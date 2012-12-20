@@ -1,0 +1,8 @@
+package com.appCore.Requests;
+
+public class LoginRequestStatus extends RequestStatus 
+{
+	
+	
+
+}

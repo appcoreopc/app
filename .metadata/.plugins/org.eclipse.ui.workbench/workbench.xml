@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="33" version="2.0">
+<workbenchAdvisor/>
+<window height="768" maximized="true" width="1024" x="905" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="153" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="175" y="22"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
+<coolItem id="org.eclipse.jst.j2ee.J2eeMainActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="130" y="22"/>
+<coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.zeroturnaround.eclipse.remoting.SyncNowToolbarActions" itemType="typeToolBarContribution" x="53" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.m2e.editor.MavenPomEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="net.sf.jadclipse.JadclipseClassFileEditor" itemType="typePlaceholder" x="38" y="22"/>
+<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.html.core.htmlsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1345827241073" focus="true" label="Workspace - Java">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeContactController.java" partName="EmployeeContactController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeContactController.java" title="EmployeeContactController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeContactController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeContactController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1296" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeContactService.java" partName="EmployeeContactService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeContactService.java" title="EmployeeContactService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeContactService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeContactService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="263" selectionOffset="768" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeEmploymentController.java" partName="EmployeeEmploymentController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeEmploymentController.java" title="EmployeeEmploymentController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeEmploymentController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeEmploymentController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1838" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeEmploymentService.java" partName="EmployeeEmploymentService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeEmploymentService.java" title="EmployeeEmploymentService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeEmploymentService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeEmploymentService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="960" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeResidenceController.java" partName="EmployeeResidenceController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeResidenceController.java" title="EmployeeResidenceController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeResidenceController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeResidenceController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="1949" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeResidenceService.java" partName="EmployeeResidenceService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeResidenceService.java" title="EmployeeResidenceService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeResidenceService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeResidenceService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="855" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeFamilyController.java" partName="EmployeeFamilyController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java" title="EmployeeFamilyController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1772" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeFamilyService.java" partName="EmployeeFamilyService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeFamilyService.java" title="EmployeeFamilyService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeFamilyService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeFamilyService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1217" selectionTopPixel="15"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeMembershipController.java" partName="EmployeeMembershipController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeMembershipController.java" title="EmployeeMembershipController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeMembershipController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeMembershipController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1840" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeMembershipService.java" partName="EmployeeMembershipService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeMembershipService.java" title="EmployeeMembershipService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeMembershipService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeMembershipService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="1122" selectionTopPixel="15"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeExpertiseController.java" partName="EmployeeExpertiseController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeExpertiseController.java" title="EmployeeExpertiseController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeExpertiseController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeExpertiseController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="318" selectionOffset="1683" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeExpertiseService.java" partName="EmployeeExpertiseService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeExpertiseService.java" title="EmployeeExpertiseService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeExpertiseService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeExpertiseService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="270" selectionOffset="1078" selectionTopPixel="15"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmploymentTypeService.java" partName="EmploymentTypeService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmploymentTypeService.java" title="EmploymentTypeService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmploymentTypeService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmploymentTypeService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1045" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeController.java" partName="EmployeeController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeController.java" title="EmployeeController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmploymentTypeInfoController.java" partName="EmploymentTypeInfoController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeInfoController.java" title="EmploymentTypeInfoController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeInfoController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeInfoController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1706" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmploymentTypeInfo.java" partName="EmploymentTypeInfo.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmploymentTypeInfo.java" title="EmploymentTypeInfo.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmploymentTypeInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmploymentTypeInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1624" selectionTopPixel="1053"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeResidence.java" partName="EmployeeResidence.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeResidence.java" title="EmployeeResidence.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeResidence.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeResidence.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2751" selectionTopPixel="2070"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersController.java" partName="UsersController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java" title="UsersController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2574" selectionTopPixel="633"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RequestStatus.java" partName="RequestStatus.java" path="C:/appCoreDev/appCore.Shared/src/com/appCore/Requests/RequestStatus.java" title="RequestStatus.java" tooltip="appCore.Shared/src/com/appCore/Requests/RequestStatus.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Shared/src/com/appCore/Requests/RequestStatus.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="121" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginRequestStatus.java" partName="LoginRequestStatus.java" path="C:/appCoreDev/appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java" title="LoginRequestStatus.java" tooltip="appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="46" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
+<viewState search_scope_type="1"/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.eclipse.ui.views.AllMarkersView" partName="Markers">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.allSeverityField" categoryGroup="org.eclipse.ui.ide.type" markerContentGenerator="org.eclipse.ui.ide.allMarkersGenerator" partName="Markers">
+<columnWidths org.eclipse.ui.ide.allSeverityField="738" org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="253"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.allSeverityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" partName="Snippets"/>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
+<view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
+<viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
+<filters>&#x0A;<filter element="*.class" isEnabled="false"/>
+<filter element="RemoteSystemsConnections" isEnabled="true"/>
+<filter element="RemoteSystemsTempFiles" isEnabled="true"/>
+<filter element=".*" isEnabled="false"/>
+</filters>
+<expanded>&#x0A;<element path="/appCore.Personnel"/>
+<element path="/appCore.Personnel/src"/>
+<element path="/appCore.Personnel/src/main"/>
+<element path="/appCore.Personnel/src/main/java"/>
+<element path="/appCore.Personnel/src/main/java/com"/>
+<element path="/appCore.Personnel/src/main/java/com/appCore"/>
+<element path="/appCore.Personnel/src/main/java/com/appCore/personnel"/>
+<element path="/appCore.Personnel/src/main/webapp"/>
+<element path="/appCore.Personnel/src/main/webapp/appCore.Personnel"/>
+<element path="/appCore.Personnel/src/main/webapp/includes"/>
+</expanded>
+<selection>&#x0A;<element path="/appCore.Personnel/src/main/webapp/includes"/>
+</selection>
+</viewState>
+</view>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="348" org.eclipse.ui.ide.resourceField="339" org.eclipse.ui.ide.severityAndDescriptionField="991"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsConnections" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.mylyn.java.ui.MembersFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsTempFiles" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.m2e.MavenModuleFilter" isEnabled="false"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List">
+<viewState linkWithEditor="true" presentation="org.eclipse.mylyn.tasks.ui.categorized">
+<sorter groupBy="CATEGORY_QUERY">
+<sorter>
+<sort0 sortDirection="1" sortKey="PRIORITY"/>
+<sort1 sortDirection="1" sortKey="RANK"/>
+<sort2 sortDirection="1" sortKey="DATE_CREATED"/>
+<sort3 sortDirection="1" sortKey="NONE"/>
+<sort4 sortDirection="1" sortKey="NONE"/>
+<sort5 sortDirection="1" sortKey="NONE"/>
+<sort6 sortDirection="1" sortKey="NONE"/>
+<sort7 sortDirection="1" sortKey="NONE"/>
+</sorter>
+</sorter>
+<filteredTreeFindHistory/>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
+<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.jboss.tools.common.model.ui.actionSet"/>
+<alwaysOnActionSet id="org.zeroturnaround.eclipse.remoting.SyncNowToolbarActions"/>
+<alwaysOnActionSet id="org.eclipse.jst.j2ee.J2eeMainActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.wst.ws.explorer.explorer"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.wst.server.ui.ServersView"/>
+<show_view_action id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView"/>
+<show_view_action id="org.eclipse.ui.views.AllMarkersView"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<new_wizard_action id="org.eclipse.jpt.jpa.ui.wizard.newJpaProject"/>
+<new_wizard_action id="org.eclipse.jst.j2ee.ui.project.facet.EarProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.ejb.ui.project.facet.EjbProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.j2ee.jca.ui.internal.wizard.ConnectorProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.j2ee.ui.project.facet.appclient.AppClientProjectWizard"/>
+<new_wizard_action id="org.eclipse.wst.web.ui.internal.wizards.SimpleWebProjectWizard"/>
+<new_wizard_action id="org.eclipse.jpt.ui.wizard.newJpaProject"/>
+<new_wizard_action id="org.eclipse.jst.servlet.ui.internal.wizard.AddServletWizard"/>
+<new_wizard_action id="org.eclipse.jst.ejb.ui.internal.wizard.AddSessionBeanWizard"/>
+<new_wizard_action id="org.eclipse.jst.ejb.ui.internal.wizard.AddMessageDrivenBeanWizard"/>
+<new_wizard_action id="org.eclipse.jpt.ui.wizard.newEntity"/>
+<new_wizard_action id="org.eclipse.jst.ws.creation.ui.wizard.serverwizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<perspective_action id="org.eclipse.jpt.ui.jpaPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<perspective_action id="org.eclipse.wst.web.ui.webDevPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.AllMarkersView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.wst.server.ui.ServersView"/>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackagesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@2df3ed79" ratio="0.749499" ratioLeft="748" ratioRight="250" relationship="2" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.23205867" ratioLeft="443" ratioRight="1466" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.7901099" ratioLeft="719" ratioRight="191" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.AllMarkersView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.AllMarkersView" label="Markers"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer"/>
+<page content="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" label="Snippets"/>
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="topRight" ratio="0.8784793" ratioLeft="1294" ratioRight="179" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.jboss.tools.common.model.ui.actionSet"/>
+<alwaysOnActionSet id="org.zeroturnaround.eclipse.remoting.SyncNowToolbarActions"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<alwaysOnActionSet id="org.hibernate.eclipse.launch.actionset"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.wst.jsdt.ui.JavaPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.jdt.callhierarchy.view"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@3f44c83b" ratio="0.749499" ratioLeft="748" ratioRight="250" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.1822944" ratioLeft="348" ratioRight="1561" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.69690263" ratioLeft="630" ratioRight="274" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
+<page content="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@6d0ff85e" ratio="0.74899864" ratioLeft="561" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.mylyn.tasks.ui.views.tasks" appearance="2" expanded="2">
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.5" ratioLeft="249" ratioRight="249" relationship="4" relative="org.eclipse.ui.internal.ViewStack@6d0ff85e">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeEmploymentController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeResidenceController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeResidenceService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeMembershipController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeMembershipService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeExpertiseController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeExpertiseService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmploymentTypeService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeContactController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeInfoController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmploymentTypeInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeResidence.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Shared/src/com/appCore/Requests/RequestStatus.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java"/>
+</editors>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1638" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseService.java" index="7">
+<position info="not_deleted" x="1257" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1638" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseService.java" index="7">
+<position info="not_deleted" x="1257" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1638" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseService.java" index="7">
+<position info="not_deleted" x="1257" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1638" y="0"/>
+</item>
+<item historyLabel="EmployeeResidenceService.java" index="2">
+<position info="not_deleted" x="1075" y="268"/>
+</item>
+<item historyLabel="EmployeeFamilyController.java" index="3">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="EmployeeMembershipService.java" index="5">
+<position info="not_deleted" x="1122" y="13"/>
+</item>
+<item historyLabel="EmployeeMembershipController.java" index="4">
+<position info="not_deleted" x="1840" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1638" y="0"/>
+</item>
+<item historyLabel="EmployeeResidenceController.java" index="1">
+<position info="not_deleted" x="1824" y="0"/>
+</item>
+<item historyLabel="EmployeeMembershipController.java" index="4">
+<position info="not_deleted" x="1840" y="0"/>
+</item>
+<item historyLabel="EmployeeFamilyController.java" index="3">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1638" y="0"/>
+</item>
+<item historyLabel="EmployeeFamilyController.java" index="3">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="EmployeeEmploymentController.java" index="0">
+<position info="not_deleted" x="1838" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1638" y="0"/>
+</item>
+<item historyLabel="EmployeeFamilyController.java" index="3">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="EmployeeMembershipController.java" index="4">
+<position info="not_deleted" x="1840" y="0"/>
+</item>
+<item historyLabel="EmployeeResidenceController.java" index="1">
+<position info="not_deleted" x="1824" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeController.java" index="8">
+<position info="not_deleted" x="1625" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1683" y="318"/>
+</item>
+<item historyLabel="EmploymentTypeController.java" index="8">
+<position info="not_deleted" x="1598" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeService.java" index="9">
+<position info="not_deleted" x="848" y="3"/>
+</item>
+<item historyLabel="EmployeeExpertiseService.java" index="7">
+<position info="not_deleted" x="1078" y="270"/>
+</item>
+<item historyLabel="EmploymentTypeController.java" index="8">
+<position info="not_deleted" x="1598" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeService.java" index="9">
+<position info="not_deleted" x="1045" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeController.java" index="8">
+<position/>
+</item>
+<item historyLabel="EmploymentTypeService.java" index="9">
+<position info="not_deleted" x="1045" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeController.java" index="8">
+<position/>
+</item>
+<item historyLabel="EmploymentTypeController.java" index="8">
+<position info="not_deleted" x="1642" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeService.java" index="9">
+<position info="not_deleted" x="1045" y="0"/>
+</item>
+<item historyLabel="EmployeeContactController.java" index="10">
+<position info="not_deleted" x="1296" y="0"/>
+</item>
+<item historyLabel="EmployeeController.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="EmployeeEmploymentController.java" index="0">
+<position info="not_deleted" x="1838" y="0"/>
+</item>
+<item historyLabel="EmployeeExpertiseController.java" index="6">
+<position info="not_deleted" x="1683" y="318"/>
+</item>
+<item historyLabel="EmployeeFamilyController.java" index="3">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="EmployeeMembershipController.java" index="4">
+<position info="not_deleted" x="1840" y="0"/>
+</item>
+<item historyLabel="EmployeeResidenceController.java" index="1">
+<position info="not_deleted" x="1824" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeInfoController.java" index="12">
+<position info="not_deleted" x="1706" y="0"/>
+</item>
+<item historyLabel="EmploymentTypeInfo.java" index="13">
+<position info="not_deleted" x="1624" y="0"/>
+</item>
+<item historyLabel="EmployeeResidenceController.java" index="1">
+<position info="not_deleted" x="1949" y="13"/>
+</item>
+<item historyLabel="EmployeeResidenceService.java" index="2">
+<position info="not_deleted" x="855" y="0"/>
+</item>
+<item historyLabel="EmployeeResidence.java" index="14">
+<position info="not_deleted" x="2751" y="0"/>
+</item>
+<item historyLabel="UsersController.java" index="15">
+<position info="not_deleted" x="1527" y="13"/>
+</item>
+<item historyLabel="RequestStatus.java" index="16">
+<position info="not_deleted" x="121" y="0"/>
+</item>
+<item historyLabel="LoginRequestStatus.java" index="17">
+<position info="not_deleted" x="46" y="18"/>
+</item>
+<item active="true" historyLabel="UsersController.java" index="15">
+<position info="not_deleted" x="1527" y="13"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+<trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginRequestStatus.java" tooltip="appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java">
+<persistable path="/appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RequestStatus.java" tooltip="appCore.Shared/src/com/appCore/Requests/RequestStatus.java">
+<persistable path="/appCore.Shared/src/com/appCore/Requests/RequestStatus.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeResidence.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeResidence.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeResidence.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmploymentTypeInfo.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmploymentTypeInfo.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmploymentTypeInfo.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmploymentTypeInfoController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeInfoController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeInfoController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmploymentTypeService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmploymentTypeService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmploymentTypeService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmploymentTypeController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmploymentTypeController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeExpertiseService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeExpertiseService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeExpertiseService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeExpertiseController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeExpertiseController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeExpertiseController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeMembershipService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeMembershipService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeMembershipService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeMembershipController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeMembershipController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeMembershipController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeFamilyService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeFamilyService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeFamilyService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeFamilyController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java"/>
+</file>
+</mruList>
+</workbench>

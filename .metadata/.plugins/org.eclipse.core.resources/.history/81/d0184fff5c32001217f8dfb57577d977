@@ -1,0 +1,76 @@
+var EmployeeResidentialViewModel = function (initView, value, data) {
+
+    this.viewType = initView;
+
+    this.getRole = function () {
+        var input = { "id":employeeModule, "roleId":1 };
+        return input;
+    }
+
+    this.getView = function () {
+        var gridDataObject =
+        {
+
+        };
+
+        switch (this.viewType) {
+            // General main add form view
+            case 0:
+                var fieldExpertiseLinkInfo =
+                {
+                    "text":"Add Residential Info",
+                    "icon":"icon-plus",
+                    "commandId":'ResidentialAdd',
+                    "link":this.addPage,
+                    "targetControlId":"#userCommand",
+                    "ctrlId":"ResidentialAddId",
+                    "callback":function () {
+                        var vm = new EmployeeResidentialViewModel();
+                        vm.saveExpertiseForm();
+                    }
+                }
+
+                var updateLinkInfo = {
+                    "text":"Update",
+                    "link":this.editPage
+                };
+
+                gridDataObject.editorMode = "Insert";
+                gridDataObject.addLinkInfo = fieldExpertiseLinkInfo;
+                return gridDataObject;
+            default:
+                break;
+        }
+    }
+
+    this.saveExpertiseForm = function () {
+        var isValid = $("#" + "employeeResidenceForm").validationEngine('validate');
+
+        if (!isValid)
+            return;
+
+        var employeeResidence = new EmployeeResidence();
+
+        //employeeResidence.level = $("#Level").val();
+        employeeResidence.permanentAddress1 = $("#PermanentAddress1").val();
+        employeeResidence.permanentAddress2 = $("#PermanentAddress2").val();
+        employeeResidence.permanentAddress3 = $("#PermanentAddress3").val();
+        employeeResidence.city = $("#City").val();
+        employeeResidence.country = $("#Country").val();
+        employeeResidence.postcode = $("#PostCode").val();
+        employeeResidence.telNo = $("#TelNo").val();
+        employeeResidence.emergencyContact1 = $("#EmergencyContact1").val();
+        employeeResidence.emergencyContact2 = $("#EmergencyContact2").val();
+        employeeResidence.contact1 = $("#ContactNo1").val();
+        employeeResidence.contact2 = $("#ContactNo2").val();
+        employeeResidence..employeeRefId = globalCurrentEmployee;
+
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestType(globalHostname + "/app/Job/EmployeeResidence/add", employeeResidence, "post");
+
+        request.success(function (data, status, xhrObj) {
+            preparePageForLoading("$<linkName>$");
+        });
+
+    }
+}

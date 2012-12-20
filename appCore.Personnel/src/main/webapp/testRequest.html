@@ -1,0 +1,53 @@
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        </head>
+        <body>
+
+		
+		<script language="javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script language="javascript" src="requestViewModel.js"></script>
+		<script language="javascript" src="js/ajaxCore.js"></script>
+		<script language="javascript" src="js/knockoutjs/knockout-2.2.0.debug.js"></script>
+
+        <script type="text/javascript">
+
+
+        $(document).ready(function()
+        {
+		
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest("http://localhost:8080/appCore-personnel/app/Job/EmployeeEmployment/list", null, "get");
+
+        request.success(function(dataSource)
+        {
+			
+			
+			var vm = new RequestViewModel(dataSource); 
+			ko.applyBindings(vm);
+	  
+        });
+
+        });
+
+        </script>
+		
+		
+		<div> 
+		
+		 <ul data-bind="foreach : initData"> 
+		  
+		  <span data-bind="text: nid"> </span>
+		  <span data-bind="text: employerName"> </span>  <a href="#" data-bind="click: $root.remove">Remove</a> <br />
+		
+		</ul> 
+		</div>
+		
+		
+		
+
+    
