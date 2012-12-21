@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;id&apos; in &apos;com.appCore.personnel.Core.Service.UnitService.getSummary(...)&apos; to &apos;sectionId&apos;&#x0D;&#x0A;- Original project: &apos;appCore.Personnel&apos;&#x0D;&#x0A;- Original element: &apos;com.appCore.personnel.Core.Service.UnitService.getSummary(Integer).id&apos;&#x0D;&#x0A;- Renamed element: &apos;id&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;id&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java&lt;com.appCore.personnel.Core.Service{UnitService.java[UnitService~getSummary~QInteger;@id!616!625!624!625!QInteger;!0!true" name="sectionId" references="true" stamp="1351515014158" version="1.0"/>
-</session>
