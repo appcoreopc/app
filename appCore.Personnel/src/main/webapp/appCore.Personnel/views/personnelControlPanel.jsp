@@ -27,10 +27,11 @@
         $(document).ready(function()
         {
 
-            $("#companyDropDownList").change(function()
-            {
-                 globalCurrentCompanyId = $(this).find("option:selected").val();
-            });
+        $("#companyDropDownList").change(function()
+        {
+        globalCurrentCompanyId = $(this).find("option:selected").val();
+        globalViewModel.companyId(globalCurrentCompanyId);
+        });
         });
 
         var currentPage = "globalPersonnelControlPanel.jsp";

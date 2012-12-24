@@ -4,17 +4,8 @@
 
         $(document).ready(function()
         {
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalEmployeeUrl + "/list", null, "get");
-
-        request.success(function(data)
-        {
-            var vm = new EmployeeViewModel();
-            var gridDataObject = vm.getListView(data);
-            var input = { "id" : coreEmployeePage, "roleId" : 1 };
-            var coreCommand = new CoreCommand();
-            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-        });
+               var vm = new EmployeeViewModel(0, globalViewModel);
+               var gridDataObject = vm.getListView();
         });
 
         </script>

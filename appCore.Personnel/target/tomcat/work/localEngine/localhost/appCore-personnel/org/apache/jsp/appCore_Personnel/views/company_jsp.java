@@ -51,25 +51,27 @@ public final class company_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("    <script language=\"javascript\" src=\"../../js/viewmodal/companyViewModel.js\"></script>\r\n");
+      out.write("    <script language=\"javascript\" src=\"../../js/viewmodal/companyHelper.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
       out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("\r\n");
-      out.write("        var ajaxCore = new AjaxCore();\r\n");
-      out.write("        var request = ajaxCore.sendRequest(globalCompanyListUrl, null, \"get\");\r\n");
+      out.write("            var ajaxCore = new AjaxCore();\r\n");
+      out.write("            var request = ajaxCore.sendRequest(globalCompanyListUrl, null, \"get\");\r\n");
       out.write("\r\n");
-      out.write("        request.success(function(data)\r\n");
-      out.write("        {\r\n");
-      out.write("            var vm = new CompanyViewModel(globalCompanyUrl, data);\r\n");
-      out.write("            var gridDataObject = vm.getView();\r\n");
-      out.write("\r\n");
-      out.write("            var input = { \"id\" : coreCompanyPage, \"roleId\" : 1 };\r\n");
-      out.write("            var coreCommand = new CoreCommand();\r\n");
-      out.write("            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);\r\n");
-      out.write("\r\n");
-      out.write("        });\r\n");
-      out.write("\r\n");
+      out.write("            request.success(function(data)\r\n");
+      out.write("            {\r\n");
+      out.write("                var vm = new CompanyViewModel(globalCompanyUrl, data, globalViewModel);\r\n");
+      out.write("                var gridDataObject = vm.getView();\r\n");
+      out.write("                var input = { \"id\" : coreCompanyPage, \"roleId\" : 1 };\r\n");
+      out.write("                var coreCommand = new CoreCommand();\r\n");
+      out.write("                var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);\r\n");
+      out.write("                vm.gridViewModel = gridViewModel;\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"companyDiv\"));\r\n");
+      out.write("            });\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -84,9 +86,10 @@ public final class company_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div>\r\n");
-      out.write("        <div id=\"grid\" style=\"height: 380px\"></div>\r\n");
+      out.write("\r\n");
+      out.write("        <div id=\"companyDiv\" data-bind=\"dataGrid: gridViewModel\"></div>\r\n");
       out.write("        </div>\r\n");
-      out.write("        </div>\r\n");
+      out.write("        </div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -1,7 +1,6 @@
-var EmployeeViewModel = function (initView, value, data) {
+var EmployeeViewModel = function (initView, globalViewModel) {
 
     this.viewType = initView;
-
     this.centralPage = "employeeAdd.jsp";
     this.editPage = "employeeAdd.jsp";
     this.addPage = "branchAdd.jsp";
@@ -9,9 +8,8 @@ var EmployeeViewModel = function (initView, value, data) {
     this.gridUrl = globalEmployeeUrl;
     this.codeCommand = "#codeCommand";
     this.gridId = "gridBranch";
-    this.data = data;
 
-    this.valueData = value;
+    this.data = null;
 
     var model =
     {
@@ -84,6 +82,17 @@ var EmployeeViewModel = function (initView, value, data) {
         }
     };
 
+    if (globalViewModel != undefined) {
+
+        globalViewModel.companyId.subscribe(function (newValue) {
+            $(".maintenanceCommand").empty();
+            $("#employeeListViewGrid").empty();
+            generateEmployeeGrid(newValue);
+        });
+    }
+
+
+
     this.getAddPage = function () {
         return this.addPage;
     }
@@ -97,38 +106,47 @@ var EmployeeViewModel = function (initView, value, data) {
         preparePageForLoading("employeeGeneralInfoView.jsp");
     }
 
-    this.getListView = function (dataSource) {
-
-        var gridMetaData =
-        {
-            "gridUrl":globalEmployeeUrl,
-            "data":dataSource,
-            "columns":columns,
-            "model":model
-        };
-
-        var addLinkInfo = {
-            "text":"Add Employee",
-            "commandId":'employeeAdd',
-            "link":this.addPage,
-            "callback":function () {
-                goToAdd();
-            }
-        };
-
-        var updateLinkInfo = {
-            "text":"Update",
-            "link":this.editPage
-        };
-
-        gridMetaData.controlId = "employeeListViewGrid";
-        gridMetaData.addLinkInfo = addLinkInfo;
-        gridMetaData.updateLinkInfo = updateLinkInfo;
-
-        return gridMetaData;
-
+    this.getListView = function (companyId) {
+        generateEmployeeGrid(companyId);
     }
 
+    function generateEmployeeGrid(companyId) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalEmployeeUrl + "/list", null, "get");
+
+        request.success(function (dataSource) {
+            var gridMetaData =
+            {
+                "gridUrl":globalEmployeeUrl,
+                "data":dataSource,
+                "columns":columns,
+                "model":model
+            };
+
+            var addLinkInfo = {
+                "text":"Add Employee",
+                "commandId":'employeeAdd',
+                "link":this.addPage,
+                "callback":function () {
+                    goToAdd();
+                }
+            };
+
+            var updateLinkInfo = {
+                "text":"Update",
+                "link":"employeeAdd.jsp"
+            };
+
+            gridMetaData.controlId = "employeeListViewGrid";
+            gridMetaData.addLinkInfo = addLinkInfo;
+            gridMetaData.updateLinkInfo = updateLinkInfo;
+
+            var input = { "id":coreEmployeePage, "roleId":1 };
+            var coreCommand = new CoreCommand();
+            coreCommand.parseCommand(hostAuthorizationUrl, input, gridMetaData);
+
+        });
+    }
 
     this.getView = function () {
 
@@ -141,9 +159,7 @@ var EmployeeViewModel = function (initView, value, data) {
         };
 
         switch (this.viewType) {
-            // General main add form view
             case 0:
-
                 var contactLinkInfo = {
                     "text":"Add Contact",
                     "icon":"icon-plus",
@@ -242,7 +258,6 @@ var EmployeeViewModel = function (initView, value, data) {
 
                 return gridDataObject;
         }
-
 
         function getContactForm() {
 

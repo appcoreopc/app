@@ -102,9 +102,9 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("<script language=\"javascript\" src=\"../../js/ui/jquery-ui-1.8.23.custom.min.js\"></script>\r\n");
       out.write("\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/viewmodal/knockoutBindersControl.js\"></script>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("<script language=\"javascript\" src=\"../../js/coreSimpleGrid.js\"></script>\r\n");
+      out.write("<script language=\"javascript\" src=\"../../js/simpleGrid.js\"></script>\r\n");
+      out.write("<script language=\"javascript\" src=\"../../js/viewmodal/employeeHelper.js\"></script>\r\n");
       out.write("<script src=\"../../kendo/js/kendo.web.min.js\"></script>\r\n");
       out.write("\r\n");
       out.write("        ");
@@ -214,10 +214,11 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("\r\n");
-      out.write("            $(\"#companyDropDownList\").change(function()\r\n");
-      out.write("            {\r\n");
-      out.write("                 globalCurrentCompanyId = $(this).find(\"option:selected\").val();\r\n");
-      out.write("            });\r\n");
+      out.write("        $(\"#companyDropDownList\").change(function()\r\n");
+      out.write("        {\r\n");
+      out.write("        globalCurrentCompanyId = $(this).find(\"option:selected\").val();\r\n");
+      out.write("        globalViewModel.companyId(globalCurrentCompanyId);\r\n");
+      out.write("        });\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("        var currentPage = \"globalPersonnelControlPanel.jsp\";\r\n");

@@ -9,17 +9,16 @@
         $(document).ready(function()
         {
 
-            $(document).unbind("parseComplete");
+            // $(document).unbind("parseComplete");
 
             $("#companyForm").validationEngine();
 
-            var tab = $("#companyCodeSetupTabs").tabs();
             var vm;
             var gridDataObject;
 
-            if (globalCurrentId != undefined && globalCurrentId.id != null)
+            if (globalViewModel != undefined && globalViewModel.targetId != null)
             {
-                vm = new CompanyAddViewModel(2, globalCurrentId.id);
+                vm = new CompanyAddViewModel(coreModeEdit, globalViewModel.targetId);
                 gridDataObject = vm.getView();
             }
             else
@@ -28,14 +27,16 @@
                 gridDataObject = vm.getView();
             }
 
-            var input = { "id" : coreCompanyPage, "roleId" : 1 };
-            var coreCommand = new CoreCommand();
-            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
+                var input = { "id" : coreCompanyPage, "roleId" : 1 };
+                var coreCommand = new CoreCommand();
+                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
 
-            $(document).bind("parseComplete", function()
-            {
+            //$(document).bind("parseComplete", function()
+            //{
                 ko.applyBindings(vm, document.getElementById("companyCodeSetupTabs"));
-            });
+            //});
+
+            var tab = $("#companyCodeSetupTabs").tabs();
 
         });
 

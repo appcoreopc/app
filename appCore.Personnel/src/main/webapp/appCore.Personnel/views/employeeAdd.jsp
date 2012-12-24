@@ -8,7 +8,6 @@
         $(document).ready(function()
         {
 
-            var tab = $("#codeSetupTabs").tabs({ cache : true});
             var ajaxCore = new AjaxCore();
             var vm = new EmployeeViewModel(0);
 
@@ -17,6 +16,8 @@
 
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+
+            var tab = $("#codeSetupTabs").tabs({ cache : true});
 
         });
 

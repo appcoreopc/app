@@ -129,7 +129,10 @@ var CompanyAddViewModel = function (mode, companyId) {
         var isValid = $("#" + "companyForm").validationEngine('validate');
 
         if (!isValid)
+        {
+            alert('invalid validation.')
             return;
+        }
 
         var company = new Company();
 

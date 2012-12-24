@@ -60,7 +60,6 @@ public final class employeeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("\r\n");
-      out.write("            var tab = $(\"#codeSetupTabs\").tabs({ cache : true});\r\n");
       out.write("            var ajaxCore = new AjaxCore();\r\n");
       out.write("            var vm = new EmployeeViewModel(0);\r\n");
       out.write("\r\n");
@@ -69,6 +68,8 @@ public final class employeeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("            var coreCommand = new CoreCommand();\r\n");
       out.write("            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);\r\n");
+      out.write("\r\n");
+      out.write("            var tab = $(\"#codeSetupTabs\").tabs({ cache : true});\r\n");
       out.write("\r\n");
       out.write("        });\r\n");
       out.write("\r\n");

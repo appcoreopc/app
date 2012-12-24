@@ -1,23 +1,25 @@
     <script language="javascript" src="../../js/viewmodal/companyViewModel.js"></script>
+    <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
+
+
         <script type="text/javascript">
 
         $(document).ready(function()
         {
 
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalCompanyListUrl, null, "get");
+            var ajaxCore = new AjaxCore();
+            var request = ajaxCore.sendRequest(globalCompanyListUrl, null, "get");
 
-        request.success(function(data)
-        {
-            var vm = new CompanyViewModel(globalCompanyUrl, data);
-            var gridDataObject = vm.getView();
-
-            var input = { "id" : coreCompanyPage, "roleId" : 1 };
-            var coreCommand = new CoreCommand();
-            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-
-        });
-
+            request.success(function(data)
+            {
+                var vm = new CompanyViewModel(globalCompanyUrl, data, globalViewModel);
+                var gridDataObject = vm.getView();
+                var input = { "id" : coreCompanyPage, "roleId" : 1 };
+                var coreCommand = new CoreCommand();
+                var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+                vm.gridViewModel = gridViewModel;
+                ko.applyBindings(vm, document.getElementById("companyDiv"));
+            });
         });
 
 
@@ -32,6 +34,7 @@
         </div>
 
         <div>
-        <div id="grid" style="height: 380px"></div>
+
+        <div id="companyDiv" data-bind="dataGrid: gridViewModel"></div>
         </div>
         </div>

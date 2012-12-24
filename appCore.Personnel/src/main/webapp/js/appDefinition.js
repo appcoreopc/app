@@ -78,6 +78,8 @@ var globalCompanyGetSummaryUrl = globalHostname + "/app/Core/Company/getSummary"
 
 var globalCompanyAddUrl = globalHostname + "/app/Core/Company/add";
 
+var globalCompanyDeleteUrl = globalHostname + "/app/Core/Company/delete";
+
 var globalCompanySaveOrUpdateUrl = globalHostname + "/app/Core/Company/saveOrUpdate";
 
 var globalCompanyGetUrl = globalHostname + "/app/Core/Company/get";
@@ -171,3 +173,11 @@ var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?i
 var globalPersonnelControlPanel = "personnelControlPanel.jsp";
 
 var globalUserValidationUrl = globalHostname + "/app/Users/Users/validateLogin";
+
+var coreModeList = 0;
+var coreModeInsert = 1;
+var coreModeEdit = 2;
+
+var coreApplicationTypeCompany = 0;
+var coreApplicationTypeEmployee = 1;
+var coreApplicationTypeCode = 2;

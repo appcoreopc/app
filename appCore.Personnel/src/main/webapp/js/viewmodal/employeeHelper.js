@@ -294,6 +294,42 @@ var EmployeeHelper = function ()
                 return "";
         }
     }
+
+    /*
+     self.targetId = ko.observable();
+     self.editMode = ko.observable();
+     self.applicationScopeType = ko.observable();
+     */
+
+    this.setCompanyEditMode = function(globalViewModel, id)
+    {
+        globalViewModel.targetId(id);
+        globalViewModel.editMode(coreModeEdit);
+        globalViewModel.applicationScopeType(coreApplicationTypeCompany);
+
+    }
+
+    this.setCompanyInsertMode = function(globalViewModel, id)
+    {
+        globalViewModel.targetId(id);
+        globalViewModel.editMode(coreModeInsert);
+        globalViewModel.applicationScopeType(coreApplicationTypeCompany);
+    }
+
+    this.setCompanyListMode = function(globalViewModel)
+    {
+        globalViewModel.editMode(coreModeList);
+        globalViewModel.applicationScopeType(coreApplicationTypeCompany);
+    }
+
+    this.resetTargetIdNull = function(globalViewModel)
+    {
+        globalViewModel.targetId(null);
+        globalViewModel.editMode(null);
+        globalViewModel.applicationScopeType(null);
+
+    }
+
 }
 
 Date.prototype.format = function (fmt) {
@@ -316,6 +352,11 @@ Date.prototype.format = function (fmt) {
             }
         });
 };
+
+
+
+
+
 
 /*
 
@@ -407,9 +448,69 @@ ko.bindingHandlers.datepicker = {
     }
 };
 
+
+
 */
 
 ko.bindingHandlers.datepicker = {
+    init: function (element, valueAccessor, allBindingsAccessor) {
+        //initialize datepicker with some optional options
+        var options = allBindingsAccessor().datepickerOptions || {};
+        $(element).datepicker(options);
+
+        $(element).after("<i class='icon-calendar'></i>");
+
+        var value = ko.utils.unwrapObservable(valueAccessor());
+        if (value != null)
+            $(element).datepicker("setDate", value);
+
+        //handle the field changing
+        ko.utils.registerEventHandler(element, "change", function () {
+            var observable = valueAccessor();
+            observable($(element).val());
+
+            //alert($(element).val());
+            //alert($(element).datepicker("getDate"));
+            //if (observable.isValid()) {
+            //    observable($(element).datepicker("getDate"));
+            //    $(element).blur();
+            //}
+        });
+
+        //handle disposal (if KO removes by the template binding)
+        ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+            $(element).datepicker("destroy");
+        });
+
+        // ko.bindingHandlers.validationCore.init(element, valueAccessor, allBindingsAccessor);
+
+    },
+    update: function (element, valueAccessor) {
+        var value = ko.utils.unwrapObservable(valueAccessor());
+
+        //handle date data coming via json from Microsoft
+        //if (String(value).indexOf('/Date(') == 0) {
+        //    value = new Date(parseInt(value.replace(/\/Date\((.*?)\)\//gi, "$1")));
+        //}
+
+        var current = $(element).datepicker("getDate");
+
+        if (value - current !== 0) {
+            $(element).datepicker("setDate", value);
+        }
+    }
+};
+
+
+/*
+
+ codepicker:
+ it is a control that is used to evaluate if code exist
+ and created within the system.
+
+ */
+
+ko.bindingHandlers.codepicker = {
     init: function (element, valueAccessor, allBindingsAccessor) {
         //initialize datepicker with some optional options
         var options = allBindingsAccessor().datepickerOptions || {};

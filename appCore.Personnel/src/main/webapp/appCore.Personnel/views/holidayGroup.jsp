@@ -96,7 +96,6 @@
 							for (var i=0; i < e.sender._data.length; i++)
 							{
 								cnt++;
-								console.log(cnt);
 								if (e.sender._data[i].isNew())
 								{
 									var holidayGroup = new HolidayGroup(); 

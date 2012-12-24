@@ -1,4 +1,5 @@
 var CoreCommand = function () {
+
     var deleteCommandId = "deleteBtn";
     var updateCommandId = "updBtn";
     var addCommandId = "addBtn";
@@ -7,8 +8,9 @@ var CoreCommand = function () {
 
     this.parseCommand = function (requestUrl, requestData, commandDataObject) {
         var dataPermission = this.getPermission(requestUrl, requestData);
-        getCommand(dataPermission, commandDataObject);
+        var gridViewModel = getCommand(dataPermission, commandDataObject);
         $(document).trigger("parseComplete");
+        return gridViewModel;
     }
 
     this.getPermission = function (requestUrl, requestData) {
@@ -60,6 +62,9 @@ var CoreCommand = function () {
             default :
                 break;
         }
+
+        var coreSimpleGrid = new CoreSimpleGrid();
+        return coreSimpleGrid.createGrid(commandDataObject);
     }
 
     this.createCommandButton = function (ctrlId, text, link, callBack) {
