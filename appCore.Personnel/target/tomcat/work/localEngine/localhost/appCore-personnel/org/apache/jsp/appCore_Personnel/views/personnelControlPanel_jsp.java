@@ -89,6 +89,7 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/carousel.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/ajaxCore.js\"></script>\r\n");
+      out.write("<script language=\"javascript\" src=\"../../js/coreDialog.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/coreObjects.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/coreCommonFunction.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/appDefinition.js\"></script>\r\n");

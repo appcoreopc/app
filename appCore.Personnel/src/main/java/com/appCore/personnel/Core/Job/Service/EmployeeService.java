@@ -27,7 +27,15 @@ public class EmployeeService
 
 		return  query.list();
 	}
-
+	
+	public List<Employee> getAllByCompany(Integer id) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Employee WHERE CompanyRef = id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
 	public Employee get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -85,4 +93,6 @@ public class EmployeeService
 
 		session.save(target);
 	}
+
+	
 }

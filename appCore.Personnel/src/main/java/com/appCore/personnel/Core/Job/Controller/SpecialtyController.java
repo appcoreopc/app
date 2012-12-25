@@ -35,6 +35,14 @@ public class SpecialtyController
 				List<Specialty> list = service.getAll();
 				return list;
 		}
+		
+		
+		@RequestMapping(value = "/Specialty/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Specialty> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Specialty> list = service.getAllByCompany(id);
+				return list;
+		}
 
 		@RequestMapping(value = "/Specialty/get", method = RequestMethod.GET)		
 		public @ResponseBody Specialty getSpecialty (@RequestParam(value="id", required=true) Integer id ) 

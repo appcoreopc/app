@@ -36,6 +36,14 @@ public class LevelController
 				return list;
 		}
 
+		@RequestMapping(value = "/Level/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Level> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Level> list = service.getAllByCompany(id);
+				return list;
+		}
+		
+		
 		@RequestMapping(value = "/Level/get", method = RequestMethod.GET)		
 		public @ResponseBody Level getLevel (@RequestParam(value="id", required=true) Integer id ) 
 		{

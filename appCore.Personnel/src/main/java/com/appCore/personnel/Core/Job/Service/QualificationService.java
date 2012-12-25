@@ -28,6 +28,15 @@ public class QualificationService
 		return  query.list();
 	}
 
+	public List<EmployeeQualification> getByEmployeeRefId(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Qualification WHERE EmployeeRefId = :id");
+		query.setParameter("id", id);
+		return  query.list();
+
+	}
+	
 	public EmployeeQualification get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +82,7 @@ public class QualificationService
 
 		session.save(target);
 	}
+
+	
+	
 }

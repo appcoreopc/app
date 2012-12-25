@@ -16,33 +16,33 @@
         {
         $("#" + form).validationEngine();
 
-        if (globalCurrentId != undefined && globalCurrentId.id != null)
+        if (globalViewModel != undefined && globalViewModel.targetId != null)
         {
-        vm = new CodeMaintenanceViewModel(2, codeType, globalCurrentId.id);
-        gridDataObject = vm.getView();
+            vm = new CodeMaintenanceViewModel(coreModeEdit, codeType, globalViewModel.targetId, globalViewModel);
+            gridDataObject = vm.getView();
         }
         else
         {
-        vm = new CodeMaintenanceViewModel(1, codeType);
-        gridDataObject = vm.getView();
+            vm = new CodeMaintenanceViewModel(coreModeInsert, codeType, null, globalViewModel);
+            gridDataObject = vm.getView();
         }
-
 
         var input = { "id" : coreCodeMaintenancePage, "roleId" : 1 };
         var coreCommand = new CoreCommand();
         coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
 
-        $(document).unbind("parseComplete");
+        //$(document).unbind("parseComplete");
+        //$(document).bind("parseComplete", function()
+        //{
+        ko.applyBindings(vm, document.getElementById("codeForm"));
 
-        $(document).bind("parseComplete", function()
-        {
-        ko.applyBindings(vm);
-        });
+        //});
+
         });
 
         function getEmptyDate(date)
         {
-        return "empty";
+            return "empty";
         }
 
 

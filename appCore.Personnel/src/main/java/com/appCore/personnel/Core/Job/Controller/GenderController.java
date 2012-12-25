@@ -15,6 +15,7 @@ import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.Core.Job.Entity.Gender;
+import com.appCore.personnel.Core.Job.Entity.Grade;
 
 import com.appCore.personnel.Core.Job.Service.GenderService;
 
@@ -35,6 +36,14 @@ public class GenderController
 				List<Gender> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Gender/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Gender> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Gender> list = service.getAllByCompany(id);
+				return list;
+		}
+		
 
 		@RequestMapping(value = "/Gender/get", method = RequestMethod.GET)		
 		public @ResponseBody Gender getGender (@RequestParam(value="id", required=true) Integer id ) 

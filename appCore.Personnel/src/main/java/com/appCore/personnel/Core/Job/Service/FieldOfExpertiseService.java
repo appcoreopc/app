@@ -28,6 +28,15 @@ public class FieldOfExpertiseService
 		return  query.list();
 	}
 
+	
+	public List<FieldOfExpertise> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  FieldOfExpertise WHERE CompanyRef = :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
 	public FieldOfExpertise get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +82,6 @@ public class FieldOfExpertiseService
 
 		session.save(target);
 	}
+
+	
 }

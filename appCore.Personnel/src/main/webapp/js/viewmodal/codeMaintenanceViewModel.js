@@ -1,15 +1,4 @@
-/*
- initView - defined what type of view you're trying to defined
-
- 0 - list view / overall view with grid
- 1 - insert mode
- 2 - edit mode
-
- codeType -
-
- */
-
-var CodeMaintenanceViewModel = function (initView, codeType, data) {
+var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewModel) {
 
     var self = this;
     self.viewType = ko.observable(initView);
@@ -37,6 +26,20 @@ var CodeMaintenanceViewModel = function (initView, codeType, data) {
 
     var form = "codeForm";
 
+    globalViewModel.companyId.subscribe(function(newValue)
+    {
+
+    });
+
+    self.gridData = ko.observableArray(data);
+
+    var viewColumns = [
+        { headerText:"Code Name", rowText:"name" },
+        { headerText:"Description", rowText:"description" },
+        { headerText:"Start Effective Date", rowText:"startEffectiveDate" },
+        { headerText:"End Effective Date", rowText:"endEffectiveDate" }
+
+    ];
 
     var model = {
         id:"nid",
@@ -77,13 +80,12 @@ var CodeMaintenanceViewModel = function (initView, codeType, data) {
         ]};
 
 
-    if (self.viewType() == 2)
+    if (self.viewType() == coreModeEdit)
         getDataForm(data);
 
     this.getAddPage = function () {
         return this.addPage;
     }
-
 
     function getGridDate(date) {
         return new Date(date);
@@ -91,6 +93,30 @@ var CodeMaintenanceViewModel = function (initView, codeType, data) {
 
     this.getCentralPage = function () {
         return this.centralPage;
+    }
+
+    function updateFunction(data) {
+
+        var helper = new EmployeeHelper();
+        helper.setMaintenanceCodeEditMode(globalViewModel, data.nid);
+        preparePageForLoading("maintenanceCodeAdd.jsp");
+    }
+
+    function deleteFunction(data) {
+
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType, deleteCallBack);
+    }
+
+    function deleteCallBack(status, data, globalViewModel, codeType) {
+
+        if (status == true) {
+            var helper = new CodeMaintenanceHelper(codeType);
+            var result = helper.deletMaintenanceCode(globalViewModel.companyId, data.nid, codeType);
+            self.gridData.remove(data);
+        }
     }
 
     this.getView = function () {
@@ -108,7 +134,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data) {
             case 0:
                 var helper = new CodeMaintenanceHelper(this.codeType);
                 gridDataObject.gridUrl = helper.getUrl();
-                this.title = ko.observable(helper.getTitle(this.codeType));
+                self.title = ko.observable(helper.getTitle(this.codeType));
 
                 var addLinkInfo = {
                     "text":"Add New Code",
@@ -123,6 +149,10 @@ var CodeMaintenanceViewModel = function (initView, codeType, data) {
                     "link":this.editPage
                 };
 
+                gridDataObject.gridData = self.gridData;
+                gridDataObject.viewColumns = viewColumns;
+                gridDataObject.updateFunction = updateFunction;
+                gridDataObject.deleteFunction = deleteFunction;
                 gridDataObject.controlId = this.gridId;
                 gridDataObject.addLinkInfo = addLinkInfo;
                 gridDataObject.updateLinkInfo = updateLinkInfo;

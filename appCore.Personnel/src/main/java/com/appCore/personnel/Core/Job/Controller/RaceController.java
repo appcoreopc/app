@@ -35,6 +35,14 @@ public class RaceController
 				List<Race> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Race/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Race> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Race> list = service.getAllByCompany(id);
+				return list;
+		}
+
 
 		@RequestMapping(value = "/Race/get", method = RequestMethod.GET)		
 		public @ResponseBody Race getRace (@RequestParam(value="id", required=true) Integer id ) 

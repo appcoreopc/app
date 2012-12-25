@@ -28,6 +28,15 @@ public class RaceService
 		return  query.list();
 	}
 
+	public List<Race> getAllByCompany(Integer id) {
+
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Race WHERE CompanyRef= :id");
+		query.setParameter("id", id);
+		return  query.list();
+
+	}
+	
 	public Race get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +82,6 @@ public class RaceService
 
 		session.save(target);
 	}
+
+	
 }

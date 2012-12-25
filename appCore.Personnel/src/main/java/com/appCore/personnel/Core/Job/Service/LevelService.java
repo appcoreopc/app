@@ -24,10 +24,18 @@ public class LevelService
 	{	
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  Level");
-
 		return  query.list();
 	}
 
+	public List<Level> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Level WHERE companyRef = :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
+	
 	public Level get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +81,6 @@ public class LevelService
 
 		session.save(target);
 	}
+
+	
 }

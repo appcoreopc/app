@@ -27,6 +27,14 @@ public class IndustryService
 
 		return  query.list();
 	}
+	
+	public List<Industry> getAllByCompany(Integer id) 
+	{	
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Industry WHERE companyRef= :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
 
 	public Industry get(Integer id) 
 	{
@@ -35,7 +43,8 @@ public class IndustryService
 
 		return industry;
 	}
-
+	
+	
 	public void add(Industry industry) 
 	{
 		Session session = sessionFactory.getCurrentSession();

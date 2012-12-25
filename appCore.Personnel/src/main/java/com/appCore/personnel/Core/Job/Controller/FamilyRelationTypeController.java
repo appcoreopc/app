@@ -35,6 +35,15 @@ public class FamilyRelationTypeController
 				List<FamilyRelationType> list = service.getAll();
 				return list;
 		}
+		
+		
+		@RequestMapping(value = "/FamilyRelationType/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<FamilyRelationType> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<FamilyRelationType> list = service.getAllByCompany(id);
+				return list;
+		}
+
 
 		@RequestMapping(value = "/FamilyRelationType/get", method = RequestMethod.GET)		
 		public @ResponseBody FamilyRelationType getFamilyRelationType (@RequestParam(value="id", required=true) Integer id ) 

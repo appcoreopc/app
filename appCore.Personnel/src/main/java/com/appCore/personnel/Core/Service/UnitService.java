@@ -52,6 +52,14 @@ public class UnitService
 		return query.list();
 	}
 
+	public List<Unit> getAllByCompany(Integer id) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Unit");
+		query.setParameter("id", id);
+		return query.list();
+		
+	}
+	
 	public Unit get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -103,4 +111,5 @@ public class UnitService
 
 		session.save(target);
 	}
+	
 }

@@ -28,6 +28,13 @@ public class NationalityService
 		return  query.list();
 	}
 
+	public List<Nationality> getAllByCompany(Integer id) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Nationality WHERE companyRef = :id");
+		query.setParameter("id", id);
+		return  query.list();	}
+	
 	public Nationality get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +80,6 @@ public class NationalityService
 
 		session.save(target);
 	}
+
+	
 }

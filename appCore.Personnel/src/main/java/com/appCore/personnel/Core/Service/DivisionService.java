@@ -50,10 +50,18 @@ public class DivisionService
 	{	
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  Division");
-
 		return  query.list();
 	}
 
+	public List<Division> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Division WHERE CompanyId = :id");
+		query.setParameter("id", id);
+		return  query.list();
+		
+	}
+	
 	public Division get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -109,4 +117,6 @@ public class DivisionService
 
 		session.save(target);
 	}
+
+	
 }

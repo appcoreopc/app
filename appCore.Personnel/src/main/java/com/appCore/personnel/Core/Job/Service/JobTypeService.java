@@ -28,6 +28,16 @@ public class JobTypeService
 		return  query.list();
 	}
 
+	
+	public List<JobType> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  JobType WHERE companyRef = :id");
+		query.setParameter("id", id);
+		return  query.list();
+
+	}
+	
 	public JobType get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -76,4 +86,6 @@ public class JobTypeService
 
 		session.save(target);
 	}
+
+	
 }

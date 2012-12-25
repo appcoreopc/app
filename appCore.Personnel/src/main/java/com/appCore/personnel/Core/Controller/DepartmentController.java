@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
 import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.BranchSummary;
 import com.appCore.personnel.Core.Entity.Department;
 import com.appCore.personnel.Core.Entity.DepartmentSummary;
@@ -39,6 +40,14 @@ public class DepartmentController
 				List<Department> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Department/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Department> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Department> list = service.getAllByCompany(id);
+				return list;
+		}
+		
 		
 		@RequestMapping(value = "/Department/getByDivisionId", method = RequestMethod.GET)		
 		public @ResponseBody List<Department> listDepartment (@RequestParam(value="Id", required=true) Integer id) 

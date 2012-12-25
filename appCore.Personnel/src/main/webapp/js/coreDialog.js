@@ -1,13 +1,5 @@
-/*
- Mode :
- 0 - readonly
- 1 - edit with just a link
- 2 - edit with add/cancel feature
- 3 - delete grid view
- 4 - enabled all grid feature
- */
-
 var CoreDialog = function () {
+
     this.createMessageBox = function (dialogControlData) {
 
         $(".ui-dialog").dialog("destroy");
@@ -42,7 +34,7 @@ var CoreDialog = function () {
                 position:'center',
                 modal:true,
                 height:"auto",
-                width: 850,
+                width:850,
                 open:function () {
                     $("#" + commandObjects.targetId).load(commandObjects.url, function () {
                     });
@@ -53,5 +45,39 @@ var CoreDialog = function () {
 
     this.closeDialog = function (targetId) {
         $("#" + targetId).dialog('close');
+    }
+
+
+    this.createConfirmationDialog = function (dialogObject, data, globalViewModel, codeType, callBack) {
+
+        //var overlay = $('<div id="overlay"> </div>');
+        //overlay.appendTo(document.body);
+
+        var $myDialog = $('<div></div>')
+            .html(dialogObject.message)
+            .dialog(
+            {
+                dialogClass:'transparent',
+                autoOpen:false,
+                title:dialogObject.title,
+                closeOnEscape:false,
+                position:"center",
+                // show:"fade",
+                modal:true,
+                closeText:"",
+                buttons:{"OK":function () {
+                    $(this).dialog("close");
+                    callBack(true, data, globalViewModel, codeType);
+                },
+
+                    "Cancel":function () {
+                        $(this).dialog("close");
+                        callBack(false, data, globalViewModel, codeType);
+                    }
+                }
+            });
+
+        return $myDialog.dialog('open');
+        //$('#' + dialogObject.targetId).css('zIndex', 9999);
     }
 }

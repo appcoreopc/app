@@ -35,7 +35,7 @@ public class AssociationController
 				List<EmployeeAssociation> list = service.getAll();
 				return list;
 		}
-
+		
 		@RequestMapping(value = "/Association/get", method = RequestMethod.GET)		
 		public @ResponseBody EmployeeAssociation getAssociation (@RequestParam(value="id", required=true) Integer id ) 
 		{

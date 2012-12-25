@@ -28,6 +28,15 @@ public class CountryService
 		return  query.list();
 	}
 
+	public List<Country> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Country WHERE CompanyRef= :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
+	
 	public Country get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -74,4 +83,6 @@ public class CountryService
 
 		session.save(target);
 	}
+
+	
 }

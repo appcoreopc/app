@@ -28,6 +28,15 @@ public class SpecialtyService
 		return  query.list();
 	}
 
+	
+	public List<Specialty> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Specialty WHERE CompanyRef= :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
 	public Specialty get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +82,6 @@ public class SpecialtyService
 
 		session.save(target);
 	}
+
+	
 }

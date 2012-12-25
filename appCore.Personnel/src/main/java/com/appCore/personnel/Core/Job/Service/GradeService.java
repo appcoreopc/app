@@ -28,6 +28,14 @@ public class GradeService
 		return  query.list();
 	}
 
+	public List<Grade> getAllByCompany(Integer id) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Grade WHERE companyRef= :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
 	public Grade get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -74,4 +82,6 @@ public class GradeService
 
 		session.save(target);
 	}
+
+	
 }

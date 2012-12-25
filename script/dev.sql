@@ -41,7 +41,7 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (2,1, 'A
 insert into forms_actions_role (forms_nid, role_nid, permission) values (3,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (4,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (5,1, 'AUD');
-insert into forms_actions_role (forms_nid, role_nid, permission) values (6,1, 'AUD');
+	insert into forms_actions_role (forms_nid, role_nid, permission) values (6,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (7,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (8,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (9,1, 'AUD');
@@ -55,17 +55,35 @@ insert into level (name, description, companyRef) values ('Level1', 'Level1', 1)
 insert into level (name, description, companyRef) values ('Level2', 'Level2', 1);
 insert into level (name, description, companyRef) values ('Level3', 'Level3', 1);
 
+insert into level (name, description, companyRef) values ('Level1', 'Level1', 2);
+insert into level (name, description, companyRef) values ('Level2', 'Level2', 2);
+insert into level (name, description, companyRef) values ('Level3', 'Level3', 2);
+
 
 insert into fieldofexpertise (name, description, companyRef) values ('ExpertiseA', 'ExpertA', 1);
 insert into fieldofexpertise (name, description, companyRef) values ('ExpertiseB', 'ExpertB', 1);
 insert into fieldofexpertise (name, description, companyRef) values ('ExpertiseC', 'ExpertC', 1);
 
+insert into fieldofexpertise (name, description, companyRef) values ('ExpertiseA', 'ExpertA', 2);
+insert into fieldofexpertise (name, description, companyRef) values ('ExpertiseB', 'ExpertB', 2);
+insert into fieldofexpertise (name, description, companyRef) values ('ExpertiseC', 'ExpertC', 2);
+
+
 insert into industry (name, description, companyRef) values ('IT', 'IT', 1);
 insert into industry (name, description, companyRef) values ('Account', 'Account', 1);
 insert into industry (name, description, companyRef) values ('Business', 'Business', 1);
 
+
+insert into industry (name, description, companyRef) values ('IT', 'IT', 2);
+insert into industry (name, description, companyRef) values ('Account', 'Account', 2);
+
+
 insert into gender (name, description, companyRef) values ('Male', 'Male', 1);
 insert into gender (name, description, companyRef) values ('Female', 'Female', 1);
+
+insert into gender (name, description, companyRef) values ('Male', 'Male', 2);
+insert into gender (name, description, companyRef) values ('Female', 'Female', 2);
+
 
 insert into salutation (name, description, companyRef) values ('Mr', 'Mr', 1);
 insert into salutation (name, description, companyRef) values ('Mrs', 'Mrs', 1);
@@ -73,9 +91,20 @@ insert into salutation (name, description, companyRef) values ('Ms', 'Ms', 1);
 insert into salutation (name, description, companyRef) values ('Dr', 'Dr',1 );
 
 
+insert into salutation (name, description, companyRef) values ('Mr', 'Mr', 2);
+insert into salutation (name, description, companyRef) values ('Mrs', 'Mrs', 2);
+insert into salutation (name, description, companyRef) values ('Ms', 'Ms', 2);
+insert into salutation (name, description, companyRef) values ('Dr', 'Dr', );
+
+
 insert into maritalStatus (name, description, companyRef) values ('Single', 'Single', 1);
 insert into maritalStatus (name, description, companyRef) values ('Married', 'Married', 1);
 insert into maritalStatus (name, description, companyRef) values ('Divorced', 'Divorced', 1);
+
+insert into maritalStatus (name, description, companyRef) values ('Single', 'Single', 2);
+insert into maritalStatus (name, description, companyRef) values ('Married', 'Married', 2);
+insert into maritalStatus (name, description, companyRef) values ('Divorced', 'Divorced', 2);
+
 
 
 insert into Users (username, password) values ('user', 'user');
@@ -107,12 +136,16 @@ insert into FamilyRelationType (name, description, companyRef) values ('Mother',
 insert into FamilyRelationType (name, description, companyRef) values ('Grand Father', 'Grand Father', 1);
 insert into FamilyRelationType (name, description, companyRef) values ('Grand Mother', 'Grand Mother', 1);
 
-
 insert into Country (name, description, companyRef) values ('Malaysia', 'Malaysia', 1);
 insert into Country (name, description, companyRef) values ('Singapore', 'Singapore', 1);
 insert into Country (name, description, companyRef) values ('US', 'US', 1);
 insert into Country (name, description, companyRef) values ('India', 'India', 1);
 
+
+insert into Country (name, description, companyRef) values ('Malaysia', 'Malaysia', 2);
+insert into Country (name, description, companyRef) values ('Singapore', 'Singapore', 2);
+insert into Country (name, description, companyRef) values ('US', 'US', 2);
+insert into Country (name, description, companyRef) values ('India', 'India', 2);
 
 insert into nationality (name, description, companyRef) values ('American', 'American', 1);
 insert into nationality (name, description, companyRef) values ('British', 'British', 1);

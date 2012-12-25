@@ -1,5 +1,10 @@
 var EmployeeHelper = function ()
 {
+    this.createDialogObject = function(title, message)
+    {
+        var dialogObject = { title : title, message: message, targetId: "confirmDiv" }
+        return dialogObject;
+    }
 
     this.getEnableAdd = function(aud)
     {
@@ -300,6 +305,22 @@ var EmployeeHelper = function ()
      self.editMode = ko.observable();
      self.applicationScopeType = ko.observable();
      */
+
+    this.setMaintenanceCodeEditMode = function(globalViewModel, id)
+    {
+        globalViewModel.targetId(id);
+        globalViewModel.editMode(coreModeEdit);
+        globalViewModel.applicationScopeType(coreApplicationTypeCode);
+    }
+
+    this.setMaintenanceCodeInsertMode = function(globalViewModel, id)
+    {
+        globalViewModel.targetId(id);
+        globalViewModel.editMode(coreModeInsert);
+        globalViewModel.applicationScopeType(coreApplicationTypeCode);
+    }
+
+
 
     this.setCompanyEditMode = function(globalViewModel, id)
     {

@@ -16,6 +16,7 @@ import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.BranchSummary;
 import com.appCore.personnel.Core.Entity.UnitSummary;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
+import com.appCore.personnel.Core.Job.Entity.AssociationMembershipType;
 import com.appCore.personnel.Core.Service.BranchService;
 
 @Controller
@@ -33,6 +34,14 @@ public class BranchController {
 		return service.getSummary(id);
 	}
 
+	@RequestMapping(value = "/Branch/listByCompany", method = RequestMethod.GET)		
+	public @ResponseBody List<Branch> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+	{
+			List<Branch> list = service.getAllByCompany(id);
+			return list;
+	}
+	
+	
 	@RequestMapping(value = "/Branch/list", method = RequestMethod.GET)
 	public @ResponseBody
 	List<Branch> listBranch(Model model) {

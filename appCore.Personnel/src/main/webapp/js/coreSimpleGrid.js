@@ -27,7 +27,7 @@ var CoreSimpleGrid = function () {
     }
 
     function createReadOnlyGrid(gridDataObjects) {
-        return new ko.dataGrid.ViewModel({
+        var vm = new ko.dataGrid.ViewModel({
             data:gridDataObjects.gridData,
             columns:gridDataObjects.viewColumns,
             pageSize:10,
@@ -37,10 +37,12 @@ var CoreSimpleGrid = function () {
             deleteData:gridDataObjects.deleteFunction,
             updateData:gridDataObjects.updateFunction
         });
+
+        return vm;
     }
 
     function createEditEnabledOnlyGrid(gridDataObjects) {
-        return new ko.dataGrid.ViewModel({
+        var vm = new ko.dataGrid.ViewModel({
             data:gridDataObjects.gridData,
             columns:gridDataObjects.viewColumns,
             pageSize:10,
@@ -50,10 +52,11 @@ var CoreSimpleGrid = function () {
             deleteData:gridDataObjects.deleteFunction,
             updateData:gridDataObjects.updateFunction
         });
-    }
+        return vm;
+     }
 
     function createEditModeOnlyGrid(gridDataObjects) {
-        return new ko.dataGrid.ViewModel({
+        var vm = new ko.dataGrid.ViewModel({
             data:gridDataObjects.gridData,
             columns:gridDataObjects.viewColumns,
             pageSize:10,
@@ -63,6 +66,7 @@ var CoreSimpleGrid = function () {
             deleteData:gridDataObjects.deleteFunction,
             updateData:gridDataObjects.updateFunction
         });
+        return vm;
     }
 
     function createAllFeatureGrid(gridDataObjects) {
@@ -81,7 +85,7 @@ var CoreSimpleGrid = function () {
     }
 
     function createDeleteOnlyGrid(gridDataObjects) {
-        return new ko.dataGrid.ViewModel({
+        var vm = new ko.dataGrid.ViewModel({
             data:gridDataObjects.gridData,
             columns:gridDataObjects.viewColumns,
             pageSize:10,
@@ -91,10 +95,11 @@ var CoreSimpleGrid = function () {
             deleteData:gridDataObjects.deleteFunction,
             updateData:gridDataObjects.updateFunction
         });
+        return vm;
     }
 
     function createInsertCommandGrid(gridDataObjects) {
-        return new ko.dataGrid.ViewModel({
+        var vm = new ko.dataGrid.ViewModel({
             data:gridDataObjects.gridData,
             columns:gridDataObjects.viewColumns,
             pageSize:10,
@@ -104,6 +109,7 @@ var CoreSimpleGrid = function () {
             deleteData:gridDataObjects.deleteFunction,
             updateData:gridDataObjects.updateFunction
         });
+        return vm;
     }
 
     function createEditCommandGrid(gridDataObjects) {

@@ -35,7 +35,7 @@ public class SkillController
 				List<EmployeeSkill> list = service.getAll();
 				return list;
 		}
-
+				
 		@RequestMapping(value = "/Skill/get", method = RequestMethod.GET)		
 		public @ResponseBody EmployeeSkill getSkill (@RequestParam(value="id", required=true) Integer id) 
 		{

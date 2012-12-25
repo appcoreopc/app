@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
+import com.appCore.personnel.Core.Job.Entity.Gender;
 import com.appCore.personnel.Core.Job.Entity.JobType;
 
 import com.appCore.personnel.Core.Job.Service.JobTypeService;
@@ -31,6 +32,13 @@ public class JobTypeController
 		public @ResponseBody List<JobType> listJobType () 
 		{
 				List<JobType> list = service.getAll();
+				return list;
+		}
+		
+		@RequestMapping(value = "/JobType/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<JobType> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<JobType> list = service.getAllByCompany(id);
 				return list;
 		}
 

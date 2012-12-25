@@ -28,6 +28,15 @@ public class ReligionService
 		return  query.list();
 	}
 
+	public List<Religion> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Religion WHERE CompanyRef= :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
+	
 	public Religion get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +82,6 @@ public class ReligionService
 
 		session.save(target);
 	}
+
+	
 }

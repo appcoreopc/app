@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.Grade;
+import com.appCore.personnel.Core.Job.Entity.Industry;
 
 import com.appCore.personnel.Core.Job.Service.GradeService;
 
@@ -33,6 +34,13 @@ public class GradeController
 		public @ResponseBody List<Grade> listGrade () 
 		{
 				List<Grade> list = service.getAll();
+				return list;
+		}
+		
+		@RequestMapping(value = "/Grade/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Grade> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Grade> list = service.getAllByCompany(id);
 				return list;
 		}
 		

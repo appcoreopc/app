@@ -36,6 +36,13 @@ public class FieldOfExpertiseController
 				return list;
 		}
 
+		@RequestMapping(value = "/FieldOfExpertise/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<FieldOfExpertise> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<FieldOfExpertise> list = service.getAllByCompany(id);
+				return list;
+		}
+				
 		@RequestMapping(value = "/FieldOfExpertise/get", method = RequestMethod.GET)		
 		public @ResponseBody FieldOfExpertise getFieldOfExpertise (@RequestParam(value="id", required=true) Integer id ) 
 		{

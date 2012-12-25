@@ -36,6 +36,15 @@ public class AssociationMembershipTypeController
 				return list;
 		}
 
+		
+		@RequestMapping(value = "/AssociationMembershipType/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<AssociationMembershipType> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<AssociationMembershipType> list = service.getAllByCompany(id);
+				return list;
+		}
+
+		
 		@RequestMapping(value = "/AssociationMembershipType/get", method = RequestMethod.GET)		
 		public @ResponseBody AssociationMembershipType getAssociationMembershipType (@RequestParam(value="id", required=true) Integer id ) 
 		{

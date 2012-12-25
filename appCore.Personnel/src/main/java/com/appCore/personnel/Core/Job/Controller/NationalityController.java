@@ -35,6 +35,14 @@ public class NationalityController
 				List<Nationality> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Nationality/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Nationality> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Nationality> list = service.getAllByCompany(id);
+				return list;
+		}
+
 
 		@RequestMapping(value = "/Nationality/get", method = RequestMethod.GET)		
 		public @ResponseBody Nationality getNationality (@RequestParam(value="id", required=true) Integer id ) 

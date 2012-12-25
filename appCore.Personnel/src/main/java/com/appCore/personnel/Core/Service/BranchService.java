@@ -54,6 +54,15 @@ public class BranchService
 		return query.list();
 	}
 
+	public List<Branch> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Branch WHERE CompanyId = :id");
+		query.setParameter("id", id);
+		return query.list();
+		
+	}
+	
 	public Branch get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -104,4 +113,6 @@ public class BranchService
 
 		session.save(target);
 	}
+
+	
 }

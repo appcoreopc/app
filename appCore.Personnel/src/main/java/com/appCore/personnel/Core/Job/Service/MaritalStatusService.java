@@ -28,6 +28,15 @@ public class MaritalStatusService
 		return  query.list();
 	}
 
+	public List<MaritalStatus> getAllByCompany(Integer id) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  MaritalStatus WHERE companyRef = :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+
+	
 	public MaritalStatus get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +82,6 @@ public class MaritalStatusService
 
 		session.save(target);
 	}
+
+	
 }

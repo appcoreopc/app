@@ -35,6 +35,14 @@ public class MaritalStatusController
 				List<MaritalStatus> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/MaritalStatus/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<MaritalStatus> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<MaritalStatus> list = service.getAllByCompany(id);
+				return list;
+		}
+	
 
 		@RequestMapping(value = "/MaritalStatus/get", method = RequestMethod.GET)		
 		public @ResponseBody MaritalStatus getMaritalStatus (@RequestParam(value="id", required=true) Integer id ) 

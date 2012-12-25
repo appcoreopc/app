@@ -35,6 +35,14 @@ public class SalutationController
 				List<Salutation> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Salutation/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Salutation> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Salutation> list = service.getAllByCompany(id);
+				return list;
+		}
+
 
 		@RequestMapping(value = "/Salutation/get", method = RequestMethod.GET)		
 		public @ResponseBody Salutation getSalutation (@RequestParam(value="id", required=true) Integer id ) 

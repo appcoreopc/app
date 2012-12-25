@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Entity.BranchSummary;
+import com.appCore.personnel.Core.Entity.Department;
 import com.appCore.personnel.Core.Entity.Division;
 import com.appCore.personnel.Core.Entity.DivisionSummary;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
@@ -43,6 +44,14 @@ public class DivisionController
 				model.addAttribute("data", list);
 				return list;
 		}
+		
+		@RequestMapping(value = "/Division/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Division> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Division> list = service.getAllByCompany(id);
+				return list;
+		}
+		
 		
 		@RequestMapping(value = "/Division/get", method = RequestMethod.GET)		
 		public @ResponseBody Division getDivision (@RequestParam(value="id", required=true) Integer id) 

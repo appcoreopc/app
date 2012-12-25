@@ -34,6 +34,14 @@ public class QualificationController
 				List<EmployeeQualification> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Qualification/getByEmployeeRefId", method = RequestMethod.GET)		
+		public @ResponseBody List<EmployeeQualification> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<EmployeeQualification> list = service.getByEmployeeRefId(id);
+				return list;
+		}
+
 
 		@RequestMapping(value = "/Qualification/get", method = RequestMethod.GET)		
 		public @ResponseBody EmployeeQualification getQualification (@RequestParam(value="id", required=true) Integer id) 

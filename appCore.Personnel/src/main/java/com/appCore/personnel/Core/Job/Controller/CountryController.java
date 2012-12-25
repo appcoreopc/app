@@ -35,7 +35,15 @@ public class CountryController
 				List<Country> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Country/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Country> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Country> list = service.getAllByCompany(id);
+				return list;
+		}
 
+		
 		@RequestMapping(value = "/Country/get", method = RequestMethod.GET)		
 		public @ResponseBody Country getCountry (@RequestParam(value="id", required=true) Integer id ) 
 		{

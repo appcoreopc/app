@@ -24,10 +24,17 @@ public class FamilyRelationTypeService
 	{	
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  FamilyRelationType");
-
 		return  query.list();
 	}
 
+	public List<FamilyRelationType> getAllByCompany(Integer id) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  FamilyRelationType");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
 	public FamilyRelationType get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +80,6 @@ public class FamilyRelationTypeService
 
 		session.save(target);
 	}
+
+	
 }

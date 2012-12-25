@@ -36,6 +36,15 @@ public class ReligionController
 				return list;
 		}
 
+		
+		@RequestMapping(value = "/Religion/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Religion> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Religion> list = service.getAllByCompany(id);
+				return list;
+		}
+
+		
 		@RequestMapping(value = "/Religion/get", method = RequestMethod.GET)		
 		public @ResponseBody Religion getReligion (@RequestParam(value="id", required=true) Integer id ) 
 		{

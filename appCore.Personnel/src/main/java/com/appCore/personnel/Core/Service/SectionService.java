@@ -52,6 +52,16 @@ public class SectionService
 		return  query.list();
 	}
 
+	
+	public List<Section> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Section WHERE CompanyId = id");
+		query.setParameter("id", id);
+		return  query.list();
+
+	}
+	
 	public Section get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -105,4 +115,6 @@ public class SectionService
 
 		session.save(target);
 	}
+
+	
 }

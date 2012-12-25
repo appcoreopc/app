@@ -14,6 +14,7 @@ var CompanyViewModel = function (gridUrl, dataSource, globalVM) {
 
     ];
 
+
     var model = {
         id:"nid",
         fields:{

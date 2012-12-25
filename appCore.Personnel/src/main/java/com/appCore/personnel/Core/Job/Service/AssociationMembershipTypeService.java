@@ -24,10 +24,18 @@ public class AssociationMembershipTypeService
 	{	
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  AssociationMembershipType");
-
 		return  query.list();
 	}
 
+	
+	public List<AssociationMembershipType> getAllByCompany(Integer id) {
+	
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  AssociationMembershipType");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
 	public AssociationMembershipType get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +81,6 @@ public class AssociationMembershipTypeService
 
 		session.save(target);
 	}
+
+	
 }

@@ -28,6 +28,16 @@ public class GenderService
 		return  query.list();
 	}
 
+	
+	public List<Gender> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Gender WHERE companyRef = :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
+	
 	public Gender get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +83,6 @@ public class GenderService
 
 		session.save(target);
 	}
+
+	
 }

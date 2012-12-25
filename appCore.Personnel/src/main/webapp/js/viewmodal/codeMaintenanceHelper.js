@@ -67,6 +67,19 @@ var CodeMaintenanceHelper = function (codeType)
             case 10:
                 return "Family Relation Type";
         }
-
     }
+
+    this.deletMaintenanceCode = function(companyId, id, codeType)
+    {
+        var maintenanceCodeObject = { companyId: companyId,  "id" : id };
+        var url = this.getUrl(codeType);
+
+         /*var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(url + "/delete", maintenanceCodeObject, "get");
+        request.success(function(data)
+        {
+            return data.messageCode;
+        });*/
+    }
+
 }

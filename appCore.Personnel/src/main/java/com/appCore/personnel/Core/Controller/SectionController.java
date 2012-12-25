@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
 import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Entity.Division;
 import com.appCore.personnel.Core.Entity.DivisionSummary;
 import com.appCore.personnel.Core.Entity.Section;
 import com.appCore.personnel.Core.Entity.SectionSummary;
@@ -41,6 +42,13 @@ public class SectionController
 		{
 				List<Section> list = service.getAll();
 				model.addAttribute("data", list);
+				return list;
+		}
+		
+		@RequestMapping(value = "/Section/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Section> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Section> list = service.getAllByCompany(id);
 				return list;
 		}
 

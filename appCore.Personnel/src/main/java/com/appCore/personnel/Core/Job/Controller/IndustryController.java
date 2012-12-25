@@ -35,6 +35,13 @@ public class IndustryController
 				List<Industry> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Industry/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Industry> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Industry> list = service.getAllByCompany(id);
+				return list;
+		}
 
 		@RequestMapping(value = "/Industry/get", method = RequestMethod.GET)		
 		public @ResponseBody Industry getIndustry (@RequestParam(value="id", required=true) Integer id ) 

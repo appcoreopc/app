@@ -24,10 +24,19 @@ public class SalutationService
 	{	
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  Salutation");
-
 		return  query.list();
 	}
 
+	
+	public List<Salutation> getAllByCompany(Integer id) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Salutation WHERE CompanyRef = :id");
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
+	
 	public Salutation get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -73,4 +82,6 @@ public class SalutationService
 
 		session.save(target);
 	}
+
+	
 }

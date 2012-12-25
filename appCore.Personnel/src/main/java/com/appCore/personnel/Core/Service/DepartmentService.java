@@ -57,6 +57,17 @@ public class DepartmentService
 		return  query.list();
 	}
 
+	
+	public List<Department> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		Query query = session.createQuery("FROM  Department WHERE CompanyId = :id");
+		List<Department> deptList = query.list();
+		query.setParameter("id", id);
+		return  query.list();
+	}
+	
 	public Department get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -133,4 +144,7 @@ public class DepartmentService
 
 		session.save(target);
 	}
+
+
+	
 }
