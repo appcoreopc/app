@@ -1,6 +1,6 @@
-var BranchViewModel = function (initView, value, data) {
+var BranchViewModel = function (initView, data, globalViewModel) {
 
-    this.viewType = initView;
+    this.mode = initView;
     this.centralPage = "branch.jsp";
     this.editPage = "branchEdit.jsp";
     this.addPage = "branchAdd.jsp";
@@ -11,7 +11,16 @@ var BranchViewModel = function (initView, value, data) {
     this.gridId = "gridBranch";
     this.data = data;
 
-    this.valueData = value;
+    self.gridData = ko.observableArray(data);
+
+    self.globalViewModel = globalViewModel;
+
+    var viewColumns = [
+        { headerText:"Branch Code", rowText:"branchCode" },
+        { headerText:"Branch Name", rowText:"branchName" },
+        { headerText:"Description", rowText:"description" },
+        { headerText:"Disabled", rowText:"disabled" }
+    ];
 
     var model = {
 
@@ -96,6 +105,33 @@ var BranchViewModel = function (initView, value, data) {
      *  2 = edit mode
      */
 
+    function deleteFunction(data) {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType, deleteCallBack);
+    }
+
+    function deleteCallBack(status, data, globalViewModel, codeType) {
+        if (status == true) {
+            var helper = new CompanyHelper();
+            var result = helper.deleteBranch(data, successCallback);
+        }
+    }
+
+    function successCallback(result, data) {
+        if (result.messageCode == 0) {
+            self.gridData.remove(data);
+        }
+    }
+
+    function updateFunction(data) {
+        globalViewModel.targetId(data.nid);
+        globalViewModel.editMode(coreModeEdit);
+        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        preparePageForLoading("branchAdd.jsp");
+    }
+
     this.getView = function () {
         var gridDataObject =
         {
@@ -105,9 +141,8 @@ var BranchViewModel = function (initView, value, data) {
             "model":model
         };
 
-        switch (this.viewType) {
+        switch (this.mode) {
             case 0:
-
                 var addLinkInfo = {
                     "text":"Add Branch",
                     "commandId":'branchAdd',
@@ -121,195 +156,23 @@ var BranchViewModel = function (initView, value, data) {
                     "text":"Update",
                     "link":this.editPage
                 };
+
+                gridDataObject.gridData = self.gridData;
+                gridDataObject.viewColumns = viewColumns;
+                gridDataObject.updateFunction = updateFunction;
+                gridDataObject.deleteFunction = deleteFunction;
                 gridDataObject.controlId = this.gridId;
                 gridDataObject.addLinkInfo = addLinkInfo;
                 gridDataObject.updateLinkInfo = updateLinkInfo;
-
-                return gridDataObject;
-
-            case 1:
-
-                var addLinkInfo = {
-                    "text":"Save",
-                    "link":this.centralPage,
-                    "commandId":'branchAdd',
-                    "targetControlId":this.codeCommand,
-                    "callback":function () {
-                        saveForm();
-                    }
-                };
-
-                var updateLinkInfo = {
-                    "text":"Update",
-                    "link":this.editPage
-                };
-
-                gridDataObject.model = infoModel;
-                gridDataObject.columns = infoColumns;
-                gridDataObject.gridUrl = this.gridInfoUrl;
-                gridDataObject.controlId = this.gridId;
-                gridDataObject.appearance = globalCoreGridAppearanceToobarCreateCancel;
-                gridDataObject.editorMode = "Insert";
-                gridDataObject.addLinkInfo = addLinkInfo;
-                gridDataObject.updateLinkInfo = updateLinkInfo;
-
-                return gridDataObject;
-
-            case 2:
-
-                var transport = {
-                    read:{
-                        url:gridUrl + "/listByRefEntity?id=" + this.valueData,
-                        dataType:"json"
-                    },
-                    update:{
-                        url:gridUrl + "/saveOrUpdate",
-                        dataType:"json"
-                    },
-                    destroy:{
-                        url:gridUrl + "/delete",
-                        dataType:"json"
-                    },
-                    createMessageBox:{
-                        url:gridUrl + "/add",
-                        dataType:"json"
-                    }
-                };
-
-                var addLinkInfo =
-                {
-                    "text":"Save",
-                    "link":this.centralPage,
-                    "commandId":'branchUpdate',
-                    "targetControlId":this.codeCommand,
-                    "callback":function () {
-                        updateBranch();
-                    }
-                };
-
-                var updateLinkInfo = {
-                    "text":"Update",
-                    "link":this.editPage
-                };
-
-                var transport = {
-                    read:{
-                        url:gridUrl + "/listByRefEntity?id=" + this.valueData,
-                        dataType:"json"
-                    },
-                    update:{
-                        url:gridUrl + "/saveOrUpdate",
-                        dataType:"json"
-                    },
-                    destroy:{
-                        url:gridUrl + "/delete",
-                        dataType:"json"
-                    },
-                    createMessageBox:{
-                        url:gridUrl + "/add",
-                        dataType:"json"
-                    }
-                };
-
-                gridDataObject.model = infoModel;
-                gridDataObject.columns = infoColumns;
-                gridDataObject.gridUrl = this.gridInfoUrl;
-                gridDataObject.controlId = this.gridId;
-                gridDataObject.appearance = globalCoreGridAppearanceToobarCreateCancel;
-                gridDataObject.editorMode = "Edit";
-                gridDataObject.addLinkInfo = addLinkInfo;
-                gridDataObject.updateLinkInfo = updateLinkInfo;
-                gridDataObject.transport = transport;
-                gridDataObject.valueData = this.valueData;
-
                 return gridDataObject;
         }
         return gridDataObject;
     }
 
     function goToAdd() {
+        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("branchAdd.jsp");
     }
 
-    function saveForm() {
-        var isValid = $("#" + "branchForm").validationEngine('validate');
-
-        if (!isValid)
-            return;
-
-        if ($("#" + "branchForm").validationEngine('validate'));
-        {
-            var branchInfoData = [];
-
-            var grid = $("#" + "gridBranch").data("kendoGrid").dataSource.data();
-            $.each(grid, function (i, dataItem) {
-                var branchInfo = new BranchInfo();
-                branchInfo.type = dataItem.type;
-                branchInfo.value = dataItem.value;
-                branchInfo.description = dataItem.description;
-                branchInfo.category = dataItem.category;
-                branchInfo.Description = undefined;
-                branchInfoData.push(branchInfo);
-            });
-
-            var branch = new Branch();
-
-            branch.companyId = globalCurrentCompanyId;
-
-            branch.branchCode = $("#BranchCode").val();
-            branch.branchName = $("#BranchName").val();
-            branch.description = $("#Description").val();
-            branch.enabled = $('#Enabled').is(":checked");
-            branch.branchInfo = branchInfoData;
-
-            // Warning : You have to use the following to refer to a request
-            // url; additional parsing will not work;
-            var ajaxCore = new AjaxCore();
-
-            var request = ajaxCore.sendRequestType(globalHostname + "/app/Core/Branch/add", branch, "post");
-
-            request.success(function (data, status, xhrObj) {
-                preparePageForLoading("branch.jsp");
-            });
-        }
-    }
-
-    function updateBranch() {
-        var isValid = $("#" + "branchForm").validationEngine('validate');
-
-        if (!isValid)
-            return;
-
-        if (isValid) {
-            var branchInfoData = [];
-            var grid = $("#gridBranch").data("kendoGrid").dataSource.data();
-
-            $.each(grid, function (i, dataItem) {
-                var branchInfo = new BranchInfo();
-                branchInfo.type = dataItem.type;
-                branchInfo.value = dataItem.value;
-                branchInfo.description = dataItem.description;
-                branchInfo.category = dataItem.category;
-                branchInfoData.push(branchInfo);
-            });
-
-            var branch = new Branch();
-            branch.nid = $("#Nid").val();
-            branch.branchCode = $("#BranchCode").val();
-            branch.branchName = $("#BranchName").val();
-
-            branch.description = $("#Description").val();
-            branch.enabled = $('#Enabled').is(":checked");
-            branch.branchInfo = branchInfoData;
-
-            // Warning : You have to use the following to refer to a request
-            // url; additional parsing will not work;
-            var ajaxCore = new AjaxCore();
-            var request = ajaxCore.sendRequestType(globalHostname + "/app/Core/Branch/saveOrUpdate", branch, "post");
-
-            request.success(function (data, status, xhrObj) {
-                preparePageForLoading("branch.jsp");
-            });
-        }
-    }
 }

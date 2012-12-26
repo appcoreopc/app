@@ -1,7 +1,7 @@
 var JobExperienceViewModel = function(initView, value, data)
 {
 
-    this.viewType = initView;
+    this.mode = initView;
 
     this.centralPage = "jobSetup.jsp";
     this.editPage = "jobSetupEdit.jsp";
@@ -53,7 +53,7 @@ var JobExperienceViewModel = function(initView, value, data)
             "model" : model
         };
 
-        switch (this.viewType)
+        switch (this.mode)
         {
             case 0:
 

@@ -31,7 +31,7 @@ var EmployeeFamilyViewModel = function (initView, value, data) {
     helper.getMaritalStatusCode(self.maritalStatusList);
     helper.getSalutationCode(self.salutationList);
 
-    this.viewType = initView;
+    this.mode = initView;
 
     this.getRole = function () {
         var input = { "id":globalEmployeeModule, "roleId":1 };
@@ -42,7 +42,7 @@ var EmployeeFamilyViewModel = function (initView, value, data) {
 
         var gridDataObject = {};
 
-        switch (this.viewType) {
+        switch (this.mode) {
             case 0:
                 var helper = new EmployeeHelper();
                 var addLinkInfo =

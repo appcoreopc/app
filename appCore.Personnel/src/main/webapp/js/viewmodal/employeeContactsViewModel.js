@@ -1,7 +1,7 @@
 var EmployeeContactsViewModel = function (initView, value, data) {
 
     var self = this;
-    this.viewType = initView;
+    this.mode = initView;
 
     self.email = ko.observable();
     self.alternateEmail = ko.observable();
@@ -28,7 +28,7 @@ var EmployeeContactsViewModel = function (initView, value, data) {
 
         var gridDataObject = { };
 
-        switch (this.viewType) {
+        switch (this.mode) {
             case 0:
 
                 var helper = new EmployeeHelper();

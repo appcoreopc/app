@@ -82,7 +82,7 @@ public class DivisionController
 		}
 
 		@RequestMapping(value = "/Division/delete", method = RequestMethod.GET)
-		public @ResponseBody RequestStatus deleteDivision (@RequestParam(value="id", required=true) Integer id, Model model )
+		public @ResponseBody RequestStatus deleteDivision (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
 				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();

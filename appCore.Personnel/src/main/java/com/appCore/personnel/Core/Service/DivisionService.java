@@ -111,7 +111,7 @@ public class DivisionService
 		target.setDivisionName(division.getDivisionName());
 		target.setDivisionInfo(division.getDivisionInfo());
 		target.setDescription(division.getDescription());
-		target.setEnabled(division.getEnabled());
+		target.setDisabled(division.getDisabled());
 		
 		target.setLastUpdate(division.getLastUpdate());
 

@@ -45,8 +45,8 @@ import com.appCore.personnel.Core.Entity.DivisionInfo;
 		private String description;
 
 		
-		@Column(name = "Enabled")
-		private Boolean enabled;
+		@Column(name = "Disabled")
+		private Boolean disabled;
 
 		
 		@Column(name = "LastUpdate")
@@ -86,18 +86,7 @@ import com.appCore.personnel.Core.Entity.DivisionInfo;
 			this.divisionName = divisionName;
 		}
 
-		/*
-		public List<Department> getDepartment() { 
-			return this.department;
-		}
-
-
-		public void setDepartment(List<Department> department) { 
-			this.department = department;
-		} 
-		*/
-
-		
+				
 		public List<DivisionInfo> getDivisionInfo() { 
 			return this.divisionInfo;
 		}
@@ -117,13 +106,13 @@ import com.appCore.personnel.Core.Entity.DivisionInfo;
 			this.description = description;
 		}
 
-		public Boolean getEnabled() { 
-			return this.enabled;
+		public Boolean getDisabled() { 
+			return this.disabled;
 		}
 
 
-		public void setEnabled(Boolean enabled) { 
-			this.enabled = enabled;
+		public void setDisabled(Boolean enabled) { 
+			this.disabled = enabled;
 		}
 
 		public Timestamp getLastUpdate() { 

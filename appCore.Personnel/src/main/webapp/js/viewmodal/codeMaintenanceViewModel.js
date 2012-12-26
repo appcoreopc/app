@@ -1,7 +1,7 @@
 var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewModel) {
 
     var self = this;
-    self.viewType = ko.observable(initView);
+    self.mode = ko.observable(initView);
     self.title = ko.observable();
 
     self.nid = ko.observable("");
@@ -80,7 +80,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         ]};
 
 
-    if (self.viewType() == coreModeEdit)
+    if (self.mode() == coreModeEdit)
         getDataForm(data);
 
     this.getAddPage = function () {
@@ -129,7 +129,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
             "model":model
         };
 
-        switch (self.viewType()) {
+        switch (self.mode()) {
 
             case 0:
                 var helper = new CodeMaintenanceHelper(this.codeType);
@@ -237,7 +237,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         var helper = new EmployeeHelper();
         var code = new GenericCodeMaintenance();
 
-        if (self.viewType() == 2)
+        if (self.mode() == 2)
             code.nid = self.nid();
 
         self.companyRef(globalCurrentCompanyId);

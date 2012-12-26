@@ -82,21 +82,23 @@ var CoreCommand = function () {
         $(".maintenanceCommand").empty();
 
         if (commandDataObject.editorMode != undefined && commandDataObject.editorMode == globalEditorModeInsert) {
+
             createAddCommand(addCommandId, commandDataObject.addLinkInfo);
             createCancelCommand(cancelCommandId, cancelCommandText, commandDataObject.addLinkInfo.link, commandDataObject.cancelLinkInfo, commandDataObject.addLinkInfo.targetControlId);
             createGridInsertMode(commandDataObject);
         }
         else if (commandDataObject.editorMode != undefined && commandDataObject.editorMode == globalEditorModeEdit) {
+
             createAddCommand(addCommandId, commandDataObject.addLinkInfo);
             createCancelCommand(cancelCommandId, cancelCommandText, commandDataObject.addLinkInfo.link, commandDataObject.cancelLinkInfo, commandDataObject.addLinkInfo.targetControlId);
             createGridEditMode(commandDataObject);
         }
         else {
+
             createAddCommand(addCommandId, commandDataObject.addLinkInfo);
             createUpdateDeleteCommand(commandDataObject);
         }
     }
-
 
     function createGridEditMode(commandDataObject) {
         commandDataObject.mode = 6;
@@ -203,7 +205,6 @@ var CoreCommand = function () {
     function createCommand(ctrlId, text, commandObject, controlIdToAppendTo) {
 
         if (commandObject != undefined && commandObject.icon != undefined && controlIdToAppendTo != undefined) {
-
             appendCommandToCtrlId("<button class='" + commandObject.icon + " command' type='button' id='" + ctrlId + "'>" + text + "</button>", controlIdToAppendTo);
         }
         else if (commandObject != undefined && commandObject.icon != undefined) {
@@ -211,14 +212,12 @@ var CoreCommand = function () {
             appendCommandTo("<button class='" + commandObject.icon + " command' type='button' id='" + ctrlId + "'>" + text + "</button>");
         }
         else if (controlIdToAppendTo == undefined) {
-
             appendCommandTo("<button class='command' type='button' id='" + ctrlId + "'>" + text + "</button>");
         }
         else if (commandObject != null && commandObject.knockoutAttribute != undefined) {
             appendCommandToCtrlId("<button class='command' data-bind='" + commandObject.knockoutAttribute + "' type='button' id='" + ctrlId + "'>" + text + "</button>", controlIdToAppendTo);
         }
         else {
-
             appendCommandToCtrlId("<button class='command' type='button' id='" + ctrlId + "'>" + text + "</button>", controlIdToAppendTo);
         }
     }

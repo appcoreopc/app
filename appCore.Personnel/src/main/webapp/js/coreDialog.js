@@ -50,34 +50,36 @@ var CoreDialog = function () {
 
     this.createConfirmationDialog = function (dialogObject, data, globalViewModel, codeType, callBack) {
 
-        //var overlay = $('<div id="overlay"> </div>');
-        //overlay.appendTo(document.body);
+        var overlay = $('<div id="overlay"> </div>');
+        overlay.appendTo(document.body);
 
         var $myDialog = $('<div></div>')
             .html(dialogObject.message)
             .dialog(
             {
-                dialogClass:'transparent',
+                dialogClass:'dialogTop',
                 autoOpen:false,
                 title:dialogObject.title,
                 closeOnEscape:false,
                 position:"center",
-                // show:"fade",
+                show:"fade",
                 modal:true,
                 closeText:"",
                 buttons:{"OK":function () {
+                    $("#overlay").remove();
                     $(this).dialog("close");
                     callBack(true, data, globalViewModel, codeType);
-                },
 
+                },
                     "Cancel":function () {
+                        $("#overlay").remove();
                         $(this).dialog("close");
                         callBack(false, data, globalViewModel, codeType);
                     }
                 }
             });
 
-        return $myDialog.dialog('open');
-        //$('#' + dialogObject.targetId).css('zIndex', 9999);
+        $myDialog.dialog('open');
+        $('#' + dialogObject.targetId).scrollTop("0");
     }
 }

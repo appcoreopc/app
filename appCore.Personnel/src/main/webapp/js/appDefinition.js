@@ -168,6 +168,11 @@ var appGlobalEventLoadDataComplete = "DataLoadComplete";
 
 var globalBranchSummaryUrl = globalHostname + "/app/Core/Branch/getSummary?id=";
 
+var globalBranchListByCompanyUrl = globalHostname + "/app/Core/Branch/listByCompany";
+var globalBranchDeleteUrl = globalHostname + "/app/Core/Branch/delete";
+var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdate";
+var globalBranchGetUrl = globalHostname + "/app/Core/Branch/get"
+
 var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?id=";
 
 var globalPersonnelControlPanel = "personnelControlPanel.jsp";
@@ -181,3 +186,4 @@ var coreModeEdit = 2;
 var coreApplicationTypeCompany = 0;
 var coreApplicationTypeEmployee = 1;
 var coreApplicationTypeCode = 2;
+var coreApplicationTypeBranch = 3;

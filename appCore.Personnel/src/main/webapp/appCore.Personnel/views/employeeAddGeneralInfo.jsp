@@ -134,9 +134,8 @@
         </script>
 
 
-
         <form id="generalInfoForm">
-            <div id="companyGeneralInfo" class="formEntry" data-bind="template : { name : templateToUse">
+            <div id="companyGeneralInfo" class="formEntry" data-bind="template : { name : templateToUse }">
         </div>
 
 

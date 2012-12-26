@@ -1,7 +1,7 @@
 var EmployeeQualificationViewModel = function (initView, value, data) {
 
     var self = this;
-    this.viewType = initView;
+    this.mode = initView;
     this.addPage = "employeeAdd.jsp";
 
 
@@ -40,7 +40,7 @@ var EmployeeQualificationViewModel = function (initView, value, data) {
     this.getView = function () {
         var gridDataObject =  {};
 
-        switch (this.viewType) {
+        switch (this.mode) {
 
             case 0:
                 var helper = new EmployeeHelper();

@@ -138,7 +138,7 @@ public class DepartmentService
 		target.setDepartmentInfo(department.getDepartmentInfo());
 		target.setDepartmentName(department.getDepartmentName());
 		target.setRemark(department.getRemark());
-		target.setEnabled(department.getEnabled());
+		target.setDisabled(department.getDisabled());
 		
 		target.setLastUpdate(department.getLastUpdate());
 

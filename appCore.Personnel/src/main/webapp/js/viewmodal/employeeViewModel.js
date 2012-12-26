@@ -1,6 +1,6 @@
 var EmployeeViewModel = function (initView, globalViewModel) {
 
-    this.viewType = initView;
+    this.mode = initView;
     this.centralPage = "employeeAdd.jsp";
     this.editPage = "employeeAdd.jsp";
     this.addPage = "branchAdd.jsp";
@@ -158,7 +158,7 @@ var EmployeeViewModel = function (initView, globalViewModel) {
             "model":model
         };
 
-        switch (this.viewType) {
+        switch (this.mode) {
             case 0:
                 var contactLinkInfo = {
                     "text":"Add Contact",

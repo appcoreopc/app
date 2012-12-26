@@ -1,6 +1,6 @@
 var EmployeeResidentialViewModel = function (initView, value, data) {
 
-    this.viewType = initView;
+    this.mode = initView;
 
     var self = this;
 
@@ -28,7 +28,7 @@ var EmployeeResidentialViewModel = function (initView, value, data) {
 
     this.getView = function () {
         var gridDataObject = { };
-        switch (this.viewType) {
+        switch (this.mode) {
             case 0:
                 var helper = new EmployeeHelper();
                 var addLinkInfo =

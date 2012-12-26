@@ -80,7 +80,7 @@ public class UnitController {
 	@RequestMapping(value = "/Unit/delete", method = RequestMethod.GET)
 	public @ResponseBody
 	RequestStatus deleteUnit(
-			@RequestParam(value = "id", required = true) Integer id, Model model) {
+			@RequestParam(value = "id", required = true) Integer id) {
 		service.delete(id);
 		return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 	}

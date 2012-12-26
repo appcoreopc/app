@@ -105,7 +105,7 @@ public class UnitService
 		target.setUnitCode(unit.getUnitCode());
 		target.setUnitName(unit.getUnitName());
 		target.setRemark(unit.getRemark());
-		target.setEnabled(unit.getEnabled());
+		target.setDisabled(unit.getDisabled());
 		target.setUnitInfo(unit.getUnitInfo());
 		target.setLastUpdate(unit.getLastUpdate());
 

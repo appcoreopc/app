@@ -80,7 +80,7 @@ public class DepartmentController
 		}
 		
 		@RequestMapping(value = "/Department/delete", method = RequestMethod.GET)
-		public @ResponseBody RequestStatus deleteDepartment (@RequestParam(value="id", required=true) Integer id, Model model )
+		public @ResponseBody RequestStatus deleteDepartment (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
 

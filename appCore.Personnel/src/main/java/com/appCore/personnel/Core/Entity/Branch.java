@@ -56,8 +56,8 @@ import com.appCore.personnel.Core.Entity.BranchInfo;
 		@JoinColumn(name="RefEntity")
 		private List<BranchInfo> branchInfo;
 		
-		@Column(name = "Enabled")
-		private Boolean enabled;
+		@Column(name = "Disabled")
+		private Boolean disabled;
 		
 		
 		@Temporal(TemporalType.TIMESTAMP)
@@ -119,13 +119,12 @@ import com.appCore.personnel.Core.Entity.BranchInfo;
 			this.branchInfo = branchInfo;
 		}
 
-		public Boolean getEnabled() { 
-			return this.enabled;
+		public Boolean getDisabled() { 
+			return this.disabled;
 		}
-
-
-		public void setEnabled(Boolean enabled) { 
-			this.enabled = enabled;
+		
+		public void setDisabled(Boolean enabled) { 
+			this.disabled = enabled;
 		}
 
 		 @PreUpdate

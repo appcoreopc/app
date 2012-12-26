@@ -4828,5 +4828,15 @@ ui-state-hover a, .ui-state-hover a:hover {
     -moz-opacity:0.5;
     -khtml-opacity: 0.5;
     opacity: 0.5;
-    z-index: 10000;
+    z-index: 1001;
+}
+
+.dialogTop {
+    position: fixed;
+    z-index: 9999;
+}
+
+.ui-resizable .ui-resizable-handle {
+    background-color: #fff;
+    display: block;
 }

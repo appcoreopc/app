@@ -108,7 +108,7 @@ public class BranchService
 		target.setBranchName(branch.getBranchName());
 		target.setDescription(branch.getDescription());
 		target.setBranchInfo(branch.getBranchInfo());
-		target.setEnabled(branch.getEnabled());
+		target.setDisabled(branch.getDisabled());
 		target.setLastUpdate(branch.getLastUpdate());
 
 		session.save(target);

@@ -52,8 +52,8 @@ import com.appCore.personnel.Core.Entity.DepartmentInfo;
 		private String remark;
 
 		
-		@Column(name = "Enabled")
-		private Boolean enabled;
+		@Column(name = "Disabled")
+		private Boolean disabled;
 		
 		
 		@Column(name = "LastUpdate")
@@ -133,13 +133,13 @@ import com.appCore.personnel.Core.Entity.DepartmentInfo;
 			this.remark = remark;
 		}
 
-		public Boolean getEnabled() { 
-			return this.enabled;
+		public Boolean getDisabled() { 
+			return this.disabled;
 		}
 
 
-		public void setEnabled(Boolean enabled) { 
-			this.enabled = enabled;
+		public void setDisabled(Boolean enabled) { 
+			this.disabled = enabled;
 		}
 		
 		public Timestamp getLastUpdate() { 

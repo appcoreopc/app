@@ -53,10 +53,9 @@ public class SectionController
 		}
 
 		@RequestMapping(value = "/Section/get", method = RequestMethod.GET)		
-		public @ResponseBody Section getSection (@RequestParam(value="id", required=true) Integer id, Model model ) 
+		public @ResponseBody Section getSection (@RequestParam(value="id", required=true) Integer id) 
 		{
 				Section section=service.get(id);
-				model.addAttribute("modelData", section);
 				return section;
 		}
 

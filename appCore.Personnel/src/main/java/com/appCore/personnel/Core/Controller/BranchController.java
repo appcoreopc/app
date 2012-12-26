@@ -81,9 +81,7 @@ public class BranchController {
 	}
 
 	@RequestMapping(value = "/Branch/delete", method = RequestMethod.GET)
-	public @ResponseBody
-	RequestStatus deleteBranch(
-			@RequestParam(value = "id", required = true) Integer id, Model model) {
+	public @ResponseBody RequestStatus deleteBranch(@RequestParam(value = "id", required = true) Integer id) {
 		service.delete(id);
 		return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 	}

@@ -1,25 +1,37 @@
 <script language="javascript" src="../../js/viewmodal/branchViewModel.js"></script>	
+<script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
-<script type="text/javascript">          
+<script type="text/javascript">
 
     var gridUrl = globalHostname + "/app/Core/Branch";
+
     $(document).ready(function()
 	{
-		var ajaxCore = new AjaxCore();
-		var request = ajaxCore.sendRequest(gridUrl + "/list", null, "get");
+        getData(globalViewModel.companyId());
+        globalViewModel.companyId.subscribe(function(newValue)
+        {
+            getData(newValue);
+        });
+    });
 
-		request.success(function(data)
-		{
-			var vm = new BranchViewModel(0, 0, data); 
-			var addPage = vm.getAddPage(); 
-			var centralPage = vm.getCentralPage();
-		
-			var gridDataObject = vm.getView();
-			var input = { "id" : coreBranchPage, "roleId" : 1 };
-			var coreCommand = new CoreCommand();
-			coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-		});
-	});
+    function getData(companyId)
+    {
+        var ajaxCore = new AjaxCore();
+        var companyId = { id : companyId };
+        var request = ajaxCore.sendRequest(globalBranchListByCompanyUrl, companyId, "get");
+
+        request.success(function(data)
+        {
+            var vm = new BranchViewModel(0, data, globalViewModel);
+            var gridDataObject = vm.getView();
+            var input = { "id" : coreBranchPage, "roleId" : 1 };
+            var coreCommand = new CoreCommand();
+            var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            vm.gridViewModel = gridViewModel;
+            ko.applyBindings(vm, document.getElementById("branchDiv"));
+
+        });
+    }
 			
 </script>    
 
@@ -32,7 +44,7 @@
 		</div>
 
     <div>
-		<div id="gridBranch" style="height: 380px"></div>
+    <div id="branchDiv" data-bind="dataGrid: gridViewModel"></div>
 	</div>
 	
 	<div>

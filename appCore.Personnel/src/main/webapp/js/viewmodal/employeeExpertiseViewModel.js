@@ -12,7 +12,7 @@ var EmployeeExpertiseViewModel = function (initView, value, data) {
     self.industryList = ko.observableArray();
     self.specialtyList = ko.observableArray();
 
-    this.viewType = initView;
+    this.mode = initView;
 
     var helper = new EmployeeHelper();
     var ajaxCore = new AjaxCore();
@@ -30,7 +30,7 @@ var EmployeeExpertiseViewModel = function (initView, value, data) {
 
         var gridDataObject = {};
 
-        switch (this.viewType) {
+        switch (this.mode) {
             case 0:
                 var helper = new EmployeeHelper();
 

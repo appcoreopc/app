@@ -1,5 +1,6 @@
 var EmployeeHelper = function ()
 {
+
     this.createDialogObject = function(title, message)
     {
         var dialogObject = { title : title, message: message, targetId: "confirmDiv" }

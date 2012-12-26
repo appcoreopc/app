@@ -109,7 +109,7 @@ public class SectionService
 		target.setSectionCode(section.getSectionCode());
 		target.setSectionName(section.getSectionName());
 		target.setRemark(section.getRemark());
-		target.setEnabled(section.getEnabled());
+		target.setDisabled(section.getDisabled());
 		target.setSectionInfo(section.getSectionInfo());
 		target.setLastUpdate(section.getLastUpdate());
 

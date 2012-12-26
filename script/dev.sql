@@ -135,7 +135,7 @@ insert into FamilyRelationType (name, description, companyRef) values ('Father',
 insert into FamilyRelationType (name, description, companyRef) values ('Mother', 'Mother', 1);
 insert into FamilyRelationType (name, description, companyRef) values ('Grand Father', 'Grand Father', 1);
 insert into FamilyRelationType (name, description, companyRef) values ('Grand Mother', 'Grand Mother', 1);
-
+	
 insert into Country (name, description, companyRef) values ('Malaysia', 'Malaysia', 1);
 insert into Country (name, description, companyRef) values ('Singapore', 'Singapore', 1);
 insert into Country (name, description, companyRef) values ('US', 'US', 1);
@@ -167,8 +167,18 @@ insert into branch (branchCode, BranchName, CompanyId) values ('B1', 'Branch One
 insert into branch (branchCode, BranchName, CompanyId) values ('B2', 'Branch Two', 1);
 insert into branch (branchCode, BranchName, CompanyId) values ('B3', 'Branch Three', 1);
 
+insert into branch (branchCode, BranchName, CompanyId) values ('Branch1', 'Branch One', 2);
+insert into branch (branchCode, BranchName, CompanyId) values ('BranchB2', 'Branch Two', 2);
+insert into branch (branchCode, BranchName, CompanyId) values ('BranchB3', 'Branch Three', 2);
+	
+insert into branch (branchCode, BranchName, CompanyId) values ('Branch4', 'Branch One', 1);
+insert into branch (branchCode, BranchName, CompanyId) values ('Branch5', 'Branch Two', 1);
+insert into branch (branchCode, BranchName, CompanyId) values ('Branch6', 'Branch Three', 1);
+
+
 insert into division (divisionCode, divisionName, CompanyId) values ('Div1', 'Div1', 1);
 insert into division (divisionCode, divisionName, CompanyId) values ('Div2', 'Div3', 1);
 insert into division (divisionCode, divisionName, CompanyId) values ('Div3', 'Div', 1);
 
-
+insert into company (companyName, companyCode, Address, Address2) values ('CompanyA', 'CodeA', 'Addr1', 'Addr2');
+insert into company (companyName, companyCode, Address, Address2) values ('CompanyB', 'CodeB', 'Addr1', 'Addr2');

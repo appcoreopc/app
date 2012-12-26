@@ -1,6 +1,6 @@
 var EmployeeMembershipViewModel = function (initView, value, data) {
 
-    this.viewType = initView;
+    this.mode = initView;
 
     var self = this;
 
@@ -37,7 +37,7 @@ var EmployeeMembershipViewModel = function (initView, value, data) {
         {
         };
 
-        switch (this.viewType) {
+        switch (this.mode) {
             case 0:
                 var helper = new EmployeeHelper();
                 var addLinkInfo =
