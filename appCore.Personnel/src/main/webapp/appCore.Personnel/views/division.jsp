@@ -1,84 +1,32 @@
-    <script type="text/javascript">
+   <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+   <script language="javascript" src="../../js/viewmodal/divisionListViewModel.js"></script>
+   <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
-        var gridUrl = globalHostname + "/app/Core/Division";
 
-        $(document).ready(function()
-        {
-        var model = {
-        id: "nid",
-        fields: {
-        nid: { editable: false },
-        divisionCode: { editable: false, validation: { required: true } },
-        divisionName: { editable: false, type: "string", validation: { required: true } },
-        description: { editable: false, type: "string" },
-        enabled: { editable: false, type: "number" }
-        }
-        };
+        <script type="text/javascript">
 
-        var columns = { "columns" :
-        [
-        {
-        field: "divisionCode",
-        width: 90,
-        title: "Division Code"
-        },
-        {
-        field: "divisionName",
-        width: 90,
-        title: "Division Name"
-        },
-        {
-        field: "description",
-        width: 90,
-        title: "Description"
-        },
-        {
-        field: "enabled",
-        width: 90,
-        title: "Disabled"
-        }
-        ]};
+            $(document).ready(function()
+            {
+                getData(globalViewModel.companyId());
 
-        var addLinkInfo = {
-        "text" : "Add New Division",
-        "link" : "divisionAdd.jsp",
-        "callback" : function() {
-            goToAdd();
-        }
+                globalViewModel.companyId.subscribe(function(newValue)
+                {
+                    getData(newValue);
+                });
+            });
 
-        };
+            function getData(companyId)
+            {
+                var ajaxCore = new AjaxCore();
+                var companyId = { id : companyId };
+                var request = ajaxCore.sendRequest(globalDivisionListByCompanyUrl, companyId, "get");
 
-        var updateLinkInfo = {
-        "text" : "Update",
-        "link" : "divisionEdit.jsp"
-        };
-
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(gridUrl + "/list", null, "get");
-
-        request.success(function(data)
-        {
-        var gridDataObject =
-        {
-        "gridUrl" : gridUrl,
-        "data" : data,
-        "columns" : columns,
-        "model" : model,
-        "addLinkInfo" : addLinkInfo,
-        "updateLinkInfo" : updateLinkInfo
-        };
-
-        var input = { "id" : coreDivisionPage, "roleId" : 1 };
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-
-        });
-        });
-
-        function goToAdd()
-        {
-            preparePageForLoading("divisionAdd.jsp");
-        }
+                request.success(function(data)
+                {
+                    var vm = new DivisionListViewModel(0, data, globalViewModel);
+                    ko.applyBindings(vm, document.getElementById("branchDiv"));
+                });
+            }
 
         </script>
 
@@ -86,14 +34,12 @@
         <h1>Division </h1>
 
 
-        <div class="viewData">
-        <div class="maintenanceCommand">
-        </div>
-        </div>
+       <div class="viewData">
+       <div class="maintenanceCommand">
+       </div>
 
-        <div>
+       <div>
+        <div id="branchDiv" data-bind="dataGrid: gridViewModel"></div>
+       </div>
 
-        <div id="grid" style="height: 380px"></div>
-
-        </div>
         </div>

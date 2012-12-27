@@ -1,3 +1,13 @@
+var InfoDataViewModel = function (element) {
+
+    var self = this;
+    self.nid = ko.observable(element.nid);
+    self.infoCategory = ko.observable(element.category);
+    self.infoDescription = ko.observable(element.description);
+    self.infoType = ko.observable(element.type);
+    self.infoValue = ko.observable(element.value);
+}
+
 var BranchInfoViewModel = function (globalViewModel) {
 
     var self = this;
@@ -7,6 +17,19 @@ var BranchInfoViewModel = function (globalViewModel) {
     self.name = ko.observable();
     self.description = ko.observable();
     self.disabled = ko.observable(false);
+
+    self.infoCategory = ko.observable();
+    self.infoDescription = ko.observable();
+    self.infoType = ko.observable();
+    self.infoValue = ko.observable();
+
+    self.commandText = ko.observable("Add");
+
+    self.addInfoCategory = ko.observable();
+    self.addInfoDescription = ko.observable();
+    self.addInfoType = ko.observable();
+    self.addInfoValue = ko.observable();
+
 
     self.listInfo = ko.observableArray();
 
@@ -57,45 +80,157 @@ var BranchInfoViewModel = function (globalViewModel) {
     function getBranchCallback(data) {
 
         if (data != null) {
+
             self.nid(data.nid);
             self.code(data.branchCode);
             self.name(data.branchName);
             self.description(data.description);
             self.disabled(data.disabled);
+
+            for (var i = 0; i < data.branchInfo.length; i++) {
+                self.listInfo.push(new InfoDataViewModel(data.branchInfo[i]));
+            }
         }
     }
 
-    self.editData = function (data) {
+    self.editData = ko.observable();
+
+    self.cancelInfoData = function()
+    {
+        self.editData("");
+    }
+
+
+    self.editInfoData = function (data) {
+
+        self.infoCategory = data.infoCategory;
+        self.infoDescription = data.infoDescription;
+        self.infoType = data.infoType;
+        self.infoValue = data.infoValue;
+        self.editData(data);
+    }
+
+    self.deleteInfoData = function (data) {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType, deleteInfoConfirmCallBack);
+    }
+
+    self.updateInfoData = function (data) {
+
+        var branchData = createUpdateBranchData(data);
+        var helper = new CompanyHelper();
+        helper.saveOrUpdateBranchInfo(branchData, updateDataSuccessCallback);
+
+        self.editData("");
+    }
+
+    function createUpdateBranchData(data) {
+        var branchData = {
+            category:data.infoCategory(),
+            description:data.infoDescription(),
+            type:data.infoType(),
+            value:data.infoValue(),
+            refEntity:self.nid()
+        };
+        if (data.nid() != null)
+            branchData.nid = data.nid();
+
+        return branchData;
+    }
+
+    self.addInfo = function (data) {
+        var branchData = createBranchData();
+        var helper = new CompanyHelper();
+        helper.saveOrUpdateBranchInfo(branchData, addDataSuccessCallback);
+    }
+
+    function createBranchData() {
+
+        var branchData = {
+            category:self.addInfoCategory(),
+            description:self.addInfoDescription(),
+            type:self.addInfoType(),
+            value:self.addInfoValue(),
+            refEntity:self.nid()
+        };
+        return branchData;
+    }
+
+    function updateDataSuccessCallback(result) {
 
     }
+
+    function addDataSuccessCallback(result) {
+
+        var data = {
+            category:self.addInfoCategory(),
+            description:self.addInfoDescription(),
+            type:self.addInfoType(),
+            value:self.addInfoValue()
+        };
+
+        var addItem = new InfoDataViewModel(data);
+        self.listInfo.push(addItem);
+        self.addInfoCategory("");
+        self.addInfoDescription("");
+        self.addInfoType("");
+        self.addInfoValue("");
+
+    }
+
+    self.addInfoData = function () {
+
+        var data = {
+            category:self.addInfoCategory(),
+            description:self.addInfoDescription(),
+            type:self.addInfoType(),
+            value:self.addInfoValue()
+        };
+
+        var addItem = new InfoDataViewModel(data);
+
+        self.listInfo.push(addItem);
+        self.addInfoCategory("");
+        self.addInfoDescription("");
+        self.addInfoType("");
+        self.addInfoValue("");
+    }
+
 
     self.templateToUse = function (item) {
         switch (self.mode()) {
             case 1:
             case 2:
-                return "branchAddTemplate";
+                return "companyEntityAddTemplate";
             default:
-                return "branchAddTemplate";
+                return "companyEntityAddTemplate";
         }
-        return "branchAddTemplate";
+        return "companyEntityAddTemplate";
 
     }.bind(this);
 
-    function deleteFunction(data) {
-        var dialog = new CoreDialog();
-        var helper = new EmployeeHelper();
-        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
-        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType, deleteCallBack);
-    }
 
-    function deleteCallBack(status, data, globalViewModel, codeType) {
-        if (status == true) {
+    self.infoTemplateToUse = function (item) {
+        if (item === self.editData())
+            return "infoUpdateTemplate";
+
+        return "infoViewTemplate";
+    }.bind(this);
+
+
+    function deleteInfoConfirmCallBack(userResponse, data, globalViewModel, codeType) {
+
+        if (userResponse == true) {
             var helper = new CompanyHelper();
-            var result = helper.deleteBranch(data, successCallback);
+            var branchData = { id:data.nid() };
+            var result = helper.deleteBranchInfo(branchData, data, deleteCompleteCallback);
         }
     }
 
-    function successCallback(result, data) {
+    function deleteCompleteCallback(result, data) {
+
         if (result.messageCode == 0) {
             self.listInfo.remove(data);
         }

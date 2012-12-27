@@ -61,8 +61,8 @@ public class DepartmentService
 	public List<Department> getAllByCompany(Integer id) {
 		
 		Session session = sessionFactory.getCurrentSession();
-		
 		Query query = session.createQuery("FROM  Department WHERE CompanyId = :id");
+		query.setParameter("id", id);
 		List<Department> deptList = query.list();
 		query.setParameter("id", id);
 		return  query.list();

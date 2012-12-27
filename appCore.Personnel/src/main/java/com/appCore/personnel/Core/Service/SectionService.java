@@ -56,7 +56,7 @@ public class SectionService
 	public List<Section> getAllByCompany(Integer id) {
 		
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  Section WHERE CompanyId = id");
+		Query query = session.createQuery("FROM  Section WHERE CompanyId = :id");
 		query.setParameter("id", id);
 		return  query.list();
 

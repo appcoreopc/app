@@ -1,4 +1,4 @@
-var globalHostname =  "http://localhost:8080/appCore-personnel";
+var globalHostname = "http://localhost:8080/appCore-personnel";
 var globalMenuServiceUrl = "/app/User/Forms/listMenu";
 var globalCompanyServiceUrl = "/app/Core/CompanyEntity/list";
 //var globalCurrentId;
@@ -30,7 +30,7 @@ var coreJobQualification = "Branch";
 
 var coreJobExperience = "Branch";
 
-var coreJobType= "Branch";
+var coreJobType = "Branch";
 
 var coreJobSkillRequirement = "Branch";
 
@@ -169,14 +169,25 @@ var appGlobalEventLoadDataComplete = "DataLoadComplete";
 var globalBranchSummaryUrl = globalHostname + "/app/Core/Branch/getSummary?id=";
 
 var globalBranchListByCompanyUrl = globalHostname + "/app/Core/Branch/listByCompany";
+var globalBranchInfoDeleteUrl = globalHostname + "/app/Core/BranchInfo/delete";
 var globalBranchDeleteUrl = globalHostname + "/app/Core/Branch/delete";
 var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdate";
+var globalBranchInfoSaveOrUpdateUrl = globalHostname + "/app/Core/BranchInfo/saveOrUpdate";
 var globalBranchGetUrl = globalHostname + "/app/Core/Branch/get"
 
 var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?id=";
 
-var globalPersonnelControlPanel = "personnelControlPanel.jsp";
+var globalDivisionListByCompanyUrl = globalHostname + "/app/Core/Division/listByCompany";
+var globalSectionListByCompanyUrl = globalHostname + "/app/Core/Section/listByCompany";
+var globalUnitListByCompanyUrl = globalHostname + "/app/Core/Unit/listByCompany";
+var globalDepartmentListByCompanyUrl = globalHostname + "/app/Core/Department/listByCompany";
 
+var globalDivisionDeleteUrl = globalHostname + "/app/Core/Division/delete";
+var globalUnitDeleteUrl = globalHostname + "/app/Core/Unit/delete";
+var globalSectionDeleteUrl = globalHostname + "/app/Core/Section/delete";
+var globalDepartmentDeleteUrl = globalHostname + "/app/Core/Department/delete";
+
+var globalPersonnelControlPanel = "personnelControlPanel.jsp";
 var globalUserValidationUrl = globalHostname + "/app/Users/Users/validateLogin";
 
 var coreModeList = 0;

@@ -1,95 +1,46 @@
-    <script type="text/javascript">
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
 
-        var model = {
-        id: "nid",
-        fields: {
-        nid: { editable: false },
-        unitCode: { editable: false, validation: { required: true } },
-        unitName: { editable: false, type: "string", validation: { required: true } },
-        remark: { editable: false, type: "string" },
-        enabled: { editable: false, type: "number" }
-        }
-        };
+        <script language="javascript" src="../../js/viewmodal/unitListViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
-        var columns = { columns: [
-        {
-        field: "unitCode",
-        width: 90,
-        title: "Unit Code"
-        },
-        {
-        field: "unitName",
-        width: 90,
-        title: "Unit Name"
-        },
-        {
-        field: "remark",
-        width: 90,
-        title: "Remark"
-        },
-        {
-        field: "enabled",
-        width: 90,
-        title: "Disabled"
-        }
-        ]
-        };
 
-        var addLinkInfo = {
-        "text" : "Add New Unit",
-        "link" : "unitAdd.jsp",
-        "callback" : function() { goToAdd(); }
-        };
-
-        var updateLinkInfo = {
-        "text" : "Update",
-        "link" : "unitEdit.jsp"
-        };
-
-        var gridUrl = globalHostname + "/app/Core/Unit";
+        <script type="text/javascript">
 
         $(document).ready(function()
         {
+            getData(globalViewModel.companyId());
 
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(gridUrl + "/list", null, "get");
-
-        request.success(function(data)
-        {
-        var gridDataObject =
-        {
-        "gridUrl" : gridUrl,
-        "data" : data,
-        "columns" : columns,
-        "model" : model,
-        "addLinkInfo" : addLinkInfo,
-        "updateLinkInfo" : updateLinkInfo
-        };
-
-        var input = { "id" : coreUnitPage, "roleId" : 1 };
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-        });
+            globalViewModel.companyId.subscribe(function(newValue)
+            {
+            getData(newValue);
+            });
         });
 
-        function goToAdd()
+        function getData(companyId)
         {
-        preparePageForLoading("unitAdd.jsp");
+            var ajaxCore = new AjaxCore();
+            var companyId = { id : companyId };
+            var request = ajaxCore.sendRequest(globalUnitListByCompanyUrl, companyId, "get");
+
+            request.success(function(data)
+            {
+            var vm = new UnitListViewModel(0, data, globalViewModel);
+            ko.applyBindings(vm, document.getElementById("unitDiv"));
+            });
         }
-
 
         </script>
 
-        <div class="form">
+        <div class="forms">
         <h1>Unit </h1>
+
 
         <div class="viewData">
         <div class="maintenanceCommand">
         </div>
-        </div>
-
 
         <div>
-        <div id="grid" style="height: 380px"></div>
+        <div id="unitDiv" data-bind="dataGrid: gridViewModel"></div>
         </div>
+
         </div>

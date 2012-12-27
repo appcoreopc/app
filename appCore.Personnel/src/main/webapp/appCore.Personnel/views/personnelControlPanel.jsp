@@ -53,12 +53,6 @@
         <select id="companyDropDownList" class="company">
         </select>
 
-        <select class="comboControlHuge">
-        <option>Add</option>
-        <option>Edit</option>
-        <option>Copy</option>
-        <option>Remove</option>
-        </select>
 
         </div>
 

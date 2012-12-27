@@ -17,6 +17,44 @@ var CompanyHelper = function () {
         });
     }
 
+    this.deleteDivision = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalDivisionDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
+
+    this.deleteUnit = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalUnitDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
+    this.deleteDepartment = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalDepartmentDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
+    this.deleteSection = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalSectionDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
+
     this.saveUpdateBranch = function (branchData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalBranchSaveOrUpdateUrl, branchData, "post");
@@ -33,6 +71,23 @@ var CompanyHelper = function () {
         });
     }
 
+    this.deleteBranchInfo = function (branchData, data, callBack)
+    {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalBranchInfoDeleteUrl, branchData, "get");
+        request.success(function (responseData, status, xhrObj) {
+            callBack(responseData, data);
+        });
+    }
+
+    this.saveOrUpdateBranchInfo = function (branchData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestType(globalBranchInfoSaveOrUpdateUrl, branchData, "post");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
     this.getCodeType = function (globalViewModal, id) {
         var companyId = { "id":id };
         var ajaxCore = new AjaxCore();
@@ -41,5 +96,4 @@ var CompanyHelper = function () {
             return data.messageCode;
         });
     }
-
 }

@@ -1,12 +1,10 @@
-var BranchViewModel = function (initView, data, globalViewModel) {
+var DivisionListViewModel = function (initView, data, globalViewModel) {
 
-    this.mode = initView;
-
-    this.editPage = "branchAdd.jsp";
-    this.addPage = "branchAdd.jsp";
+    mode = initView;
     this.gridUrl = globalHostname + "/app/Core/Branch";
     this.codeCommand = "#codeCommand";
     this.gridId = "gridBranch";
+
     this.data = data;
 
     self.gridData = ko.observableArray(data);
@@ -14,8 +12,8 @@ var BranchViewModel = function (initView, data, globalViewModel) {
     self.globalViewModel = globalViewModel;
 
     var viewColumns = [
-        { headerText:"Branch Code", rowText:"branchCode" },
-        { headerText:"Branch Name", rowText:"branchName" },
+        { headerText:"Division Code", rowText:"divisionCode" },
+        { headerText:"Division Name", rowText:"divisionName" },
         { headerText:"Description", rowText:"description" },
         { headerText:"Disabled", rowText:"disabled" }
     ];
@@ -90,35 +88,7 @@ var BranchViewModel = function (initView, data, globalViewModel) {
         }
     };
 
-    function deleteFunction(data) {
-        var dialog = new CoreDialog();
-        var helper = new EmployeeHelper();
-        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
-        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType, deleteCallBack);
-    }
-
-    function deleteCallBack(status, data, globalViewModel, codeType) {
-        if (status == true) {
-            var helper = new CompanyHelper();
-            var result = helper.deleteBranch(data, successCallback);
-        }
-    }
-
-    function successCallback(result, data) {
-        if (result.messageCode == 0) {
-            self.gridData.remove(data);
-        }
-    }
-
-    function updateFunction(data) {
-        globalViewModel.targetId(data.nid);
-        globalViewModel.editMode(coreModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
-        preparePageForLoading("branchAdd.jsp");
-    }
-
-    this.getView = function () {
-
+    function getView() {
         var gridDataObject =
         {
             "gridUrl":this.gridUrl,
@@ -127,12 +97,12 @@ var BranchViewModel = function (initView, data, globalViewModel) {
             "model":model
         };
 
-        switch (this.mode) {
+        switch (mode) {
             case 0:
                 var addLinkInfo = {
-                    "text":"Add Branch",
+                    "text":"Add Division",
                     "commandId":'branchAdd',
-                    "link":this.addPage,
+                    // "link":this.addPage,
                     "callback":function () {
                         goToAdd()
                     }
@@ -155,9 +125,48 @@ var BranchViewModel = function (initView, data, globalViewModel) {
         return gridDataObject;
     }
 
+    self.initializeViewModel = function () {
+        var gridDataObject = getView();
+        var input = { "id":coreDivisionPage, "roleId":1 };
+        var coreCommand = new CoreCommand();
+
+        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        self.gridViewModel = gridViewModel;
+    }
+
+    function deleteFunction(data) {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, null, deleteCallBack);
+    }
+
+    function deleteCallBack(status, data, globalViewModel, codeType) {
+        if (status == true) {
+            var helper = new CompanyHelper();
+            var result = helper.deleteDivision(data, successDeleteCallback);
+        }
+    }
+
+    function successDeleteCallback(result, data) {
+        if (result.messageCode == 0) {
+            self.gridData.remove(data);
+        }
+    }
+
+    function updateFunction(data) {
+        globalViewModel.targetId(data.nid);
+        globalViewModel.editMode(coreModeEdit);
+        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        preparePageForLoading("divisionAdd.jsp");
+    }
+
     function goToAdd() {
         globalViewModel.applicationScopeType(coreApplicationTypeBranch);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("divisionAdd.jsp");
     }
+
+
+    self.initializeViewModel();
 }

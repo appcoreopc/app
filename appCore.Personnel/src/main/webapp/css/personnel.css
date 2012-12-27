@@ -465,3 +465,74 @@ span.fieldSpacer {
     font-size: 16px;
 }
 
+.formList
+{
+    border: 1px solid black;
+}
+
+.formList div:nth-of-type(even)
+{
+    background-color : #DDDDDD;
+}
+.formRowList div:nth-of-type(odd)
+{
+    background-color : #000;
+}
+
+.formAddRow {
+    background-color: #EEEEDD;
+    display: block;
+    padding-top: 6px;
+    padding-left:16px;
+}
+
+
+.formAddRowCommand button {
+
+    display : block;
+    background-color: #000;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-style: none;
+    color: #FFFFFF;
+    font-size: 14px;
+
+}
+
+
+.formRowSpacer {
+    height: 16px;
+}
+
+.formRowHeader {
+
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+}
+
+.formRowAddContainer {
+    padding: 2px 2px 2px 2px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+{
+    background: none repeat scroll 0 0 #EEEEDD;
+    border: none;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background: none repeat scroll 0 0 #EEEEDD;
+    border: none;
+}
+
+.accordianRowHeader
+{
+    background: none repeat scroll 0 0 #fff;
+    color : #01D001;
+    width: 100%;
+}
+
+.formRowCommand {
+    display : block;
+}

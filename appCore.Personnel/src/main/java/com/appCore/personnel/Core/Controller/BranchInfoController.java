@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
+import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Entity.BranchInfo;
+import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.Core.Service.BranchInfoService;
 
@@ -64,25 +66,17 @@ public class BranchInfoController
 		}
 
 		@RequestMapping(value = "/BranchInfo/saveOrUpdate", method = RequestMethod.POST)
-		public @ResponseBody String saveOrUpdateBranchInfo (@ModelAttribute BranchInfo branchInfo)
+		public @ResponseBody RequestStatus  saveOrUpdateBranchInfo (@RequestBody BranchInfo branchInfo)
 		{
 				service.saveOrUpdate(branchInfo);
-				return "View/Core/BranchInfo/add";
+				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
 		}
 
 		@RequestMapping(value = "/BranchInfo/delete", method = RequestMethod.GET)
-		public @ResponseBody String deleteBranchInfo (@RequestParam(value="id", required=true) Integer id, Model model )
+		public  @ResponseBody RequestStatus  deleteBranchInfo (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
-
-				return "View/Core/BranchInfo/delete";
+				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
-
-		@RequestMapping(value = "/BranchInfo/edit", method = RequestMethod.GET)
-		public String editBranchInfo ( Model model ) 
-		{
-				return "View/Core/BranchInfo/edit";
-		}
-
 
 }

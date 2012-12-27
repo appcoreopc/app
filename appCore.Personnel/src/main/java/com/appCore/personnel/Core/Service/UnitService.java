@@ -54,7 +54,7 @@ public class UnitService
 
 	public List<Unit> getAllByCompany(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  Unit");
+		Query query = session.createQuery("FROM  Unit WHERE CompanyId = :id");
 		query.setParameter("id", id);
 		return query.list();
 		

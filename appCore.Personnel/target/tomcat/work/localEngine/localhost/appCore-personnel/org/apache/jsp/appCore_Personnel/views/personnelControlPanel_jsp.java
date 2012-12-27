@@ -241,12 +241,6 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        <select id=\"companyDropDownList\" class=\"company\">\r\n");
       out.write("        </select>\r\n");
       out.write("\r\n");
-      out.write("        <select class=\"comboControlHuge\">\r\n");
-      out.write("        <option>Add</option>\r\n");
-      out.write("        <option>Edit</option>\r\n");
-      out.write("        <option>Copy</option>\r\n");
-      out.write("        <option>Remove</option>\r\n");
-      out.write("        </select>\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");

@@ -1,9 +1,9 @@
-<script language="javascript" src="../../js/viewmodal/branchViewModel.js"></script>	
+<link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../../js/viewmodal/branchViewModel.js"></script>
 <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
 <script type="text/javascript">
 
-    var gridUrl = globalHostname + "/app/Core/Branch";
 
     $(document).ready(function()
 	{
