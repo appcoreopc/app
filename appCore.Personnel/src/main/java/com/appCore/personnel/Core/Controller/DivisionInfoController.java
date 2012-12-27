@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
+import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Entity.DivisionInfo;
+import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.Core.Service.DivisionInfoService;
-
 
 @Controller
 @RequestMapping("/Core")
@@ -28,10 +29,9 @@ public class DivisionInfoController
 		private DivisionInfoService service;
 
 		@RequestMapping(value = "/DivisionInfo/list", method = RequestMethod.GET)		
-		public @ResponseBody List<DivisionInfo> listDivisionInfo ( Model model ) 
+		public @ResponseBody List<DivisionInfo> listDivisionInfo () 
 		{
 				List<DivisionInfo> list = service.getAll();
-				model.addAttribute("data", list);
 				return list;
 		}
 		
@@ -43,46 +43,33 @@ public class DivisionInfoController
 		}
 	
 		@RequestMapping(value = "/DivisionInfo/get", method = RequestMethod.GET)		
-		public @ResponseBody DivisionInfo getDivisionInfo (@RequestParam(value="id", required=true) Integer id, Model model ) 
+		public @ResponseBody DivisionInfo getDivisionInfo (@RequestParam(value="id", required=true) Integer id) 
 		{
 				DivisionInfo divisionInfo=service.get(id);
-				model.addAttribute("modelData", divisionInfo);
 				return divisionInfo;
 		}
-
-		@RequestMapping(value = "/DivisionInfo/add", method = RequestMethod.GET)
-		public String renderAddDivisionInfo ( Model model ) 
-		{
-				model.addAttribute("modelData", new DivisionInfo());
-				return "View/Core/DivisionInfo/add";
-		}
-
+		
 		@RequestMapping(value = "/DivisionInfo/add", method = RequestMethod.POST)
-		public @ResponseBody String addDivisionInfo (@ModelAttribute DivisionInfo divisionInfo)
+		public @ResponseBody String addDivisionInfo (@RequestBody DivisionInfo divisionInfo)
 		{
 				service.add(divisionInfo);
 				return "View/Core/DivisionInfo/add";
 		}
 
 		@RequestMapping(value = "/DivisionInfo/saveOrUpdate", method = RequestMethod.POST)
-		public @ResponseBody String saveOrUpdateDivisionInfo (@ModelAttribute DivisionInfo divisionInfo)
+		public @ResponseBody RequestStatus saveOrUpdateDivisionInfo (@RequestBody DivisionInfo divisionInfo)
 		{
-				service.saveOrUpdate(divisionInfo);
-				return "View/Core/DivisionInfo/add";
+				int saveId = service.saveOrUpdate(divisionInfo);
+				RequestStatus status = RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				status.setSaveCode(saveId);
+				return status;
 		}
 
 		@RequestMapping(value = "/DivisionInfo/delete", method = RequestMethod.GET)
-		public @ResponseBody String deleteDivisionInfo (@RequestParam(value="id", required=true) Integer id, Model model )
+		public @ResponseBody RequestStatus deleteDivisionInfo (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
-
-				return "View/Core/DivisionInfo/delete";
+				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
-
-		@RequestMapping(value = "/DivisionInfo/edit", method = RequestMethod.GET)
-		public String editDivisionInfo ( Model model ) 
-		{
-				return "View/Core/DivisionInfo/edit";
-		}
-
+		
 }

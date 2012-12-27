@@ -2,8 +2,17 @@
 {
     background: none repeat scroll 0 0 transparent;
     display: inline-block;
-    padding: 12px 0 12px 10px;
+    padding: 12px 0 12px 190px;
     width: 100%
+}
+
+.maintenanceCommand button {
+    background-color: #000000;
+    border-style: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 4px 0 2px 4px;
+    padding: 6px 10px 6px 6px;
 }
 
 #maintenanceCommand button {
@@ -15,3 +24,59 @@
     padding: 6px 12px 6px 6px;
 }
 
+
+.icon-plus-circle-1:before {
+    content: "";
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    font-family: 'fontello';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1em;
+    margin-right: 0.2em;
+    opacity: 0.7;
+    text-align: center;
+    text-decoration: inherit;
+    width: 1em;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size : 20px;
+}
+
+.formAddRowCommand {
+    display : block;
+    padding-left : 12px;
+}
+
+.formAddRowCommand button {
+    display : inline;
+    background-color: #000000;
+    border-style: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 4px 0 2px 0px;
+    padding: 6px 10px 6px 6px;
+}
+
+.emptyData {
+    min-height: 280px;
+    list-style: none;
+    border: solid 1px #efefef;
+}
+
+.emptyData ul {
+    min-height: 140px;
+    list-style: none;
+    text-align: center;
+}
+
+.emptyDataSpacer {
+    height : 128px;
+}

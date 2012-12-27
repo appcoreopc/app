@@ -67,7 +67,12 @@ public class BranchService
 	{
 		Session session = sessionFactory.getCurrentSession();
 		Branch branch = (Branch) session.get(Branch.class, id);
-
+		
+		Query query = session.createQuery("FROM BranchInfo WHERE RefEntity = :id");
+		query.setParameter("id", id);
+		List<BranchInfo> branchInfo = query.list();
+		branch.setBranchInfo(branchInfo);
+		
 		return branch;
 	}
 
@@ -87,6 +92,7 @@ public class BranchService
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(branch);
+			
 	}
 
 
@@ -94,7 +100,7 @@ public class BranchService
 	{
 		Session session = sessionFactory.getCurrentSession();
 		Branch branch = (Branch) session.get(Branch.class, id);
-
+		
 		session.delete(branch);
 	}
 

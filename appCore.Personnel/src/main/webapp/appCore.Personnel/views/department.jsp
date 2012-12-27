@@ -32,7 +32,7 @@
         </script>
 
         <div class="forms">
-        <h1>Department</h1>
+        <h1>Department Maintenance</h1>
 
         <div class="viewData">
         <div class="maintenanceCommand">

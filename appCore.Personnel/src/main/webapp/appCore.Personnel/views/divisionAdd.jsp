@@ -1,170 +1,231 @@
-    <script type="text/javascript">
+    <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+        <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/divisionInfoViewModel.js"></script>
+        <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>
 
-        var gridUrl = globalHostname + "/app/Core/DivisionInfo";
-        var divisionPage = "division.jsp";
 
-        var model = {
-        id: "nid",
-        fields: {
-        nid: { editable: false },
-        type: { type: "string" },
-        value : { validation: { required: true } },
-        description: { type: "string" },
-        category: { validation: { required: true } }
-        }
-        };
+        <script type="text/html" id="infoUpdateTemplate">
 
-        var columns = {
-        columns :
-        [
-        {
-        field: "type",
-        width: 90,
-        title: "Type"
-        },
-        {
-        field: "value",
-        width: 90,
-        title: "Value"
-        },
-        {
-        field: "description",
-        width: 90,
-        title: "Description"
-        },
-        {
-        field: "category",
-        width: 90,
-        title: "Category"
-        }
-        ]};
+        <div class="formRowList">
 
-        var addLinkInfo = {
-        "text" : "Save",
-        "link" : divisionPage,
-        "commandId" : 'divisionAdd',
-        "targetControlId" : "#divisionCommand",
-        "callback" : function()
-        {
-                saveForm();
-        }
-        };
+        <span class='columnDivider'>
+        <span class="labelSection">Category</span>
+        <span class="inputSectionForm"><input type="text" data-bind="value : $root.infoCategory" placeholder="info type"/></span>
 
-        var updateLinkInfo = {
-        "text" : "Update",
-        "link" : "divisionEdit.jsp"
-        };
+        </span>
 
-        var gridId = "gridDivision";
-        var formName = "divisionForm";
+        <span class='columnDivider'>
+        <span class="labelSection">Description</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.infoDescription" placeholder="new description"/></span>
+        </span>
 
-        $(document).ready(function()
-        {
-        $("#" + formName).validationEngine({});
 
-        var gridDataObject =
-        {
-        "gridUrl" : gridUrl,
-        "columns" : columns,
-        "model" : model,
-        "addLinkInfo" : addLinkInfo,
-        "updateLinkInfo" : updateLinkInfo,
-        "controlId" : gridId,
-        "appearance" : globalCoreGridAppearanceToobarCreateCancel,
-        "editorMode" : "Insert"
-        };
+        <span class='columnDivider'>
+        <span class="labelSection">Type</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.infoType" placeholder="type"/></span>
+        </span>
 
-        var input = { "id" : coreDivisionPage, "roleId" : 1 };
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        <span class='columnDivider'>
+        <span class="labelSection">Value</span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.infoValue" placeholder="new value"/></span>
+        </span>
 
-        $(".cancelCommand").click(function()
-        {
-        var result = cancelFormChanges();
-        if (result)
-        preparePageForLoading(divisionPage);
-        });
-        });
+        <span class="formRowCommand">
+        <span class="labelSectionCommand"></span>
+        <span class="inputSectionForm">
+        <button id="updateBtn" type="button" data-bind="visible : $root.enableUpdate, click : $root.updateInfoData"
+        class="command">Update</button>
 
-        function saveForm()
-        {
-        var isValid = $("#" + formName).validationEngine('validate');
+        <button id="cancelUpdateBtn" type="button" data-bind="visible : $root.enableUpdate, click : $root.cancelInfoData"
+        class="command">Cancel</button>
 
-        if (!isValid)
-        return;
+        </span>
+        </span>
 
-        if ($("#" + formName).validationEngine('validate'));
-        {
-        var divisionInfoData = [];
+        </div>
 
-        var grid = $("#" + gridId).data("kendoGrid").dataSource.data();
-        $.each(grid, function (i, dataItem)
-        {
-        var divisionInfo = new DivisionInfo();
-        divisionInfo.type = dataItem.type;
-        divisionInfo.value = dataItem.value;
-        divisionInfo.description = dataItem.description;
-        divisionInfo.category = dataItem.category;
-        divisionInfoData.push(divisionInfo);
-        });
+        <span class="formRowSpacer">
+        </span>
 
-        var division = new Division();
-        division.divisionCode = $("#DivisionCode").val();
-        division.divisionName = $("#DivisionName").val();
-        division.description = $("#Description").val();
-        division.enabled = $('#Enabled').is(":checked");
-        division.divisionInfo = divisionInfoData;
-
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequestType(globalHostname + "/app/Core/Division/add", division, "post");
-
-        request.success(function(data, status, xhrObj)
-        {
-        preparePageForLoading(divisionPage);
-        });
-        }
-        }
 
 
         </script>
 
-        <form id="divisionForm">
+        <script type="text/html" id="infoViewTemplate">
+
+        <div class="formRowList">
+        <span class='columnDividerListView' data-bind="text : infoCategory"></span>
+        <span class='columnDividerListView' data-bind="text : infoDescription"></span>
+        <span class='columnDividerListView' data-bind="text : infoType"></span>
+        <span class='columnDividerListView' data-bind="text : infoValue"></span>
+        <span class='columnDividerListViewCmd'><a href="#" data-bind="visible : $root.enableUpdate, click : $root.editInfoData">Edit</a></span>
+        <span class='columnDividerListViewCmd'><a href="#" data-bind="visible : $root.enableDelete, click : $root.deleteInfoData">Delete</a></span>
+        </div>
+
+        </script>
+
+
+        <script type="text/html" id="infoAddTemplate">
+
+
+        <span class="accordianRowHeader"><icon class="icon-plus-circle-1"></icon></span>
+
+        <div class="formAddRow">
+
+        <div class='columnDivider'>
+        <div class="labelSection">Category</div>
+        <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="category type"/></div>
+
+        </div>
+
+        <div class='columnDivider'>
+        <div class="labelSection">Description</div><span class='req'>*</span>
+        <div class="inputSectionForm">
+        <input type="text" data-bind="value : $root.addInfoDescription" placeholder="new description"/></div>
+        </div>
+
+
+        <div class='columnDivider'>
+        <div class="labelSection">Type</div><span class='req'>*</span>
+        <div class="inputSectionForm">
+        <input type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
+        </div>
+
+        <div class='columnDivider'>
+        <div class="labelSection">Value</div><span class='req'>*</span>
+        <div class="inputSectionForm">
+        <input type="text" data-bind="value : $root.addInfoValue" placeholder="new value"/></div>
+        </div>
+
+        <span class="formAddRowCommand">
+        <button id="addBtn" type="button" data-bind="visible: $root.enableAdd, click: addInfo" class="command">Add</button>
+        <button id="addCancelBtn" type="button" data-bind="visible: $root.enableAdd, click : $root.closeAddControl" class="command">Cancel</button>
+        </span>
+
+        <span class="formRowSpacer"></span>
+
+        </div>
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/html" id="companyEntityAddTemplate">
 
         <div class="form">
-
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Division Code</div><span class='req'>*</span><div class="inputSection"><input
-        type="text" id="DivisionCode" class="validate[required, maxSize[10]]" value="DivisionCode"/></div>
+        <div class="labelSection">Division  Code</div><span class='req'>*</span><div class="inputSection"><input
+        class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="DivisionCode" name="DivisionCode"
+        placeholder="a new division code"/></div>
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Disabled</div><div class="inlineLabelSection"><input type="checkbox"
-        id="Enabled" value="Disabled"/></div>
+        <div class="inlineLabelSection">Disabled </div><div class="inlineLabelSection"><input type="checkbox"
+        id="Enabled" data-bind="checked : disabled" /></div>
         </div>
         </div>
 
         <div class="formRow">
         <div class="labelSection">Division Name</div><span class='req'>*</span><div class="inputSection"><input
-        type="text" id="DivisionName" class="validate[required, maxSize[20]]" value="DivisionNames"/></div>
+        type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="DivisionName" placeholder="a new division name"/></div>
         </div>
 
+
         <div class="formRow">
-        <div class="labelSection">Description</div><span class='req'>*</span><div class="inputSection"><input
-        type="text" id="Description" class="validate[required, maxSize[80]]" value="Description"/></div>
+        <div class="labelSection">Description</div><span class='req'>&nbsp;</span><div class="inputSection"><input
+        type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
+        placeholder="description for new division"/></div>
         </div>
 
         <div> <div class="maintenanceCommandSpace"></div>
-        <div class="maintenanceCommand" id="divisionCommand">
+        <div id="divisionCommand" class="maintenanceCommand">
+        <button id="saveBtn" type="button" data-bind="visible : enableAdd || enableUpdate, click : updateData"
+        class="command">Save</button>
+        <button id="cancelBtn" type="button" data-bind="click : cancelUpdate" class="command">Cancel</button>
         </div>
         </div>
-
-        <div>&nbsp;</div>
-
+        <div>&nbsp;
+        </div>
         <div>
-        <div> Division Info </div>
-        <div id="gridDivision" style="height: 380px"></div>
+
+        <div class="subHeader"> Division Info </div>
+
+        <div class="formRowSpacer"></div>
+
+
+
+        <div id="accordianDivision" class="formRowAddContainer" data-bind="template : { name : 'infoAddTemplate'}, visible : enableAdd "></div>
+
+
+        <div class="formRowSpacer"></div>
+
+
+        <div class="emptyData" data-bind="visible : $root.listInfo().length == 0">
+        <div>
+        <ul>
+
+
+        <li class="emptyDataSpacer"> </li>
+        <li> No data available.</li>
+        </ul>
         </div>
         </div>
 
+
+
+        <div class="formRowHeader" data-bind="visible : $root.listInfo().length > 0">
+        <span class='columnDividerListView'>Category</span>
+        <span class='columnDividerListView'>Description</span>
+        <span class='columnDividerListView'>Type</span>
+        <span class='columnDividerListView'>Value</span>
+        <span class='columnDividerListViewCmd' data-bind='visible: $root.enableUpdate'>Edit</span>
+        <span class='columnDividerListViewCmd' data-bind='visible: $root.enableDelete'>Delete</span>
+        </div>
+
+
+        <div class="formList" data-bind="visible : ($root.listInfo().length > 0 && enableUpdate) || ($root.listInfo().length > 0 && enableDelete),
+        template : { name :  infoTemplateToUse, foreach : listInfo}"></div>
+
+        </div>
+        </div>
+
+        </script>
+
+
+        <script type="text/javascript">
+
+        var formName = "divisionForm";
+        $(document).ready(function()
+        {
+            $("#" + formName).validationEngine();
+            var vm = new DivisionInfoViewModel(globalViewModel);
+            ko.applyBindings(vm, document.getElementById("divisionForm"));
+
+            $("#accordianDivision").accordion({collapsible : true, active: false});
+
+        });
+
+        </script>
+
+
+        <form id="divisionForm">
+        <div id="divisionMaintenance" data-bind="template : { name : templateToUse} ">
         </form>

@@ -52,8 +52,9 @@ import com.appCore.personnel.Core.Entity.BranchInfo;
 		private String description;
 
 		
-		@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		@JoinColumn(name="RefEntity")
+		//@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+		//@JoinColumn(name="RefEntity")
+		@Transient
 		private List<BranchInfo> branchInfo;
 		
 		@Column(name = "Disabled")

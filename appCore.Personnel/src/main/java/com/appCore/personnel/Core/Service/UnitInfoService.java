@@ -50,12 +50,14 @@ public class UnitInfoService
 	}
 
 
-	public void saveOrUpdate(UnitInfo unitInfo) 
+	public int saveOrUpdate(UnitInfo unitInfo) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(unitInfo);
+		
+		return unitInfo.getNid();
 	}
-
+	
 
 	public void delete(Integer id) 
 	{

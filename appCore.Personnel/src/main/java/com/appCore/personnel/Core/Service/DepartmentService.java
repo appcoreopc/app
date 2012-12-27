@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.log4j.Logger;
 
+import com.appCore.personnel.Core.Entity.BranchInfo;
 import com.appCore.personnel.Core.Entity.Department;
 import com.appCore.personnel.Core.Entity.DepartmentInfo;
 import com.appCore.personnel.Core.Entity.DepartmentSummary;
@@ -53,7 +54,6 @@ public class DepartmentService
 		
 		Query query = session.createQuery("FROM  Department");
 		List<Department> deptList = query.list();
-		
 		return  query.list();
 	}
 
@@ -63,8 +63,6 @@ public class DepartmentService
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  Department WHERE CompanyId = :id");
 		query.setParameter("id", id);
-		List<Department> deptList = query.list();
-		query.setParameter("id", id);
 		return  query.list();
 	}
 	
@@ -73,6 +71,12 @@ public class DepartmentService
 		Session session = sessionFactory.getCurrentSession();
 		Department department = (Department) session.get(Department.class, id);
 
+		Query query = session.createQuery("FROM DepartmentInfo WHERE RefEntity = :id");
+		query.setParameter("id", id);
+		List<DepartmentInfo> info = query.list();
+		
+		department.setDepartmentInfo(info);
+		
 		return department;
 	}
 	

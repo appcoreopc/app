@@ -1,6 +1,8 @@
+        <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+        <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/branchInfoViewModel.js"></script>
         <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>
-
 
 
             <script type="text/html" id="infoUpdateTemplate">
@@ -14,26 +16,26 @@
             </span>
 
             <span class='columnDivider'>
-            <span class="labelSection">Description</span><span class='req'>*</span>
+            <span class="labelSection">Description</span></span>
             <span class="inputSectionForm">
             <input type="text" data-bind="value : $root.infoDescription" placeholder="new description"/></span>
             </span>
 
 
             <span class='columnDivider'>
-            <span class="labelSection">Type</span><span class='req'>*</span>
+            <span class="labelSection">Type</span></span>
             <span class="inputSectionForm">
             <input type="text" data-bind="value : $root.infoType" placeholder="type"/></span>
             </span>
 
             <span class='columnDivider'>
-            <span class="labelSection">Value</span><span class='req'>*</span>
+            <span class="labelSection">Value</span>
             <span class="inputSectionForm">
             <input type="text" data-bind="value : $root.infoValue" placeholder="new value"/></span>
             </span>
 
             <span class="formRowCommand">
-            <span class="labelSection"></span>
+            <span class="labelSectionCommand"></span>
             <span class="inputSectionForm">
             <button id="updateBtn" type="button" data-bind="visible : $root.enableUpdate, click : $root.updateInfoData"
             class="command">Update</button>
@@ -43,10 +45,6 @@
 
             </span>
             </span>
-
-
-
-
 
             </div>
 
@@ -80,7 +78,7 @@
 
                 <div class='columnDivider'>
                     <div class="labelSection">Category</div>
-                    <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="info type"/></div>
+                    <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="category type"/></div>
 
                 </div>
 
@@ -94,7 +92,7 @@
                 <div class='columnDivider'>
                     <div class="labelSection">Type</div><span class='req'>*</span>
                     <div class="inputSectionForm">
-                    <input type="text" data-bind="value : $root.addInfoType" placeholder="type"/></div>
+                    <input type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
                 </div>
 
                 <div class='columnDivider'>
@@ -105,16 +103,12 @@
 
             <span class="formAddRowCommand">
                 <button id="addBtn" type="button" data-bind="visible: $root.enableAdd, click: addInfo" class="command">Add</button>
-            </span>
-
-            <span class="formAddRow">
-            <span class="formRowSpacer"></span>
+                <button id="addCancelBtn" type="button" data-bind="visible: $root.enableAdd, click : $root.closeAddControl" class="command">Cancel</button>
             </span>
 
             <span class="formRowSpacer"></span>
 
             </div>
-
 
 
             </script>
@@ -182,11 +176,24 @@
 
             <div id="accordian" class="formRowAddContainer" data-bind="template : { name : 'infoAddTemplate'}, visible : enableAdd "></div>
 
-            <div class="formRowSpacer"></div>
+
             <div class="formRowSpacer"></div>
 
 
-            <div class="formRowHeader">
+            <div class="emptyData" data-bind="visible : $root.listInfo().length == 0">
+            <div>
+            <ul>
+
+
+            <li class="emptyDataSpacer"> </li>
+            <li> No data available.</li>
+            </ul>
+            </div>
+            </div>
+
+
+
+            <div class="formRowHeader" data-bind="visible : $root.listInfo().length > 0">
             <span class='columnDividerListView'>Category</span>
             <span class='columnDividerListView'>Description</span>
             <span class='columnDividerListView'>Type</span>
@@ -211,7 +218,7 @@
             $(document).ready(function()
             {
                 $("#" + branchForm).validationEngine();
-                 var vm = new BranchInfoViewModel(globalViewModel);
+                var vm = new BranchInfoViewModel(globalViewModel);
                 ko.applyBindings(vm, document.getElementById("branchForm"));
 
                 $("#accordian").accordion({collapsible : true, active: false});

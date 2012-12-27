@@ -51,10 +51,11 @@ public class DivisionInfoService
 	}
 
 
-	public void saveOrUpdate(DivisionInfo divisionInfo) 
+	public int saveOrUpdate(DivisionInfo divisionInfo) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(divisionInfo);
+		return divisionInfo.getNid();
 	}
 
 

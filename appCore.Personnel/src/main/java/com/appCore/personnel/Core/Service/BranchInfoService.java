@@ -52,10 +52,11 @@ public class BranchInfoService
 	}
 
 
-	public void saveOrUpdate(BranchInfo branchInfo) 
+	public int saveOrUpdate(BranchInfo branchInfo) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(branchInfo);
+		return branchInfo.getNid();
 	}
 
 

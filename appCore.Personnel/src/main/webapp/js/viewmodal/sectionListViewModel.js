@@ -14,7 +14,7 @@ var SectionListViewModel = function (initView, data, globalViewModel) {
     var viewColumns = [
         { headerText:"Section Code", rowText:"sectionCode" },
         { headerText:"Section Name", rowText:"sectionName" },
-        { headerText:"Description", rowText:"description" },
+        { headerText:"Description", rowText:"remark" },
         { headerText:"Disabled", rowText:"disabled" }
     ];
 

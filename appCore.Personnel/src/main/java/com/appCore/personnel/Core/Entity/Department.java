@@ -37,8 +37,23 @@ import com.appCore.personnel.Core.Entity.DepartmentInfo;
 		@Column(name = "DepartmentCode")
 		private String departmentCode;
 		
-		@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		@JoinColumn(name="RefEntity")
+		
+		@Column(name = "Description")
+		private String description;
+		
+		
+		public String getDescription() {
+			return description;
+		}
+
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		//@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+		//@JoinColumn(name="RefEntity")
+		@Transient
 		private List<DepartmentInfo> departmentInfo;
 		
 		@Transient

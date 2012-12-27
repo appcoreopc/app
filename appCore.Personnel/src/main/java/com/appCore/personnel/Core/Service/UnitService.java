@@ -65,6 +65,11 @@ public class UnitService
 		Session session = sessionFactory.getCurrentSession();
 		Unit unit = (Unit) session.get(Unit.class, id);
 
+		Query query = session.createQuery("FROM UnitInfo WHERE RefEntity = :id");
+		query.setParameter("id", id);
+		List<UnitInfo> info = query.list();
+		unit.setUnitInfo(info);
+	
 		return unit;
 	}
 

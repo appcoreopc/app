@@ -4843,12 +4843,14 @@ ui-state-hover a, .ui-state-hover a:hover {
 
 .columnDivider {
     display: inline-table;
+    padding-left : 10px;
 }
 
 .columnDividerListView {
     display: table-cell;
     width: 130px;
     font-size: 16px;
+    padding: 2px 6px;
 }
 
 .columnDividerListViewCmd {

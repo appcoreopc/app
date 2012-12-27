@@ -50,10 +50,12 @@ public class SectionInfoService
 	}
 
 
-	public void saveOrUpdate(SectionInfo sectionInfo) 
+	public int saveOrUpdate(SectionInfo sectionInfo) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(sectionInfo);
+		
+		return sectionInfo.getNid();
 	}
 
 

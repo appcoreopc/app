@@ -8099,3 +8099,6 @@ Contains: Could not delete: C:\appCoreDev\appCore.Shared\bin\com.
 
 !ENTRY org.eclipse.jst.jsp.core 4 4 2012-12-27 08:07:29.410
 !MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.osgi 2 1 2012-12-27 13:56:40.262
+!MESSAGE NLS unused message: NewHibernateMappingElementsSelectionPage_select in: org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages

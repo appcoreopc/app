@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import com.appCore.personnel.Core.Entity.DepartmentInfo;
 import com.appCore.personnel.Core.Entity.Division;
 import com.appCore.personnel.Core.Entity.DivisionInfo;
 import com.appCore.personnel.Core.Entity.DivisionSummary;
@@ -65,10 +66,13 @@ public class DivisionService
 	public Division get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		//Session session = SessionFactoryUtils.getSession(sessionFactory, true);
-		//TransactionSynchronizationManager.bindResource(sessionFactory, new SessionHolder(session));
 		Division division = (Division) session.get(Division.class, id);
-		//TransactionSynchronizationManager.unbindResource(sessionFactory);
+		
+		Query query = session.createQuery("FROM DivisionInfo WHERE RefEntity = :id");
+		query.setParameter("id", id);
+		List<DivisionInfo> info = query.list();
+		division.setDivisionInfo(info);
+		
 		return division;
 	}
 

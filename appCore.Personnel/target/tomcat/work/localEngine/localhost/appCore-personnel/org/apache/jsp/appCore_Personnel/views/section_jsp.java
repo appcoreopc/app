@@ -85,7 +85,7 @@ public final class section_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </script>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"forms\">\r\n");
-      out.write("        <h1>Section </h1>\r\n");
+      out.write("        <h1>Section Maintenance</h1>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <div class=\"viewData\">\r\n");

@@ -55,7 +55,6 @@ public class BranchController {
 	Branch getBranch(@RequestParam(value = "id", required = true) Integer id,
 			Model model) {
 		Branch branch = service.get(id);
-		model.addAttribute("modelData", branch);
 		return branch;
 	}
 

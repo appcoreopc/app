@@ -42,14 +42,14 @@ public class UnitController {
 		return list;
 	}
 
-	
-	@RequestMapping(value = "/Unit/listByCompany", method = RequestMethod.GET)		
-	public @ResponseBody List<Unit> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
-	{
-			List<Unit> list = service.getAllByCompany(id);
-			return list;
+	@RequestMapping(value = "/Unit/listByCompany", method = RequestMethod.GET)
+	public @ResponseBody
+	List<Unit> listByCompany(
+			@RequestParam(value = "id", required = true) Integer id) {
+		List<Unit> list = service.getAllByCompany(id);
+		return list;
 	}
-	
+
 	@RequestMapping(value = "/Unit/get", method = RequestMethod.GET)
 	public @ResponseBody
 	Unit getUnit(@RequestParam(value = "id", required = true) Integer id) {

@@ -43,7 +43,7 @@ public class DepartmentController
 		
 		@RequestMapping(value = "/Department/listByCompany", method = RequestMethod.GET)		
 		public @ResponseBody List<Department> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
-		{
+		{	
 				List<Department> list = service.getAllByCompany(id);
 				return list;
 		}
@@ -57,10 +57,9 @@ public class DepartmentController
 		}
 
 		@RequestMapping(value = "/Department/get", method = RequestMethod.GET)		
-		public @ResponseBody Department getDepartment (@RequestParam(value="id", required=true) Integer id, Model model ) 
+		public @ResponseBody Department getDepartment (@RequestParam(value="id", required=true) Integer id) 
 		{
 				Department department=service.get(id);
-				model.addAttribute("modelData", department);
 				return department;
 		}
 

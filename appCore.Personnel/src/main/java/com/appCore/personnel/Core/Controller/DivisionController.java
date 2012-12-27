@@ -60,13 +60,7 @@ public class DivisionController
 				return division;
 		}
 
-		@RequestMapping(value = "/Division/add", method = RequestMethod.GET)
-		public String renderAddDivision ( Model model ) 
-		{
-				model.addAttribute("modelData", new Division());
-				return "View/Core/Division/add";
-		}
-
+		
 		@RequestMapping(value = "/Division/add", method = RequestMethod.POST)
 		public @ResponseBody RequestStatus addDivision (@RequestBody Division division)
 		{
@@ -87,11 +81,5 @@ public class DivisionController
 				service.delete(id);
 				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
-
-		@RequestMapping(value = "/Division/edit", method = RequestMethod.GET)
-		public String editDivision ( Model model ) 
-		{
-				return "View/Core/Division/edit";
-		}
-
+		
 }

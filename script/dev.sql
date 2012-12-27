@@ -217,3 +217,36 @@ insert into unit (unitCode, unitName, CompanyId) values ('UnitAAAA', 'UnitAAAAA'
 insert into unit (unitCode, unitName, CompanyId) values ('UnitBBBB', 'UnitBBBBB', 2);
 
 
+insert into divisioninfo (category, description, type, value, refEntity) values ('DivInfo1', 'Div1Desc', 'DivType1', 'Div1Value', 1);
+insert into divisioninfo (category, description, type, value, refEntity) values ('DivInfo2', 'Div2Desc', 'DivType2', 'Div2Value', 1);
+insert into divisioninfo (category, description, type, value, refEntity) values ('DivInfo3', 'Div3Desc', 'DivType3', 'Div3Value', 1);
+
+
+insert into departmentInfo (category, description, type, value, refEntity) values ('DepInfo1', 'DepInfoDesc1', 'DeptInfoType1', 'DepInfoVal1', 1);
+insert into departmentInfo (category, description, type, value, refEntity) values ('DepInfo2', 'DepInfoDesc2', 'DeptInfoType2', 'DepInfoVal2', 1);
+insert into departmentInfo (category, description, type, value, refEntity) values ('DepInfo3', 'DepInfoDesc3', 'DeptInfoType3', 'DepInfoVal3', 1);
+
+insert into departmentInfo (category, description, type, value, refEntity) values ('DepInfoA', 'DepInfoDescA', 'DeptInfoTypeA', 'DepInfoValA', 2);
+insert into departmentInfo (category, description, type, value, refEntity) values ('DepInfoB', 'DepInfoDescB', 'DeptInfoTypeB', 'DepInfoValB', 2);
+
+insert into departmentInfo (category, description, type, value, refEntity) values ('DPP', 'DP', 'DPTYPE', 'DPValue', 3);
+
+	
+insert into sectionInfo (category, description, type, value, refEntity) values ('Sec1', 'Sec1Desc1', 'Sec1', 'Sec1Val', 1);
+insert into sectionInfo (category, description, type, value, refEntity) values ('Sec2', 'Sec1Desc2', 'Sec2', 'Sec2Val', 1);
+insert into sectionInfo (category, description, type, value, refEntity) values ('Sec3', 'Sec1Desc3', 'Sec3', 'Sec3Val', 1);
+
+insert into sectionInfo (category, description, type, value, refEntity) values ('SecA', 'SecAAAA', 'SecAAA', 'SecValueAa', 2);
+insert into sectionInfo (category, description, type, value, refEntity) values ('SecB', 'SecBBBB', 'SecBBB', 'SecValueBb', 2);
+
+
+insert into unitInfo (category, description, type, value, refEntity) values ('UnitA', 'UnitADesc', 'UnitAVal', 'UnitValA', 1);
+insert into unitInfo (category, description, type, value, refEntity) values ('UnitB', 'UnitBDesc', 'UnitBVal', 'UnitValB', 1);
+insert into unitInfo (category, description, type, value, refEntity) values ('UnitC', 'UnitCDesc', 'UnitCVal', 'UnitValC', 1);
+
+insert into unitInfo (category, description, type, value, refEntity) values ('Unit1', 'Unit1Desc', 'Unit1Val', 'UnitVal1', 2);
+insert into unitInfo (category, description, type, value, refEntity) values ('UUUUU', 'UDESCCCCC', 'UVALLLL', 'UValvalval', 2);
+
+
+
+

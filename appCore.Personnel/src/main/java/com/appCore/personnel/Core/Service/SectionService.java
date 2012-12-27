@@ -67,6 +67,11 @@ public class SectionService
 		Session session = sessionFactory.getCurrentSession();
 		Section section = (Section) session.get(Section.class, id);
 
+		Query query = session.createQuery("FROM SectionInfo WHERE RefEntity = :id");
+		query.setParameter("id", id);
+		List<SectionInfo> info = query.list();
+		section.setSectionInfo(info);
+		
 		return section;
 	}
 

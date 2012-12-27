@@ -1,4 +1,4 @@
-var BranchInfoViewModel = function (globalViewModel) {
+var DepartmentInfoViewModel = function (globalViewModel) {
 
     var self = this;
 
@@ -30,13 +30,6 @@ var BranchInfoViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
-    var viewColumns = [
-        { headerText:"Branch Code", rowText:"branchCode" },
-        { headerText:"Branch Name", rowText:"branchName" },
-        { headerText:"Description", rowText:"description" },
-        { headerText:"Disabled", rowText:"enable" }
-    ];
-
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeBranch) {
         throw "Application Type is not branch.";
     }
@@ -48,7 +41,7 @@ var BranchInfoViewModel = function (globalViewModel) {
 
     function initializeApplication() {
 
-        var input = { "id":coreBranchPage, "roleId":self.globalViewModel.employeeRole() };
+        var input = { "id":coreDepartmentPage, "roleId":self.globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var moduleResult = coreCommand.getPermission(hostAuthorizationUrl, input);
         var result = moduleResult.permission;
@@ -61,24 +54,24 @@ var BranchInfoViewModel = function (globalViewModel) {
         if (self.mode() == coreModeEdit) {
             var codeId = globalViewModel.targetId();
 
-            var branchData = { id:codeId };
+            var entityData = { id:codeId };
             var helper = new CompanyHelper();
-            helper.getBranch(branchData, getBranchCallback);
+            helper.getDepartment(entityData, getEntityGetDataCallback);
         }
     }
 
-    function getBranchCallback(data) {
+    function getEntityGetDataCallback(data) {
 
         if (data != null) {
 
             self.nid(data.nid);
-            self.code(data.branchCode);
-            self.name(data.branchName);
+            self.code(data.departmentCode);
+            self.name(data.departmentName);
             self.description(data.description);
             self.disabled(data.disabled);
 
-            for (var i = 0; i < data.branchInfo.length; i++) {
-                self.listInfo.push(new InfoDataViewModel(data.branchInfo[i]));
+            for (var i = 0; i < data.departmentInfo.length; i++) {
+                self.listInfo.push(new InfoDataViewModel(data.departmentInfo[i]));
             }
         }
     }
@@ -107,20 +100,20 @@ var BranchInfoViewModel = function (globalViewModel) {
     }
 
     self.closeAddControl = function () {
-        $("#accordian").accordion({collapsible:true, active:false});
+        $("#accordianDepartment").accordion({collapsible:true, active:false});
     }
 
     self.updateInfoData = function (data) {
 
-        var branchData = createUpdateBranchData(data);
+        var entityData = createUpdateEntityData(data);
         var helper = new CompanyHelper();
-        helper.saveOrUpdateBranchInfo(branchData, updateDataSuccessCallback);
-
+        helper.saveOrUpdateDepartmentInfo(entityData, updateDataSuccessCallback);
         self.editData("");
     }
 
-    function createUpdateBranchData(data) {
-        var branchData = {
+    function createUpdateEntityData(data) {
+
+        var entityData = {
             category:data.infoCategory(),
             description:data.infoDescription(),
             type:data.infoType(),
@@ -128,18 +121,18 @@ var BranchInfoViewModel = function (globalViewModel) {
             refEntity:self.nid()
         };
         if (data.nid() != null)
-            branchData.nid = data.nid();
+            entityData.nid = data.nid();
 
-        return branchData;
+        return entityData;
     }
 
     self.addInfo = function (data) {
-        var branchData = createBranchData();
+        var entityInfoData = createEntityData();
         var helper = new CompanyHelper();
-        helper.saveOrUpdateBranchInfo(branchData, addDataSuccessCallback);
+        helper.saveOrUpdateDepartmentInfo(entityInfoData, addDataSuccessCallback);
     }
 
-    function createBranchData() {
+    function createEntityData() {
 
         var branchData = {
             category:self.addInfoCategory(),
@@ -157,8 +150,7 @@ var BranchInfoViewModel = function (globalViewModel) {
 
     function addDataSuccessCallback(result) {
 
-        if (result.messageCode != null)
-        {
+        if (result.messageCode != null) {
             var data = {
                 category:self.addInfoCategory(),
                 description:self.addInfoDescription(),
@@ -223,8 +215,8 @@ var BranchInfoViewModel = function (globalViewModel) {
 
         if (userResponse == true) {
             var helper = new CompanyHelper();
-            var branchData = { id:data.nid() };
-            var result = helper.deleteBranchInfo(branchData, data, deleteCompleteCallback);
+            var entityData = { id:data.nid() };
+            var result = helper.deleteDepartmentInfo(entityData, data, deleteCompleteCallback);
         }
     }
 
@@ -235,41 +227,34 @@ var BranchInfoViewModel = function (globalViewModel) {
         }
     }
 
-    function updateFunction(data) {
-        globalViewModel.targetId(data.nid);
-        globalViewModel.editMode(globalEditorModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
-        preparePageForLoading("branchEdit.jsp");
-    }
-
     self.updateData = function (data) {
 
-        var isValid = $("#" + "branchForm").validationEngine('validate');
+        var isValid = $("#" + "departmentForm").validationEngine('validate');
 
         if (!isValid)
             return;
 
-        var branch = new Branch();
+        var department = new Department();
         if (self.mode() == coreModeEdit)
-            branch.nid = self.nid();
+            department.nid = self.nid();
 
-        branch.companyId = self.globalViewModel.companyId();
-        branch.branchCode = self.code();
-        branch.branchName = self.name();
-        branch.description = self.description();
-        branch.disabled = self.disabled();
+        department.companyId = self.globalViewModel.companyId();
+        department.departmentCode = self.code();
+        department.departmentName = self.name();
+        department.description = self.description();
+        department.disabled = self.disabled();
 
         var helper = new CompanyHelper();
-        helper.saveUpdateBranch(branch, saveOrUpdateStatus)
+        helper.saveUpdateDepartment(department, saveOrUpdateStatus)
     }
 
     function saveOrUpdateStatus(result) {
         if (result.messageCode == 0) {
-            preparePageForLoading("branch.jsp");
+            preparePageForLoading("department.jsp");
         }
     }
 
     self.cancelUpdate = function (data) {
-        preparePageForLoading("branch.jsp");
+        preparePageForLoading("department.jsp");
     }
 }

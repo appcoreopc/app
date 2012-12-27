@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
+import javax.persistence.Transient;
+
 import java.util.List;
 import javax.persistence.Table;
 import com.appCore.personnel.Core.Entity.UnitInfo;
@@ -49,8 +51,9 @@ import com.appCore.personnel.Core.Entity.UnitInfo;
 		private Boolean disabled;
 
 				
-		@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		@JoinColumn(name="RefEntity")
+		//@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+		//@JoinColumn(name="RefEntity")
+		@Transient
 		private List<UnitInfo> unitInfo;
 		
 		

@@ -496,12 +496,12 @@ span.fieldSpacer {
     border-style: none;
     color: #FFFFFF;
     font-size: 14px;
-
 }
 
 
 .formRowSpacer {
     height: 16px;
+    display: block;
 }
 
 .formRowHeader {
@@ -535,4 +535,12 @@ span.fieldSpacer {
 
 .formRowCommand {
     display : block;
+
+}
+
+.labelSectionCommand {
+    width: 161px;
+    display: inline-block;
+    padding-right: 20px;
+    font-weight: bold;
 }

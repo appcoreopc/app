@@ -170,10 +170,30 @@ var globalBranchSummaryUrl = globalHostname + "/app/Core/Branch/getSummary?id=";
 
 var globalBranchListByCompanyUrl = globalHostname + "/app/Core/Branch/listByCompany";
 var globalBranchInfoDeleteUrl = globalHostname + "/app/Core/BranchInfo/delete";
+var globalDivisionInfoDeleteUrl = globalHostname + "/app/Core/DivisionInfo/delete";
+var globalDepartmentInfoDeleteUrl = globalHostname + "/app/Core/DepartmentInfo/delete";
+var globalSectionInfoDeleteUrl = globalHostname + "/app/Core/SectionInfo/delete";
+var globalUnitInfoDeleteUrl = globalHostname + "/app/Core/UnitInfo/delete";
 var globalBranchDeleteUrl = globalHostname + "/app/Core/Branch/delete";
 var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdate";
+var globalDivisionSaveOrUpdateUrl = globalHostname + "/app/Core/Division/saveOrUpdate";
+var globalDepartmentSaveOrUpdateUrl = globalHostname + "/app/Core/Department/saveOrUpdate";
+var globalSectionSaveOrUpdateUrl = globalHostname + "/app/Core/Section/saveOrUpdate";
+var globalUnitSaveOrUpdateUrl = globalHostname + "/app/Core/Unit/saveOrUpdate";
 var globalBranchInfoSaveOrUpdateUrl = globalHostname + "/app/Core/BranchInfo/saveOrUpdate";
+
+var globalDivisionInfoSaveOrUpdateUrl = globalHostname + "/app/Core/DivisionInfo/saveOrUpdate";
+var globalDepartmentInfoSaveOrUpdateUrl = globalHostname + "/app/Core/DepartmentInfo/saveOrUpdate";
+
+var globalSectionInfoSaveOrUpdateUrl = globalHostname + "/app/Core/SectionInfo/saveOrUpdate";
+var globalUnitInfoSaveOrUpdateUrl = globalHostname + "/app/Core/UnitInfo/saveOrUpdate";
+
 var globalBranchGetUrl = globalHostname + "/app/Core/Branch/get"
+
+var globalDivisionGetUrl = globalHostname + "/app/Core/Division/get"
+var globalDepartmentGetUrl = globalHostname + "/app/Core/Department/get"
+var globalSectionGetUrl = globalHostname + "/app/Core/Section/get"
+var globalUnitGetUrl = globalHostname + "/app/Core/Unit/get"
 
 var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?id=";
 

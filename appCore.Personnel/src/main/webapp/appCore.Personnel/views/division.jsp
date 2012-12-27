@@ -31,7 +31,7 @@
         </script>
 
         <div class="forms">
-        <h1>Division </h1>
+        <h1>Division Maintenance</h1>
 
 
        <div class="viewData">

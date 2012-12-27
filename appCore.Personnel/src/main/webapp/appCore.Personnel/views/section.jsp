@@ -33,7 +33,7 @@
         </script>
 
         <div class="forms">
-        <h1>Section </h1>
+        <h1>Section Maintenance</h1>
 
 
         <div class="viewData">

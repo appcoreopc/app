@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
+import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Entity.DepartmentInfo;
+import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.Core.Service.DepartmentInfoService;
 
@@ -28,10 +30,9 @@ public class DepartmentInfoController
 		private DepartmentInfoService service;
 
 		@RequestMapping(value = "/DepartmentInfo/list", method = RequestMethod.GET)		
-		public @ResponseBody List<DepartmentInfo> listDepartmentInfo ( Model model ) 
+		public @ResponseBody List<DepartmentInfo> listDepartmentInfo () 
 		{
 				List<DepartmentInfo> list = service.getAll();
-				model.addAttribute("data", list);
 				return list;
 		}
 		
@@ -50,39 +51,28 @@ public class DepartmentInfoController
 				return departmentInfo;
 		}
 
-		@RequestMapping(value = "/DepartmentInfo/add", method = RequestMethod.GET)
-		public String renderAddDepartmentInfo ( Model model ) 
-		{
-				model.addAttribute("modelData", new DepartmentInfo());
-				return "View/Core/DepartmentInfo/add";
-		}
-
+		
 		@RequestMapping(value = "/DepartmentInfo/add", method = RequestMethod.POST)
-		public @ResponseBody String addDepartmentInfo (@ModelAttribute DepartmentInfo departmentInfo)
+		public @ResponseBody RequestStatus addDepartmentInfo (@RequestBody DepartmentInfo departmentInfo)
 		{
 				service.add(departmentInfo);
-				return "View/Core/DepartmentInfo/add";
+				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
 		}
 
 		@RequestMapping(value = "/DepartmentInfo/saveOrUpdate", method = RequestMethod.POST)
-		public @ResponseBody String saveOrUpdateDepartmentInfo (@ModelAttribute DepartmentInfo departmentInfo)
+		public  @ResponseBody RequestStatus saveOrUpdateDepartmentInfo (@RequestBody DepartmentInfo departmentInfo)
 		{
-				service.saveOrUpdate(departmentInfo);
-				return "View/Core/DepartmentInfo/add";
+				int saveId = service.saveOrUpdate(departmentInfo);
+				RequestStatus status = RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				status.setSaveCode(saveId);
+				return status;
 		}
 
 		@RequestMapping(value = "/DepartmentInfo/delete", method = RequestMethod.GET)
-		public @ResponseBody String deleteDepartmentInfo (@RequestParam(value="id", required=true) Integer id, Model model )
+		public @ResponseBody RequestStatus deleteDepartmentInfo (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
-
-				return "View/Core/DepartmentInfo/delete";
-		}
-
-		@RequestMapping(value = "/DepartmentInfo/edit", method = RequestMethod.GET)
-		public String editDepartmentInfo ( Model model ) 
-		{
-				return "View/Core/DepartmentInfo/edit";
+				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
 
 }

@@ -68,8 +68,10 @@ public class BranchInfoController
 		@RequestMapping(value = "/BranchInfo/saveOrUpdate", method = RequestMethod.POST)
 		public @ResponseBody RequestStatus  saveOrUpdateBranchInfo (@RequestBody BranchInfo branchInfo)
 		{
-				service.saveOrUpdate(branchInfo);
-				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				Integer saveId = service.saveOrUpdate(branchInfo);
+				RequestStatus status = RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				status.setSaveCode(saveId);
+				return status;
 		}
 
 		@RequestMapping(value = "/BranchInfo/delete", method = RequestMethod.GET)

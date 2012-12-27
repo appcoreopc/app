@@ -14,7 +14,7 @@ var UnitListViewModel = function (initView, data, globalViewModel) {
     var viewColumns = [
         { headerText:"Unit Code", rowText:"unitCode" },
         { headerText:"Unit Name", rowText:"unitName" },
-        { headerText:"Description", rowText:"description" },
+        { headerText:"Description", rowText:"remark" },
         { headerText:"Disabled", rowText:"disabled" }
     ];
 

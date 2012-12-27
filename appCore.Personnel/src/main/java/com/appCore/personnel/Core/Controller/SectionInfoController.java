@@ -29,10 +29,9 @@ public class SectionInfoController
 		private SectionInfoService service;
 
 		@RequestMapping(value = "/SectionInfo/list", method = RequestMethod.GET)		
-		public @ResponseBody List<SectionInfo> listSectionInfo ( Model model ) 
+		public @ResponseBody List<SectionInfo> listSectionInfo () 
 		{
 				List<SectionInfo> list = service.getAll();
-				model.addAttribute("data", list);
 				return list;
 		}
 		
@@ -44,47 +43,34 @@ public class SectionInfoController
 		}
 
 		@RequestMapping(value = "/SectionInfo/get", method = RequestMethod.GET)		
-		public @ResponseBody SectionInfo getSectionInfo (@RequestParam(value="id", required=true) Integer id, Model model ) 
+		public @ResponseBody SectionInfo getSectionInfo (@RequestParam(value="id", required=true) Integer id) 
 		{
 				SectionInfo sectionInfo=service.get(id);
-				model.addAttribute("modelData", sectionInfo);
 				return sectionInfo;
 		}
-
-		@RequestMapping(value = "/SectionInfo/add", method = RequestMethod.GET)
-		public String renderAddSectionInfo ( Model model ) 
-		{
-				model.addAttribute("modelData", new SectionInfo());
-				return "View/Core/SectionInfo/add";
-		}
-
+		
 		@RequestMapping(value = "/SectionInfo/add", method = RequestMethod.POST)
-		public @ResponseBody String addSectionInfo (@ModelAttribute SectionInfo sectionInfo)
+		public @ResponseBody RequestStatus addSectionInfo (@RequestBody SectionInfo sectionInfo)
 		{
 				service.add(sectionInfo);
-				return "View/Core/SectionInfo/add";
+				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
 		}
 
 		@RequestMapping(value = "/SectionInfo/saveOrUpdate", method = RequestMethod.POST)
 		public @ResponseBody RequestStatus saveOrUpdateSectionInfo (@RequestBody SectionInfo sectionInfo)
 		{
-				service.saveOrUpdate(sectionInfo);
-				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				int saveId = service.saveOrUpdate(sectionInfo);
+				RequestStatus status = RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				status.setSaveCode(saveId);
+				
+				return status; 
 		}
 
 		@RequestMapping(value = "/SectionInfo/delete", method = RequestMethod.GET)
-		public @ResponseBody String deleteSectionInfo (@RequestParam(value="id", required=true) Integer id, Model model )
+		public @ResponseBody RequestStatus deleteSectionInfo (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
-
-				return "View/Core/SectionInfo/delete";
+				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
-
-		@RequestMapping(value = "/SectionInfo/edit", method = RequestMethod.GET)
-		public String editSectionInfo ( Model model ) 
-		{
-				return "View/Core/SectionInfo/edit";
-		}
-
-
+		
 }

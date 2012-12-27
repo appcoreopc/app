@@ -84,7 +84,7 @@ public final class department_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </script>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"forms\">\r\n");
-      out.write("        <h1>Department</h1>\r\n");
+      out.write("        <h1>Department Maintenance</h1>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"viewData\">\r\n");
       out.write("        <div class=\"maintenanceCommand\">\r\n");
