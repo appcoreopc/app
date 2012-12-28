@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
+import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.EmploymentTypeInfo;
 
 import com.appCore.personnel.Core.Job.Service.EmploymentTypeInfoService;
@@ -28,10 +30,9 @@ public class EmploymentTypeInfoController
 		private EmploymentTypeInfoService service;
 
 		@RequestMapping(value = "/EmploymentTypeInfo/list", method = RequestMethod.GET)		
-		public @ResponseBody List<EmploymentTypeInfo> listEmploymentTypeInfo ( Model model ) 
+		public @ResponseBody List<EmploymentTypeInfo> listEmploymentTypeInfo () 
 		{
 				List<EmploymentTypeInfo> list = service.getAll();
-				model.addAttribute("data", list);
 				return list;
 		}
 		
@@ -43,46 +44,33 @@ public class EmploymentTypeInfoController
 		}
 
 		@RequestMapping(value = "/EmploymentTypeInfo/get", method = RequestMethod.GET)		
-		public @ResponseBody EmploymentTypeInfo getEmploymentTypeInfo (@RequestParam(value="id", required=true) Integer id, Model model ) 
+		public @ResponseBody EmploymentTypeInfo getEmploymentTypeInfo (@RequestParam(value="id", required=true) Integer id) 
 		{
 				EmploymentTypeInfo employmentTypeInfo=service.get(id);
-				model.addAttribute("modelData", employmentTypeInfo);
 				return employmentTypeInfo;
 		}
-
-		@RequestMapping(value = "/EmploymentTypeInfo/add", method = RequestMethod.GET)
-		public String renderAddEmploymentTypeInfo (@ModelAttribute EmploymentTypeInfo employmentTypeInfo)
-		{
-				service.add(employmentTypeInfo);
-				return "View/Job/EmploymentTypeInfo/add";
-		}
+	
 
 		@RequestMapping(value = "/EmploymentTypeInfo/add", method = RequestMethod.POST)
-		public @ResponseBody String addEmploymentTypeInfo (@ModelAttribute EmploymentTypeInfo employmentTypeInfo)
+		public @ResponseBody RequestStatus addEmploymentTypeInfo (@RequestBody EmploymentTypeInfo employmentTypeInfo)
 		{
 				service.add(employmentTypeInfo);
-				return "View/Job/EmploymentTypeInfo/add";
+				return RequestStatusHelper.GenerateRequestStatusCreateOperation();
 		}
 
 		@RequestMapping(value = "/EmploymentTypeInfo/saveOrUpdate", method = RequestMethod.POST)
-		public @ResponseBody String saveOrUpdateEmploymentTypeInfo (@ModelAttribute EmploymentTypeInfo employmentTypeInfo)
+		public @ResponseBody RequestStatus saveOrUpdateEmploymentTypeInfo (@RequestBody EmploymentTypeInfo employmentTypeInfo)
 		{
-				service.saveOrUpdate(employmentTypeInfo);
-				return "View/Job/EmploymentTypeInfo/add";
+				int saveId = service.saveOrUpdate(employmentTypeInfo);
+				RequestStatus status = RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				status.setSaveCode(saveId);
+				return status;
 		}
 
 		@RequestMapping(value = "/EmploymentTypeInfo/delete", method = RequestMethod.GET)
-		public @ResponseBody String deleteEmploymentTypeInfo (@RequestParam(value="id", required=true) Integer id, Model model )
+		public @ResponseBody RequestStatus deleteEmploymentTypeInfo (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
-
-				return "View/Job/EmploymentTypeInfo/delete";
+				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
-
-		@RequestMapping(value = "/EmploymentTypeInfo/edit", method = RequestMethod.GET)
-		public String editEmploymentTypeInfo ( Model model ) 
-		{
-				return "View/Job/EmploymentTypeInfo/edit";
-		}
-
 }

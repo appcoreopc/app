@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Entity.Section;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.Core.Job.Entity.Employee;
@@ -35,6 +36,13 @@ public class EmployeeController
 				List<Employee> list = service.getAll();
 				return list;
 		}
+		
+		@RequestMapping(value = "/Employee/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<Employee> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<Employee> list = service.getAllByCompany(id);
+				return list;
+		}	
 
 		@RequestMapping(value = "/Employee/get", method = RequestMethod.GET)		
 		public @ResponseBody Employee getEmployee (@RequestParam(value="id", required=true) Integer id ) 

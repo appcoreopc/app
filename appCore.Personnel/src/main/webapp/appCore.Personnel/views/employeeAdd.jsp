@@ -1,19 +1,17 @@
     <link href="../../css/personnelEmployeeForm.css" media="screen" rel="stylesheet" type="text/css" />
 
-        <script language="javascript" src="../../js/viewmodal/employeeViewModel.js"></script>
+
+        <script language="javascript" src="../../js/viewmodal/employeeCommandViewModel.js"></script>
         <script language="javascript" src="../../js/coreDialog.js"></script>
 
         <script type="text/javascript">
 
         $(document).ready(function()
         {
+            var vm = new EmployeeCommandViewModel();
+            var gridDataObject = vm.getCommandForForm();
 
-            var ajaxCore = new AjaxCore();
-            var vm = new EmployeeViewModel(0);
-
-            var gridDataObject = vm.getView();
-            var input = { "id" : globalEmployeeModule, "roleId" : 1 };
-
+            var input = { "id" : globalEmployeeModule, "roleId" : globalViewModel.employeeRole() };
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
 

@@ -1,4 +1,4 @@
-var JobType = function()
+    var JobType = function()
 {
 
     this.nid;

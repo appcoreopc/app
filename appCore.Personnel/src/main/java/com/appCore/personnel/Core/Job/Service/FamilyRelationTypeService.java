@@ -30,7 +30,7 @@ public class FamilyRelationTypeService
 	public List<FamilyRelationType> getAllByCompany(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  FamilyRelationType");
+		Query query = session.createQuery("FROM  FamilyRelationType WHERE CompanyRef = :id");
 		query.setParameter("id", id);
 		return  query.list();
 	}

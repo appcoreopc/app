@@ -1,26 +1,42 @@
-    <script language="javascript" src="../../js/viewmodal/employeeViewModel.js"></script>
+    <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+          <script language="javascript" src="../../js/viewmodal/employeeViewModel.js"></script>
 
         <script type="text/javascript">
-
         $(document).ready(function()
         {
-               var vm = new EmployeeViewModel(0, globalViewModel);
-               var gridDataObject = vm.getListView();
+                getData(globalViewModel.companyId());
+                globalViewModel.companyId.subscribe(function(newValue)
+                {
+                            getData(newValue);
+                });
         });
+
+        function getData(companyId)
+        {
+                var ajaxCore = new AjaxCore();
+                var companyId = { id : companyId };
+                var request = ajaxCore.sendRequest(globalEmployeeListByCompanyUrl, companyId, "get");
+
+                request.success(function(data)
+                {
+                    var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);
+                    ko.applyBindings(vm, document.getElementById("employeeDiv"));
+                });
+        }
 
         </script>
 
-        <div class="form formOutline">
+        <div class="forms">
+        <h1>Employee Maintenance</h1>
 
-        <h1>Employee</h1>
 
         <div class="viewData">
         <div class="maintenanceCommand">
         </div>
 
         <div>
-        <div id="employeeListViewGrid" style="height: 380px"></div>
+        <div id="employeeDiv" data-bind="dataGrid: gridViewModel"></div>
         </div>
 
         </div>
-        </div>
+

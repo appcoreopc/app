@@ -80,6 +80,6 @@ var CoreDialog = function () {
             });
 
         $myDialog.dialog('open');
-        $('#' + dialogObject.targetId).scrollTop("0");
+        //$('#' + dialogObject.targetId).scrollTop("0");
     }
 }

@@ -76,7 +76,7 @@ public final class division_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                request.success(function(data)\r\n");
       out.write("                {\r\n");
       out.write("                    var vm = new DivisionListViewModel(0, data, globalViewModel);\r\n");
-      out.write("                    ko.applyBindings(vm, document.getElementById(\"branchDiv\"));\r\n");
+      out.write("                    ko.applyBindings(vm, document.getElementById(\"divisionDiv\"));\r\n");
       out.write("                });\r\n");
       out.write("            }\r\n");
       out.write("\r\n");
@@ -91,7 +91,7 @@ public final class division_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("       </div>\r\n");
       out.write("\r\n");
       out.write("       <div>\r\n");
-      out.write("        <div id=\"branchDiv\" data-bind=\"dataGrid: gridViewModel\"></div>\r\n");
+      out.write("        <div id=\"divisionDiv\" data-bind=\"dataGrid: gridViewModel\"></div>\r\n");
       out.write("       </div>\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");

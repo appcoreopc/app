@@ -51,10 +51,11 @@ public class EmploymentTypeInfoService
 	}
 
 
-	public void saveOrUpdate(EmploymentTypeInfo employmentTypeInfo) 
+	public int saveOrUpdate(EmploymentTypeInfo employmentTypeInfo) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(employmentTypeInfo);
+		return employmentTypeInfo.getNid();
 	}
 
 

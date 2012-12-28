@@ -1,8 +1,8 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+       <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
 
        <link href="../../css/codeMaintenance.css" media="screen" rel="stylesheet" type="text/css" />
-        <script language="javascript" src="../../js/viewmodal/codeMaintenanceViewModel.js"></script>
-        <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
+       <script language="javascript" src="../../js/viewmodal/codeMaintenanceViewModel.js"></script>
+       <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
 
         <script type="text/javascript">
 
@@ -14,29 +14,19 @@
 
         $(document).ready(function()
         {
-        $("#" + form).validationEngine();
+            $("#" + form).validationEngine();
 
-        if (globalViewModel != undefined && globalViewModel.targetId != null)
-        {
-            vm = new CodeMaintenanceViewModel(coreModeEdit, codeType, globalViewModel.targetId, globalViewModel);
-            gridDataObject = vm.getView();
-        }
-        else
-        {
-            vm = new CodeMaintenanceViewModel(coreModeInsert, codeType, null, globalViewModel);
-            gridDataObject = vm.getView();
-        }
-
-        var input = { "id" : coreCodeMaintenancePage, "roleId" : 1 };
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
-
-        //$(document).unbind("parseComplete");
-        //$(document).bind("parseComplete", function()
-        //{
-        ko.applyBindings(vm, document.getElementById("codeForm"));
-
-        //});
+            if (globalViewModel != undefined && globalViewModel.targetId() != null && globalViewModel.editMode() == coreModeEdit)
+            {
+                vm = new CodeMaintenanceViewModel(coreModeEdit, codeType, globalViewModel.targetId, globalViewModel);
+                gridDataObject = vm.getView();
+            }
+            else
+            {
+                vm = new CodeMaintenanceViewModel(coreModeInsert, codeType, null, globalViewModel);
+                gridDataObject = vm.getView();
+            }
+             ko.applyBindings(vm, document.getElementById("codeForm"));
 
         });
 
@@ -86,14 +76,14 @@
         <div class="labelSection">Effective Start Date</div><span class='req'>*</span><div class="inputSection"><input
         type="text" id="SartEffectiveDate" data-bind="datepicker: startEffectiveDate, datepickerOptions: { dateFormat :
         'dd-mm-yy'}, value : startEffectiveDate, enable : !disabled()" class="validate[required, maxSize[80]]"
-        /><i class="icon-calendar"></i></div>
+        /></div>
         </div>
 
         <div class="formRow">
         <div class="labelSection">Effective End Date</div><span class='req'>*</span><div class="inputSection"><input
         type="text" id="EndEffectiveDate" data-bind="datepicker: endEffectiveDate, datepickerOptions: { dateFormat :
         'dd-mm-yy'}, value : endEffectiveDate, enable : !disabled()" class="validate[required, maxSize[80]]"
-        /><i class="icon-calendar"></i></div>
+        /></div>
         </div>
 
         <div class="formRowSpacer">
@@ -105,7 +95,10 @@
 
 
         <div> <div class="maintenanceCommandSpace"></div>
-        <div class="maintenanceCommand" id="maintenanceCodeCommand">
+        <div class="maintenanceCommand" data-bind="visible : $root.enableAdd || $root.enableUpdate" id="maintenanceCodeCommand">
+
+           <button id="saveBtn" type="button" class="command" data-bind="click : saveDataForm">Add New Code</button>
+           <button id="cancelBtn" type="button" class="command" data-bind="click : cancelChanges">Cancel</button>
         </div>
         </div>
 

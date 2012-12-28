@@ -39,6 +39,8 @@ public class BranchService
 
 		List<Branch> list = query.setMaxResults(summaryResultCount).list();
 
+		System.out.println(summaryCount);
+		
 		BranchSummary summary = new BranchSummary();
 		summary.setCount(summaryCount);
 		summary.setListBranch(list);

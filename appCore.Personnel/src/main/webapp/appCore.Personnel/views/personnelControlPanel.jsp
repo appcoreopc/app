@@ -29,8 +29,8 @@
 
         $("#companyDropDownList").change(function()
         {
-        globalCurrentCompanyId = $(this).find("option:selected").val();
-        globalViewModel.companyId(globalCurrentCompanyId);
+            globalCurrentCompanyId = $(this).find("option:selected").val();
+            globalViewModel.companyId(globalCurrentCompanyId);
         });
         });
 

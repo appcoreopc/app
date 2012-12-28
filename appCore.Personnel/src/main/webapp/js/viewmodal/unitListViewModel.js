@@ -127,7 +127,7 @@ var UnitListViewModel = function (initView, data, globalViewModel) {
 
     self.initializeViewModel = function () {
         var gridDataObject = getView();
-        var input = { "id":coreDivisionPage, "roleId":1 };
+        var input = { "id":coreDivisionPage, "roleId": globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
 
         var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
@@ -157,12 +157,12 @@ var UnitListViewModel = function (initView, data, globalViewModel) {
     function updateFunction(data) {
         globalViewModel.targetId(data.nid);
         globalViewModel.editMode(coreModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
         preparePageForLoading("unitAdd.jsp");
     }
 
     function goToAdd() {
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("unitAdd.jsp");
     }

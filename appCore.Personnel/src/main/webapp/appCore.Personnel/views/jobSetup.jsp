@@ -1,31 +1,46 @@
-    <script language="javascript" src="../../js/viewmodal/jobTypeViewModel.js"></script>
+    <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+
+        <script language="javascript" src="../../js/viewmodal/jobSetupListViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
+
 
         <script type="text/javascript">
 
         $(document).ready(function()
         {
-        var vm = new JobTypeViewModel(0);
-        var gridDataObject = vm.getView();
+        getData(globalViewModel.companyId());
 
-        var input = { "id" : coreBranchPage, "roleId" : 1 };
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-
+        globalViewModel.companyId.subscribe(function(newValue)
+        {
+            getData(newValue);
         });
+        });
+
+        function getData(companyId)
+        {
+        var ajaxCore = new AjaxCore();
+        var companyId = { id : companyId };
+        var request = ajaxCore.sendRequest(globalJobSetupListByCompanyUrl, companyId, "get");
+
+        request.success(function(data)
+        {
+        var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);
+        ko.applyBindings(vm, document.getElementById("jobSetupDiv"));
+        });
+        }
 
         </script>
 
-        <div class="form">
+        <div class="forms">
         <h1>Job Setup</h1>
 
 
         <div class="viewData">
-        <div id="jobTypeCommand" class="maintenanceCommand">
+        <div class="maintenanceCommand">
         </div>
-        </div>
-
 
         <div>
-        <div id="gridJobType" style="height: 380px"></div>
+        <div id="jobSetup" data-bind="dataGrid: gridViewModel"></div>
         </div>
+
         </div>

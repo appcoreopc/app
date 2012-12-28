@@ -52,20 +52,18 @@ public final class employeeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("    <link href=\"../../css/personnelEmployeeForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("\r\n");
-      out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeViewModel.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeCommandViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/coreDialog.js\"></script>\r\n");
       out.write("\r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
       out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
+      out.write("            var vm = new EmployeeCommandViewModel();\r\n");
+      out.write("            var gridDataObject = vm.getCommandForForm();\r\n");
       out.write("\r\n");
-      out.write("            var ajaxCore = new AjaxCore();\r\n");
-      out.write("            var vm = new EmployeeViewModel(0);\r\n");
-      out.write("\r\n");
-      out.write("            var gridDataObject = vm.getView();\r\n");
-      out.write("            var input = { \"id\" : globalEmployeeModule, \"roleId\" : 1 };\r\n");
-      out.write("\r\n");
+      out.write("            var input = { \"id\" : globalEmployeeModule, \"roleId\" : globalViewModel.employeeRole() };\r\n");
       out.write("            var coreCommand = new CoreCommand();\r\n");
       out.write("            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);\r\n");
       out.write("\r\n");

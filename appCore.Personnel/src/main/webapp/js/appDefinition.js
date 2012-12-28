@@ -20,8 +20,8 @@ var coreUnitPage = "Unit";
 var coreSectionPage = "Section";
 var coreAdminPage = "Admin";
 var coreUserPage = "User";
-var coreGradePage = "Grade";
-var coreEmploymentTypePage = "Employment Type";
+var coreGradePage = "Branch";
+var coreEmploymentTypePage = "Branch";
 var coreHolidaySetupPage = "HolidaySetup";
 var coreHolidayGroupPage = "HolidayGroup";
 var coreCodeMaintenancePage = "Branch";
@@ -54,7 +54,11 @@ var globalCodeMaintenance;
 
 var globalEmployeeUrl = globalHostname + "/app/Job/Employee";
 
+var globalEmployeeListByCompanyUrl = globalHostname + "/app/Job/Employee/listByCompany";
+
 var globalEmployeeSaveOrUpdateUrl = globalHostname + "/app/Job/Employee/saveOrUpdate";
+
+var globalEmployeeDeleteUrl = globalHostname + "/app/Job/Employee/delete";
 
 var globalEmployeeListUrl = globalHostname + "/app/Job/Employee/list";
 
@@ -174,12 +178,16 @@ var globalDivisionInfoDeleteUrl = globalHostname + "/app/Core/DivisionInfo/delet
 var globalDepartmentInfoDeleteUrl = globalHostname + "/app/Core/DepartmentInfo/delete";
 var globalSectionInfoDeleteUrl = globalHostname + "/app/Core/SectionInfo/delete";
 var globalUnitInfoDeleteUrl = globalHostname + "/app/Core/UnitInfo/delete";
+var globalGradeInfoDeleteUrl = globalHostname + "/app/Core/Job/GradeInfo/delete";
+var globalEmploymentTypeInfoDeleteUrl = globalHostname + "/app/Core/Job/EmploymentTypeInfo/delete";
 var globalBranchDeleteUrl = globalHostname + "/app/Core/Branch/delete";
 var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdate";
 var globalDivisionSaveOrUpdateUrl = globalHostname + "/app/Core/Division/saveOrUpdate";
 var globalDepartmentSaveOrUpdateUrl = globalHostname + "/app/Core/Department/saveOrUpdate";
 var globalSectionSaveOrUpdateUrl = globalHostname + "/app/Core/Section/saveOrUpdate";
 var globalUnitSaveOrUpdateUrl = globalHostname + "/app/Core/Unit/saveOrUpdate";
+var globalGradeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/Grade/saveOrUpdate";
+var globalEmploymentTypeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/EmploymentType/saveOrUpdate";
 var globalBranchInfoSaveOrUpdateUrl = globalHostname + "/app/Core/BranchInfo/saveOrUpdate";
 
 var globalDivisionInfoSaveOrUpdateUrl = globalHostname + "/app/Core/DivisionInfo/saveOrUpdate";
@@ -187,6 +195,9 @@ var globalDepartmentInfoSaveOrUpdateUrl = globalHostname + "/app/Core/Department
 
 var globalSectionInfoSaveOrUpdateUrl = globalHostname + "/app/Core/SectionInfo/saveOrUpdate";
 var globalUnitInfoSaveOrUpdateUrl = globalHostname + "/app/Core/UnitInfo/saveOrUpdate";
+var globalGradeInfoSaveOrUpdateUrl = globalHostname + "/app/Core/Job/GradeInfo/saveOrUpdate";
+var globalEmploymentTypeInfoSaveOrUpdateUrl = globalHostname + "/app/Core/Job/EmploymentTypeInfo/saveOrUpdate";
+var globalEmploymentTypeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/EmploymentType/saveOrUpdate";
 
 var globalBranchGetUrl = globalHostname + "/app/Core/Branch/get"
 
@@ -195,15 +206,26 @@ var globalDepartmentGetUrl = globalHostname + "/app/Core/Department/get"
 var globalSectionGetUrl = globalHostname + "/app/Core/Section/get"
 var globalUnitGetUrl = globalHostname + "/app/Core/Unit/get"
 
+var globalGradeGetUrl = globalHostname + "/app/Core/Job/Grade/get"
+
+var globalEmploymentTypeGetUrl = globalHostname + "/app/Core/Job/EmploymentType/get"
+
 var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?id=";
 
 var globalDivisionListByCompanyUrl = globalHostname + "/app/Core/Division/listByCompany";
 var globalSectionListByCompanyUrl = globalHostname + "/app/Core/Section/listByCompany";
 var globalUnitListByCompanyUrl = globalHostname + "/app/Core/Unit/listByCompany";
+var globalJobSetupListByCompanyUrl = globalHostname + "/app/Core/Job/JobType/listByCompany";
+
+var globalGradeTypeListByCompanyUrl = globalHostname + "/app/Core/Job/Grade/listByCompany";
+var globalEmploymentTypeListByCompanyUrl = globalHostname + "/app/Core/Job/EmploymentType/listByCompany";
 var globalDepartmentListByCompanyUrl = globalHostname + "/app/Core/Department/listByCompany";
 
 var globalDivisionDeleteUrl = globalHostname + "/app/Core/Division/delete";
 var globalUnitDeleteUrl = globalHostname + "/app/Core/Unit/delete";
+var globalJobSetupDeleteUrl = globalHostname + "/app/Core/Job/JobType/delete";
+var globalEmploymentTypeDeleteUrl = globalHostname + "/app/Core/Job/EmploymentType/delete";
+var globalGradeDeleteUrl = globalHostname + "/app/Core/Job/Grade/delete";
 var globalSectionDeleteUrl = globalHostname + "/app/Core/Section/delete";
 var globalDepartmentDeleteUrl = globalHostname + "/app/Core/Department/delete";
 
@@ -218,3 +240,10 @@ var coreApplicationTypeCompany = 0;
 var coreApplicationTypeEmployee = 1;
 var coreApplicationTypeCode = 2;
 var coreApplicationTypeBranch = 3;
+var coreApplicationTypeGradeType = 4;
+var coreApplicationTypeUnit = 5;
+var coreApplicationTypeSection = 6;
+var coreApplicationTypeDepartment = 7;
+var coreApplicationTypeEmploymentType = 8;
+var coreApplicationMaintenanceCode = 9;
+

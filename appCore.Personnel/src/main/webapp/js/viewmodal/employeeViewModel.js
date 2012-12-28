@@ -1,15 +1,30 @@
-var EmployeeViewModel = function (initView, globalViewModel) {
+var EmployeeViewModel = function (initView, globalViewModel, data) {
 
-    this.mode = initView;
-    this.centralPage = "employeeAdd.jsp";
-    this.editPage = "employeeAdd.jsp";
-    this.addPage = "branchAdd.jsp";
-    this.branchForm = "branchForm";
-    this.gridUrl = globalEmployeeUrl;
-    this.codeCommand = "#codeCommand";
-    this.gridId = "gridBranch";
+    var self = this;
+    self.mode = initView;
+    self.centralPage = "employeeAdd.jsp";
+    self.editPage = "employeeAdd.jsp";
+    self.addPage = "branchAdd.jsp";
+    self.branchForm = "branchForm";
+    self.gridUrl = globalEmployeeUrl;
+    self.codeCommand = "#codeCommand";
+    self.gridId = "gridBranch";
 
     this.data = null;
+
+    self.gridData = ko.observableArray(data);
+    self.globalViewModel = globalViewModel;
+
+    self.enableAdd = ko.observable();
+    self.enableUpdate = ko.observable();
+    self.enableDelete = ko.observable();
+
+    var viewColumns = [
+        { headerText:"Employee Code", rowText:"code" },
+        { headerText:"Employee Name", rowText:"name" },
+        { headerText:"Gender", rowText:"gender" },
+        { headerText:"Age", rowText:"age" }
+    ];
 
     var model =
     {
@@ -46,109 +61,101 @@ var EmployeeViewModel = function (initView, globalViewModel) {
         }
     ]};
 
-    var infoColumns = { "columns":[
-        {
-            field:"type",
-            width:90,
-            title:"Type"
-        },
-        {
-            field:"value",
-            width:90,
-            title:"Value"
-        },
-        {
-            field:"description",
-            width:90,
-            title:"Description"
-        },
-        {
-            field:"category",
-            width:90,
-            title:"Category"
-        }
+    /*if (globalViewModel != undefined)
+     {
+     globalViewModel.companyId.subscribe(function (newValue) {
+     $(".maintenanceCommand").empty();
+     $("#employeeListViewGrid").empty();
+     generateEmployeeGrid(newValue);
+     });
 
-    ]};
-
-    var infoModel =
-    {
-        id:"nid",
-        fields:{
-            nid:{ editable:false },
-            type:{  type:"string" },
-            value:{  validation:{ required:true } },
-            description:{  type:"string" },
-            category:{  validation:{ required:true } }
-        }
-    };
-
-    if (globalViewModel != undefined) {
-
-        globalViewModel.companyId.subscribe(function (newValue) {
-            $(".maintenanceCommand").empty();
-            $("#employeeListViewGrid").empty();
-            generateEmployeeGrid(newValue);
-        });
-    }
-
-
-
-    this.getAddPage = function () {
-        return this.addPage;
-    }
-
-    this.getCentralPage = function () {
-        return this.centralPage;
-    }
+     } */
 
     function goToAdd() {
-        globalFormMode = 1;
+        globalViewModel.targetId(null);
+        globalViewModel.editMode(coreModeInsert);
+        globalViewModel.applicationScopeType(coreApplicationTypeEmployee);
         preparePageForLoading("employeeGeneralInfoView.jsp");
     }
 
-    this.getListView = function (companyId) {
-        generateEmployeeGrid(companyId);
+    function updateFunction(data) {
+
+        globalViewModel.targetId(data.nid);
+        globalViewModel.editMode(coreModeEdit);
+        globalViewModel.applicationScopeType(coreApplicationTypeEmployee);
+        //preparePageForLoading("employeeGeneralInfoView.jsp");
+        preparePageForLoading("employeeAdd.jsp");
+    }
+
+    function deleteFunction(data) {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, null, deleteCallBack);
+    }
+
+    function deleteCallBack(status, data, globalViewModel, codeType) {
+        if (status == true) {
+            var helper = new EmployeeHelper();
+            var result = helper.deleteEmployee(data, successDeleteCallback);
+        }
+    }
+
+    function successDeleteCallback(result, data) {
+        if (result.messageCode == 0) {
+            self.gridData.remove(data);
+        }
+    }
+
+    self.getListView = function (companyId) {
+        return generateEmployeeGrid(companyId);
     }
 
     function generateEmployeeGrid(companyId) {
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalEmployeeUrl + "/list", null, "get");
 
-        request.success(function (dataSource) {
-            var gridMetaData =
-            {
-                "gridUrl":globalEmployeeUrl,
-                "data":dataSource,
-                "columns":columns,
-                "model":model
-            };
+        //var ajaxCore = new AjaxCore();
+        //var request = ajaxCore.sendRequest(globalEmployeeListByCompanyUrl, null, "get");
+        //request.success(function (dataSource) {
 
-            var addLinkInfo = {
-                "text":"Add Employee",
-                "commandId":'employeeAdd',
-                "link":this.addPage,
-                "callback":function () {
-                    goToAdd();
-                }
-            };
+        var gridMetaData =
+        {
+            "gridUrl":globalEmployeeUrl,
+            "data":self.gridData,
+            "columns":columns,
+            "model":model
+        };
 
-            var updateLinkInfo = {
-                "text":"Update",
-                "link":"employeeAdd.jsp"
-            };
+        var addLinkInfo = {
+            "text":"Add Employee",
+            "commandId":'employeeAdd',
+            "link":this.addPage,
+            "callback":function () {
+                goToAdd();
+            }
+        };
 
-            gridMetaData.controlId = "employeeListViewGrid";
-            gridMetaData.addLinkInfo = addLinkInfo;
-            gridMetaData.updateLinkInfo = updateLinkInfo;
+        var updateLinkInfo = {
+            "text":"Update",
+            "link":"employeeAdd.jsp"
+        };
 
-            var input = { "id":coreEmployeePage, "roleId":1 };
-            var coreCommand = new CoreCommand();
-            coreCommand.parseCommand(hostAuthorizationUrl, input, gridMetaData);
+        gridMetaData.controlId = "employeeListViewGrid";
+        gridMetaData.addLinkInfo = addLinkInfo;
+        gridMetaData.updateLinkInfo = updateLinkInfo;
+        gridMetaData.gridData = self.gridData;
+        gridMetaData.viewColumns = viewColumns;
+        gridMetaData.updateFunction = updateFunction;
+        gridMetaData.deleteFunction = deleteFunction;
 
-        });
+        /*var input = { "id":coreEmployeePage, "roleId":1 };
+         var coreCommand = new CoreCommand();
+         coreCommand.parseCommand(hostAuthorizationUrl, input, gridMetaData);
+         */
+        return gridMetaData;
+        //});
     }
 
-    this.getView = function () {
+    /*self.getCommandForForm = function () {
 
         var gridDataObject =
         {
@@ -159,7 +166,7 @@ var EmployeeViewModel = function (initView, globalViewModel) {
         };
 
         switch (this.mode) {
-            case 0:
+            case 1:
                 var contactLinkInfo = {
                     "text":"Add Contact",
                     "icon":"icon-plus",
@@ -259,6 +266,7 @@ var EmployeeViewModel = function (initView, globalViewModel) {
                 return gridDataObject;
         }
 
+
         function getContactForm() {
 
             var commandObject = {
@@ -280,7 +288,6 @@ var EmployeeViewModel = function (initView, globalViewModel) {
             var coreDialolg = new CoreDialog();
             coreDialolg.createLoadDialog(commandObject);
         }
-
 
         function getFamilyForm() {
 
@@ -338,4 +345,25 @@ var EmployeeViewModel = function (initView, globalViewModel) {
             coreDialolg.createLoadDialog(commandObject);
         }
     }
+*/
+
+    self.initializeViewModel = function () {
+
+        var gridDataObject = self.getListView();
+        var input = { "id":coreEmployeePage, "roleId":globalViewModel.employeeRole() };
+        var coreCommand = new CoreCommand();
+
+        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        var permissionResult = coreCommand.getPermission(hostAuthorizationUrl, input);
+
+        self.gridViewModel = gridViewModel;
+
+        var helper = new EmployeeHelper();
+        self.enableAdd(helper.getEnableAdd(permissionResult.permission));
+        self.enableUpdate(helper.getEnableUpdate(permissionResult.permission));
+        self.enableDelete(helper.getEnableDelete(permissionResult.permission));
+
+    }
+
+    self.initializeViewModel();
 }

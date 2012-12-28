@@ -168,6 +168,7 @@ var CoreCommand = function () {
             cancellationText = "Cancel";
 
         if (cancelCommandObject == null) {
+
             createCommand(cancellationControlId, cancellationText, cancelCommandObject, controlIdToAppendTo);
             createCancelBindingEventForControl(cancellationControlId, cancellationLink);
         }

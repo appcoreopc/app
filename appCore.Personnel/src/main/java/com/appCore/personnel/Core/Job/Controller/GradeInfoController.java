@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
+import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.GradeInfo;
 
 import com.appCore.personnel.Core.Job.Service.GradeInfoService;
@@ -27,10 +29,9 @@ public class GradeInfoController
 		private GradeInfoService service;
 
 		@RequestMapping(value = "/GradeInfo/list", method = RequestMethod.GET)		
-		public @ResponseBody List<GradeInfo> listGradeInfo ( Model model ) 
+		public @ResponseBody List<GradeInfo> listGradeInfo () 
 		{
 				List<GradeInfo> list = service.getAll();
-				model.addAttribute("data", list);
 				return list;
 		}
 		
@@ -43,47 +44,35 @@ public class GradeInfoController
 		
 
 		@RequestMapping(value = "/GradeInfo/get", method = RequestMethod.GET)		
-		public @ResponseBody GradeInfo getGradeInfo (@RequestParam(value="id", required=true) Integer id, Model model ) 
+		public @ResponseBody GradeInfo getGradeInfo (@RequestParam(value="id", required=true) Integer id) 
 		{
 				GradeInfo gradeInfo=service.get(id);
-				model.addAttribute("modelData", gradeInfo);
 				return gradeInfo;
 		}
 
-		@RequestMapping(value = "/GradeInfo/add", method = RequestMethod.GET)
-		public String renderAddGradeInfo (@ModelAttribute GradeInfo gradeInfo)
-		{
-				service.add(gradeInfo);
-				return "View/Job/GradeInfo/add";
-		}
-
+		
 		@RequestMapping(value = "/GradeInfo/add", method = RequestMethod.POST)
-		public @ResponseBody String addGradeInfo (@ModelAttribute GradeInfo gradeInfo)
+		public @ResponseBody RequestStatus addGradeInfo (@ModelAttribute GradeInfo gradeInfo)
 		{
 				service.add(gradeInfo);
-				return "View/Job/GradeInfo/add";
+				return RequestStatusHelper.GenerateRequestStatusCreateOperation();
 		}
 
 		@RequestMapping(value = "/GradeInfo/saveOrUpdate", method = RequestMethod.POST)
-		public @ResponseBody String saveOrUpdateGradeInfo (@ModelAttribute GradeInfo gradeInfo)
+		public @ResponseBody RequestStatus saveOrUpdateGradeInfo (@RequestBody GradeInfo gradeInfo)
 		{
-				service.saveOrUpdate(gradeInfo);
-				return "View/Job/GradeInfo/add";
+				int saveId = service.saveOrUpdate(gradeInfo);
+				RequestStatus status = RequestStatusHelper.GenerateRequestStatusSaveOperation();
+				status.setSaveCode(saveId);
+				return status;
 		}
 
 		@RequestMapping(value = "/GradeInfo/delete", method = RequestMethod.GET)
-		public @ResponseBody String deleteGradeInfo (@RequestParam(value="id", required=true) Integer id, Model model )
+		public @ResponseBody RequestStatus deleteGradeInfo (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
-
-				return "View/Job/GradeInfo/delete";
+				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
 
-		@RequestMapping(value = "/GradeInfo/edit", method = RequestMethod.GET)
-		public String editGradeInfo ( Model model ) 
-		{
-				return "View/Job/GradeInfo/edit";
-		}
-
-
+		
 }

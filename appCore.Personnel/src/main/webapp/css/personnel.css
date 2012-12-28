@@ -544,3 +544,8 @@ span.fieldSpacer {
     padding-right: 20px;
     font-weight: bold;
 }
+
+
+.formRow textarea {
+    resize: none;
+}

@@ -1,6 +1,5 @@
 var EmployeeHelper = function ()
 {
-
     this.createDialogObject = function(title, message)
     {
         var dialogObject = { title : title, message: message, targetId: "confirmDiv" }
@@ -70,6 +69,15 @@ var EmployeeHelper = function ()
                 var obj = data[i];
                 list.push(obj);
             }
+        });
+    }
+
+    this.deleteEmployee = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalEmployeeDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
         });
     }
 
@@ -534,11 +542,11 @@ ko.bindingHandlers.datepicker = {
 
 ko.bindingHandlers.codepicker = {
     init: function (element, valueAccessor, allBindingsAccessor) {
-        //initialize datepicker with some optional options
+        //initialize with some optional options
         var options = allBindingsAccessor().datepickerOptions || {};
         $(element).datepicker(options);
 
-        $(element).after("<i class='icon-calendar'></i>");
+        $(element).after("<i class=' icon-tag-1'></i>");
 
         var value = ko.utils.unwrapObservable(valueAccessor());
         if (value != null)
@@ -548,13 +556,6 @@ ko.bindingHandlers.codepicker = {
         ko.utils.registerEventHandler(element, "change", function () {
             var observable = valueAccessor();
             observable($(element).val());
-
-            //alert($(element).val());
-            //alert($(element).datepicker("getDate"));
-            //if (observable.isValid()) {
-            //    observable($(element).datepicker("getDate"));
-            //    $(element).blur();
-            //}
         });
 
         //handle disposal (if KO removes by the template binding)
@@ -568,10 +569,9 @@ ko.bindingHandlers.codepicker = {
     update: function (element, valueAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor());
 
-        //handle date data coming via json from Microsoft
-        //if (String(value).indexOf('/Date(') == 0) {
-        //    value = new Date(parseInt(value.replace(/\/Date\((.*?)\)\//gi, "$1")));
-        //}
+        // query data url // using http get //
+        // determine response
+        // show status
 
         var current = $(element).datepicker("getDate");
 

@@ -34,14 +34,14 @@ public class BranchController {
 		return service.getSummary(id);
 	}
 
-	@RequestMapping(value = "/Branch/listByCompany", method = RequestMethod.GET)		
-	public @ResponseBody List<Branch> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
-	{
-			List<Branch> list = service.getAllByCompany(id);
-			return list;
+	@RequestMapping(value = "/Branch/listByCompany", method = RequestMethod.GET)
+	public @ResponseBody
+	List<Branch> listByCompany(
+			@RequestParam(value = "id", required = true) Integer id) {
+		List<Branch> list = service.getAllByCompany(id);
+		return list;
 	}
-	
-	
+
 	@RequestMapping(value = "/Branch/list", method = RequestMethod.GET)
 	public @ResponseBody
 	List<Branch> listBranch(Model model) {
@@ -80,7 +80,9 @@ public class BranchController {
 	}
 
 	@RequestMapping(value = "/Branch/delete", method = RequestMethod.GET)
-	public @ResponseBody RequestStatus deleteBranch(@RequestParam(value = "id", required = true) Integer id) {
+	public @ResponseBody
+	RequestStatus deleteBranch(
+			@RequestParam(value = "id", required = true) Integer id) {
 		service.delete(id);
 		return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 	}

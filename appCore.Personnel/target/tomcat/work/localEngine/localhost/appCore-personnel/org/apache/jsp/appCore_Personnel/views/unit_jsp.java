@@ -76,7 +76,7 @@ public final class unit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("            request.success(function(data)\r\n");
       out.write("            {\r\n");
-      out.write("            var vm = new UnitListViewModel(0, data, globalViewModel);\r\n");
+      out.write("            var vm = new UnitListViewModel(coreModeList, data, globalViewModel);\r\n");
       out.write("            ko.applyBindings(vm, document.getElementById(\"unitDiv\"));\r\n");
       out.write("            });\r\n");
       out.write("        }\r\n");

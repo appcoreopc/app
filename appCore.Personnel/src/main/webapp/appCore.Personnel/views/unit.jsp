@@ -24,7 +24,7 @@
 
             request.success(function(data)
             {
-            var vm = new UnitListViewModel(0, data, globalViewModel);
+            var vm = new UnitListViewModel(coreModeList, data, globalViewModel);
             ko.applyBindings(vm, document.getElementById("unitDiv"));
             });
         }

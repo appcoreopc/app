@@ -185,20 +185,22 @@
 
         $(document).ready(function()
         {
-            var ajaxCore = new AjaxCore();
-            var employeeId = { id : globalCurrentId.nid };
-            var request = ajaxCore.sendRequest(globalEmployeeContactGetByEmployeeUrl, employeeId, "get");
-
-            request.success(function(dataSource)
+            if (globalViewModel.targetId != null && globalViewModel.applicationScopeType() == coreApplicationTypeEmployee)
             {
-                var input = { "id" : coreEmployeeContactViewPage, "roleId" : globalViewModel.employeeRole() };
-                var coreCommand = new CoreCommand();
-                var result = coreCommand.getPermission(hostAuthorizationUrl, input);
+                var ajaxCore = new AjaxCore();
+                var employeeId = { id : globalViewModel.targetId()  };
+                var request = ajaxCore.sendRequest(globalEmployeeContactGetByEmployeeUrl, employeeId, "get");
 
-                var vm = new EmployeeContactViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-                ko.applyBindings(vm, document.getElementById("contactDataContent"));
-            });
+                request.success(function(dataSource)
+                {
+                    var input = { "id" : coreEmployeeContactViewPage, "roleId" : globalViewModel.employeeRole() };
+                    var coreCommand = new CoreCommand();
+                    var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
+                    var vm = new EmployeeContactViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                    ko.applyBindings(vm, document.getElementById("contactDataContent"));
+                });
+            }
         });
 
         </script>

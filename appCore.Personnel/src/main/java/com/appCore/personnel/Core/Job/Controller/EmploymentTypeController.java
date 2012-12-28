@@ -16,6 +16,7 @@ import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.EmployeeExpertise;
 import com.appCore.personnel.Core.Job.Entity.EmploymentType;
+import com.appCore.personnel.Core.Job.Entity.Grade;
 
 import com.appCore.personnel.Core.Job.Service.EmploymentTypeService;
 
@@ -37,6 +38,14 @@ public class EmploymentTypeController
 				return list;
 		}
 
+		@RequestMapping(value = "/EmploymentType/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<EmploymentType> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				
+				List<EmploymentType> list = service.getAllByCompany(id);
+				return list;
+		}
+		
 		@RequestMapping(value = "/EmploymentType/get", method = RequestMethod.GET)		
 		public @ResponseBody EmploymentType getEmploymentType (@RequestParam(value="id", required=true) Integer id) 
 		{

@@ -217,8 +217,8 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("        $(\"#companyDropDownList\").change(function()\r\n");
       out.write("        {\r\n");
-      out.write("        globalCurrentCompanyId = $(this).find(\"option:selected\").val();\r\n");
-      out.write("        globalViewModel.companyId(globalCurrentCompanyId);\r\n");
+      out.write("            globalCurrentCompanyId = $(this).find(\"option:selected\").val();\r\n");
+      out.write("            globalViewModel.companyId(globalCurrentCompanyId);\r\n");
       out.write("        });\r\n");
       out.write("        });\r\n");
       out.write("\r\n");

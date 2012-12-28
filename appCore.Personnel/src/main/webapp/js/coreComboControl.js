@@ -91,7 +91,8 @@ var CommandWidgetControlRenderer = function () {
     this.objDataObjects;
     var objDataObjects;
 
-    this.createControl = function (data, dataObjects) {
+    this.createControl = function (data, dataObjects, dataCount) {
+
         this.objDataObjects = dataObjects;
 
         objDataObjects = dataObjects;
@@ -109,7 +110,7 @@ var CommandWidgetControlRenderer = function () {
             parsedHtml += "<li>" + data[i].text + "</li>";
         }
 
-        parsedHtml += "<li>Total count <span class='widgetHighlight'> " + data.length + "  </span>   </li>";
+        parsedHtml += "<li>Total count <span class='widgetHighlight'> " + dataCount + "  </span>   </li>";
         parsedHtml += "</ul>";
         parsedHtml += "</div></div>";
 
@@ -181,11 +182,13 @@ var WidgetCommandControl = function () {
             var result = parser.parseKeyText(dataObjects.key, dataObjects.text, data[dataObjects.list]);
 
             var ctl = new CommandWidgetControlRenderer();
-            ctl.createControl(result, dataObjects);
+            ctl.createControl(result, dataObjects, data.count);
         });
     }
 }
 
+
+// jeremy
 
 var TestCodeExector = function () {
     this.execute = function (jsonCode) {

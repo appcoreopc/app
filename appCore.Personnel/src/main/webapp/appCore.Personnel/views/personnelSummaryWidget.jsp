@@ -34,7 +34,7 @@
         "clickControlId" : "aBranchAdd",
         "clickCode" : function()
         {
-        preparePageForLoading("branch.jsp");
+            preparePageForLoading("branch.jsp");
         }
         };
 
@@ -52,7 +52,7 @@
         "clickControlId" : "aDivisionAdd",
         "clickCode" : function()
         {
-        preparePageForLoading("division.jsp");
+            preparePageForLoading("division.jsp");
         }
         };
 
@@ -70,7 +70,7 @@
         "clickControlId" : "aUnitAdd",
         "clickCode" : function()
         {
-        preparePageForLoading("unit.jsp");
+            preparePageForLoading("unit.jsp");
         }
         };
 
@@ -88,7 +88,7 @@
         "clickControlId" : "aDepartmentAdd",
         "clickCode" : function()
         {
-        preparePageForLoading("department.jsp");
+            preparePageForLoading("department.jsp");
         }
         };
 

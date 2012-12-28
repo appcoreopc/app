@@ -25,10 +25,11 @@ insert into forms (formid, link, category_nid) values ('Marital Status Code', 'm
 insert into forms (formid, link, category_nid) values ('Level Code', 'maintenanceCode.jsp?id=8', 1);
 insert into forms (formid, link, category_nid) values ('Field Of ExpertiseCode', 'maintenanceCode.jsp?id=9', 1);
 insert into forms (formid, link, category_nid) values ('Family Relation Type', 'maintenanceCode.jsp?id=10', 1);
+insert into forms (formid, link, category_nid) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1);
 
 
 insert into forms (formid, link, category_nid) values ('Job Setup', 'jobSetup.jsp', 2);
-insert into forms (formid, link, category_nid) values ('Employee Group', 'employeeGroup.jsp', 2);
+insert into forms (formid, link, category_nid) values ('Configure Employee Group', 'employeeGroup.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Grade', 'grade.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Employment Type', 'employmentType.jsp', 2);
 
@@ -230,7 +231,7 @@ insert into departmentInfo (category, description, type, value, refEntity) value
 insert into departmentInfo (category, description, type, value, refEntity) values ('DepInfoB', 'DepInfoDescB', 'DeptInfoTypeB', 'DepInfoValB', 2);
 
 insert into departmentInfo (category, description, type, value, refEntity) values ('DPP', 'DP', 'DPTYPE', 'DPValue', 3);
-
+	
 	
 insert into sectionInfo (category, description, type, value, refEntity) values ('Sec1', 'Sec1Desc1', 'Sec1', 'Sec1Val', 1);
 insert into sectionInfo (category, description, type, value, refEntity) values ('Sec2', 'Sec1Desc2', 'Sec2', 'Sec2Val', 1);
@@ -248,5 +249,39 @@ insert into unitInfo (category, description, type, value, refEntity) values ('Un
 insert into unitInfo (category, description, type, value, refEntity) values ('UUUUU', 'UDESCCCCC', 'UVALLLL', 'UValvalval', 2);
 
 
+
+insert into grade (code, category, description, companyref) values ('Grade1', 'Cat1', 'Description1', 1);
+insert into grade (code, category, description, companyref) values ('Grade2', 'Cat2', 'Description2', 1);
+insert into grade (code, category, description, companyref) values ('Grade3', 'Cat3', 'Description3', 1);
+insert into grade (code, category, description, companyref) values ('Grade4', 'Cat4', 'Description4', 1);
+
+insert into grade (code, category, description, companyref) values ('GradeAAA', 'CatAAA', 'DescriptionAAA', 2);
+insert into grade (code, category, description, companyref) values ('GradeBBB', 'CatBBB', 'DescriptionBBB', 2);
+
+
+insert into employmentType (code, category, description, companyref) values ('Permanent', 'Permanent', 'Perment/Forever', 1);
+insert into employmentType (code, category, description, companyref) values ('Temporary', 'Temprary', 'Temporary/Possible Permanent', 1);
+insert into employmentType (code, category, description, companyref) values ('Part Time', 'Part Time', 'Part Time-Desc', 1);
+
+insert into employmentType (code, category, description, companyref) values ('Permanent', 'Permanent', 'Perment', 2);
+insert into employmentType (code, category, description, companyref) values ('Temporary', 'Temprary', 'Temporary', 2);
+insert into employmentType (code, category, description, companyref) values ('Part Time', 'Part Time', 'Parttimers', 2);
+
+
+	
+insert into jobtype (code, jobcategory, description, companyref) values ('Job2', 'Job2Type', 'Job2Desc', 1);
+insert into jobtype (code, jobcategory, description, companyref) values ('Job3', 'Job3Type', 'Job3Desc', 1);
+
+
+insert into jobtype (code, jobcategory, description, companyref) values ('JobA', 'JobAType', 'JobADesc', 2);
+insert into jobtype (code, jobcategory, description, companyref) values ('JobB', 'JobBType', 'JobBDesc', 2);
+
+
+insert into EmployeeGroup (name, description, companyref) values ('Emp1', 'Emp1',  1);
+insert into EmployeeGroup (name, description, companyref) values ('Emp2', 'Emp2',  1);
+insert into EmployeeGroup (name, description, companyref) values ('Emp3	', 'Emp3',  1);
+
+insert into EmployeeGroup (name, description, companyref) values ('EmpA', 'EmpA', 2);
+insert into EmployeeGroup (name, description, companyref) values ('EmpB', 'EmpB', 2);
 
 

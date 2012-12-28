@@ -24,7 +24,7 @@
                 request.success(function(data)
                 {
                     var vm = new DivisionListViewModel(0, data, globalViewModel);
-                    ko.applyBindings(vm, document.getElementById("branchDiv"));
+                    ko.applyBindings(vm, document.getElementById("divisionDiv"));
                 });
             }
 
@@ -39,7 +39,7 @@
        </div>
 
        <div>
-        <div id="branchDiv" data-bind="dataGrid: gridViewModel"></div>
+        <div id="divisionDiv" data-bind="dataGrid: gridViewModel"></div>
        </div>
 
         </div>

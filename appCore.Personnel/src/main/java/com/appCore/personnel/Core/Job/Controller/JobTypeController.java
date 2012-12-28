@@ -21,7 +21,7 @@ import com.appCore.personnel.Core.Job.Service.JobTypeService;
 
 
 @Controller
-@RequestMapping("/Job")
+@RequestMapping("/Core/Job")
 public class JobTypeController
 { 
 		protected static Logger logger = Logger.getLogger("controller");

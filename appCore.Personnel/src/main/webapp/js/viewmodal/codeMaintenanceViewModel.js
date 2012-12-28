@@ -13,6 +13,10 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     self.companyRef = ko.observable("");
     self.lastUpdate = ko.observable("");
 
+    self.enableAdd = ko.observable();
+    self.enableUpdate = ko.observable();
+    self.enableDelete = ko.observable();
+
     this.centralPage = "maintenanceCode.jsp";
     this.editPage = "maintenanceCodeAdd.jsp";
     this.addPage = "maintenanceCodeAdd.jsp";
@@ -22,16 +26,12 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     this.codeCommand = "#maintenanceCodeCommand";
     this.gridId = "codeGrid";
     this.data = data;
-    this.codeType = codeType;
+    self.codeType = codeType;
 
     var form = "codeForm";
 
-    globalViewModel.companyId.subscribe(function(newValue)
-    {
-
-    });
-
-    self.gridData = ko.observableArray(data);
+    if (initView == 0)
+        self.gridData = ko.observableArray(data);
 
     var viewColumns = [
         { headerText:"Code Name", rowText:"name" },
@@ -104,6 +104,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
     function deleteFunction(data) {
 
+
         var dialog = new CoreDialog();
         var helper = new EmployeeHelper();
         var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
@@ -120,7 +121,6 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     }
 
     this.getView = function () {
-
         var gridDataObject =
         {
             "gridUrl":this.gridUrl,
@@ -159,6 +159,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
                 return gridDataObject;
 
             case 1:
+
 
                 var helper = new CodeMaintenanceHelper(this.codeType);
                 gridDataObject.gridUrl = helper.getUrl();
@@ -232,6 +233,22 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         });
     }
 
+    self.cancelChanges = function()
+    {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Cancel changes", "Do you want to cancel your changes?");
+        var result = dialog.createConfirmationDialog(dialogObject, null, globalViewModel, null, deleteCancelCallBack);
+    }
+
+    function deleteCancelCallBack(status, data, globalViewModel, codeType) {
+
+        if (status == true) {
+            preparePageForLoading("maintenanceCode.jsp");
+        }
+    }
+
+
     this.saveDataForm = function () {
 
         var helper = new EmployeeHelper();
@@ -257,12 +274,34 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
         var request = ajaxCore.sendRequestType(helper.getUrl() + "/saveOrUpdate", code, "post");
         request.success(function (data, status, xhrObj) {
-            globalCurrentId = null;
+
+            globalViewModel.targetId(null);
+            globalViewModel.editMode(null);
+            globalViewModel.applicationScopeType(coreApplicationMaintenanceCode);
             preparePageForLoading("maintenanceCode.jsp");
         });
     }
 
-    function goToAdd() {
+    function goToAdd()
+    {
+        globalViewModel.targetId(null);
+        globalViewModel.applicationScopeType(coreApplicationMaintenanceCode);
+        globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("maintenanceCodeAdd.jsp");
     }
+
+
+    function initializeApp()
+    {
+        var input = { "id" : coreCodeMaintenancePage, "roleId" : globalViewModel.employeeRole() };
+        var coreCommand = new CoreCommand();
+        var result = coreCommand.getPermission(hostAuthorizationUrl, input);
+
+        var helper = new EmployeeHelper();
+        self.enableAdd(helper.getEnableAdd(result.permission));
+        self.enableUpdate(helper.getEnableUpdate(result.permission));
+        self.enableDelete(helper.getEnableDelete(result.permission));
+    }
+
+    initializeApp();
 }

@@ -52,10 +52,11 @@ public class GradeInfoService
 	}
 
 
-	public void saveOrUpdate(GradeInfo gradeInfo) 
+	public int saveOrUpdate(GradeInfo gradeInfo) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(gradeInfo);
+		return gradeInfo.getNid();
 	}
 
 

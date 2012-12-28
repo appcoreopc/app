@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.appCore.personnel.Core.Job.Entity.EmployeeExpertise;
 import com.appCore.personnel.Core.Job.Entity.EmploymentType;
+import com.appCore.personnel.Core.Job.Entity.EmploymentTypeInfo;
 
 @Service("employmentTypeService")
 @Transactional
@@ -25,7 +26,14 @@ public class EmploymentTypeService
 	{	
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  EmploymentType");
-
+		return  query.list();
+	}
+		
+	public List<EmploymentType> getAllByCompany(Integer id)  
+	{	
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  EmploymentType WHERE CompanyRef = :id");
+		query.setParameter("id", id);
 		return  query.list();
 	}
 
@@ -34,6 +42,11 @@ public class EmploymentTypeService
 		Session session = sessionFactory.getCurrentSession();
 		EmploymentType employmentType = (EmploymentType) session.get(EmploymentType.class, id);
 
+		Query query = session.createQuery("FROM  EmploymentTypeInfo WHERE RefEntity = :id");
+		query.setParameter("id", id);
+		List<EmploymentTypeInfo> info = query.list();
+		employmentType.setEmploymentTypeInfo(info);
+		
 		return employmentType;
 	}
 	

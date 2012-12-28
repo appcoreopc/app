@@ -1,10 +1,11 @@
-    <script language="javascript" src="../../js/viewmodal/codeMaintenanceViewModel.js"></script>
-    <script language="javascript" src="../../js/viewmodal/codeMaintenanceHelper.js"></script>
-
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+        <script language="javascript" src="../../js/viewmodal/codeMaintenanceViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/codeMaintenanceHelper.js"></script>
         <script type="text/javascript">
 
         $(document).ready(function()
         {
+
             getData(globalViewModel.companyId());
             globalViewModel.companyId.subscribe(function(newValue)
             {
@@ -14,28 +15,32 @@
 
         function getData(companyId)
         {
+
             var codeType = parseInt(globalCodeMaintenance);
+
             if (codeType != null)
-            {
-                var helper = new CodeMaintenanceHelper(codeType);
-                var gridUrl = helper.getUrl();
-                var ajaxCore = new AjaxCore();
-                var companyObject = { id : companyId };
-                var request = ajaxCore.sendRequest(gridUrl + "/listByCompany", companyObject, "get");
-                var vm;
-
-                request.success(function(data)
                 {
-                vm = new CodeMaintenanceViewModel(0, codeType, data, globalViewModel);
-                var gridDataObject = vm.getView();
-                var input = { "id" : coreDivisionPage, "roleId" : 1 };
-                var coreCommand = new CoreCommand();
-                var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
-                vm.gridViewModel = gridViewModel;
-                ko.applyBindings(vm, document.getElementById("codeMaintenanceGrid"));
+                    var helper = new CodeMaintenanceHelper(codeType);
+                    var gridUrl = helper.getUrl();
+                    var ajaxCore = new AjaxCore();
+                    var companyObject = { id : companyId };
 
-                });
-            }
+                    var request = ajaxCore.sendRequest(gridUrl + "/listByCompany", companyObject, "get");
+                    var vm;
+
+                    request.success(function(data)
+                    {
+                        vm = new CodeMaintenanceViewModel(coreModeList, codeType, data, globalViewModel);
+                        var gridDataObject = vm.getView();
+                        var input = { "id" : coreCodeMaintenancePage, "roleId" : 1 };
+                        var coreCommand = new CoreCommand();
+
+                        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
+                        vm.gridViewModel = gridViewModel;
+                        ko.applyBindings(vm, document.getElementById("codeMaintenanceGrid"));
+
+                    });
+                }
         }
 
         </script>

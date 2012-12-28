@@ -31,7 +31,7 @@ public class EmployeeService
 	public List<Employee> getAllByCompany(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  Employee WHERE CompanyRef = id");
+		Query query = session.createQuery("FROM  Employee WHERE CompanyRef = :id");
 		query.setParameter("id", id);
 		return  query.list();
 	}

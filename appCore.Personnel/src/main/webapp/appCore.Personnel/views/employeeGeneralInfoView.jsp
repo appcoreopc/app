@@ -340,19 +340,21 @@
                 var coreCommand = new CoreCommand();
                 var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-                if (globalCurrentId != null)
-                {
-                        globalCurrentEmployee = globalCurrentId.nid;
-                }
-                if (globalFormMode == 1)
-                {
-                        vm = new EmployeeGeneralInfoViewModel(1, result.permission);
-                }
-                else
-                {
-                        vm = new EmployeeGeneralInfoViewModel(0, result.permission, globalCurrentId.nid);
-                }
+                //if (globalViewModel.targetId != null)
+                //{
+                //        globalCurrentEmployee = globalCurrentId.nid;
+                //}
 
+                //if (globalFormMode == 1)
+                //{
+                //        vm = new EmployeeGeneralInfoViewModel(1, result.permission);
+                //}
+                //else
+                //{
+                //        vm = new EmployeeGeneralInfoViewModel(0, result.permission, globalCurrentId.nid);
+                //}
+
+                vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
                 ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
 
                 var tab = $("#employeeAddTabs").tabs();

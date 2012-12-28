@@ -9,7 +9,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.appCore.personnel.Core.Entity.BranchInfo;
 import com.appCore.personnel.Core.Job.Entity.Grade;
+import com.appCore.personnel.Core.Job.Entity.GradeInfo;
 
 @Service("gradeService")
 @Transactional
@@ -40,7 +42,11 @@ public class GradeService
 	{
 		Session session = sessionFactory.getCurrentSession();
 		Grade grade = (Grade) session.get(Grade.class, id);
-
+		
+		Query query = session.createQuery("FROM GradeInfo WHERE RefEntity = :id");
+		query.setParameter("id", id);
+		List<GradeInfo> info = query.list();
+		grade.setGradeInfo(info);
 		return grade;
 	}
 

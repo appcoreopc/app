@@ -39,6 +39,8 @@ var CodeMaintenanceHelper = function (codeType)
                 return this.gridUrl + "FieldOfExpertise";
             case 10:
                 return this.gridUrl + "FamilyRelationType";
+            case 11:
+                return this.gridUrl + "EmployeeGroup";
         }
     }
 
@@ -66,6 +68,8 @@ var CodeMaintenanceHelper = function (codeType)
                 return "Field Of Expertise";
             case 10:
                 return "Family Relation Type";
+            case 11:
+                return "Employee Group";
         }
     }
 
@@ -74,12 +78,12 @@ var CodeMaintenanceHelper = function (codeType)
         var maintenanceCodeObject = { companyId: companyId,  "id" : id };
         var url = this.getUrl(codeType);
 
-         /*var ajaxCore = new AjaxCore();
+        var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestSequential(url + "/delete", maintenanceCodeObject, "get");
         request.success(function(data)
         {
             return data.messageCode;
-        });*/
+        })
     }
 
 }

@@ -20,7 +20,6 @@ function cancelFormChanges() {
 function cancelFormChangesWindow(ctrlId, link) {
 
     var cancelWindow = $("#" + ctrlId);
-
     cancelWindow.kendoWindow({
         width:"350px",
         height:"160px",

@@ -102,6 +102,8 @@ i .icon-doc-3 {
 
 .emptyData {
    min-height: 480px;
+   background: url("../images/empty.png") no-repeat scroll right bottom transparent;
+   opacity: 0.2;
 }
 
 .emptyData ul li {

@@ -86,7 +86,7 @@ public final class personnelSummaryWidget_jsp extends org.apache.jasper.runtime.
       out.write("        \"clickControlId\" : \"aBranchAdd\",\r\n");
       out.write("        \"clickCode\" : function()\r\n");
       out.write("        {\r\n");
-      out.write("        preparePageForLoading(\"branch.jsp\");\r\n");
+      out.write("            preparePageForLoading(\"branch.jsp\");\r\n");
       out.write("        }\r\n");
       out.write("        };\r\n");
       out.write("\r\n");
@@ -104,7 +104,7 @@ public final class personnelSummaryWidget_jsp extends org.apache.jasper.runtime.
       out.write("        \"clickControlId\" : \"aDivisionAdd\",\r\n");
       out.write("        \"clickCode\" : function()\r\n");
       out.write("        {\r\n");
-      out.write("        preparePageForLoading(\"division.jsp\");\r\n");
+      out.write("            preparePageForLoading(\"division.jsp\");\r\n");
       out.write("        }\r\n");
       out.write("        };\r\n");
       out.write("\r\n");
@@ -122,7 +122,7 @@ public final class personnelSummaryWidget_jsp extends org.apache.jasper.runtime.
       out.write("        \"clickControlId\" : \"aUnitAdd\",\r\n");
       out.write("        \"clickCode\" : function()\r\n");
       out.write("        {\r\n");
-      out.write("        preparePageForLoading(\"unit.jsp\");\r\n");
+      out.write("            preparePageForLoading(\"unit.jsp\");\r\n");
       out.write("        }\r\n");
       out.write("        };\r\n");
       out.write("\r\n");
@@ -140,7 +140,7 @@ public final class personnelSummaryWidget_jsp extends org.apache.jasper.runtime.
       out.write("        \"clickControlId\" : \"aDepartmentAdd\",\r\n");
       out.write("        \"clickCode\" : function()\r\n");
       out.write("        {\r\n");
-      out.write("        preparePageForLoading(\"department.jsp\");\r\n");
+      out.write("            preparePageForLoading(\"department.jsp\");\r\n");
       out.write("        }\r\n");
       out.write("        };\r\n");
       out.write("\r\n");

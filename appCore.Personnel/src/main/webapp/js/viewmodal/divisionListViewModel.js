@@ -53,41 +53,6 @@ var DivisionListViewModel = function (initView, data, globalViewModel) {
         }
     ]};
 
-    var infoColumns = { "columns":[
-        {
-            field:"type",
-            width:90,
-            title:"Type"
-        },
-        {
-            field:"value",
-            width:90,
-            title:"Value"
-        },
-        {
-            field:"description",
-            width:90,
-            title:"Description"
-        },
-        {
-            field:"category",
-            width:90,
-            title:"Category"
-        }
-
-    ]};
-
-    var infoModel = {
-        id:"nid",
-        fields:{
-            nid:{ editable:false },
-            type:{  type:"string" },
-            value:{  validation:{ required:true } },
-            description:{  type:"string" },
-            category:{  validation:{ required:true } }
-        }
-    };
-
     function getView() {
         var gridDataObject =
         {
