@@ -42,14 +42,24 @@ import javax.persistence.Table;
 		@Column(name = "HolidayDate")
 		private Date holidayDate;
 
+
+		@Column(name = "CompanyRef")
+		private Integer companyRef;
+
+		
+		public Integer getCompanyRef() {
+			return companyRef;
+		}
+
+
+		public void setCompanyRef(Integer companyId) {
+			this.companyRef = companyId;
+		}
+
 		
 		@Column(name = "Recurring")
 		private Boolean recurring;
 		
-		
-		@Column(name = "RefEntity")
-		private Integer refEntity;
-
 		
 		@Column(name = "Description")
 		private String description;
@@ -109,15 +119,7 @@ import javax.persistence.Table;
 			this.recurring = recurring;
 		}
 
-		public Integer getRefEntity() { 
-			return this.refEntity;
-		}
-
-
-		public void setRefEntity(Integer refEntity) { 
-			this.refEntity = refEntity;
-		}
-
+		
 		public String getDescription() { 
 			return this.description;
 		}

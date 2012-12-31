@@ -229,7 +229,7 @@
         $(document).ready(function()
         {
             var ajaxCore = new AjaxCore();
-            var employeeId = { id : globalCurrentId.nid };
+            var employeeId = { id : globalViewModel.targetId()};
             var request = ajaxCore.sendRequest(globalEmployeeFamilyGetByEmployeeUrl, employeeId, "get");
 
             request.success(function(dataSource)
@@ -246,18 +246,18 @@
 
         </script>
 
-        <div id="familyDataContent" data-bind="template : {name : templateToUse, foreach :
-        bindingSource}">
+        <div id="familyDataContent">
 
-        <div data-bind="visible : $root.bindingSource().length == 0" class="emptyData">
-        <div>
-        <ul>
+                <div data-bind="visible : $root.bindingSource().length == 0" class="emptyData">
+                <div>
+                    <ul>
+                        <li class='emptyDataSpacer'> </li>
+                        <li> No data available.</li>
+                    </ul>
+                </div>
+                </div>
 
-        <li class='emptyDataSpacer'> </li>
-        <li> No data available.</li>
-        </ul>
+            <div data-bind="template : {name : templateToUse, foreach : bindingSource}">
+            </div>
+
         </div>
-        </div>
-
-        </div>
-

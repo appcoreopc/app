@@ -52,7 +52,7 @@ public final class holidaySetupAdd_jsp extends org.apache.jasper.runtime.HttpJsp
 
       out.write("<script type=\"text/javascript\">          \r\n");
       out.write("\r\n");
-      out.write("    var currentService = hostname + \"/app/Core/Calendar/Holiday\";\r\n");
+      out.write("    var currentService = globalHostname + \"/app/Core/Calendar/Holiday\";\r\n");
       out.write("\r\n");
       out.write("\t$(\"#myform\").validationEngine();\r\n");
       out.write("\t\r\n");

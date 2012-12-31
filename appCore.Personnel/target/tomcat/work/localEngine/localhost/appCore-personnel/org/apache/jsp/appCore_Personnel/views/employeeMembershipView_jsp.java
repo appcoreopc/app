@@ -234,7 +234,7 @@ public final class employeeMembershipView_jsp extends org.apache.jasper.runtime.
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("            var ajaxCore = new AjaxCore();\r\n");
-      out.write("            var employeeId = { id : globalCurrentId.nid };\r\n");
+      out.write("            var employeeId = { id : globalViewModel.targetId() };\r\n");
       out.write("            var request = ajaxCore.sendRequest(globalEmployeeEmployeeMembershipGetByEmployeeUrl, employeeId, \"get\");\r\n");
       out.write("\r\n");
       out.write("            request.success(function(dataSource)\r\n");
@@ -251,21 +251,20 @@ public final class employeeMembershipView_jsp extends org.apache.jasper.runtime.
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
-      out.write("        <div id=\"membershipDataContent\" data-bind=\"template : {name : templateToUse, foreach :\r\n");
-      out.write("        bindingSource}\">\r\n");
-      out.write("\r\n");
+      out.write("        <div id=\"membershipDataContent\">\r\n");
       out.write("            <div data-bind=\"visible : $root.bindingSource().length == 0\" class=\"emptyData\">\r\n");
-      out.write("            <div>\r\n");
-      out.write("            <ul>\r\n");
-      out.write("\r\n");
-      out.write("            <li class='emptyDataSpacer'> </li>\r\n");
-      out.write("            <li> No data available.</li>\r\n");
-      out.write("            </ul>\r\n");
+      out.write("                <div>\r\n");
+      out.write("                    <ul>\r\n");
+      out.write("                        <li class='emptyDataSpacer'> </li>\r\n");
+      out.write("                        <li> No data available.</li>\r\n");
+      out.write("                    </ul>\r\n");
+      out.write("                </div>\r\n");
       out.write("            </div>\r\n");
-      out.write("            </div>\r\n");
       out.write("\r\n");
-      out.write("\r\n");
+      out.write("        <div data-bind=\"template : {name : templateToUse, foreach : bindingSource}\">\r\n");
       out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("        </div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

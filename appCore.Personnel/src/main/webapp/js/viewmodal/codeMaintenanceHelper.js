@@ -41,6 +41,8 @@ var CodeMaintenanceHelper = function (codeType)
                 return this.gridUrl + "FamilyRelationType";
             case 11:
                 return this.gridUrl + "EmployeeGroup";
+            case 12:
+                return globalHostname + "/app/Core/Calendar/" + "HolidayGroup";
         }
     }
 
@@ -70,6 +72,8 @@ var CodeMaintenanceHelper = function (codeType)
                 return "Family Relation Type";
             case 11:
                 return "Employee Group";
+            case 12:
+                return "Holiday Group";
         }
     }
 

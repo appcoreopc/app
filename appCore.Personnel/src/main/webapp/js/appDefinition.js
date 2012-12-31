@@ -1,7 +1,6 @@
 var globalHostname = "http://localhost:8080/appCore-personnel";
 var globalMenuServiceUrl = "/app/User/Forms/listMenu";
 var globalCompanyServiceUrl = "/app/Core/CompanyEntity/list";
-//var globalCurrentId;
 
 var hostAuthorizationUrl = globalHostname + "/app/User/Forms/get";
 
@@ -22,7 +21,7 @@ var coreAdminPage = "Admin";
 var coreUserPage = "User";
 var coreGradePage = "Branch";
 var coreEmploymentTypePage = "Branch";
-var coreHolidaySetupPage = "HolidaySetup";
+var coreHolidaySetupPage = "Branch";
 var coreHolidayGroupPage = "HolidayGroup";
 var coreCodeMaintenancePage = "Branch";
 
@@ -56,6 +55,8 @@ var globalEmployeeUrl = globalHostname + "/app/Job/Employee";
 
 var globalEmployeeListByCompanyUrl = globalHostname + "/app/Job/Employee/listByCompany";
 
+var globalEmployeeGroupListByCompanyUrl = globalHostname + "/app/Job/EmployeeGroup/listByCompany";
+
 var globalEmployeeSaveOrUpdateUrl = globalHostname + "/app/Job/Employee/saveOrUpdate";
 
 var globalEmployeeDeleteUrl = globalHostname + "/app/Job/Employee/delete";
@@ -73,6 +74,8 @@ var globalEmployeeContactListUrl = globalHostname + "/app/Job/EmployeeContact/li
 var globalEmployeeContactGetUrl = globalHostname + "/app/Job/EmployeeContact/list";
 
 var globalEmployeeContactGetByEmployeeUrl = globalHostname + "/app/Job/EmployeeContact/getByEmployee";
+
+var globalEmployeeQualificationGetByEmployeeUrl = globalHostname + "/app/Job/EmployeeQualification/getByEmployee";
 
 var globalCompanyUrl = globalHostname + "/app/Core/Company";
 
@@ -215,6 +218,7 @@ var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?i
 var globalDivisionListByCompanyUrl = globalHostname + "/app/Core/Division/listByCompany";
 var globalSectionListByCompanyUrl = globalHostname + "/app/Core/Section/listByCompany";
 var globalUnitListByCompanyUrl = globalHostname + "/app/Core/Unit/listByCompany";
+var globalHolidaySetupListByCompanyUrl = globalHostname + "/app/Core/Calendar/Holiday/listByCompany";
 var globalJobSetupListByCompanyUrl = globalHostname + "/app/Core/Job/JobType/listByCompany";
 
 var globalGradeTypeListByCompanyUrl = globalHostname + "/app/Core/Job/Grade/listByCompany";
@@ -223,6 +227,7 @@ var globalDepartmentListByCompanyUrl = globalHostname + "/app/Core/Department/li
 
 var globalDivisionDeleteUrl = globalHostname + "/app/Core/Division/delete";
 var globalUnitDeleteUrl = globalHostname + "/app/Core/Unit/delete";
+var globalHolidayDeleteUrl = globalHostname + "/app/Core/Calendar/Holiday/delete";
 var globalJobSetupDeleteUrl = globalHostname + "/app/Core/Job/JobType/delete";
 var globalEmploymentTypeDeleteUrl = globalHostname + "/app/Core/Job/EmploymentType/delete";
 var globalGradeDeleteUrl = globalHostname + "/app/Core/Job/Grade/delete";
@@ -236,6 +241,7 @@ var coreModeList = 0;
 var coreModeInsert = 1;
 var coreModeEdit = 2;
 
+
 var coreApplicationTypeCompany = 0;
 var coreApplicationTypeEmployee = 1;
 var coreApplicationTypeCode = 2;
@@ -246,4 +252,6 @@ var coreApplicationTypeSection = 6;
 var coreApplicationTypeDepartment = 7;
 var coreApplicationTypeEmploymentType = 8;
 var coreApplicationMaintenanceCode = 9;
+var coreApplicationTypeDivision = 10;
+var coreApplicationTypeHolidayConfigure = 11;
 

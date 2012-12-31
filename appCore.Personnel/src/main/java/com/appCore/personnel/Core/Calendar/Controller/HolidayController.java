@@ -16,6 +16,7 @@ import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Calendar.Entity.Holiday;
 
 import com.appCore.personnel.Core.Calendar.Service.HolidayService;
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 
@@ -33,8 +34,17 @@ public class HolidayController
 		{
 				List<Holiday> list = service.getAll();
 				return list;
+				
 		}
 
+		@RequestMapping(value = "/Holiday/listByCompany", method = RequestMethod.GET)
+		public @ResponseBody
+		List<Holiday> listByCompany(@RequestParam(value = "id", required = true) Integer id) 
+		{
+			List<Holiday> list = service.getAllByCompany(id);
+			return list;
+		}
+		
 		@RequestMapping(value = "/Holiday/get", method = RequestMethod.GET)		
 		public @ResponseBody Holiday getHoliday (@RequestParam(value="id", required=true) Integer id) 
 		{

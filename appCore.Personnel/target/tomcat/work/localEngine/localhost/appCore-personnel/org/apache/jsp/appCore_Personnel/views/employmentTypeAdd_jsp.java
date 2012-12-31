@@ -264,7 +264,7 @@ public final class employmentTypeAdd_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            $(\"#\" + formName).validationEngine();\r\n");
       out.write("            var vm = new EmploymentTypeInfoViewModel(globalViewModel);\r\n");
       out.write("            ko.applyBindings(vm, document.getElementById(\"employmentTypeForm\"));\r\n");
-      out.write("            $(\"#accordianEmploymentType\").accordion({collapsible : true, active: false});\r\n");
+      out.write("            $(\"#accordianEmployentType\").accordion({collapsible : true, active: false});\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");

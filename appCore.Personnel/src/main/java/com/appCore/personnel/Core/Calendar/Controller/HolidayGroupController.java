@@ -17,6 +17,7 @@ import com.appCore.personnel.Core.Calendar.Entity.HolidayGroup;
 
 import com.appCore.personnel.Core.Calendar.Service.HolidayGroupService;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
+import com.appCore.personnel.Core.Job.Entity.Race;
 
 
 @Controller
@@ -35,6 +36,13 @@ public class HolidayGroupController
 				return list;
 		}
 
+		@RequestMapping(value = "/HolidayGroup/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<HolidayGroup> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<HolidayGroup> list = service.getAllByCompany(id);
+				return list;
+		}
+		
 		@RequestMapping(value = "/HolidayGroup/get", method = RequestMethod.GET)		
 		public @ResponseBody HolidayGroup getHolidayGroup (@RequestParam(value="id", required=true) Integer id) 
 		{
@@ -84,11 +92,5 @@ public class HolidayGroupController
 				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
 
-		@RequestMapping(value = "/HolidayGroup/edit", method = RequestMethod.GET)
-		public String editHolidayGroup ( Model model ) 
-		{
-				return "View/Calendar/HolidayGroup/edit";
-		}
-
-
+		
 }

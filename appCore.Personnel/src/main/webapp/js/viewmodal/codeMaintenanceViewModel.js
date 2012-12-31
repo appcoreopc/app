@@ -17,6 +17,8 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
 
+    self.commandText = ko.observable();
+
     this.centralPage = "maintenanceCode.jsp";
     this.editPage = "maintenanceCodeAdd.jsp";
     this.addPage = "maintenanceCodeAdd.jsp";
@@ -36,8 +38,19 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     var viewColumns = [
         { headerText:"Code Name", rowText:"name" },
         { headerText:"Description", rowText:"description" },
-        { headerText:"Start Effective Date", rowText:"startEffectiveDate" },
-        { headerText:"End Effective Date", rowText:"endEffectiveDate" }
+        { headerText:"Start Effective Date", rowText:
+            function(data)
+            {
+                var helper = new EmployeeHelper();
+                return helper.getDateFormatMMDDYYYY(new Date(data.startEffectiveDate));
+            }
+        },
+        { headerText:"End Effective Date", rowText: function(data)
+            {
+                var helper = new EmployeeHelper();
+                return helper.getDateFormatMMDDYYYY(new Date(data.endEffectiveDate));
+            }
+        }
 
     ];
 
@@ -81,7 +94,15 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
 
     if (self.mode() == coreModeEdit)
+    {
         getDataForm(data);
+        self.commandText("Save changes")
+    }
+
+    if (self.mode() == coreModeInsert)
+    {
+        self.commandText("Add new code")
+    }
 
     this.getAddPage = function () {
         return this.addPage;
@@ -237,8 +258,10 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     {
         var dialog = new CoreDialog();
         var helper = new EmployeeHelper();
+
         var dialogObject = helper.createDialogObject("Cancel changes", "Do you want to cancel your changes?");
         var result = dialog.createConfirmationDialog(dialogObject, null, globalViewModel, null, deleteCancelCallBack);
+
     }
 
     function deleteCancelCallBack(status, data, globalViewModel, codeType) {

@@ -185,7 +185,7 @@
         $(document).ready(function()
         {
         var ajaxCore = new AjaxCore();
-        var employeeId = { id : globalCurrentId.nid };
+        var employeeId = { id : globalViewModel.targetId() };
         var request = ajaxCore.sendRequest(globalEmployeeEmploymentGetByEmployeeUrl, employeeId, "get");
 
         request.success(function(dataSource)
@@ -201,18 +201,20 @@
 
         </script>
 
-        <div id="employmentDataContent" data-bind="template : {name : templateToUse, foreach :
-        bindingSource}">
-
-        <div data-bind="visible : $root.bindingSource().length == 0" class="emptyData">
-        <div>
-        <ul>
-
-        <li class='emptyDataSpacer'> </li>
-        <li> No data available.</li>
-        </ul>
-        </div>
-        </div>
 
 
-        </div>
+        <div id="employmentDataContent">
+
+            <div data-bind="visible : $root.bindingSource().length == 0" class="emptyData">
+                <div>
+                    <ul>
+                        <li class='emptyDataSpacer'> </li>
+                        <li> No data available.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-bind="template : {name : templateToUse, foreach : bindingSource}">
+            </div>
+
+       </div>

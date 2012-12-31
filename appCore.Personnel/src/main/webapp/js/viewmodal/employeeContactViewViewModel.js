@@ -1,11 +1,11 @@
 var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employeeId) {
 
+
     var self = this;
     self.bindingSource = ko.observableArray(dataSource);
     self.countryList = ko.observableArray();
 
     var helper = new EmployeeHelper();
-
     helper.getCountryCode(self.countryList);
 
     self.mode = ko.observable(0);
@@ -16,6 +16,8 @@ var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employee
     self.selectedItem = ko.observable();
     self.formPermission = ko.observable();
 
+    self.test = ko.observable(false);
+
     if (audMode != undefined)
     {
         self.enableAdd = ko.observable(helper.getEnableAdd(audMode));
@@ -23,14 +25,16 @@ var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employee
         self.enableDelete = ko.observable(helper.getEnableDelete(audMode));
     }
 
-    if (mode != 0)
+    if (mode != coreModeList)
         self.mode = ko.observable(mode);
 
-    if (mode == 2) {
-        getGeneralInfo(employeeId);
-    }
 
-    function getContactInfo(code) {
+    //if (mode == coreModeEdit) {
+        // getGeneralInfo(employeeId);
+        // getContactInfo(employeeId);
+    //}
+
+    /*function getContactInfo(code) {
 
         var employeeCode = { id:code };
         var request = ajaxCore.sendRequestSequential(globalEmployeeGetUrl, employeeCode, "get");
@@ -62,7 +66,7 @@ var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employee
             self.bindingSource = ko.observableArray([employeeGeneralInfo]);
 
         });
-    }
+    }*/
 
     self.getPermission = function () {
         return self.enableAdd() || self.enableDelete() || self.enableUpdate();
@@ -135,4 +139,5 @@ var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employee
     self.remove = function (element) {
         self.initData.remove(element);
     }
+
 }

@@ -1,4 +1,4 @@
-ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+.ui-dialog
 {
     background: none repeat scroll 0 0 #000;
     border: none;
@@ -10,3 +10,22 @@ ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-st
     background: none repeat scroll 0 0 #fff;
     border: none;
 }
+
+.ui-dialog-buttonset button {
+    color: #fff;
+    background-color:  #000;
+    margin-right: 10px;
+
+}
+
+.ui-dialog-buttonset .ui-button-text-only {
+    color: #fff;
+    background-color:  #000;
+}
+
+.ui-dialog-titlebar {
+    height: 20px;
+    padding: 8px 0px 8px 10px;
+    color: #fff;
+}
+

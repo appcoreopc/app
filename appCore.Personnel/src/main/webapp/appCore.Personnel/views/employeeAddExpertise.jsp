@@ -1,5 +1,5 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeExpertiseViewModel.js"></script>
 
@@ -65,24 +65,24 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Period</div><div class="inputSection"><input type="text" id="Period" data-bind="value:
         period" class="validate[required, custom[number]]" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="Remarks"
         data-bind="value: remarks" class="validate[maxSize[40]]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div id="userCommand"></div>
         </div>
 

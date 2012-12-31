@@ -50,7 +50,7 @@ public final class employeeContactsView_jsp extends org.apache.jasper.runtime.Ht
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("    <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("        <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <link href=\"../../kendo/styles/kendo.custom.min.css\" rel=\"stylesheet\">\r\n");
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeContactViewViewModel.js\"></script>\r\n");
@@ -257,25 +257,22 @@ public final class employeeContactsView_jsp extends org.apache.jasper.runtime.Ht
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
+      out.write("            <div id=\"contactDataContent\">\r\n");
       out.write("\r\n");
-      out.write("        <div id=\"contactDataContent\" data-bind=\"template : {name : templateToUse, foreach :\r\n");
-      out.write("        bindingSource}\">\r\n");
+      out.write("            <div data-bind=\"visible : bindingSource().length == 0\" class=\"emptyData\">\r\n");
+      out.write("                <div>\r\n");
+      out.write("                <ul>\r\n");
+      out.write("                    <li class='emptyDataSpacer'> </li>\r\n");
+      out.write("                    <li> No data available.</li>\r\n");
+      out.write("                </ul>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
       out.write("\r\n");
-      out.write("        <div data-bind=\"visible : $root.bindingSource().length == 0\" class=\"emptyData\">\r\n");
-      out.write("        <div>\r\n");
-      out.write("        <ul>\r\n");
+      out.write("            <div data-bind=\"template : {name : templateToUse, foreach :\r\n");
+      out.write("                bindingSource}\">\r\n");
+      out.write("            </div>\r\n");
       out.write("\r\n");
-      out.write("        <li class='emptyDataSpacer'> </li>\r\n");
-      out.write("        <li> No data available.</li>\r\n");
-      out.write("        </ul>\r\n");
-      out.write("        </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        </div>\r\n");
-      out.write("\r\n");
+      out.write("         </div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

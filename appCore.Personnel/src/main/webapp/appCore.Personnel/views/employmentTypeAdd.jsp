@@ -212,7 +212,7 @@
             $("#" + formName).validationEngine();
             var vm = new EmploymentTypeInfoViewModel(globalViewModel);
             ko.applyBindings(vm, document.getElementById("employmentTypeForm"));
-            $("#accordianEmploymentType").accordion({collapsible : true, active: false});
+            $("#accordianEmployentType").accordion({collapsible : true, active: false});
         });
 
         </script>

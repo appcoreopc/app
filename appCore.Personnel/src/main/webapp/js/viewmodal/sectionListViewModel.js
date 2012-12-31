@@ -121,12 +121,12 @@ var SectionListViewModel = function (initView, data, globalViewModel) {
     function updateFunction(data) {
         globalViewModel.targetId(data.nid);
         globalViewModel.editMode(coreModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeSection);
         preparePageForLoading("sectionAdd.jsp");
     }
 
     function goToAdd() {
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeSection);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("sectionAdd.jsp");
     }

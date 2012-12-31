@@ -218,7 +218,7 @@ public final class departmentAdd_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("        </div>\r\n");
       out.write("        <div>\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"subHeader\"> Division Info </div>\r\n");
+      out.write("        <div class=\"subHeader\"> Department Info </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRowSpacer\"></div>\r\n");
       out.write("\r\n");

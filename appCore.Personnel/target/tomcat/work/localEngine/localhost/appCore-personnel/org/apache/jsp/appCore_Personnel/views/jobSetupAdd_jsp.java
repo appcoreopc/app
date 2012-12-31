@@ -104,8 +104,9 @@ public final class jobSetupAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <li><a href=\"jobQualificationAdd.jsp\">Qualification Requirement</a></li>\r\n");
       out.write("            <li><a href=\"jobExperienceAdd.jsp\">Experience Requirement</a></li>\r\n");
       out.write("            <li><a href=\"jobSkillRequirementAdd.jsp\">Skill Requirement</a></li>\r\n");
-      out.write("\r\n");
       out.write("        </ul>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("    </div>\r\n");
       out.write("\r\n");
       out.write("    </div>\r\n");

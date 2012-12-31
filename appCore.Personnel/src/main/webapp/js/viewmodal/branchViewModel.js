@@ -158,7 +158,7 @@ var BranchViewModel = function (initView, data, globalViewModel) {
     function goToAdd() {
         globalViewModel.applicationScopeType(coreApplicationTypeBranch);
         globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("divisionAdd.jsp");
+        preparePageForLoading("branchAdd.jsp");
 
     }
 }

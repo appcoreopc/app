@@ -14,9 +14,10 @@ import org.apache.log4j.Logger;
 
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
+import com.appCore.personnel.Core.Job.Entity.EmployeeContact;
 import com.appCore.personnel.Core.Job.Entity.EmployeeQualification;
 
-import com.appCore.personnel.Core.Job.Service.QualificationService;
+import com.appCore.personnel.Core.Job.Service.EmployeeQualificationService;
 
 
 @Controller
@@ -25,8 +26,8 @@ public class QualificationController
 { 
 
 		protected static Logger logger = Logger.getLogger("controller");
-		@Resource(name="qualificationService")
-		private QualificationService service;
+		@Resource(name="employeeQualificationService")
+		private EmployeeQualificationService service;
 
 		@RequestMapping(value = "/Qualification/list", method = RequestMethod.GET)		
 		public @ResponseBody List<EmployeeQualification> listQualification () 
@@ -35,14 +36,13 @@ public class QualificationController
 				return list;
 		}
 		
-		@RequestMapping(value = "/Qualification/getByEmployeeRefId", method = RequestMethod.GET)		
-		public @ResponseBody List<EmployeeQualification> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		@RequestMapping(value = "/Qualification/getByEmployee", method = RequestMethod.GET)		
+		public @ResponseBody List<EmployeeQualification> getContactByEmployee (@RequestParam(value="id", required=true) Integer id ) 
 		{
-				List<EmployeeQualification> list = service.getByEmployeeRefId(id);
-				return list;
+				List<EmployeeQualification> employeeContact=service.getByEmployee(id);
+				return employeeContact;
 		}
-
-
+			
 		@RequestMapping(value = "/Qualification/get", method = RequestMethod.GET)		
 		public @ResponseBody EmployeeQualification getQualification (@RequestParam(value="id", required=true) Integer id) 
 		{

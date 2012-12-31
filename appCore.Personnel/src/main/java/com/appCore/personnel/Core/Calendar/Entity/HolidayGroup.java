@@ -54,9 +54,36 @@ import com.appCore.personnel.Core.Calendar.Entity.Holiday;
 	
 		
 		@Column(name = "LastUpdate")
-		private Date lastUpdate;
+		private Timestamp lastUpdate;
+
+		
+		@Column(name = "CompanyRef")
+		private int companyRef;
+		
+		
+		@Column(name = "StartEffectiveDate")
+		private Timestamp startEffectiveDate;
+		
+		
+		@Column(name = "EndEffectiveDate")
+		private Timestamp endEffectiveDate;
+
+		
+		
+		@Column(name = "Disabled")
+		private Boolean disabled;
+
+		
+		public int getCompanyRef() {
+			return companyRef;
+		}
 
 
+		public void setCompanyRef(int companyRef) {
+			this.companyRef = companyRef;
+		}
+
+		
 		public Integer getNid() { 
 			return this.nid;
 		}
@@ -92,12 +119,42 @@ import com.appCore.personnel.Core.Calendar.Entity.Holiday;
 			this.holidays = holidays;
 		}
 
-		public Date getLastUpdate() { 
+		public Timestamp getLastUpdate() { 
 			return this.lastUpdate;
 		}
 
 
-		public void setLastUpdate(Date lastUpdate) { 
+		public void setLastUpdate(Timestamp lastUpdate) { 
 			this.lastUpdate = lastUpdate;
 		}
+		public Timestamp getStartEffectiveDate() {
+			return startEffectiveDate;
+		}
+
+
+		public void setStartEffectiveDate(Timestamp startEffectiveDate) {
+			this.startEffectiveDate = startEffectiveDate;
+		}
+
+
+		public Timestamp getEndEffectiveDate() {
+			return endEffectiveDate;
+		}
+
+
+		public void setEndEffectiveDate(Timestamp endEffectiveDate) {
+			this.endEffectiveDate = endEffectiveDate;
+		}
+
+
+		public Boolean getDisabled() {
+			return disabled;
+		}
+
+
+		public void setDisabled(Boolean disabled) {
+			this.disabled = disabled;
+		}
+
+
 	}

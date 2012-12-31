@@ -89,7 +89,8 @@
 	function getListForDisplay(sourceControlId, targetControlId)
 	{
 		var groupName = $("#" + sourceControlId + " option:selected").text();
-		var assignedHolidays = holidayGroupData[groupName];
+
+        var assignedHolidays = holidayGroupData[groupName];
 		
 		if (assignedHolidays != undefined) 
 		{

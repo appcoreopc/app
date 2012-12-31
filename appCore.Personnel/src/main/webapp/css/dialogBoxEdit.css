@@ -1,0 +1,57 @@
+.ui-dialog
+{
+    background: none repeat scroll 0 0  #FFFFFF;
+    border: none;
+    margin-right: 10px;
+    width: 60px;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background: none repeat scroll 0 0 #fff;
+    border: none;
+}
+
+.ui-dialog-buttonset button {
+    color: #fff;
+    background-color:  #000;
+    margin-right: 10px;
+
+}
+
+.ui-dialog-buttonset .ui-button-text-only {
+    color: #fff;
+    background-color:  #000;
+}
+
+.ui-dialog-titlebar {
+    height: 20px;
+    padding: 8px 0px 8px 10px;
+    color: #fff;
+}
+
+.ui-dialog-content {
+     color: #000;
+}
+    
+.ui-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #000;
+    overflow: auto;
+    padding: 0.5em 1em;
+    position: relative;
+}
+
+
+.ui-button-text-only {
+    background-color: #000;
+    color:  #fff;
+}
+
+.ui-widget-header {
+   background-color:  #000;
+}
+
+.ui-state-default {
+    background: none;
+}

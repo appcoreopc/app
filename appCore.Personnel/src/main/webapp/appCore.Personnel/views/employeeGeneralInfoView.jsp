@@ -4,7 +4,7 @@
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeGeneralInfoViewModel.js"></script>
 
-        <link href="../../css/employeeGeneral.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
 
 
         <script type="text/html" id="employeeGeneralInfoTemplate">
@@ -339,21 +339,6 @@
                 var input = { "id" : coreEmployeeGeneralViewPage, "roleId" : globalViewModel.employeeRole() };
                 var coreCommand = new CoreCommand();
                 var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-
-                //if (globalViewModel.targetId != null)
-                //{
-                //        globalCurrentEmployee = globalCurrentId.nid;
-                //}
-
-                //if (globalFormMode == 1)
-                //{
-                //        vm = new EmployeeGeneralInfoViewModel(1, result.permission);
-                //}
-                //else
-                //{
-                //        vm = new EmployeeGeneralInfoViewModel(0, result.permission, globalCurrentId.nid);
-                //}
-
                 vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
                 ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
 

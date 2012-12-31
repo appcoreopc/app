@@ -1,4 +1,5 @@
         <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeEmploymentViewModel.js"></script>
@@ -48,7 +49,7 @@
         </div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Industry</div><div class="inputSection"><select type="text" id="Industry"
         data-bind="options: industryList, optionsText: 'name', optionsValue: 'nid', value: industry"/></div>
         </div>
@@ -67,36 +68,36 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Duration</div><div class="inputSection"><input type="text" id="Duration"
         data-bind="value: duration" class="validate[required]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Last Drawn Salary</div><div class="inputSection"><input type="text"
         id="LastDrawnSalary" data-bind="value: lastDrawnSalary" class="validate[required, custom[number]]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Resignation Reason</div><div class="inputSection"><input type="text"
         id="ResignationReason" data-bind="value: resignationReason" class="validate[required, maxSize[40]]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="Remarks"
         data-bind="value: remarks" class="validate[required, maxSize[40]]" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div id="userCommand"></div>
         </div>
 

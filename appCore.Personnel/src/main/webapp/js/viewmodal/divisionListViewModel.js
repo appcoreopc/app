@@ -122,12 +122,12 @@ var DivisionListViewModel = function (initView, data, globalViewModel) {
     function updateFunction(data) {
         globalViewModel.targetId(data.nid);
         globalViewModel.editMode(coreModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeDivision);
         preparePageForLoading("divisionAdd.jsp");
     }
 
     function goToAdd() {
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeDivision);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("divisionAdd.jsp");
     }

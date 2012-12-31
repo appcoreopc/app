@@ -27,19 +27,23 @@
         <script language="javascript" src="../../js/viewmodal/branchViewModel.js"></script>
 
         <script src="../../js/jquery-1.7.2.min.js"></script>
-
-        <script language="javascript" src="../../js/ui/jquery-ui-1.8.23.custom.min.js"></script>
         <script language="javascript" src="../../js/viewmodal/knockoutBindersControl.js"></script>
-        <script src="../../kendo/js/kendo.web.min.js"></script>
         <script language="javascript" src="../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
-        <script language="javascript" src="../../js/simpleGrid.js"></script>
+        <script language="javascript" src="../../js/testGrid.js"></script>
+
+
+        <script type="text/html" id="editTemplate">
+        <select data-bind="value : $data, options : $root.availableCountries">
+        </select>
+        </script>
+
 
 
         <script type="text/javascript">
         $(document).ready(function()
         {
         var initialData = [
-        { name: "Well-Travelled Kitt", sales: 352, price: 75.95 },
+        { name: "Well-Travelled Kitt", sales: 352, price: 75.95, salesDate : "" },
         { name: "Speedy Coyote", sales: 89, price: 190.00 },
         { name: "Furious Lizard", sales: 152, price: 25.00 },
         { name: "Indifferent Monkey", sales: 1, price: 99.95 },
@@ -76,24 +80,25 @@
         }
 
 
-
         var self = this;
-        self.name = "namenamename";
+        self.name = "n  amenamename";
         self.name2 = "noname";
         var miki="testing";
 
 
-        this.gridViewModel = new ko.dataGrid.ViewModel({
+        this.gridViewModel = new ko.testGrid.ViewModel({
         data: self.items,
         columns: [
-        { headerText: "Item Name", rowText: "name" },
-        { headerText: "Sales Count", rowText: "sales" },
+        { headerText: "Item Name", rowText: "name", renderTemplate : "editTemplate" },
+        { headerText: "Sales Count", rowText: "sales"  },
         { headerText: "Price", rowText: function (item) { return "$" + item.price.toFixed(2) } }
         ],
         pageSize: 10,
+        availableCountries : ko.observableArray(['France', 'Germany', 'Spain']),
         enableUpdate : ko.observable(false),
         enableAdd : ko.observable(false),
         enableDelete : ko.observable(true),
+        test : "demodemo",
         deleteData : function(data)
         {
             self.items.remove(data);
@@ -101,8 +106,6 @@
         updateData : function(data) { alert(data);}
         });
         };
-
-
 
         var vm = new PagedGridModel(initialData);
         ko.applyBindings(vm);
@@ -112,7 +115,7 @@
         </script>
 
 
-        <div data-bind='dataGrid: gridViewModel'> </div>
+        <div data-bind='testGrid: gridViewModel'> </div>
 
         <button data-bind='click: addItem'>
         Add item

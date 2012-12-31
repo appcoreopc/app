@@ -237,7 +237,7 @@ public final class employeeEmploymentInfoView_jsp extends org.apache.jasper.runt
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("        var ajaxCore = new AjaxCore();\r\n");
-      out.write("        var employeeId = { id : globalCurrentId.nid };\r\n");
+      out.write("        var employeeId = { id : globalViewModel.targetId() };\r\n");
       out.write("        var request = ajaxCore.sendRequest(globalEmployeeEmploymentGetByEmployeeUrl, employeeId, \"get\");\r\n");
       out.write("\r\n");
       out.write("        request.success(function(dataSource)\r\n");
@@ -253,21 +253,23 @@ public final class employeeEmploymentInfoView_jsp extends org.apache.jasper.runt
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
-      out.write("        <div id=\"employmentDataContent\" data-bind=\"template : {name : templateToUse, foreach :\r\n");
-      out.write("        bindingSource}\">\r\n");
-      out.write("\r\n");
-      out.write("        <div data-bind=\"visible : $root.bindingSource().length == 0\" class=\"emptyData\">\r\n");
-      out.write("        <div>\r\n");
-      out.write("        <ul>\r\n");
-      out.write("\r\n");
-      out.write("        <li class='emptyDataSpacer'> </li>\r\n");
-      out.write("        <li> No data available.</li>\r\n");
-      out.write("        </ul>\r\n");
-      out.write("        </div>\r\n");
-      out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        </div>\r\n");
+      out.write("        <div id=\"employmentDataContent\">\r\n");
+      out.write("\r\n");
+      out.write("            <div data-bind=\"visible : $root.bindingSource().length == 0\" class=\"emptyData\">\r\n");
+      out.write("                <div>\r\n");
+      out.write("                    <ul>\r\n");
+      out.write("                        <li class='emptyDataSpacer'> </li>\r\n");
+      out.write("                        <li> No data available.</li>\r\n");
+      out.write("                    </ul>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
+      out.write("            <div data-bind=\"template : {name : templateToUse, foreach : bindingSource}\">\r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
+      out.write("       </div>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

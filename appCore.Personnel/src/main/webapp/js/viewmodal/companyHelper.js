@@ -26,11 +26,20 @@ var CompanyHelper = function () {
         });
     }
 
-
     this.deleteUnit = function (targetData, callback) {
         var objectId = { "id":targetData.nid };
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestSequential(globalUnitDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
+
+    this.deleteHoliday = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalHolidayDeleteUrl, objectId, "get");
         request.success(function (resultData) {
             callback(resultData, targetData);
         });
@@ -180,6 +189,22 @@ var CompanyHelper = function () {
         });
     }
 
+    this.getEmployees = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalEmployeeListByCompanyUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+
+    this.getEmployeeGroups = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalEmployeeGroupListByCompanyUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
 
     this.getGrade = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();

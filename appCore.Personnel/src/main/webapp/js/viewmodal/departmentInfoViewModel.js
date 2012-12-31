@@ -30,8 +30,8 @@ var DepartmentInfoViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
-    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeBranch) {
-        throw "Application Type is not branch.";
+    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeDepartment) {
+        throw "Application Type is not department.";
     }
 
     self.mode(self.globalViewModel.editMode());

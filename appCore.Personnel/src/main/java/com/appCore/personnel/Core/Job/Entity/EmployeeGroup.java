@@ -5,6 +5,8 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
 import javax.persistence.GeneratedValue;
@@ -13,6 +15,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import java.util.List;
 import javax.persistence.Table;
+
+import com.appCore.personnel.Core.Calendar.Entity.Holiday;
 
 
 
@@ -46,20 +50,22 @@ import javax.persistence.Table;
 		private Timestamp startEffectiveDate;
 
 		
-		
 		@Column(name = "EndEffectiveDate")
 		private Timestamp endEffectiveDate;
 
-		
 		
 		@Column(name = "Disabled")
 		private Boolean disabled;
 
 		
-		
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
 
+
+		@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+		@JoinTable(name="EmployeeGroup_Assignment")
+		private List<Employee> assignedEmployees;
+		
 
 		public Integer getNid() { 
 			return this.nid;
@@ -134,4 +140,15 @@ import javax.persistence.Table;
 		public void setLastUpdate(Timestamp lastUpdate) { 
 			this.lastUpdate = lastUpdate;
 		}
+
+		
+		public List<Employee> getAssignedEmployees() {
+			return assignedEmployees;
+		}
+
+
+		public void setAssignedEmployees(List<Employee> assignedEmployees) {
+			this.assignedEmployees = assignedEmployees;
+		}
+
 	}

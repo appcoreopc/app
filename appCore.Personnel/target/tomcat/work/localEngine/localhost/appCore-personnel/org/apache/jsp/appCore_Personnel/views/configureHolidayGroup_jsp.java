@@ -141,7 +141,8 @@ public final class configureHolidayGroup_jsp extends org.apache.jasper.runtime.H
       out.write("\tfunction getListForDisplay(sourceControlId, targetControlId)\r\n");
       out.write("\t{\r\n");
       out.write("\t\tvar groupName = $(\"#\" + sourceControlId + \" option:selected\").text();\r\n");
-      out.write("\t\tvar assignedHolidays = holidayGroupData[groupName];\r\n");
+      out.write("\r\n");
+      out.write("        var assignedHolidays = holidayGroupData[groupName];\r\n");
       out.write("\t\t\r\n");
       out.write("\t\tif (assignedHolidays != undefined) \r\n");
       out.write("\t\t{\r\n");

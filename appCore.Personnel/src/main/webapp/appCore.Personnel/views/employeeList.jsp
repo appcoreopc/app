@@ -1,5 +1,5 @@
-    <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
-          <script language="javascript" src="../../js/viewmodal/employeeViewModel.js"></script>
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+        <script language="javascript" src="../../js/viewmodal/employeeViewModel.js"></script>
 
         <script type="text/javascript">
         $(document).ready(function()

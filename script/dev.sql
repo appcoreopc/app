@@ -1,4 +1,4 @@
-insert into roles (rolename, description) values ('General', 'General');
+insert into roles (rolename, description) values ('General', 'Gene	ral');
 
 insert into category (categoryname, description) values ('CompanySetup', 'Company');
 insert into category (categoryname, description) values ('Job', 'Job');
@@ -12,7 +12,7 @@ insert into forms (formid, link, category_nid) values ('Department', 'department
 insert into forms (formid, link, category_nid) values ('Section', 'section.jsp', 1);
 insert into forms (formid, link, category_nid) values ('Unit', 'unit.jsp', 1);
 
-insert into forms (formid, link, category_nid) values ('Employee', 'employeeAdd.jsp', 1);
+-- insert into forms (formid, link, category_nid) values ('Employee', 'employeeAdd.jsp', 1);
 insert into forms (formid, link, category_nid) values ('EmployeeList', 'employeeList.jsp', 1);
 
 insert into forms (formid, link, category_nid) values ('Industry Code', 'maintenanceCode.jsp?id=1', 1);
@@ -26,10 +26,11 @@ insert into forms (formid, link, category_nid) values ('Level Code', 'maintenanc
 insert into forms (formid, link, category_nid) values ('Field Of ExpertiseCode', 'maintenanceCode.jsp?id=9', 1);
 insert into forms (formid, link, category_nid) values ('Family Relation Type', 'maintenanceCode.jsp?id=10', 1);
 insert into forms (formid, link, category_nid) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1);
+insert into forms (formid, link, category_nid) values ('Holiday Group', 'maintenanceCode.jsp?id=12', 1);
 
 
 insert into forms (formid, link, category_nid) values ('Job Setup', 'jobSetup.jsp', 2);
-insert into forms (formid, link, category_nid) values ('Configure Employee Group', 'employeeGroup.jsp', 2);
+insert into forms (formid, link, category_nid) values ('Configure Employee Group', 'configureEmployeeGroup.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Grade', 'grade.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Employment Type', 'employmentType.jsp', 2);
 
@@ -42,7 +43,7 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (2,1, 'A
 insert into forms_actions_role (forms_nid, role_nid, permission) values (3,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (4,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (5,1, 'AUD');
-	insert into forms_actions_role (forms_nid, role_nid, permission) values (6,1, 'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (6,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (7,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (8,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (9,1, 'AUD');
@@ -123,8 +124,9 @@ insert into employeequalification (level, leveldescription, major, remarks , emp
 insert into employeeMembership (membertype, association, remarks, employeeRefId) values (1, 'ACM', 'a remark again', 1);
 
 
-insert into employeeemployment (employername, job, industry) values ('Google', 'Tester', 1);
-insert into employeeemployment (employername, job, industry) values ('IBM', 'Tester', 1);
+
+insert into employeeemployment (employername, job, industry, employeerefid) values ('Google', 'Tester', 1, 1);
+insert into employeeemployment (employername, job, industry, employeerefid) values ('IBM', 'Tester', 1, 1);
 
 insert into AssociationMembershipType (name, description) values ('Professional Member', 'Professional Member');
 insert into AssociationMembershipType (name, description) values ('Normal Member', 'Normal Member');
@@ -237,8 +239,8 @@ insert into sectionInfo (category, description, type, value, refEntity) values (
 insert into sectionInfo (category, description, type, value, refEntity) values ('Sec2', 'Sec1Desc2', 'Sec2', 'Sec2Val', 1);
 insert into sectionInfo (category, description, type, value, refEntity) values ('Sec3', 'Sec1Desc3', 'Sec3', 'Sec3Val', 1);
 
-insert into sectionInfo (category, description, type, value, refEntity) values ('SecA', 'SecAAAA', 'SecAAA', 'SecValueAa', 2);
-insert into sectionInfo (category, description, type, value, refEntity) values ('SecB', 'SecBBBB', 'SecBBB', 'SecValueBb', 2);
+insert into sectionInfo (category, description, type, value, refEntity) values ('SecA', 'SecAAAA', 'SecAAA', 'SecValueA', 2);
+insert into sectionInfo (category, description, type, value, refEntity) values ('SecB', 'SecBBBB', 'SecBBB', 'SecValueB', 2);
 
 
 insert into unitInfo (category, description, type, value, refEntity) values ('UnitA', 'UnitADesc', 'UnitAVal', 'UnitValA', 1);
@@ -284,4 +286,25 @@ insert into EmployeeGroup (name, description, companyref) values ('Emp3	', 'Emp3
 insert into EmployeeGroup (name, description, companyref) values ('EmpA', 'EmpA', 2);
 insert into EmployeeGroup (name, description, companyref) values ('EmpB', 'EmpB', 2);
 
+
+	
+insert into holiday (name,description, holidaydate, recurring, companyRef) values ('New Year', 'New Year', '2012-01-01', true, 1);
+insert into holiday (name,description, holidaydate, recurring, companyRef) values ('Company Holiday #1', 'Company Holiday', '2012-12-26', true, 1);
+insert into holiday (name,description, holidaydate, recurring, companyRef) values ('Company Holiday #2', 'Company Holiday', '2012-12-27', true, 1);
+
+
+insert into holiday (name,description, holidaydate, recurring, companyRef) values ('Christmas', 'Merry Merry Christmas', '2012-12-25', true, 2);
+insert into holiday (name,description, holidaydate, recurring, companyRef) values ('New Year', 'New Year', '2012-01-01', true, 2);
+
+
+insert into HolidayGroup (name, description, companyRef) values ('General Worker', 'General Worker', 1);
+insert into HolidayGroup (name, description, companyRef) values ('Developer', 'Developer', 1);
+insert into HolidayGroup (name, description, companyRef) values ('Contractors', 'Contractors', 1);
+
+insert into HolidayGroup (name, description, companyRef) values ('General WorkerB', 'General Worker', 2);
+insert into HolidayGroup (name, description, companyRef) values ('DeveloperB', 'Developer', 2);
+insert into HolidayGroup (name, description, companyRef) values ('ContractorsB', 'Contractors', 2);
+
+
+insert into EmployeeGroup_Assignment (EmployeeGroup_nid, assignedEmployees_nid) values (1, 1);
 

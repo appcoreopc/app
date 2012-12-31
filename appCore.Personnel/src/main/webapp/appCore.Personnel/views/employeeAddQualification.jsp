@@ -1,5 +1,5 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeQualificationViewModel.js"></script>
 
@@ -81,30 +81,30 @@
         </div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Result (CGPA) </div><div class="inputSection"><input type="text" id="CGPA"
         data-bind="value: CGPA" class="validate[required], custom[number]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Attachment</div><div class="inputSection"><input type="text" id="Attachment"
         data-bind="value: attachment"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="QualificationRemark"
         data-bind="value: remarks" class="validate[required], maxSize[40]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div id="userCommand"></div>
         </div>
 

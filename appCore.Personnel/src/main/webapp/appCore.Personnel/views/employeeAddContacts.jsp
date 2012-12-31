@@ -1,4 +1,5 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeContactsViewModel.js"></script>
@@ -64,19 +65,19 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Correspondence Address </div><div class="inputSection"><input type="text"
         data-bind="value: correspondenceAddress" id="CorrespondenceAddress" class="validate[required]" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection"></div><div class="inputSection"><input type="text" data-bind="value:
         correspondenceAddress2" id="CorrespondenceAddress2" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection"></div><div class="inputSection"><input type="text" data-bind="value:
         correspondenceAddress3" id="CorrespondenceAddress3" /></div>
         </div>

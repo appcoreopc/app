@@ -30,8 +30,8 @@ var SectionInfoViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
-    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeBranch) {
-        throw "Application Type is not branch.";
+    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeSection) {
+        throw "Application Type is not section.";
     }
 
     self.mode(self.globalViewModel.editMode());

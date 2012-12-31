@@ -209,14 +209,14 @@
         var formName = "unitForm";
         $(document).ready(function()
         {
-        $("#" + formName).validationEngine();
-        var vm = new UnitInfoViewModel(globalViewModel);
-        ko.applyBindings(vm, document.getElementById("unitForm"));
-        $("#accordianUnit").accordion({collapsible : true, active: false});
+            $("#" + formName).validationEngine();
+            var vm = new UnitInfoViewModel(globalViewModel);
+            ko.applyBindings(vm, document.getElementById("unitForm"));
+            $("#accordianUnit").accordion({collapsible : true, active: false});
         });
 
         </script>
 
         <form id="unitForm">
-        <div id="unitMaintenance" data-bind="template : { name : templateToUse} ">
+        <div id="unitMaintenance" data-bind="template : { name : templateToUse } ">
         </form>

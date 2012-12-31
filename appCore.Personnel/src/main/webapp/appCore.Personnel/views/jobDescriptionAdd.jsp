@@ -37,5 +37,17 @@
         </div>
 
 
+
+        <div class="formRow darken">
+        <div class="labelSection"></div>
+        <div class="inputSection">
+
+                <button id="generalInfoSave" type="button" class="command">Save</button>
+                <button id="generalInfoCancel" type="button" class="command">Cancel</button>
+
+        </div>
+        </div>
+
+
         </div>
     </form>

@@ -122,12 +122,12 @@ var DepartmentListViewModel = function (initView, data, globalViewModel) {
     function updateFunction(data) {
         globalViewModel.targetId(data.nid);
         globalViewModel.editMode(coreModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeDepartment);
         preparePageForLoading("departmentAdd.jsp");
     }
 
     function goToAdd() {
-        globalViewModel.applicationScopeType(coreApplicationTypeBranch);
+        globalViewModel.applicationScopeType(coreApplicationTypeDepartment);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("departmentAdd.jsp");
     }

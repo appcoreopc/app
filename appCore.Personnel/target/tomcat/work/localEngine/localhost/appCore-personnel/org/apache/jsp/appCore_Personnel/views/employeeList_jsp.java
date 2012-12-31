@@ -50,8 +50,8 @@ public final class employeeList_jsp extends org.apache.jasper.runtime.HttpJspBas
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("    <link href=\"../../css/dialogBox.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
-      out.write("          <script language=\"javascript\" src=\"../../js/viewmodal/employeeViewModel.js\"></script>\r\n");
+      out.write("        <link href=\"../../css/dialogBox.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeViewModel.js\"></script>\r\n");
       out.write("\r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
       out.write("        $(document).ready(function()\r\n");

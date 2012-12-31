@@ -28,9 +28,17 @@ public class HolidayGroupService
 	{	
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  HolidayGroup");
-
 		return  query.list();
 	}
+	
+	public List<HolidayGroup> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  HolidayGroup WHERE CompanyRef = :id");
+		query.setParameter("id", id);
+		return query.list();
+	}
+	
 	
 	public boolean saveconfiguredHolidayGroup(int holidayGroupId, int holidayId, boolean isGrantAccess)
 	{
@@ -101,7 +109,11 @@ public class HolidayGroupService
 		target.setDescription(holidayGroup.getDescription());
 		target.setHolidays(holidayGroup.getHolidays());
 		target.setLastUpdate(holidayGroup.getLastUpdate());
-
+		target.setCompanyRef(holidayGroup.getCompanyRef());
+		target.setStartEffectiveDate(holidayGroup.getEndEffectiveDate());
+		target.setEndEffectiveDate(holidayGroup.getEndEffectiveDate());
+		target.setDisabled(holidayGroup.getDisabled());
+		
 		session.save(target);
 	}
 }

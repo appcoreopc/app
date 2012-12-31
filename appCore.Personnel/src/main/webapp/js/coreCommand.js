@@ -79,7 +79,7 @@ var CoreCommand = function () {
     // editorMode = Update is used during page insert mode whereby Grid contains information
     function createAddUpdateDeleteView(commandDataObject) {
 
-        $(".maintenanceCommand").empty();
+        // $(".maintenanceCommand").empty();
 
         if (commandDataObject.editorMode != undefined && commandDataObject.editorMode == globalEditorModeInsert) {
 

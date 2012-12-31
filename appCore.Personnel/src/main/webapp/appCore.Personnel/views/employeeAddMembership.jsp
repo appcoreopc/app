@@ -1,4 +1,5 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeMembershipViewModel.js"></script>
@@ -51,7 +52,7 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Contact Details</div><div class="inputSection"><input type="text"
         id="MembershipContact" data-bind="value: membershipContact" class="validate[required]"/></div>
         </div>
@@ -70,42 +71,42 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Membership period (in months)</div><div class="inputSection"><input type="text"
         id="MembershipPeriod" data-bind="value: membershipPeriod" class="validate[required]" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Enrollment Fees</div><div class="inputSection"><input type="text" id="EnrollmentFees"
         data-bind="value: enrollmentFees" class="validate[required, custom[integer]]" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Membership Fees</div><div class="inputSection"><input type="text" id="MembershipFees"
         data-bind="value: membershipFees" class="validate[required, custom[integer]]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Attachment</div><div class="inputSection"><input type="text" id="Attachment"
         data-bind="value: attachment"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="Remarks"
         data-bind="value: remarks" class="validate[required, maxSize[40]]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div id="userCommand"></div>
         </div>
 

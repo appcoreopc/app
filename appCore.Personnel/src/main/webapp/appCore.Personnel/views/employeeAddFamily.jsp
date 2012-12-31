@@ -1,5 +1,5 @@
         <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeFamilyViewModel.js"></script>
 
@@ -81,7 +81,7 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Marital status</div><div class="inputSection">
 
         <select id="MaritalStatus" data-bind="options: maritalStatusList, optionsText: 'name', optionsValue: 'nid',
@@ -92,50 +92,50 @@
         </div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">I/C No</div><div class="inputSection"><input type="text" id="IdentificationNo"
         data-bind="value: identificationNo" class="validate[required], maxSize[20]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Working</div><div class="inputSection"><input type="checkbox" data-bind="checked:
         working" /></div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Studying</div><div class="inputSection"><input type="checkbox" data-bind="checked:
         studying" /></div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Handicap</div><div class="inputSection"><input type="checkbox" data-bind="checked:
         handicap" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Nominated Spouse</div><div class="inputSection"><input type="checkbox"
         data-bind="checked: nominatedSpouse" /></div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Attachments</div><div class="inputSection"><input type="text" id="Attachments"
         data-bind="value: attachments"/></div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="Remarks"
         data-bind="value: remarks" class="validate[required], maxSize[40]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div id="userCommand"></div>
         </div>
 

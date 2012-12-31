@@ -1,5 +1,5 @@
         <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeResidentialViewModel.js"></script>
 
@@ -36,17 +36,17 @@
 
         <div id="employeeResidenceAddInfo" class="formEntry">
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Permanent Add.</div><div class="inputSection"><input type="text"
         id="PermanentAddress1" data-bind="value: permanentAddress1" class="validate[required]"/></div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection"></div><div class="inputSection"><input type="text" id="PermanentAddress2"
         data-bind="value: permanentAddress2"/></div>
         </div>
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection"></div><div class="inputSection"><input type="text" id="PermanentAddress3"
         data-bind="value: permanentAddress3"/></div>
         </div>
@@ -328,36 +328,36 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Emergency Contact 1</div><div class="inputSection"><input type="text"
         id="EmergencyContact1" data-bind="value: emergencyContact1" class="validate[required]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Emergency Contact 2</div><div class="inputSection"><input type="text"
         id="EmergencyContact2" data-bind="value: emergencyContact2" /></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Contact No</div><div class="inputSection"><input type="text"
         id="ContactNo" data-bind="value: contactNo" class="validate[required, custom[number]]"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Contact No 2</div><div class="inputSection"><input type="text"
         id="ContactNo2" data-bind="value: contactNo2"/></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div></div>
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div id="userCommand"></div>
         </div>
 

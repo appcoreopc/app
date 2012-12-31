@@ -1,85 +1,189 @@
     <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-
-
-        <script language="javascript" src="../../js/coreDataSourceHelper.js"></script>
-        <script language="javascript" src="../../js/coreListView.js"></script>
-
         <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
 
-        <script type="text/x-kendo-tmpl" id="employeeQualificationTemplate">
+        <script language="javascript" src="../../js/viewmodal/employeeQualificationViewViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
+
+        <script type="text/html" id="employeeContactTemplate">
 
         <div class="formRowView">
-        <div class="viewLabelSection">Level</div><div class="inputSection">#=level#</div>
+        <div class="viewLabelSection">Level</div><div class="inputSection" data-bind="text: level"></div>
         </div>
 
         <div class="formRowView">
-        <div class="viewLabelSection">Field</div><div class="inputSection">Field</div>
+        <div class="viewLabelSection">Field</div><div class="inputSection" data-bind="text: fieldOfStudyDescription"></div>
         </div>
 
-
         <div class="formRowView">
-        <div class="viewLabelSection">Major</div><div class="inputSection">Major</div>
-        </div>
-
-
-        <div class="formRowView">
-        <div class="viewLabelSection">Institution</div><div class="inputSection">Institution</div>
+        <div class="viewLabelSection">Major</div><div class="inputSection" data-bind="text: major"></div>
         </div>
 
 
         <div class="formRowView">
-        <div class="viewLabelSection">Local/Oversea</div><div class="inputSection">Local/Oversea</div>
+        <div class="viewLabelSection">Institution</div><div class="inputSection" data-bind="text: institution"></div>
         </div>
 
 
         <div class="formRowView">
-        <div class="viewLabelSection">Start Date</div><div class="inputSection">Start Date</div>
-        </div>
-
-        <div class="formRowView">
-        <div class="viewLabelSection">End Date</div><div class="inputSection">End Date</div>
+        <div class="viewLabelSection">Local / Oversea </div><div class="inputSection" data-bind="text: localOrOversea"></div>
         </div>
 
 
         <div class="formRowView">
-        <div class="viewLabelSection">Result (CGPA) </div><div class="inputSection">CGPA</div>
+        <div class="viewLabelSection">Start Date</div><div class="inputSection" data-bind="text: startDate"></div>
         </div>
 
 
         <div class="formRowView">
-        <div class="viewLabelSection">Attachment</div><div class="inputSection">Attachment</div>
+        <div class="viewLabelSection">End Date</div><div class="inputSection" data-bind="text: endDate"></div>
         </div>
 
 
         <div class="formRowView">
-        <div class="viewLabelSection">Remarks</div><div class="inputSection">QualificationRemark</div>
+        <div class="viewLabelSection">Result(CGPA/Grade)</div><div class="inputSection" data-bind="text: resultCGPA"></div>
+        </div>
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Attachment</div><div class="inputSection"></div>
+        </div>
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Remark</div><div class="inputSection" data-bind="text: remarks"></div>
+        </div>
+
+
+        <div class="formRowSpacer">
+        </div>
+
+
+        <div class="formRow darken" data-bind="visible : $root.getPermission">
+        <div class="labelSection"></div><div class="inputSection">
+
+        <div id="contactInfoEditCommand" class="maintenanceCommand">
+
+        <button id="contactEdit" type="button" data-bind="visible : $root.enableAdd, click: $root.editData"
+        class="command">Edit</button>
+
+
+        </div>
+        </div>
         </div>
 
         <div class="formRowView">
         <span class="formRowRuler"></span>
         </div>
 
-
         </script>
 
+
+        <script type="text/html" id="employeeContactAddTemplate">
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Level</div><div class="inputSection"> <input type="text" data-bind="value: level" /></div>
+        </div>
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Field</div><div class="inputSection"> <input type="text"  data-bind="text: fieldOfStudyDescription" /></div>
+        </div>
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Major</div><div class="inputSection"> <input type="text" data-bind="text: major" /></div>
+        </div>
+
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Institution</div><div class="inputSection"> <input type="text"  data-bind="text: institution" /></div>
+        </div>
+
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Local / Oversea </div><div class="inputSection"> <input type="text"  data-bind="text: localOrOversea" /></div>
+        </div>
+
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Start Date</div><div class="inputSection"> <input type="text"  data-bind="text: startDate" /></div>
+        </div>
+
+
+        <div class="formRowView">
+        <div class="viewLabelSection">End Date</div><div class="inputSection"> <input type="text"  data-bind="text: endDate"></div>
+        </div>
+
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Result(CGPA/Grade)</div><div class="inputSection"> <input type="text"  data-bind="text: resultCGPA"></div>
+        </div>
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Attachment</div><div class="inputSection"></div>
+        </div>
+
+        <div class="formRowView">
+        <div class="viewLabelSection">Remark</div><div class="inputSection"> <input type="text"  data-bind="text: remarks" /></div>
+        </div>
+
+
+        <div class="formRow darken">
+        <div class="labelSection"></div><div class="inputSection">
+
+        <div id="employeeAddContactCommand" class="maintenanceCommand">
+        <button id="contactInfoSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"
+        class="command">Save</button>
+
+        <button id="contactCancel" type="button" data-bind="visible : $root.enableAdd, click: $root.cancelEdit"
+        class="command">Cancel</button>
+        </div>
+        </div>
+        </div>
+
+        <div class="formRowSpacer">
+        </div>
+
+
+        <div class="formRowView">
+        <span class="formRowRuler"></span>
+        </div>
+
+        </script>
 
         <script type="text/javascript">
 
-
         $(document).ready(function()
         {
+            if (globalViewModel.targetId != null && globalViewModel.applicationScopeType() == coreApplicationTypeEmployee)
+            {
+                var ajaxCore = new AjaxCore();
+                var employeeId = { id : globalViewModel.targetId()  };
+                var request = ajaxCore.sendRequest(globalEmployeeQualificationGetByEmployeeUrl, employeeId, "get");
 
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalEmployeeQualificationListUrl, null, "get");
+                request.success(function(dataSource)
+                {
+                    var input = { "id" : coreEmployeeContactViewPage, "roleId" : globalViewModel.employeeRole() };
+                    var coreCommand = new CoreCommand();
+                    var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-        request.success(function(dataSource)
-        {
-        var coreListView = new CoreListView();
-        coreListView.createListView("qualificationDataContent", dataSource, "employeeQualificationTemplate");
-        });
-
+                    var vm = new EmployeeQualificationViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                    ko.applyBindings(vm, document.getElementById("qualificationDataContent"));
+                });
+            }
         });
 
         </script>
 
-        <div id="qualificationDataContent"></div>
+        <div id="qualificationDataContent">
+
+        <div data-bind="visible : bindingSource().length == 0" class="emptyData">
+        <div>
+        <ul>
+        <li class='emptyDataSpacer'> </li>
+        <li> No data available.</li>
+        </ul>
+        </div>
+        </div>
+
+
+        <div data-bind="template : {name : templateToUse, foreach : bindingSource}">
+        </div>
+
+        </div>

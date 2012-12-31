@@ -50,7 +50,8 @@ public final class employeeAddContacts_jsp extends org.apache.jasper.runtime.Htt
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("    <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("        <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("        <link href=\"../../css/employeeGeneralAddForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeHelper.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeContactsViewModel.js\"></script>\r\n");
@@ -116,19 +117,19 @@ public final class employeeAddContacts_jsp extends org.apache.jasper.runtime.Htt
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"formRow\">\r\n");
+      out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Correspondence Address </div><div class=\"inputSection\"><input type=\"text\"\r\n");
       out.write("        data-bind=\"value: correspondenceAddress\" id=\"CorrespondenceAddress\" class=\"validate[required]\" /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"formRow\">\r\n");
+      out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\"></div><div class=\"inputSection\"><input type=\"text\" data-bind=\"value:\r\n");
       out.write("        correspondenceAddress2\" id=\"CorrespondenceAddress2\" /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"formRow\">\r\n");
+      out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\"></div><div class=\"inputSection\"><input type=\"text\" data-bind=\"value:\r\n");
       out.write("        correspondenceAddress3\" id=\"CorrespondenceAddress3\" /></div>\r\n");
       out.write("        </div>\r\n");

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.appCore.personnel.Core.Calendar.Entity.Holiday;
+import com.appCore.personnel.Core.Entity.Branch;
 
 @Service("holidayService")
 @Transactional
@@ -27,7 +28,15 @@ public class HolidayService
 
 		return  query.list();
 	}
-
+	
+	public List<Holiday> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Holiday WHERE CompanyRef = :id");
+		query.setParameter("id", id);
+		return query.list();
+	}
+	
 	public Holiday get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -67,11 +76,12 @@ public class HolidayService
 		target.setName(holiday.getName());
 		target.setHolidayDate(holiday.getHolidayDate());
 		target.setRecurring(holiday.getRecurring());
-		target.setRefEntity(holiday.getRefEntity());
+		target.setCompanyRef(holiday.getCompanyRef());
 		target.setDescription(holiday.getDescription());
 		target.setType(holiday.getType());
 		target.setLastUpdate(holiday.getLastUpdate());
-
+		target.setCompanyRef(holiday.getCompanyRef());
+		
 		session.save(target);
 	}
 }

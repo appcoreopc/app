@@ -1,4 +1,6 @@
-       <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+
+       <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+       <link href="../../css/dialogBoxEdit.css" media="screen" rel="stylesheet" type="text/css" />
 
        <link href="../../css/codeMaintenance.css" media="screen" rel="stylesheet" type="text/css" />
        <script language="javascript" src="../../js/viewmodal/codeMaintenanceViewModel.js"></script>
@@ -97,7 +99,7 @@
         <div> <div class="maintenanceCommandSpace"></div>
         <div class="maintenanceCommand" data-bind="visible : $root.enableAdd || $root.enableUpdate" id="maintenanceCodeCommand">
 
-           <button id="saveBtn" type="button" class="command" data-bind="click : saveDataForm">Add New Code</button>
+           <button id="saveBtn" type="button" class="command" data-bind="click : saveDataForm, text: commandText">Add New Code</button>
            <button id="cancelBtn" type="button" class="command" data-bind="click : cancelChanges">Cancel</button>
         </div>
         </div>

@@ -30,8 +30,8 @@ var UnitInfoViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
-    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeBranch) {
-        throw "Application Type is not branch.";
+    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeUnit) {
+        throw "Application Type is not unit.";
     }
 
     self.mode(self.globalViewModel.editMode());

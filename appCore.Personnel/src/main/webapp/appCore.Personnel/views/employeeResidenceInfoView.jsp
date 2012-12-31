@@ -190,7 +190,7 @@
         $(document).ready(function()
         {
             var ajaxCore = new AjaxCore();
-            var employeeId = { id : globalCurrentId.nid };
+            var employeeId = { id : globalViewModel.targetId() };
             var request = ajaxCore.sendRequest(globalEmployeeResidenceGetByEmployeeUrl, employeeId, "get");
 
             request.success(function(dataSource)
@@ -207,8 +207,7 @@
 
         </script>
 
-        <div id="residenceDataContent" data-bind="template : {name : templateToUse , foreach :
-        bindingSource}">
+        <div id="residenceDataContent">
 
             <div data-bind="visible : $root.bindingSource().length == 0" class="emptyData">
             <div>
@@ -220,8 +219,7 @@
             </div>
             </div>
 
-
-
-
-
+            <div data-bind="template : {name : templateToUse , foreach : bindingSource}">
             </div>
+
+        </div>

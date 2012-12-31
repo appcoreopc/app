@@ -1,4 +1,4 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
 
         <script language="javascript" src="../../js/viewmodal/employeeContactViewViewModel.js"></script>
@@ -205,22 +205,19 @@
 
         </script>
 
+            <div id="contactDataContent">
 
-        <div id="contactDataContent" data-bind="template : {name : templateToUse, foreach :
-        bindingSource}">
+            <div data-bind="visible : bindingSource().length == 0" class="emptyData">
+                <div>
+                <ul>
+                    <li class='emptyDataSpacer'> </li>
+                    <li> No data available.</li>
+                </ul>
+                </div>
+            </div>
 
-        <div data-bind="visible : $root.bindingSource().length == 0" class="emptyData">
-        <div>
-        <ul>
+            <div data-bind="template : {name : templateToUse, foreach :
+                bindingSource}">
+            </div>
 
-        <li class='emptyDataSpacer'> </li>
-        <li> No data available.</li>
-        </ul>
-        </div>
-        </div>
-
-
-
-
-        </div>
-
+         </div>

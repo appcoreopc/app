@@ -1,0 +1,22 @@
+.formRowView {
+    display: block;
+    padding-bottom: 0.7em;
+    padding-top: 0.7em;
+}
+
+.labelSection {
+    color: #3B5998;
+    display: inline-block;
+    padding-right: 20px;
+    width: 150px;
+}
+
+.inputSection {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.sectionalForm {
+    display: block;
+    text-align: left;
+}

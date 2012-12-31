@@ -30,8 +30,8 @@ var DivisionInfoViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
-    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeBranch) {
-        throw "Application Type is not branch.";
+    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeDivision) {
+        throw "Application Type is not division.";
     }
 
     self.mode(self.globalViewModel.editMode());
