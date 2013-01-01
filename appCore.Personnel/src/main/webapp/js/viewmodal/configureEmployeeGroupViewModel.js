@@ -1,7 +1,6 @@
 var EmployeeGroupChangeInfo = function (groupId, employeeId, IsMember) {
 
     var self = this;
-
     self.employeeGroupId = ko.observable(groupId);
     self.employeeId = ko.observable(employeeId);
     self.isMember = ko.observable(IsMember);
@@ -258,9 +257,6 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     }
 
     self.updateData = function (data) {
-
-        console.log(self.employeeGroupChangeList());
-
         var list = self.employeeGroupChangeList();
         var helper = new CompanyHelper();
         for (var i = 0; i < list.length; i++) {
@@ -270,15 +266,12 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
                 groupId:item.employeeGroupId(),
                 isGrantAccess:item.isMember()
             };
-
-            console.log(entityObject);
             helper.configureEmployeeGroup(entityObject, updateCompleteCallBack);
         }
     }
 
-    function updateCompleteCallBack(data)
-    {
-        console.log(data);
+    function updateCompleteCallBack(data) {
+
     }
 
 
@@ -412,9 +405,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
             if (newList.length > 0) {
                 self.employeeNotInGroupList(newList);
-
             }
-
             //pushDataToComboBox(targetControlId, assignedEmployees);
         }
         else {
@@ -422,6 +413,4 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
             // appendAvailableHolidayDataToComboBox(allHolidays, targetControlId);
         }
     });
-
-
 }
