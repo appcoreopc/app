@@ -11,6 +11,7 @@
 
             globalViewModel.companyId.subscribe(function(newValue)
             {
+                $(".maintenanceCommand").empty();
                 getData(newValue);
             });
         });

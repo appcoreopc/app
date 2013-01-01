@@ -188,6 +188,11 @@ var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdat
 var globalDivisionSaveOrUpdateUrl = globalHostname + "/app/Core/Division/saveOrUpdate";
 var globalDepartmentSaveOrUpdateUrl = globalHostname + "/app/Core/Department/saveOrUpdate";
 var globalSectionSaveOrUpdateUrl = globalHostname + "/app/Core/Section/saveOrUpdate";
+
+
+var globalEmployeeGroupConfigureUrl = globalHostname + "/app/Job/EmployeeGroup/configuredEmployeeGroup";
+
+
 var globalUnitSaveOrUpdateUrl = globalHostname + "/app/Core/Unit/saveOrUpdate";
 var globalGradeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/Grade/saveOrUpdate";
 var globalEmploymentTypeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/EmploymentType/saveOrUpdate";

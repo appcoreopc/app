@@ -259,35 +259,35 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
     self.updateData = function (data) {
 
-        alert('update');
+        console.log(self.employeeGroupChangeList());
 
-        /*var isValid = $("#" + "unitForm").validationEngine('validate');
+        var list = self.employeeGroupChangeList();
+        var helper = new CompanyHelper();
+        for (var i = 0; i < list.length; i++) {
+            var item = list[i];
+            var entityObject = {
+                employeeId:item.employeeId(),
+                groupId:item.employeeGroupId(),
+                isGrantAccess:item.isMember()
+            };
 
-         if (!isValid)
-         return;
-
-         var unit = new Unit();
-         if (self.mode() == coreModeEdit)
-         unit.nid = self.nid();
-
-         unit.companyId = self.globalViewModel.companyId();
-         unit.unitCode = self.code();
-         unit.unitName = self.name();
-         unit.remark = self.description();
-         unit.disabled = self.disabled();
-
-         var helper = new CompanyHelper();
-         helper.saveUpdateUnit(unit, saveOrUpdateStatus)*/
+            console.log(entityObject);
+            helper.configureEmployeeGroup(entityObject, updateCompleteCallBack);
+        }
     }
 
+    function updateCompleteCallBack(data)
+    {
+        console.log(data);
+    }
+
+
     self.cancelUpdate = function (data) {
-        alert('cancel update');
-        //preparePageForLoading("unit.jsp");
+        //alert('cancel update');
+        preparePageForLoading("personnelControlPanel.jsp");
     }
 
     self.assignToGroup = function (data) {
-
-
         var selection = self.selectionOfEmployee();
         var emp = null;
 
@@ -311,26 +311,18 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
         self.selectionOfEmployee = ko.observableArray();
     }
 
-    function lookupChangesToPropagateToServer(groupName, employeeId, boolValueToSet) {
-        var groupId = getGroupId(groupName);
-
-        console.log(groupName + " " + "group id  " + groupId + ":" + employeeId);
-        removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
-        var employeeGroupInfo = new EmployeeGroupChangeInfo(groupId, employeeId, boolValueToSet);
-        self.employeeGroupChangeList.push(employeeGroupInfo);
-
-    }
 
     function removeItemFromListIfExistByGroupAndId(list, groupId, employeeId) {
+
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
-            console.log("item");
-            console.log(item);
             if (item.employeeGroupId() == groupId && item.employeeId() == employeeId) {
                 list.splice(i, 1);
-                self.employeeGroupChangeList(list);
+                break;
             }
         }
+        self.employeeGroupChangeList(list);
+        return list;
     }
 
     function removeItemFromList(list, value) {
@@ -371,6 +363,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
                     break;
                 }
             }
+
             self.employeeNotInGroupList.push(emp);
             lookupChangesToPropagateToServer(self.currentlySelectedGroup(), employeeId, false);
         }
@@ -378,9 +371,17 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
         self.selectionOfEmployeeToRemove = ko.observableArray();
     }
 
+    function lookupChangesToPropagateToServer(groupName, employeeId, boolValueToSet) {
+
+        var groupId = getGroupId(groupName);
+        removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
+        var employeeGroupInfo = new EmployeeGroupChangeInfo(groupId, employeeId, boolValueToSet);
+        self.employeeGroupChangeList.push(employeeGroupInfo);
+    }
+
+
     self.groupSelectionChanged = function (data) {
-        console.log($data);
-        alert('selection changed' + $data);
+
     }
 
     function saveOrUpdateStatus(result) {

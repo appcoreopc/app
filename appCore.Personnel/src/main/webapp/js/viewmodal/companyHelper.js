@@ -123,6 +123,14 @@ var CompanyHelper = function () {
         });
     }
 
+    this.configureEmployeeGroup = function (entityData, callBack) {
+
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalEmployeeGroupConfigureUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
 
     this.saveUpdateUnit = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();

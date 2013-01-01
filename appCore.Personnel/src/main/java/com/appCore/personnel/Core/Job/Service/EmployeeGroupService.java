@@ -9,6 +9,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.appCore.personnel.Core.Calendar.Entity.Holiday;
+import com.appCore.personnel.Core.Calendar.Entity.HolidayGroup;
+import com.appCore.personnel.Core.Job.Entity.Employee;
 import com.appCore.personnel.Core.Job.Entity.EmployeeGroup;
 
 @Service("employeeGroupService")
@@ -35,6 +38,26 @@ public class EmployeeGroupService
 		query.setParameter("id", id);
 		return  query.list();
 
+	}
+	
+	
+	public boolean saveconfiguredEmployeeGroup(int employeeId, int groupId, boolean isGrantAccess)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		EmployeeGroup employeeGroup = (EmployeeGroup) session.get(EmployeeGroup.class, groupId);
+		Employee employee = (Employee) session.get(Employee.class, employeeId);
+		
+		if (isGrantAccess)
+		{
+			employeeGroup.getAssignedEmployees().add(employee);
+		}
+		else 
+		{
+			employeeGroup.getAssignedEmployees().remove(employee);
+		}
+		return true; 
+		
+		
 	}
 
 	public EmployeeGroup get(Integer id) 

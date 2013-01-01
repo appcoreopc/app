@@ -43,6 +43,14 @@ public class EmployeeGroupController
 				List<EmployeeGroup> list = service.getAllByCompany(id);
 				return list;
 		}
+				
+		@RequestMapping(value = "/EmployeeGroup/configuredEmployeeGroup", method = RequestMethod.GET)		
+		public @ResponseBody RequestStatus saveconfiguredHolidayGroup (@RequestParam(value="employeeId", required=true) int employeeId, int groupId, boolean isGrantAccess) 
+		{
+				service.saveconfiguredEmployeeGroup(employeeId, groupId, isGrantAccess);
+				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+		}
+		
 		
 		@RequestMapping(value = "/EmployeeGroup/get", method = RequestMethod.GET)		
 		public @ResponseBody EmployeeGroup getEmployeeGroup (@RequestParam(value="id", required=true) Integer id ) 

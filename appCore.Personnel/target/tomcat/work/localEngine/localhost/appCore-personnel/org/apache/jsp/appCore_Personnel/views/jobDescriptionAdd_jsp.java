@@ -96,7 +96,7 @@ public final class jobDescriptionAdd_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("                <button id=\"generalInfoSave\" type=\"button\" class=\"command\">Save</button>\r\n");
       out.write("                <button id=\"generalInfoCancel\" type=\"button\" class=\"command\">Cancel</button>\r\n");
-      out.write("            \r\n");
+      out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");

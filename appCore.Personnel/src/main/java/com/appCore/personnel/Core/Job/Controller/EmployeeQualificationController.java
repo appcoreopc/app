@@ -42,6 +42,7 @@ public class EmployeeQualificationController
 				List<EmployeeQualification> employeeContact=service.getByEmployee(id);
 				return employeeContact;
 		}
+		
 			
 		@RequestMapping(value = "/EmployeeQualification/get", method = RequestMethod.GET)		
 		public @ResponseBody EmployeeQualification getQualification (@RequestParam(value="id", required=true) Integer id) 
@@ -69,7 +70,6 @@ public class EmployeeQualificationController
 		public @ResponseBody RequestStatus deleteQualification (@RequestParam(value="id", required=true) Integer id)
 		{
 				service.delete(id);
-
 				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
 		
