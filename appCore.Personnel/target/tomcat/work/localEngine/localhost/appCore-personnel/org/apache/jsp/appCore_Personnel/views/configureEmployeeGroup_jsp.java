@@ -85,9 +85,15 @@ public final class configureEmployeeGroup_jsp extends org.apache.jasper.runtime.
       out.write("\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"sectionalForm\">\r\n");
+      out.write("            <div class=\"formRow\">\r\n");
+      out.write("            &nbsp;\r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("            <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
-      out.write("        <div class=\"labelSectionBlock\">Employee Not Assigned To Group</div><div class=\"inputSection\">\r\n");
+      out.write("        <div class=\"labelSectionBlock\">Employee not assigned </div><div class=\"inputSectionList\">\r\n");
       out.write("\r\n");
       out.write("        <select multiple=\"true\" id=\"employeeNotInGroupList\" data-bind=\"options: employeeNotInGroupList, optionsText: 'name', optionsValue: 'nid', selectedOptions : selectionOfEmployee\">\r\n");
       out.write("        </select>\r\n");
@@ -99,7 +105,7 @@ public final class configureEmployeeGroup_jsp extends org.apache.jasper.runtime.
       out.write("\r\n");
       out.write("            <div class=\"rightSection\">\r\n");
       out.write("\r\n");
-      out.write("                <div class=\"labelSectionBlockRight\">Employee Available In Group</div><div class=\"inlineLabelSection\">\r\n");
+      out.write("                <div class=\"labelSectionBlockRight\">Employee belongs to selected group</div><div class=\"inlineLabelSection\">\r\n");
       out.write("                <select id=\"currentlyAssignedGroup\" data-bind=\"options : employeesCurrentlyAssignedToAGroup, optionsText: 'name', optionsValue: 'nid', selectedOptions : selectionOfEmployeeToRemove \" multiple=\"multiple\">\r\n");
       out.write("                </select>\r\n");
       out.write("                </div>\r\n");

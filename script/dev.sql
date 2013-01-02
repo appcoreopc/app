@@ -4,6 +4,7 @@ insert into category (categoryname, description) values ('CompanySetup', 'Compan
 insert into category (categoryname, description) values ('Job', 'Job');
 insert into category (categoryname, description) values ('Holiday', 'Holiday');
 
+insert into forms (formid, link, category_nid) values ('Master Id Setup', 'masterIdSetup.jsp', 1);
 
 insert into forms (formid, link, category_nid) values ('Company', 'company.jsp', 1);
 insert into forms (formid, link, category_nid) values ('Branch', 'branch.jsp', 1);

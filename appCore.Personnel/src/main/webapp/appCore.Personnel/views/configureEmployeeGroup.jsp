@@ -33,9 +33,15 @@
 
             </div>
 
-        <div class="sectionalForm">
+            <div class="formRow">
+            &nbsp;
+            </div>
+
+
+
+            <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlock">Employee Not Assigned To Group</div><div class="inputSection">
+        <div class="labelSectionBlock">Employee not assigned </div><div class="inputSectionList">
 
         <select multiple="true" id="employeeNotInGroupList" data-bind="options: employeeNotInGroupList, optionsText: 'name', optionsValue: 'nid', selectedOptions : selectionOfEmployee">
         </select>
@@ -47,7 +53,7 @@
 
             <div class="rightSection">
 
-                <div class="labelSectionBlockRight">Employee Available In Group</div><div class="inlineLabelSection">
+                <div class="labelSectionBlockRight">Employee belongs to selected group</div><div class="inlineLabelSection">
                 <select id="currentlyAssignedGroup" data-bind="options : employeesCurrentlyAssignedToAGroup, optionsText: 'name', optionsValue: 'nid', selectedOptions : selectionOfEmployeeToRemove " multiple="multiple">
                 </select>
                 </div>

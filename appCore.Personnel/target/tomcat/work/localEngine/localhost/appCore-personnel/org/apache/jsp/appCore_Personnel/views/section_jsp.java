@@ -65,6 +65,7 @@ public final class section_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("            globalViewModel.companyId.subscribe(function(newValue)\r\n");
       out.write("            {\r\n");
+      out.write("                $(\".maintenanceCommand\").empty();\r\n");
       out.write("                getData(newValue);\r\n");
       out.write("            });\r\n");
       out.write("        });\r\n");

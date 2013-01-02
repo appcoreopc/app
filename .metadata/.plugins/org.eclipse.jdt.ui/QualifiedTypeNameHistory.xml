@@ -47,4 +47,5 @@
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DepartmentSummary"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DivisionSummary"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.SectionSummary"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Job.Entity.Employee"/>
 </qualifiedTypeNameHistroy>
