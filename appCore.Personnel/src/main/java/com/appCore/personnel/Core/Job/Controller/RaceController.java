@@ -11,7 +11,10 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
+
+import com.appCore.Requests.CodeRequest;
 import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Helpers.CodeCheckerHelper;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.Core.Job.Entity.Race;
@@ -28,7 +31,10 @@ public class RaceController
 		protected static Logger logger = Logger.getLogger("controller");
 		@Resource(name="raceService")
 		private RaceService service;
-
+		
+		@Resource(name="codeCheckerService")
+		private CodeCheckerHelper codeService;
+		
 		@RequestMapping(value = "/Race/list", method = RequestMethod.GET)		
 		public @ResponseBody List<Race> listRace () 
 		{
@@ -43,14 +49,13 @@ public class RaceController
 				return list;
 		}
 
-
 		@RequestMapping(value = "/Race/get", method = RequestMethod.GET)		
 		public @ResponseBody Race getRace (@RequestParam(value="id", required=true) Integer id ) 
 		{
 				Race race=service.get(id);
 				return race;
 		}
-
+		
 		@RequestMapping(value = "/Race/add", method = RequestMethod.GET)
 		public @ResponseBody RequestStatus renderAddRace (@RequestBody Race race)
 		{

@@ -57,7 +57,7 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeGeneralInfoViewModel.js\"></script>\r\n");
       out.write("\r\n");
       out.write("        <link href=\"../../css/employeeGeneralAddForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
-      out.write("\r\n");
+      out.write("        <link href=\"../../css/employeeGeneralForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("\r\n");
       out.write("        <script type=\"text/html\" id=\"employeeGeneralInfoTemplate\">\r\n");
       out.write("\r\n");

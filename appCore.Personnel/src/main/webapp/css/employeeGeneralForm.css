@@ -1,0 +1,52 @@
+.maintenanceCommand {
+    background: none repeat scroll 0 0 #fff;
+    display: inline-block;
+    padding: 12px 0;
+    width: 100%;
+}
+.maintenanceCommand {
+    background: repeat scroll 0 0 #fff;
+    display: inline-block;
+    padding: 12px 0;
+    width: 100%;
+}
+
+.maintenanceCommand button {
+    background-color: #000000;
+    border-style: none;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 6px 26px 6px 10px;
+}
+
+.darken {
+    background-color: #fff;
+}
+
+.editCommandIcon {
+ font-size: 20px;
+ padding-right: 10px;
+}
+
+
+.saveCommandIcon {
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+
+.emptyData {
+    min-height: 480px;
+    background: url("../images/empty.png") no-repeat scroll right bottom transparent;
+    opacity: 0.2;
+}
+
+.emptyData ul li {
+    list-style : none;
+    text-align: center;
+}
+
+.emptyDataSpacer {
+
+    padding-top : 200px;
+}

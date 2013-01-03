@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DepartmentInfo"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DivisionInfo"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Service.CompanyEntityService"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Company"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Division"/>
@@ -39,7 +38,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Category"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.FormMenuView"/>
-<fullyQualifiedTypeName name="com.appCore.Requests.RequestStatus"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Unit"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.UnitSummary"/>
@@ -48,4 +46,8 @@
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DivisionSummary"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.SectionSummary"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Job.Entity.Employee"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.appCore.Requests.CodeRequest"/>
+<fullyQualifiedTypeName name="com.appCore.Requests.RequestStatus"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Helpers.CodeCheckerHelper"/>
 </qualifiedTypeNameHistroy>

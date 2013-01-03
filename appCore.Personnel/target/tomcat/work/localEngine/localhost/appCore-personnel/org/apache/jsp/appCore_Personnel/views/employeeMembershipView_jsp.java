@@ -51,6 +51,7 @@ public final class employeeMembershipView_jsp extends org.apache.jasper.runtime.
       _jspx_out = out;
 
       out.write("    <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("    <link href=\"../../css/employeeGeneralForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeMembershipViewViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeHelper.js\"></script>\r\n");
@@ -122,7 +123,7 @@ public final class employeeMembershipView_jsp extends org.apache.jasper.runtime.
       out.write("        <div id=\"familyInfoEditCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("\r\n");
       out.write("        <button id=\"familyEdit\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.editData\"\r\n");
-      out.write("        class=\"command\">Edit</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-edit editCommandIcon\"></i>Edit</button>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
@@ -208,10 +209,10 @@ public final class employeeMembershipView_jsp extends org.apache.jasper.runtime.
       out.write("\r\n");
       out.write("        <div id=\"employeeAddContactCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("        <button id=\"contactInfoSave\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.saveDataForm\"\r\n");
-      out.write("        class=\"command\">Save</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-ok saveCommandIcon\"></i>Save</button>\r\n");
       out.write("\r\n");
       out.write("        <button id=\"contactCancel\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.cancelEdit\"\r\n");
-      out.write("        class=\"command\">Cancel</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-cancel saveCommandIcon\"></i>Cancel</button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");

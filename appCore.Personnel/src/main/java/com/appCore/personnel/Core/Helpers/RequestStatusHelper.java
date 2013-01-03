@@ -36,4 +36,21 @@ public class RequestStatusHelper {
 		return status; 
 	}
 	
+	
+	public static RequestStatus CodeCheckStatusOk(String messageText, int messageCode) 
+	{
+		RequestStatus status = new RequestStatus(); 
+		status.setMessageCode(messageCode);
+		status.setMessageDescription(messageText);
+		return status; 
+	}
+	
+	public static RequestStatus CodeCheckStatusDuplicate(String messageText, int messageCode) 
+	{
+		RequestStatus status = new RequestStatus(); 
+		status.setMessageCode(messageCode);
+		status.setMessageDescription(messageText);
+		return status; 
+	}
+	
 }

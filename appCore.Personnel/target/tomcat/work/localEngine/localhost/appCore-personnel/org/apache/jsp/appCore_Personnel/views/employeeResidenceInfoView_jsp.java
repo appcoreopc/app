@@ -52,7 +52,7 @@ public final class employeeResidenceInfoView_jsp extends org.apache.jasper.runti
 
       out.write("        <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <link href=\"../../kendo/styles/kendo.custom.min.css\" rel=\"stylesheet\">\r\n");
-      out.write("\r\n");
+      out.write("        <link href=\"../../css/employeeGeneralForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeResidenceViewViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeHelper.js\"></script>\r\n");
@@ -126,7 +126,7 @@ public final class employeeResidenceInfoView_jsp extends org.apache.jasper.runti
       out.write("        <div id=\"residenceInfoEditCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("\r\n");
       out.write("        <button id=\"residenceEdit\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.editData\"\r\n");
-      out.write("        class=\"command\">Edit</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-edit editCommandIcon\"></i>Edit</button>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
@@ -223,10 +223,10 @@ public final class employeeResidenceInfoView_jsp extends org.apache.jasper.runti
       out.write("        <div id=\"residenceInfoSaveCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("\r\n");
       out.write("        <button id=\"residenceSave\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.saveDataForm\"\r\n");
-      out.write("        class=\"command\">Save</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-ok saveCommandIcon\"></i>Save</button>\r\n");
       out.write("\r\n");
       out.write("        <button id=\"residenceCancel\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.cancelEdit\"\r\n");
-      out.write("        class=\"command\">Cancel</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-cancel saveCommandIcon\"></i>Cancel</button>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");

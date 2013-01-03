@@ -137,6 +137,8 @@ var globalEmployeeSalutationList = globalHostname + "/app/Job/Salutation/list";
 
 var globalEmployeeRaceList = globalHostname + "/app/Job/Race/list";
 
+var globalCodeCheckExist = globalHostname + "/app/Core/CodeChecker/checkExist";
+
 var globalEmployeeNationalityList = globalHostname + "/app/Job/Nationality/list";
 
 var globalEmployeeReligionList = globalHostname + "/app/Job/Religion/list";

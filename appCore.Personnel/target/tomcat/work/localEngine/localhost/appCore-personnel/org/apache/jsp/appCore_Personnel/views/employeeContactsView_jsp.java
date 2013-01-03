@@ -51,7 +51,7 @@ public final class employeeContactsView_jsp extends org.apache.jasper.runtime.Ht
       _jspx_out = out;
 
       out.write("        <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
-      out.write("        <link href=\"../../kendo/styles/kendo.custom.min.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <link href=\"../../css/employeeGeneralForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeContactViewViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeHelper.js\"></script>\r\n");
@@ -122,8 +122,8 @@ public final class employeeContactsView_jsp extends org.apache.jasper.runtime.Ht
       out.write("\r\n");
       out.write("        <div id=\"contactInfoEditCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("\r\n");
-      out.write("        <button id=\"contactEdit\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.editData\"\r\n");
-      out.write("        class=\"command\">Edit</button>\r\n");
+      out.write("        <button id=\"contactEdit\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.editData\">\r\n");
+      out.write("        <i class=\"icon-edit editCommandIcon\"></i>Edit</button>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
@@ -212,11 +212,9 @@ public final class employeeContactsView_jsp extends org.apache.jasper.runtime.Ht
       out.write("        <div class=\"labelSection\"></div><div class=\"inputSection\">\r\n");
       out.write("\r\n");
       out.write("        <div id=\"employeeAddContactCommand\" class=\"maintenanceCommand\">\r\n");
-      out.write("        <button id=\"contactInfoSave\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.saveDataForm\"\r\n");
-      out.write("        class=\"command\">Save</button>\r\n");
+      out.write("        <button id=\"contactInfoSave\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.saveDataForm\"> <i class=\"icon-ok saveCommandIcon\"></i>Save</button>\r\n");
       out.write("\r\n");
-      out.write("        <button id=\"contactCancel\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.cancelEdit\"\r\n");
-      out.write("        class=\"command\">Cancel</button>\r\n");
+      out.write("        <button id=\"contactCancel\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.cancelEdit\"> <i class=\"icon-cancel saveCommandIcon\"></i>Cancel</button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");

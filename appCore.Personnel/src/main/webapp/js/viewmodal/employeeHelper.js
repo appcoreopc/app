@@ -570,16 +570,13 @@ ko.bindingHandlers.datepicker = {
  */
 
 ko.bindingHandlers.codepicker = {
-    init:function (element, valueAccessor, allBindingsAccessor) {
 
-        //initialize with some optional options
-        var options = allBindingsAccessor().entityCode || {};
+
+    init:function (element, valueAccessor, allBindingsAccessor) {
 
         $(element).after("<i class=' icon-tag-1'></i>");
 
         var value = ko.utils.unwrapObservable(valueAccessor());
-        if (value != null)
-            $(element).datepicker("setDate", value);
 
         //handle the field changing
         ko.utils.registerEventHandler(element, "change", function () {
@@ -595,20 +592,38 @@ ko.bindingHandlers.codepicker = {
         // ko.bindingHandlers.validationCore.init(element, valueAccessor, allBindingsAccessor);
 
     },
-    update:function (element, valueAccessor) {
+    update:function (element, valueAccessor, allBindingsAccessor) {
 
-        var value = ko.utils.unwrapObservable(valueAccessor());
-        // code type  + companyId
+        //initialize with some optional options
+        var options = allBindingsAccessor().codeEntity;
 
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequestType(globalEmployeeIndustryList, null, "get");
-        request.success(function (data, status, xhrObj) {
-            if (data.code == 0) {
-                $(element).after("code ok");
+        if (options != undefined) {
+            var value = ko.utils.unwrapObservable(valueAccessor());
+
+            var codeTypeOption = options.codeType;
+            var companyIdOption = options.companyId;
+
+            var codeEntity = {
+                codeName:value,
+                codeType:parseInt(codeTypeOption),
+                companyId:parseInt(companyIdOption)
+            };
+
+            if (value != undefined && value != "") {
+                var ajaxCore = new AjaxCore();
+                var request = ajaxCore.sendRequestType(globalCodeCheckExist, codeEntity, "post");
+                request.success(function (data, status, xhrObj) {
+                    if (data.messageCode == 0) {
+                        $(element).next('i').next('span').remove();
+                        $(element).next('i').after("<span>code ok</span>");
+                    }
+                    else {
+                        $(element).next('i').next('span').remove();
+                        $(element).next('i').after("<span>code is not ok</span>");
+
+                    }
+                });
             }
-            else {
-                $(element).after("code is not ok");
-            }
-        });
+        }
     }
 };

@@ -25,6 +25,8 @@
         </style>
 
         <script language="javascript" src="../../js/viewmodal/branchViewModel.js"></script>
+        <script src="../../js/ajaxCore.js"></script>
+        <script src="../../js/appDefinition.js"></script>
         <script src="../../js/jquery-1.7.2.min.js"></script>
         <script language="javascript" src="../../js/viewmodal/knockoutBindersControl.js"></script>
         <script language="javascript" src="../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
@@ -50,5 +52,5 @@
 
         </script>
 
-        <input type="text" data-bind="codepicker : code" />
+        <input type="text" data-bind="codepicker : code, codeEntity : { codeType : 1, companyId : '1' }" />
 

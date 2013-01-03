@@ -42,19 +42,19 @@ var EmployeeQualificationViewViewModel = function (dataSource, mode, audMode, em
 
         if (item === self.selectedItem())
         {
-            return "employeeContactAddTemplate";
+            return "employeeQualificationAddTemplate";
         }
 
         switch (self.mode()) {
             case 0:
-                return "employeeContactTemplate";
+                return "employeeQualificationTemplate";
             case 1:
             case 2:
-                return "employeeContactAddTemplate";
+                return "employeeQualificationAddTemplate";
             default:
-                return "employeeContactTemplate";
+                return "employeeQualificationTemplate";
         }
-        return "employeeContactAddTemplate";
+        return "employeeQualificationAddTemplate";
 
     }.bind(this);
 

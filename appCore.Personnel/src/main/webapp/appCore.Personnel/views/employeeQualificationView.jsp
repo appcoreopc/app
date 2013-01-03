@@ -1,10 +1,13 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
+        <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeQualificationViewViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
 
-        <script type="text/html" id="employeeContactTemplate">
+
+
+        <script type="text/html" id="employeeQualificationTemplate">
 
         <div class="formRowView">
         <div class="viewLabelSection">Level</div><div class="inputSection" data-bind="text: level"></div>
@@ -62,7 +65,7 @@
         <div id="contactInfoEditCommand" class="maintenanceCommand">
 
         <button id="contactEdit" type="button" data-bind="visible : $root.enableAdd, click: $root.editData"
-        class="command">Edit</button>
+        class="command"><i class="icon-edit editCommandIcon"></i>Edit</button>
 
 
         </div>
@@ -76,7 +79,7 @@
         </script>
 
 
-        <script type="text/html" id="employeeContactAddTemplate">
+        <script type="text/html" id="employeeQualificationAddTemplate">
 
         <div class="formRowView">
         <div class="viewLabelSection">Level</div><div class="inputSection"> <input type="text" data-bind="value: level" /></div>
@@ -129,10 +132,10 @@
 
         <div id="employeeAddContactCommand" class="maintenanceCommand">
         <button id="contactInfoSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"
-        class="command">Save</button>
+        class="command"><i class="icon-ok saveCommandIcon"></i>Save</button>
 
         <button id="contactCancel" type="button" data-bind="visible : $root.enableAdd, click: $root.cancelEdit"
-        class="command">Cancel</button>
+        class="command"><i class="icon-cancel saveCommandIcon"></i>Cancel</button>
         </div>
         </div>
         </div>

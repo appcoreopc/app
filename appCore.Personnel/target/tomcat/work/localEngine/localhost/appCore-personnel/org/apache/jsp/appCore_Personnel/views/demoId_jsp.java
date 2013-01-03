@@ -77,6 +77,8 @@ public final class demoId_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </style>\r\n");
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/branchViewModel.js\"></script>\r\n");
+      out.write("        <script src=\"../../js/ajaxCore.js\"></script>\r\n");
+      out.write("        <script src=\"../../js/appDefinition.js\"></script>\r\n");
       out.write("        <script src=\"../../js/jquery-1.7.2.min.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/knockoutBindersControl.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/knockoutjs/knockout-2.2.0.debug.js\"></script>\r\n");
@@ -102,7 +104,7 @@ public final class demoId_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
-      out.write("        <input type=\"text\" data-bind=\"codepicker : code\" />\r\n");
+      out.write("        <input type=\"text\" data-bind=\"codepicker : code, codeEntity : { codeType : 1, companyId : '1' }\" />\r\n");
       out.write("\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

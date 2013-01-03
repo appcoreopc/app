@@ -50,13 +50,16 @@ public final class employeeQualificationView_jsp extends org.apache.jasper.runti
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("    <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("        <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <link href=\"../../kendo/styles/kendo.custom.min.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <link href=\"../../css/employeeGeneralForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeQualificationViewViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeHelper.js\"></script>\r\n");
       out.write("\r\n");
-      out.write("        <script type=\"text/html\" id=\"employeeContactTemplate\">\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        <script type=\"text/html\" id=\"employeeQualificationTemplate\">\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRowView\">\r\n");
       out.write("        <div class=\"viewLabelSection\">Level</div><div class=\"inputSection\" data-bind=\"text: level\"></div>\r\n");
@@ -114,7 +117,7 @@ public final class employeeQualificationView_jsp extends org.apache.jasper.runti
       out.write("        <div id=\"contactInfoEditCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("\r\n");
       out.write("        <button id=\"contactEdit\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.editData\"\r\n");
-      out.write("        class=\"command\">Edit</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-edit editCommandIcon\"></i>Edit</button>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
@@ -128,7 +131,7 @@ public final class employeeQualificationView_jsp extends org.apache.jasper.runti
       out.write("        </script>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <script type=\"text/html\" id=\"employeeContactAddTemplate\">\r\n");
+      out.write("        <script type=\"text/html\" id=\"employeeQualificationAddTemplate\">\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRowView\">\r\n");
       out.write("        <div class=\"viewLabelSection\">Level</div><div class=\"inputSection\"> <input type=\"text\" data-bind=\"value: level\" /></div>\r\n");
@@ -181,10 +184,10 @@ public final class employeeQualificationView_jsp extends org.apache.jasper.runti
       out.write("\r\n");
       out.write("        <div id=\"employeeAddContactCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("        <button id=\"contactInfoSave\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.saveDataForm\"\r\n");
-      out.write("        class=\"command\">Save</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-ok saveCommandIcon\"></i>Save</button>\r\n");
       out.write("\r\n");
       out.write("        <button id=\"contactCancel\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.cancelEdit\"\r\n");
-      out.write("        class=\"command\">Cancel</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-cancel saveCommandIcon\"></i>Cancel</button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");

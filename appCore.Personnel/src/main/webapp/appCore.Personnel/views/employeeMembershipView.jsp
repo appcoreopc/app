@@ -1,4 +1,5 @@
     <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeMembershipViewViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
@@ -70,7 +71,7 @@
         <div id="familyInfoEditCommand" class="maintenanceCommand">
 
         <button id="familyEdit" type="button" data-bind="visible : $root.enableAdd, click: $root.editData"
-        class="command">Edit</button>
+        class="command"><i class="icon-edit editCommandIcon"></i>Edit</button>
 
 
         </div>
@@ -156,10 +157,10 @@
 
         <div id="employeeAddContactCommand" class="maintenanceCommand">
         <button id="contactInfoSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"
-        class="command">Save</button>
+        class="command"><i class="icon-ok saveCommandIcon"></i>Save</button>
 
         <button id="contactCancel" type="button" data-bind="visible : $root.enableAdd, click: $root.cancelEdit"
-        class="command">Cancel</button>
+        class="command"><i class="icon-cancel saveCommandIcon"></i>Cancel</button>
         </div>
         </div>
         </div>

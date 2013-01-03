@@ -96,7 +96,7 @@ var EmployeeFamilyViewViewModel = function (dataSource, mode, audMode, employeeI
     }.bind(this);
 
     self.cancelEdit = function () {
-        //self.editData();
+        self.editData();
         self.mode(0);
     }
 

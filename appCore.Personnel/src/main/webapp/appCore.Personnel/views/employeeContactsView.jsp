@@ -1,5 +1,5 @@
         <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
+        <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeContactViewViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
@@ -70,8 +70,8 @@
 
         <div id="contactInfoEditCommand" class="maintenanceCommand">
 
-        <button id="contactEdit" type="button" data-bind="visible : $root.enableAdd, click: $root.editData"
-        class="command">Edit</button>
+        <button id="contactEdit" type="button" data-bind="visible : $root.enableAdd, click: $root.editData">
+        <i class="icon-edit editCommandIcon"></i>Edit</button>
 
 
         </div>
@@ -160,11 +160,9 @@
         <div class="labelSection"></div><div class="inputSection">
 
         <div id="employeeAddContactCommand" class="maintenanceCommand">
-        <button id="contactInfoSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"
-        class="command">Save</button>
+        <button id="contactInfoSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"> <i class="icon-ok saveCommandIcon"></i>Save</button>
 
-        <button id="contactCancel" type="button" data-bind="visible : $root.enableAdd, click: $root.cancelEdit"
-        class="command">Cancel</button>
+        <button id="contactCancel" type="button" data-bind="visible : $root.enableAdd, click: $root.cancelEdit"> <i class="icon-cancel saveCommandIcon"></i>Cancel</button>
         </div>
         </div>
         </div>

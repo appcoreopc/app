@@ -1,6 +1,6 @@
         <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
-
+        <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeResidenceViewViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
@@ -74,7 +74,7 @@
         <div id="residenceInfoEditCommand" class="maintenanceCommand">
 
         <button id="residenceEdit" type="button" data-bind="visible : $root.enableAdd, click: $root.editData"
-        class="command">Edit</button>
+        class="command"><i class="icon-edit editCommandIcon"></i>Edit</button>
 
 
         </div>
@@ -171,10 +171,10 @@
         <div id="residenceInfoSaveCommand" class="maintenanceCommand">
 
         <button id="residenceSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"
-        class="command">Save</button>
+        class="command"><i class="icon-ok saveCommandIcon"></i>Save</button>
 
         <button id="residenceCancel" type="button" data-bind="visible : $root.enableAdd, click: $root.cancelEdit"
-        class="command">Cancel</button>
+        class="command"><i class="icon-cancel saveCommandIcon"></i>Cancel</button>
 
 
         </div>

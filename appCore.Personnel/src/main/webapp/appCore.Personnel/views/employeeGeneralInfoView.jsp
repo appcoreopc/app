@@ -5,7 +5,7 @@
         <script language="javascript" src="../../js/viewmodal/employeeGeneralInfoViewModel.js"></script>
 
         <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script type="text/html" id="employeeGeneralInfoTemplate">
 
