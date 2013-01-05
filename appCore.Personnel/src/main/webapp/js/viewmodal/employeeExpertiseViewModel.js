@@ -1,7 +1,6 @@
-var EmployeeExpertiseViewModel = function (initView, value, data) {
+var EmployeeExpertiseViewModel = function (initView, globalViewModel) {
 
     var self = this;
-
     self.industry = ko.observable();
     self.specialty = ko.observable();
     self.startDate = ko.observable();
@@ -18,11 +17,13 @@ var EmployeeExpertiseViewModel = function (initView, value, data) {
     var ajaxCore = new AjaxCore();
 
     this.loadInitData = function () {
-        helper.getIndustryCode(self.industryList);
+
+        helper.getIndustryCodeByCompany(self.industryList, globalViewModel.companyId());
+        helper.getSpecialtyCodeByCompany(self.specialtyList, globalViewModel.companyId());
     }
 
     this.getRole = function () {
-        var input = { "id":globalEmployeeModule, "roleId":1 };
+        var input = { "id":globalEmployeeModule, "roleId": globalViewModel.employeeRole() };
         return input;
     }
 
@@ -76,7 +77,7 @@ var EmployeeExpertiseViewModel = function (initView, value, data) {
         employeeExpertise.period = self.period();
         employeeExpertise.remarks = self.remarks();
 
-        employeeExpertise.employeeRefId = globalCurrentEmployee;
+        employeeExpertise.employeeRefId = globalViewModel.targetId()    ;
         var request = ajaxCore.sendRequestType(globalEmployeeExpertiseAddUrl, employeeExpertise, "post");
 
         request.success(function (data, status, xhrObj) {

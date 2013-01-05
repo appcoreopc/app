@@ -9,24 +9,17 @@
         $(document).ready(function()
         {
 
-        $("#MembershipForm").validationEngine();
+            $("#MembershipForm").validationEngine();
 
-        var ajaxCore = new AjaxCore();
-        var vm = new EmployeeMembershipViewModel(0);
+            var ajaxCore = new AjaxCore();
+            var vm = new EmployeeMembershipViewModel(0, globalViewModel);
 
-        var gridDataObject = vm.getView();
-        var input = vm.getRole();
+            var gridDataObject = vm.getView();
+            var input = vm.getRole();
 
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-
-        $(document).unbind("parseComplete");
-
-        $(document).bind("parseComplete", function()
-        {
+            var coreCommand = new CoreCommand();
+            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
             ko.applyBindings(vm, document.getElementById("MembershipAddDetailInfo"));
-        });
-
 
         });
 
@@ -46,8 +39,8 @@
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Member Type</div><div class="inlineLabelSection"><input type="text"
-        id="MemberType" data-bind="value: memberType" /></div>
+        <div class="inlineLabelSection">Member Type</div><div class="inlineLabelSection"><select
+        id="MemberType" data-bind="options: memberTypeList, optionsText: 'name', optionsValue: 'nid', value: memberType"></select></div>
         </div>
         </div>
 
@@ -64,8 +57,8 @@
         data-bind="datepicker: startDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}"/></div>
         </div>
 
-        <div class="rightSection">
-        <div class="inlineLabelSection">End Date</div><div class="inlineLabelSection"><input type="text" id="EndDate"
+        <div class="rightSectionInline">
+        <div class="inlineLabelSection">End Date</div><div class="inlineLabelSectionExtra"><input type="text" id="EndDate"
         data-bind="datepicker: endDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}"/></div>
         </div>
         </div>
@@ -106,7 +99,7 @@
         </div>
 
 
-        <div class="sectionalForm">
+        <div class="formRow">
         <div id="userCommand"></div>
         </div>
 

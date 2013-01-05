@@ -1,5 +1,6 @@
         <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
+
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeFamilyViewModel.js"></script>
 
@@ -9,20 +10,15 @@
         {
             $("#FamilyForm").validationEngine();
 
-            var vm = new EmployeeFamilyViewModel(0);
+            var vm = new EmployeeFamilyViewModel(0, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            ko.applyBindings(vm, document.getElementById("familyAddDetailInfo"));
 
-            $(document).unbind("parseComplete");
-
-            $(document).bind("parseComplete", function()
-            {
-                ko.applyBindings(vm, document.getElementById("familyAddDetailInfo"));
-            });
         });
 
         </script>
@@ -39,8 +35,8 @@
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Member Type</div><div class="inlineLabelSection"><input type="text"
-        id="MemberType" data-bind="value: memberType" class="validate[required]"/></div>
+        <div class="rightLabelSection">Member Type</div><div class="inlineLabelSection"><select
+        id="MemberType" data-bind="options: memberTypeList, optionsText: 'name', optionsValue: 'nid', value: memberType" class="validate[required]"></select></div>
         </div>
         </div>
 
@@ -52,7 +48,7 @@
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Age</div><div class="inlineLabelSection"><input type="text" id="Age"
+        <div class="rightLabelSection">Age</div><div class="inlineLabelSection"><input type="text" id="Age"
         data-bind="value: age" class="validate[required], custom[integer]"/></div>
         </div>
         </div>
@@ -70,7 +66,7 @@
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Gender</div><div class="inlineLabelSection">
+        <div class="rightLabelSection">Gender</div><div class="inlineLabelSection">
 
         <select id="Gender" data-bind="options: genderList, optionsText: 'name', optionsValue: 'nid', value: gender"
         name="Gender">
@@ -96,7 +92,7 @@
         <div class="labelSection">I/C No</div><div class="inputSection"><input type="text" id="IdentificationNo"
         data-bind="value: identificationNo" class="validate[required], maxSize[20]"/></div>
         </div>
-
+`
 
         <div class="sectionalForm">
         <div class="labelSection">Working</div><div class="inputSection"><input type="checkbox" data-bind="checked:
@@ -135,7 +131,7 @@
         </div>
 
 
-        <div class="sectionalForm">
+        <div class="formRow">
         <div id="userCommand"></div>
         </div>
 

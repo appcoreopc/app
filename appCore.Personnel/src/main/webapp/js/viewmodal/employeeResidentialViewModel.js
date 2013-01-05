@@ -1,8 +1,7 @@
-var EmployeeResidentialViewModel = function (initView, value, data) {
-
-    this.mode = initView;
+var EmployeeResidentialViewModel = function (initView, globalViewModel) {
 
     var self = this;
+    this.mode = initView;
 
     self.permanentAddress1 = ko.observable();
     self.permanentAddress2 = ko.observable();
@@ -22,7 +21,7 @@ var EmployeeResidentialViewModel = function (initView, value, data) {
     var helper = new EmployeeHelper();
 
     this.getRole = function () {
-        var input = { "id":globalEmployeeModule, "roleId":1 };
+        var input = { "id":globalEmployeeModule, "roleId": globalViewModel.employeeRole() };
         return input;
     }
 
@@ -87,7 +86,7 @@ var EmployeeResidentialViewModel = function (initView, value, data) {
         employeeResidence.contact1 = self.contactNo();
         employeeResidence.contact2 = self.contactNo2();
 
-        employeeResidence.employeeRefId = globalCurrentEmployee;
+        employeeResidence.employeeRefId = globalViewModel.targetId();
 
         var ajaxCore = new AjaxCore();
 

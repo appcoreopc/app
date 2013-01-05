@@ -79,8 +79,6 @@ var CoreCommand = function () {
     // editorMode = Update is used during page insert mode whereby Grid contains information
     function createAddUpdateDeleteView(commandDataObject) {
 
-        // $(".maintenanceCommand").empty();
-
         if (commandDataObject.editorMode != undefined && commandDataObject.editorMode == globalEditorModeInsert) {
 
             createAddCommand(addCommandId, commandDataObject.addLinkInfo);
@@ -168,11 +166,11 @@ var CoreCommand = function () {
             cancellationText = "Cancel";
 
         if (cancelCommandObject == null) {
-
             createCommand(cancellationControlId, cancellationText, cancelCommandObject, controlIdToAppendTo);
             createCancelBindingEventForControl(cancellationControlId, cancellationLink);
         }
-        else {
+        else
+        {
             createCommand(cancellationControlId, cancellationText, cancelCommandObject, controlIdToAppendTo);
             createJsonBindingEventForControl(cancellationControlId, cancelCommandObject.callback);
         }
@@ -206,6 +204,7 @@ var CoreCommand = function () {
     function createCommand(ctrlId, text, commandObject, controlIdToAppendTo) {
 
         if (commandObject != undefined && commandObject.icon != undefined && controlIdToAppendTo != undefined) {
+
             appendCommandToCtrlId("<button class='" + commandObject.icon + " command' type='button' id='" + ctrlId + "'>" + text + "</button>", controlIdToAppendTo);
         }
         else if (commandObject != undefined && commandObject.icon != undefined) {

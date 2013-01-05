@@ -24,10 +24,11 @@ var EmployeeHelper = function () {
 
 
     this.getCancelInfo = function () {
+
         var cancelLinkInfo =
         {
             "text":"Cancel",
-            "icon":"icon-plus",
+            //"icon":"icon-plus",
             "commandId":'ContactCancel',
             "link":this.centerPage,
             "targetControlId":"#userCommand",
@@ -66,6 +67,21 @@ var EmployeeHelper = function () {
         });
     }
 
+    this.getIndustryCodeByCompany = function (list, entity) {
+
+        var entityObject = { "id": entity };
+
+        var ajaxCore = new AjaxCore();
+        var industryRequest = ajaxCore.sendRequest(globalEmployeeIndustryListByCompany, entityObject, "get");
+        industryRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+
     this.deleteEmployee = function (targetData, callback) {
         var objectId = { "id":targetData.nid };
         var ajaxCore = new AjaxCore();
@@ -77,7 +93,7 @@ var EmployeeHelper = function () {
 
     this.getSpecialtyCode = function (list) {
         var ajaxCore = new AjaxCore();
-        var specialtyRequest = ajaxCore.sendRequestType(globalEmployeeIndustryList, null, "get");
+        var specialtyRequest = ajaxCore.sendRequestType(globalEmployeeSpecialtyList, null, "get");
 
         specialtyRequest.success(function (data, status, xhrObj) {
             for (var i = 0; i < data.length; i++) {
@@ -86,6 +102,21 @@ var EmployeeHelper = function () {
             }
         });
     }
+
+    this.getSpecialtyCodeByCompany = function (list, entity) {
+
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var specialtyRequest = ajaxCore.sendRequest(globalEmployeeSpecialtyListByCompany, entityObject, "get");
+
+        specialtyRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
 
     this.getIndustryCodeSequential = function () {
         var ajaxCore = new AjaxCore();
@@ -116,10 +147,38 @@ var EmployeeHelper = function () {
         });
     }
 
+    this.getLevelCodeByCompany = function (list, entity) {
+
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+
+        var levelRequest = ajaxCore.sendRequest(globalEmployeeLevelListByCompany, entityObject, "get");
+        levelRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+
     this.getAssociationMemberCode = function (list) {
         var ajaxCore = new AjaxCore();
 
-        var levelRequest = ajaxCore.sendRequestType(globalEmployeeAssociationMemberTypelList, null, "get");
+        var levelRequest = ajaxCore.sendRequestType(globalEmployeeAssociationMemberTypeList, null, "get");
+        levelRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+
+    this.getAssociationMemberCodeByCompany = function (list, entity) {
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var levelRequest = ajaxCore.sendRequest(globalEmployeeAssociationMemberTypeListByCompany, entityObject, "get");
         levelRequest.success(function (data, status, xhrObj) {
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];
@@ -141,10 +200,24 @@ var EmployeeHelper = function () {
         });
     }
 
+    this.getFamilyMemberCodeByCompany = function (list, entity) {
+
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+
+        var levelRequest = ajaxCore.sendRequest(globalEmployeeFamilyMemberTypelList, entityObject, "get");
+        levelRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+
 
     this.getFieldCode = function (list) {
         var ajaxCore = new AjaxCore();
-
         var fieldRequest = ajaxCore.sendRequestType(globalEmployeeFieldExpertiseList, null, "get");
         fieldRequest.success(function (data, status, xhrObj) {
             for (var i = 0; i < data.length; i++) {
@@ -153,6 +226,21 @@ var EmployeeHelper = function () {
             }
         });
     }
+
+    this.getFieldCodeByCompany = function (list, entity) {
+
+        var entityObject = { id : entity };
+
+        var ajaxCore = new AjaxCore();
+        var fieldRequest = ajaxCore.sendRequest(globalEmployeeFieldExpertiseListByCompany, entityObject, "get");
+        fieldRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
 
     this.getSalutationCode = function (list) {
         var ajaxCore = new AjaxCore();
@@ -166,6 +254,18 @@ var EmployeeHelper = function () {
         });
     }
 
+    this.getSalutationCodeByCompany = function (list, entity) {
+
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var salutationRequest = ajaxCore.sendRequest(globalEmployeeSalutationListByCompany, entityObject, "get");
+        salutationRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
 
     this.getRaceCode = function (list) {
         var ajaxCore = new AjaxCore();
@@ -216,7 +316,6 @@ var EmployeeHelper = function () {
         });
     }
 
-
     this.getCountryCode = function (list) {
         var ajaxCore = new AjaxCore();
 
@@ -229,6 +328,19 @@ var EmployeeHelper = function () {
         });
     }
 
+    this.getCountryCodeByCompany = function (list, entity) {
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var salutationRequest = ajaxCore.sendRequest(globalCountryListByCompany, entityObject, "get");
+        salutationRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+
     this.getGenderCode = function (list) {
         var ajaxCore = new AjaxCore();
         var genderRequest = ajaxCore.sendRequestType(globalEmployeeGenderExpertiseList, null, "get");
@@ -240,9 +352,33 @@ var EmployeeHelper = function () {
         });
     }
 
+    this.getGenderCodeByCompany = function (list, entity) {
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var genderRequest = ajaxCore.sendRequest(globalEmployeeGenderExpertiseListByCompany, entityObject, "get");
+        genderRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+    this.getMaritalStatusCodeByCompany = function (list, entity) {
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var maritalRequest = ajaxCore.sendRequest(globalEmployeeMaritalStatusListByCompany, entityObject, "get");
+        maritalRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
     this.getMaritalStatusCode = function (list) {
         var ajaxCore = new AjaxCore();
-        var maritalRequest = ajaxCore.sendRequestType(globalEmployeeMaritalStatusExpertiseList, null, "get");
+        var maritalRequest = ajaxCore.sendRequestType(globalEmployeeMaritalStatusList, null, "get");
         maritalRequest.success(function (data, status, xhrObj) {
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];

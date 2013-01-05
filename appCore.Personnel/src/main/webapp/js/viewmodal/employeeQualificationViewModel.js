@@ -1,9 +1,8 @@
-var EmployeeQualificationViewModel = function (initView, value, data) {
+var EmployeeQualificationViewModel = function (initView, globalViewModel) {
 
     var self = this;
     this.mode = initView;
     this.addPage = "employeeAdd.jsp";
-
 
     self.level = ko.observable();
     self.field = ko.observable();
@@ -25,20 +24,18 @@ var EmployeeQualificationViewModel = function (initView, value, data) {
 
     var helper = new EmployeeHelper();
 
-    this.loadInitData = function()
-    {
-        helper.getLevelCode(self.levelList);
-        helper.getFieldCode(self.fieldList);
+    this.loadInitData = function () {
+        helper.getLevelCodeByCompany(self.levelList, globalViewModel.companyId());
+        helper.getFieldCodeByCompany(self.fieldList, globalViewModel.companyId);
     }
 
-
     this.getRole = function () {
-        var input = { "id":globalEmployeeModule, "roleId":1 };
+        var input = { "id":globalEmployeeModule, "roleId":globalViewModel.employeeRole() };
         return input;
     }
 
     this.getView = function () {
-        var gridDataObject =  {};
+        var gridDataObject = {};
 
         switch (this.mode) {
 
@@ -90,7 +87,7 @@ var EmployeeQualificationViewModel = function (initView, value, data) {
         employeeQualification.startDate = helper.getDate(self.startDate());
         employeeQualification.endDate = helper.getDate(self.endDate());
 
-        employeeQualification.employeeRefId = globalCurrentEmployee;
+        employeeQualification.employeeRefId = globalViewModel.targetId();
 
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalEmployeeQualificationUrl, employeeQualification, "post");
@@ -99,7 +96,5 @@ var EmployeeQualificationViewModel = function (initView, value, data) {
             helper.closeDialog();
         });
     }
-
-
 
 }

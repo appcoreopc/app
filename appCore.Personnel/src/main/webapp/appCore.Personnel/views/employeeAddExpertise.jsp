@@ -7,25 +7,18 @@
 
         $(document).ready(function()
         {
+            $("#ExpertiseForm").validationEngine();
 
-        $("#ExpertiseForm").validationEngine();
+            var ajaxCore = new AjaxCore();
+            var vm = new EmployeeExpertiseViewModel(0, globalViewModel);
 
-        var ajaxCore = new AjaxCore();
-        var vm = new EmployeeExpertiseViewModel(0);
+            var gridDataObject = vm.getView();
+            var input = vm.getRole();
 
-        var gridDataObject = vm.getView();
-        var input = vm.getRole();
-
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-
-        $(document).unbind("parseComplete");
-
-        $(document).bind("parseComplete", function()
-        {
-        vm.loadInitData();
-        ko.applyBindings(vm, document.getElementById("employeeExpertiseAddDetailInfo"));
-        });
+            var coreCommand = new CoreCommand();
+            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            vm.loadInitData();
+            ko.applyBindings(vm, document.getElementById("employeeExpertiseAddDetailInfo"));
 
         });
 
@@ -46,7 +39,7 @@
 
         <div class="rightSection">
         <div class="inlineLabelSection">Specialty</div><div class="inlineLabelSection"><select type="text"
-        data-bind="options: industryList, optionsText: 'name', optionsValue: 'nid', value: specialty" id="Specialty"
+        data-bind="options: specialtyList, optionsText: 'name', optionsValue: 'nid', value: specialty" id="Specialty"
         /></div>
         </div>
         </div>
@@ -58,8 +51,8 @@
         data-bind="datepicker: startDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}"/></div>
         </div>
 
-        <div class="rightSection">
-        <div class="inlineLabelSection">End Date</div><div class="inlineLabelSection"><input type="text"
+        <div class="rightSectionInline">
+        <div class="inlineLabelSection">End Date</div><div class="inlineLabelSectionExtra"><input type="text"
         data-bind="datepicker: endDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}" id="EndDate" /></div>
         </div>
         </div>
@@ -82,7 +75,7 @@
         </div>
 
 
-        <div class="sectionalForm">
+        <div class="formRow">
         <div id="userCommand"></div>
         </div>
 

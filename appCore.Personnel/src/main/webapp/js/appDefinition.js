@@ -125,15 +125,31 @@ var globalEmployeeExpertiseSaveOrUpdateUrl = globalHostname + "/app/Job/Employee
 
 var globalEmployeeIndustryList = globalHostname + "/app/Job/Industry/list";
 
+var globalEmployeeSpecialtyList = globalHostname + "/app/Job/Specialty/list";
+
+var globalEmployeeSpecialtyListByCompany = globalHostname + "/app/Job/Specialty/listByCompany";
+
+var globalEmployeeIndustryListByCompany = globalHostname + "/app/Job/Industry/listByCompany";
+
 var globalEmployeeLevelList = globalHostname + "/app/Job/Level/list";
 
-var globalEmployeeAssociationMemberTypelList = globalHostname + "/app/Job/AssociationMembershipType/list";
+var globalEmployeeLevelListByCompany = globalHostname + "/app/Job/Level/listByCompany";
+
+var globalEmployeeAssociationMemberTypeList = globalHostname + "/app/Job/AssociationMembershipType/list";
+
+var globalEmployeeAssociationMemberTypeListByCompany = globalHostname + "/app/Job/AssociationMembershipType/listByCompany";
 
 var globalEmployeeFamilyMemberTypelList = globalHostname + "/app/Job/FamilyRelationType/list";
 
+var globalEmployeeFamilyMemberTypelListByCompany = globalHostname + "/app/Job/FamilyRelationType/listByCompany";
+
 var globalEmployeeFieldExpertiseList = globalHostname + "/app/Job/FieldOfExpertise/list";
 
+var globalEmployeeFieldExpertiseListByCompany = globalHostname + "/app/Job/FieldOfExpertise/listByCompany";
+
 var globalEmployeeSalutationList = globalHostname + "/app/Job/Salutation/list";
+
+var globalEmployeeSalutationListByCompany = globalHostname + "/app/Job/Salutation/listByCompany";
 
 var globalEmployeeRaceList = globalHostname + "/app/Job/Race/list";
 
@@ -145,9 +161,15 @@ var globalEmployeeReligionList = globalHostname + "/app/Job/Religion/list";
 
 var globalCountryList = globalHostname + "/app/Job/Country/list";
 
-var globalEmployeeMaritalStatusExpertiseList = globalHostname + "/app/Job/MaritalStatus/list";
+var globalCountryListByCompany = globalHostname + "/app/Job/Country/listByCompany";
+
+var globalEmployeeMaritalStatusList = globalHostname + "/app/Job/MaritalStatus/list";
+
+var globalEmployeeMaritalStatusListByCompany = globalHostname + "/app/Job/MaritalStatus/listByCompany";
 
 var globalEmployeeGenderExpertiseList = globalHostname + "/app/Job/Gender/list";
+
+var globalEmployeeGenderExpertiseListByCompany = globalHostname + "/app/Job/Gender/listByCompany";
 
 var globallandingPage = "landingpage.jsp";
 

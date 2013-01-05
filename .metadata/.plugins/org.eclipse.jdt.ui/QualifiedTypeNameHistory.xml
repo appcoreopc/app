@@ -50,4 +50,5 @@
 <fullyQualifiedTypeName name="com.appCore.Requests.CodeRequest"/>
 <fullyQualifiedTypeName name="com.appCore.Requests.RequestStatus"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Helpers.CodeCheckerHelper"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

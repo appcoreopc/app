@@ -1,9 +1,8 @@
-var EmployeeMembershipViewModel = function (initView, value, data) {
+var EmployeeMembershipViewModel = function (initView, globalViewModel) {
 
     this.mode = initView;
 
     var self = this;
-
     self.association = ko.observable();
     self.memberType = ko.observable();
     self.membershipContact = ko.observable();
@@ -21,11 +20,12 @@ var EmployeeMembershipViewModel = function (initView, value, data) {
     self.memberTypeList = ko.observableArray();
 
     this.getRole = function () {
-        var input = { "id":globalEmployeeModule, "roleId":1 };
+        var input = { "id":globalEmployeeModule, "roleId": globalViewModel.employeeRole() };
         return input;
     }
 
     var helper = new EmployeeHelper();
+    helper.getAssociationMemberCodeByCompany(self.memberTypeList, globalViewModel.companyId());
 
     this.loadInitData = function () {
 
@@ -85,7 +85,7 @@ var EmployeeMembershipViewModel = function (initView, value, data) {
         employeeMembership.attachments = self.attachment();
         employeeMembership.remarks = self.remarks();
 
-        employeeMembership.employeeRefId = globalCurrentEmployee;
+        employeeMembership.employeeRefId = globalViewModel.targetId();
 
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalEmployeeMembershipUrl, employeeMembership, "post");

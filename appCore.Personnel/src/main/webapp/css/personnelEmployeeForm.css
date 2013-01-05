@@ -344,7 +344,7 @@ span.fieldSpacer {
     margin-end: auto;
     border-style: dotted;
     border-width: 1px;
-    width: 50em;
+    width: 100%;
     border-color: #e1e1e1;
 }
 

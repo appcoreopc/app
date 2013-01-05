@@ -34,7 +34,7 @@ var CoreDialog = function () {
                 position:'center',
                 modal:true,
                 height:"auto",
-                width:850,
+                width: 950,
                 open:function () {
                     $("#" + commandObjects.targetId).load(commandObjects.url, function () {
                     });

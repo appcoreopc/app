@@ -9,24 +9,17 @@
 
         $(document).ready(function()
         {
-
             $("#ContactForm").validationEngine();
 
             var ajaxCore = new AjaxCore();
-            var vm = new EmployeeContactsViewModel(0);
+            var vm = new EmployeeContactsViewModel(0, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-
-            $(document).unbind("parseComplete");
-
-            $(document).bind("parseComplete", function()
-            {
-                ko.applyBindings(vm, document.getElementById("contactsAddDetailInfo"));
-            });
+            ko.applyBindings(vm, document.getElementById("contactsAddDetailInfo"));
 
         });
 

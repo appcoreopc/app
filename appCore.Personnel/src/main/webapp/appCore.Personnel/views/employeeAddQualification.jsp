@@ -8,24 +8,19 @@
         $(document).ready(function()
         {
 
-        $("#QualificationForm").validationEngine();
+            $("#QualificationForm").validationEngine();
 
-        var ajaxCore = new AjaxCore();
-        var vm = new EmployeeQualificationViewModel(0);
+            var ajaxCore = new AjaxCore();
+            var vm = new EmployeeQualificationViewModel(0, globalViewModel);
 
-        var gridDataObject = vm.getView();
-        var input = vm.getRole();
+            var gridDataObject = vm.getView();
+            var input = vm.getRole();
 
-        var coreCommand = new CoreCommand();
-        coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            var coreCommand = new CoreCommand();
+            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
 
-        $(document).unbind("parseComplete");
-
-        $(document).bind("parseComplete", function()
-        {
             vm.loadInitData();
             ko.applyBindings(vm, document.getElementById("qualificationAddDetailInfo"));
-        });
 
         });
 
@@ -51,7 +46,7 @@
         </div>
 
 
-        <div class="formRow">
+        <div class="sectionalForm">
         <div class="labelSection">Major</div><div class="inputSection"><input type="text" id="Majors"
         data-bind="value: majors" class="validate[required], maxSize[30]"/></div>
         </div>
@@ -64,8 +59,8 @@
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Local/Oversea</div><div class="inlineLabelSection"><input type="text"
-        id="LocalOversea" data-bind="value: localOversea"/></div>
+        <div class="inlineLabelSection">Local/Oversea</div><div class="inlineLabelSection"><input type="checkbox"
+        id="LocalOversea" data-bind="checked : localOversea"/></div>
         </div>
         </div>
 
@@ -75,8 +70,8 @@
         data-bind="datepicker: startDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}"/></div>
         </div>
 
-        <div class="rightSection">
-        <div class="inlineLabelSection">End Date</div><div class="inlineLabelSection"><input type="text" id="EndDate"
+        <div class="rightSectionInline">
+        <div class="inlineLabelSection">End Date</div><div class="inlineLabelSectionExtra"><input type="text" id="EndDate"
         data-bind="datepicker: endDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}"/></div>
         </div>
         </div>
@@ -104,7 +99,7 @@
         </div>
 
 
-        <div class="sectionalForm">
+        <div class="formRow">
         <div id="userCommand"></div>
         </div>
 

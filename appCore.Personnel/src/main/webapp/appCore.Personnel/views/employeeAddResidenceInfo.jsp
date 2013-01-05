@@ -7,24 +7,17 @@
 
         $(document).ready(function()
         {
-
-            $("#EmployeeResidenceForm").validationEngine();
+           $("#EmployeeResidenceForm").validationEngine();
 
             var ajaxCore = new AjaxCore();
-            var vm = new EmployeeResidentialViewModel(0);
+            var vm = new EmployeeResidentialViewModel(0, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-
-            $(document).unbind("parseComplete");
-
-            $(document).bind("parseComplete", function()
-            {
-                ko.applyBindings(vm, document.getElementById("employeeResidenceAddInfo"));
-            });
+            ko.applyBindings(vm, document.getElementById("employeeResidenceAddInfo"));
 
         });
 
@@ -356,8 +349,12 @@
         <div></div>
         </div>
 
-
         <div class="sectionalForm">
+        <div></div>
+        </div>
+
+
+        <div class="formRow">
         <div id="userCommand"></div>
         </div>
 

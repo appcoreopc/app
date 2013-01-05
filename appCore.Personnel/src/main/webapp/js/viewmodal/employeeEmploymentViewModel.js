@@ -1,10 +1,8 @@
-
-var EmployeeEmploymentViewModel = function (initView, value, data) {
+var EmployeeEmploymentViewModel = function (initView, globalViewModel) {
 
     this.mode = initView;
 
     var self = this;
-
     self.employerName = ko.observable();
     self.job = ko.observable();
     self.industry = ko.observable();
@@ -18,15 +16,14 @@ var EmployeeEmploymentViewModel = function (initView, value, data) {
     self.remarks = ko.observable();
 
     self.industryList = ko.observableArray();
-
     var helper = new EmployeeHelper();
 
     this.loadInitData = function () {
-        helper.getIndustryCode(self.industryList);
+        helper.getIndustryCodeByCompany(self.industryList, globalViewModel.companyId());
     }
 
     this.getRole = function () {
-        var input = { "id":globalEmployeeModule, "roleId":1 };
+        var input = { "id":globalEmployeeModule, "roleId":globalViewModel.employeeRole()};
         return input;
     }
 
@@ -64,10 +61,9 @@ var EmployeeEmploymentViewModel = function (initView, value, data) {
         }
     }
 
-    this.saveExpertiseForm = function ()
-    {
-        var isValid = $("#" + "EmploymentForm").validationEngine('validate');
+    this.saveExpertiseForm = function () {
 
+        var isValid = $("#" + "EmploymentForm").validationEngine('validate');
         if (!isValid)
             return;
 
@@ -82,7 +78,7 @@ var EmployeeEmploymentViewModel = function (initView, value, data) {
         employeeEmployment.resignationReason = self.resignationReason();
         employeeEmployment.remarks = self.remarks();
 
-        employeeEmployment.employeeRefId = globalCurrentEmployee;
+        employeeEmployment.employeeRefId = globalViewModel.targetId();
 
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalEmployeeEmploymentUrl, employeeEmployment, "post");

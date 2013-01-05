@@ -1,8 +1,10 @@
-var EmployeeContactsViewModel = function (initView, value, data) {
+//var EmployeeContactsViewModel = function (initView, value, data) {
+
+var EmployeeContactsViewModel = function (initView, globalViewModel) {
 
     var self = this;
-    this.mode = initView;
 
+    this.mode = initView;
     self.email = ko.observable();
     self.alternateEmail = ko.observable();
 
@@ -20,7 +22,7 @@ var EmployeeContactsViewModel = function (initView, value, data) {
     self.telNo = ko.observable();
 
     this.getRole = function () {
-        var input = { "id":globalEmployeeModule, "roleId":1 };
+        var input = { "id":globalEmployeeModule, "roleId": globalViewModel.employeeRole() };
         return input;
     }
 
@@ -58,7 +60,10 @@ var EmployeeContactsViewModel = function (initView, value, data) {
         }
     }
 
-    this.saveContactsForm = function () {
+    self.saveContactsForm = function () {
+
+
+        alert(globalViewModel.targetId());
 
         var isValid = $("#" + "contactForm").validationEngine('validate');
 
@@ -83,8 +88,7 @@ var EmployeeContactsViewModel = function (initView, value, data) {
         employeeContact.mobileNo = self.hp();
         employeeContact.extNo = self.extNo();
 
-        employeeContact.employeeRefId = globalCurrentEmployee;
-
+        employeeContact.employeeRefId = globalViewModel.targetId();
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalEmployeeContactAddUrl, employeeContact, "post");
 

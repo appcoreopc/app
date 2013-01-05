@@ -52,6 +52,7 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
 
       out.write("        <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <link href=\"../../css/employeeGeneralAddForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeHelper.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeFamilyViewModel.js\"></script>\r\n");
       out.write("\r\n");
@@ -61,20 +62,15 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        {\r\n");
       out.write("            $(\"#FamilyForm\").validationEngine();\r\n");
       out.write("\r\n");
-      out.write("            var vm = new EmployeeFamilyViewModel(0);\r\n");
+      out.write("            var vm = new EmployeeFamilyViewModel(0, globalViewModel);\r\n");
       out.write("\r\n");
       out.write("            var gridDataObject = vm.getView();\r\n");
       out.write("            var input = vm.getRole();\r\n");
       out.write("\r\n");
       out.write("            var coreCommand = new CoreCommand();\r\n");
       out.write("            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);\r\n");
+      out.write("            ko.applyBindings(vm, document.getElementById(\"familyAddDetailInfo\"));\r\n");
       out.write("\r\n");
-      out.write("            $(document).unbind(\"parseComplete\");\r\n");
-      out.write("\r\n");
-      out.write("            $(document).bind(\"parseComplete\", function()\r\n");
-      out.write("            {\r\n");
-      out.write("                ko.applyBindings(vm, document.getElementById(\"familyAddDetailInfo\"));\r\n");
-      out.write("            });\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");
@@ -91,8 +87,8 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");
-      out.write("        <div class=\"inlineLabelSection\">Member Type</div><div class=\"inlineLabelSection\"><input type=\"text\"\r\n");
-      out.write("        id=\"MemberType\" data-bind=\"value: memberType\" class=\"validate[required]\"/></div>\r\n");
+      out.write("        <div class=\"rightLabelSection\">Member Type</div><div class=\"inlineLabelSection\"><select\r\n");
+      out.write("        id=\"MemberType\" data-bind=\"options: memberTypeList, optionsText: 'name', optionsValue: 'nid', value: memberType\" class=\"validate[required]\"></select></div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
@@ -104,7 +100,7 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");
-      out.write("        <div class=\"inlineLabelSection\">Age</div><div class=\"inlineLabelSection\"><input type=\"text\" id=\"Age\"\r\n");
+      out.write("        <div class=\"rightLabelSection\">Age</div><div class=\"inlineLabelSection\"><input type=\"text\" id=\"Age\"\r\n");
       out.write("        data-bind=\"value: age\" class=\"validate[required], custom[integer]\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
@@ -122,7 +118,7 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");
-      out.write("        <div class=\"inlineLabelSection\">Gender</div><div class=\"inlineLabelSection\">\r\n");
+      out.write("        <div class=\"rightLabelSection\">Gender</div><div class=\"inlineLabelSection\">\r\n");
       out.write("\r\n");
       out.write("        <select id=\"Gender\" data-bind=\"options: genderList, optionsText: 'name', optionsValue: 'nid', value: gender\"\r\n");
       out.write("        name=\"Gender\">\r\n");
@@ -148,7 +144,7 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <div class=\"labelSection\">I/C No</div><div class=\"inputSection\"><input type=\"text\" id=\"IdentificationNo\"\r\n");
       out.write("        data-bind=\"value: identificationNo\" class=\"validate[required], maxSize[20]\"/></div>\r\n");
       out.write("        </div>\r\n");
-      out.write("\r\n");
+      out.write("`\r\n");
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Working</div><div class=\"inputSection\"><input type=\"checkbox\" data-bind=\"checked:\r\n");
@@ -187,7 +183,7 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"sectionalForm\">\r\n");
+      out.write("        <div class=\"formRow\">\r\n");
       out.write("        <div id=\"userCommand\"></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");

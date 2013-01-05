@@ -1,4 +1,4 @@
-var EmployeeFamilyViewModel = function (initView, value, data) {
+var EmployeeFamilyViewModel = function (initView, globalViewModel) {
 
     var self = this;
 
@@ -24,17 +24,19 @@ var EmployeeFamilyViewModel = function (initView, value, data) {
     self.genderList = ko.observableArray();
     self.maritalStatusList = ko.observableArray();
     self.salutationList = ko.observableArray();
+    self.memberTypeList = ko.observableArray();
 
     var helper = new EmployeeHelper();
 
-    helper.getGenderCode(self.genderList);
-    helper.getMaritalStatusCode(self.maritalStatusList);
-    helper.getSalutationCode(self.salutationList);
+    helper.getGenderCodeByCompany(self.genderList, globalViewModel.companyId());
+    helper.getMaritalStatusCodeByCompany(self.maritalStatusList, globalViewModel.companyId());
+    helper.getSalutationCodeByCompany(self.salutationList, globalViewModel.companyId());
+    helper.getFamilyMemberCodeByCompany(self.memberTypeList, globalViewModel.companyId());
 
     this.mode = initView;
 
     this.getRole = function () {
-        var input = { "id":globalEmployeeModule, "roleId":1 };
+        var input = { "id":globalEmployeeModule, "roleId": globalViewModel.employeeRole() };
         return input;
     }
 
@@ -101,7 +103,7 @@ var EmployeeFamilyViewModel = function (initView, value, data) {
         employeeFamily.attachments = self.attachments();
         employeeFamily.remarks = self.remarks();
 
-        employeeFamily.employeeRefId = globalCurrentEmployee;
+        employeeFamily.employeeRefId = globalViewModel.targetId();
 
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalEmployeeFamilyUrl, employeeFamily, "post");

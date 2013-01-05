@@ -35,15 +35,16 @@ import javax.persistence.Table;
 						
 		
 		@Column(name = "Major")
-		private Integer major;
+		private String major;
 		
 		
 		@Column(name = "Institution")
-		private Integer institution;
+		private String institution;
 		
 		
 		@Column(name = "LocalOrOversea")
-		private Integer localOrOversea;
+		private boolean localOrOversea;
+		
 		
 		@Column(name = "StartDate")
 		private Timestamp startDate;
@@ -52,7 +53,7 @@ import javax.persistence.Table;
 		private Timestamp endDate;
 		
 		@Column(name = "ResultCGPA")
-		private Timestamp resultCGPA;
+		private String resultCGPA;
 		
 		
 		@Column(name = "Attachment")
@@ -144,32 +145,32 @@ import javax.persistence.Table;
 		
 		
 		
-		public Integer getMajor() {
+		public String getMajor() {
 			return major;
 		}
 
 
-		public void setMajor(Integer major) {
+		public void setMajor(String major) {
 			this.major = major;
 		}
 
 
-		public Integer getInstitution() {
+		public String getInstitution() {
 			return institution;
 		}
 
 
-		public void setInstitution(Integer institution) {
+		public void setInstitution(String institution) {
 			this.institution = institution;
 		}
 
 
-		public Integer getLocalOrOversea() {
+		public boolean getLocalOrOversea() {
 			return localOrOversea;
 		}
 
 
-		public void setLocalOrOversea(Integer localOrOversea) {
+		public void setLocalOrOversea(boolean localOrOversea) {
 			this.localOrOversea = localOrOversea;
 		}
 
@@ -194,12 +195,12 @@ import javax.persistence.Table;
 		}
 
 
-		public Timestamp getResultCGPA() {
+		public String getResultCGPA() {
 			return resultCGPA;
 		}
 
 
-		public void setResultCGPA(Timestamp resultCGPA) {
+		public void setResultCGPA(String resultCGPA) {
 			this.resultCGPA = resultCGPA;
 		}
 

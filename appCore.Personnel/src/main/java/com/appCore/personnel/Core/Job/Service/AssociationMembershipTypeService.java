@@ -31,7 +31,7 @@ public class AssociationMembershipTypeService
 	public List<AssociationMembershipType> getAllByCompany(Integer id) {
 	
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  AssociationMembershipType");
+		Query query = session.createQuery("FROM  AssociationMembershipType WHERE CompanyRef = :id");
 		query.setParameter("id", id);
 		return  query.list();
 	}

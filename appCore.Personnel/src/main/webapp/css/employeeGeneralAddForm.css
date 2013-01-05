@@ -14,9 +14,38 @@
 .inputSection {
     display: inline-block;
     padding-left: 20px;
+    width: 260px    ;
 }
 
 .sectionalForm {
     display: block;
     text-align: left;
+}
+
+.inlineLabelSection {
+    display: inline-block;
+    padding-left: 30px;
+    width: 120px;
+}
+
+.rightLabelSection {
+    display: inline-block;
+    width: 120px;
+}
+
+
+.inlineLabelSectionExtra {
+    display: inline;
+    padding-left: 30px;
+    width: 208px;
+}
+
+.rightSection {
+   display : inline-block;
+   width: 300px;
+}
+
+
+.rightSectionInline {
+    display: inline;
 }
