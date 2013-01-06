@@ -51,4 +51,8 @@
 <fullyQualifiedTypeName name="com.appCore.Requests.RequestStatus"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Helpers.CodeCheckerHelper"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="appCore.Mvc.Controller.AppCoreController"/>
 </qualifiedTypeNameHistroy>

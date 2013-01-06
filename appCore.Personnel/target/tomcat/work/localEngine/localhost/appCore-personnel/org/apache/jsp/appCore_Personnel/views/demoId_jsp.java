@@ -90,6 +90,18 @@ public final class demoId_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("\r\n");
+      out.write("            var ajaxCore = new AjaxCore();\r\n");
+      out.write("            var fieldRequest = ajaxCore.sendRequest(\"http://localhost:8080/appCore-personnel/app/Core/Branch/edit\", null, \"get\");\r\n");
+      out.write("            fieldRequest.success(function (data, status, xhrObj) {\r\n");
+      out.write("                console.log(data);\r\n");
+      out.write("            });\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        var SimplePage = function()\r\n");
       out.write("        {\r\n");
       out.write("            var self = this;\r\n");

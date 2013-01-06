@@ -38,6 +38,18 @@
         $(document).ready(function()
         {
 
+            var ajaxCore = new AjaxCore();
+            var fieldRequest = ajaxCore.sendRequest("http://localhost:8080/appCore-personnel/app/Core/Branch/edit", null, "get");
+            fieldRequest.success(function (data, status, xhrObj) {
+                console.log(data);
+            });
+
+
+
+
+
+
+
         var SimplePage = function()
         {
             var self = this;

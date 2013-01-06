@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="MavenProjectWizardArchetypePage">
+		<item value="defaultLocal" key="catalog"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -23,6 +24,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\appCoreDev\appCore.Mvc"/>
 			<item value="C:\appCoreDev\appCore.Data"/>
 			<item value="C:\appCoreDev\"/>
 		</list>
@@ -36,11 +38,14 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="groupId">
+			<item value="appCoreMvc"/>
 		</list>
 		<list key="package">
+			<item value="appCore.Mvc"/>
 			<item value="foo"/>
 		</list>
 		<list key="artifactId">
+			<item value="appCoreMvc"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -48,6 +53,19 @@
 			<item value="[artifactId]-[version]"/>
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="appCore.Shared"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="appCore.Shared"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
