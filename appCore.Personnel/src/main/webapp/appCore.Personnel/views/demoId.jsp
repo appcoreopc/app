@@ -44,21 +44,15 @@
                 console.log(data);
             });
 
+            var SimplePage = function()
+            {
+                var self = this;
 
+                self.code = ko.observable();
+            }
 
-
-
-
-
-        var SimplePage = function()
-        {
-            var self = this;
-
-            self.code = ko.observable();
-        }
-
-        var vm = new SimplePage();
-        ko.applyBindings(vm);
+            var vm = new SimplePage();
+            ko.applyBindings(vm);
 
         });
 

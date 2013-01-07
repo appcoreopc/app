@@ -87,12 +87,12 @@ public final class employeeAddEmploymentInfo_jsp extends org.apache.jasper.runti
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Employer Name</div><div class=\"inputSection\"><input type=\"text\" id=\"EmployerName\"\r\n");
-      out.write("        data-bind=\"value: employerName\" class=\"validate[required, maxSize[40]]\"/></div>\r\n");
+      out.write("        data-bind=\"value: employerName\" class=\"validate[required, maxSize[40]]\" data-prompt-position=\"bottomRight\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");
       out.write("        <div class=\"inlineLabelSection\">Job</div><div class=\"inlineLabelSection\"><input type=\"text\" id=\"Job\"\r\n");
-      out.write("        data-bind=\"value: job\" class=\"validate[required, maxSize[40]]\"/></div>\r\n");
+      out.write("        data-bind=\"value: job\" class=\"validate[required, maxSize[40]]\" data-prompt-position=\"bottomLeft\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");

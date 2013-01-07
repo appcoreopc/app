@@ -83,7 +83,7 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Member Name</div><div class=\"inputSection\"><input type=\"text\" id=\"MemberName\"\r\n");
-      out.write("        data-bind=\"value: memberName\" class=\"validate[required], maxSize[30]\"/></div>\r\n");
+      out.write("        data-bind=\"value: memberName\" class=\"validate[required], maxSize[30]\" data-prompt-position=\"bottomRight\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");

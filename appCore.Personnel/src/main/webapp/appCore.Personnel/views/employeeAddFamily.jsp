@@ -31,7 +31,7 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Member Name</div><div class="inputSection"><input type="text" id="MemberName"
-        data-bind="value: memberName" class="validate[required], maxSize[30]"/></div>
+        data-bind="value: memberName" class="validate[required], maxSize[30]" data-prompt-position="bottomRight"/></div>
         </div>
 
         <div class="rightSection">
@@ -122,7 +122,7 @@
 
         <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="Remarks"
-        data-bind="value: remarks" class="validate[required], maxSize[40]"/></div>
+        data-bind="value: remarks"/></div>
         </div>
 
 

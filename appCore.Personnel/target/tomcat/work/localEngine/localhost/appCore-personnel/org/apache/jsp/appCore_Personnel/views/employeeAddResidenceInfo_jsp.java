@@ -83,7 +83,7 @@ public final class employeeAddResidenceInfo_jsp extends org.apache.jasper.runtim
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Permanent Add.</div><div class=\"inputSection\"><input type=\"text\"\r\n");
-      out.write("        id=\"PermanentAddress1\" data-bind=\"value: permanentAddress1\" class=\"validate[required]\"/></div>\r\n");
+      out.write("        id=\"PermanentAddress1\" data-bind=\"value: permanentAddress1\" class=\"validate[required]\" data-prompt-position=\"bottomRight\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
@@ -363,7 +363,7 @@ public final class employeeAddResidenceInfo_jsp extends org.apache.jasper.runtim
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Post Code </div><div class=\"inputSection\"><input type=\"text\" id=\"PostCode\"\r\n");
-      out.write("        data-bind=\"value: postcode\" class=\"validate[custom[number]]\"/></div>\r\n");
+      out.write("        data-bind=\"value: postcode\" class=\"validate[required]\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");

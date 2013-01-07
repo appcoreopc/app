@@ -87,12 +87,12 @@ public final class employeeAddContacts_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Email</div><div class=\"inputSection\"><input type=\"text\" data-bind=\"value: email\"\r\n");
-      out.write("        id=\"Email\" class=\"validate[required, custom[email]]\" /></div>\r\n");
+      out.write("        id=\"Email\" class=\"validate[required, custom[email]]\" data-prompt-position=\"bottomRight\" /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");
       out.write("        <div class=\"inlineLabelSection\">H/P No</div><div class=\"inlineLabelSection\"><input type=\"text\" data-bind=\"value:\r\n");
-      out.write("        hp\" id=\"HP\" class=\"validate[maxSize[20]]\" /></div>\r\n");
+      out.write("        hp\" id=\"HP\" class=\"validate[maxSize[20]]\" data-prompt-position=\"bottomRight\" /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
@@ -100,7 +100,7 @@ public final class employeeAddContacts_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Alternate Email</div><div class=\"inputSection\"><input type=\"text\" data-bind=\"value:\r\n");
-      out.write("        alternateEmail\" id=\"AlternateEmail\" class=\"validate[required, custom[email]]\" /></div>\r\n");
+      out.write("        alternateEmail\" id=\"AlternateEmail\" class=\"validate[required, custom[email]]\" data-prompt-position=\"bottomRight\" /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");
@@ -112,7 +112,7 @@ public final class employeeAddContacts_jsp extends org.apache.jasper.runtime.Htt
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Correspondence Address </div><div class=\"inputSection\"><input type=\"text\"\r\n");
-      out.write("        data-bind=\"value: correspondenceAddress\" id=\"CorrespondenceAddress\" class=\"validate[required]\" /></div>\r\n");
+      out.write("        data-bind=\"value: correspondenceAddress\" id=\"CorrespondenceAddress\" class=\"validate[required]\"  data-prompt-position=\"bottomRight\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -394,7 +394,7 @@ public final class employeeAddContacts_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Post Code </div><div class=\"inputSection\"><input type=\"text\" data-bind=\"value:\r\n");
-      out.write("        postcode\" id=\"PostCode\" class=\"validate[custom[number]]\" /></div>\r\n");
+      out.write("        postcode\" id=\"PostCode\" class=\"validate[require]\" /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");

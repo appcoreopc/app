@@ -87,7 +87,7 @@ public final class employeeAddMembership_jsp extends org.apache.jasper.runtime.H
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Association</div><div class=\"inputSection\"><input type=\"text\" id=\"Association\"\r\n");
-      out.write("        data-bind=\"value: association\" class=\"validate[required]\"/></div>\r\n");
+      out.write("        data-bind=\"value: association\" class=\"validate[required]\" data-prompt-position=\"bottomRight\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");
@@ -99,7 +99,7 @@ public final class employeeAddMembership_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Contact Details</div><div class=\"inputSection\"><input type=\"text\"\r\n");
-      out.write("        id=\"MembershipContact\" data-bind=\"value: membershipContact\" class=\"validate[required]\"/></div>\r\n");
+      out.write("        id=\"MembershipContact\" data-bind=\"value: membershipContact\" class=\"validate[required]\" data-prompt-position=\"bottomRight\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -142,7 +142,7 @@ public final class employeeAddMembership_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Remarks</div><div class=\"inputSection\"><input type=\"text\" id=\"Remarks\"\r\n");
-      out.write("        data-bind=\"value: remarks\" class=\"validate[required, maxSize[40]]\"/></div>\r\n");
+      out.write("        data-bind=\"value: remarks\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");

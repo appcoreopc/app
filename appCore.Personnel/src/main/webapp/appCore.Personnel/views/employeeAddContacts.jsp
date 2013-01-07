@@ -35,12 +35,12 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Email</div><div class="inputSection"><input type="text" data-bind="value: email"
-        id="Email" class="validate[required, custom[email]]" /></div>
+        id="Email" class="validate[required, custom[email]]" data-prompt-position="bottomRight" /></div>
         </div>
 
         <div class="rightSection">
         <div class="inlineLabelSection">H/P No</div><div class="inlineLabelSection"><input type="text" data-bind="value:
-        hp" id="HP" class="validate[maxSize[20]]" /></div>
+        hp" id="HP" class="validate[maxSize[20]]" data-prompt-position="bottomRight" /></div>
         </div>
         </div>
 
@@ -48,7 +48,7 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Alternate Email</div><div class="inputSection"><input type="text" data-bind="value:
-        alternateEmail" id="AlternateEmail" class="validate[required, custom[email]]" /></div>
+        alternateEmail" id="AlternateEmail" class="validate[required, custom[email]]" data-prompt-position="bottomRight" /></div>
         </div>
 
         <div class="rightSection">
@@ -60,7 +60,7 @@
 
         <div class="sectionalForm">
         <div class="labelSection">Correspondence Address </div><div class="inputSection"><input type="text"
-        data-bind="value: correspondenceAddress" id="CorrespondenceAddress" class="validate[required]" /></div>
+        data-bind="value: correspondenceAddress" id="CorrespondenceAddress" class="validate[required]"  data-prompt-position="bottomRight"/></div>
         </div>
 
 
@@ -342,7 +342,7 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Post Code </div><div class="inputSection"><input type="text" data-bind="value:
-        postcode" id="PostCode" class="validate[custom[number]]" /></div>
+        postcode" id="PostCode" class="validate[require]" /></div>
         </div>
 
         <div class="rightSection">

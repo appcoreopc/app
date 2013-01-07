@@ -35,7 +35,7 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Association</div><div class="inputSection"><input type="text" id="Association"
-        data-bind="value: association" class="validate[required]"/></div>
+        data-bind="value: association" class="validate[required]" data-prompt-position="bottomRight"/></div>
         </div>
 
         <div class="rightSection">
@@ -47,7 +47,7 @@
 
         <div class="sectionalForm">
         <div class="labelSection">Contact Details</div><div class="inputSection"><input type="text"
-        id="MembershipContact" data-bind="value: membershipContact" class="validate[required]"/></div>
+        id="MembershipContact" data-bind="value: membershipContact" class="validate[required]" data-prompt-position="bottomRight"/></div>
         </div>
 
 
@@ -90,7 +90,7 @@
 
         <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="Remarks"
-        data-bind="value: remarks" class="validate[required, maxSize[40]]"/></div>
+        data-bind="value: remarks"/></div>
         </div>
 
 

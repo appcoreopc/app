@@ -142,7 +142,7 @@ public final class employeeAddQualification_jsp extends org.apache.jasper.runtim
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Remarks</div><div class=\"inputSection\"><input type=\"text\" id=\"QualificationRemark\"\r\n");
-      out.write("        data-bind=\"value: remarks\" class=\"validate[required], maxSize[40]\"/></div>\r\n");
+      out.write("        data-bind=\"value: remarks\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");

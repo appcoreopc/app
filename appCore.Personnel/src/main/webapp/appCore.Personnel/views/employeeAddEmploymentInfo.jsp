@@ -35,12 +35,12 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Employer Name</div><div class="inputSection"><input type="text" id="EmployerName"
-        data-bind="value: employerName" class="validate[required, maxSize[40]]"/></div>
+        data-bind="value: employerName" class="validate[required, maxSize[40]]" data-prompt-position="bottomRight"/></div>
         </div>
 
         <div class="rightSection">
         <div class="inlineLabelSection">Job</div><div class="inlineLabelSection"><input type="text" id="Job"
-        data-bind="value: job" class="validate[required, maxSize[40]]"/></div>
+        data-bind="value: job" class="validate[required, maxSize[40]]" data-prompt-position="bottomLeft"/></div>
         </div>
         </div>
 

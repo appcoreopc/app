@@ -31,7 +31,7 @@
 
         <div class="sectionalForm">
         <div class="labelSection">Permanent Add.</div><div class="inputSection"><input type="text"
-        id="PermanentAddress1" data-bind="value: permanentAddress1" class="validate[required]"/></div>
+        id="PermanentAddress1" data-bind="value: permanentAddress1" class="validate[required]" data-prompt-position="bottomRight"/></div>
         </div>
 
         <div class="sectionalForm">
@@ -311,7 +311,7 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Post Code </div><div class="inputSection"><input type="text" id="PostCode"
-        data-bind="value: postcode" class="validate[custom[number]]"/></div>
+        data-bind="value: postcode" class="validate[required]"/></div>
         </div>
 
         <div class="rightSection">

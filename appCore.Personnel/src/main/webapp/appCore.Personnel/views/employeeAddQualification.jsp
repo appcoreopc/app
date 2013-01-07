@@ -90,7 +90,7 @@
 
         <div class="sectionalForm">
         <div class="labelSection">Remarks</div><div class="inputSection"><input type="text" id="QualificationRemark"
-        data-bind="value: remarks" class="validate[required], maxSize[40]"/></div>
+        data-bind="value: remarks"/></div>
         </div>
 
 
