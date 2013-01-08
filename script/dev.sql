@@ -28,7 +28,7 @@ insert into forms (formid, link, category_nid) values ('Field Of ExpertiseCode',
 insert into forms (formid, link, category_nid) values ('Family Relation Type', 'maintenanceCode.jsp?id=10', 1);
 insert into forms (formid, link, category_nid) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1);
 insert into forms (formid, link, category_nid) values ('Holiday Group', 'maintenanceCode.jsp?id=12', 1);
-
+insert into forms (formid, link, category_nid) values ('Currency', 'maintenanceCode.jsp?id=13', 1);
 
 insert into forms (formid, link, category_nid) values ('Job Setup', 'jobSetup.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Configure Employee Group', 'configureEmployeeGroup.jsp', 2);
@@ -158,6 +158,11 @@ insert into nationality (name, description, companyRef) values ('Malaysian', 'Ma
 insert into race (name, description, companyRef) values ('Chinese', 'Chinese', 1);
 insert into race (name, description, companyRef) values ('Malay', 'Malay', 1);
 insert into race (name, description, companyRef) values ('Indian', 'Indian', 1);
+
+insert into Currency (name, description, companyRef) values ('USD', 'USD', 1);
+insert into Currency (name, description, companyRef) values ('MYR', 'MYR', 1);
+insert into Currency (name, description, companyRef) values ('SGD', 'SGD', 1);
+insert into Currency (name, description, companyRef) values ('PESO', 'PESO', 1);
 
 
 insert into religion (name, description, companyRef) values ('Christian', 'Christian', 1);

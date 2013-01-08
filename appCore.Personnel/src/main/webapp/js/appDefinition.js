@@ -24,6 +24,7 @@ var coreEmploymentTypePage = "Branch";
 var coreHolidaySetupPage = "Branch";
 var coreHolidayGroupPage = "HolidayGroup";
 var coreCodeMaintenancePage = "Branch";
+var coreUserPage = "Branch";
 
 var coreJobQualification = "Branch";
 
@@ -151,6 +152,10 @@ var globalEmployeeSalutationList = globalHostname + "/app/Job/Salutation/list";
 
 var globalEmployeeSalutationListByCompany = globalHostname + "/app/Job/Salutation/listByCompany";
 
+var globalCurrencyListByCompany = globalHostname + "/app/Job/Currency/listByCompany";
+
+var globalCurrencyList = globalHostname + "/app/Job/Currency/list";
+
 var globalEmployeeRaceList = globalHostname + "/app/Job/Race/list";
 
 var globalCodeCheckExist = globalHostname + "/app/Core/CodeChecker/checkExist";
@@ -200,6 +205,7 @@ var appGlobalEventLoadDataComplete = "DataLoadComplete";
 var globalBranchSummaryUrl = globalHostname + "/app/Core/Branch/getSummary?id=";
 
 var globalBranchListByCompanyUrl = globalHostname + "/app/Core/Branch/listByCompany";
+var globalUserList = globalHostname + "/app/Core/Branch/listByCompany";
 var globalBranchInfoDeleteUrl = globalHostname + "/app/Core/BranchInfo/delete";
 var globalDivisionInfoDeleteUrl = globalHostname + "/app/Core/DivisionInfo/delete";
 var globalDepartmentInfoDeleteUrl = globalHostname + "/app/Core/DepartmentInfo/delete";
@@ -247,6 +253,7 @@ var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?i
 var globalDivisionListByCompanyUrl = globalHostname + "/app/Core/Division/listByCompany";
 var globalSectionListByCompanyUrl = globalHostname + "/app/Core/Section/listByCompany";
 var globalUnitListByCompanyUrl = globalHostname + "/app/Core/Unit/listByCompany";
+var globalUserList = globalHostname + "/app/Users/Users/list";
 var globalHolidaySetupListByCompanyUrl = globalHostname + "/app/Core/Calendar/Holiday/listByCompany";
 var globalJobSetupListByCompanyUrl = globalHostname + "/app/Core/Job/JobType/listByCompany";
 
@@ -283,4 +290,7 @@ var coreApplicationTypeEmploymentType = 8;
 var coreApplicationMaintenanceCode = 9;
 var coreApplicationTypeDivision = 10;
 var coreApplicationTypeHolidayConfigure = 11;
+
+var coreAdministrationUserManager = 12;
+var coreAdministrationUserRights = 13;
 

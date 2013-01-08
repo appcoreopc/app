@@ -43,6 +43,8 @@ var CodeMaintenanceHelper = function (codeType)
                 return this.gridUrl + "EmployeeGroup";
             case 12:
                 return globalHostname + "/app/Core/Calendar/" + "HolidayGroup";
+            case 13:
+                return this.gridUrl + "Currency";
         }
     }
 
@@ -74,6 +76,8 @@ var CodeMaintenanceHelper = function (codeType)
                 return "Employee Group";
             case 12:
                 return "Holiday Group";
+            case 13:
+                return "Currency";
         }
     }
 

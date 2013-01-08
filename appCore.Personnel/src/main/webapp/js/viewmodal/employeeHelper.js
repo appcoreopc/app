@@ -127,6 +127,8 @@ var EmployeeHelper = function () {
 
     }
 
+
+
     this.getIndustryCodeAsArray = function () {
         var ajaxCore = new AjaxCore();
         var industryRequest = ajaxCore.sendRequestType(globalEmployeeIndustryList, null, "get");
@@ -259,6 +261,41 @@ var EmployeeHelper = function () {
         var entityObject = { id : entity };
         var ajaxCore = new AjaxCore();
         var salutationRequest = ajaxCore.sendRequest(globalEmployeeSalutationListByCompany, entityObject, "get");
+        salutationRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+    this.getCurrencyByCompany = function (list, entity) {
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var salutationRequest = ajaxCore.sendRequest(globalCurrencyListByCompany, entityObject, "get");
+        salutationRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+    this.getCurrency = function (list, entity) {
+        var entityObject = { id : entity };
+        var ajaxCore = new AjaxCore();
+        var salutationRequest = ajaxCore.sendRequest(globalCurrencyList, entityObject, "get");
+        salutationRequest.success(function (data, status, xhrObj) {
+            for (var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                list.push(obj);
+            }
+        });
+    }
+
+    this.getCompanyList = function (list) {
+        var ajaxCore = new AjaxCore();
+        var salutationRequest = ajaxCore.sendRequest(globalCompanyListUrl, null, "get");
         salutationRequest.success(function (data, status, xhrObj) {
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];

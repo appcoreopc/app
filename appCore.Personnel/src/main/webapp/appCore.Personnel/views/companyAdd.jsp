@@ -9,34 +9,28 @@
         $(document).ready(function()
         {
 
-            // $(document).unbind("parseComplete");
+                $("#companyForm").validationEngine();
 
-            $("#companyForm").validationEngine();
+                var vm;
+                var gridDataObject;
 
-            var vm;
-            var gridDataObject;
-
-            if (globalViewModel != undefined && globalViewModel.targetId != null)
-            {
-                vm = new CompanyAddViewModel(coreModeEdit, globalViewModel.targetId);
-                gridDataObject = vm.getView();
-            }
-            else
-            {
-                vm = new CompanyAddViewModel(1);
-                gridDataObject = vm.getView();
-            }
+                if (globalViewModel != undefined && globalViewModel.targetId() != null)
+                {
+                    vm = new CompanyAddViewModel(coreModeEdit, globalViewModel.targetId());
+                    gridDataObject = vm.getView();
+                }
+                else
+                {
+                    vm = new CompanyAddViewModel(coreModeInsert, globalViewModel.targetId());
+                    gridDataObject = vm.getView();
+                }
 
                 var input = { "id" : coreCompanyPage, "roleId" : 1 };
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
-
-            //$(document).bind("parseComplete", function()
-            //{
                 ko.applyBindings(vm, document.getElementById("companyCodeSetupTabs"));
-            //});
 
-            var tab = $("#companyCodeSetupTabs").tabs();
+                var tab = $("#companyCodeSetupTabs").tabs();
 
         });
 
@@ -374,18 +368,14 @@
 
         <div class="formRow">
         <div class="labelSection">Default Currency</div><div class="inputSection">
-        <select id="Currency" data-bind="value: defaultCurrency" name="Currency" class="validate[required]">
-        <option value="MYR">MYR</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="HKD">HKD</option>
+        <select id="Currency" data-bind="options: currencyList, optionsText: 'name', optionsValue: 'nid', value: defaultCurrency" name="Currency" class="validate[required]">
         </select>
         </div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Parent Company</div><div class="inputSection"><input type="text" id="ParentCompany"
-        data-bind="value: parentCompany"/></div>
+        <div class="labelSection">Parent Company</div><div class="inputSection"><select id="ParentCompany"
+        data-bind="options: companyList, optionsText: 'companyName', optionsValue: 'nid', value: parentCompany"></select></div>
         </div>
 
 

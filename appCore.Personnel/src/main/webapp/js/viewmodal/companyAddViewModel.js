@@ -2,9 +2,9 @@ var CompanyAddViewModel = function (mode, companyId) {
 
     var self = this;
     var modelCompanyId = companyId;
+    this.centralPage = globalCompanyCentralPage;
 
     self.mode = ko.observable(0);
-
     self.nid = ko.observable();
 
     self.companyCode = ko.observable();
@@ -25,11 +25,16 @@ var CompanyAddViewModel = function (mode, companyId) {
     self.defaultCurrency = ko.observable();
     self.disabled = ko.observable();
 
+    self.currencyList = ko.observableArray();
+    self.companyList = ko.observableArray();
     self.templateToUse = ko.observable();
 
-    this.centralPage = globalCompanyCentralPage;
 
     self.mode(mode);
+
+    var helper = new EmployeeHelper();
+    helper.getCurrency(self.currencyList, companyId);
+    helper.getCompanyList(self.companyList);
 
     if (mode == 2) {
         getCompany(modelCompanyId);
@@ -128,8 +133,7 @@ var CompanyAddViewModel = function (mode, companyId) {
 
         var isValid = $("#" + "companyForm").validationEngine('validate');
 
-        if (!isValid)
-        {
+        if (!isValid) {
             alert('invalid validation.')
             return;
         }
