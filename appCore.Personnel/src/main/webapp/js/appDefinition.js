@@ -205,7 +205,12 @@ var appGlobalEventLoadDataComplete = "DataLoadComplete";
 var globalBranchSummaryUrl = globalHostname + "/app/Core/Branch/getSummary?id=";
 
 var globalBranchListByCompanyUrl = globalHostname + "/app/Core/Branch/listByCompany";
-var globalUserList = globalHostname + "/app/Core/Branch/listByCompany";
+
+var globalUserList = globalHostname + "/app/Users/Users/listByCompany";
+
+var globalUserGet = globalHostname + "/app/Users/Users/get";
+var globalUserSaveOrUpdate = globalHostname + "/app/Users/Users/saveOrUpdate";
+
 var globalBranchInfoDeleteUrl = globalHostname + "/app/Core/BranchInfo/delete";
 var globalDivisionInfoDeleteUrl = globalHostname + "/app/Core/DivisionInfo/delete";
 var globalDepartmentInfoDeleteUrl = globalHostname + "/app/Core/DepartmentInfo/delete";
@@ -263,7 +268,11 @@ var globalDepartmentListByCompanyUrl = globalHostname + "/app/Core/Department/li
 
 var globalDivisionDeleteUrl = globalHostname + "/app/Core/Division/delete";
 var globalUnitDeleteUrl = globalHostname + "/app/Core/Unit/delete";
+
+var globalDeleteUsersUrl = globalHostname + "/app/Users/Users/delete";
+
 var globalHolidayDeleteUrl = globalHostname + "/app/Core/Calendar/Holiday/delete";
+
 var globalJobSetupDeleteUrl = globalHostname + "/app/Core/Job/JobType/delete";
 var globalEmploymentTypeDeleteUrl = globalHostname + "/app/Core/Job/EmploymentType/delete";
 var globalGradeDeleteUrl = globalHostname + "/app/Core/Job/Grade/delete";
@@ -272,6 +281,8 @@ var globalDepartmentDeleteUrl = globalHostname + "/app/Core/Department/delete";
 
 var globalPersonnelControlPanel = "personnelControlPanel.jsp";
 var globalUserValidationUrl = globalHostname + "/app/Users/Users/validateLogin";
+
+var globalAdminCentralPage = "userList.jsp";
 
 var coreModeList = 0;
 var coreModeInsert = 1;

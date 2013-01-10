@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-
 	@Entity
 	@Table(name = "Users")
 	public class Users implements Serializable
@@ -34,6 +33,14 @@ import javax.persistence.Table;
 		private Timestamp lastLogin;
 
 
+		@Column(name = "Email")
+		private String email;
+		
+		
+		@Column(name = "FullName")
+		private String fullName;
+
+		
 		public Integer getNid() { 
 			return this.nid;
 		}
@@ -69,4 +76,23 @@ import javax.persistence.Table;
 		public void setLastLogin(Timestamp lastLogin) { 
 			this.lastLogin = lastLogin;
 		}
+		
+		public String getEmail() {
+			return email;
+		}
+
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+
+		public String getFullName() {
+			return fullName;
+		}
+
+		public void setFullName(String fullName) {
+			this.fullName = fullName;
+		}
+		
 	}

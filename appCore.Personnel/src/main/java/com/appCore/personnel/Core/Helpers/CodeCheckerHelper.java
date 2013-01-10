@@ -21,13 +21,8 @@ public class CodeCheckerHelper {
 	public RequestStatus checkExist(CodeRequest codeRequest)
 	{
 		
-		System.out.println("creating instance getcurrentsession");
 		Session session = sessionFactory.getCurrentSession();
-
-		String generatedQuery = getQueryByCodeType(codeRequest.getCodeType());
-		Query query = session.createQuery(generatedQuery);
-		query.setParameter("codeName", codeRequest.getCodeName());
-		query.setParameter("companyId", codeRequest.getCompanyId());
+		Query query = getQueryByCodeType(session, codeRequest);
 		
 		if (query.list().size() == 0) 
 		{
@@ -38,7 +33,6 @@ public class CodeCheckerHelper {
 			return RequestStatusHelper.CodeCheckStatusDuplicate("Code already exist.", -1);
 		}
 	}
-	
 	
 	
 	/*
@@ -62,49 +56,124 @@ public class CodeCheckerHelper {
 	 * 18 - Unit 
 	 */
 	 
-	private static String getQueryByCodeType(int codeType)
+	private static Query getQueryByCodeType(Session session, CodeRequest codeRequest)
 	{
-		switch (codeType)
+		switch (codeRequest.getCodeType())
 		{
-		
 			case 1: 
-				return "FROM Industry WHERE Name = :codeName AND CompanyRef = :companyId"; 
+				String industryStringQuery =  "FROM Industry WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query industryQuery = session.createQuery(industryStringQuery);
+				industryQuery.setParameter("codeName", codeRequest.getCodeName());
+				industryQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return industryQuery;
 			case 2: 
-				return "FROM Gender WHERE Name = :codeName AND CompanyRef = :companyId";
+				String genderStringQuery = "FROM Gender WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query genderQuery = session.createQuery(genderStringQuery);
+				genderQuery.setParameter("codeName", codeRequest.getCodeName());
+				genderQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return genderQuery;
 			case 3: 
-				return "FROM Race WHERE Name = :codeName AND CompanyRef = :companyId"; 
+				String raceStringQuery = "FROM Race WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query raceQuery = session.createQuery(raceStringQuery);
+				raceQuery.setParameter("codeName", codeRequest.getCodeName());
+				raceQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return raceQuery;
 			case 4: 
-				return "FROM Salutation WHERE Name = :codeName AND CompanyRef = :companyId";
+				String salutationStringQuery = "FROM Salutation WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query salutationQuery = session.createQuery(salutationStringQuery);
+				salutationQuery.setParameter("codeName", codeRequest.getCodeName());
+				salutationQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return salutationQuery;
 			case 5: 
-				return "FROM Religion WHERE Name = :codeName AND CompanyRef = :companyId";
+				String religionStringQuery = "FROM Religion WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query religionQuery = session.createQuery(religionStringQuery);
+				religionQuery.setParameter("codeName", codeRequest.getCodeName());
+				religionQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return religionQuery;
 			case 6:
-				return "FROM Nationality WHERE Name = :codeName AND CompanyRef = :companyId";
+				String nationalityStringQuery = "FROM Nationality WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query nationalityQuery = session.createQuery(nationalityStringQuery);
+				nationalityQuery.setParameter("codeName", codeRequest.getCodeName());
+				nationalityQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return nationalityQuery;
 			case 7: 
-				return "FROM MaritalStatus WHERE Name = :codeName AND CompanyRef = :companyId";
+				String maritalStatusStringQuery =  "FROM MaritalStatus WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query maritalStatusSQuery = session.createQuery(maritalStatusStringQuery);
+				maritalStatusSQuery.setParameter("codeName", codeRequest.getCodeName());
+				maritalStatusSQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return maritalStatusSQuery;
 			case 8: 
-				return "FROM Level WHERE Name = :codeName AND CompanyRef = :companyId";
+				String levelStringQuery = "FROM Level WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query levelQuery = session.createQuery(levelStringQuery);
+				levelQuery.setParameter("codeName", codeRequest.getCodeName());
+				levelQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return levelQuery;
 			case 9: 
-				return "FROM FieldOfExpertise WHERE Name = :codeName AND CompanyRef = :companyId";
+				String fieldOfExpertiseStringQuery = "FROM FieldOfExpertise WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query fieldOfExpertiseQuery = session.createQuery(fieldOfExpertiseStringQuery);
+				fieldOfExpertiseQuery.setParameter("codeName", codeRequest.getCodeName());
+				fieldOfExpertiseQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return fieldOfExpertiseQuery;
 			case 10: 
-				return "FROM FamilyRelationType WHERE Name = :codeName AND CompanyRef = :companyId";
+				String familyRelationTypeStringQuery =  "FROM FamilyRelationType WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query familyRelationTypeQuery = session.createQuery(familyRelationTypeStringQuery);
+				familyRelationTypeQuery.setParameter("codeName", codeRequest.getCodeName());
+				familyRelationTypeQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return familyRelationTypeQuery;
 			case 11: 
-				return "FROM EmployeeGroup WHERE Name = :codeName AND CompanyRef = :companyId";
+				String employeeGroupStringQuery = "FROM EmployeeGroup WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query employeeGroupQuery = session.createQuery(employeeGroupStringQuery);
+				employeeGroupQuery.setParameter("codeName", codeRequest.getCodeName());
+				employeeGroupQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return employeeGroupQuery;
 			case 12: 
-				return "FROM HolidayGroup WHERE Name = :codeName AND CompanyRef = :companyId";
+				String holidayGroupStringQuery =  "FROM HolidayGroup WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query holidayGroupQuery = session.createQuery(holidayGroupStringQuery);
+				holidayGroupQuery.setParameter("codeName", codeRequest.getCodeName());
+				holidayGroupQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return holidayGroupQuery;
 			case 13: 
-				return "FROM Company WHERE CompanyCode = :codeName";
+				String companyStringQuery = "FROM Company WHERE CompanyCode = :codeName";
+				Query companyQuery = session.createQuery(companyStringQuery);
+				companyQuery.setParameter("codeName", codeRequest.getCodeName());
+				companyQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return companyQuery;
 			case 14: 
-				return "FROM Branch WHERE BranchCode = :codeName AND CompanyId = :companyId";
+				String branchStringQuery = "FROM Branch WHERE BranchCode = :codeName AND CompanyId = :companyId";
+				Query branchQuery = session.createQuery(branchStringQuery);
+				branchQuery.setParameter("codeName", codeRequest.getCodeName());
+				branchQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return branchQuery;
 			case 15: 
-				return "FROM Division WHERE DivisionCode = :codeName AND CompanyId = :companyId";
+				String divisionStringQuery = "FROM Division WHERE DivisionCode = :codeName AND CompanyId = :companyId";
+				Query divisionQuery = session.createQuery(divisionStringQuery);
+				divisionQuery.setParameter("codeName", codeRequest.getCodeName());
+				divisionQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return divisionQuery;
 			case 16: 
-				return "FROM Department WHERE DepartmentCode = :codeName AND CompanyId = :companyId";
+				String departmentStringQuery = "FROM Department WHERE DepartmentCode = :codeName AND CompanyId = :companyId";
+				Query departmentQuery = session.createQuery(departmentStringQuery);
+				departmentQuery.setParameter("codeName", codeRequest.getCodeName());
+				departmentQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return departmentQuery;
 			case 17: 
-				return "FROM Section WHERE SectionCode = :codeName AND CompanyId = :companyId";
+				String sectionStringQuery = "FROM Section WHERE SectionCode = :codeName AND CompanyId = :companyId";
+				Query sectionQuery = session.createQuery(sectionStringQuery);
+				sectionQuery.setParameter("codeName", codeRequest.getCodeName());
+				sectionQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return sectionQuery;
 			case 18: 
-				return "FROM Unit WHERE UnitCode = :codeName AND CompanyId = :companyId";
-		
+				String unitStringQuery = "FROM Unit WHERE UnitCode = :codeName AND CompanyId = :companyId";
+				Query unitQuery = session.createQuery(unitStringQuery);
+				unitQuery.setParameter("codeName", codeRequest.getCodeName());
+				unitQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return unitQuery;
+			case 19:
+				String userStringQuery = "FROM Users where userName = :codeName";
+				Query userQuery = session.createQuery(userStringQuery);
+				userQuery.setParameter("codeName", codeRequest.getCodeName());
+				return userQuery;
 		}
-		return ""; 
+		return null; 
 	}
 }

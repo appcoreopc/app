@@ -12,7 +12,7 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
     self.globalViewModel = globalViewModel;
 
     var viewColumns = [
-        { headerText:"Unit Code", rowText:"username" }
+        { headerText:"User name", rowText:"username" }
     ];
 
     var model = {
@@ -99,7 +99,7 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
                 var addLinkInfo = {
                     "text":"Add Users",
                     "commandId":'userAdd',
-                    // "link":this.addPage,
+                    "link": globalPersonnelControlPanel,
                     "callback":function () {
                         goToAdd()
                     }
@@ -124,7 +124,7 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
 
     self.initializeViewModel = function () {
         var gridDataObject = getView();
-        var input = { "id":coreDivisionPage, "roleId":globalViewModel.employeeRole() };
+        var input = { "id":coreDivisionPage, "roleId":globalViewModel.userRole() };
         var coreCommand = new CoreCommand();
 
         var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
@@ -141,7 +141,7 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
     function deleteCallBack(status, data, globalViewModel, codeType) {
         if (status == true) {
             var helper = new CompanyHelper();
-            var result = helper.deleteUnit(data, successDeleteCallback);
+            var result = helper.deleteUser(data, successDeleteCallback);
         }
     }
 
@@ -155,15 +155,14 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
         globalViewModel.targetId(data.nid);
         globalViewModel.editMode(coreModeEdit);
         globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        preparePageForLoading("unitAdd.jsp");
+        preparePageForLoading("usersAdd.jsp");
     }
 
     function goToAdd() {
         globalViewModel.applicationScopeType(coreApplicationTypeUnit);
         globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("test.jsp");
+        preparePageForLoading("usersAdd.jsp");
     }
-
 
     self.initializeViewModel();
 }

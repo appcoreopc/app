@@ -36,6 +36,15 @@ var CompanyHelper = function () {
     }
 
 
+    this.deleteUser = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalDeleteUsersUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
     this.deleteHoliday = function (targetData, callback) {
         var objectId = { "id":targetData.nid };
         var ajaxCore = new AjaxCore();

@@ -171,6 +171,7 @@ var CoreCommand = function () {
         }
         else
         {
+
             createCommand(cancellationControlId, cancellationText, cancelCommandObject, controlIdToAppendTo);
             createJsonBindingEventForControl(cancellationControlId, cancelCommandObject.callback);
         }

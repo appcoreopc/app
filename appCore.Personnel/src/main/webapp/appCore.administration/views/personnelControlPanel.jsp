@@ -10,8 +10,9 @@
 
         <%@ include file="../includes/css_includes.html" %>
         <%@ include file="../includes/js_includes.html" %>
--        <%@ include file="/includes/header.html" %>
+-        <%@ include file="/includes/adminHeader.html" %>
 
+        <script language="javascript" src="../../js/viewmodal/Administration/adminGlobalViewModel.js"></script>
         <script language="javascript" src="../../js/coreComboControl.js"></script>
 
         <link rel="stylesheet" href="../../css/fontello.css"><!--[if IE 7]>
@@ -19,19 +20,17 @@
 
         <script type="text/javascript">
 
-        var globalViewModel = new GlobalViewModel();
-        globalViewModel.employeeRole(1);
-        globalViewModel.companyId(1);
-        globalViewModel.companyName("AppCoreDev");
+        var globalViewModel = new AdminGlobalViewModel();
+        globalViewModel.userName(1);
+        globalViewModel.userRole(1);
 
         $(document).ready(function()
         {
-
-        $("#companyDropDownList").change(function()
-        {
-            globalCurrentCompanyId = $(this).find("option:selected").val();
-            globalViewModel.companyId(globalCurrentCompanyId);
-        });
+            //$("#companyDropDownList").change(function()
+            //{
+            //    globalCurrentCompanyId = $(this).find("option:selected").val();
+            //    globalViewModel.companyId(globalCurrentCompanyId);
+            //});
         });
 
         var currentPage = "globalPersonnelControlPanel.jsp";
@@ -39,19 +38,28 @@
         var request;
         var url = globalCompanyServiceUrl;
 
-        preparePageForLoading("userRightsList.jsp");
+        preparePageForLoading("userList.jsp");
 
         </script>
 
         <div class="form dataEntry">
-        <h1>My Page</h1>
 
         <div class="formRow">
-        <div> Current company </div>
+        &nbsp;
         </div>
 
         <div class="formRow">
-        <select id="companyDropDownList" class="company">
+        &nbsp;
+        </div>
+
+
+
+        <div class="formRow">
+        <div> <!-- Current company --> </div>
+        </div>
+
+        <div class="formRow">
+        <!-- <select id="companyDropDownList" class="company"> -->
         </select>
 
 
@@ -64,7 +72,6 @@
 
         <div class="formRow">
         &nbsp;
-
         </div>
 
         <div id="viewPort">

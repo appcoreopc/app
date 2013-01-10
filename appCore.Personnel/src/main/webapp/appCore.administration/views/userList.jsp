@@ -7,9 +7,8 @@
 
         $(document).ready(function()
         {
-            getData(globalViewModel.companyId());
-
-            globalViewModel.companyId.subscribe(function(newValue)
+            getData(globalViewModel.userRole());
+            globalViewModel.userRole.subscribe(function(newValue)
             {
                 $(".maintenanceCommand").empty();
                 getData(newValue);
