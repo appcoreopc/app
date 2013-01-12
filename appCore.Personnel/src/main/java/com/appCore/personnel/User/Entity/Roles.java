@@ -5,6 +5,8 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import javax.persistence.FetchType;
 import java.util.List;
 import javax.persistence.Table;
 
+import com.appCore.personnel.Core.Job.Entity.Employee;
 
 
 	@Entity
@@ -27,21 +30,21 @@ import javax.persistence.Table;
 		@Column(name = "Nid")
 		private Integer nid;
 
-		
-		
+				
 		@Column(name = "Rolename")
 		private String rolename;
-
 		
 		
 		@Column(name = "Description")
 		private String description;
 
 		
-		
 		@Column(name = "Disabled")
 		private Boolean disabled;
-
+		
+		@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+		@JoinTable(name="UserRole_Assignment")
+		private List<Users> assignedUsers;
 		
 		
 		@Column(name = "LastUpdate")
@@ -92,4 +95,16 @@ import javax.persistence.Table;
 		public void setLastUpdate(Timestamp lastUpdate) { 
 			this.lastUpdate = lastUpdate;
 		}
+		
+		public List<Users> getAssignedUsers() {
+			return assignedUsers;
+		}
+
+
+		public void setAssignedUsers(List<Users> assignedUsers) {
+			this.assignedUsers = assignedUsers;
+		}
+
+
+		
 	}

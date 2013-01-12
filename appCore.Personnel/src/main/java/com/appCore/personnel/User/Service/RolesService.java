@@ -9,7 +9,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.appCore.personnel.Core.Job.Entity.Employee;
+import com.appCore.personnel.Core.Job.Entity.EmployeeGroup;
 import com.appCore.personnel.User.Entity.Roles;
+import com.appCore.personnel.User.Entity.Users;
 
 @Service("rolesService")
 @Transactional
@@ -45,6 +48,26 @@ public class RolesService
 
 		return roles;
 	}
+	
+	
+	public boolean saveconfiguredRole(int employeeId, int groupId, boolean isGrantAccess)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Roles employeeGroup = (Roles) session.get(Roles.class, groupId);
+		Users employee = (Users) session.get(Users.class, employeeId);
+		
+		if (isGrantAccess)
+		{
+			employeeGroup.getAssignedUsers().add(employee);
+		}
+		else 
+		{
+			employeeGroup.getAssignedUsers().remove(employee);
+		}
+		return true; 
+		
+	}
+
 
 	public void add(Roles roles) 
 	{

@@ -13,13 +13,13 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     var self = this;
 
     // all the employee from a selected company
-    self.allEmployeeInCompanyList = ko.observableArray();
+    self.allUsersList = ko.observableArray();
     // all the employee assigned to a group
-    self.allEmployeeGroupList = ko.observableArray();
+    self.allRolesList = ko.observableArray();
 
     // Work list
-    self.employeeNotInGroupList = ko.observableArray();
-    self.employeesCurrentlyAssignedToAGroup = ko.observableArray();
+    self.usersNotInGroupList = ko.observableArray();
+    self.usersCurrentlyAssignedToAGroup = ko.observableArray();
 
     self.currentlySelectedGroup = ko.observable();
     self.selectionOfEmployee = ko.observableArray();
@@ -57,11 +57,11 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     }
 
     function getAllEmployeeCallback(data) {
-        self.allEmployeeInCompanyList(data);
+        self.allUsersList(data);
     }
 
     function getEmployeeGroupCallback(data) {
-        self.allEmployeeGroupList(data);
+        self.allRolesList(data);
         $.each(data, function (key, value) {
             employeeGroupData[value.name] = value.assignedEmployees;
         });
@@ -266,7 +266,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
                 groupId:item.employeeGroupId(),
                 isGrantAccess:item.isMember()
             };
-            helper.configureEmployeeGroup(entityObject, updateCompleteCallBack);
+            helper.configureUserRole(entityObject, updateCompleteCallBack);
         }
     }
 
@@ -290,15 +290,15 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
         for (var i = 0; i < selection.length; i++) {
             var employeeId = selection[i];
 
-            var employeeList = self.allEmployeeInCompanyList();
+            var employeeList = self.allUsersList();
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.employeeNotInGroupList, employeeId);
+                    removeItemFromList(self.usersNotInGroupList, employeeId);
                     break;
                 }
             }
-            self.employeesCurrentlyAssignedToAGroup.push(emp);
+            self.usersCurrentlyAssignedToAGroup.push(emp);
             lookupChangesToPropagateToServer(groupName, employeeId, true);
         }
         self.selectionOfEmployee = ko.observableArray();
@@ -330,7 +330,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     }
 
     function getGroupId(groupName) {
-        var groupList = self.allEmployeeGroupList();
+        var groupList = self.allRolesList();
 
         for (var i = 0; i < groupList.length; i++) {
             if (groupList[i].name == groupName) {
@@ -348,16 +348,16 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
         for (var i = 0; i < selection.length; i++) {
             var employeeId = selection[i];
-            var employeeList = self.allEmployeeInCompanyList();
+            var employeeList = self.allUsersList();
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.employeesCurrentlyAssignedToAGroup, employeeId);
+                    removeItemFromList(self.usersCurrentlyAssignedToAGroup, employeeId);
                     break;
                 }
             }
 
-            self.employeeNotInGroupList.push(emp);
+            self.usersNotInGroupList.push(emp);
             lookupChangesToPropagateToServer(self.currentlySelectedGroup(), employeeId, false);
         }
 
@@ -386,14 +386,14 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
     self.currentlySelectedGroup.subscribe(function (groupName) {
 
-        self.employeeNotInGroupList.removeAll();
+        self.usersNotInGroupList.removeAll();
 
         var assignedEmployees = employeeGroupData[groupName];
 
-        self.employeesCurrentlyAssignedToAGroup(assignedEmployees);
+        self.usersCurrentlyAssignedToAGroup(assignedEmployees);
 
         if (assignedEmployees != undefined) {
-            var newList = self.allEmployeeInCompanyList.slice();
+            var newList = self.allUsersList.slice();
 
             for (var i = 0; i < assignedEmployees.length; i++) {
                 for (var k = 0; k < newList.length; k++) {
@@ -404,7 +404,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
             }
 
             if (newList.length > 0) {
-                self.employeeNotInGroupList(newList);
+                self.usersNotInGroupList(newList);
             }
             //pushDataToComboBox(targetControlId, assignedEmployees);
         }

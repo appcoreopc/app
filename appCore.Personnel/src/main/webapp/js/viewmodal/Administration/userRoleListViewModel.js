@@ -1,4 +1,4 @@
-var UserRightsListViewModel = function (initView, data, globalViewModel) {
+var UserRoleListViewModel = function (initView, data, globalViewModel) {
 
     mode = initView;
     this.gridUrl = globalHostname + "/app/Core/Branch";
@@ -95,42 +95,12 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
         switch (mode) {
             case 0:
                 var addUserLinkInfo = {
-                    "text":"Add Users",
-                    "commandId":'userAdd',
+                    "text":"Add Rple",
+                    "commandId":'roleAdd',
                     "link":globalPersonnelControlPanel,
                     "ctrlId":"addUserBtn",
                     "callback":function () {
                         goToAdd()
-                    }
-                };
-
-                var addRoleLinkInfo = {
-                    "text":"Add Role",
-                    "commandId":'userAdd',
-                    "ctrlId":"addRoleBtn",
-                    "link":globalPersonnelControlPanel,
-                    "callback":function () {
-                        goToAddRole()
-                    }
-                };
-
-                var assignRoleLinkInfo = {
-                    "text":"Assign Rights",
-                    "commandId":'userAdd',
-                    "ctrlId":"assignRightBtn",
-                    "link":globalPersonnelControlPanel,
-                    "callback":function () {
-                        goToAssignRight()
-                    }
-                };
-
-                var listRoleLinkInfo = {
-                    "text":"List role",
-                    "commandId":'listRole',
-                    "ctrlId":"listUserRoleBtnlistUserRoleBtn",
-                    "link":globalPersonnelControlPanel,
-                    "callback":function () {
-                        goToListRole()
                     }
                 };
 
@@ -146,13 +116,7 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
                 gridDataObject.controlId = this.gridId;
 
                 gridDataObject.updateLinkInfo = updateLinkInfo;
-
-                gridDataObject.addLinkInfo = [];
-                gridDataObject.addLinkInfo.push(listRoleLinkInfo);
-                gridDataObject.addLinkInfo.push(addUserLinkInfo);
-                gridDataObject.addLinkInfo.push(addRoleLinkInfo);
-                gridDataObject.addLinkInfo.push(assignRoleLinkInfo);
-
+                gridDataObject.addLinkInfo = addUserLinkInfo;
                 return gridDataObject;
         }
         return gridDataObject;
@@ -197,25 +161,8 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
     function goToAdd() {
         globalViewModel.applicationScopeType(coreApplicationTypeUnit);
         globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("usersAdd.jsp");
+        preparePageForLoading("roleAdd.jsp");
     }
 
-    function goToAddRole() {
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("userRoleAdd.jsp");
-    }
-
-    function goToAssignRight() {
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("configureUserRoles.jsp");
-    }
-
-    function goToListRole() {
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("roleList.jsp");
-    }
     self.initializeViewModel();
 }

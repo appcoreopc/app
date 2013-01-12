@@ -58,6 +58,8 @@ var globalEmployeeListByCompanyUrl = globalHostname + "/app/Job/Employee/listByC
 
 var globalEmployeeGroupListByCompanyUrl = globalHostname + "/app/Job/EmployeeGroup/listByCompany";
 
+var globalRoleList = globalHostname + "/app/User/Roles/list";
+
 var globalEmployeeSaveOrUpdateUrl = globalHostname + "/app/Job/Employee/saveOrUpdate";
 
 var globalEmployeeDeleteUrl = globalHostname + "/app/Job/Employee/delete";
@@ -226,7 +228,7 @@ var globalSectionSaveOrUpdateUrl = globalHostname + "/app/Core/Section/saveOrUpd
 
 
 var globalEmployeeGroupConfigureUrl = globalHostname + "/app/Job/EmployeeGroup/configuredEmployeeGroup";
-
+var globalConfigureUserRoleUrl = globalHostname + "/app/User/Roles/configuredRole";
 
 var globalUnitSaveOrUpdateUrl = globalHostname + "/app/Core/Unit/saveOrUpdate";
 var globalGradeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/Grade/saveOrUpdate";
@@ -245,8 +247,11 @@ var globalEmploymentTypeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/Employ
 var globalBranchGetUrl = globalHostname + "/app/Core/Branch/get"
 
 var globalDivisionGetUrl = globalHostname + "/app/Core/Division/get"
+
 var globalDepartmentGetUrl = globalHostname + "/app/Core/Department/get"
+
 var globalSectionGetUrl = globalHostname + "/app/Core/Section/get"
+
 var globalUnitGetUrl = globalHostname + "/app/Core/Unit/get"
 
 var globalGradeGetUrl = globalHostname + "/app/Core/Job/Grade/get"
@@ -256,10 +261,15 @@ var globalEmploymentTypeGetUrl = globalHostname + "/app/Core/Job/EmploymentType/
 var globalDivisionSummaryUrl = globalHostname + "/app/Core/Division/getSummary?id=";
 
 var globalDivisionListByCompanyUrl = globalHostname + "/app/Core/Division/listByCompany";
+
 var globalSectionListByCompanyUrl = globalHostname + "/app/Core/Section/listByCompany";
+
 var globalUnitListByCompanyUrl = globalHostname + "/app/Core/Unit/listByCompany";
+
 var globalUserList = globalHostname + "/app/Users/Users/list";
+
 var globalHolidaySetupListByCompanyUrl = globalHostname + "/app/Core/Calendar/Holiday/listByCompany";
+
 var globalJobSetupListByCompanyUrl = globalHostname + "/app/Core/Job/JobType/listByCompany";
 
 var globalGradeTypeListByCompanyUrl = globalHostname + "/app/Core/Job/Grade/listByCompany";

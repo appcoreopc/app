@@ -1,4 +1,4 @@
-insert into roles (rolename, description) values ('General', 'Gene	ral');
+insert into roles (rolename, description) values ('General', 'General');
 
 insert into category (categoryname, description) values ('CompanySetup', 'Company');
 insert into category (categoryname, description) values ('Job', 'Job');
@@ -111,6 +111,14 @@ insert into maritalStatus (name, description, companyRef) values ('Divorced', 'D
 
 
 insert into Users (username, password) values ('user', 'user');
+insert into Users (username, password) values ('user1', 'user1');
+insert into Users (username, password) values ('user2', 'user2');
+insert into Users (username, password) values ('jeremy', 'jeremy');
+
+insert into userrole_assignment (roles_nid, assignedUsers_nid) values (1,1);
+insert into userrole_assignment (roles_nid, assignedUsers_nid) values (1,2);
+
+
 
 insert into employeeContact (email, alternateEmail, correspondenceAddress1, employeeRefId) values ('kepung@gmail.com', 'kepung@hotmail.com', 'test', 1);
 

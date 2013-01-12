@@ -43,6 +43,14 @@ public class RolesController
 				return roles;
 		}
 
+		@RequestMapping(value = "/Roles/configuredRole", method = RequestMethod.GET)		
+		public @ResponseBody RequestStatus saveconfiguredRole (@RequestParam(value="employeeId", required=true) int employeeId, int groupId, boolean isGrantAccess) 
+		{
+				service.saveconfiguredRole(employeeId, groupId, isGrantAccess);
+				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+		}
+		
+		
 		@RequestMapping(value = "/Roles/add", method = RequestMethod.GET)
 		public @ResponseBody RequestStatus renderAddRoles (@RequestBody Roles roles)
 		{

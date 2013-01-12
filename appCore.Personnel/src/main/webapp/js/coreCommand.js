@@ -169,8 +169,7 @@ var CoreCommand = function () {
             createCommand(cancellationControlId, cancellationText, cancelCommandObject, controlIdToAppendTo);
             createCancelBindingEventForControl(cancellationControlId, cancellationLink);
         }
-        else
-        {
+        else {
 
             createCommand(cancellationControlId, cancellationText, cancelCommandObject, controlIdToAppendTo);
             createJsonBindingEventForControl(cancellationControlId, cancelCommandObject.callback);

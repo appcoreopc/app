@@ -132,7 +132,7 @@ var CompanyHelper = function () {
         });
     }
 
-    this.configureEmployeeGroup = function (entityData, callBack) {
+    this.configureUserRole = function (entityData, callBack) {
 
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalEmployeeGroupConfigureUrl, entityData, "get");

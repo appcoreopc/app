@@ -1,14 +1,14 @@
         <link href="../../css/employeeGroup.css" media="screen" rel="stylesheet" type="text/css" />
-        <script language="javascript" src="../../js/viewmodal/configureEmployeeGroupViewModel.js"></script>
-        <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
+        <script language="javascript" src="../../js/viewmodal/Administration/configureUserRoleViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/Administration/userHelper.js"></script>
 
 
         <script type="text/javascript">
 
         $(document).ready(function()
         {
-            var vm = new ConfigureUserRightsViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("unitDiv"));
+            var vm = new ConfigureUserRoleViewModel(globalViewModel);
+            ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
         });
 
 
@@ -26,7 +26,7 @@
             <div class="labelSectionBlock">User Role</div>
 
             <div class="inputSection">
-            <select id="allEmployeeGroupList" data-bind="options: allEmployeeGroupList, optionsText: 'name', optionsValue: 'name', optionsCaption : 'Choose an employee group' , value : currentlySelectedGroup">
+            <select id="allEmployeeGroupList" data-bind="options: allRolesList, optionsText: 'rolename', optionsValue: 'rolename', optionsCaption : 'Choose a role' , value : currentlySelectedGroup">
             </select>
             </div>
 
@@ -38,12 +38,11 @@
             </div>
 
 
-
             <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlock">Modules listed in system</div><div class="inputSectionList">
+        <div class="labelSectionBlock">User listed in system</div><div class="inputSectionList">
 
-        <select multiple="true" id="employeeNotInGroupList" data-bind="options: employeeNotInGroupList, optionsText: 'name', optionsValue: 'nid', selectedOptions : selectionOfEmployee">
+        <select multiple="true" id="usersNotInGroupList" data-bind="options: usersNotInGroupList, optionsText: 'username', optionsValue: 'nid', selectedOptions : selectionOfEmployee">
         </select>
 
         </div>
@@ -53,8 +52,8 @@
 
             <div class="rightSection">
 
-                <div class="labelSectionBlockRight">Modules assigned to a role</div><div class="inlineLabelSection">
-                <select id="currentlyAssignedGroup" data-bind="options : employeesCurrentlyAssignedToAGroup, optionsText: 'name', optionsValue: 'nid', selectedOptions : selectionOfEmployeeToRemove " multiple="multiple">
+                <div class="labelSectionBlockRight">Users assigned to current role</div><div class="inlineLabelSection">
+                <select id="currentlyAssignedGroup" data-bind="options : usersCurrentlyAssignedToAGroup, optionsText: 'username', optionsValue: 'nid', selectedOptions : selectionOfEmployeeToRemove " multiple="multiple">
                 </select>
                 </div>
 
