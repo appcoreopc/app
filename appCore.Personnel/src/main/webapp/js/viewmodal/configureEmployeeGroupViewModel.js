@@ -18,11 +18,11 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     self.allRolesList = ko.observableArray();
 
     // Work list
-    self.usersNotInGroupList = ko.observableArray();
-    self.usersCurrentlyAssignedToAGroup = ko.observableArray();
+    self.moduleNotInGroupList = ko.observableArray();
+    self.rightsCurrentlyAssignedToAGroup = ko.observableArray();
 
     self.currentlySelectedGroup = ko.observable();
-    self.selectionOfEmployee = ko.observableArray();
+    self.selectionOfModule = ko.observableArray();
 
     self.employeeGroupChangeList = ko.observableArray();
 
@@ -281,7 +281,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     }
 
     self.assignToGroup = function (data) {
-        var selection = self.selectionOfEmployee();
+        var selection = self.selectionOfModule();
         var emp = null;
 
         var groupName = self.currentlySelectedGroup();
@@ -294,14 +294,14 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.usersNotInGroupList, employeeId);
+                    removeItemFromList(self.moduleNotInGroupList, employeeId);
                     break;
                 }
             }
-            self.usersCurrentlyAssignedToAGroup.push(emp);
+            self.rightsCurrentlyAssignedToAGroup.push(emp);
             lookupChangesToPropagateToServer(groupName, employeeId, true);
         }
-        self.selectionOfEmployee = ko.observableArray();
+        self.selectionOfModule = ko.observableArray();
     }
 
 
@@ -352,12 +352,12 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.usersCurrentlyAssignedToAGroup, employeeId);
+                    removeItemFromList(self.rightsCurrentlyAssignedToAGroup, employeeId);
                     break;
                 }
             }
 
-            self.usersNotInGroupList.push(emp);
+            self.moduleNotInGroupList.push(emp);
             lookupChangesToPropagateToServer(self.currentlySelectedGroup(), employeeId, false);
         }
 
@@ -386,11 +386,11 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
     self.currentlySelectedGroup.subscribe(function (groupName) {
 
-        self.usersNotInGroupList.removeAll();
+        self.moduleNotInGroupList.removeAll();
 
         var assignedEmployees = employeeGroupData[groupName];
 
-        self.usersCurrentlyAssignedToAGroup(assignedEmployees);
+        self.rightsCurrentlyAssignedToAGroup(assignedEmployees);
 
         if (assignedEmployees != undefined) {
             var newList = self.allUsersList.slice();
@@ -404,7 +404,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
             }
 
             if (newList.length > 0) {
-                self.usersNotInGroupList(newList);
+                self.moduleNotInGroupList(newList);
             }
             //pushDataToComboBox(targetControlId, assignedEmployees);
         }

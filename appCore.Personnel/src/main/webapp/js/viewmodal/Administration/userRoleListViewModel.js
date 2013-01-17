@@ -95,7 +95,7 @@ var UserRoleListViewModel = function (initView, data, globalViewModel) {
         switch (mode) {
             case 0:
                 var addUserLinkInfo = {
-                    "text":"Add Rple",
+                    "text":"Add Role",
                     "commandId":'roleAdd',
                     "link":globalPersonnelControlPanel,
                     "ctrlId":"addUserBtn",

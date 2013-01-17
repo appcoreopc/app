@@ -29,6 +29,7 @@ insert into forms (formid, link, category_nid) values ('Family Relation Type', '
 insert into forms (formid, link, category_nid) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1);
 insert into forms (formid, link, category_nid) values ('Holiday Group', 'maintenanceCode.jsp?id=12', 1);
 insert into forms (formid, link, category_nid) values ('Currency', 'maintenanceCode.jsp?id=13', 1);
+insert into forms (formid, link, category_nid) values ('Configurator', 'companyConfigurator', 1);
 
 insert into forms (formid, link, category_nid) values ('Job Setup', 'jobSetup.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Configure Employee Group', 'configureEmployeeGroup.jsp', 2);

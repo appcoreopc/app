@@ -35,6 +35,14 @@ public class RolesController
 				List<Roles> list = service.getAll();
 				return list;
 		}
+		
+		
+		@RequestMapping(value = "/Roles/listRoleRights", method = RequestMethod.GET)		
+		public @ResponseBody List<Roles> listRoleRights() 
+		{
+				List<Roles> list = service.getRoleByRights();
+				return list;
+		}
 
 		@RequestMapping(value = "/Roles/get", method = RequestMethod.GET)		
 		public @ResponseBody Roles getRoles (@RequestParam(value="id", required=true) Integer id ) 

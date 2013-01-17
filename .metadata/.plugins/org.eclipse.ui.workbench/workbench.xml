@@ -77,6 +77,26 @@
 <part id="33"/>
 <part id="34"/>
 <part id="35"/>
+<part id="36"/>
+<part id="37"/>
+<part id="38"/>
+<part id="39"/>
+<part id="40"/>
+<part id="41"/>
+<part id="42"/>
+<part id="43"/>
+<part id="44"/>
+<part id="45"/>
+<part id="46"/>
+<part id="47"/>
+<part id="48"/>
+<part id="49"/>
+<part id="50"/>
+<part id="51"/>
+<part id="52"/>
+<part id="53"/>
+<part id="54"/>
+<part id="55"/>
 </presentation>
 </folder>
 </info>
@@ -95,7 +115,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeGroupService.java" partName="EmployeeGroupService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeGroupService.java" title="EmployeeGroupService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeGroupService.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/EmployeeGroupService.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1517" selectionTopPixel="108"/>
+<editorState selectionHorizontalPixel="0" selectionLength="505" selectionOffset="1199" selectionTopPixel="133"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeFamilyController.java" partName="EmployeeFamilyController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java" title="EmployeeFamilyController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeFamilyController.java"/>
@@ -113,7 +133,7 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/RaceService.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="549" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CodeCheckerHelper.java" partName="CodeCheckerHelper.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java" title="CodeCheckerHelper.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CodeCheckerHelper.java" partName="CodeCheckerHelper.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java" title="CodeCheckerHelper.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3572" selectionTopPixel="967"/>
 </editor>
@@ -213,15 +233,95 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersController.java" partName="UsersController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java" title="UsersController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2310" selectionTopPixel="615"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="807" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Users.java" partName="Users.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Users.java" title="Users.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Users.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Users.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="298" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="385" selectionTopPixel="75"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActionsService.java" partName="ActionsService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/ActionsService.java" title="ActionsService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/ActionsService.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/ActionsService.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="448" selectionTopPixel="60"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms_Actions_Role.java" partName="Forms_Actions_Role.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms_Actions_Role.java" title="Forms_Actions_Role.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms_Actions_Role.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms_Actions_Role.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="566" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms_Role.java" partName="Forms_Role.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms_Role.java" title="Forms_Role.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms_Role.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms_Role.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1153"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HolidayGroupController.java" partName="HolidayGroupController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayGroupController.java" title="HolidayGroupController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayGroupController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayGroupController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HolidayGroup.java" partName="HolidayGroup.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/HolidayGroup.java" title="HolidayGroup.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/HolidayGroup.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/HolidayGroup.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="20" selectionOffset="1424" selectionTopPixel="205"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OffDay.java" partName="OffDay.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDay.java" title="OffDay.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDay.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDay.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OffDayInfo.java" partName="OffDayInfo.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDayInfo.java" title="OffDayInfo.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDayInfo.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDayInfo.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HolidayController.java" partName="HolidayController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayController.java" title="HolidayController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Holiday.java" partName="Holiday.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/Holiday.java" title="Holiday.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/Holiday.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/Holiday.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeGroup.java" partName="EmployeeGroup.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeGroup.java" title="EmployeeGroup.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeGroup.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeGroup.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1321" selectionTopPixel="600"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Roles.java" partName="Roles.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Roles.java" title="Roles.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Roles.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Roles.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2169" selectionTopPixel="868"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RolesController.java" partName="RolesController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/RolesController.java" title="RolesController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/RolesController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/RolesController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1354" selectionTopPixel="15"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FormsController.java" partName="FormsController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/FormsController.java" title="FormsController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/FormsController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/FormsController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1602" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms_RoleController.java" partName="Forms_RoleController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Forms_RoleController.java" title="Forms_RoleController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Forms_RoleController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Forms_RoleController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1216" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CategoryController.java" partName="CategoryController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/CategoryController.java" title="CategoryController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/CategoryController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/CategoryController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Actions_RoleController.java" partName="Actions_RoleController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Actions_RoleController.java" title="Actions_RoleController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Actions_RoleController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Actions_RoleController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeGroupController.java" partName="EmployeeGroupController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeGroupController.java" title="EmployeeGroupController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeGroupController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeGroupController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1928" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RolesService.java" partName="RolesService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java" title="RolesService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1250" selectionTopPixel="240"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FormsService.java" partName="FormsService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/FormsService.java" title="FormsService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/FormsService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/FormsService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="2123" selectionTopPixel="915"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms.java" partName="Forms.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms.java" title="Forms.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="707" selectionTopPixel="75"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms_RoleService.java" partName="Forms_RoleService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/Forms_RoleService.java" title="Forms_RoleService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/Forms_RoleService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/Forms_RoleService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="34" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -272,7 +372,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (100 of 3701 items)"/>
+<category IMemento.internal.id="Warnings (100 of 3706 items)"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="441" org.eclipse.ui.ide.resourceField="339" org.eclipse.ui.ide.severityAndDescriptionField="937"/>
@@ -337,7 +437,7 @@
 <view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -585,172 +685,166 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCoreMvc/src/main/java/appCore/Mvc/Controller/AppCoreController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" path="/appCore.Personnel/pom.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/CurrencyController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/CountryController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CountryService.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/Country.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/Currency.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/AssociationService.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" path="/appCore.Personnel/pom.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Users.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Users.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CodeCheckerController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/ActionsController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/ActionsService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/RolesController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/FormsController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/FormsService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Roles.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Forms_RoleController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/Forms_RoleService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms_Actions_Role.java"/>
 </editors>
-<item historyLabel="AppCoreController.java" index="0">
-<position info="not_deleted" x="442" y="0"/>
+<item historyLabel="RolesService.java" index="1">
+<position info="not_deleted" x="1453" y="0"/>
 </item>
-<item historyLabel="AppCoreController.java" index="0">
-<position info="not_deleted" x="446" y="13"/>
+<item historyLabel="RolesService.java" index="1">
+<position info="not_deleted" x="1319" y="0"/>
 </item>
-<item historyLabel="AppCoreController.java" index="0">
-<position info="not_deleted" x="324" y="0"/>
+<item historyLabel="RolesController.java" index="0">
+<position info="not_deleted" x="1680" y="18"/>
 </item>
-<item historyLabel="AppCoreController.java" index="0">
-<position info="not_deleted" x="442" y="19"/>
-</item>
-<item historyLabel="BranchController.java" index="1">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="BranchController.java" index="1">
-<position info="not_deleted" x="1115" y="17"/>
-</item>
-<item historyLabel="BranchController.java" index="1">
-<position info="not_deleted" x="3290" y="52"/>
-</item>
-<item historyLabel="BranchController.java" index="1">
-<position info="not_deleted" x="3283" y="0"/>
-</item>
-<item historyLabel="BranchController.java" index="1">
-<position info="not_deleted" x="1117" y="0"/>
-</item>
-<item historyLabel="AppCoreController.java" index="0">
-<position info="not_deleted" x="271" y="17"/>
-</item>
-<item historyLabel="AppCoreController.java" index="2">
-<position info="not_deleted" x="410" y="0"/>
-</item>
-<item historyLabel="AppCoreController.java" index="2">
-<position info="not_deleted" x="414" y="0"/>
-</item>
-<item historyLabel="BranchController.java" index="3">
+<item historyLabel="RolesController.java" index="0">
 <position/>
 </item>
-<item historyLabel="AppCoreController.java" index="2">
-<position info="not_deleted" x="302" y="301"/>
+<item historyLabel="FormsController.java" index="2">
+<position info="not_deleted" x="1287" y="0"/>
 </item>
-<item historyLabel="BranchController.java" index="3">
-<position info="not_deleted" x="3230" y="0"/>
+<item historyLabel="FormsService.java" index="3">
+<position info="not_deleted" x="2123" y="6"/>
 </item>
-<item historyLabel="appCore.Personnel/pom.xml" index="4"/>
-<item historyLabel="BranchController.java" index="3">
-<position info="not_deleted" x="3230" y="0"/>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="2037" y="0"/>
 </item>
-<item historyLabel="CurrencyController.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="FormsController.java" index="2">
+<position info="not_deleted" x="1232" y="0"/>
 </item>
-<item historyLabel="CountryController.java" index="6">
-<position info="not_deleted" x="1232" y="266"/>
+<item historyLabel="Forms.java" index="5">
+<position info="not_deleted" x="707" y="7"/>
 </item>
-<item historyLabel="CurrencyController.java" index="5">
-<position info="not_deleted" x="1506" y="0"/>
+<item historyLabel="FormsController.java" index="2">
+<position info="not_deleted" x="1602" y="0"/>
 </item>
-<item historyLabel="CountryService.java" index="7">
-<position info="not_deleted" x="726" y="245"/>
+<item historyLabel="RolesController.java" index="0">
+<position info="not_deleted" x="1587" y="0"/>
 </item>
-<item historyLabel="CurrencyService.java" index="8">
-<position info="not_deleted" x="840" y="0"/>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="8" y="0"/>
 </item>
-<item historyLabel="CurrencyController.java" index="5">
-<position info="not_deleted" x="1533" y="0"/>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="8" y="0"/>
 </item>
-<item historyLabel="CurrencyService.java" index="8">
-<position info="not_deleted" x="940" y="8"/>
+<item historyLabel="RolesController.java" index="0">
+<position info="not_deleted" x="1147" y="0"/>
 </item>
-<item historyLabel="Country.java" index="9">
-<position info="not_deleted" x="693" y="54"/>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="682" y="5"/>
 </item>
-<item historyLabel="Currency.java" index="10">
-<position info="not_deleted" x="1495" y="0"/>
+<item historyLabel="Forms_RoleController.java" index="7">
+<position info="not_deleted" x="1216" y="0"/>
 </item>
-<item historyLabel="AssociationService.java" index="11">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Forms_RoleService.java" index="8">
+<position info="not_deleted" x="34" y="0"/>
 </item>
-<item historyLabel="appCore.Personnel/pom.xml" index="12"/>
-<item historyLabel="UsersController.java" index="13">
-<position info="not_deleted" x="1294" y="0"/>
-</item>
-<item historyLabel="Users.java" index="14">
-<position info="not_deleted" x="22" y="0"/>
-</item>
-<item historyLabel="UsersController.java" index="13">
-<position info="not_deleted" x="1294" y="0"/>
-</item>
-<item historyLabel="Users.java" index="15">
-<position info="not_deleted" x="298" y="0"/>
-</item>
-<item historyLabel="UsersController.java" index="13">
-<position info="not_deleted" x="878" y="0"/>
-</item>
-<item historyLabel="CodeCheckerController.java" index="16">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="1424" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="686" y="0"/>
-</item>
-<item historyLabel="CodeCheckerController.java" index="16">
-<position info="not_deleted" x="1506" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="571" y="10"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="700" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="1357" y="18"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="1444" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="1611" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="8151" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="1863" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="2206" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="2908" y="0"/>
-</item>
-<item historyLabel="CodeCheckerHelper.java" index="17">
+<item historyLabel="RolesController.java" index="0">
 <position/>
 </item>
-<item historyLabel="ActionsController.java" index="18">
-<position info="not_deleted" x="1002" y="0"/>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1109" y="0"/>
 </item>
-<item historyLabel="ActionsService.java" index="19">
-<position info="not_deleted" x="448" y="14"/>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="682" y="5"/>
 </item>
-<item active="true" historyLabel="CodeCheckerHelper.java" index="17">
-<position info="not_deleted" x="2625" y="15"/>
+<item historyLabel="Forms_Actions_Role.java" index="9">
+<position info="not_deleted" x="566" y="18"/>
+</item>
+<item historyLabel="RolesController.java" index="0">
+<position/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="937" y="0"/>
+</item>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="682" y="5"/>
+</item>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="1208" y="0"/>
+</item>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="1904" y="0"/>
+</item>
+<item historyLabel="RolesController.java" index="0">
+<position info="not_deleted" x="1374" y="15"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="942" y="6"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1294" y="1"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1305" y="1"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1686" y="0"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1317" y="0"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1364" y="0"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1567" y="0"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1679" y="0"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1112" y="15"/>
+</item>
+<item historyLabel="RolesController.java" index="0">
+<position info="not_deleted" x="1374" y="15"/>
+</item>
+<item historyLabel="RolesService.java" index="4">
+<position info="not_deleted" x="1250" y="0"/>
+</item>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="1904" y="0"/>
+</item>
+<item historyLabel="RolesController.java" index="0">
+<position info="not_deleted" x="1354" y="0"/>
+</item>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="682" y="5"/>
+</item>
+<item historyLabel="Roles.java" index="6">
+<position info="not_deleted" x="1257" y="0"/>
+</item>
+<item historyLabel="Roles.java" index="6">
+<position/>
+</item>
+<item active="true" historyLabel="Roles.java" index="6">
+<position/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -770,50 +864,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActionsService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/ActionsService.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/ActionsService.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms_RoleService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/Forms_RoleService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/Forms_RoleService.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Users.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Users.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Users.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Forms.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/UsersController.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FormsService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/FormsService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/FormsService.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AssociationService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/AssociationService.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/AssociationService.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RolesService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Currency.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/Currency.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/Currency.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeGroupController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeGroupController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/EmployeeGroupController.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Country.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/Country.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/Country.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Actions_RoleController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Actions_RoleController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Actions_RoleController.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CurrencyService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CategoryController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/CategoryController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/CategoryController.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CountryService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CountryService.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CountryService.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Forms_RoleController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Forms_RoleController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/Forms_RoleController.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CurrencyController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/CurrencyController.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/CurrencyController.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FormsController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/FormsController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/FormsController.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" name="pom.xml" tooltip="appCore.Personnel/pom.xml">
-<persistable path="/appCore.Personnel/pom.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RolesController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/RolesController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Controller/RolesController.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" name="pom.xml" tooltip="appCoreMvc/pom.xml">
-<persistable path="/appCoreMvc/pom.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Roles.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Roles.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Entity/Roles.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppCoreController.java" tooltip="appCoreMvc/src/main/java/appCore/Mvc/Controller/AppCoreController.java">
-<persistable path="/appCoreMvc/src/main/java/appCore/Mvc/Controller/AppCoreController.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EmployeeGroup.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeGroup.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Entity/EmployeeGroup.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="App.java" tooltip="appCoreMvc/src/main/java/appCore/Mvc/App.java">
-<persistable path="/appCoreMvc/src/main/java/appCore/Mvc/App.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Holiday.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/Holiday.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/Holiday.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginRequestStatus.java" tooltip="appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java">
-<persistable path="/appCore.Shared/src/com/appCore/Requests/LoginRequestStatus.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HolidayController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Controller/HolidayController.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppCoreController.java" tooltip="appCore.Shared/com/appCore/Controller/AppCoreController.java">
-<persistable path="/appCore.Shared/com/appCore/Controller/AppCoreController.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OffDayInfo.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDayInfo.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Calendar/Entity/OffDayInfo.java"/>
 </file>
 </mruList>
 </workbench>

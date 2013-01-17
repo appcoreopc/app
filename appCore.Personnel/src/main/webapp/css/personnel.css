@@ -549,3 +549,7 @@ span.fieldSpacer {
 .formRow textarea {
     resize: none;
 }
+
+.fixedWidth {
+    width: 350px;
+}

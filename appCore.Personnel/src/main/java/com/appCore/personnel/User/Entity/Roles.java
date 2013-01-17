@@ -13,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
+import javax.persistence.Transient;
+
 import java.util.List;
 import javax.persistence.Table;
 
@@ -49,7 +51,10 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 		
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
-
+	
+		@Transient
+		private List<Forms_Actions_Role> assignedRights; 
+				
 
 		public Integer getNid() { 
 			return this.nid;
@@ -105,6 +110,14 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 			this.assignedUsers = assignedUsers;
 		}
 
+		
+		public List<Forms_Actions_Role> getAssignedRights() {
+			return assignedRights;
+		}
 
+	
+		public void setAssignedRights(List<Forms_Actions_Role> assignedRoles) {
+			this.assignedRights = assignedRoles;
+		}
 		
 	}
