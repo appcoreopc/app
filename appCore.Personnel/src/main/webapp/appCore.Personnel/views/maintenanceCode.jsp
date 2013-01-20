@@ -5,6 +5,7 @@
 
         $(document).ready(function()
         {
+            $("#ui-datepicker-div").hide();
 
             getData(globalViewModel.companyId());
             globalViewModel.companyId.subscribe(function(newValue)
@@ -51,8 +52,6 @@
         }
 
         </script>
-
-
 
         <div id="codeMaintenanceGrid" class="forms">
         <h1 data-bind="text: title"></h1>

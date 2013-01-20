@@ -57,6 +57,7 @@ public final class maintenanceCode_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
+      out.write("            $(\"#ui-datepicker-div\").hide();\r\n");
       out.write("\r\n");
       out.write("            getData(globalViewModel.companyId());\r\n");
       out.write("            globalViewModel.companyId.subscribe(function(newValue)\r\n");
@@ -103,8 +104,6 @@ public final class maintenanceCode_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        }\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("\r\n");
       out.write("        <div id=\"codeMaintenanceGrid\" class=\"forms\">\r\n");
       out.write("        <h1 data-bind=\"text: title\"></h1>\r\n");

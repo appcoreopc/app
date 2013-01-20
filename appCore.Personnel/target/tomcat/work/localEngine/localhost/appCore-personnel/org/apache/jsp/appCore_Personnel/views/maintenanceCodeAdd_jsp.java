@@ -80,7 +80,15 @@ public final class maintenanceCodeAdd_jsp extends org.apache.jasper.runtime.Http
       out.write("                vm = new CodeMaintenanceViewModel(coreModeInsert, codeType, null, globalViewModel);\r\n");
       out.write("                gridDataObject = vm.getView();\r\n");
       out.write("            }\r\n");
-      out.write("             ko.applyBindings(vm, document.getElementById(\"codeForm\"));\r\n");
+      out.write("\r\n");
+      out.write("            try\r\n");
+      out.write("            {\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"codeForm\"));\r\n");
+      out.write("            }\r\n");
+      out.write("            catch (ex)\r\n");
+      out.write("            {\r\n");
+      out.write("                console.log(ex)\r\n");
+      out.write("            }\r\n");
       out.write("\r\n");
       out.write("        });\r\n");
       out.write("\r\n");

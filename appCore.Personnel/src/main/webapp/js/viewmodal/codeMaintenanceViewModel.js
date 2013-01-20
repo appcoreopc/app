@@ -124,8 +124,6 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     }
 
     function deleteFunction(data) {
-
-
         var dialog = new CoreDialog();
         var helper = new EmployeeHelper();
         var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");

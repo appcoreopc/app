@@ -59,8 +59,9 @@ var CoreDialog = function () {
                 title:dialogObject.title,
                 closeOnEscape:false,
                 position:"center",
-                show:"fade",
-                modal:true,
+                show: { effect : "fade", duration : 800},
+                modal: true,
+                resizable: false,
                 closeText:"",
                 buttons:{"OK":function () {
                     $("#overlay").remove();
@@ -75,8 +76,13 @@ var CoreDialog = function () {
                     }
                 }
             });
-
         $myDialog.dialog('open');
-        //$('#' + dialogObject.targetId).scrollTop("0");
+
+        $(".ui-dialog .ui-dialog-title").css('color','#000');
+        $(".ui-dialog .ui-dialog-title").css('font-weight','normal');
+        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float','none');
+        $(".ui-dialog .ui-dialog-buttonpane button").css('background','#000');
+        $(".ui-dialog .ui-dialog-buttonpane").css('border-width','0px 0px 0px');
+
     }
 }
