@@ -19,8 +19,15 @@
 
                 request.success(function(data)
                 {
-                    var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);
-                    ko.applyBindings(vm, document.getElementById("employeeDiv"));
+                    try
+                    {
+                        var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);
+                        ko.applyBindings(vm, document.getElementById("employeeDiv"));
+                    }
+                    catch (ex)
+                    {
+                        console.log(ex)
+                    }
                 });
         }
 

@@ -468,6 +468,8 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
         if (groupName != undefined) {
 
             self.moduleNotInGroupList.removeAll();
+            self.employeeGroupChangeList.removeAll();
+
             var assignedRights = rightsGroupData[groupName];
             var clonedAssignedRights = assignedRights.slice();
             self.rightsCurrentlyAssignedToAGroup(flattenFormRightsToObservables(clonedAssignedRights));

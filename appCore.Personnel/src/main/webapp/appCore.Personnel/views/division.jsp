@@ -24,8 +24,14 @@
 
                 request.success(function(data)
                 {
+                   try {
                     var vm = new DivisionListViewModel(0, data, globalViewModel);
                     ko.applyBindings(vm, document.getElementById("divisionDiv"));
+                   }
+                   catch (ex)
+                   {
+                        console.log(ex)
+                   }
                 });
             }
 

@@ -1,5 +1,4 @@
     <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
-
         <script language="javascript" src="../../js/viewmodal/jobSetupListViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
@@ -12,6 +11,7 @@
 
         globalViewModel.companyId.subscribe(function(newValue)
         {
+            $(".maintenanceCommand").empty();
             getData(newValue);
         });
         });
@@ -24,15 +24,22 @@
 
         request.success(function(data)
         {
-        var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);
-        ko.applyBindings(vm, document.getElementById("jobSetupDiv"));
+        try
+        {
+            var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);
+            ko.applyBindings(vm, document.getElementById("jobSetupDiv"));
+        }
+        catch (ex)
+        {
+        console.log(ex)
+        }
         });
         }
 
         </script>
 
         <div class="forms">
-        <h1>Job Setup</h1>
+        <h1>Job Setup Maintenance</h1>
 
 
         <div class="viewData">
@@ -40,7 +47,7 @@
         </div>
 
         <div>
-        <div id="jobSetup" data-bind="dataGrid: gridViewModel"></div>
+        <div id="jobSetupDiv" data-bind="dataGrid: gridViewModel"></div>
         </div>
 
         </div>

@@ -26,6 +26,9 @@
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="0" key="index"/>
+	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="Comments"/>

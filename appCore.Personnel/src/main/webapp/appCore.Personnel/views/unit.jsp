@@ -25,8 +25,15 @@
 
             request.success(function(data)
             {
-            var vm = new UnitListViewModel(coreModeList, data, globalViewModel);
-            ko.applyBindings(vm, document.getElementById("unitDiv"));
+                try
+                {
+                    var vm = new UnitListViewModel(coreModeList, data, globalViewModel);
+                    ko.applyBindings(vm, document.getElementById("unitDiv"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
             });
         }
 

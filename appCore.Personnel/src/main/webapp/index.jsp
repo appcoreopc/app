@@ -42,12 +42,10 @@
             {
                 //sessionStorage.setItem("username", msg.username);
                 //sessionStorage.setItem("role", msg.employeeRole);
-
                 sessionStorage.setItem("username", "jeremy1");
                 sessionStorage.setItem("role", 1);
                 sessionStorage.setItem("companyId", 1);
                 sessionStorage.setItem("companyName", "AppCore");
-
                 goToPage(globallandingPage);
             }
             else

@@ -51,7 +51,6 @@ public final class jobSetup_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("    <link href=\"../../css/dialogBox.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
-      out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/jobSetupListViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/companyHelper.js\"></script>\r\n");
       out.write("\r\n");
@@ -64,6 +63,7 @@ public final class jobSetup_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        globalViewModel.companyId.subscribe(function(newValue)\r\n");
       out.write("        {\r\n");
+      out.write("            $(\".maintenanceCommand\").empty();\r\n");
       out.write("            getData(newValue);\r\n");
       out.write("        });\r\n");
       out.write("        });\r\n");
@@ -76,15 +76,22 @@ public final class jobSetup_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        request.success(function(data)\r\n");
       out.write("        {\r\n");
-      out.write("        var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);\r\n");
-      out.write("        ko.applyBindings(vm, document.getElementById(\"jobSetupDiv\"));\r\n");
+      out.write("        try\r\n");
+      out.write("        {\r\n");
+      out.write("            var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);\r\n");
+      out.write("            ko.applyBindings(vm, document.getElementById(\"jobSetupDiv\"));\r\n");
+      out.write("        }\r\n");
+      out.write("        catch (ex)\r\n");
+      out.write("        {\r\n");
+      out.write("        console.log(ex)\r\n");
+      out.write("        }\r\n");
       out.write("        });\r\n");
       out.write("        }\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"forms\">\r\n");
-      out.write("        <h1>Job Setup</h1>\r\n");
+      out.write("        <h1>Job Setup Maintenance</h1>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <div class=\"viewData\">\r\n");
@@ -92,7 +99,7 @@ public final class jobSetup_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div>\r\n");
-      out.write("        <div id=\"jobSetup\" data-bind=\"dataGrid: gridViewModel\"></div>\r\n");
+      out.write("        <div id=\"jobSetupDiv\" data-bind=\"dataGrid: gridViewModel\"></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");

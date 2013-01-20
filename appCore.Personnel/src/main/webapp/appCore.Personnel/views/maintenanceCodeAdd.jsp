@@ -28,7 +28,15 @@
                 vm = new CodeMaintenanceViewModel(coreModeInsert, codeType, null, globalViewModel);
                 gridDataObject = vm.getView();
             }
-             ko.applyBindings(vm, document.getElementById("codeForm"));
+
+            try
+            {
+                ko.applyBindings(vm, document.getElementById("codeForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
 
         });
 

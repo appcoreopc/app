@@ -10,7 +10,8 @@ public class AppCoreController
 	
 	@ExceptionHandler(NullPointerException.class)
 	public @ResponseBody RequestStatus handleException(Exception exception)
-	{
+	{	
+		
 		RequestStatus errorStatus = new RequestStatus();
 		errorStatus.setMessageCode(-999);
 		errorStatus.setMessageDescription(exception.getMessage());

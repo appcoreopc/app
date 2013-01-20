@@ -15,10 +15,16 @@
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
-            var coreCommand = new CoreCommand();
-            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-            ko.applyBindings(vm, document.getElementById("employeeResidenceAddInfo"));
-
+            try
+            {
+                var coreCommand = new CoreCommand();
+                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+                ko.applyBindings(vm, document.getElementById("employeeResidenceAddInfo"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
         });
 
         </script>

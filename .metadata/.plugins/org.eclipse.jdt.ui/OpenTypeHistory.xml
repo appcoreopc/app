@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Controller{CompanyController.java[CompanyController" modifiers="1" timestamp="1351518242641"/>
-<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Job.Entity{Industry.java[Industry" modifiers="1" timestamp="1355397202103"/>
-<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Job.Entity{JobType.java[JobType" modifiers="1" timestamp="1355397231590"/>
-<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Job.Entity{Country.java[Country" modifiers="1" timestamp="1355396921676"/>
-<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Job.Controller{CountryController.java[CountryController" modifiers="1" timestamp="1356396827515"/>
-<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Job.Entity{Employee.java[Employee" modifiers="1" timestamp="1355560233104"/>
-<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Job.Controller{EmployeeController.java[EmployeeController" modifiers="1" timestamp="1356646676925"/>
+<typeInfo handle="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Controller{CodeCheckerController.java[CodeCheckerController" modifiers="1" timestamp="1357432968108"/>
 </typeInfoHistroy>

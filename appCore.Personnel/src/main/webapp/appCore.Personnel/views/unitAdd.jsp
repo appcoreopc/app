@@ -210,8 +210,17 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
-            var vm = new UnitInfoViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("unitForm"));
+
+            try
+            {
+                var vm = new UnitInfoViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("unitForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
+
             $("#accordianUnit").accordion({collapsible : true, active: false});
         });
 

@@ -157,8 +157,16 @@
             var coreCommand = new CoreCommand();
             var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-            var vm = new EmployeeExpertiseViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-            ko.applyBindings(vm, document.getElementById("expertiseDataContent"));
+            try
+            {
+                var vm = new EmployeeExpertiseViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                ko.applyBindings(vm, document.getElementById("expertiseDataContent"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
+
         });
 
         });

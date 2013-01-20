@@ -63,6 +63,7 @@ public final class division_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                globalViewModel.companyId.subscribe(function(newValue)\r\n");
       out.write("                {\r\n");
+      out.write("                    $(\".maintenanceCommand\").empty();\r\n");
       out.write("                    getData(newValue);\r\n");
       out.write("                });\r\n");
       out.write("            });\r\n");
@@ -75,8 +76,14 @@ public final class division_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                request.success(function(data)\r\n");
       out.write("                {\r\n");
+      out.write("                   try {\r\n");
       out.write("                    var vm = new DivisionListViewModel(0, data, globalViewModel);\r\n");
       out.write("                    ko.applyBindings(vm, document.getElementById(\"divisionDiv\"));\r\n");
+      out.write("                   }\r\n");
+      out.write("                   catch (ex)\r\n");
+      out.write("                   {\r\n");
+      out.write("                        console.log(ex)\r\n");
+      out.write("                   }\r\n");
       out.write("                });\r\n");
       out.write("            }\r\n");
       out.write("\r\n");

@@ -339,8 +339,15 @@
                 var input = { "id" : coreEmployeeGeneralViewPage, "roleId" : globalViewModel.employeeRole() };
                 var coreCommand = new CoreCommand();
                 var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-                vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
-                ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
+
+                try {
+                    vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
+                    ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
 
                 var tab = $("#employeeAddTabs").tabs();
         });

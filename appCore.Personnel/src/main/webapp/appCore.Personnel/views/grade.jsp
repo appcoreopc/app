@@ -24,8 +24,15 @@
 
         request.success(function(data)
         {
-            var vm = new GradeListViewModel(coreModeList, data, globalViewModel);
-            ko.applyBindings(vm, document.getElementById("gradeTypeDiv"));
+            try
+            {
+                var vm = new GradeListViewModel(coreModeList, data, globalViewModel);
+                ko.applyBindings(vm, document.getElementById("gradeTypeDiv"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
         });
         }
 

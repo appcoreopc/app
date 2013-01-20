@@ -15,6 +15,7 @@ var coreEmployeeExpertiseViewPage = "Branch";
 var coreDepartmentPage = "Department";
 var coreCompanyPage = "Company";
 var coreDivisionPage = "Division";
+var coreJobSetupPage = "Branch";
 var coreUnitPage = "Unit";
 var coreSectionPage = "Section";
 var coreAdminPage = "Admin";
@@ -314,4 +315,5 @@ var coreApplicationTypeHolidayConfigure = 11;
 
 var coreAdministrationUserManager = 12;
 var coreAdministrationUserRights = 13;
+var coreApplicationJobSetup = 14;
 

@@ -210,8 +210,17 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
-            var vm = new SectionInfoViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("sectionForm"));
+
+            try
+            {
+                var vm = new SectionInfoViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("sectionForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
+
             $("#accordianSection").accordion({collapsible : true, active: false});
         });
 

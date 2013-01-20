@@ -192,9 +192,14 @@
                 var coreCommand = new CoreCommand();
                 var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-                var vm = new EmployeeMembershipViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-                ko.applyBindings(vm, document.getElementById("membershipDataContent"));
-
+                try {
+                    var vm = new EmployeeMembershipViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                    ko.applyBindings(vm, document.getElementById("membershipDataContent"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
             });
         });
 

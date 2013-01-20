@@ -213,8 +213,16 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
-            var vm = new DepartmentInfoViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("departmentForm"));
+
+            try
+            {
+                var vm = new DepartmentInfoViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("departmentForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
 
             $("#accordianDepartment").accordion({collapsible : true, active: false});
         });

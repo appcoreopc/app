@@ -82,6 +82,8 @@ public final class maintenanceCode_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\r\n");
       out.write("                    request.success(function(data)\r\n");
       out.write("                    {\r\n");
+      out.write("                        try\r\n");
+      out.write("                        {\r\n");
       out.write("                        vm = new CodeMaintenanceViewModel(coreModeList, codeType, data, globalViewModel);\r\n");
       out.write("                        var gridDataObject = vm.getView();\r\n");
       out.write("                        var input = { \"id\" : coreCodeMaintenancePage, \"roleId\" : 1 };\r\n");
@@ -90,6 +92,11 @@ public final class maintenanceCode_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);\r\n");
       out.write("                        vm.gridViewModel = gridViewModel;\r\n");
       out.write("                        ko.applyBindings(vm, document.getElementById(\"codeMaintenanceGrid\"));\r\n");
+      out.write("                        }\r\n");
+      out.write("                        catch (ex)\r\n");
+      out.write("                        {\r\n");
+      out.write("                            console.log(ex)\r\n");
+      out.write("                        }\r\n");
       out.write("\r\n");
       out.write("                    });\r\n");
       out.write("                }\r\n");

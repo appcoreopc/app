@@ -217,12 +217,17 @@
             var branchForm = "branchForm";
             $(document).ready(function()
             {
-                $("#" + branchForm).validationEngine();
-                var vm = new BranchInfoViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("branchForm"));
-
-                $("#accordian").accordion({collapsible : true, active: false});
-
+                try
+                {
+                    $("#" + branchForm).validationEngine();
+                    var vm = new BranchInfoViewModel(globalViewModel);
+                    ko.applyBindings(vm, document.getElementById("branchForm"));
+                    $("#accordian").accordion({collapsible : true, active: false});
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
             });
 
             </script>

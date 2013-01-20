@@ -24,8 +24,15 @@
 
             request.success(function(data)
             {
-                var vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel);
-                ko.applyBindings(vm, document.getElementById("employmentTypeDiv"));
+                try
+                {
+                    var vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel);
+                    ko.applyBindings(vm, document.getElementById("employmentTypeDiv"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
             });
         }
 

@@ -33,8 +33,9 @@
                 globalViewModel.username = sessionStorage.username;
                 ko.applyBindings(globalViewModel, document.getElementById("header"));
             }
-            catch(ex) {
-                    console.log(ex);
+            catch(ex)
+            {
+                console.log(ex);
             }
 
             $(document).ready(function()

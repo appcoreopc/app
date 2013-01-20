@@ -28,7 +28,14 @@
                 var input = { "id" : coreCompanyPage, "roleId" : 1 };
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
-                ko.applyBindings(vm, document.getElementById("companyCodeSetupTabs"));
+
+                try {
+                    ko.applyBindings(vm, document.getElementById("companyCodeSetupTabs"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
 
                 var tab = $("#companyCodeSetupTabs").tabs();
 

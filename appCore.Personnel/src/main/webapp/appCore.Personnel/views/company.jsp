@@ -6,19 +6,25 @@
 
         $(document).ready(function()
         {
-
             var ajaxCore = new AjaxCore();
             var request = ajaxCore.sendRequest(globalCompanyListUrl, null, "get");
 
             request.success(function(data)
             {
-                var vm = new CompanyViewModel(globalCompanyUrl, data, globalViewModel);
-                var gridDataObject = vm.getView();
-                var input = { "id" : coreCompanyPage, "roleId" : 1 };
-                var coreCommand = new CoreCommand();
-                var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                vm.gridViewModel = gridViewModel;
-                ko.applyBindings(vm, document.getElementById("companyDiv"));
+                try
+                {
+                    var vm = new CompanyViewModel(globalCompanyUrl, data, globalViewModel);
+                    var gridDataObject = vm.getView();
+                    var input = { "id" : coreCompanyPage, "roleId" : 1 };
+                    var coreCommand = new CoreCommand();
+                    var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+                    vm.gridViewModel = gridViewModel;
+                    ko.applyBindings(vm, document.getElementById("companyDiv"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
             });
         });
 

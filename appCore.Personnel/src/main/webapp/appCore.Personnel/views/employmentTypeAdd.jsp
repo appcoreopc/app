@@ -210,8 +210,17 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
-            var vm = new EmploymentTypeInfoViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("employmentTypeForm"));
+
+            try
+            {
+                var vm = new EmploymentTypeInfoViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("employmentTypeForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
+
             $("#accordianEmployentType").accordion({collapsible : true, active: false});
         });
 

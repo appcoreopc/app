@@ -25,6 +25,7 @@
 <fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.MapKeyManyToMany"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Calendar.Entity.Holiday"/>
+<fullyQualifiedTypeName name="javax.persistence.Transient"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Forms_Actions_Role"/>
@@ -54,6 +55,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="appCore.Mvc.Controller.AppCoreController"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Users"/>
-<fullyQualifiedTypeName name="javax.persistence.Transient"/>
+<fullyQualifiedTypeName name="com.appCore.Requests.UserAuthenticationRequestStatus"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Roles"/>
 </qualifiedTypeNameHistroy>

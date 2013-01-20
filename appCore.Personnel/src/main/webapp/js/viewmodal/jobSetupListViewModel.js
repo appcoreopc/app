@@ -6,7 +6,7 @@ var JobSetupListViewModel = function (initView, data, globalViewModel) {
     this.gridId = "gridBranch";
 
     this.data = data;
-
+    var self = this;
     self.gridData = ko.observableArray(data);
 
     self.globalViewModel = globalViewModel;
@@ -124,9 +124,10 @@ var JobSetupListViewModel = function (initView, data, globalViewModel) {
         return gridDataObject;
     }
 
+
     self.initializeViewModel = function () {
         var gridDataObject = getView();
-        var input = { "id":coreDivisionPage, "roleId": globalViewModel.employeeRole() };
+        var input = { "id": coreJobSetupPage, "roleId":globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
 
         var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
@@ -156,16 +157,17 @@ var JobSetupListViewModel = function (initView, data, globalViewModel) {
     function updateFunction(data) {
         globalViewModel.targetId(data.nid);
         globalViewModel.editMode(coreModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
+        globalViewModel.applicationScopeType(coreApplicationJobSetup);
         preparePageForLoading("jobSetupAdd.jsp");
     }
 
     function goToAdd() {
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
+        globalViewModel.applicationScopeType(coreApplicationJobSetup);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("jobSetupAdd.jsp");
     }
 
 
     self.initializeViewModel();
+
 }

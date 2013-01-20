@@ -17,11 +17,17 @@
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
-            var coreCommand = new CoreCommand();
-            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            try {
+                var coreCommand = new CoreCommand();
+                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
 
-            vm.loadInitData();
-            ko.applyBindings(vm,  document.getElementById("employmentInfoAddDetailInfo"));
+                vm.loadInitData();
+                ko.applyBindings(vm,  document.getElementById("employmentInfoAddDetailInfo"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
 
         });
 

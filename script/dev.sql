@@ -29,7 +29,6 @@ insert into forms (formid, link, category_nid) values ('Family Relation Type', '
 insert into forms (formid, link, category_nid) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1);
 insert into forms (formid, link, category_nid) values ('Holiday Group', 'maintenanceCode.jsp?id=12', 1);
 insert into forms (formid, link, category_nid) values ('Currency', 'maintenanceCode.jsp?id=13', 1);
-insert into forms (formid, link, category_nid) values ('Configurator', 'companyConfigurator', 1);
 
 insert into forms (formid, link, category_nid) values ('Job Setup', 'jobSetup.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Configure Employee Group', 'configureEmployeeGroup.jsp', 2);
@@ -129,17 +128,15 @@ insert into employeefamily (memberName, memberType, age,  employeeRefId) values 
 
 insert into employeeExpertise (specialty, industry, remarks,  employeeRefId) values (1, 1, 'a remark', 1);
 
-insert into employeequalification (level, leveldescription, major, remarks , employeeRefId) values ('level Good', 'expert level', 1, 'a remark again', 1);
+insert into employeequalification (level, leveldescription, major, remarks, localoroversea, employeeRefId) values ('level Good', 'expert level', 1, 'a remark again',  true, 1);
 
 insert into employeeMembership (membertype, association, remarks, employeeRefId) values (1, 'ACM', 'a remark again', 1);
-
-
 
 insert into employeeemployment (employername, job, industry, employeerefid) values ('Google', 'Tester', 1, 1);
 insert into employeeemployment (employername, job, industry, employeerefid) values ('IBM', 'Tester', 1, 1);
 
-insert into AssociationMembershipType (name, description) values ('Professional Member', 'Professional Member');
-insert into AssociationMembershipType (name, description) values ('Normal Member', 'Normal Member');
+insert into AssociationMembershipType (name, description, companyref) values ('Professional Member', 'Professional Member', 1);
+insert into AssociationMembershipType (name, description, companyref) values ('Normal Member', 'Normal Member', 1);
 
 insert into FamilyRelationType (name, description, companyRef) values ('Brother', 'Brother', 1);
 insert into FamilyRelationType (name, description, companyRef) values ('Sister', 'Sister', 1);

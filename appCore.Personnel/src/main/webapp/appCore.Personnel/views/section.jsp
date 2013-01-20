@@ -26,8 +26,15 @@
 
             request.success(function(data)
             {
-                var vm = new SectionListViewModel(0, data, globalViewModel);
-                ko.applyBindings(vm, document.getElementById("sectionDiv"));
+                try
+                {
+                    var vm = new SectionListViewModel(0, data, globalViewModel);
+                    ko.applyBindings(vm, document.getElementById("sectionDiv"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
             });
         }
 

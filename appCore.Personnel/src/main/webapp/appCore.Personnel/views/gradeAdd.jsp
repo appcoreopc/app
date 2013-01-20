@@ -216,8 +216,16 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
-            var vm = new GradeInfoViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("gradeForm"));
+             try
+            {
+                var vm = new GradeInfoViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("gradeForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
+
             $("#accordianGrade").accordion({collapsible : true, active: false});
         });
 

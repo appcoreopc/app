@@ -7,8 +7,15 @@
 
         $(document).ready(function()
         {
-            var vm = new CompanyConfiguratorViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
+            try
+            {
+                var vm = new CompanyConfiguratorViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
         });
 
         </script>

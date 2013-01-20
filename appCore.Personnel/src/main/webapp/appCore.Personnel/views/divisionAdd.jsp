@@ -216,8 +216,16 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
-            var vm = new DivisionInfoViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("divisionForm"));
+
+            try
+            {
+                var vm = new DivisionInfoViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("divisionForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
 
             $("#accordianDivision").accordion({collapsible : true, active: false});
 
