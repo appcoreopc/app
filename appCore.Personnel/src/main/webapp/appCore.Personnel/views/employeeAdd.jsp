@@ -43,21 +43,3 @@
 
         </div>
         </form>
-
-
-        <!--
-
-        This is the add section
-        <div id="codeSetupTabs">
-        <ul>
-        <li><a href="employeeAddGeneralInfo.jsp">General</a></li>
-        <li><a href="employeeAddContacts.jsp">Contacts</a></li>
-        <li><a href="employeeAddResidenceInfo.jsp">Residence</a></li>
-        <li><a href="employeeAddFamily.jsp">Family</a></li>
-        <li><a href="employeeAddQualification.jsp">Qualification</a></li> -- we have an issue here
-        <li><a href="employeeAddMembership.jsp">Membership</a></li>
-        <li><a href="employeeAddExpertise.jsp">Expertise</a></li>
-        <li><a href="employeeAddEmploymentInfo.jsp">Employment</a></li>
-        </ul>
-        </div>
-        -->

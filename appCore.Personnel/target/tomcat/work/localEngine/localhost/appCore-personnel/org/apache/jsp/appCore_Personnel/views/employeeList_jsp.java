@@ -51,15 +51,19 @@ public final class employeeList_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
 
       out.write("        <link href=\"../../css/dialogBox.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/employeeViewModel.js\"></script>\r\n");
       out.write("\r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
+      out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
+      out.write("                $(\"#ui-datepicker-div\").hide();\r\n");
+      out.write("\r\n");
       out.write("                getData(globalViewModel.companyId());\r\n");
       out.write("                globalViewModel.companyId.subscribe(function(newValue)\r\n");
       out.write("                {\r\n");
-      out.write("                            getData(newValue);\r\n");
+      out.write("                     getData(newValue);\r\n");
       out.write("                });\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
@@ -71,8 +75,15 @@ public final class employeeList_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\r\n");
       out.write("                request.success(function(data)\r\n");
       out.write("                {\r\n");
-      out.write("                    var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);\r\n");
-      out.write("                    ko.applyBindings(vm, document.getElementById(\"employeeDiv\"));\r\n");
+      out.write("                    try\r\n");
+      out.write("                    {\r\n");
+      out.write("                        var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);\r\n");
+      out.write("                        ko.applyBindings(vm, document.getElementById(\"employeeDiv\"));\r\n");
+      out.write("                    }\r\n");
+      out.write("                    catch (ex)\r\n");
+      out.write("                    {\r\n");
+      out.write("                        console.log(ex)\r\n");
+      out.write("                    }\r\n");
       out.write("                });\r\n");
       out.write("        }\r\n");
       out.write("\r\n");
@@ -91,7 +102,6 @@ public final class employeeList_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
-      out.write("\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

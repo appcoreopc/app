@@ -152,7 +152,7 @@ public final class employeeFamilyView_jsp extends org.apache.jasper.runtime.Http
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRowView\">\r\n");
-      out.write("        <span class=\"formRowRuler\"></span>\r\n");
+      out.write("        <span class=\"formRowRuler\" data-bind=\"visible : $index() < $root.totalRecordCount()\"></span>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");
@@ -290,9 +290,15 @@ public final class employeeFamilyView_jsp extends org.apache.jasper.runtime.Http
       out.write("                var input = { \"id\" : coreEmployeeFamilyViewPage, \"roleId\" : globalViewModel.employeeRole() };\r\n");
       out.write("                var coreCommand = new CoreCommand();\r\n");
       out.write("                var result = coreCommand.getPermission(hostAuthorizationUrl, input);\r\n");
-      out.write("\r\n");
-      out.write("                var vm = new EmployeeFamilyViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);\r\n");
-      out.write("                ko.applyBindings(vm, document.getElementById(\"familyDataContent\"));\r\n");
+      out.write("                try\r\n");
+      out.write("                {\r\n");
+      out.write("                    var vm = new EmployeeFamilyViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);\r\n");
+      out.write("                    ko.applyBindings(vm, document.getElementById(\"familyDataContent\"));\r\n");
+      out.write("                }\r\n");
+      out.write("                catch (ex)\r\n");
+      out.write("                {\r\n");
+      out.write("                    console.log(ex)\r\n");
+      out.write("                }\r\n");
       out.write("            });\r\n");
       out.write("\r\n");
       out.write("        });\r\n");

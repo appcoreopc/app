@@ -1,13 +1,17 @@
         <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+
         <script language="javascript" src="../../js/viewmodal/employeeViewModel.js"></script>
 
         <script type="text/javascript">
+
         $(document).ready(function()
         {
+                $("#ui-datepicker-div").hide();
+
                 getData(globalViewModel.companyId());
                 globalViewModel.companyId.subscribe(function(newValue)
                 {
-                            getData(newValue);
+                     getData(newValue);
                 });
         });
 
@@ -46,4 +50,3 @@
         </div>
 
         </div>
-

@@ -94,25 +94,7 @@ public final class employeeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
-      out.write("        </form>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        <!--\r\n");
-      out.write("\r\n");
-      out.write("        This is the add section\r\n");
-      out.write("        <div id=\"codeSetupTabs\">\r\n");
-      out.write("        <ul>\r\n");
-      out.write("        <li><a href=\"employeeAddGeneralInfo.jsp\">General</a></li>\r\n");
-      out.write("        <li><a href=\"employeeAddContacts.jsp\">Contacts</a></li>\r\n");
-      out.write("        <li><a href=\"employeeAddResidenceInfo.jsp\">Residence</a></li>\r\n");
-      out.write("        <li><a href=\"employeeAddFamily.jsp\">Family</a></li>\r\n");
-      out.write("        <li><a href=\"employeeAddQualification.jsp\">Qualification</a></li> -- we have an issue here\r\n");
-      out.write("        <li><a href=\"employeeAddMembership.jsp\">Membership</a></li>\r\n");
-      out.write("        <li><a href=\"employeeAddExpertise.jsp\">Expertise</a></li>\r\n");
-      out.write("        <li><a href=\"employeeAddEmploymentInfo.jsp\">Employment</a></li>\r\n");
-      out.write("        </ul>\r\n");
-      out.write("        </div>\r\n");
-      out.write("        -->");
+      out.write("        </form>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

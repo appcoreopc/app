@@ -125,7 +125,7 @@ public final class employeeQualificationView_jsp extends org.apache.jasper.runti
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRowView\">\r\n");
-      out.write("        <span class=\"formRowRuler\"></span>\r\n");
+      out.write("        <span class=\"formRowRuler\" data-bind=\"visible : $index() < $root.totalRecordCount()\"></span>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");
@@ -217,9 +217,15 @@ public final class employeeQualificationView_jsp extends org.apache.jasper.runti
       out.write("                    var input = { \"id\" : coreEmployeeContactViewPage, \"roleId\" : globalViewModel.employeeRole() };\r\n");
       out.write("                    var coreCommand = new CoreCommand();\r\n");
       out.write("                    var result = coreCommand.getPermission(hostAuthorizationUrl, input);\r\n");
-      out.write("\r\n");
-      out.write("                    var vm = new EmployeeQualificationViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);\r\n");
-      out.write("                    ko.applyBindings(vm, document.getElementById(\"qualificationDataContent\"));\r\n");
+      out.write("                    try\r\n");
+      out.write("                    {\r\n");
+      out.write("                        var vm = new EmployeeQualificationViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);\r\n");
+      out.write("                        ko.applyBindings(vm, document.getElementById(\"qualificationDataContent\"));\r\n");
+      out.write("                    }\r\n");
+      out.write("                    catch (ex)\r\n");
+      out.write("                    {\r\n");
+      out.write("                        console.log(ex)\r\n");
+      out.write("                    }\r\n");
       out.write("                });\r\n");
       out.write("            }\r\n");
       out.write("        });\r\n");
