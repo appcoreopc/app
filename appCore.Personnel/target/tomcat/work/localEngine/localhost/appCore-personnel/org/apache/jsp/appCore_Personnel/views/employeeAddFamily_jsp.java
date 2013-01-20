@@ -67,9 +67,16 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            var gridDataObject = vm.getView();\r\n");
       out.write("            var input = vm.getRole();\r\n");
       out.write("\r\n");
-      out.write("            var coreCommand = new CoreCommand();\r\n");
-      out.write("            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);\r\n");
-      out.write("            ko.applyBindings(vm, document.getElementById(\"familyAddDetailInfo\"));\r\n");
+      out.write("            try\r\n");
+      out.write("            {\r\n");
+      out.write("                var coreCommand = new CoreCommand();\r\n");
+      out.write("                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"familyAddDetailInfo\"));\r\n");
+      out.write("            }\r\n");
+      out.write("            catch (ex)\r\n");
+      out.write("            {\r\n");
+      out.write("                console.log(ex)\r\n");
+      out.write("            }\r\n");
       out.write("\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
@@ -174,7 +181,7 @@ public final class employeeAddFamily_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"labelSection\">Remarks</div><div class=\"inputSection\"><input type=\"text\" id=\"Remarks\"\r\n");
-      out.write("        data-bind=\"value: remarks\" class=\"validate[required], maxSize[40]\"/></div>\r\n");
+      out.write("        data-bind=\"value: remarks\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");

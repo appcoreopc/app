@@ -28,19 +28,16 @@ var CoreDialog = function () {
 
         $("<div id='" + commandObjects.targetId + "'>" + "</div>").appendTo("body");
 
-        $("#" + commandObjects.targetId).dialog(
-            {
-                title:commandObjects.title,
-                position:'center',
-                modal:true,
-                height:"auto",
-                width: 950,
-                open:function () {
-                    $("#" + commandObjects.targetId).load(commandObjects.url, function () {
-                    });
-                }
-            }
-        );
+        $("#" + commandObjects.targetId).load(commandObjects.url,function()
+        {
+            $("#" + commandObjects.targetId).dialog(
+                {
+                    title:commandObjects.title,
+                    position:'center',
+                    modal:true,
+                    width: 950
+                });
+        });
     }
 
     this.closeDialog = function (targetId) {
