@@ -1,6 +1,6 @@
 var UserAuthenticator = function()
 {
-    this.authenticateUser = function(username, password)
+    this.authenticateUser = function(username, password, callBack)
     {
         var user = new User();
         user.Username = username;
@@ -10,16 +10,7 @@ var UserAuthenticator = function()
         var request = ajax.sendRequest(globalUserValidationUrl, user, "get");
         request.success(function(msg)
         {
-            if (msg.messageCode == 0)
-            {
-                //goToPage(msg.tagetLandingPage);
-                goToPage(globallandingPage);
-            }
-            else
-            {
-                $("#loginInfo").addClass("errorMessage");
-                $("#loginInfo").html(msg.messageDescription);
-            }
+            callBack(msg);
         });
     }
 }

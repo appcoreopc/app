@@ -13,16 +13,16 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     var self = this;
 
     // all the employee from a selected company
-    self.allUsersList = ko.observableArray();
+    self.allEmployeeInCompanyList = ko.observableArray();
     // all the employee assigned to a group
-    self.allRolesList = ko.observableArray();
+    self.allEmployeeGroupList = ko.observableArray();
 
     // Work list
-    self.moduleNotInGroupList = ko.observableArray();
-    self.rightsCurrentlyAssignedToAGroup = ko.observableArray();
+    self.employeeNotInGroupList = ko.observableArray();
+    self.employeesCurrentlyAssignedToAGroup = ko.observableArray();
 
     self.currentlySelectedGroup = ko.observable();
-    self.selectionOfModule = ko.observableArray();
+    self.selectionOfEmployee = ko.observableArray();
 
     self.employeeGroupChangeList = ko.observableArray();
 
@@ -57,11 +57,12 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     }
 
     function getAllEmployeeCallback(data) {
-        self.allUsersList(data);
+        self.allEmployeeInCompanyList(data);
     }
 
     function getEmployeeGroupCallback(data) {
-        self.allRolesList(data);
+        self.allEmployeeGroupList(data);
+
         $.each(data, function (key, value) {
             employeeGroupData[value.name] = value.assignedEmployees;
         });
@@ -258,6 +259,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
     self.updateData = function (data) {
         var list = self.employeeGroupChangeList();
+        console.log(list);
         var helper = new CompanyHelper();
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
@@ -266,22 +268,19 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
                 groupId:item.employeeGroupId(),
                 isGrantAccess:item.isMember()
             };
-            helper.configureUserRole(entityObject, updateCompleteCallBack);
+            helper.configureEmployeeGroup(entityObject, updateCompleteCallBack);
         }
     }
 
     function updateCompleteCallBack(data) {
-
     }
 
-
     self.cancelUpdate = function (data) {
-        //alert('cancel update');
-        preparePageForLoading("personnelControlPanel.jsp");
+        preparePageForLoading("personnelSummaryWidget.jsp");
     }
 
     self.assignToGroup = function (data) {
-        var selection = self.selectionOfModule();
+        var selection = self.selectionOfEmployee();
         var emp = null;
 
         var groupName = self.currentlySelectedGroup();
@@ -290,18 +289,18 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
         for (var i = 0; i < selection.length; i++) {
             var employeeId = selection[i];
 
-            var employeeList = self.allUsersList();
+            var employeeList = self.allEmployeeInCompanyList();
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.moduleNotInGroupList, employeeId);
+                    removeItemFromList(self.employeeNotInGroupList, employeeId);
                     break;
                 }
             }
-            self.rightsCurrentlyAssignedToAGroup.push(emp);
+            self.employeesCurrentlyAssignedToAGroup.push(emp);
             lookupChangesToPropagateToServer(groupName, employeeId, true);
         }
-        self.selectionOfModule = ko.observableArray();
+        self.selectionOfEmployee = ko.observableArray();
     }
 
 
@@ -330,7 +329,7 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
     }
 
     function getGroupId(groupName) {
-        var groupList = self.allRolesList();
+        var groupList = self.allEmployeeGroupList();
 
         for (var i = 0; i < groupList.length; i++) {
             if (groupList[i].name == groupName) {
@@ -348,16 +347,16 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
         for (var i = 0; i < selection.length; i++) {
             var employeeId = selection[i];
-            var employeeList = self.allUsersList();
+            var employeeList = self.allEmployeeInCompanyList();
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.rightsCurrentlyAssignedToAGroup, employeeId);
+                    removeItemFromList(self.employeesCurrentlyAssignedToAGroup, employeeId);
                     break;
                 }
             }
 
-            self.moduleNotInGroupList.push(emp);
+            self.employeeNotInGroupList.push(emp);
             lookupChangesToPropagateToServer(self.currentlySelectedGroup(), employeeId, false);
         }
 
@@ -366,34 +365,75 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
 
     function lookupChangesToPropagateToServer(groupName, employeeId, boolValueToSet) {
 
+        var recordModifiedIndicator = true;
         var groupId = getGroupId(groupName);
-        removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
-        var employeeGroupInfo = new EmployeeGroupChangeInfo(groupId, employeeId, boolValueToSet);
-        self.employeeGroupChangeList.push(employeeGroupInfo);
+
+        if (boolValueToSet) {
+
+            if (checkIfReassignment(employeeId, groupName)) {
+                recordModifiedIndicator = false;
+                removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
+            }
+        }
+        else if (boolValueToSet == false) {
+
+            if (isRevokeAccess(employeeId, groupName)) {
+                recordModifiedIndicator = true;
+            }
+            else {
+                recordModifiedIndicator = false;
+                removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
+            }
+        }
+
+        if (recordModifiedIndicator == true) {
+            removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
+            var employeeGroupInfo = new EmployeeGroupChangeInfo(groupId, employeeId, boolValueToSet);
+            self.employeeGroupChangeList.push(employeeGroupInfo);
+        }
     }
 
+
+    function isRevokeAccess(employeeId, groupName) {
+
+        var isDoubleRevokeRecord = false;
+        var staticAssignedDataFromServer = employeeGroupData[groupName];
+
+        for (var i = 0; i < staticAssignedDataFromServer.length; i++) {
+            if (staticAssignedDataFromServer[i].nid == employeeId) {
+                isDoubleRevokeRecord = true;
+                break;
+            }
+        }
+        return isDoubleRevokeRecord;
+    }
+
+    function checkIfReassignment(employeeId, groupName) {
+        var isRecordAnReassignment = false;
+        var staticAssignedDataFromServer = employeeGroupData[groupName];
+        for (var i = 0; i < staticAssignedDataFromServer.length; i++) {
+            if (staticAssignedDataFromServer[i].nid == employeeId) {
+                isRecordAnReassignment = true;
+            }
+        }
+        return isRecordAnReassignment;
+    }
 
     self.groupSelectionChanged = function (data) {
 
     }
 
-    function saveOrUpdateStatus(result) {
-        if (result.messageCode == 0) {
-            preparePageForLoading("unit.jsp");
-        }
-    }
-
-
     self.currentlySelectedGroup.subscribe(function (groupName) {
 
-        self.moduleNotInGroupList.removeAll();
+        self.employeeNotInGroupList.removeAll();
+        self.employeeGroupChangeList.removeAll();
 
         var assignedEmployees = employeeGroupData[groupName];
-
-        self.rightsCurrentlyAssignedToAGroup(assignedEmployees);
+        var newList = assignedEmployees.slice();
+        self.employeesCurrentlyAssignedToAGroup(newList);
 
         if (assignedEmployees != undefined) {
-            var newList = self.allUsersList.slice();
+            var newList = self.allEmployeeInCompanyList.slice();
 
             for (var i = 0; i < assignedEmployees.length; i++) {
                 for (var k = 0; k < newList.length; k++) {
@@ -404,13 +444,11 @@ var ConfigureEmployeeGroupViewModel = function (globalViewModel) {
             }
 
             if (newList.length > 0) {
-                self.moduleNotInGroupList(newList);
+                self.employeeNotInGroupList(newList);
             }
-            //pushDataToComboBox(targetControlId, assignedEmployees);
         }
         else {
 
-            // appendAvailableHolidayDataToComboBox(allHolidays, targetControlId);
         }
     });
 }

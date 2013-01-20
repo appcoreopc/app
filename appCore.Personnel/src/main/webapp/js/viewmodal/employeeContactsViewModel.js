@@ -62,9 +62,6 @@ var EmployeeContactsViewModel = function (initView, globalViewModel) {
 
     self.saveContactsForm = function () {
 
-
-        alert(globalViewModel.targetId());
-
         var isValid = $("#" + "contactForm").validationEngine('validate');
 
         if (!isValid)

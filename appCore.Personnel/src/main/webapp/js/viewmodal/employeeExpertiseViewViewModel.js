@@ -20,6 +20,8 @@ var EmployeeExpertiseViewInfo = function (source) {
 var EmployeeExpertiseViewViewModel = function (dataSource, mode, audMode, employeeId) {
 
     var self = this;
+
+    self.totalRecordCount = ko.observable(dataSource.length-1);
     self.bindingSource = ko.observableArray();
     self.industryList = ko.observableArray();
     self.specialtyList = ko.observableArray();

@@ -1,5 +1,4 @@
-var EmployeeFamilyViewInfo = function(source)
-{
+var EmployeeFamilyViewInfo = function (source) {
 
     var self = this;
     var helper = new EmployeeHelper();
@@ -32,6 +31,7 @@ var EmployeeFamilyViewViewModel = function (dataSource, mode, audMode, employeeI
 
     var self = this;
 
+    self.totalRecordCount = ko.observable(dataSource.length - 1);
     self.bindingSource = ko.observableArray();
     self.familyMemberTypeList = ko.observableArray();
     self.salutationList = ko.observableArray();
@@ -52,8 +52,7 @@ var EmployeeFamilyViewViewModel = function (dataSource, mode, audMode, employeeI
     self.formPermission = ko.observable();
 
 
-    if (audMode != undefined)
-    {
+    if (audMode != undefined) {
         self.enableAdd = ko.observable(helper.getEnableAdd(audMode));
         self.enableUpdate = ko.observable(helper.getEnableUpdate(audMode));
         self.enableDelete = ko.observable(helper.getEnableDelete(audMode));
@@ -63,10 +62,8 @@ var EmployeeFamilyViewViewModel = function (dataSource, mode, audMode, employeeI
         return self.enableAdd() || self.enableDelete() || self.enableUpdate();
     }
 
-    if (mode == 0 && dataSource != null)
-    {
-        for (var i=0; i < dataSource.length; i++)
-        {
+    if (mode == 0 && dataSource != null) {
+        for (var i = 0; i < dataSource.length; i++) {
             self.bindingSource.push(new EmployeeFamilyViewInfo(dataSource[i]));
         }
     }

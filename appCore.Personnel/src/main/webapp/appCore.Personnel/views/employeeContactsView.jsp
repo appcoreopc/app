@@ -78,7 +78,7 @@
         </div>
         </div>
 
-        <div class="formRowView">
+        <div class="formRowView" data-bind="visible : $index() < $root.totalRecordCount()">
         <span class="formRowRuler"></span>
         </div>
 

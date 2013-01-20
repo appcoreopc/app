@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.appCore.personnel.User.Entity.Roles;
 import com.appCore.personnel.User.Entity.Users;
 
 @Service("usersService")
@@ -44,6 +45,21 @@ public class UsersService
 
 		return users;
 	}
+	
+	public int getRole(Integer userId) 
+	{
+		//Session session = sessionFactory.getCurrentSession();
+		//Query query = session.createQuery(("From userrole_assignment where assignedUsers_Nid :userId");
+		//query.setParameter("userId", userId);
+		//List result = query.list();
+		//System.out.println(result.getClass().toString());
+		//if (result.size() > 0)
+		//{
+			// int userRole = result.get(0).
+		//}
+		return -1;
+	}
+	
 	
 	public List<Users> get(String username, String password) 
 	{

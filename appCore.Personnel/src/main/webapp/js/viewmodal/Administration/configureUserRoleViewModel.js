@@ -19,11 +19,11 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
     self.allRolesList = ko.observableArray();
 
     // Work list
-    self.moduleNotInGroupList = ko.observableArray();
-    self.rightsCurrentlyAssignedToAGroup = ko.observableArray();
+    self.usersNotInGroupList = ko.observableArray();
+    self.usersCurrentlyAssignedToAGroup = ko.observableArray();
 
     self.currentlySelectedGroup = ko.observable();
-    self.selectionOfModule = ko.observableArray();
+    self.selectionOfEmployee = ko.observableArray();
 
     self.employeeGroupChangeList = ko.observableArray();
 
@@ -263,6 +263,8 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
 
     self.updateData = function (data) {
 
+        console.log(self.employeeGroupChangeList());
+
         var list = self.employeeGroupChangeList();
         var helper = new UserHelper();
         for (var i = 0; i < list.length; i++) {
@@ -282,12 +284,12 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
     }
 
     self.cancelUpdate = function (data) {
-        preparePageForLoading("userList.jsp");
+        preparePageForLoading("personnelControlPanel.jsp");
     }
 
     self.assignToGroup = function (data) {
 
-        var selection = self.selectionOfModule();
+        var selection = self.selectionOfEmployee();
         var emp = null;
         var groupName = self.currentlySelectedGroup();
 
@@ -304,17 +306,17 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.moduleNotInGroupList, employeeId);
+                    removeItemFromList(self.usersNotInGroupList, employeeId);
                     break;
                 }
             }
 
-            self.rightsCurrentlyAssignedToAGroup.push(emp);
+            self.usersCurrentlyAssignedToAGroup.push(emp);
 
             lookupChangesToPropagateToServer(groupName, employeeId, true);
         }
 
-        self.selectionOfModule = ko.observableArray();
+        self.selectionOfEmployee = ko.observableArray();
     }
 
 
@@ -367,12 +369,12 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
                 if (emp.nid == employeeId) {
-                    removeItemFromList(self.rightsCurrentlyAssignedToAGroup, employeeId);
+                    removeItemFromList(self.usersCurrentlyAssignedToAGroup, employeeId);
                     break;
                 }
             }
 
-            self.moduleNotInGroupList.push(emp);
+            self.usersNotInGroupList.push(emp);
             lookupChangesToPropagateToServer(self.currentlySelectedGroup(), employeeId, false);
         }
 
@@ -443,10 +445,10 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
 
     self.currentlySelectedGroup.subscribe(function (groupName) {
 
-        self.moduleNotInGroupList.removeAll();
+        self.usersNotInGroupList.removeAll();
         var assignedEmployees = usersGroupData[groupName];
         var clonedAssignedEmployees = assignedEmployees.slice();
-        self.rightsCurrentlyAssignedToAGroup(clonedAssignedEmployees);
+        self.usersCurrentlyAssignedToAGroup(clonedAssignedEmployees);
 
         if (assignedEmployees != undefined) {
             var newList = self.allUsersList.slice();
@@ -460,7 +462,7 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
             }
 
             if (newList.length > 0) {
-                self.moduleNotInGroupList(newList);
+                self.usersNotInGroupList(newList);
             }
 
             //pushDataToComboBox(targetControlId, assignedEmployees);

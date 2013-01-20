@@ -80,18 +80,10 @@
         </div>
 
         <div class="formRowView">
-        <span class="formRowRuler"></span>
-        </div>
-
+            <span class="formRowRuler" data-bind="visible : $index() < $root.totalRecordCount()"></span>
+            </div>
 
         </script>
-
-
-
-
-
-
-
 
 
 

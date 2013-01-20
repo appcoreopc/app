@@ -201,7 +201,7 @@ div.rightSection {
     border-style: none;
     color: #FFFFFF;
     font-size: 13px;
-    margin: 4px 6px 2px 12px;
+    margin: 4px 6px 2px 5px;
     padding: 6px 12px 6px 6px;
 }
 
@@ -548,8 +548,4 @@ span.fieldSpacer {
 
 .formRow textarea {
     resize: none;
-}
-
-.fixedWidth {
-    width: 350px;
 }

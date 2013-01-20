@@ -23,7 +23,6 @@ import com.appCore.personnel.Core.Job.Service.AssociationMembershipTypeService;
 @RequestMapping("/Job")
 public class AssociationMembershipTypeController
 { 
-
 	
 		protected static Logger logger = Logger.getLogger("controller");
 		@Resource(name="associationMembershipTypeService")
@@ -35,7 +34,6 @@ public class AssociationMembershipTypeController
 				List<AssociationMembershipType> list = service.getAll();
 				return list;
 		}
-
 		
 		@RequestMapping(value = "/AssociationMembershipType/listByCompany", method = RequestMethod.GET)		
 		public @ResponseBody List<AssociationMembershipType> listByCompany (@RequestParam(value="id", required=true) Integer id ) 

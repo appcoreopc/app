@@ -48,8 +48,7 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     self.enableUpdate = ko.observable(false);
     self.enableDelete = ko.observable(false);
 
-    if (audMode != undefined)
-    {
+    if (audMode != undefined) {
         self.enableAdd = ko.observable(helper.getEnableAdd(audMode));
         self.enableUpdate = ko.observable(helper.getEnableUpdate(audMode));
         self.enableDelete = ko.observable(helper.getEnableDelete(audMode));
@@ -69,7 +68,7 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
 
     function getGeneralInfo(code) {
 
-        var employeeCode = { id: code };
+        var employeeCode = { id:code };
         var request = ajaxCore.sendRequestSequential(globalEmployeeGetUrl, employeeCode, "get");
 
         request.success(function (data, status, xhrObj) {
@@ -103,19 +102,15 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
         });
     }
 
-    self.editForm = function()
-    {
+    self.editForm = function () {
         self.mode(2);
     }
 
-    self.cancelEdit = function()
-    {
-        if (self.mode() == 1)
-        {
+    self.cancelEdit = function () {
+        if (self.mode() == 1) {
             self.cancelForm();
         }
-        else
-        {
+        else {
             self.mode(0);
         }
     }
@@ -136,8 +131,7 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     }.bind(this);
 
 
-    self.cancelForm = function()
-    {
+    self.cancelForm = function () {
         preparePageForLoading("employeeList.jsp");
     }
 

@@ -4875,4 +4875,7 @@ ui-state-hover a, .ui-state-hover a:hover {
    font-weight: bold;
 }
 
-
+.usernamePlacement {
+    padding: 12px 4px;
+    font-weight: bold;
+}

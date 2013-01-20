@@ -47,8 +47,12 @@
             var SimplePage = function()
             {
                 var self = this;
-
                 self.code = ko.observable();
+
+                self.fakeSubmit = function()
+                {
+                     alert("value: " + self.code());
+                }
             }
 
             var vm = new SimplePage();
@@ -58,5 +62,9 @@
 
         </script>
 
-        <input type="text" data-bind="codepicker : code, codeEntity : { codeType : 1, companyId : '1' }" />
+        <input type="text" data-bind="codepicker : code, codeEntity : { codeType : 2, companyId : '1' }" />
+
+
+        <button data-bind="click : fakeSubmit">Click </button>
+
 

@@ -1,6 +1,8 @@
 var EmployeeQualificationViewViewModel = function (dataSource, mode, audMode, employeeId) {
 
     var self = this;
+
+    self.totalRecordCount = ko.observable(dataSource.length-1);
     self.bindingSource = ko.observableArray(dataSource);
     self.countryList = ko.observableArray();
 

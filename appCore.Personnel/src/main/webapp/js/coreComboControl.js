@@ -101,7 +101,7 @@ var CommandWidgetControlRenderer = function () {
         var parsedHtml = "<div class='widget'><div class='widgetInfoHeader'><i class='icon-th'></i><h4>" + dataObjects.title + "</h4>";
 
         if (dataObjects.clickControlId != undefined)
-            parsedHtml += "<a href='#' id='" + dataObjects.clickControlId + "'><i class='icon-plus cmdLeft'></i></a>";
+            parsedHtml += "<a href='#' id='" + dataObjects.clickControlId + "'><i class='icon-right-open cmdLeft'></i></a>";
 
         parsedHtml += "</div>";
         parsedHtml += "<div class='widgetInfo'><ul>";

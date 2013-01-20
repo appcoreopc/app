@@ -1,10 +1,11 @@
 var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employeeId) {
 
-
     var self = this;
     self.bindingSource = ko.observableArray(dataSource);
-    self.countryList = ko.observableArray();
 
+    self.totalRecordCount = ko.observable(dataSource.length-1);
+
+    self.countryList = ko.observableArray();
     var helper = new EmployeeHelper();
     helper.getCountryCode(self.countryList);
 
@@ -16,10 +17,8 @@ var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employee
     self.selectedItem = ko.observable();
     self.formPermission = ko.observable();
 
-    self.test = ko.observable(false);
 
-    if (audMode != undefined)
-    {
+    if (audMode != undefined) {
         self.enableAdd = ko.observable(helper.getEnableAdd(audMode));
         self.enableUpdate = ko.observable(helper.getEnableUpdate(audMode));
         self.enableDelete = ko.observable(helper.getEnableDelete(audMode));
@@ -30,58 +29,56 @@ var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employee
 
 
     //if (mode == coreModeEdit) {
-        // getGeneralInfo(employeeId);
-        // getContactInfo(employeeId);
+    // getGeneralInfo(employeeId);
+    // getContactInfo(employeeId);
     //}
 
     /*function getContactInfo(code) {
 
-        var employeeCode = { id:code };
-        var request = ajaxCore.sendRequestSequential(globalEmployeeGetUrl, employeeCode, "get");
+     var employeeCode = { id:code };
+     var request = ajaxCore.sendRequestSequential(globalEmployeeGetUrl, employeeCode, "get");
 
-        request.success(function (data, status, xhrObj) {
+     request.success(function (data, status, xhrObj) {
 
-            var employeeGeneralInfo = new EmployeeGeneralInfo();
-            employeeGeneralInfo.name(data.name);
-            employeeGeneralInfo.code(data.code);
-            employeeGeneralInfo.salutation(data.salutation);
-            employeeGeneralInfo.firstName(data.firstName);
-            employeeGeneralInfo.middleName(data.middleName);
-            employeeGeneralInfo.lastName(data.lastName);
+     var employeeGeneralInfo = new EmployeeGeneralInfo();
+     employeeGeneralInfo.name(data.name);
+     employeeGeneralInfo.code(data.code);
+     employeeGeneralInfo.salutation(data.salutation);
+     employeeGeneralInfo.firstName(data.firstName);
+     employeeGeneralInfo.middleName(data.middleName);
+     employeeGeneralInfo.lastName(data.lastName);
 
-            employeeGeneralInfo.gender(data.gender);
-            employeeGeneralInfo.birthDate(helper.getDateOnly(new Date(data.birthDate)));
+     employeeGeneralInfo.gender(data.gender);
+     employeeGeneralInfo.birthDate(helper.getDateOnly(new Date(data.birthDate)));
 
-            employeeGeneralInfo.age(data.age);
-            employeeGeneralInfo.maritalStatus(data.maritalStatus);
-            employeeGeneralInfo.marriageDate(helper.getDateOnly(new Date(data.marriageDate)));
-            employeeGeneralInfo.race(data.race);
+     employeeGeneralInfo.age(data.age);
+     employeeGeneralInfo.maritalStatus(data.maritalStatus);
+     employeeGeneralInfo.marriageDate(helper.getDateOnly(new Date(data.marriageDate)));
+     employeeGeneralInfo.race(data.race);
 
-            employeeGeneralInfo.religion(data.religion);
-            employeeGeneralInfo.nationality(data.nationality);
+     employeeGeneralInfo.religion(data.religion);
+     employeeGeneralInfo.nationality(data.nationality);
 
-            employeeGeneralInfo.countryOrigin(data.countryOrigin);
-            employeeGeneralInfo.disabled(data.disabled);
+     employeeGeneralInfo.countryOrigin(data.countryOrigin);
+     employeeGeneralInfo.disabled(data.disabled);
 
-            self.bindingSource = ko.observableArray([employeeGeneralInfo]);
+     self.bindingSource = ko.observableArray([employeeGeneralInfo]);
 
-        });
-    }*/
+     });
+     }*/
 
     self.getPermission = function () {
         return self.enableAdd() || self.enableDelete() || self.enableUpdate();
     }
 
-    self.editData = function (item)
-    {
+    self.editData = function (item) {
         self.selectedItem(item);
         self.mode(0);
     }
 
     self.templateToUse = function (item) {
 
-        if (item === self.selectedItem())
-        {
+        if (item === self.selectedItem()) {
             return "employeeContactAddTemplate";
         }
 
@@ -98,14 +95,12 @@ var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employee
 
     }.bind(this);
 
-    self.cancelEdit = function ()
-    {
+    self.cancelEdit = function () {
         self.editData();
         self.mode(0);
     }
 
-    self.saveDataForm = function (data)
-    {
+    self.saveDataForm = function (data) {
         var source = data;
         var contact = new EmployeeContact();
 

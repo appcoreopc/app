@@ -16,7 +16,6 @@ var UserHelper = function()
         });
     }
 
-
     this.configureUserRole = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalConfigureUserRoleUrl, entityData, "get");
@@ -24,22 +23,4 @@ var UserHelper = function()
             callBack(data);
         });
     }
-
-    this.getModules = function (entityData, callBack) {
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalModuleList, entityData, "get");
-        request.success(function (data, status, xhrObj) {
-            callBack(data);
-        });
-    }
-
-    this.getRoleRights = function (entityData, callBack) {
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalRoleRightList, entityData, "get");
-        request.success(function (data, status, xhrObj) {
-            callBack(data);
-        });
-    }
-
-
 }

@@ -60,10 +60,6 @@ var globalEmployeeGroupListByCompanyUrl = globalHostname + "/app/Job/EmployeeGro
 
 var globalRoleList = globalHostname + "/app/User/Roles/list";
 
-var globalRoleRightList = globalHostname + "/app/User/Roles/listRoleRights";
-
-var globalModuleList = globalHostname + "/app/User/Forms/list";
-
 var globalEmployeeSaveOrUpdateUrl = globalHostname + "/app/Job/Employee/saveOrUpdate";
 
 var globalEmployeeDeleteUrl = globalHostname + "/app/Job/Employee/delete";

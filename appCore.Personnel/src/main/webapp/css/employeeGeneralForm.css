@@ -50,3 +50,7 @@
 
     padding-top : 200px;
 }
+
+select {
+    height: 30px;
+}

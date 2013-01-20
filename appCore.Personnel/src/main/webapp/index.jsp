@@ -36,11 +36,42 @@
         $(document).ready(function()
         {
 
+        function authenticateUserCallBack(msg)
+        {
+            if (msg.messageCode == 0)
+            {
+                //sessionStorage.setItem("username", msg.username);
+                //sessionStorage.setItem("role", msg.employeeRole);
+
+                sessionStorage.setItem("username", "jeremy1");
+                sessionStorage.setItem("role", 1);
+                sessionStorage.setItem("companyId", 1);
+                sessionStorage.setItem("companyName", "AppCore");
+
+                goToPage(globallandingPage);
+            }
+            else
+            {
+                $("#loginInfo").addClass("errorMessage");
+                $("#loginInfo").html(msg.messageDescription);
+            }
+        }
+
             $("#loginBtn").click(function()
             {
                 var authenticator = new UserAuthenticator();
-                authenticator.authenticateUser($("#username").val(),$("#password").val());
-            })
+                authenticator.authenticateUser($("#username").val(),$("#password").val(), authenticateUserCallBack);
+            });
+
+            $("#password").keypress(function(e)
+            {
+                var code = e.which;
+                if(code == 13)
+                    {
+                        var authenticator = new UserAuthenticator();
+                        authenticator.authenticateUser($("#username").val(),$("#password").val(), authenticateUserCallBack);
+                }
+            });
         });
 
         </script>

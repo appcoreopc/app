@@ -79,7 +79,7 @@
         </div>
 
         <div class="formRowView">
-        <span class="formRowRuler"></span>
+        <span class="formRowRuler" data-bind="visible : $index() < $root.totalRecordCount()"></span>
         </div>
 
         </script>

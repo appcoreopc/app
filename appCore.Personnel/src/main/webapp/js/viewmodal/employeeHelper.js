@@ -744,10 +744,9 @@ ko.bindingHandlers.datepicker = {
 
 ko.bindingHandlers.codepicker = {
 
-
     init:function (element, valueAccessor, allBindingsAccessor) {
 
-        $(element).after("<i class=' icon-tag-1'></i>");
+        $(element).after("<i class='icon-tag-1'></i>");
 
         var value = ko.utils.unwrapObservable(valueAccessor());
 
@@ -788,11 +787,11 @@ ko.bindingHandlers.codepicker = {
                 request.success(function (data, status, xhrObj) {
                     if (data.messageCode == 0) {
                         $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span>code ok</span>");
+                        $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
                     }
                     else {
                         $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span>code is not ok</span>");
+                        $(element).next('i').after("<span><i class=icon-cancel-circle-1></i></span>");
 
                     }
                 });

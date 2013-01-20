@@ -2,6 +2,7 @@ var EmployeeResidenceViewViewModel = function (dataSource, mode, audMode, employ
 {
     var self = this;
 
+    self.totalRecordCount = ko.observable(dataSource.length-1);
     self.bindingSource = ko.observableArray(dataSource);
     self.countryList = ko.observableArray();
 

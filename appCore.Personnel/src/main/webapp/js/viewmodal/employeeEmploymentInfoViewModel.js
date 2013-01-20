@@ -20,6 +20,8 @@ var EmploymentInfoView = function (source) {
 var EmployeeEmploymentInfoViewModel = function (dataSource, mode, audMode, employeeId) {
 
     var self = this;
+
+    self.totalRecordCount = ko.observable(dataSource.length-1);
     self.bindingSource = ko.observableArray();
     self.industryList = ko.observableArray();
     self.permission = ko.observable(false);

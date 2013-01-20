@@ -28,6 +28,7 @@ var EmployeeMembershipViewViewModel = function (dataSource, mode, audMode, emplo
 
     var self = this;
 
+    self.totalRecordCount = ko.observable(dataSource.length-1);
     self.mode = ko.observable(0);
     self.enableAdd = ko.observable(false);
     self.enableUpdate = ko.observable(false);

@@ -5,12 +5,6 @@
 
             <ul class="nav logged-out">
                 <li><a href="personnelControlPanel.jsp"><i class="icon-home"></i></a></li>
-                <li class="divider-vertical"></li>
-                <li></li>
-                <li><a href="/login" id="logoutLink" onclick="return false;">Log out</a>
-                </li>
-                <li class="wishlist-nav divider-vertical">
-
                 </li>
             </ul>
 
@@ -78,6 +72,11 @@
                     </ul>
                 </li>
 
+                <li class="usernamePlacement" data-bind="visible : username != undefined"><i class="icon-user"></i></li>
+                <li class="usernamePlacement" data-bind="text : username"></li>
+                <li class="wishlist-nav divider-vertical"></li>
+                <li><a href="/login" id="logoutLink" onclick="return false;">Log out</a></li>
+                <li data-bind="visible : username != undefined" class="wishlist-nav divider-vertical"></li>
                 <li><a href="../../help.jsp" class="yellow btn" id="list-your-space">Help</a></li>
             </ul>
         </div>
