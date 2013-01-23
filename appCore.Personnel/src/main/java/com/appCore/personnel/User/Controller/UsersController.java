@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import com.appCore.Requests.RequestStatus;
 import com.appCore.Requests.UserAuthenticationRequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
+import com.appCore.personnel.User.Entity.Roles;
 import com.appCore.personnel.User.Entity.Users;
 
 import com.appCore.personnel.User.Service.UsersService;
@@ -50,8 +51,11 @@ public class UsersController
 				status.setMessageCode(-1);
 				status.setMessageDescription("Login fails.");
 				
-				List<Users> users=service.get(user.getUsername(), user.getPassword());
-				if (users.size() > 0)
+				List<Users> getUserResult = service.get(user.getUsername(), user.getPassword());
+				
+				service.getRole(1);
+				
+				if (getUserResult.size() > 0)
 				{
 					status.setUsername(user.getUsername());
 					// status.setEmployeeRole();

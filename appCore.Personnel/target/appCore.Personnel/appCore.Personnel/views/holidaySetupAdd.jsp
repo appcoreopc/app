@@ -1,36 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
-
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
-
 <script type="text/javascript">          
 
-    var currentService = hostname + "/app/Core/Calendar/Holiday";
+    var currentService = globalHostname + "/app/Core/Calendar/Holiday";
 
+	$("#myform").validationEngine();
+	
 	$(document).ready(function() 
 	{
 		 $("#HolidayDate").kendoDatePicker();
-		 
 		 $("#Type").kendoComboBox();
 		 $("#Recurring").kendoComboBox();
 		  
-		 $("#saveBtn").click(function()
+		 $("#saveBtn").live("click", function()
 		 {
-			getValidateData();
+			if (evt.handled !== true)
+			{ 
+				evt.handled = true; 
+				getValidateData();
+			}
 		 });
 			 
-		 $("#cancelBtn").click(function()
+		 $("#cancelBtn").live("click", function(evt)
 		 {
-			var result = cancelFormChanges();
-			if (result) 
-			   window.location.replace("holidaySetup.jsp");
+			if (evt.handled !== true)
+			{ 
+				evt.handled = true; 
+				var result = cancelFormChanges();
+				if (result) 
+					preparePageForLoading("holidaySetup.jsp");
+			}
 		 });
  	});
 
@@ -51,7 +48,8 @@
 		
 		request.success(function(data, status, xhrObj)
 		{
-			goToPage("holidaySetup.jsp");
+			// goToPage("holidaySetup.jsp");
+			preparePageForLoading("holidaySetup.jsp");
 		}); 
 		
 	}
@@ -59,22 +57,25 @@
 	
 </script>    
 
-<div class="form dataEntry">
+<form id="myform">
+
+
+<div class="form">
 		
   <div class="sectionalForm"> 
    
    <div class="formRow">
-		<div class="labelSection">Holiday Date</div><div class="inputSection"><input type="text" id="HolidayDate" /></div>
+		<div class="labelSection">Holiday Date</div><span class='req'>*</span><div class="inputSection"><input type="text" class="validate[required]" id="HolidayDate" /></div>
     </div>
 
 	
     <div class="formRow">
-		<div class="labelSection">Holiday Name</div><div class="inputSection"><input type="text" id="Name" value="Name"/></div>
+		<div class="labelSection">Holiday Name</div><span class='req'>*</span><div class="inputSection"><input type="text" id="Name" class="validate[required, maxSize[20]]"  value="Name"/></div>
     </div>
 
 	<div class="formRow">
-		<div class="labelSection">Type</div><div class="inputSection">
-			<select id="Type">
+		<div class="labelSection">Type</div><span class='req'>*</span><div class="inputSection">
+			<select id="Type" class="validate[required]" >
 				<option value="1">Gazetted</option>
 				<option value="0">Non-Gazetted</option>
 			</select>
@@ -82,8 +83,8 @@
     </div>
 	
 	<div class="formRow">
-		<div class="labelSection">Recurring</div><div class="inputSection">
-			<select id="Recurring">
+		<div class="labelSection">Recurring</div><span class='req'>*</span><div class="inputSection">
+			<select id="Recurring" class="validate[required]" >
 				<option value="1">Yes</option>
 				<option value="0">No</option>
 			</select>
@@ -102,8 +103,4 @@
    
    <div>&nbsp;</div>
 </div>
-
-<%@ include file="/includes/footer.html" %>
-
-</body>
-</html>
+</form>

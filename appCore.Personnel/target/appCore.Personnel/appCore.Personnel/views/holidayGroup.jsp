@@ -18,7 +18,7 @@
 	{
 		var appPath = "/app/Core/Calendar/HolidayGroup";
 		var ajaxCore = new AjaxCore();
-		var request = ajaxCore.sendRequest(hostname +  appPath + "/list", null, "get");
+		var request = ajaxCore.sendRequest(globalHostname +  appPath + "/list", null, "get");
 		
 			request.success(function(data) 
 			{
@@ -27,7 +27,7 @@
 						
 						  transport: {
                                 read:  {
-                                    url: hostname + appPath + "/list",
+                                    url: globalHostname + appPath + "/list",
                                     dataType: "json"
                                 },
                                 update: {
@@ -35,10 +35,10 @@
                                     dataType: "json"
                                 },
                                 destroy: {
-                                    url: hostname + appPath + "/delete",
+                                    url: globalHostname + appPath + "/delete",
                                     dataType: "json"
                                 },
-                                create: {
+                                createMessageBox: {
                                     // url: hostname + appPath + "/add",
                                     dataType: "json"
                                 } 
@@ -83,7 +83,7 @@
 						remove : function(e)
 						{
 							$.ajax({
-								url: hostname + appPath + "/delete",
+								url: globalHostname + appPath + "/delete",
 								data: {"id": e.model.nid},
 								type : "get", 
 								dataType : "json"
@@ -96,13 +96,12 @@
 							for (var i=0; i < e.sender._data.length; i++)
 							{
 								cnt++;
-								console.log(cnt);
 								if (e.sender._data[i].isNew())
 								{
 									var holidayGroup = new HolidayGroup(); 
 									holidayGroup.name =  e.sender._data[i].name;
 									holidayGroup.description =  e.sender._data[i].description;
-									ajaxCore.sendRequest(hostname +  appPath + "/add", holidayGroup, "get");
+									ajaxCore.sendRequest(globalHostname +  appPath + "/add", holidayGroup, "get");
 								}
 								else 
 								{
@@ -111,7 +110,7 @@
 									holidayGroup.name =  e.sender._data[i].name;
 									holidayGroup.lastUpdate =  '2012-01-01';
 									holidayGroup.description =  e.sender._data[i].description;
-									ajaxCore.sendRequestType(hostname +  appPath + "/saveOrUpdate", holidayGroup, "post");
+									ajaxCore.sendRequestType(globalHostname +  appPath + "/saveOrUpdate", holidayGroup, "post");
 								}
 							}
 						 }
@@ -166,4 +165,4 @@
 <%@ include file="/includes/footer.html" %>
 
 </body>
-</html>0
+</html>

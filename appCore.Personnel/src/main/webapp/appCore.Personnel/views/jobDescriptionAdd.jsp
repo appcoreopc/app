@@ -1,53 +1,94 @@
-
-    <script language="javascript" src="../../js/viewmodal/jobTypeViewModel.js"></script>
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
+        <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
+        <script language="javascript" src="../../js/viewmodal/jobTypeViewModel.js"></script>
 
         <script type="text/javascript">
 
         $(document).ready(function()
         {
-            var vm = new JobTypeViewModel(1);
-            var gridDataObject = vm.getView();
-            var input = { "id" : coreJobType, "roleId" : 1 };
+            $("#jobTypeForm").validationEngine();
+
+            var input = { "id" : coreJobType, "roleId" : globalViewModel.employeeRole() };
             var coreCommand = new CoreCommand();
-            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            var result = coreCommand.getPermission(hostAuthorizationUrl, input);
+            var vm = new JobTypeViewModel(globalViewModel.editMode(), globalViewModel.targetId(), result.permission, globalViewModel);
+
+            try
+            {
+                ko.applyBindings(vm, document.getElementById("jobDescriptionContent"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
         });
 
         </script>
 
 
-        <form id="jobDescriptionForm">
+        <script type="text/html" id="employeeEditJobDescriptionTemplate">
+
+
+        <form id="jobTypeDataForm">
+
 
         <div class="jobTypeForm">
 
-        <div class="maintenanceCommand">
-            <div id="jobTypeCommand" class="maintenanceCommand">
-            </div>
+        <div class="formRow">
+
+        <div class="viewLabelSection">Job Description</div><span class='req'>*</span>
+        <div class="formRow">
+            <textarea id="jobDescription" class="validate[required]" data-bind="value : description"></textarea>
         </div>
 
-
-        <div class="formRow">
-        <div class="labelSection">Job Description</div><span class='req'>*</span>
-
-        <div class="formRow">
-            <textarea id="jobDescription"></textarea>
         </div>
 
         <div class="formRow">
         &nbsp;
         </div>
 
-
-
-        <div class="formRow darken">
-        <div class="labelSection"></div>
-        <div class="inputSection">
-
-                <button id="generalInfoSave" type="button" class="command">Save</button>
-                <button id="generalInfoCancel" type="button" class="command">Cancel</button>
-
-        </div>
         </div>
 
+        </form>
+
+        </script>
+
+
+        <script type="text/html" id="employeeJobDescriptionTemplate">
+
+        <div class="jobTypeForm">
+
+
+        <div class="formRow">
+
+        <div class="viewLabelSection">Job Description</div>
+        <div class="formRow">
+        <span data-bind="text : description"></span>
+        </div>
 
         </div>
-    </form>
+
+        <div class="formRow">
+        &nbsp;
+        </div>
+
+        <div id="contactInfoEditCommand" class="maintenanceCommand">
+
+        <button id="contactEdit" type="button" data-bind="visible : $root.enableAdd, click: $root.editData">
+        <i class="icon-edit editCommandIcon"></i>Edit</button>
+
+
+        </div>
+
+        </div>
+
+        </script>
+
+
+        <div id="jobDescriptionContent">
+
+        <div data-bind="template : { name : templateToUse }">
+        </div>
+
+        </div>

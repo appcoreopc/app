@@ -1,41 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
-
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
-
 <script type="text/javascript">          
 
-    var currentService = hostname + "/app/Core/Calendar/Holiday";
+    var holidayService = globalHostname + "/app/Core/Calendar/Holiday";
+    var groupHolidayService = globalHostname + "/app/Core/Calendar/HolidayGroup";
 	var holidayGroupData = []; 
 	var allHolidays = [];
+	var currentWorkList=[]; 
+	
+	var HolidayDataObject = function()
+	{
+		this.id; 
+		this.holidayId;
+		this.isGrantAccess;
+	}
 	
 	$(document).ready(function() 
 	{
-		 
-		 getDataForComboCtl(hostname + "/app/Core/Calendar/HolidayGroup/list", "get", "HolidayGroup");
-		 
-		 getAllHolidaysData(hostname + "/app/Core/Calendar/Holiday/list", "get", "AvailableHoliday");
+		 getAllHolidayGroupData(groupHolidayService + "/list", "get", "HolidayGroup");
+		 getAllHolidaysData(holidayService + "/list", "get", "AvailableHoliday");
 	 
 		 $("#HolidayGroup").change(function()
 		 {
-			GetListForDisplay();
+			getListForDisplay("HolidayGroup", "AllocatedHoliday");
 		 });
 		 
+		 // grant access
 		 $("#availableToAllocated").click(function()
 		 {
-			moveDataFromSourceToTargetComboBox("AvailableHoliday", "AllocatedHoliday");
+			grantHolidays("AvailableHoliday", "AllocatedHoliday");
 		 });
 		 
+		 // revoke access 
 		 $("#allocatedToAvailable").click(function()
 		 {
-			moveDataFromSourceToTargetComboBox("AllocatedHoliday", "AvailableHoliday");
+			revokeHolidays("AllocatedHoliday", "AvailableHoliday");
 		 });
 	 
 		 $("#saveBtn").click(function()
@@ -45,20 +42,25 @@
 		 
 		 $("#updateBtn").click(function()
 		 {
-			  alert("HolidayGroup " + $("#HolidayGroup").val()); 
-			  
-			   $("#AllocatedHoliday option").each(function()
+				
+				if (currentWorkList != undefined && currentWorkList.length > 0)
 				{
-					alert($(this).val());
-				});
+					for (var i=0; i < currentWorkList.length; i++)
+					{
+						var hdo = currentWorkList[i]; 
+						var ajaxCore = new AjaxCore(); 
+						var request = ajaxCore.sendRequest(groupHolidayService + "/configuredHolidayGroup", hdo, "get"); 
+					
+						request.done(function(data)
+						{
+							
+						}); 
+					}
+					
+					currentWorkList = [];
+				}
 		 });
-		 
-		 
-		 $("#testBtn").click(function()
-		 {
-			test();
-		 });
-			 
+		 	 
 		 $("#cancelBtn").click(function()
 		 {
 			var result = cancelFormChanges();
@@ -67,7 +69,7 @@
 		 });
  	});
 	
-	function getDataForComboCtl(url, method, controlId)
+	function getAllHolidayGroupData(url, method, controlId)
 	{
 		var ajaxCore = new AjaxCore(); 
 		var request = ajaxCore.sendRequestType(url, null, method); 
@@ -77,52 +79,47 @@
 			var i=0;
 			$.each(data, function(key, value) 
 			{   
-				holidayGroupData[value.name] = [];
-				holidayGroupData[value.name].push(value.holidays);
-				appendDataToComboBox(controlId, value.name, value.name);
+				holidayGroupData[value.name] = value.holidays;
+				appendDataToComboBox(controlId, value.nid, value.name);
 				i++;
 			});
 		});
 	}
 	
-	function GetListForDisplay()
+	function getListForDisplay(sourceControlId, targetControlId)
 	{
-		var groupName = $("#HolidayGroup").val();
-		var assignedHolidays = holidayGroupData[groupName];
+		var groupName = $("#" + sourceControlId + " option:selected").text();
+
+        var assignedHolidays = holidayGroupData[groupName];
 		
 		if (assignedHolidays != undefined) 
 		{
 			var newList = allHolidays.slice(); 
-			var renderList = []; 
 		
-			for (var i = 0; i < assignedHolidays.length; i++)
-			{
-				for (var j = 0; j < assignedHolidays[0].length; j++)
+				for (var i = 0; i < assignedHolidays.length; i++)
 				{
 					for (var k = 0; k < newList.length; k++)
-					{
-						if (newList[k].name = assignedHolidays[0][j].name)
-						{
-							newList.splice(j, 1);  // remove the list
-						}
-						else 
-						{
-							renderList.push(assignedHolidays[0][j]);
-						}
+					{ 
+							if (newList[k].name == assignedHolidays[i].name)
+							{
+								newList.splice(k, 1);  // remove the list
+							}
 					}
-				} 
-			}
+				}
 			
+			clearComboBox(targetControlId);
 			clearComboBox("AvailableHoliday");
 			
-			if (renderList.length > 0) 
+			if (newList.length > 0) 
 			{
-				appendDataToComboBox("AvailableHoliday", renderList);
+				pushDataToComboBox("AvailableHoliday", newList);
 			}
+			
+			pushDataToComboBox(targetControlId, assignedHolidays);
 		}
 		else 
 		{
-			appendAvailableHolidayDataToComboBox(allHolidays, "AvailableHoliday");
+				appendAvailableHolidayDataToComboBox(allHolidays, targetControlId);
 		}
 	}
 
@@ -136,7 +133,7 @@
 			appendDataToComboBoxAllHoliday(data, controlId); 
 		});
 	}
-	
+		
 	function clearComboBox(controlId) 
 	{
 		$('#' + controlId).empty();
@@ -162,7 +159,7 @@
 		});
 	}
 	
-	function appendDataToComboBox(controlId, data)
+	function pushDataToComboBox(controlId, data)
 	{
 		$.each(data, function(key, value)
 		{
@@ -190,29 +187,112 @@
 		}); 
 	}
 	
-	function moveDataFromSourceToTargetComboBox(sourceControlId, targetControlId)
+	
+	
+	function revokeHolidays(sourceControlId, targetControlId)
 	{
 		var selectedItemList = $('#' + sourceControlId + " :selected");
 		
 		$.each(selectedItemList, function(key, value) 
 		{
+			var holidayGroup = $("#HolidayGroup option:selected").val(); 
+			var holidayGroupText = $("#HolidayGroup option:selected").text(); 
+			var assignedHolidays = holidayGroupData[holidayGroupText];
+			
+			var isAccessRevoked = false;
+			var currentValue = parseInt(value.value);
+			for (var i=0; i < assignedHolidays.length; i++)
+			{
+				if (assignedHolidays[i].nid == currentValue)
+				{
+					var hdo = new HolidayDataObject();
+					hdo.id = holidayGroup;
+					hdo.holidayId = value.value;
+					hdo.isGrantAccess = false;
+					currentWorkList.push(hdo);
+					isAccessRevoked = true;
+					break;
+				}	
+			}
+			
+			if (!isAccessRevoked)
+			{
+				removeCurrentWorkList(currentValue);
+			}
+			
 			appendDataToComboBox(targetControlId, value.value, value.text);
 		});
 		selectedItemList.remove();
 	}
+	
+	function grantHolidays(sourceControlId, targetControlId)
+	{
+		var selectedItemList = $('#' + sourceControlId + " :selected");
+		
+		$.each(selectedItemList, function(key, value) 
+		{
+			var holidayGroup = $("#HolidayGroup option:selected").val(); 
+			var holidayGroupText = $("#HolidayGroup option:selected").text(); 
+			var assignedHolidays = holidayGroupData[holidayGroupText];
+				
+			var alreadyGranted = false; 
+			
+			for (var i=0; i < assignedHolidays.length; i++)
+			{
+				var compareValue = parseInt(value.value);
+				
+				if (assignedHolidays[i].nid == compareValue)
+				{
+					removeCurrentWorkList(compareValue);
+					alreadyGranted = true;
+					break;
+				}	
+			}
+			
+			if (!alreadyGranted) 
+			{	
+				var hdo = new HolidayDataObject();
+				hdo.id = holidayGroup;
+				hdo.holidayId = value.value;
+				hdo.isGrantAccess = true;
+				currentWorkList.push(hdo);
+			}
+			
+			appendDataToComboBox(targetControlId, value.value, value.text);
+		});
+		selectedItemList.remove();
+	}
+	
+	function removeCurrentWorkList(id)
+	{
+		for (var i=0; i < currentWorkList.length; i++)
+		{
+			if (currentWorkList[i].holidayId == id)
+			{
+				currentWorkList.splice(i, 1);
+			}
+		}
+	}
+	
+	function debugCurrentList()
+	{
+		for (var i=0; i < currentWorkList.length; i++)
+		{
+			alert(currentWorkList[i].id +  "; " + currentWorkList[i].holidayId  + ";" + currentWorkList[i].isGrantAccess);
+		}
+	}
+	
 	
 	function appendDataToComboBox(controlId, value, textValue)
 	{
 		$('#' + controlId).append($("<option></option>").attr("value", value).text(textValue)); 
 	}
 	
-	
-	
 	function test()
 	{	
 		var request = $.ajax(
         {
-              url: hostname + "/app/Core/Calendar/HolidayGroup" + "/getTest", 
+              url: globalHostname + "/app/Core/Calendar/HolidayGroup" + "/getTest",
               type: "get", 
               data: {id:1, nid : 1}, 
               dataType: "json",
@@ -223,30 +303,38 @@
 	
 </script>    
 
-<div class="form dataEntry">
-		
+<form id="myform">
+
+<div class="form">
   <div class="sectionalForm"> 
-   
    </div>
 
-	<div class="formRow">
+   <div class="formRow">
 		&nbsp;
     </div>
-	
-	
-    <div class="formRow">
-		<div class="labelSection">Holiday Group</div><div class="inputSection">
-		<select id="HolidayGroup">
-			<option value="0">None</option>
+    
+	<div class="sectionalForm"> 
+   <div class="leftSection">
+	<div class="labelSection">Available Holidays</div><div class="inputSection">
+		<select id="AllHolidayGroup">
+			<option value="0">All Holiday</option>
 		</select>
 		
+	</div>
+   </div> 
+	
+	<div class="rightSection">
+		<div class="inlineLabelSection">Holiday Group</div><div class="inlineLabelSection">
+			<select id="HolidayGroup">
+			<option value="0">All Holiday</option>
+		</select>
 		</div>
-    </div>
+	</div>
+  </div>
 	
 	<div class="formRow">
 		&nbsp;
     </div>
-	
 	
 	<div class="sectionalForm"> 
    <div class="leftSection">
@@ -272,21 +360,12 @@
 	<div> 
 		<div class="command"><button type="button" id="saveBtn">Save Changes</button>
 		<button type="button" id="cancelBtn">Cancel</button>
-		<button type="button" id="testBtn">Test</button>
-		
 		<button type="button" id="availableToAllocated">-></button>
 		<button type="button" id="allocatedToAvailable"><-</button>
-		
-		
 		<button type="button" id="updateBtn">Update</button>
 		</div>
 	</div>
    
    <div>&nbsp;</div>
 </div>
-
-<%@ include file="/includes/footer.html" %>
-
-</body>
-</html>
-	
+</form>

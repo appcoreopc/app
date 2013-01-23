@@ -38,6 +38,7 @@ div.rightSection {
 .inlineLabelSection {
     display: inline-block;
     padding-left: 30px;
+    color : #3B5998;
 }
 
 .formRow {

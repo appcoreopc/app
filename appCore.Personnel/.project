@@ -3,6 +3,9 @@
 	<name>appCore.Personnel</name>
 	<comment></comment>
 	<projects>
+		<project>appCore.Administration</project>
+		<project>appCore.Shared</project>
+		<project>appCoreMvc</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

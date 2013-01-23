@@ -1,28 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
-
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
-
 <script type="text/javascript">          
 
-    var gridUrl = hostname + "/app/Core/Job/GradeInfo";
-
+    var gridUrl = globalHostname + "/app/Core/Job/GradeInfo";
+	var gradePage = "grade.jsp";
+	
+	globalCurrentPageToLoad = gradePage;
+	
 	$(document).ready(function() 
 	{
 	
-		var value = getParameterByName("id");
+		$("#myform").validationEngine();
+		
+		var value = globalCurrentId.nid;
 		
 		if (value != null) 
 		{
 			var ajaxCore = new AjaxCore();
-			var request = ajaxCore.sendRequest(hostname + "/app/Core/Job/Grade/get", { id : value }, "get");
+			var request = ajaxCore.sendRequest(globalHostname + "/app/Core/Job/Grade/get", { id : value }, "get");
 	
 			request.done(function(data)
 			{
@@ -53,7 +46,7 @@
                                     url: gridUrl + "/delete",
                                     dataType: "json"
                                 },
-                                create: {
+                                createMessageBox: {
                                     url: gridUrl + "/add",
                                     dataType: "json"
                                 } 
@@ -120,16 +113,13 @@
 				})
 			 }
 				
-			 $("#saveBtn").click(function()
+			 $("#saveBtn").live("click", function(evt)
 			 {
-				getValidateData();
-			 });
-			 
-			 $("#cancelBtn").click(function()
-			 {
-				var result = cancelFormChanges();
-				if (result) 
-				   window.location.replace("grade.jsp");
+				if (evt.handled !== true)
+				{
+					evt.handled = true; 
+					getValidateData();
+				}
 			 });
  	});
 
@@ -158,11 +148,11 @@
 		grade.gradeInfo = gradeInfoData; 		
 				
 		var ajaxCore = new AjaxCore(); 
-		var request = ajaxCore.sendRequestType(hostname + "/app/Core/Job/Grade/saveOrUpdate", grade, "post"); 
+		var request = ajaxCore.sendRequestType(globalHostname + "/app/Core/Job/Grade/saveOrUpdate", grade, "post");
 		
 		request.success(function(data, status, xhrObj)
 		{
-			goToPage("grade.jsp");
+			preparePageForLoading(gradePage);
 		});
 		
 	}
@@ -170,11 +160,13 @@
 	
 </script>    
 
-<div class="form dataEntry">
+<form id="myform">
+
+<div class="form">
 		
   <div class="sectionalForm"> 
    <div class="leftSection"><input type="hidden" id="Nid" name="Nid" />
-	<div class="labelSection">Grade Code</div><div class="inputSection"><input type="text" id="Code" value="Code"/></div>
+	<div class="labelSection">Grade Code</div><span class='req'>*</span><div class="inputSection"><input type="text" class="validate[required, maxSize[10]]" id="Code" value="Code"/></div>
    </div> 
 	
 	<div class="rightSection">
@@ -183,7 +175,7 @@
   </div>
 	
     <div class="formRow">
-		<div class="labelSection">Description</div><div class="inputSection"><input type="text" id="Description" value="Description"/></div>
+		<div class="labelSection">Description</div><span class='req'>*</span><div class="inputSection"><input type="text" id="Description" class="validate[required, maxSize[80]]" value="Description"/></div>
     </div>
 
 	<div class="formRow">
@@ -191,7 +183,7 @@
 	</div>
 
 	<div class="formRow">
-		<div class="labelSection">Probation Month</div><div class="inputSection"><input type="text" id="ProbationMonth" value="0"/></div>
+		<div class="labelSection">Probation Month</div><span class='req'>*</span><div class="inputSection"><input type="text" class="validate[required, max[12]]" id="ProbationMonth" value="0"/></div>
 	</div>	
 	
 	<div> 
@@ -208,7 +200,4 @@
 	</div>
 </div>
 
-<%@ include file="/includes/footer.html" %>
-
-</body>
-</html>
+</form>

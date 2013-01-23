@@ -1,28 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
-
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
-
 <script type="text/javascript">          
 
-    var gridUrl = hostname + "/app/Core/Job/EmploymentTypeInfo";
-
+    var gridUrl = globalHostname + "/app/Core/Job/EmploymentTypeInfo";
+	var employmentTypePage =  "employmentType.jsp";
+	
 	$(document).ready(function() 
 	{
 	
-		var value = getParameterByName("id");
+		var value = globalCurrentId.nid;
 		
 		if (value != null) 
 		{
 			var ajaxCore = new AjaxCore();
-			var request = ajaxCore.sendRequest(hostname + "/app/Core/Job/EmploymentType/get", { id : value }, "get");
+			var request = ajaxCore.sendRequest(globalHostname + "/app/Core/Job/EmploymentType/get", { id : value }, "get");
 	
 			request.done(function(data)
 			{
@@ -52,7 +41,7 @@
                                     url: gridUrl + "/delete",
                                     dataType: "json"
                                 },
-                                create: {
+                                createMessageBox: {
                                     url: gridUrl + "/add",
                                     dataType: "json"
                                 } 
@@ -117,17 +106,26 @@
                     });
 				 });
 			}
-				0
+				
 			 $("#saveBtn").click(function()
 			 {
-				getValidateData();
+				if (evt.handled !== true)
+				{
+					evt.handled = true; 
+					getValidateData();
+				}
 			 });
 			 
-			 $("#cancelBtn").click(function()
+			 $("#cancelBtn2").click(function()
 			 {
-				var result = cancelFormChanges();
-				if (result) 
-				   window.location.replace("employmentType.jsp");
+				if (evt.handled !== true)
+				{
+					evt.handled = true; 
+					var result = cancelFormChanges();
+					if (result) 
+				   preparePageForLoading(employmentTypePage);
+				}
+				
 			 });
  	});
 
@@ -155,11 +153,11 @@
 		employmentType.employmentTypeInfo = employmentTypeInfoData; 		
 				
 		var ajaxCore = new AjaxCore(); 
-		var request = ajaxCore.sendRequestType(hostname + "/app/Core/Job/EmploymentType/saveOrUpdate", employmentType, "post"); 
+		var request = ajaxCore.sendRequestType(globalHostname + "/app/Core/Job/EmploymentType/saveOrUpdate", employmentType, "post");
 		
 		request.success(function(data, status, xhrObj)
 		{
-			goToPage("employmentType.jsp");
+			preparePageForLoading(employmentTypePage);
 		});
 		
 	}
@@ -167,7 +165,9 @@
 	
 </script>    
 
-<div class="form dataEntry">
+<form id="myform">
+
+<div class="form">
 		
   <div class="sectionalForm"> 
    <div class="leftSection"><input type="hidden" id="Nid" name="Nid" />
@@ -190,7 +190,7 @@
 	
 	<div> 
 		<div class="command"><button type="button" id="saveBtn">Save</button>
-		<button type="button" id="cancelBtn">Cancel</button>
+		<button type="button" id="cancelBtn2">Cancel</button>
 		</div>
 	</div>
    
@@ -201,8 +201,4 @@
 		<div id="grid" style="height: 380px"></div>
 	</div>
 </div>
-
-<%@ include file="/includes/footer.html" %>
-
-</body>
-</html>
+</form>

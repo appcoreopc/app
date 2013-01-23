@@ -50,6 +50,7 @@ public final class jobQualificationAdd_jsp extends org.apache.jasper.runtime.Htt
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write("\r\n");
       out.write("   <script language=\"javascript\" src=\"../../js/viewmodal/jobQualificationViewModel.js\"></script>\r\n");
       out.write("   <script type=\"text/javascript\">\r\n");
       out.write("\r\n");
@@ -57,7 +58,7 @@ public final class jobQualificationAdd_jsp extends org.apache.jasper.runtime.Htt
       out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
-      out.write("            $(\"#\" + jobQualificationForm).validationEngine();\r\n");
+      out.write("            $(\"#jobQualificationForm\").validationEngine();\r\n");
       out.write("\r\n");
       out.write("            var vm = new JobQualificationViewModel(1);\r\n");
       out.write("            var gridDataObject = vm.getView();\r\n");

@@ -320,3 +320,13 @@ insert into HolidayGroup (name, description, companyRef) values ('ContractorsB',
 
 insert into EmployeeGroup_Assignment (EmployeeGroup_nid, assignedEmployees_nid) values (1, 1);
 
+insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 1', 1, 1);
+insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 2', 1, 1);
+insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 3', 1, 1);
+
+--insert into jobsetupExperience (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 1', 1, 1)
+--insert into jobsetupExperience (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 2', 1, 1);==--
+
+
+
+

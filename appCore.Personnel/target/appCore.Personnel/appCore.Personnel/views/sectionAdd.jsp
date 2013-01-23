@@ -1,185 +1,231 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
+    <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+        <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/sectionInfoViewModel.js"></script>
+        <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>
 
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
 
-<script type="text/javascript">          
+        <script type="text/html" id="infoUpdateTemplate">
 
-    var gridUrl = hostname + "/app/Core/SectionInfo";
+        <div class="formRowList">
 
-	$(document).ready(function() 
-	{
-	
-		var grid = $("#grid").kendoGrid({
-                         dataSource: {
-						
-						  transport: {
-                                read:  {
-                                    dataType: "json"
-                                },
-                                update: {
-                                    url: gridUrl + "/saveOrUpdate",
-                                    dataType: "json"
-                                },
-                                destroy: {
-                                    url: gridUrl + "/delete",
-                                    dataType: "json"
-                                },
-                                create: {
-                                    url: gridUrl + "/add",
-                                    dataType: "json"
-                                } 
-							},
-						 	data: [],
-                            pageSize: 10, 
-							schema: {
-                                model: {
-                                    ids: "nid",
-                                    fields: {
-                                        nid: { editable: false },
-                                        type: {  type: "string" },
-                                        value : {  validation: { required: true } },
-                                        description: {  type: "string" },
-                                        category: {  validation: { required: true } }
-                                    }
-                                }
-                            }
-		                },
-						editable : true,
-						toolbar: ["create", "cancel"],
-						groupable: false,
-						selectable : true,
-                        sortable: true,
-                        pageable: true,
-                        columns: [ 
-							{
-                                field: "type",
-                                width: 90,
-                                title: "Type"
-                            }, 
-							{
-                                field: "value",
-                                width: 90,
-                                title: "Value"
-                            },
-							{
-                                field: "description",
-                                width: 90,
-                                title: "Description"
-                            }, 
-							{
-                                field: "category",
-                                width: 90,
-                                title: "Category"
-                            }, 
-							{
-							     command : "destroy",  title : "", width: 110
-							}
-						], 
+        <span class='columnDivider'>
+        <span class="labelSection">Category</span>
+        <span class="inputSectionForm"><input type="text" data-bind="value : $root.infoCategory" placeholder="info type"/></span>
 
-						remove : function(e)
-						{
-							$.ajax({
-								url: gridUrl + "/delete",
-								data: {"id": e.model.nid},
-								type : "get", 
-								dataType : "json"
-								});
-						}
-						
-                    });
-				
-			 $("#saveBtn").click(function()
-			 {
-				getValidateData();
-			 });
-			 
-			 $("#cancelBtn").click(function()
-			 {
-				var result = cancelFormChanges();
-				if (result) 
-				   window.location.replace("section.jsp");
-			 });
- 	});
+        </span>
 
-	function getValidateData()
-	{
-		var sectionInfoData = [];
-	
-        var grid = $("#grid").data("kendoGrid").dataSource.data();
- 		$.each(grid, function (i, dataItem) 
-		{
-			var sectionInfo = new SectionInfo(); 
-			sectionInfo.type = dataItem.type; 
-			sectionInfo.value = dataItem.value;
-			sectionInfo.description = dataItem.description;
-			sectionInfo.category = dataItem.category;
-			sectionInfoData.push(sectionInfo);
-		});
-	 		
-		var section = new Section(); 
-		section.sectionCode = $("#SectionCode").val(); 
-		section.sectionName = $("#SectionName").val(); 
-		section.remark = $("#Remark").val(); 
-		section.enabled = $('#Enabled').is(":checked"); 
-		section.sectionInfo = sectionInfoData; 		
-				
-		var ajaxCore = new AjaxCore(); 
-		var request = ajaxCore.sendRequestType(hostname + "/app/Core/Section/add", section, "post"); 
-		
-		request.success(function(data, status, xhrObj)
-		{
-			goToPage("section.jsp");
-		});
-		
-	}
-	
-	
-</script>    
+        <span class='columnDivider'>
+        <span class="labelSection">Description</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.infoDescription" placeholder="new description"/></span>
+        </span>
 
-<div class="form dataEntry">
-		
-  <div class="sectionalForm"> 
-   <div class="leftSection">
-	<div class="labelSection">Section Code</div><div class="inputSection"><input type="text" id="SectionCode" value="SectionCode"/></div>
-   </div> 
-	
-	<div class="rightSection">
-		<div class="inlineLabelSection">Disabled</div><div class="inlineLabelSection"><input type="checkbox" id="Enabled" /></div>
-	</div>
-  </div>
-	
-    <div class="formRow">
-		<div class="labelSection">Section Name</div><div class="inputSection"><input type="text" id="SectionName" value="SectionName"/></div>
-    </div>
 
-	<div class="formRow">
-		<div class="labelSection">Remark</div><div class="inputSection"><input type="text" id="Remark" value="remark"/></div>
-	</div>
+        <span class='columnDivider'>
+        <span class="labelSection">Type</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.infoType" placeholder="type"/></span>
+        </span>
 
-	<div> 
-		<div class="command"><button type="button" id="saveBtn">Save</button>
-		<button type="button" id="cancelBtn">Cancel</button>
-		</div>
-	</div>
-   
-   <div>&nbsp;
-   </div>
-  
-    <div>
-	 <div> Section Info  </div>
-		<div id="grid" style="height: 380px"></div>
-	</div>
-</div>
+        <span class='columnDivider'>
+        <span class="labelSection">Value</span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.infoValue" placeholder="new value"/></span>
+        </span>
 
-<%@ include file="/includes/footer.html" %>
+        <span class="formRowCommand">
+        <span class="labelSectionCommand"></span>
+        <span class="inputSectionForm">
+        <button id="updateBtn" type="button" data-bind="visible : $root.enableUpdate, click : $root.updateInfoData"
+        class="command">Update</button>
 
-</body>
-</html>
+        <button id="cancelUpdateBtn" type="button" data-bind="visible : $root.enableUpdate, click : $root.cancelInfoData"
+        class="command">Cancel</button>
+
+        </span>
+        </span>
+
+        </div>
+
+        <span class="formRowSpacer">
+        </span>
+
+
+
+        </script>
+
+        <script type="text/html" id="infoViewTemplate">
+
+        <div class="formRowList">
+        <span class='columnDividerListView' data-bind="text : infoCategory"></span>
+        <span class='columnDividerListView' data-bind="text : infoDescription"></span>
+        <span class='columnDividerListView' data-bind="text : infoType"></span>
+        <span class='columnDividerListView' data-bind="text : infoValue"></span>
+        <span class='columnDividerListViewCmd'><a href="#" data-bind="visible : $root.enableUpdate, click : $root.editInfoData">Edit</a></span>
+        <span class='columnDividerListViewCmd'><a href="#" data-bind="visible : $root.enableDelete, click : $root.deleteInfoData">Delete</a></span>
+        </div>
+
+        </script>
+
+
+        <script type="text/html" id="infoAddTemplate">
+
+
+        <span class="accordianRowHeader"><icon class="icon-plus-circle-1"></icon></span>
+
+        <div class="formAddRow">
+
+        <div class='columnDivider'>
+        <div class="labelSection">Category</div>
+        <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="new category"/></div>
+
+        </div>
+
+        <div class='columnDivider'>
+        <div class="labelSection">Description</div><span class='req'>*</span>
+        <div class="inputSectionForm">
+        <input type="text" data-bind="value : $root.addInfoDescription" placeholder="new description"/></div>
+        </div>
+
+
+        <div class='columnDivider'>
+        <div class="labelSection">Type</div><span class='req'>*</span>
+        <div class="inputSectionForm">
+        <input type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
+        </div>
+
+        <div class='columnDivider'>
+        <div class="labelSection">Value</div><span class='req'>*</span>
+        <div class="inputSectionForm">
+        <input type="text" data-bind="value : $root.addInfoValue" placeholder="new value"/></div>
+        </div>
+
+        <span class="formAddRowCommand">
+        <button id="addBtn" type="button" data-bind="visible: $root.enableAdd, click: addInfo" class="command">Add</button>
+        <button id="addCancelBtn" type="button" data-bind="visible: $root.enableAdd, click : $root.closeAddControl" class="command">Cancel</button>
+        </span>
+
+        <span class="formRowSpacer"></span>
+
+        </div>
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/html" id="companyEntityAddTemplate">
+
+        <div class="form">
+        <div class="sectionalForm">
+        <div class="leftSection">
+        <div class="labelSection">Section  Code</div><span class='req'>*</span><div class="inputSection"><input
+        class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="SectionCode" name="SectionCode"
+        placeholder="a new section code"/></div>
+        </div>
+
+        <div class="rightSection">
+        <div class="inlineLabelSection">Disabled </div><div class="inlineLabelSection"><input type="checkbox"
+        id="Enabled" data-bind="checked : disabled" /></div>
+        </div>
+        </div>
+
+        <div class="formRow">
+        <div class="labelSection">Section Name</div><span class='req'>*</span><div class="inputSection"><input
+        type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="SectionName" placeholder="a new section name"/></div>
+        </div>
+
+
+        <div class="formRow">
+        <div class="labelSection">Description</div><span class='req'>&nbsp;</span><div class="inputSection"><input
+        type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
+        placeholder="description for new section"/></div>
+        </div>
+
+        <div> <div class="maintenanceCommandSpace"></div>
+        <div id="sectionCommand" class="maintenanceCommand">
+        <button id="saveBtn" type="button" data-bind="visible : enableAdd || enableUpdate, click : updateData"
+        class="command">Save</button>
+        <button id="cancelBtn" type="button" data-bind="click : cancelUpdate" class="command">Cancel</button>
+        </div>
+        </div>
+        <div>&nbsp;
+        </div>
+        <div>
+
+        <div class="subHeader"> Section Info </div>
+
+        <div class="formRowSpacer"></div>
+
+        <div id="accordianSection" class="formRowAddContainer" data-bind="template : { name : 'infoAddTemplate'}, visible : enableAdd "></div>
+
+
+        <div class="formRowSpacer"></div>
+
+        <div class="emptyData" data-bind="visible : $root.listInfo().length == 0">
+        <div>
+        <ul>
+
+
+        <li class="emptyDataSpacer"> </li>
+        <li> No data available.</li>
+        </ul>
+        </div>
+        </div>
+
+
+        <div class="formRowHeader" data-bind="visible : $root.listInfo().length > 0">
+        <span class='columnDividerListView'>Category</span>
+        <span class='columnDividerListView'>Description</span>
+        <span class='columnDividerListView'>Type</span>
+        <span class='columnDividerListView'>Value</span>
+        <span class='columnDividerListViewCmd' data-bind='visible: $root.enableUpdate'>Edit</span>
+        <span class='columnDividerListViewCmd' data-bind='visible: $root.enableDelete'>Delete</span>
+        </div>
+
+
+        <div class="formList" data-bind="visible : ($root.listInfo().length > 0 && enableUpdate) || ($root.listInfo().length > 0 && enableDelete),
+        template : { name :  infoTemplateToUse, foreach : listInfo}"></div>
+
+        </div>
+        </div>
+
+        </script>
+
+
+        <script type="text/javascript">
+
+        var formName = "sectionForm";
+        $(document).ready(function()
+        {
+            $("#" + formName).validationEngine();
+
+            try
+            {
+                var vm = new SectionInfoViewModel(globalViewModel);
+                ko.applyBindings(vm, document.getElementById("sectionForm"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
+
+            $("#accordianSection").accordion({collapsible : true, active: false});
+        });
+
+        </script>
+
+        <form id="sectionForm">
+        <div id="sectionMaintenance" data-bind="template : { name : templateToUse} ">
+        </form>

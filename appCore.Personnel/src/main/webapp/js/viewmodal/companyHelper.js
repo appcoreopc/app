@@ -215,6 +215,15 @@ var CompanyHelper = function () {
         });
     }
 
+    this.getJobType = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalJobTypeGetUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+
     this.getEmployees = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalEmployeeListByCompanyUrl, entityData, "get");

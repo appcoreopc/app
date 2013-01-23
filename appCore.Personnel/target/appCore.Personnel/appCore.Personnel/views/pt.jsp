@@ -46,7 +46,7 @@
 		return branch;
 	}
 	
-	var gridUrl = hostname + "/app/Core/Branch";
+	var gridUrl = globalHostname + "/app/Core/Branch";
 	
 	$(document).ready(function() 
 	{

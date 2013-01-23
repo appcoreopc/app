@@ -70,7 +70,7 @@
 		
 		$.ajax(
             {
-              url: hostname + "/app/Core/Department/add", 
+              url: globalHostname + "/app/Core/Department/add",
               type: "POST", 
               data: JSON.stringify( d ), 
               dataType: "json",

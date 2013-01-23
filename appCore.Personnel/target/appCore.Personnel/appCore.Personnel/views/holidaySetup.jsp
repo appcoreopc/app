@@ -1,166 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
 
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
+        <script language="javascript" src="../../js/viewmodal/holidaySetupListViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
-<script type="text/javascript">          
-  
-	$(document).ready(function() 
-	{
-		var appPath = "/app/Core/Calendar/Holiday";
-		var ajaxCore = new AjaxCore();
-		var request = ajaxCore.sendRequest(hostname +  appPath + "/list", null, "get");
-		
-			request.success(function(data) 
-			{
-				  var grid = $("#grid").kendoGrid({
-                        dataSource: {
-						
-						  transport: {
-                                read:  {
-                                    url: hostname + appPath + "/list",
-                                    dataType: "json"
-                                },
-                                update: {
-                                    url: hostname + appPath + "/saveOrUpdate",
-                                    dataType: "json"
-                                },
-                                destroy: {
-                                    url: hostname + appPath + "/delete",
-                                    dataType: "json"
-                                },
-                                create: {
-                                    url: hostname + appPath + "/add",
-                                    dataType: "json"
-                                } 
-							},
-						
-                            data: data,
-                            pageSize: 10, 
-							schema: {
-                                model: {
-                                    id: "nid",
-                                    fields: {
-                                        nid: { editable: false },
-                                        holidayDate: { editable: false, type : "date" },
-                                        name: { editable: false, type : "string" },
-                                        recurring : { editable: false, type : "boolean" },
-                                        lastUpdate : { editable: false, type : "string" }
-                                       
-                                    }
-                                }
-                            }
-							 
-                        },
-						editable : true,
-						groupable: false,
-						selectable : true,
-                        sortable: true,
-                        pageable: true,
-						toolbar: ["save", "cancel"],
-                        columns: [ 
-							 {
-                                field: "holidayDate",
-                                width: 90,
-                                title: "Holiday Date", format : "{0:dd-MMM-yyyy}"
-                            }, 
-							{
-                                field: "name",
-                                width: 90,
-                                title: "Name"
-                            }, 
-							{
-                                field: "recurring",
-                                width: 90,
-                                title: "Recurring"
-                            }, 
-							{
-                                field: "type",
-                                width: 90,
-                                title: "Type", template : '#= getHolidayTypeDisplayText(type) #'
-                            }, 
-							{
-							     command : { text: "Edit", click: showDetails },  title : "", width: 50
-							},
-							{
-							     command : "destroy",  title : "", width: 50
-							}
-						], 
-						remove : function(e)
-						{
-							$.ajax({
-								url: hostname + appPath + "/delete",
-								data: {"id": e.model.nid},
-								type : "get", 
-								dataType : "json"
-								});
-						}
-				    });
-				}
-			);
-			
-			$("#addBtn").click(function()
-			{
-				goToPage("holidaySetupAdd.jsp");
-			});
-			
-			$("#setupHolidayBtn").click(function()
-			{
-				goToPage("configureHolidayGroup.jsp");
-			});
-	});
-	
-	function getHolidayTypeDisplayText(dayType)
-	{
-		if (dayType == 1) 
-			return "Gazetted";
-		else if (dayType == 0) 
-		    return "Non-Gazetted";
-		else 
-			return "Non-Gazetted";
-	}
-	
-	function showDetails(e)
-	{
-		 e.preventDefault();
-		 var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-		 goToPage("holidaySetupEdit.jsp?id=" + dataItem.nid );
-	}
 
-</script>    
+        <script type="text/javascript">
 
-<div class="form dataEntry">
-	<h1>Holiday Setup</h1>
-	
-	<div class="formRow">
-		Holiday Maintenance
-    </div>
+        $(document).ready(function()
+        {
+            getData(globalViewModel.companyId());
+            globalViewModel.companyId.subscribe(function(newValue)
+            {
+                $(".maintenanceCommand").empty();
+                getData(newValue);
+            });
+        });
 
-	<div class="formRow">	
-		&nbsp;
-    </div>
-	 
-	<div class="maintenanceCommand"> 
-		<button type="button" id="addBtn">Add New Holiday</button>
-		<button type="button" id="setupHolidayBtn">Configure Holiday Group</button>
-	</div>
-	<div class="formRow">	
-		&nbsp;
-    </div>
-	 
-  <div>
-		<div id="grid" style="height: 380px"></div>
-	</div>
-</div>
+        function getData(companyId)
+        {
+            var ajaxCore = new AjaxCore();
+            var companyId = { id : companyId };
+            var request = ajaxCore.sendRequest(globalHolidaySetupListByCompanyUrl, companyId, "get");
 
-<%@ include file="/includes/footer.html" %>
+            request.success(function(data)
+            {
+                try
+                {
+                    var vm = new HolidaySetupListViewModel(coreModeList, data, globalViewModel);
+                    ko.applyBindings(vm, document.getElementById("holidaySetupDiv"));
+                }
+                catch (ex)
+                {
+                    console.log(ex)
+                }
 
-</body>
-</html>
+            });
+        }
+
+        </script>
+
+        <div class="forms">
+        <h1>Holidays Available</h1>
+
+        <div class="viewData">
+        <div class="maintenanceCommand">
+        </div>
+
+        <div>
+        <div id="holidaySetupDiv" data-bind="dataGrid: gridViewModel"></div>
+        </div>
+
+        </div>

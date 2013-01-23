@@ -57,4 +57,5 @@
 <fullyQualifiedTypeName name="appCore.Mvc.Controller.AppCoreController"/>
 <fullyQualifiedTypeName name="com.appCore.Requests.UserAuthenticationRequestStatus"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Roles"/>
+<fullyQualifiedTypeName name="org.hibernate.Hibernate"/>
 </qualifiedTypeNameHistroy>

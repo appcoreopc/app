@@ -377,10 +377,9 @@ var EmployeeHelper = function () {
         });
     }
 
-
     this.getGenderCode = function (list) {
         var ajaxCore = new AjaxCore();
-        var genderRequest = ajaxCore.sendRequestType(globalEmployeeGenderExpertiseList, null, "get");
+        var genderRequest = ajaxCore.sendRequestType(globalEmployeeGenderList, null, "get");
         genderRequest.success(function (data, status, xhrObj) {
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];
@@ -392,7 +391,7 @@ var EmployeeHelper = function () {
     this.getGenderCodeByCompany = function (list, entity) {
         var entityObject = { id : entity };
         var ajaxCore = new AjaxCore();
-        var genderRequest = ajaxCore.sendRequest(globalEmployeeGenderExpertiseListByCompany, entityObject, "get");
+        var genderRequest = ajaxCore.sendRequest(globalEmployeeGenderListByCompany, entityObject, "get");
         genderRequest.success(function (data, status, xhrObj) {
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];

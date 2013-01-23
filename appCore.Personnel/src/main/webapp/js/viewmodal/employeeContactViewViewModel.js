@@ -1,10 +1,9 @@
 var EmployeeContactViewViewModel = function (dataSource, mode, audMode, employeeId) {
 
     var self = this;
+
     self.bindingSource = ko.observableArray(dataSource);
-
     self.totalRecordCount = ko.observable(dataSource.length-1);
-
     self.countryList = ko.observableArray();
     var helper = new EmployeeHelper();
     helper.getCountryCode(self.countryList);

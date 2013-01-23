@@ -1,5 +1,4 @@
-var User = function()
-{
+var User = function () {
     this.Nid;
     this.Username;
     this.Password;
@@ -372,4 +371,43 @@ var Employee = function () {
     this.countryOrigin;
     this.disabled;
 
+}
+
+var JobType = function () {
+
+    this.nid;
+    this.code;
+    this.jobTitle;
+    this.jobCategory;
+    this.description;
+}
+
+var JobSetupQualification = function () {
+    var self = this;
+    self.nid;
+    self.jobSetupRef;
+    self.level;
+    self.levelDescription;
+    self.fieldOfStudy;
+}
+
+var JobSetupExperience = function () {
+    var self = this;
+    self.nid;
+    self.jobSetupRef;
+    self.expertise;
+    self.description;
+    self.experienceYears;
+}
+
+var JobSetupSkill = function () {
+    var self = this;
+    self.nid;
+    self.jobSetupRef;
+
+    self.skill;
+    self.level;
+    self.category;
+    self.categoryDescription;
+    self.description;
 }

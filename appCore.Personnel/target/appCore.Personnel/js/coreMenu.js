@@ -55,7 +55,7 @@
 					{
 						if (data[i].link != undefined && data[i].link != null)
 						{
-							goToPage(data[i].link);
+							preparePageForLoading(data[i].link);
 						}
 					}
 					else 

@@ -1,3 +1,4 @@
+
    <script language="javascript" src="../../js/viewmodal/jobQualificationViewModel.js"></script>
    <script type="text/javascript">
 
@@ -5,7 +6,7 @@
 
         $(document).ready(function()
         {
-            $("#" + jobQualificationForm).validationEngine();
+            $("#jobQualificationForm").validationEngine();
 
             var vm = new JobQualificationViewModel(1);
             var gridDataObject = vm.getView();

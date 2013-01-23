@@ -1,5 +1,6 @@
 html, body {
-    background-color: #F9F9F9;
+
+    background-color: #fff;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -8,7 +9,9 @@ body {
     color: #222222;
     font: 400 14px/19px Roboto,sans-serif;
     padding: 0 10px;
+    height: auto;
 }
+
 #page-container {
     margin: 0 40px;
     width: 940px;
@@ -740,6 +743,7 @@ li.no-bullet * {
 }
 html {
     line-height: 20px;
+    background-color: #fff;
 }
 pre, table, input, textarea, code {
     font-size: 1em;
@@ -868,7 +872,7 @@ legend {
     display: none;
 }
 a:link, a:visited {
-    color: #258AAF;
+    color: #0088CC;
     text-decoration: none;
 }
 a:focus, a:hover, a:active {
@@ -951,7 +955,7 @@ tr:first-of-type th:first-of-type:empty {
     font-weight: bold;
 }
 #footer-global li + li:before {
-    content: "¬?";
+    content: "ï¿½?";
     padding: 0 3px;
 }
 * html #footer-global li {
@@ -1118,7 +1122,13 @@ a {
     width: 97.0238%;
 }
 #header {
-    padding: 2.2em 0 0.2em;
+        /*padding: 2.2em 0 0.2em;*/
+
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
 }
 #header:before, #header:after {
     clear: both;
@@ -1797,11 +1807,11 @@ div.toggle-content > p {
     z-index: 1;
 }
 .ui-resizable .ui-resizable-handle {
-    border-bottom: 1px solid #E4E4E4;
+ /*    border-bottom: 1px solid #E4E4E4; */
     display: block;
 }
 .ui-resizable-s {
-    background: url("../images/resizable-s2.png") no-repeat scroll center center #F7F7F7;
+    /* background: url("../images/resizable-s2.png") no-repeat scroll center center #F7F7F7; */
     border-bottom: 1px solid #EDEDED;
     bottom: -11px;
     cursor: s-resize;
@@ -3221,3 +3231,22 @@ a.download-sdk {
 .plusone {
     float: right;
 }
+
+.ko-grid { margin-bottom: 1em; width: 100%; border: 1px solid silver; background-color:White; }
+
+.ko-grid th { text-align:left; background-color: Black; color:White; }
+
+.ko-grid td, th { padding: 0.4em; }
+
+.ko-grid tr:nth-child(odd) { background-color: #DDD; }
+
+.ko-grid-pageLinks { margin-bottom: 1em; }
+
+.ko-grid-pageLinks a { padding: 0.5em; }
+
+.ko-grid-pageLinks a.selected { background-color: Black; color: White; }
+
+.liveExample { height:20em; overflow:auto } /* Mobile Safari reflows pages slowly, so fix the height to avoid
+        the need for reflows */
+
+

@@ -196,7 +196,7 @@
                     var result = coreCommand.getPermission(hostAuthorizationUrl, input);
                     try
                     {
-                        var vm = new EmployeeContactViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                        var vm = new EmployeeContactViewViewModel(dataSource, coreModeList, result.permission, globalCurrentEmployee);
                         ko.applyBindings(vm, document.getElementById("contactDataContent"));
                     }
                     catch (ex)

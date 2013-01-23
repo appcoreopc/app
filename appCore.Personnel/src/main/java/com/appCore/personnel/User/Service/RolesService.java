@@ -45,7 +45,6 @@ public class RolesService
 	{
 		Session session = sessionFactory.getCurrentSession();
 		Roles roles = (Roles) session.get(Roles.class, id);
-
 		return roles;
 	}
 	
@@ -53,16 +52,16 @@ public class RolesService
 	public boolean saveconfiguredRole(int employeeId, int groupId, boolean isGrantAccess)
 	{
 		Session session = sessionFactory.getCurrentSession();
-		Roles employeeGroup = (Roles) session.get(Roles.class, groupId);
+		Roles userGroup = (Roles) session.get(Roles.class, groupId);
 		Users employee = (Users) session.get(Users.class, employeeId);
 		
 		if (isGrantAccess)
 		{
-			employeeGroup.getAssignedUsers().add(employee);
+			userGroup.getAssignedUsers().add(employee);
 		}
 		else 
 		{
-			employeeGroup.getAssignedUsers().remove(employee);
+			userGroup.getAssignedUsers().remove(employee);
 		}
 		return true; 
 		

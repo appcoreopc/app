@@ -1,217 +1,97 @@
-    var JobType = function()
-{
+var JobTypeViewModel = function (mode, jobTypeId, permission, globalViewModel) {
 
-    this.nid;
-    this.code;
-    this.jobTitle;
-    this.jobCategory;
-    this.description;
-}
+    var self = this;
+    var helper = new EmployeeHelper();
+    self.mode = ko.observable(0);
 
-var JobTypeViewModel = function(initView, value, data)
-{
-    this.mode = initView;
-    this.centralPage = "jobSetup.jsp";
-    this.editPage = "jobSetupEdit.jsp";
-    this.addPage = "jobSetupAdd.jsp";
-    this.jobTypeForm = "jobTypeForm";
+    self.description = ko.observable();
 
-    this.gridUrl = globalHostname + "/app/Job/JobType";
+    self.enableAdd = ko.observable(false);
+    self.enableUpdate = ko.observable(false);
+    self.enableDelete = ko.observable(false);
 
-    this.gridJobExperience = "#jobTypeCommand";
-    this.gridId = "gridJobType";
-    this.data = data;
+    self.selectedItem = ko.observable();
+    self.formPermission = ko.observable();
 
-    var model =
-    {
-        id: "nid",
-        fields: {
-            nid: { editable: false },
-            code : { editable: false, type: "string" },
-            jobTitle : { editable: false, validation: { required: true } },
-            jobCategory : { editable: false, type: "string" }
-        }
-    };
-
-    var columns = { "columns" : [
-        {
-            field: "code",
-            width: 90,
-            title: "Job Code"
-        },
-        {
-            field: "jobTitle",
-            width: 90,
-            title: "Title"
-        },
-        {
-            field: "jobCategory",
-            width: 90,
-            title: "Category"
-        }
-    ]};
-
-
-    this.getView = function()
-    {
-        var gridDataObject =
-        {
-            "gridUrl" : this.gridUrl,
-            "data" : this.data,
-            "columns" : columns,
-            "model" : model
-        };
-
-        switch (this.mode)
-        {
-            case 0:
-
-                var addLinkInfo = {
-                    "text" : "Add Job Setup",
-                    "commandId" : 'jobTypeCommand',
-                    "targetControlId" : this.gridJobExperience,
-                    "link" : this.addPage,
-                    "callback" : function() { goToAdd(); }
-                };
-
-                var updateLinkInfo = {
-                    "text" : "Update",
-                    "link" : this.editPage
-                };
-
-                gridDataObject.controlId = this.gridId;
-                gridDataObject.addLinkInfo = addLinkInfo;
-                gridDataObject.updateLinkInfo = updateLinkInfo;
-                return gridDataObject;
-
-            case 1:
-
-                var addLinkInfo = {
-                    "text" : "Save",
-                    "link" : this.centralPage,
-                    "commandId" : 'jobExperienceAdd',
-                    "targetControlId" : this.gridJobExperience,
-                    "callback" : saveForm.toString()
-                };
-
-                var updateLinkInfo = {
-                    "text" : "Update",
-                    "link" : this.editPage
-                };
-
-                gridDataObject.model = model;
-                gridDataObject.columns = columns;
-                gridDataObject.gridUrl = this.gridUrl;
-                gridDataObject.controlId = this.gridId;
-                gridDataObject.appearance = globalCoreGridAppearanceToobarCreateCancel;
-                gridDataObject.editorMode = "Insert";
-                gridDataObject.addLinkInfo = addLinkInfo;
-                gridDataObject.updateLinkInfo = updateLinkInfo;
-
-                return gridDataObject;
-
-            case 2:
-
-                var transport = {
-                    read:  {
-                        url: this.gridUrl + "/listByRefEntity?id=" + this.valueData,
-                        dataType: "json"
-                    },
-                    update: {
-                        url: this.gridUrl + "/saveOrUpdate",
-                        dataType: "json"
-                    },
-                    destroy: {
-                        url: this.gridUrl + "/delete",
-                        dataType: "json"
-                    },
-                    createMessageBox: {
-                        url: this.gridUrl + "/add",
-                        dataType: "json"
-                    }
-                };
-
-                var addLinkInfo =
-                {
-                    "text" : "Save",
-                    "link" : this.centralPage,
-                    "commandId" : 'jobExperienceUpdate',
-                    "targetControlId" : this.gridJobExperience,
-                    "callback" : updateBranch.toString()
-                };
-
-                var updateLinkInfo = {
-                    "text" : "Update",
-                    "link" : this.editPage
-                };
-
-                var transport = {
-                    read:  {
-                        url: this.gridUrl + "/listByRefEntity?id=" + this.valueData,
-                        dataType: "json"
-                    },
-                    update: {
-                        url: this.gridUrl + "/saveOrUpdate",
-                        dataType: "json"
-                    },
-                    destroy: {
-                        url: this.gridUrl + "/delete",
-                        dataType: "json"
-                    },
-                    createMessageBox: {
-                        url: this.gridUrl + "/add",
-                        dataType: "json"
-                    }
-                };
-
-                gridDataObject.model = model;
-                gridDataObject.columns = columns;
-                gridDataObject.gridUrl = this.gridInfoUrl;
-                gridDataObject.controlId = this.gridId;
-                gridDataObject.appearance = globalCoreGridAppearanceToobarCreateCancel;
-                gridDataObject.editorMode = "Edit";
-                gridDataObject.addLinkInfo = addLinkInfo;
-                gridDataObject.updateLinkInfo = updateLinkInfo;
-                gridDataObject.transport = transport;
-                gridDataObject.valueData = this.valueData;
-
-                return gridDataObject;
-        }
-        return gridDataObject;
+    if (permission != undefined) {
+        self.enableAdd = ko.observable(helper.getEnableAdd(permission));
+        self.enableUpdate = ko.observable(helper.getEnableUpdate(permission));
+        self.enableDelete = ko.observable(helper.getEnableDelete(permission));
     }
 
-   function saveForm()
-   {
-       var dataDescription = $("#jobDescription").val();
+    if (mode != coreModeList)
+        self.mode = ko.observable(mode);
 
-       if (dataDescription.length > 0)
-       {
+    if (self.mode() == coreModeEdit) {
+        var entityData = { id: jobTypeId };
+        var companyHelper = new CompanyHelper();
+        companyHelper.getJobType(entityData, getEntityGetDataCallback);
+    }
 
-           var jobTypeData = new JobType();
-           jobTypeData.description = dataDescription;
-           jobTypeData.code = $("#JobCode").val();
-           jobTypeData.jobTitle = $("#JobTitle").val();
-           jobTypeData.jobCategory = $("#JobCategory").val();
+    function getEntityGetDataCallback(data) {
 
-           var request = ajaxCore.sendRequestType(globalHostname + "/app/Job/JobType/add", jobTypeData, "post");
-           request.success(function(data, status, xhrObj)
-           {
-               status = true;
-           });
+        if (data != null) {
+            self.description(data.description);
+        }
+    }
 
-           if (status)
-                preparePageForLoading("jobSetup.jsp");
 
-       }
-   }
+    self.getPermission = function () {
+        return self.enableAdd() || self.enableDelete() || self.enableUpdate();
+    }
 
-   function updateForm()
-   {
-       alert('update form');
-   }
+    self.editData = function (item) {
+        self.selectedItem(item);
+        self.mode(0);
+    }
 
-   function goToAdd()
-   {
-       preparePageForLoading("jobSetupAdd.jsp");
-   }
+    self.templateToUse = function (item) {
+        switch (self.mode()) {
+            case 0:
+                return "employeeJobDescriptionTemplate";
+            case 1:
+            case 2:
+                return "employeeEditJobDescriptionTemplate";
+            default:
+                return "employeeJobDescriptionTemplate";
+        }
+        return "employeeEditJobDescriptionTemplate";
+
+    }.bind(this);
+
+    self.cancelEdit = function () {
+        self.editData();
+        self.mode(0);
+    }
+
+    self.saveDataForm = function (data) {
+        var source = data;
+        var contact = new EmployeeContact();
+
+        if (source.nid != null || source.nid != undefined)
+            contact.nid = data.nid;
+
+        contact.level = source.level;
+        contact.email = source.email;
+        contact.mobileNo = source.mobileNo;
+        contact.alternateEmail = source.alternateEmail;
+        contact.extNo = source.extNo;
+        contact.correspondenceAddress1 = source.correspondenceAddress1;
+        contact.correspondenceAddress2 = source.correspondenceAddress2;
+        contact.correspondenceAddress3 = source.correspondenceAddress3;
+        contact.city = source.city;
+        contact.country = source.country;
+        contact.telNo = source.telNo;
+        contact.employeeRefId = globalCurrentEmployee;
+
+        var request = ajaxCore.sendRequestType(globalEmployeeContactSaveOrUpdateUrl, contact, "post");
+        request.success(function (data, status, xhrObj) {
+            self.editData();
+        });
+
+    }
+
+   self.remove = function (element) {
+        self.initData.remove(element);
+    }
 }

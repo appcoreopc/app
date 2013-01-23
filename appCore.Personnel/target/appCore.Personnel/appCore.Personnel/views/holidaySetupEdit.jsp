@@ -12,7 +12,7 @@
 
 <script type="text/javascript">          
 
-    var currentService = hostname + "/app/Core/Calendar/Holiday";
+    var currentService = globalHostname + "/app/Core/Calendar/Holiday";
 
 	$(document).ready(function() 
 	{
@@ -26,7 +26,7 @@
 		if (value != null) 
 		{
 			var ajaxCore = new AjaxCore();
-			var request = ajaxCore.sendRequest(hostname + "/app/Core/Calendar/Holiday/get", { id : value }, "get");
+			var request = ajaxCore.sendRequest(globalHostname + "/app/Core/Calendar/Holiday/get", { id : value }, "get");
 	
 			request.done(function(data)
 			{

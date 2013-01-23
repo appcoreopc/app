@@ -1,152 +1,53 @@
-	<!DOCTYP+
-E html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
+    <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
 
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
+        <script language="javascript" src="../../js/viewmodal/gradeListViewModel.js"></script>
+        <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
-<script type="text/javascript">          
-  
-	$(document).ready(function() 
-	{
-	
-		var ajaxCore = new AjaxCore();
-		var request = ajaxCore.sendRequest(hostname + "/app/Core/Job/Grade/list", null, "get");
-		
-			request.success(function(data) 
-			{
-				  var grid = $("#grid").kendoGrid({
-                        dataSource: {
-						
-						  transport: {
-                                read:  {
-                                    url: hostname + "/app/Core/Job/Grade/list",
-                                    dataType: "json"
-                                },
-                                update: {
-                                    url: hostname + "/app/Core/Job/Grade/saveOrUpdate",
-                                    dataType: "json"
-                                },
-                                destroy: {
-                                    url: hostname + "/app/Core/Job/Grade/delete",
-                                    dataType: "json"
-                                },
-                                create: {
-                                    url: hostname + "/app/Core/Job/Grade/add",
-                                    dataType: "json"
-                                } 
-							},
-						
-                            data: data,
-                            pageSize: 10, 
-							schema: {
-                                model: {
-                                    id: "nid",
-                                    fields: {
-                                        nid: { editable: false },
-                                        code: { editable: false, validation: { required: true } },
-                                        description : { editable: false, type: "string", validation: { required: true } },
-                                        probationMonth: { editable: false, type: "number" },
-                                        category: { editable: false, type: "string" },
-                                        disabled : { editable: false, type: "boolean" }
-                                    }
-                                }
-                            }
-							 
-                        },
-						editable : true,
-						groupable: false,
-						selectable : true,
-                        sortable: true,
-                        pageable: true,
-                        columns: [ 
-							{
-                                field: "code",
-                                width: 90,
-                                title: "Grade Code"
-                            }, 
-							{
-                                field: "description",
-                                width: 90,
-                                title: "Description"
-                            },
-							{
-                                field: "category",
-                                width: 90,
-                                title: "Category"
-                            }, 
-							{
-                                field: "probationMonth",
-                                width: 90,
-                                title: "Probation (Month)"
-                            }, 
-							{
-							     command : { text: "Edit", click: showDetails },  title : "", width: 50
-							},
-							{
-							     command : "destroy",  title : "", width: 50
-							}
-						], 
-						remove : function(e)
-						{
-							$.ajax({
-								url: hostname + "/app/Core/Job/Grade/delete",
-								data: {"id": e.model.nid},
-								type : "get", 
-								dataType : "json"
-								});
-						}
-						
-                    });
-				}
-			);
-			
-			$("#addBtn").click(function()
-			{
-				goToPage("gradeAdd.jsp");
-			});
-	});
-	
-	function showDetails(e)
-	{
-		 e.preventDefault();
-		 var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-		 goToPage("gradeEdit.jsp?id=" + dataItem.nid );
-	}
 
-</script>    
+        <script type="text/javascript">
 
-<div class="form dataEntry">
-	<h1>Grade </h1>
-	
-	<div class="formRow">
-		Grade Code Maintenance
-    </div>
+        $(document).ready(function()
+        {
+        getData(globalViewModel.companyId());
 
-	<div class="formRow">	
-		&nbsp;
-    </div>
-	 
-	<div class="maintenanceCommand"> 
-		<button type="button" id="addBtn">Add New Grade</button>
-	</div>
-	<div class="formRow">	
-		&nbsp;
-    </div>
-	 
-	 
-  <div>
-		<div id="grid" style="height: 380px"></div>
-	</div>
-</div>
+        globalViewModel.companyId.subscribe(function(newValue)
+        {
+        getData(newValue);
+        });
+        });
 
-<%@ include file="/includes/footer.html" %>
+        function getData(companyId)
+        {
+        var ajaxCore = new AjaxCore();
+        var companyId = { id : companyId };
+        var request = ajaxCore.sendRequest(globalGradeTypeListByCompanyUrl, companyId, "get");
 
-</body>
-</html>
+        request.success(function(data)
+        {
+            try
+            {
+                var vm = new GradeListViewModel(coreModeList, data, globalViewModel);
+                ko.applyBindings(vm, document.getElementById("gradeTypeDiv"));
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
+        });
+        }
+
+        </script>
+
+        <div class="forms">
+        <h1>Grade Maintenance</h1>
+
+
+        <div class="viewData">
+        <div class="maintenanceCommand">
+        </div>
+
+        <div>
+        <div id="gradeTypeDiv" data-bind="dataGrid: gridViewModel"></div>
+        </div>
+
+        </div>

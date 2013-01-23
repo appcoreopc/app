@@ -1,32 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
-
-<%@ include file="../includes/css_includes.html" %>
-<%@ include file="../includes/js_includes.html" %>
-<%@ include file="/includes/header.html" %>
-
 <script type="text/javascript">          
 
-    var gridUrl = hostname + "/app/Core/SectionInfo";
+    var gridUrl = globalHostname + "/app/Core/SectionInfo";
 
+	var sectionForm = "sectionForm";
+	var sectionPage = "section.jsp";
+	var sectionGrid = "sectionGrid";
+	
 	$(document).ready(function() 
 	{
-	
-		var value = getParameterByName("id");
+		$("#" + sectionForm).validationEngine();
+		
+		var value = globalCurrentId.nid;
 		
 		if (value != null) 
 		{
 			var ajaxCore = new AjaxCore();
-			var request = ajaxCore.sendRequest(hostname + "/app/Core/Section/get", { id : value }, "get");
+			var request = ajaxCore.sendRequest(globalHostname + "/app/Core/Section/get", { id : value }, "get");
 	
 			request.done(function(data)
 			{
-			
 				if (data == null) 
 					return;
 			
@@ -36,7 +28,7 @@
 				$("#Remark").val(data.remark);
 				$("#Enabled").attr("checked", data.enabled);
 				
-				var grid = $("#grid").kendoGrid({
+				var grid = $("#" + sectionGrid).kendoGrid({
                          dataSource: {
 						
 						  transport: {
@@ -52,7 +44,7 @@
                                     url: gridUrl + "/delete",
                                     dataType: "json"
                                 },
-                                create: {
+                                createMessageBox: {
                                     url: gridUrl + "/add",
                                     dataType: "json"
                                 } 
@@ -117,27 +109,27 @@
                     });
 					
 				   });
-				}
+			}
 
 			
 			 $("#saveBtn").click(function()
 			 {
-				getValidateData();
+				saveSectionForm();
 			 });
 			 
 			 $("#cancelBtn").click(function()
 			 {
 				var result = cancelFormChanges();
 				if (result) 
-				   window.location.replace("section.jsp");
+				   preparePageForLoading(sectionPage);
 			 });
  	});
 
-	function getValidateData()
+	function saveSectionForm()
 	{
 		var sectionInfoData = [];
 	
-        var grid = $("#grid").data("kendoGrid").dataSource.data();
+        var grid = $("#" + sectionGrid).data("kendoGrid").dataSource.data();
  		$.each(grid, function (i, dataItem) 
 		{
 			var sectionInfo = new SectionInfo(); 
@@ -157,7 +149,7 @@
 		section.sectionInfo = sectionInfoData; 		
 				
 		var ajaxCore = new AjaxCore(); 
-		var request = ajaxCore.sendRequestType(hostname + "/app/Core/Section/saveOrUpdate", section, "post"); 
+		var request = ajaxCore.sendRequestType(globalHostname + "/app/Core/Section/saveOrUpdate", section, "post");
 		
 		request.done(function(data, status, xhrObj)
 		{
@@ -167,11 +159,13 @@
 	
 	function goHome()
 	{
-		window.location.replace("section.jsp");
+		preparePageForLoading(sectionPage);
 	}
 </script>    
 
-<div class="form dataEntry">
+<form id="sectionForm">
+
+<div class="form">
 		
   <div class="sectionalForm"> 
    <div class="leftSection"><input type="hidden" id="Nid" name="Nid" />
@@ -202,11 +196,7 @@
   
     <div>
 	 <div> Section Info  </div>
-		<div id="grid" style="height: 380px"></div>
+		<div id="sectionGrid" style="height: 380px"></div>
 	</div>
 </div>
-
-<%@ include file="/includes/footer.html" %>
-
-</body>
-</html>
+</form>

@@ -12,7 +12,7 @@
 
 <script type="text/javascript">          
 
-    var gridUrl = hostname + "/app/Core/Calendar/OffDayInfo";
+    var gridUrl = globalHostname + "/app/Core/Calendar/OffDayInfo";
 
 	$(document).ready(function() 
 	{
@@ -35,7 +35,7 @@
                                     url: gridUrl + "/delete",
                                     dataType: "json"
                                 },
-                                create: {
+                                createMessageBox: {
                                     url: gridUrl + "/add",
                                     dataType: "json"
                                 } 
@@ -210,7 +210,7 @@
 		offday.offDayInfo = offdayInfoData; 		
 				
 		var ajaxCore = new AjaxCore(); 
-		var request = ajaxCore.sendRequestType(hostname + "/app/Core/Calendar/OffDay/add", offday, "post"); 
+		var request = ajaxCore.sendRequestType(globalHostname + "/app/Core/Calendar/OffDay/add", offday, "post");
 		
 		request.success(function(data, status, xhrObj)
 		{

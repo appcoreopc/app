@@ -12,7 +12,7 @@
 
 <script type="text/javascript">          
   
-    var currentService = hostname + "/app/Core/Calendar/OffDay";
+    var currentService = globalHostname + "/app/Core/Calendar/OffDay";
 	$(document).ready(function() 
 	{
 	   
@@ -37,7 +37,7 @@
                                     url: currentService + "/delete",
                                     dataType: "json"
                                 },
-                                create: {
+                                createMessageBox: {
                                     url: currentService + "/add",
                                     dataType: "json"
                                 } 
@@ -97,7 +97,7 @@
 						remove : function(e)
 						{
 							$.ajax({
-								url: hostname + "/app/Core/Calendar/OffDay/delete",
+								url: globalHostname + "/app/Core/Calendar/OffDay/delete",
 								data: {"id": e.model.nid},
 								type : "get", 
 								dataType : "json"
