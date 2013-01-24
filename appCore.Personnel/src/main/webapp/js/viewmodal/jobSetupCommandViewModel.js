@@ -1,6 +1,7 @@
-var JobSetupCommandViewModel = function () {
+var JobSetupCommandViewModel = function (mode, dataSource, globalViewModel) {
 
     var self = this;
+
     self.centralPage = "employeeAdd.jsp";
     self.editPage = "employeeAdd.jsp";
     self.addPage = "branchAdd.jsp";
@@ -9,7 +10,20 @@ var JobSetupCommandViewModel = function () {
     self.codeCommand = "#codeCommand";
     self.gridId = "gridBranch";
 
+    self.jobCode = ko.observable();
+    self.disabled = ko.observable();
+    self.jobTitle = ko.observable();
+    self.jobCategory = ko.observable();
+
     this.data = null;
+
+    if (mode == coreModeEdit)
+    {
+        self.jobCode = ko.observable(dataSource.code);
+        self.disabled = ko.observable(dataSource.disabled);
+        self.jobTitle = ko.observable(dataSource.jobTitle);
+        self.jobCategory = ko.observable(dataSource.jobCategory);
+    }
 
     var model =
     {

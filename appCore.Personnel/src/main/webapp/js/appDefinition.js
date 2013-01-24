@@ -132,6 +132,8 @@ var globalJobSetupExperienceListByJobSetupUrl = globalHostname + "/app/Job/JobSe
 
 var globalJobSetupSkillListByJobSetupUrl = globalHostname + "/app/Job/JobSetupSkill/listByJobSetup";
 
+var globalJobTypeGetUrl = globalHostname + "/app/Job/JobType/get";
+
 var globalJobSetupExperienceAddUrl = globalHostname + "/app/Job/JobSetupExperience/add";
 
 var globalJobSetupSkillAddUrl = globalHostname + "/app/Job/JobSetupSkill/add";

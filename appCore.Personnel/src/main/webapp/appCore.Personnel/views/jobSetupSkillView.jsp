@@ -129,28 +129,27 @@
 
         $(document).ready(function()
         {
-        var ajaxCore = new AjaxCore();
+            var ajaxCore = new AjaxCore();
+            var targetEntity = { id : globalViewModel.targetId() };
+            var request = ajaxCore.sendRequest(globalJobSetupSkillListByJobSetupUrl, targetEntity, "get");
 
-        var targetEntity = { id : globalViewModel.targetId() };
-        var request = ajaxCore.sendRequest(globalJobSetupSkillListByJobSetupUrl, targetEntity, "get");
+            request.success(function(dataSource)
+            {
+            var input = { "id" : coreEmployeeExpertiseViewPage, "roleId" : globalViewModel.employeeRole() };
+            var coreCommand = new CoreCommand();
+            var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-        request.success(function(dataSource)
-        {
-        var input = { "id" : coreEmployeeExpertiseViewPage, "roleId" : globalViewModel.employeeRole() };
-        var coreCommand = new CoreCommand();
-        var result = coreCommand.getPermission(hostAuthorizationUrl, input);
+            try
+            {
+            var vm = new JobSetupSkillViewViewModel(dataSource, 0, result.permission, globalViewModel);
+            ko.applyBindings(vm, document.getElementById("jobSetupSkillDataContent"));
+            }
+            catch (ex)
+            {
+            console.log(ex)
+            }
 
-        try
-        {
-        var vm = new JobSetupSkillViewViewModel(dataSource, 0, result.permission, globalViewModel);
-        ko.applyBindings(vm, document.getElementById("jobSetupSkillDataContent"));
-        }
-        catch (ex)
-        {
-        console.log(ex)
-        }
-
-        });
+            });
 
         });
 
