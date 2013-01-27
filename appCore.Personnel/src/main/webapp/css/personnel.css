@@ -546,7 +546,19 @@ span.fieldSpacer {
     font-weight: bold;
 }
 
-
 .formRow textarea {
     resize: none;
+}
+
+#loadingStatusIndicator {
+    display: none;
+    position : absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%;
+}
+
+.companyInfoDiv {
+   display: inline;
+    font-size:  20px;
 }

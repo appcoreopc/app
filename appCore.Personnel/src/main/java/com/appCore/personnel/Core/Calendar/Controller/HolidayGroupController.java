@@ -57,7 +57,7 @@ public class HolidayGroupController
 				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
 		}
 		
-		@RequestMapping(value = "/HolidayGroup/configuredHolidayGroup", method = RequestMethod.GET)		
+		@RequestMapping(value = "/HolidayGroup/	", method = RequestMethod.GET)		
 		public @ResponseBody RequestStatus saveconfiguredHolidayGroup (@RequestParam(value="id", required=true) int id, int holidayId, boolean isGrantAccess) 
 		{
 				service.saveconfiguredHolidayGroup(id, holidayId, isGrantAccess);

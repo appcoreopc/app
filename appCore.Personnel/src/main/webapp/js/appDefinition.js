@@ -245,9 +245,8 @@ var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdat
 var globalDivisionSaveOrUpdateUrl = globalHostname + "/app/Core/Division/saveOrUpdate";
 var globalDepartmentSaveOrUpdateUrl = globalHostname + "/app/Core/Department/saveOrUpdate";
 var globalSectionSaveOrUpdateUrl = globalHostname + "/app/Core/Section/saveOrUpdate";
-
-
 var globalEmployeeGroupConfigureUrl = globalHostname + "/app/Job/EmployeeGroup/configuredEmployeeGroup";
+var globalHolidayGroupConfigureUrl = globalHostname + "/app/Core/Calendar/HolidayGroup/configuredHolidayGroup";
 var globalConfigureUserRoleUrl = globalHostname + "/app/User/Roles/configuredRole";
 
 var globalUnitSaveOrUpdateUrl = globalHostname + "/app/Core/Unit/saveOrUpdate";
@@ -292,6 +291,7 @@ var globalUserList = globalHostname + "/app/Users/Users/list";
 
 var globalHolidaySetupListByCompanyUrl = globalHostname + "/app/Core/Calendar/Holiday/listByCompany";
 
+var globalHolidayGroupListByCompanyUrl = globalHostname + "/app/Core/Calendar/HolidayGroup/listByCompany";
 
 var globalJobSetupListByCompanyUrl = globalHostname + "/app/Core/Job/JobType/listByCompany";
 

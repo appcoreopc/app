@@ -38,8 +38,6 @@ import com.appCore.personnel.Core.Entity.DivisionInfo;
 		private String divisionName;
 
 		
-		//@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		//@JoinColumn(name="RefEntity")
 		@Transient
 		private List<DivisionInfo> divisionInfo;
 		
@@ -55,6 +53,10 @@ import com.appCore.personnel.Core.Entity.DivisionInfo;
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
 
+		
+		@Transient
+		List<Department> departmentList; 
+		
 
 		public Integer getNid() { 
 			return this.nid;
@@ -122,8 +124,16 @@ import com.appCore.personnel.Core.Entity.DivisionInfo;
 			return this.lastUpdate;
 		}
 
-
 		public void setLastUpdate(Timestamp lastUpdate) { 
 			this.lastUpdate = lastUpdate;
 		}
+		
+		public List<Department> getDepartmentList() {
+			return departmentList;
+		}
+
+		public void setDepartmentList(List<Department> departmentList) {
+			this.departmentList = departmentList;
+		}
+
 	}

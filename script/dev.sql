@@ -29,6 +29,7 @@ insert into forms (formid, link, category_nid) values ('Family Relation Type', '
 insert into forms (formid, link, category_nid) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1);
 insert into forms (formid, link, category_nid) values ('Holiday Group', 'maintenanceCode.jsp?id=12', 1);
 insert into forms (formid, link, category_nid) values ('Currency', 'maintenanceCode.jsp?id=13', 1);
+insert into forms (formid, link, category_nid) values ('Configure Company', 'companyConfigurator.jsp', 1);
 
 insert into forms (formid, link, category_nid) values ('Job Setup', 'jobSetup.jsp', 2);
 insert into forms (formid, link, category_nid) values ('Configure Employee Group', 'configureEmployeeGroup.jsp', 2);
@@ -177,6 +178,9 @@ insert into religion (name, description, companyRef) values ('Buddhist', 'Buddhi
 insert into religion (name, description, companyRef) values ('Islam', 'Islam', 1);
 
 insert into employee (name, firstname, lastname, companyref) values ('jeremy', 'jeremy', 'woo', 1);
+insert into company (companyName, companyCode, Address, Address2) values ('CompanyA', 'CodeA', 'Addr1', 'Addr2');
+insert into company (companyName, companyCode, Address, Address2) values ('CompanyB', 'CodeB', 'Addr1', 'Addr2');
+
 
 insert into branch (branchCode, BranchName, CompanyId) values ('B1', 'Branch One', 1);
 insert into branch (branchCode, BranchName, CompanyId) values ('B2', 'Branch Two', 1);
@@ -203,34 +207,25 @@ insert into division (divisionCode, divisionName, CompanyId) values ('Div3', 'Di
 insert into division (divisionCode, divisionName, CompanyId) values ('DivSector2', 'DivSector2', 2);
 insert into division (divisionCode, divisionName, CompanyId) values ('DivSector3', 'DeiSector3', 2);
 
+insert into department (departmentCode, departmentName, CompanyId, divisionId) values ('DeptA', 'DepartmentA', 1, 1);
+insert into department (departmentCode, departmentName, CompanyId, divisionId) values ('DeptB', 'DepartmentB', 1, 1);
+insert into department (departmentCode, departmentName, CompanyId, divisionId) values ('DeptC', 'DepartmentC', 1, 2);
 
-insert into company (companyName, companyCode, Address, Address2) values ('CompanyA', 'CodeA', 'Addr1', 'Addr2');
-insert into company (companyName, companyCode, Address, Address2) values ('CompanyB', 'CodeB', 'Addr1', 'Addr2');
+insert into department (departmentCode, departmentName, CompanyId, divisionId) values ('Dept1', 'BBBBBBDepartment', 2, 4);
+insert into department (departmentCode, departmentName, CompanyId, divisionId) values ('Dept2', 'CCCCCCDepartment', 2, 4);
 
+insert into section (sectionCode, sectionName, CompanyId, departmentId) values ('SectA', 'SectionA', 1, 1);
+insert into section (sectionCode, sectionName, CompanyId, departmentId) values ('SectB', 'SectionB', 1, 1);
 
-insert into department (departmentCode, departmentName, CompanyId) values ('DeptA', 'DepartmentA', 1);
-insert into department (departmentCode, departmentName, CompanyId) values ('DeptB', 'DepartmentB', 1);
-insert into department (departmentCode, departmentName, CompanyId) values ('DeptC', 'DepartmentC', 1);
+insert into section (sectionCode, sectionName, CompanyId, departmentId) values ('Sect11111', 'Section1111', 2, 4);
+insert into section (sectionCode, sectionName, CompanyId, departmentId) values ('Sect22222', 'Section2222', 2, 4);
 
-insert into department (departmentCode, departmentName, CompanyId) values ('Dept1', 'BBBBBBDepartment', 2);
-insert into department (departmentCode, departmentName, CompanyId) values ('Dept2', 'CCCCCCDepartment', 2);
+insert into unit (unitCode, unitName, CompanyId, sectionId) values ('Unit1', 'Unit1Name', 1, 1);
+insert into unit (unitCode, unitName, CompanyId, sectionId) values ('Unit2', 'Unit2Name', 1, 1);
+insert into unit (unitCode, unitName, CompanyId, sectionId) values ('Unit3', 'Unit3Name', 1, 1);
 
-
-
-insert into section (sectionCode, sectionName, CompanyId) values ('SectA', 'SectionA', 1);
-insert into section (sectionCode, sectionName, CompanyId) values ('SectB', 'SectionB', 1);
-
-insert into section (sectionCode, sectionName, CompanyId) values ('Sect11111', 'Section1111', 2);
-insert into section (sectionCode, sectionName, CompanyId) values ('Sect22222', 'Section2222', 2);
-
-
-insert into unit (unitCode, unitName, CompanyId) values ('Unit1', 'Unit1Name', 1);
-insert into unit (unitCode, unitName, CompanyId) values ('Unit2', 'Unit2Name', 1);
-insert into unit (unitCode, unitName, CompanyId) values ('Unit3', 'Unit3Name', 1);
-
-insert into unit (unitCode, unitName, CompanyId) values ('UnitAAAA', 'UnitAAAAA', 2);
-insert into unit (unitCode, unitName, CompanyId) values ('UnitBBBB', 'UnitBBBBB', 2);
-
+insert into unit (unitCode, unitName, CompanyId, sectionId) values ('UnitAAAA', 'UnitAAAAA', 2, 3);
+insert into unit (unitCode, unitName, CompanyId, sectionId) values ('UnitBBBB', 'UnitBBBBB', 2, 3);
 
 insert into divisioninfo (category, description, type, value, refEntity) values ('DivInfo1', 'Div1Desc', 'DivType1', 'Div1Value', 1);
 insert into divisioninfo (category, description, type, value, refEntity) values ('DivInfo2', 'Div2Desc', 'DivType2', 'Div2Value', 1);
@@ -324,8 +319,10 @@ insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef
 insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 2', 1, 1);
 insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 3', 1, 1);
 
---insert into jobsetupExperience (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 1', 1, 1)
---insert into jobsetupExperience (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 2', 1, 1);==--
+
+
+insert into jobsetupExperience (expertise, description, experienceYears, jobSetupRef) values (1, 'Level 1', 1, 269)
+insert into jobsetupSkill (skill, level, category, categorydescription, jobSetupRef) values (1, 1, 1, 'category description', 269);
 
 
 

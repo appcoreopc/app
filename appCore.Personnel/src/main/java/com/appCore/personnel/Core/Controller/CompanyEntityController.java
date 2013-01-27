@@ -33,7 +33,6 @@ public class CompanyEntityController {
 	@RequestMapping(value = "/CompanyEntity/listBy", method = RequestMethod.GET)		
 	public @ResponseBody String getByCompanyId(Integer id) 
 	{
-			
 			return "";
 	}
 }

@@ -83,6 +83,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        <script language=\"javascript\" src=\"js/carousel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"js/coreDialog.js\"></script>\r\n");
+      out.write("        <script language=\"javascript\" src=\"js/coreLoadMask.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"js/coreCommonFunction.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"js/userAuthenticator.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"js/coreObjects.js\"></script>\r\n");
@@ -176,6 +177,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
+      out.write("\r\n");
+      out.write("        var coreLoadMask = new CoreLoadMask();\r\n");
+      out.write("        coreLoadMask.bindAjaxEvent(\"images/ajax-loader.gif\");\r\n");
       out.write("\r\n");
       out.write("        function authenticateUserCallBack(msg)\r\n");
       out.write("        {\r\n");

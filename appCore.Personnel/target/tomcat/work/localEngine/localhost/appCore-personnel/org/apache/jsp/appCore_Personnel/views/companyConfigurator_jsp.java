@@ -50,7 +50,7 @@ public final class companyConfigurator_jsp extends org.apache.jasper.runtime.Htt
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("    <link href=\"../../css/employeeGroup.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("\t\t<link href=\"../../css/employeeGroup.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/companyConfiguratorViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/companyHelper.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/jstree/jquery.jstree.js\"></script>\r\n");
@@ -59,8 +59,15 @@ public final class companyConfigurator_jsp extends org.apache.jasper.runtime.Htt
       out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
-      out.write("            var vm = new CompanyConfiguratorViewModel(globalViewModel);\r\n");
-      out.write("            ko.applyBindings(vm, document.getElementById(\"configureEmployeeGroupForm\"));\r\n");
+      out.write("            try\r\n");
+      out.write("            {\r\n");
+      out.write("                var vm = new CompanyConfiguratorViewModel(globalViewModel);\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"configureEmployeeGroupForm\"));\r\n");
+      out.write("            }\r\n");
+      out.write("            catch (ex)\r\n");
+      out.write("            {\r\n");
+      out.write("                console.log(ex)\r\n");
+      out.write("            }\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");

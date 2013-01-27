@@ -144,5 +144,12 @@ div.rightSection {
 .formRowSpacer {
     display: block;
     padding-top: 150px;
+}
 
+#loadingStatusIndicator {
+    display: none;
+    position : absolute;
+    width: 100%;
+    text-align: center;
+    top: 300px;
 }

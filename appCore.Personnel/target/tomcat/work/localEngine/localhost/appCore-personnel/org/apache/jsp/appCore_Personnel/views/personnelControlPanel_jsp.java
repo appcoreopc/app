@@ -90,6 +90,7 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("<script language=\"javascript\" src=\"../../js/carousel.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/ajaxCore.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/coreDialog.js\"></script>\r\n");
+      out.write("<script language=\"javascript\" src=\"../../js/coreLoadMask.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/coreObjects.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/coreCommonFunction.js\"></script>\r\n");
       out.write("<script language=\"javascript\" src=\"../../js/appDefinition.js\"></script>\r\n");
@@ -206,7 +207,10 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
       out.write("\r\n");
-      out.write("            if (sessionStorage.username == undefined || sessionStorage.username == null)\r\n");
+      out.write("        var coreLoadMask = new CoreLoadMask();\r\n");
+      out.write("        coreLoadMask.bindAjaxEvent(\"../../images/ajax-loader.gif\");\r\n");
+      out.write("\r\n");
+      out.write("        if (sessionStorage.username == undefined || sessionStorage.username == null)\r\n");
       out.write("            {\r\n");
       out.write("                goToPage(\"http://localhost:8080/appCore-personnel/\");\r\n");
       out.write("            }\r\n");
@@ -246,11 +250,11 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        <h1>My Page</h1>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRow\">\r\n");
-      out.write("        <div> Current company </div>\r\n");
+      out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRow\">\r\n");
-      out.write("        <select id=\"companyDropDownList\" class=\"company\">\r\n");
+      out.write("        <div class=\"companyInfoDiv\">Current Company </div> <select id=\"companyDropDownList\" class=\"company\">\r\n");
       out.write("        </select>\r\n");
       out.write("\r\n");
       out.write("\r\n");

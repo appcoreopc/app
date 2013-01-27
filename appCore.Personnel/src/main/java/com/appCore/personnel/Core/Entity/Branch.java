@@ -52,21 +52,22 @@ import com.appCore.personnel.Core.Entity.BranchInfo;
 		private String description;
 
 		
-		//@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		//@JoinColumn(name="RefEntity")
 		@Transient
 		private List<BranchInfo> branchInfo;
 		
 		@Column(name = "Disabled")
 		private Boolean disabled;
-		
-		
+				
 		@Temporal(TemporalType.TIMESTAMP)
 		@org.hibernate.annotations.Generated(value=GenerationTime.ALWAYS)
 		@Column(name = "LastUpdate")
 		private Date lastUpdate;
 
-
+		
+		@Transient
+		List<Division> divisionList;
+		
+		
 		public Integer getNid() { 
 			return this.nid;
 		}
@@ -141,4 +142,16 @@ import com.appCore.personnel.Core.Entity.BranchInfo;
 		public void setLastUpdate(Date lastUpdate) { 
 			this.lastUpdate = lastUpdate;
 		}
+		
+		
+		public List<Division> getDivisionList() {
+			return divisionList;
+		}
+
+		
+		public void setDivisionList(List<Division> divisionList) {
+			this.divisionList = divisionList;
+		}
+
+		
 	}

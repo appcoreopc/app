@@ -40,6 +40,15 @@ public class CompanyController
 				List<Company> list = service.getAll();
 				return list;
 		}
+		
+		
+		@RequestMapping(value = "/Company/getAllCompanyInfo", method = RequestMethod.GET)		
+		public @ResponseBody List<Company> getAllCompany() 
+		{
+				List<Company> list = service.getAllCompanyInfo();
+				return list;
+		}
+		
 
 		@RequestMapping(value = "/Company/get", method = RequestMethod.GET)		
 		public @ResponseBody Company getCompany (@RequestParam(value="id", required=true) Integer id) 

@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
+import javax.persistence.Transient;
+
 import java.util.List;
 import javax.persistence.Table;
 
@@ -79,7 +81,10 @@ import org.hibernate.envers.Audited;
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
 
-
+		@Transient
+		List<Branch> branchList; 
+		
+		
 		public Integer getNid() { 
 			return this.nid;
 		}
@@ -224,5 +229,18 @@ import org.hibernate.envers.Audited;
 		public void setLastUpdate(Timestamp lastUpdate) { 
 			this.lastUpdate = lastUpdate;
 		}
+		
+		
+		public List<Branch> getBranchList() {
+			return branchList;
+		}
+
+
+		public void setBranchList(List<Branch> branchList) {
+			this.branchList = branchList;
+		}
+
+
+		
 }
 	

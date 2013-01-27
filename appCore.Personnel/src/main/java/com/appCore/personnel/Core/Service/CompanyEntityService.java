@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.BranchInfo;
 import com.appCore.personnel.Core.Entity.Company;
 import com.appCore.personnel.Core.Entity.CompanyEntity;
@@ -47,6 +49,30 @@ public class CompanyEntityService {
 		}
 		return list; 
 	}
+	
+	private void getBranch(CompanyEntity companyEntity, Company company)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM Branch where CompanyId = :companyId");
+		query.setParameter("companyId", company.getNid());
+		
+	    List<Branch> resultQuery = query.list(); 
+	    
+	    if (resultQuery.size() > 0) 
+	    {
+	    	companyEntity.items = new ArrayList<CompanyEntity>(); 
+
+	    	for	(Branch division : resultQuery)
+	    	{
+	    		CompanyEntity branchCompanyEntity = new CompanyEntity(); 
+	    		branchCompanyEntity.setText(division.getBranchCode());
+	    		branchCompanyEntity.setType("branch");
+	    		companyEntity.getItems().add(branchCompanyEntity);
+	    		getDivision(branchCompanyEntity, company);
+	    	}
+	    }
+	}
+	
 	
 	private void getDivision(CompanyEntity companyEntity, Company company)
 	{
@@ -138,9 +164,5 @@ public class CompanyEntityService {
 	    		companyEntity.getItems().add(divCompanyEntity);
 	    	}
 	    }
-	}
-	
-	
-	
-	
+	}	
 }

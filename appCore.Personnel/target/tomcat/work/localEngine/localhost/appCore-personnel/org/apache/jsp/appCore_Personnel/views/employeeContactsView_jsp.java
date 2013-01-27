@@ -248,7 +248,7 @@ public final class employeeContactsView_jsp extends org.apache.jasper.runtime.Ht
       out.write("                    var result = coreCommand.getPermission(hostAuthorizationUrl, input);\r\n");
       out.write("                    try\r\n");
       out.write("                    {\r\n");
-      out.write("                        var vm = new EmployeeContactViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);\r\n");
+      out.write("                        var vm = new EmployeeContactViewViewModel(dataSource, coreModeList, result.permission, globalCurrentEmployee);\r\n");
       out.write("                        ko.applyBindings(vm, document.getElementById(\"contactDataContent\"));\r\n");
       out.write("                    }\r\n");
       out.write("                    catch (ex)\r\n");

@@ -105,7 +105,9 @@ public final class branch_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</div>\r\n");
       out.write("\t\r\n");
       out.write("\t<div>\r\n");
+      out.write("    </div>\r\n");
       out.write("</div>\r\n");
+      out.write("    </div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

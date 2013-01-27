@@ -59,8 +59,7 @@ public class UsersService {
 
 			Object object = (Object) iterator.next();
 			Integer roleId = (Integer) (object);
-			System.out.println("yay! Given roleId");
-			System.out.println(roleId);
+			
 		}
 		return -1;
 	}

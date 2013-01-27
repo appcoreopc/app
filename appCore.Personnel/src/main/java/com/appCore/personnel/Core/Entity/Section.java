@@ -52,12 +52,14 @@ import com.appCore.personnel.Core.Entity.SectionInfo;
 		private Boolean disabled;
 		
 		
-		//@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		//@JoinColumn(name="RefEntity")
 		@Transient
 		private List<SectionInfo> sectionInfo;
 		
-			
+		
+		@Transient
+		List<Unit> unitList;
+		
+		
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
 
@@ -143,4 +145,15 @@ import com.appCore.personnel.Core.Entity.SectionInfo;
 		public void setLastUpdate(Timestamp lastUpdate) { 
 			this.lastUpdate = lastUpdate;
 		}
+		
+		
+		public List<Unit> getUnitList() {
+			return unitList;
+		}
+
+
+		public void setUnitList(List<Unit> unitList) {
+			this.unitList = unitList;
+		}
+		
 	}

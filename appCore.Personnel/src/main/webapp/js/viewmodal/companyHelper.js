@@ -150,6 +150,15 @@ var CompanyHelper = function () {
         });
     }
 
+    this.configureHolidayGroup = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalHolidayGroupConfigureUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+
     this.saveUpdateUnit = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalUnitSaveOrUpdateUrl, entityData, "post");
@@ -232,7 +241,6 @@ var CompanyHelper = function () {
         });
     }
 
-
     this.getEmployeeGroups = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalEmployeeGroupListByCompanyUrl, entityData, "get");
@@ -240,6 +248,24 @@ var CompanyHelper = function () {
             callBack(data);
         });
     }
+
+    this.getHolidays = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalHolidaySetupListByCompanyUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+    this.getHolidayGroups = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalHolidayGroupListByCompanyUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+
 
     this.getGrade = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();

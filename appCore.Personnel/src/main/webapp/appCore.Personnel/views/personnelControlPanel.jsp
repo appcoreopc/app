@@ -19,7 +19,10 @@
 
         <script type="text/javascript">
 
-            if (sessionStorage.username == undefined || sessionStorage.username == null)
+        var coreLoadMask = new CoreLoadMask();
+        coreLoadMask.bindAjaxEvent("../../images/ajax-loader.gif");
+
+        if (sessionStorage.username == undefined || sessionStorage.username == null)
             {
                 goToPage("http://localhost:8080/appCore-personnel/");
             }
@@ -59,11 +62,11 @@
         <h1>My Page</h1>
 
         <div class="formRow">
-        <div> Current company </div>
+
         </div>
 
         <div class="formRow">
-        <select id="companyDropDownList" class="company">
+        <div class="companyInfoDiv">Current Company </div> <select id="companyDropDownList" class="company">
         </select>
 
 
