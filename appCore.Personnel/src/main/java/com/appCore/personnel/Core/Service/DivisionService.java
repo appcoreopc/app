@@ -13,10 +13,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import com.appCore.personnel.Core.Entity.Branch;
+import com.appCore.personnel.Core.Entity.Company;
+import com.appCore.personnel.Core.Entity.Department;
 import com.appCore.personnel.Core.Entity.DepartmentInfo;
 import com.appCore.personnel.Core.Entity.Division;
 import com.appCore.personnel.Core.Entity.DivisionInfo;
 import com.appCore.personnel.Core.Entity.DivisionSummary;
+import com.appCore.personnel.Core.Entity.Section;
+import com.appCore.personnel.Core.Entity.Unit;
 
 @Service("divisionService")
 @Transactional
@@ -46,6 +51,9 @@ public class DivisionService
 		return summary;
 		
 	}
+	
+	
+	
 	
 	public List<Division> getAll() 
 	{	
@@ -118,9 +126,8 @@ public class DivisionService
 		target.setDisabled(division.getDisabled());
 		
 		target.setLastUpdate(division.getLastUpdate());
-
 		session.save(target);
 	}
-
+	
 	
 }

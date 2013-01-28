@@ -84,6 +84,8 @@ var globalCompanyUrl = globalHostname + "/app/Core/Company";
 
 var globalCompanyListUrl = globalHostname + "/app/Core/Company/list";
 
+var globalGetAllCompanyInfoUrl = globalHostname + "/app/Core/Company/getAllCompanyInfo";
+
 var globalCompanyGetSummaryUrl = globalHostname + "/app/Core/Company/getSummary";
 
 var globalCompanyAddUrl = globalHostname + "/app/Core/Company/add";

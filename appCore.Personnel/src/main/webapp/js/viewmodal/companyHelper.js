@@ -241,6 +241,14 @@ var CompanyHelper = function () {
         });
     }
 
+    this.getCompanyAllInfo = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalGetAllCompanyInfoUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
     this.getEmployeeGroups = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalEmployeeGroupListByCompanyUrl, entityData, "get");

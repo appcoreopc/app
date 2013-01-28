@@ -20,64 +20,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="coreDialog.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/coreDialog.js">
+      <file leaf-file-name="companyConfigurator.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyConfigurator.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="84" selection-start="987" selection-end="1063" vertical-scroll-proportion="0.0">
+            <state line="93" column="0" selection-start="2879" selection-end="2879" vertical-scroll-proportion="-11.769231">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coreLoadMask.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/coreLoadMask.js">
+      <file leaf-file-name="companyConfiguratorViewModel.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/viewmodal/companyConfiguratorViewModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="11" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="1" selection-start="2909" selection-end="3037" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="59" selection-start="1864" selection-end="1888" vertical-scroll-proportion="-26.153847">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personnelControlPanel.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="45" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.41379312">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personnel.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/personnel.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="562" column="20" selection-start="10674" selection-end="10674" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="js_includes.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="59" selection-start="481" selection-end="481" vertical-scroll-proportion="-5.230769">
+            <state line="255" column="0" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.54464287">
               <folding />
             </state>
           </provider>
@@ -93,22 +48,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/coreObjects.js" />
-        <option value="$PROJECT_DIR$/js/viewmodal/jobSetupSkillViewViewModel.js" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/jobSetupSkillView.jsp" />
         <option value="$PROJECT_DIR$/js/viewmodal/jobSetupCommandViewModel.js" />
         <option value="$PROJECT_DIR$/appCore.Personnel/views/jobSetupAdd.jsp" />
         <option value="$PROJECT_DIR$/css/configureStyle.css" />
         <option value="$PROJECT_DIR$/appCore.Personnel/views/configureHolidayGroup.jsp" />
-        <option value="$PROJECT_DIR$/js/appDefinition.js" />
-        <option value="$PROJECT_DIR$/js/viewmodal/companyHelper.js" />
         <option value="$PROJECT_DIR$/js/viewmodal/configureHolidayGroupViewModel.js" />
         <option value="$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html" />
-        <option value="$PROJECT_DIR$/css/login.css" />
         <option value="$PROJECT_DIR$/index.jsp" />
         <option value="$PROJECT_DIR$/js/coreLoadMask.js" />
-        <option value="$PROJECT_DIR$/css/personnel.css" />
         <option value="$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp" />
+        <option value="$PROJECT_DIR$/css/personnel.css" />
+        <option value="$PROJECT_DIR$/css/login.css" />
+        <option value="$PROJECT_DIR$/js/appDefinition.js" />
+        <option value="$PROJECT_DIR$/js/viewmodal/companyHelper.js" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/companyConfigurator.jsp" />
+        <option value="$PROJECT_DIR$/js/viewmodal/companyConfiguratorViewModel.js" />
       </list>
     </option>
   </component>
@@ -173,20 +128,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,14 +223,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15092291" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19240907" sideWeight="0.32685715" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19270833" sideWeight="0.8490771" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1953125" sideWeight="0.8490771" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18344755" sideWeight="0.22742857" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -358,37 +299,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/jobSetupCommandViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="373" selection-end="380" vertical-scroll-proportion="0.018973215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branch.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="87" selection-start="0" selection-end="87" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/configureStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/configureHolidayGroup1.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="8" selection-start="1781" selection-end="1781" vertical-scroll-proportion="-12.461538" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/configureHolidayGroup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="15" selection-start="2815" selection-end="2815" vertical-scroll-proportion="-0.65384614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/viewmodal/configureHolidayGroupViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="266" column="25" selection-start="7645" selection-end="7645" vertical-scroll-proportion="0.0">
@@ -403,37 +313,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="312" column="79" selection-start="14150" selection-end="14150" vertical-scroll-proportion="0.43080357">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/companyHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="30" selection-start="5740" selection-end="5761" vertical-scroll-proportion="0.018973215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="59" selection-start="481" selection-end="481" vertical-scroll-proportion="-5.230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/coreDialog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="84" selection-start="987" selection-end="1063" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="1" selection-start="2909" selection-end="3037" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -445,16 +327,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/personnel.css">
+    <entry file="file://$PROJECT_DIR$/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="562" column="20" selection-start="10674" selection-end="10674" vertical-scroll-proportion="0.0">
+        <state line="4" column="23" selection-start="70" selection-end="70" vertical-scroll-proportion="0.07589286">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="59" selection-start="1864" selection-end="1888" vertical-scroll-proportion="-26.153847">
+        <state line="40" column="59" selection-start="1864" selection-end="1888" vertical-scroll-proportion="0.7816092">
           <folding />
         </state>
       </provider>
@@ -462,6 +344,69 @@
     <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="45" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.41379312">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="318" column="67" selection-start="10253" selection-end="10253" vertical-scroll-proportion="0.254023">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/personnel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="21" selection-start="72" selection-end="72" vertical-scroll-proportion="0.05691964">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="59" selection-start="481" selection-end="481" vertical-scroll-proportion="0.15632184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="0" selection-start="2977" selection-end="2977" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/companyHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="243" column="26" selection-start="8969" selection-end="8986" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="222" column="39" selection-start="8570" selection-end="8570" vertical-scroll-proportion="-20.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/branchInfoViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="54" selection-start="5175" selection-end="5175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyConfigurator.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="0" selection-start="2879" selection-end="2879" vertical-scroll-proportion="-11.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/companyConfiguratorViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="255" column="0" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.54464287">
           <folding />
         </state>
       </provider>

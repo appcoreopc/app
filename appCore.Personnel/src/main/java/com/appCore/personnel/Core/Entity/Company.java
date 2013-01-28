@@ -84,7 +84,10 @@ import org.hibernate.envers.Audited;
 		@Transient
 		List<Branch> branchList; 
 		
+		@Transient
+		List<Division> divisionList; 
 		
+	
 		public Integer getNid() { 
 			return this.nid;
 		}
@@ -240,6 +243,15 @@ import org.hibernate.envers.Audited;
 			this.branchList = branchList;
 		}
 
+		
+		public List<Division> getDivisionList() {
+			return divisionList;
+		}
+
+
+		public void setDivisionList(List<Division> divisionList) {
+			this.divisionList = divisionList;
+		}
 
 		
 }

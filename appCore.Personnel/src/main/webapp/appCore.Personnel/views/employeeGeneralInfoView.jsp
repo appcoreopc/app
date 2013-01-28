@@ -313,10 +313,10 @@
 
         <div id="maintenanceCodeCommand" class="maintenanceCommand">
         <button id="generalInfoSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"
-        class="command">Save</button>
+        class="command"><i class="icon-ok saveCommandIcon"></i>Save</button>
 
         <button id="generalInfoCancel" type="button" data-bind="visible : $root.enableAdd, click: $root.cancelEdit"
-        class="command">Cancel</button>
+        class="command"><i class="icon-cancel saveCommandIcon"></i>Cancel</button>
         </div>
         </div>
         </div>

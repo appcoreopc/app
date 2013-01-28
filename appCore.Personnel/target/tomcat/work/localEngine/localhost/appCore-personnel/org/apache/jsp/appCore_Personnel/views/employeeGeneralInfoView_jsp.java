@@ -365,10 +365,10 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("\r\n");
       out.write("        <div id=\"maintenanceCodeCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("        <button id=\"generalInfoSave\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.saveDataForm\"\r\n");
-      out.write("        class=\"command\">Save</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-ok saveCommandIcon\"></i>Save</button>\r\n");
       out.write("\r\n");
       out.write("        <button id=\"generalInfoCancel\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.cancelEdit\"\r\n");
-      out.write("        class=\"command\">Cancel</button>\r\n");
+      out.write("        class=\"command\"><i class=\"icon-cancel saveCommandIcon\"></i>Cancel</button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");

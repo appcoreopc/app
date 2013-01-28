@@ -34,39 +34,24 @@ public class CompanyService {
 	public List<Company> getAll() {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("FROM  Company");
-
 		return query.list();
 	}
 
 	public List<Company> getAllCompanyInfo() {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  Company");
+		Query query = session.createQuery("FROM Company");
 
 		List<Company> allCompanyInfoResult = query.list();
 
 		for (int i = 0; i < allCompanyInfoResult.size(); i++) {
 			Company currentCompany = allCompanyInfoResult.get(i);
-			getBranch(currentCompany);
+			getDivision(currentCompany);
 		}
 		return allCompanyInfoResult;
 	}
-
-	private void getBranch(Company company) {
-		Session session = sessionFactory.getCurrentSession();
-		Query query = session
-				.createQuery("FROM Branch where CompanyId = :companyId");
-		query.setParameter("companyId", company.getNid());
-		List<Branch> resultQuery = query.list();
-
-		if (resultQuery.size() > 0) {
-			for (Branch branch : resultQuery) {
-				getDivision(branch, company);
-			}
-			company.setBranchList(resultQuery);
-		}
-	}
-
-	private void getDivision(Branch branch, Company company) {
+	
+	
+	private void getDivision(Company company) {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session
 				.createQuery("FROM Division where CompanyId = :companyId");
@@ -75,10 +60,12 @@ public class CompanyService {
 		List<Division> resultQuery = query.list();
 
 		if (resultQuery.size() > 0) {
-			for (Division division : resultQuery) {
-				getDepartment(division, company);
+			
+			for (int i = 0; i < resultQuery.size(); i++) {
+				Division currentCompany = resultQuery.get(i);
+				getDepartment(currentCompany, company);
 			}
-			branch.setDivisionList(resultQuery);
+			company.setDivisionList(resultQuery);
 		}
 	}
 
@@ -127,6 +114,8 @@ public class CompanyService {
 		}
 	}
 
+
+	
 	public Company get(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
 		Company company = (Company) session.get(Company.class, id);
