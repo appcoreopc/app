@@ -72,17 +72,36 @@
 
         <div class="formRowList">
         <span class='columnDivider'>
-        <span class="labelSection">Division Name</span>
-        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeTitle" placeholder="info
+        <span class="labelSection">Division Code</span>
+        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeCode" placeholder="info
         type"/></span>
         </span>
         </div>
 
+
         <div class="formRowList">
         <span class='columnDivider'>
-        <span class="labelSection">Description</span></span>
+        <span class="labelSection">Division Name</span></span>
         <span class="inputSectionForm">
-        <input type="text" data-bind="value : $root.nodeTitle" placeholder="new description"/></span>
+        <input type="text" data-bind="value : $root.nodeName" placeholder="division name"/></span>
+        </span>
+        </div>
+
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Division Description</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.nodeDescription" placeholder="new description"/></span>
+        </span>
+        </div>
+
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Disabled</span></span>
+        <span class="inputSectionForm">
+        <input type="checkbox" data-bind="checked : $root.disabled" placeholder="disabled"/></span>
         </span>
         </div>
 
@@ -97,9 +116,17 @@
 
         </div>
 
-
-
         </script>
+
+
+
+
+
+
+
+
+
+
 
 
         <script type="text/html" id="departmentInfoUpdateTemplate">
@@ -116,22 +143,41 @@
         <div class="formRowList">
 
         <span class='columnDivider'>
-        <span class="labelSection">Department Name</span>
-        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeTitle" placeholder="info
+        <span class="labelSection">Department Code</span>
+        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeCode" placeholder="info
         type"/></span>
         </span>
 
         </div>
 
         <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Department Name</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.nodeName" placeholder="new name"/></span>
+        </span>
+        </div>
 
+
+
+        <div class="formRowList">
         <span class='columnDivider'>
         <span class="labelSection">Description</span></span>
         <span class="inputSectionForm">
-        <input type="text" data-bind="value : $root.nodeTitle" placeholder="new description"/></span>
+        <input type="text" data-bind="value : $root.nodeDescription" placeholder="new description"/></span>
         </span>
 
         </div>
+
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Disabled</span></span>
+        <span class="inputSectionForm">
+        <input type="checkbox" data-bind="checked : $root.disabled" placeholder="disabled"/></span>
+        </span>
+        </div>
+
 
         <div class="formRow">
 
@@ -146,3 +192,155 @@
 
 
         </script>
+
+
+
+
+
+
+
+
+
+        <script type="text/html" id="sectionInfoUpdateTemplate">
+
+        <div class="formRowSpacer">
+        </div>
+        <div class="formRowSpacer">
+        </div>
+        <div class="formRowSpacer">
+        </div>
+
+
+
+        <div class="formRowList">
+
+        <span class='columnDivider'>
+        <span class="labelSection">Section Code</span>
+        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeCode" placeholder="info
+        type"/></span>
+        </span>
+
+        </div>
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Section Name</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.nodeName" placeholder="new name"/></span>
+        </span>
+        </div>
+
+
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Description</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.nodeDescription" placeholder="new description"/></span>
+        </span>
+
+        </div>
+
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Disabled</span></span>
+        <span class="inputSectionForm">
+        <input type="checkbox" data-bind="checked : $root.disabled" placeholder="disabled"/></span>
+        </span>
+        </div>
+
+
+        <div class="formRow">
+
+        <span class='columnDivider'>
+        <span class="labelSection"></span>
+        <span class="inputSectionForm"><button id="addBtn" class="command" type="button">Save</button><button id="addBtn" class="command" type="button">Cancel</button></span>
+        <span class="inputSectionForm"></span>
+        </span>
+
+        </div>
+
+
+
+        </script>
+
+
+
+
+
+
+        <script type="text/html" id="unitInfoUpdateTemplate">
+
+        <div class="formRowSpacer">
+        </div>
+        <div class="formRowSpacer">
+        </div>
+        <div class="formRowSpacer">
+        </div>
+
+
+
+        <div class="formRowList">
+
+        <span class='columnDivider'>
+        <span class="labelSection">Unit Code</span>
+        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeCode" placeholder="info
+        type"/></span>
+        </span>
+
+        </div>
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Unit Name</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.nodeName" placeholder="new name"/></span>
+        </span>
+        </div>
+
+
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Description</span></span>
+        <span class="inputSectionForm">
+        <input type="text" data-bind="value : $root.nodeDescription" placeholder="new description"/></span>
+        </span>
+
+        </div>
+
+
+        <div class="formRowList">
+        <span class='columnDivider'>
+        <span class="labelSection">Disabled</span></span>
+        <span class="inputSectionForm">
+        <input type="checkbox" data-bind="checked : $root.disabled" placeholder="disabled"/></span>
+        </span>
+        </div>
+
+
+        <div class="formRow">
+
+        <span class='columnDivider'>
+        <span class="labelSection"></span>
+        <span class="inputSectionForm"><button id="addBtn" class="command" type="button">Save</button><button id="addBtn" class="command" type="button">Cancel</button></span>
+        <span class="inputSectionForm"></span>
+        </span>
+
+        </div>
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+

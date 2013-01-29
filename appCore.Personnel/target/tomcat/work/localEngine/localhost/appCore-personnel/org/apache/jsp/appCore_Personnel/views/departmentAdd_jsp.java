@@ -265,8 +265,16 @@ public final class departmentAdd_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("            $(\"#\" + formName).validationEngine();\r\n");
-      out.write("            var vm = new DepartmentInfoViewModel(globalViewModel);\r\n");
-      out.write("            ko.applyBindings(vm, document.getElementById(\"departmentForm\"));\r\n");
+      out.write("\r\n");
+      out.write("            try\r\n");
+      out.write("            {\r\n");
+      out.write("                var vm = new DepartmentInfoViewModel(globalViewModel);\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"departmentForm\"));\r\n");
+      out.write("            }\r\n");
+      out.write("            catch (ex)\r\n");
+      out.write("            {\r\n");
+      out.write("                console.log(ex)\r\n");
+      out.write("            }\r\n");
       out.write("\r\n");
       out.write("            $(\"#accordianDepartment\").accordion({collapsible : true, active: false});\r\n");
       out.write("        });\r\n");

@@ -52,13 +52,13 @@ public class CompanyService {
 	
 	
 	private void getDivision(Company company) {
+		
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session
 				.createQuery("FROM Division where CompanyId = :companyId");
 		query.setParameter("companyId", company.getNid());
 
 		List<Division> resultQuery = query.list();
-
 		if (resultQuery.size() > 0) {
 			
 			for (int i = 0; i < resultQuery.size(); i++) {

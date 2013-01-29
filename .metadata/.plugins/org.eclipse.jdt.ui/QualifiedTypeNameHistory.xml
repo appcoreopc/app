@@ -14,10 +14,7 @@
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Service.CompanyEntityService"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Company"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Division"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.CompanyEntity"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Department"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Section"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
 <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
@@ -25,7 +22,6 @@
 <fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.MapKeyManyToMany"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Calendar.Entity.Holiday"/>
-<fullyQualifiedTypeName name="javax.persistence.Transient"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Forms_Actions_Role"/>
@@ -38,7 +34,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Category"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.FormMenuView"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Unit"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.UnitSummary"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.BranchSummary"/>
@@ -58,4 +53,10 @@
 <fullyQualifiedTypeName name="com.appCore.Requests.UserAuthenticationRequestStatus"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Roles"/>
 <fullyQualifiedTypeName name="org.hibernate.Hibernate"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Branch"/>
+<fullyQualifiedTypeName name="javax.persistence.Transient"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Division"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Department"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Section"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Unit"/>
 </qualifiedTypeNameHistroy>

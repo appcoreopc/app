@@ -6,11 +6,19 @@ var departmentNodeType = 3;
 var sectionNodeType = 4;
 var unitNodeType = 5;
 
-var TreeNodeObject = function (title, dataId, nodeDataType) {
+var TreeNodeObject = function (title, dataId, nodeDataType, description, name, disabledState) {
     var self = this;
     self.node = {
         "data":title,
-        "metadata":{ id:dataId, nodeType:nodeDataType, parentId:-1, nodeTitle:title },
+        "metadata":{
+            id:dataId,
+            nodeType:nodeDataType,
+            parentId:-1,
+            nodeCode:title,
+            nodeDescription:description,
+            nodename:name,
+            disabled:disabledState
+        },
         "children":[]
     };
     self.appendChild = function (nodeObject) {
@@ -18,11 +26,15 @@ var TreeNodeObject = function (title, dataId, nodeDataType) {
     }
 }
 
-var TreeNodeData = function (parentId, id, nodeType, title) {
+var TreeNodeData = function (parentId, id, nodeType, title, description, name, disabledState) {
+
     this.parentId = parentId;
     this.id = id;
     this.nodeType = nodeType;
     this.title = title;
+    this.description = description;
+    this.name = name;
+    this.disabled = disabledState;
 }
 
 var TreeNodeInfo = function () {
@@ -52,10 +64,16 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
     self.newlyCreatedNode = ko.observable();
 
-    self.nodeTitle = ko.observable();
+
+    self.nodeCode = ko.observable();
     self.nodeType = ko.observable();
     self.parentId = ko.observable();
     self.nodeId = ko.observable();
+
+    self.nodeDescription = ko.observable();
+    self.nodeName = ko.observable();
+    self.disabled = ko.observable(false);
+
 
     // all the employee from a selected company
     self.allUsersList = ko.observableArray();
@@ -103,7 +121,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     function getAllCompanyInfoCallback(data) {
         for (var i = 0; i < data.length; i++) {
             var companyTreeNode = new TreeNodeObject(data[i]["companyName"], data[i]["nid"], companyNodeType);
-            getDivisionData("divisionName", "nid", divisionNodeType, data[i].divisionList, companyTreeNode);
+            getDivisionData("divisionCode", "nid", divisionNodeType, data[i].divisionList, companyTreeNode, "description", "divisionName", "disabled");
             treeData.push(companyTreeNode.node);
         }
         // setup the tree //
@@ -114,44 +132,42 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
             "plugins":[ "themes", "json_data", "ui", "checkbox", "crrm", "contextmenu" ]
         }).bind("select_node.jstree", function (e, data) {
                 getSelectedNodeParent();
-        });
-
-
+            });
     }
 
-    function getDivisionData(fieldName, fieldNid, nodeType, list, parentNode) {
+    function getDivisionData(fieldName, fieldNid, nodeType, list, parentNode, description, name, disabledState) {
         for (var j = 0; j < list.length; j++) {
-            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType);
+            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType, list[j][description], list[j][name], list[j][disabledState]);
             if (list[j].departmentList != undefined && list[j].departmentList.length > 0) {
-                getDepartmentData("departmentName", "nid", departmentNodeType, list[j].departmentList, treeNode);
+                getDepartmentData("departmentCode", "nid", departmentNodeType, list[j].departmentList, treeNode, "description", "departmentName", "disabled");
             }
             parentNode.appendChild(treeNode.node);
         }
     }
 
-    function getDepartmentData(fieldName, fieldNid, nodeType, list, parentNode) {
+    function getDepartmentData(fieldName, fieldNid, nodeType, list, parentNode, description, name, disabledState) {
         for (var j = 0; j < list.length; j++) {
-            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType);
+            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType, list[j][description], list[j][name], list[j][disabledState]);
             if (list[j].section != undefined && list[j].section.length > 0) {
-                getSectionData("sectionName", "nid", sectionNodeType, list[j].section, treeNode);
+                getSectionData("sectionCode", "nid", sectionNodeType, list[j].section, treeNode, "description", "sectionName", "disabled");
             }
             parentNode.appendChild(treeNode.node);
         }
     }
 
-    function getSectionData(fieldName, fieldNid, nodeType, list, parentNode) {
+    function getSectionData(fieldName, fieldNid, nodeType, list, parentNode, description, name, disabledState) {
         for (var j = 0; j < list.length; j++) {
-            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType);
+            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType, list[j][description], list[j][name], list[j][disabledState]);
             if (list[j].unitList != undefined && list[j].unitList.length > 0) {
-                getUnitData("unitName", "nid", unitNodeType, list[j].unitList, treeNode);
+                getUnitData("unitCode", "nid", unitNodeType, list[j].unitList, treeNode, "description", "unitName", "disabled");
             }
             parentNode.appendChild(treeNode.node);
         }
     }
 
-    function getUnitData(fieldName, fieldNid, nodeType, list, parentNode) {
+    function getUnitData(fieldName, fieldNid, nodeType, list, parentNode, description, name, disabledState) {
         for (var j = 0; j < list.length; j++) {
-            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType);
+            var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType, list[j][description], list[j][name], list[j][disabledState]);
             parentNode.appendChild(treeNode.node);
         }
     }
@@ -243,14 +259,12 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         }
     }
 
-
     self.createSection = function () {
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
         var newNode = new TreeNodeObject("Section", 0, sectionNodeType);
 
         var nodeType = selectedNode.data("nodeType");
-
         if (nodeType == undefined) // nothing currently selected
             return;
 
@@ -305,7 +319,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
             var parentId = selectedNode.data("nodeType");
             var nodeData = new TreeNodeData(parentId, createNode.node.metadata.id,
-                createNode.node.metadata.nodeType, createNode.node.metadata.nodeTitle);
+                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode);
             self.newlyCreatedNode(nodeData);
         }
     }
@@ -319,7 +333,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
             $("#" + treeDivControlName).jstree("create", node, "last", createNode.node);
             var parentId = node.data("nodeType");
             var nodeData = new TreeNodeData(parentId, createNode.node.metadata.id,
-                createNode.node.metadata.nodeType, createNode.node.metadata.nodeTitle);
+                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode);
             self.newlyCreatedNode(nodeData);
             self.newlyCreatedNode(createNode.node);
         }
@@ -433,10 +447,14 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         switch (self.mode()) {
             case 1:
                 return "emptyTemplate";
-            case 2:
+            case divisionNodeType:
                 return "divisionInfoUpdateTemplate";
-            case 3:
+            case departmentNodeType:
                 return "departmentInfoUpdateTemplate";
+            case sectionNodeType:
+                return "sectionInfoUpdateTemplate";
+            case unitNodeType:
+                return "unitInfoUpdateTemplate";
             default:
                 return "emptyTemplate";
         }
@@ -483,10 +501,16 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
     self.newlyCreatedNode.subscribe(function (node) {
 
-        self.nodeTitle = ko.observable(node.title);
-        self.nodeType = ko.observable(node.nodeType);
-        self.parentId = ko.observable(node.parentId);
-        self.nodeId = ko.observable(node.id);
+        console.log(node);
+
+        self.nodeCode(node.title);
+        self.nodeType(node.nodeType);
+        self.parentId(node.parentId);
+        self.nodeId(node.id);
+
+        self.nodeDescription(node.description);
+        self.nodeName(node.name);
+        self.disabled(node.disabled);
 
         switch (node.nodeType) {
             case 2:
@@ -505,6 +529,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     });
 
     function getSelectedNodeParent() {
+
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var treeInstance = $.jstree._reference($("#" + treeDivControlName));
         var parent = treeInstance._get_parent(selectedNode);
@@ -513,11 +538,15 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
             var parentId = parent.data("id");
             var id = selectedNode.data("id");
-            var title = selectedNode.data("nodeTitle");
+            var title = selectedNode.data("nodeCode");
             var type = selectedNode.data("nodeType");
-            self.newlyCreatedNode(new TreeNodeData(parentId, id, type, title));
-        }
 
+            var description = selectedNode.data("nodeDescription");
+            var name = selectedNode.data("nodename");
+            var disabledState = selectedNode.data("disabled");
+
+            self.newlyCreatedNode(new TreeNodeData(parentId, id, type, title, description, name, disabledState));
+        }
     }
 
     function getSelectedNode() {
@@ -526,8 +555,8 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         return selectedNodeType;
     }
 
-    function get_type(thing){
-        if(thing===null)return "[object Null]"; // special case
+    function get_type(thing) {
+        if (thing === null)return "[object Null]"; // special case
         return Object.prototype.toString.call(thing);
     }
 }

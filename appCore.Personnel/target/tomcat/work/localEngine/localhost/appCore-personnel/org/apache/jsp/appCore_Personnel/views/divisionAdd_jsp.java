@@ -268,8 +268,16 @@ public final class divisionAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("            $(\"#\" + formName).validationEngine();\r\n");
-      out.write("            var vm = new DivisionInfoViewModel(globalViewModel);\r\n");
-      out.write("            ko.applyBindings(vm, document.getElementById(\"divisionForm\"));\r\n");
+      out.write("\r\n");
+      out.write("            try\r\n");
+      out.write("            {\r\n");
+      out.write("                var vm = new DivisionInfoViewModel(globalViewModel);\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"divisionForm\"));\r\n");
+      out.write("            }\r\n");
+      out.write("            catch (ex)\r\n");
+      out.write("            {\r\n");
+      out.write("                console.log(ex)\r\n");
+      out.write("            }\r\n");
       out.write("\r\n");
       out.write("            $(\"#accordianDivision\").accordion({collapsible : true, active: false});\r\n");
       out.write("\r\n");
