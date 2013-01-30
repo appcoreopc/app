@@ -149,7 +149,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         for (var j = 0; j < list.length; j++) {
             var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType, list[j][description], list[j][name], list[j][disabledState]);
             if (list[j].section != undefined && list[j].section.length > 0) {
-                getSectionData("sectionCode", "nid", sectionNodeType, list[j].section, treeNode, "description", "sectionName", "disabled");
+                getSectionData("sectionCode", "nid", sectionNodeType, list[j].section, treeNode, "remark", "sectionName", "disabled");
             }
             parentNode.appendChild(treeNode.node);
         }
@@ -159,7 +159,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         for (var j = 0; j < list.length; j++) {
             var treeNode = new TreeNodeObject(list[j][fieldName], list[j][fieldNid], nodeType, list[j][description], list[j][name], list[j][disabledState]);
             if (list[j].unitList != undefined && list[j].unitList.length > 0) {
-                getUnitData("unitCode", "nid", unitNodeType, list[j].unitList, treeNode, "description", "unitName", "disabled");
+                getUnitData("unitCode", "nid", unitNodeType, list[j].unitList, treeNode, "remark", "unitName", "disabled");
             }
             parentNode.appendChild(treeNode.node);
         }
@@ -297,6 +297,79 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
             createInLevel(selectedNode, parents.length - 1, newNode);
         }
     }
+
+    self.saveDivision = function (data) {
+
+        var division = new Division();
+        if (self.nodeId() > 0)
+            division.nid = self.nodeId();
+
+        division.companyId = self.globalViewModel.companyId();
+        division.divisionCode = self.nodeCode();
+        division.divisionName = self.nodeName();
+        division.description = self.nodeDescription();
+        division.disabled = self.disabled();
+
+        var helper = new CompanyHelper();
+        helper.saveUpdateDivision(division, saveOrUpdateStatus);
+    }
+
+    function saveOrUpdateStatus(result) {
+        if (result.messageCode == 0) {
+            // preparePageForLoading("branch.jsp");
+        }
+    }
+
+    self.saveDepartment = function (data) {
+        var division = new Department();
+        if (self.nodeId() > 0)
+            division.nid = self.nodeId();
+
+        division.companyId = self.globalViewModel.companyId();
+        division.departmentCode = self.nodeCode();
+        division.divisionId = self.parentId();
+        division.departmentName = self.nodeName();
+        division.description = self.nodeDescription();
+        division.disabled = self.disabled();
+
+        var helper = new CompanyHelper();
+        helper.saveUpdateDepartment(division, saveOrUpdateStatus);
+    }
+
+
+    self.saveSection = function (data) {
+        var section = new Section();
+        if (self.nodeId() > 0)
+            section.nid = self.nodeId();
+
+        section.companyId = self.globalViewModel.companyId();
+        section.sectionCode = self.nodeCode();
+        section.departmentId = self.parentId();
+        section.sectionName = self.nodeName();
+        section.remark = self.nodeDescription();
+        section.disabled = self.disabled();
+
+        var helper = new CompanyHelper();
+        helper.saveUpdateSection(section, saveOrUpdateStatus);
+    }
+
+
+    self.saveUnit = function (data) {
+        var unit = new Unit();
+        if (self.nodeId() > 0)
+            unit.nid = self.nodeId();
+
+        unit.companyId = self.globalViewModel.companyId();
+        unit.unitCode = self.nodeCode();
+        unit.sectionId = self.parentId();
+        unit.unitName = self.nodeName();
+        unit.remark = self.nodeDescription();
+        unit.disabled = self.disabled();
+
+        var helper = new CompanyHelper();
+        helper.saveUpdateUnit(unit, saveOrUpdateStatus);
+    }
+
 
     self.deleteNode = function () {
         $("#" + treeDivControlName).jstree("remove", null);
@@ -500,8 +573,6 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     }
 
     self.newlyCreatedNode.subscribe(function (node) {
-
-        console.log(node);
 
         self.nodeCode(node.title);
         self.nodeType(node.nodeType);

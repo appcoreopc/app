@@ -9,8 +9,8 @@
         {
         try
         {
-        var vm = new CompanyConfiguratorViewModel(globalViewModel);
-        ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
+            var vm = new CompanyConfiguratorViewModel(globalViewModel);
+            ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
         }
         catch (ex)
         {
@@ -110,22 +110,15 @@
         <div class="formRow">
         <span class='columnDivider'>
         <span class="labelSection"></span>
-        <span class="inputSectionForm"><button id="addBtn" class="command" type="button">Save</button><button id="addBtn" class="command" type="button">Cancel</button></span>
+        <span class="inputSectionForm">
+            <button id="divisionSaveBtn" class="command" type="button" data-bind="click : saveDivision">Save</button>
+            <button id="divisionCancelBtn" class="command" type="button">Cancel</button></span>
         <span class="inputSectionForm"></span>
         </span>
 
         </div>
 
         </script>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -183,12 +176,13 @@
 
         <span class='columnDivider'>
         <span class="labelSection"></span>
-        <span class="inputSectionForm"><button id="addBtn" class="command" type="button">Save</button><button id="addBtn" class="command" type="button">Cancel</button></span>
+        <span class="inputSectionForm">
+            <button id="departmentSaveBtn" class="command" type="button" data-bind="click : saveDepartment">Save</button>
+            <button id="departmentCancelBtn" class="command" type="button">Cancel</button></span>
         <span class="inputSectionForm"></span>
         </span>
 
         </div>
-
 
 
         </script>
@@ -234,7 +228,7 @@
 
         <div class="formRowList">
         <span class='columnDivider'>
-        <span class="labelSection">Description</span></span>
+        <span class="labelSection">Remark</span></span>
         <span class="inputSectionForm">
         <input type="text" data-bind="value : $root.nodeDescription" placeholder="new description"/></span>
         </span>
@@ -255,13 +249,13 @@
 
         <span class='columnDivider'>
         <span class="labelSection"></span>
-        <span class="inputSectionForm"><button id="addBtn" class="command" type="button">Save</button><button id="addBtn" class="command" type="button">Cancel</button></span>
+        <span class="inputSectionForm">
+            <button id="sectionSaveBtn" class="command" type="button" data-bind="click : saveSection">Save</button>
+            <button id="sectionCancelBtn" class="command" type="button">Cancel</button></span>
         <span class="inputSectionForm"></span>
         </span>
 
         </div>
-
-
 
         </script>
 
@@ -303,7 +297,7 @@
 
         <div class="formRowList">
         <span class='columnDivider'>
-        <span class="labelSection">Description</span></span>
+        <span class="labelSection">Remark</span></span>
         <span class="inputSectionForm">
         <input type="text" data-bind="value : $root.nodeDescription" placeholder="new description"/></span>
         </span>
@@ -319,12 +313,13 @@
         </span>
         </div>
 
-
         <div class="formRow">
 
         <span class='columnDivider'>
         <span class="labelSection"></span>
-        <span class="inputSectionForm"><button id="addBtn" class="command" type="button">Save</button><button id="addBtn" class="command" type="button">Cancel</button></span>
+        <span class="inputSectionForm">
+                <button id="unitSaveBtn" class="command" type="button" data-bind="click : saveUnit">Save</button>
+                <button id="unitCancelBtn" class="command" type="button">Cancel</button></span>
         <span class="inputSectionForm"></span>
         </span>
 
