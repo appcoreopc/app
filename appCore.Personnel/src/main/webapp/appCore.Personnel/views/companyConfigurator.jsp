@@ -73,8 +73,7 @@
         <div class="formRowList">
         <span class='columnDivider'>
         <span class="labelSection">Division Code</span>
-        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeCode" placeholder="info
-        type"/></span>
+        <span class="inputSectionForm"><input type="text" data-bind="value : $root.nodeCode" placeholder="division code"/></span>
         </span>
         </div>
 
@@ -92,7 +91,7 @@
         <span class='columnDivider'>
         <span class="labelSection">Division Description</span></span>
         <span class="inputSectionForm">
-        <input type="text" data-bind="value : $root.nodeDescription" placeholder="new description"/></span>
+        <input type="text" data-bind="value : $root.nodeDescription" placeholder="division description"/></span>
         </span>
         </div>
 

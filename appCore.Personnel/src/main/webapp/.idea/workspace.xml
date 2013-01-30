@@ -23,7 +23,7 @@
       <file leaf-file-name="companyConfigurator.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyConfigurator.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="320" column="98" selection-start="9339" selection-end="9347" vertical-scroll-proportion="-27.461538">
+            <state line="96" column="0" selection-start="3096" selection-end="3096" vertical-scroll-proportion="-19.076923">
               <folding />
             </state>
           </provider>
@@ -32,7 +32,7 @@
       <file leaf-file-name="companyConfiguratorViewModel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/viewmodal/companyConfiguratorViewModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="572" column="0" selection-start="19865" selection-end="19865" vertical-scroll-proportion="0.018973215">
+            <state line="604" column="0" selection-start="20910" selection-end="20910" vertical-scroll-proportion="0.68303573">
               <folding />
             </state>
           </provider>
@@ -415,14 +415,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyConfigurator.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="98" selection-start="9339" selection-end="9347" vertical-scroll-proportion="-27.461538">
+        <state line="96" column="0" selection-start="3096" selection-end="3096" vertical-scroll-proportion="-19.076923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/viewmodal/companyConfiguratorViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="572" column="0" selection-start="19865" selection-end="19865" vertical-scroll-proportion="0.018973215">
+        <state line="604" column="0" selection-start="20910" selection-end="20910" vertical-scroll-proportion="0.68303573">
           <folding />
         </state>
       </provider>

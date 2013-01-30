@@ -64,7 +64,6 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
     self.newlyCreatedNode = ko.observable();
 
-
     self.nodeCode = ko.observable();
     self.nodeType = ko.observable();
     self.parentId = ko.observable();
@@ -224,7 +223,9 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     self.createDivision = function () {
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
-        var newNode = new TreeNodeObject("Division", 0, divisionNodeType);
+        var newName = "New Division";
+        var newDescription = " Description";
+        var newNode = new TreeNodeObject(newName, -1, divisionNodeType, newName + newDescription, newName, false);
         var nodeType = selectedNode.data("nodeType");
 
         if (nodeType == undefined) // nothing currently selected
@@ -238,11 +239,33 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         }
     }
 
-    self.createDepartment = function () {
+    function createInLevel(node, level, createNode) {
 
+        var treeInstance = $.jstree._reference($("#" + treeDivControlName));
+        if (level > 0) {
+            var targetNodePath = treeInstance._get_parent(node);
+            createInLevel(targetNodePath, --level, createNode)
+        }
+        else if (level == 0) {
+            $("#" + treeDivControlName).jstree("create", node, "inside", createNode.node);
+            var parentId = node.data("nodeType");
+
+            var nodeData = new TreeNodeData(createNode.node.metadata.parentId, createNode.node.metadata.id,
+                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode, createNode.node.metadata.nodeDescription, createNode.node.metadata.nodename,
+                createNode.node.metadata.disabled);
+
+            self.newlyCreatedNode(nodeData);
+        }
+    }
+
+
+    self.createDepartment = function () {
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
-        var newNode = new TreeNodeObject("Department", 0, departmentNodeType);
+
+        var newName = "New Department";
+        var newDescription = " Description";
+        var newNode = new TreeNodeObject(newName, -1, departmentNodeType, newName + newDescription, newName, false);
 
         var nodeType = selectedNode.data("nodeType");
 
@@ -251,18 +274,20 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
         if (nodeType < departmentNodeType) {
             var levelToTraverse = departmentNodeType - nodeType;
-            console.log("dept" + levelToTraverse);
             tryToCreateChild(selectedNode, levelToTraverse, newNode);
         }
         else {
-            createInLevel(selectedNode, parents.length - 1, newNode);
+            createInLevel(selectedNode, parents.length - 2, newNode);
         }
     }
 
     self.createSection = function () {
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
-        var newNode = new TreeNodeObject("Section", 0, sectionNodeType);
+
+        var newName = "New Section";
+        var newDescription = " Description";
+        var newNode = new TreeNodeObject(newName, -1, sectionNodeType, newName + newDescription, newName, false);
 
         var nodeType = selectedNode.data("nodeType");
         if (nodeType == undefined) // nothing currently selected
@@ -270,18 +295,20 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
         if (nodeType < sectionNodeType) {
             var levelToTraverse = sectionNodeType - nodeType;
-            console.log("dept" + levelToTraverse);
             tryToCreateChild(selectedNode, levelToTraverse, newNode);
         }
         else {
-            createInLevel(selectedNode, parents.length - 1, newNode);
+            createInLevel(selectedNode, parents.length - 3, newNode);
         }
     }
 
     self.createUnit = function () {
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
-        var newNode = new TreeNodeObject("Unit", 0, unitNodeType);
+
+        var newName = "New Unit";
+        var newDescription = " Description";
+        var newNode = new TreeNodeObject(newName, -1, unitNodeType, newName + newDescription, newName, false);
 
         var nodeType = selectedNode.data("nodeType");
 
@@ -290,11 +317,10 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
         if (nodeType < unitNodeType) {
             var levelToTraverse = unitNodeType - nodeType;
-            console.log("dept" + levelToTraverse);
             tryToCreateChild(selectedNode, levelToTraverse, newNode);
         }
         else {
-            createInLevel(selectedNode, parents.length - 1, newNode);
+            createInLevel(selectedNode, parents.length - 4, newNode);
         }
     }
 
@@ -303,6 +329,8 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         var division = new Division();
         if (self.nodeId() > 0)
             division.nid = self.nodeId();
+        else
+            division.nid = null;
 
         division.companyId = self.globalViewModel.companyId();
         division.divisionCode = self.nodeCode();
@@ -324,6 +352,8 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         var division = new Department();
         if (self.nodeId() > 0)
             division.nid = self.nodeId();
+        else
+            division.nid = null;
 
         division.companyId = self.globalViewModel.companyId();
         division.departmentCode = self.nodeCode();
@@ -341,6 +371,8 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         var section = new Section();
         if (self.nodeId() > 0)
             section.nid = self.nodeId();
+        else
+            section.nid = null;
 
         section.companyId = self.globalViewModel.companyId();
         section.sectionCode = self.nodeCode();
@@ -358,6 +390,8 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         var unit = new Unit();
         if (self.nodeId() > 0)
             unit.nid = self.nodeId();
+        else
+            unit.nid = null;
 
         unit.companyId = self.globalViewModel.companyId();
         unit.unitCode = self.nodeCode();
@@ -397,20 +431,6 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         }
     }
 
-    function createInLevel(node, level, createNode) {
-        if (level > 0) {
-            var targetNodePath = node.parent();
-            createInLevel(targetNodePath, --level, createNode)
-        }
-        else if (level == 0) {
-            $("#" + treeDivControlName).jstree("create", node, "last", createNode.node);
-            var parentId = node.data("nodeType");
-            var nodeData = new TreeNodeData(parentId, createNode.node.metadata.id,
-                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode);
-            self.newlyCreatedNode(nodeData);
-            self.newlyCreatedNode(createNode.node);
-        }
-    }
 
     self.editData = ko.observable();
     self.cancelInfoData = function () {

@@ -125,8 +125,7 @@ public final class companyConfigurator_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <div class=\"formRowList\">\r\n");
       out.write("        <span class='columnDivider'>\r\n");
       out.write("        <span class=\"labelSection\">Division Code</span>\r\n");
-      out.write("        <span class=\"inputSectionForm\"><input type=\"text\" data-bind=\"value : $root.nodeCode\" placeholder=\"info\r\n");
-      out.write("        type\"/></span>\r\n");
+      out.write("        <span class=\"inputSectionForm\"><input type=\"text\" data-bind=\"value : $root.nodeCode\" placeholder=\"division code\"/></span>\r\n");
       out.write("        </span>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
@@ -144,7 +143,7 @@ public final class companyConfigurator_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <span class='columnDivider'>\r\n");
       out.write("        <span class=\"labelSection\">Division Description</span></span>\r\n");
       out.write("        <span class=\"inputSectionForm\">\r\n");
-      out.write("        <input type=\"text\" data-bind=\"value : $root.nodeDescription\" placeholder=\"new description\"/></span>\r\n");
+      out.write("        <input type=\"text\" data-bind=\"value : $root.nodeDescription\" placeholder=\"division description\"/></span>\r\n");
       out.write("        </span>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
