@@ -73,6 +73,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     self.nodeName = ko.observable();
     self.disabled = ko.observable(false);
 
+    self.newItemCreationRequestedIndicator = ko.observable(false);
 
     // all the employee from a selected company
     self.allUsersList = ko.observableArray();
@@ -97,6 +98,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     self.globalViewModel = globalViewModel;
 
     var jstree;
+    var newTreeNode;
 
     //if (self.globalViewModel.applicationScopeType() != coreApplicationTypeUnit) {
     //    throw "Application Type is not of type holidayGroup.";
@@ -130,7 +132,12 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
             },
             "plugins":[ "themes", "json_data", "ui", "checkbox", "crrm", "contextmenu" ]
         }).bind("select_node.jstree", function (e, data) {
-                getSelectedNodeParent();
+                if (isNewItemCreationRequested()) {
+                    return;
+                }
+                else {
+                    getSelectedNodeParent();
+                }
             });
     }
 
@@ -220,7 +227,37 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
      }
      */
 
+    function createInLevel(node, level, createNode) {
+        var treeInstance = $.jstree._reference($("#" + treeDivControlName));
+
+        if (level > 0) {
+            var targetNodePath = treeInstance._get_parent(node);
+            createInLevel(targetNodePath, --level, createNode)
+        }
+        else if (level == 0) {
+
+            $("#" + treeDivControlName).jstree("create", node, "inside", createNode.node, createNodeCallBack);
+            var parentId = node.data("nodeType");
+
+            var nodeData = new TreeNodeData(createNode.node.metadata.parentId, createNode.node.metadata.id,
+                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode, createNode.node.metadata.nodeDescription, createNode.node.metadata.nodename,
+                createNode.node.metadata.disabled);
+
+            self.newItemCreationRequestedIndicator(true);
+            self.newlyCreatedNode(nodeData);
+        }
+    }
+
+
+    function createNodeCallBack(data) {
+        newTreeNode = data;
+    }
+
     self.createDivision = function () {
+        if (isNewItemRequested()) {
+            return;
+        }
+
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
         var newName = "New Division";
@@ -239,32 +276,19 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         }
     }
 
-    function createInLevel(node, level, createNode) {
-
-        var treeInstance = $.jstree._reference($("#" + treeDivControlName));
-        if (level > 0) {
-            var targetNodePath = treeInstance._get_parent(node);
-            createInLevel(targetNodePath, --level, createNode)
-        }
-        else if (level == 0) {
-            $("#" + treeDivControlName).jstree("create", node, "inside", createNode.node);
-            var parentId = node.data("nodeType");
-
-            var nodeData = new TreeNodeData(createNode.node.metadata.parentId, createNode.node.metadata.id,
-                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode, createNode.node.metadata.nodeDescription, createNode.node.metadata.nodename,
-                createNode.node.metadata.disabled);
-
-            self.newlyCreatedNode(nodeData);
-        }
-    }
-
 
     self.createDepartment = function () {
+
+        if (isNewItemRequested()) {
+            return;
+        }
+
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
 
         var newName = "New Department";
         var newDescription = " Description";
+
         var newNode = new TreeNodeObject(newName, -1, departmentNodeType, newName + newDescription, newName, false);
 
         var nodeType = selectedNode.data("nodeType");
@@ -282,6 +306,11 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     }
 
     self.createSection = function () {
+
+        if (isNewItemRequested()) {
+            return;
+        }
+
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
 
@@ -290,6 +319,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         var newNode = new TreeNodeObject(newName, -1, sectionNodeType, newName + newDescription, newName, false);
 
         var nodeType = selectedNode.data("nodeType");
+
         if (nodeType == undefined) // nothing currently selected
             return;
 
@@ -303,6 +333,10 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     }
 
     self.createUnit = function () {
+        if (isNewItemRequested()) {
+            return;
+        }
+
         var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
         var parents = $("#" + treeDivControlName).jstree("get_path", selectedNode);
 
@@ -342,9 +376,40 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         helper.saveUpdateDivision(division, saveOrUpdateStatus);
     }
 
+    function isNewItemRequested() {
+        if (self.newItemCreationRequestedIndicator()) {
+            showNavigatingAwayConfirmation();
+            return true;
+        }
+        return false;
+    }
+
+    function isNewItemCreationRequested() {
+        if (self.newItemCreationRequestedIndicator()) {
+            showNavigatingAwayConfirmation();
+            return true;
+        }
+        return false;
+    }
+
+    function showNavigatingAwayConfirmation() {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("New Record Created", "Please save the record before continuing.");
+        var result = dialog.createGeneralConfirmationDialog(dialogObject, confirmCallBack);
+    }
+
+    function confirmCallBack(status) {
+        if (status == true) {
+
+        }
+    }
+
+    // Reset indicator values //
     function saveOrUpdateStatus(result) {
         if (result.messageCode == 0) {
-            // preparePageForLoading("branch.jsp");
+            self.newItemCreationRequestedIndicator(false);
+            newTreeNode = null;
         }
     }
 
@@ -385,7 +450,6 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         helper.saveUpdateSection(section, saveOrUpdateStatus);
     }
 
-
     self.saveUnit = function (data) {
         var unit = new Unit();
         if (self.nodeId() > 0)
@@ -404,7 +468,6 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         helper.saveUpdateUnit(unit, saveOrUpdateStatus);
     }
 
-
     self.deleteNode = function () {
         $("#" + treeDivControlName).jstree("remove", null);
     }
@@ -412,6 +475,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     var treeInstance = $.jstree._reference($("#" + treeDivControlName));
 
     function tryToCreateChild(selectedNode, levelToTraverse, createNode) {
+
         var treeInstance = $.jstree._reference($("#" + treeDivControlName));
 
         if (levelToTraverse > 1) {
@@ -421,18 +485,28 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
             }
         }
         else {
-            $("#" + treeDivControlName).jstree("create", selectedNode, "inside", createNode.node);
+
+            $("#" + treeDivControlName).jstree("create", selectedNode, "inside", createNode.node, createNodeCallBack);
             var treeInstance = $.jstree._reference($("#" + treeDivControlName));
 
             var parentId = selectedNode.data("nodeType");
+
+            console.log("createnode data");
+            console.log(createNode);
+
             var nodeData = new TreeNodeData(parentId, createNode.node.metadata.id,
-                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode);
+                createNode.node.metadata.nodeType, createNode.node.metadata.nodeCode, createNode.node.metadata.nodeDescription, createNode.node.metadata.nodename, createNode.node.metadata.disabled);
+
+            console.log("tryToCreateChild");
+            console.log(nodeData);
+
+            self.newItemCreationRequestedIndicator(true);
             self.newlyCreatedNode(nodeData);
         }
     }
 
-
     self.editData = ko.observable();
+
     self.cancelInfoData = function () {
         self.editData("");
     }
@@ -537,6 +611,7 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     }
 
     self.templateToUse = function (item) {
+
         switch (self.mode()) {
             case 1:
                 return "emptyTemplate";
@@ -594,7 +669,6 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
 
     self.newlyCreatedNode.subscribe(function (node) {
 
-        self.nodeCode(node.title);
         self.nodeType(node.nodeType);
         self.parentId(node.parentId);
         self.nodeId(node.id);
@@ -602,6 +676,8 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
         self.nodeDescription(node.description);
         self.nodeName(node.name);
         self.disabled(node.disabled);
+
+        self.nodeCode(node.title);
 
         switch (node.nodeType) {
             case 2:
@@ -616,6 +692,30 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
             case 5:
                 self.mode(unitNodeType);
                 break;
+        }
+    });
+
+    self.nodeCode.subscribe(function (node) {
+
+        console.log("newItemCreationRequestedIndicator");
+        console.log(self.newItemCreationRequestedIndicator());
+
+        console.log("nodeid");
+        console.log(self.nodeId());
+
+        if (self.newItemCreationRequestedIndicator() == true && self.nodeCode() != "" && self.nodeId() == -1) {
+
+            console.log("new data");
+
+            var treeInstance = $.jstree._reference($("#" + treeDivControlName));
+            treeInstance.set_text(newTreeNode, self.nodeCode());
+        }
+        else if (self.nodeCode() != "" && self.nodeId() != -1 && self.newItemCreationRequestedIndicator() != true) {
+
+            console.log("existing data");
+            var selectedNode = $('#' + treeDivControlName).jstree('get_selected');
+            var treeInstance = $.jstree._reference($("#" + treeDivControlName));
+            treeInstance.set_text(selectedNode, self.nodeCode());
         }
     });
 

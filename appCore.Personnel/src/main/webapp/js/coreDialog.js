@@ -28,14 +28,13 @@ var CoreDialog = function () {
 
         $("<div id='" + commandObjects.targetId + "'>" + "</div>").appendTo("body");
 
-        $("#" + commandObjects.targetId).load(commandObjects.url,function()
-        {
+        $("#" + commandObjects.targetId).load(commandObjects.url, function () {
             $("#" + commandObjects.targetId).dialog(
                 {
                     title:commandObjects.title,
                     position:'center',
                     modal:true,
-                    width: 950
+                    width:950
                 });
         });
     }
@@ -43,7 +42,6 @@ var CoreDialog = function () {
     this.closeDialog = function (targetId) {
         $("#" + targetId).dialog('close');
     }
-
 
     this.createConfirmationDialog = function (dialogObject, data, globalViewModel, codeType, callBack) {
 
@@ -59,9 +57,9 @@ var CoreDialog = function () {
                 title:dialogObject.title,
                 closeOnEscape:false,
                 position:"center",
-                show: { effect : "fade", duration : 800},
-                modal: true,
-                resizable: false,
+                show:{ effect:"fade", duration:800},
+                modal:true,
+                resizable:false,
                 closeText:"",
                 buttons:{"OK":function () {
                     $("#overlay").remove();
@@ -78,11 +76,43 @@ var CoreDialog = function () {
             });
         $myDialog.dialog('open');
 
-        $(".ui-dialog .ui-dialog-title").css('color','#000');
-        $(".ui-dialog .ui-dialog-title").css('font-weight','normal');
-        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float','none');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('background','#000');
-        $(".ui-dialog .ui-dialog-buttonpane").css('border-width','0px 0px 0px');
+        $(".ui-dialog .ui-dialog-title").css('color', '#000');
+        $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
+        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
+        $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
+        $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
+    }
 
+    this.createGeneralConfirmationDialog = function (dialogObject, dialogCallBack) {
+        var overlay = $('<div id="overlay"> </div>');
+        overlay.appendTo(document.body);
+
+        var $myDialog = $('<div></div>')
+            .html(dialogObject.message)
+            .dialog(
+            {
+                dialogClass:'dialogTop',
+                autoOpen:false,
+                title:dialogObject.title,
+                closeOnEscape:false,
+                position:"center",
+                show:{ effect:"fade", duration:800},
+                modal:true,
+                resizable:false,
+                closeText:"",
+                buttons:{"OK":function () {
+                    $("#overlay").remove();
+                    $(this).dialog("close");
+                    dialogCallBack(true);
+                }
+                }
+            });
+        $myDialog.dialog('open');
+
+        $(".ui-dialog .ui-dialog-title").css('color', '#000');
+        $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
+        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
+        $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
+        $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
     }
 }

@@ -25,6 +25,7 @@
 
         <script language="javascript" src="js/carousel.js"></script>
         <script language="javascript" src="js/coreDialog.js"></script>
+        <script language="javascript" src="js/coreLoadMask.js"></script>
         <script language="javascript" src="js/coreCommonFunction.js"></script>
         <script language="javascript" src="js/userAuthenticator.js"></script>
         <script language="javascript" src="js/coreObjects.js"></script>
@@ -35,6 +36,9 @@
 
         $(document).ready(function()
         {
+
+        var coreLoadMask = new CoreLoadMask();
+        coreLoadMask.bindAjaxEvent("images/ajax-loader.gif");
 
         function authenticateUserCallBack(msg)
         {

@@ -2,7 +2,7 @@
 { 
 	width: 50%;
     margin: 0px auto;
-	min-height : 30em;	
+	min-height : 800px;
 }
 
 .sectionalForm {
@@ -144,5 +144,12 @@ div.rightSection {
 .formRowSpacer {
     display: block;
     padding-top: 150px;
+}
 
+#loadingStatusIndicator {
+    display: none;
+    position : absolute;
+    width: 100%;
+    text-align: center;
+    top: 300px;
 }

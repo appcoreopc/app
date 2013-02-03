@@ -1,7 +1,7 @@
 .dataEntry {
     width: 50%;
     margin: 0px auto;
-    min-height: 480px;
+    min-height: 800px;
 }
 
 .sectionalForm {
@@ -546,7 +546,19 @@ span.fieldSpacer {
     font-weight: bold;
 }
 
-
 .formRow textarea {
     resize: none;
+}
+
+#loadingStatusIndicator {
+    display: none;
+    position : absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%;
+}
+
+.companyInfoDiv {
+   display: inline;
+    font-size:  20px;
 }

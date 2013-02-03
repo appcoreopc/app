@@ -2,6 +2,8 @@
         <script language="javascript" src="../../js/viewmodal/companyConfiguratorViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
         <script language="javascript" src="../../js/jstree/jquery.jstree.js"></script>
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+
 
         <script type="text/javascript">
 

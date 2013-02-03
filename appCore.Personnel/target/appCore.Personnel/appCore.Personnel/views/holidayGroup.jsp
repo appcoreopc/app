@@ -69,7 +69,7 @@
 							 {
                                 field: "name",
                                 width: 90,
-                                title: "Name",
+                                title: "Name"
                             }, 
 							{
                                 field: "description",

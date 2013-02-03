@@ -760,8 +760,6 @@ ko.bindingHandlers.codepicker = {
             $(element).datepicker("destroy");
         });
 
-        // ko.bindingHandlers.validationCore.init(element, valueAccessor, allBindingsAccessor);
-
     },
     update:function (element, valueAccessor, allBindingsAccessor) {
 
@@ -798,3 +796,4 @@ ko.bindingHandlers.codepicker = {
         }
     }
 };
+

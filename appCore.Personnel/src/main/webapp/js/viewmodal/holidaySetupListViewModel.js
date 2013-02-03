@@ -127,7 +127,7 @@ var HolidaySetupListViewModel = function (initView, data, globalViewModel) {
 
     self.initializeViewModel = function () {
         var gridDataObject = getView();
-        var input = { "id":coreHolidaySetupPage, "roleId": globalViewModel.employeeRole() };
+        var input = { "id":coreHolidaySetupPage, "roleId":globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
 
         var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
@@ -166,7 +166,6 @@ var HolidaySetupListViewModel = function (initView, data, globalViewModel) {
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("holidaySetupAdd.jsp");
     }
-
 
     self.initializeViewModel();
 }

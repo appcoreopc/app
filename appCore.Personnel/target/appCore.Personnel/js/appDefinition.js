@@ -1,7 +1,6 @@
 var globalHostname = "http://localhost:8080/appCore-personnel";
 var globalMenuServiceUrl = "/app/User/Forms/listMenu";
 var globalCompanyServiceUrl = "/app/Core/CompanyEntity/list";
-
 var hostAuthorizationUrl = globalHostname + "/app/User/Forms/get";
 
 var coreBranchPage = "Branch";
@@ -85,6 +84,8 @@ var globalCompanyUrl = globalHostname + "/app/Core/Company";
 
 var globalCompanyListUrl = globalHostname + "/app/Core/Company/list";
 
+var globalGetAllCompanyInfoUrl = globalHostname + "/app/Core/Company/getAllCompanyInfo";
+
 var globalCompanyGetSummaryUrl = globalHostname + "/app/Core/Company/getSummary";
 
 var globalCompanyAddUrl = globalHostname + "/app/Core/Company/add";
@@ -127,11 +128,25 @@ var globalEmployeeExpertiseAddUrl = globalHostname + "/app/Job/EmployeeExpertise
 
 var globalJobSetupQualificationAddUrl = globalHostname + "/app/Job/JobSetupQualification/add";
 
+var globalJobSetupQualificationListByJobSetupUrl = globalHostname + "/app/Job/JobSetupQualification/listByJobSetup";
+
+var globalJobSetupExperienceListByJobSetupUrl = globalHostname + "/app/Job/JobSetupExperience/listByJobSetup";
+
+var globalJobSetupSkillListByJobSetupUrl = globalHostname + "/app/Job/JobSetupSkill/listByJobSetup";
+
+var globalJobTypeGetUrl = globalHostname + "/app/Job/JobType/get";
+
 var globalJobSetupExperienceAddUrl = globalHostname + "/app/Job/JobSetupExperience/add";
 
 var globalJobSetupSkillAddUrl = globalHostname + "/app/Job/JobSetupSkill/add";
 
 var globalEmployeeExpertiseSaveOrUpdateUrl = globalHostname + "/app/Job/EmployeeExpertise/saveOrUpdate";
+
+var globalJobSetupQualificationSaveOrUpdateUrl = globalHostname + "/app/Job/JobSetupQualification/saveOrUpdate";
+
+var globalJobSetupExperienceSaveOrUpdateUrl = globalHostname + "/app/Job/JobSetupExperience/saveOrUpdate";
+
+var globalJobSetupSkillSaveOrUpdateUrl = globalHostname + "/app/Job/JobSetupSkill/saveOrUpdate";
 
 var globalEmployeeIndustryList = globalHostname + "/app/Job/Industry/list";
 
@@ -181,9 +196,9 @@ var globalEmployeeMaritalStatusList = globalHostname + "/app/Job/MaritalStatus/l
 
 var globalEmployeeMaritalStatusListByCompany = globalHostname + "/app/Job/MaritalStatus/listByCompany";
 
-var globalEmployeeGenderExpertiseList = globalHostname + "/app/Job/Gender/list";
+var globalEmployeeGenderList = globalHostname + "/app/Job/Gender/list";
 
-var globalEmployeeGenderExpertiseListByCompany = globalHostname + "/app/Job/Gender/listByCompany";
+var globalEmployeeGenderListByCompany = globalHostname + "/app/Job/Gender/listByCompany";
 
 var globallandingPage = "landingpage.jsp";
 
@@ -232,9 +247,8 @@ var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdat
 var globalDivisionSaveOrUpdateUrl = globalHostname + "/app/Core/Division/saveOrUpdate";
 var globalDepartmentSaveOrUpdateUrl = globalHostname + "/app/Core/Department/saveOrUpdate";
 var globalSectionSaveOrUpdateUrl = globalHostname + "/app/Core/Section/saveOrUpdate";
-
-
 var globalEmployeeGroupConfigureUrl = globalHostname + "/app/Job/EmployeeGroup/configuredEmployeeGroup";
+var globalHolidayGroupConfigureUrl = globalHostname + "/app/Core/Calendar/HolidayGroup/configuredHolidayGroup";
 var globalConfigureUserRoleUrl = globalHostname + "/app/User/Roles/configuredRole";
 
 var globalUnitSaveOrUpdateUrl = globalHostname + "/app/Core/Unit/saveOrUpdate";
@@ -279,6 +293,7 @@ var globalUserList = globalHostname + "/app/Users/Users/list";
 
 var globalHolidaySetupListByCompanyUrl = globalHostname + "/app/Core/Calendar/Holiday/listByCompany";
 
+var globalHolidayGroupListByCompanyUrl = globalHostname + "/app/Core/Calendar/HolidayGroup/listByCompany";
 
 var globalJobSetupListByCompanyUrl = globalHostname + "/app/Core/Job/JobType/listByCompany";
 
@@ -301,13 +316,11 @@ var globalDepartmentDeleteUrl = globalHostname + "/app/Core/Department/delete";
 
 var globalPersonnelControlPanel = "personnelControlPanel.jsp";
 var globalUserValidationUrl = globalHostname + "/app/Users/Users/validateLogin";
-
 var globalAdminCentralPage = "userList.jsp";
 
 var coreModeList = 0;
 var coreModeInsert = 1;
 var coreModeEdit = 2;
-
 
 var coreApplicationTypeCompany = 0;
 var coreApplicationTypeEmployee = 1;
@@ -321,8 +334,6 @@ var coreApplicationTypeEmploymentType = 8;
 var coreApplicationMaintenanceCode = 9;
 var coreApplicationTypeDivision = 10;
 var coreApplicationTypeHolidayConfigure = 11;
-
 var coreAdministrationUserManager = 12;
 var coreAdministrationUserRights = 13;
 var coreApplicationJobSetup = 14;
-

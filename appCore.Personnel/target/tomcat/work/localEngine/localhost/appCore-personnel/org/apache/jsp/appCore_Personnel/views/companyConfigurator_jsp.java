@@ -54,6 +54,8 @@ public final class companyConfigurator_jsp extends org.apache.jasper.runtime.Htt
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/companyConfiguratorViewModel.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/companyHelper.js\"></script>\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/jstree/jquery.jstree.js\"></script>\r\n");
+      out.write("        <link href=\"../../css/dialogBox.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
       out.write("\r\n");
