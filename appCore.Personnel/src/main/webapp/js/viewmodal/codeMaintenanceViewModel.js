@@ -17,6 +17,9 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
 
+    self.codeType = ko.observable();
+    self.companyId = ko.observable(globalViewModel.companyId());
+
     self.commandText = ko.observable();
 
     this.centralPage = "maintenanceCode.jsp";
@@ -28,7 +31,8 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     this.codeCommand = "#maintenanceCodeCommand";
     this.gridId = "codeGrid";
     this.data = data;
-    self.codeType = codeType;
+
+    self.codeType(codeType);
 
     var form = "codeForm";
 
@@ -127,7 +131,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         var dialog = new CoreDialog();
         var helper = new EmployeeHelper();
         var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
-        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType, deleteCallBack);
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType(), deleteCallBack);
     }
 
     function deleteCallBack(status, data, globalViewModel, codeType) {
@@ -151,9 +155,9 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         switch (self.mode()) {
 
             case 0:
-                var helper = new CodeMaintenanceHelper(this.codeType);
+                var helper = new CodeMaintenanceHelper(self.codeType());
                 gridDataObject.gridUrl = helper.getUrl();
-                self.title = ko.observable(helper.getTitle(this.codeType));
+                self.title = ko.observable(helper.getTitle(self.codeType()));
 
                 var addLinkInfo = {
                     "text":"Add New Code",
@@ -179,10 +183,9 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
             case 1:
 
-
-                var helper = new CodeMaintenanceHelper(this.codeType);
+                var helper = new CodeMaintenanceHelper(self.codeType());
                 gridDataObject.gridUrl = helper.getUrl();
-                this.title = ko.observable(helper.getTitle(this.codeType));
+                this.title = ko.observable(helper.getTitle(self.codeType()));
 
                 var addLinkInfo = {
                     "text":"Save",
@@ -204,9 +207,9 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
             case 2:
 
-                var helper = new CodeMaintenanceHelper(this.codeType);
+                var helper = new CodeMaintenanceHelper(self.codeType());
                 gridDataObject.gridUrl = helper.getUrl();
-                this.title = ko.observable(helper.getTitle(this.codeType));
+                this.title = ko.observable(helper.getTitle(self.codeType()));
 
                 var addLinkInfo = {
                     "text":"Save",
@@ -231,7 +234,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
     function getDataForm(nid) {
 
-        var helper = new CodeMaintenanceHelper(this.codeType);
+        var helper = new CodeMaintenanceHelper(self.codeType());
         var dateHelper = new EmployeeHelper();
 
         var code = { id:nid  };
@@ -290,7 +293,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         code.companyRef = self.companyRef();
 
 
-        var helper = new CodeMaintenanceHelper(this.codeType);
+        var helper = new CodeMaintenanceHelper(self.codeType());
         var ajaxCore = new AjaxCore();
 
         var request = ajaxCore.sendRequestType(helper.getUrl() + "/saveOrUpdate", code, "post");

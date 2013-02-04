@@ -2156,9 +2156,9 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: rgba(237, 29, 137, 0.8);
+    /*border-color: rgba(237, 29, 137, 0.8);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(237, 29, 137, 0.8), 0 0 0 #000000;
-    outline: 0 none;
+    outline: 0 none;*/
 }
 
 input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {

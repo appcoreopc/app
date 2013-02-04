@@ -126,7 +126,6 @@ public final class demoId_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        <input type=\"text\" data-bind=\"codepicker : code, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }\" />\r\n");
       out.write("\r\n");
-      out.write("\r\n");
       out.write("        <button data-bind=\"click : fakeSubmit\">Click </button>\r\n");
       out.write("        <button data-bind=\"click : change\">Click </button>\r\n");
       out.write("\r\n");

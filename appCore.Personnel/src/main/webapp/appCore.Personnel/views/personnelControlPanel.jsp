@@ -66,7 +66,7 @@
         </div>
 
         <div class="formRow">
-        <div class="companyInfoDiv">Current Company </div> <select id="companyDropDownList" class="company">
+        <div class="companyInfoDiv"><img src="../../images/company.png"> Current company </div> <select id="companyDropDownList" class="company">
         </select>
 
 

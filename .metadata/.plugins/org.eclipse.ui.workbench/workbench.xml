@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="33" version="2.0">
+<workbench progressCount="34" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="896" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -57,6 +57,8 @@
 <part id="12"/>
 <part id="13"/>
 <part id="14"/>
+<part id="15"/>
+<part id="16"/>
 </presentation>
 </folder>
 </info>
@@ -65,7 +67,7 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CompanyController.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="1482" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CompanyService.java" partName="CompanyService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/CompanyService.java" title="CompanyService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/CompanyService.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CompanyService.java" partName="CompanyService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/CompanyService.java" title="CompanyService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/CompanyService.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/CompanyService.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2380" selectionTopPixel="810"/>
 </editor>
@@ -121,6 +123,14 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Section.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="808" selectionTopPixel="0"/>
 </editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CodeCheckerController.java" partName="CodeCheckerController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CodeCheckerController.java" title="CodeCheckerController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CodeCheckerController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CodeCheckerController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1503" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CodeCheckerHelper.java" partName="CodeCheckerHelper.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java" title="CodeCheckerHelper.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="679" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
@@ -163,17 +173,12 @@
 <view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (100 of 3184 items)"/>
-<category IMemento.internal.id="Errors"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="441" org.eclipse.ui.ide.resourceField="339" org.eclipse.ui.ide.severityAndDescriptionField="937"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
-<DESCENDING_FIELDS IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 </viewState>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
@@ -692,7 +697,6 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/CompanyService.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CompanyController.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/CompanyEntity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/AssociationMembershipTypeService.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/CompanyEntityService.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/RolesService.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/User/Service/FormsService.java"/>
@@ -704,17 +708,10 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/DepartmentController.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Department.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Section.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CodeCheckerController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java"/>
 </editors>
-<item historyLabel="CompanyService.java" index="0">
-<position/>
-</item>
-<item historyLabel="CompanyEntity.java" index="2">
-<position info="not_deleted" x="673" y="0"/>
-</item>
-<item historyLabel="AssociationMembershipTypeService.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="CompanyEntityService.java" index="4">
+<item historyLabel="CompanyEntityService.java" index="3">
 <position info="not_deleted" x="1680" y="712"/>
 </item>
 <item historyLabel="CompanyEntity.java" index="2">
@@ -756,16 +753,16 @@
 <item historyLabel="CompanyService.java" index="0">
 <position info="not_deleted" x="8" y="0"/>
 </item>
-<item historyLabel="RolesService.java" index="5">
+<item historyLabel="RolesService.java" index="4">
 <position info="not_deleted" x="1683" y="0"/>
 </item>
-<item historyLabel="FormsService.java" index="6">
+<item historyLabel="FormsService.java" index="5">
 <position info="not_deleted" x="2744" y="0"/>
 </item>
-<item historyLabel="Forms_RoleService.java" index="7">
+<item historyLabel="Forms_RoleService.java" index="6">
 <position info="not_deleted" x="2417" y="0"/>
 </item>
-<item historyLabel="UsersService.java" index="8">
+<item historyLabel="UsersService.java" index="7">
 <position info="not_deleted" x="1684" y="0"/>
 </item>
 <item historyLabel="CompanyController.java" index="1">
@@ -780,43 +777,43 @@
 <item historyLabel="CompanyService.java" index="0">
 <position info="not_deleted" x="1561" y="0"/>
 </item>
-<item historyLabel="DivisionController.java" index="9">
+<item historyLabel="DivisionController.java" index="8">
 <position info="not_deleted" x="1404" y="0"/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position/>
 </item>
 <item historyLabel="CompanyService.java" index="0">
 <position info="not_deleted" x="1205" y="2213"/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position/>
 </item>
 <item historyLabel="CompanyService.java" index="0">
 <position info="not_deleted" x="1415" y="148"/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position info="not_deleted" x="4390" y="0"/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position/>
 </item>
 <item historyLabel="CompanyService.java" index="0">
 <position info="not_deleted" x="1430" y="0"/>
 </item>
-<item historyLabel="DivisionController.java" index="9">
+<item historyLabel="DivisionController.java" index="8">
 <position info="not_deleted" x="1404" y="0"/>
 </item>
-<item historyLabel="DivisionService.java" index="10">
+<item historyLabel="DivisionService.java" index="9">
 <position info="not_deleted" x="3874" y="0"/>
 </item>
 <item historyLabel="CompanyService.java" index="0">
@@ -828,7 +825,7 @@
 <item historyLabel="CompanyService.java" index="0">
 <position info="not_deleted" x="1220" y="0"/>
 </item>
-<item historyLabel="Company.java" index="11">
+<item historyLabel="Company.java" index="10">
 <position info="not_deleted" x="3455" y="0"/>
 </item>
 <item historyLabel="CompanyService.java" index="0">
@@ -840,20 +837,29 @@
 <item historyLabel="CompanyController.java" index="1">
 <position info="not_deleted" x="1482" y="17"/>
 </item>
-<item historyLabel="DepartmentController.java" index="12">
+<item historyLabel="DepartmentController.java" index="11">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Department.java" index="13">
+<item historyLabel="Department.java" index="12">
 <position info="not_deleted" x="38" y="0"/>
 </item>
-<item historyLabel="Section.java" index="14">
+<item historyLabel="Section.java" index="13">
 <position info="not_deleted" x="808" y="0"/>
 </item>
 <item historyLabel="CompanyController.java" index="1">
 <position info="not_deleted" x="1482" y="17"/>
 </item>
-<item active="true" historyLabel="CompanyService.java" index="0">
+<item historyLabel="CompanyService.java" index="0">
 <position info="not_deleted" x="1649" y="0"/>
+</item>
+<item historyLabel="CodeCheckerController.java" index="14">
+<position info="not_deleted" x="1503" y="0"/>
+</item>
+<item historyLabel="CodeCheckerHelper.java" index="15">
+<position info="not_deleted" x="679" y="0"/>
+</item>
+<item active="true" historyLabel="CodeCheckerController.java" index="14">
+<position info="not_deleted" x="1503" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -873,6 +879,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CodeCheckerHelper.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CodeCheckerController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CodeCheckerController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/CodeCheckerController.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Section.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Section.java">
 <persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Section.java"/>
 </file>
@@ -911,12 +923,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CompanyEntity.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/CompanyEntity.java">
 <persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/CompanyEntity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Branch.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Division.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Division.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Division.java"/>
 </file>
 </mruList>
 </workbench>

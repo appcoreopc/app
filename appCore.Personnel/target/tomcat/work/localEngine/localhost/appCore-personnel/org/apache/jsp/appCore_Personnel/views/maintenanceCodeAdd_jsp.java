@@ -62,8 +62,8 @@ public final class maintenanceCodeAdd_jsp extends org.apache.jasper.runtime.Http
       out.write("\r\n");
       out.write("        var form = \"codeForm\";\r\n");
       out.write("\r\n");
-      out.write("        var codeType = parseInt(globalCodeMaintenance);\r\n");
       out.write("        var vm;\r\n");
+      out.write("        var codeType = parseInt(globalCodeMaintenance);\r\n");
       out.write("        var gridDataObject;\r\n");
       out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
@@ -117,9 +117,10 @@ public final class maintenanceCodeAdd_jsp extends org.apache.jasper.runtime.Http
       out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
-      out.write("        <div class=\"labelSection\">Name</div><span class='req'>*</span><div class=\"inputSection\"><input\r\n");
-      out.write("        type=\"text\" id=\"DivisionCode\" data-bind=\"value: name\" class=\"validate[required, maxSize[10]]\" /><i\r\n");
-      out.write("        class=\"icon-tag-1\"></i></div>\r\n");
+      out.write("        <div class=\"labelSection\">Name</div><span class='req'>*</span><div class=\"inputSection\">\r\n");
+      out.write("           <input type=\"text\" id=\"code\" data-bind=\"codepicker : name, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }\" class=\"validate[required, maxSize[10]]\" /></div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"rightSection\">\r\n");

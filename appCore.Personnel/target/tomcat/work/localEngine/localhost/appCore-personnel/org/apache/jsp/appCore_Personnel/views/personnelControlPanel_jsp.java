@@ -254,7 +254,7 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRow\">\r\n");
-      out.write("        <div class=\"companyInfoDiv\">Current Company </div> <select id=\"companyDropDownList\" class=\"company\">\r\n");
+      out.write("        <div class=\"companyInfoDiv\"><img src=\"../../images/company.png\"> Current company </div> <select id=\"companyDropDownList\" class=\"company\">\r\n");
       out.write("        </select>\r\n");
       out.write("\r\n");
       out.write("\r\n");
