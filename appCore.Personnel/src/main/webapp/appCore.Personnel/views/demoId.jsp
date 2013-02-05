@@ -49,6 +49,8 @@
                 var self = this;
                 self.code = ko.observable();
 
+                self.errorInForm = ko.observable();
+
                 self.codeType = ko.observable(2);
                 self.companyId = ko.observable('1');
 
@@ -72,7 +74,7 @@
 
         </script>
 
-        <input type="text" data-bind="codepicker : code, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }" />
+        <input type="text" data-bind="tcodepicker : code, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }" />
 
         <button data-bind="click : fakeSubmit">Click </button>
         <button data-bind="click : change">Click </button>

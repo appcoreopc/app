@@ -745,6 +745,7 @@ cite {
 
 .navbar-inner {
     background: -moz-linear-gradient(center top, #FFFFFF 0%, #F9F9F9 50%, #F1F1F1 50.1%, #EFEFEF 100%) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(top , #FFFFFF 0%, #F9F9F9 50%, #F1F1F1 50.1%, #EFEFEF 100%) repeat scroll 0 0 transparent;
     border: 1px solid #D0D0D0;
     border-radius: 4px 4px 4px 4px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 5px 2px #FFFFFF inset, 0 0 0 #000000;

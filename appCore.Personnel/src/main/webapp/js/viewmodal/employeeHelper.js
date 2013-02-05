@@ -69,7 +69,7 @@ var EmployeeHelper = function () {
 
     this.getIndustryCodeByCompany = function (list, entity) {
 
-        var entityObject = { "id": entity };
+        var entityObject = { "id":entity };
 
         var ajaxCore = new AjaxCore();
         var industryRequest = ajaxCore.sendRequest(globalEmployeeIndustryListByCompany, entityObject, "get");
@@ -105,7 +105,7 @@ var EmployeeHelper = function () {
 
     this.getSpecialtyCodeByCompany = function (list, entity) {
 
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var specialtyRequest = ajaxCore.sendRequest(globalEmployeeSpecialtyListByCompany, entityObject, "get");
 
@@ -126,7 +126,6 @@ var EmployeeHelper = function () {
         return request;
 
     }
-
 
 
     this.getIndustryCodeAsArray = function () {
@@ -151,7 +150,7 @@ var EmployeeHelper = function () {
 
     this.getLevelCodeByCompany = function (list, entity) {
 
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
 
         var levelRequest = ajaxCore.sendRequest(globalEmployeeLevelListByCompany, entityObject, "get");
@@ -178,7 +177,7 @@ var EmployeeHelper = function () {
 
 
     this.getAssociationMemberCodeByCompany = function (list, entity) {
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var levelRequest = ajaxCore.sendRequest(globalEmployeeAssociationMemberTypeListByCompany, entityObject, "get");
         levelRequest.success(function (data, status, xhrObj) {
@@ -204,7 +203,7 @@ var EmployeeHelper = function () {
 
     this.getFamilyMemberCodeByCompany = function (list, entity) {
 
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
 
         var levelRequest = ajaxCore.sendRequest(globalEmployeeFamilyMemberTypelList, entityObject, "get");
@@ -215,7 +214,6 @@ var EmployeeHelper = function () {
             }
         });
     }
-
 
 
     this.getFieldCode = function (list) {
@@ -231,7 +229,7 @@ var EmployeeHelper = function () {
 
     this.getFieldCodeByCompany = function (list, entity) {
 
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
 
         var ajaxCore = new AjaxCore();
         var fieldRequest = ajaxCore.sendRequest(globalEmployeeFieldExpertiseListByCompany, entityObject, "get");
@@ -258,7 +256,7 @@ var EmployeeHelper = function () {
 
     this.getSalutationCodeByCompany = function (list, entity) {
 
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var salutationRequest = ajaxCore.sendRequest(globalEmployeeSalutationListByCompany, entityObject, "get");
         salutationRequest.success(function (data, status, xhrObj) {
@@ -270,7 +268,7 @@ var EmployeeHelper = function () {
     }
 
     this.getCurrencyByCompany = function (list, entity) {
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var salutationRequest = ajaxCore.sendRequest(globalCurrencyListByCompany, entityObject, "get");
         salutationRequest.success(function (data, status, xhrObj) {
@@ -282,7 +280,7 @@ var EmployeeHelper = function () {
     }
 
     this.getCurrency = function (list, entity) {
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var salutationRequest = ajaxCore.sendRequest(globalCurrencyList, entityObject, "get");
         salutationRequest.success(function (data, status, xhrObj) {
@@ -366,7 +364,7 @@ var EmployeeHelper = function () {
     }
 
     this.getCountryCodeByCompany = function (list, entity) {
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var salutationRequest = ajaxCore.sendRequest(globalCountryListByCompany, entityObject, "get");
         salutationRequest.success(function (data, status, xhrObj) {
@@ -389,7 +387,7 @@ var EmployeeHelper = function () {
     }
 
     this.getGenderCodeByCompany = function (list, entity) {
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var genderRequest = ajaxCore.sendRequest(globalEmployeeGenderListByCompany, entityObject, "get");
         genderRequest.success(function (data, status, xhrObj) {
@@ -401,7 +399,7 @@ var EmployeeHelper = function () {
     }
 
     this.getMaritalStatusCodeByCompany = function (list, entity) {
-        var entityObject = { id : entity };
+        var entityObject = { id:entity };
         var ajaxCore = new AjaxCore();
         var maritalRequest = ajaxCore.sendRequest(globalEmployeeMaritalStatusListByCompany, entityObject, "get");
         maritalRequest.success(function (data, status, xhrObj) {
@@ -761,7 +759,7 @@ ko.bindingHandlers.codepicker = {
         });
 
     },
-    update:function (element, valueAccessor, allBindingsAccessor) {
+    update:function (element, valueAccessor, allBindingsAccessor, viewModel) {
 
         //initialize with some optional options
         var options = allBindingsAccessor().codeEntity;
@@ -787,6 +785,71 @@ ko.bindingHandlers.codepicker = {
                         $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
                     }
                     else {
+                        if (viewModel.errorInForm != undefined) {
+                            viewModel.errorInForm(true);
+                        }
+                        $(element).next('i').next('span').remove();
+                        $(element).next('i').after("<span><i class=icon-cancel-circle-1></i></span>");
+
+                    }
+                });
+            }
+        }
+    }
+};
+
+ko.bindingHandlers.tcodepicker = {
+
+    init:function (element, valueAccessor, allBindingsAccessor) {
+
+        $(element).after("<i class='icon-tag-1'></i>");
+
+        var value = ko.utils.unwrapObservable(valueAccessor());
+
+        //handle the field changing
+        ko.utils.registerEventHandler(element, "change", function () {
+            var observable = valueAccessor();
+            observable($(element).val());
+        });
+
+        //handle disposal (if KO removes by the template binding)
+        ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+            $(element).datepicker("destroy");
+        });
+
+    },
+    update:function (element, valueAccessor, allBindingsAccessor, viewModel) {
+
+        //initialize with some optional options
+        var options = allBindingsAccessor().codeEntity;
+
+        if (options != undefined) {
+            var value = ko.utils.unwrapObservable(valueAccessor());
+
+            var codeTypeOption = options.codeType;
+            var companyIdOption = options.companyId;
+
+            var codeEntity = {
+                codeName:value,
+                codeType:parseInt(codeTypeOption),
+                companyId:parseInt(companyIdOption)
+            };
+
+            if (value != undefined && value != "") {
+                var ajaxCore = new AjaxCore();
+                var request = ajaxCore.sendRequestType(globalCodeCheckExist, codeEntity, "post");
+                request.success(function (data, status, xhrObj) {
+                    if (data.messageCode == 0) {
+                        $(element).next('i').next('span').remove();
+                        $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
+                    }
+                    else {
+
+                        if (viewModel.errorInForm != undefined) {
+                            viewModel.errorInForm(true);
+                            console.log(viewModel.errorInForm());
+                        }
+
                         $(element).next('i').next('span').remove();
                         $(element).next('i').after("<span><i class=icon-cancel-circle-1></i></span>");
 

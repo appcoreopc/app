@@ -80,7 +80,14 @@ public final class companyAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                var input = { \"id\" : coreCompanyPage, \"roleId\" : 1 };\r\n");
       out.write("                var coreCommand = new CoreCommand();\r\n");
       out.write("                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);\r\n");
-      out.write("                ko.applyBindings(vm, document.getElementById(\"companyCodeSetupTabs\"));\r\n");
+      out.write("\r\n");
+      out.write("                try {\r\n");
+      out.write("                    ko.applyBindings(vm, document.getElementById(\"companyCodeSetupTabs\"));\r\n");
+      out.write("                }\r\n");
+      out.write("                catch (ex)\r\n");
+      out.write("                {\r\n");
+      out.write("                    console.log(ex)\r\n");
+      out.write("                }\r\n");
       out.write("\r\n");
       out.write("                var tab = $(\"#companyCodeSetupTabs\").tabs();\r\n");
       out.write("\r\n");

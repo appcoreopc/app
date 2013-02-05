@@ -104,13 +104,6 @@ var CompanyConfiguratorViewModel = function (globalViewModel) {
     //    throw "Application Type is not of type holidayGroup.";
     //}
 
-    globalViewModel.companyId.subscribe(function (newValue) {
-        getData(newValue);
-    });
-
-    self.removeFromGroup = function (data) {
-    }
-
     function getData(value) {
         var helper = new CompanyHelper();
         var entityObject = { id:value };

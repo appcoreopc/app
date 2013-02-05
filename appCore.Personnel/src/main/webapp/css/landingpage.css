@@ -12,6 +12,7 @@
 
 .overview .categories ul li a.callout {
     background: -moz-linear-gradient(center top , #FFFFFF 0%, #FFFFFF 50%, #F0F0F0 100%) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(top , #FFFFFF 0%, #FFFFFF 50%, #F0F0F0 100%) repeat scroll 0 0 transparent;
     border: 3px solid #FFFFFF;
     border-radius: 10px 10px 10px 10px; 
     box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.45);

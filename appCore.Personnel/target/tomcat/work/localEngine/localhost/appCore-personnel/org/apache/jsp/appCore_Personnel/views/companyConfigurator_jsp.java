@@ -68,7 +68,7 @@ public final class companyConfigurator_jsp extends org.apache.jasper.runtime.Htt
       out.write("        }\r\n");
       out.write("        catch (ex)\r\n");
       out.write("        {\r\n");
-      out.write("        console.log(ex)\r\n");
+      out.write("            console.log(ex)\r\n");
       out.write("        }\r\n");
       out.write("        });\r\n");
       out.write("\r\n");

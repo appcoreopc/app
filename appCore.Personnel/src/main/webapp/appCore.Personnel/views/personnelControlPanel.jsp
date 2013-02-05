@@ -59,11 +59,17 @@
         </script>
 
         <div class="form dataEntry">
-        <h1>My Page</h1>
+        <h1></h1>
 
         <div class="formRow">
-
         </div>
+
+        <div class="formRow">
+        </div>
+
+        <div class="formRow">
+        </div>
+
 
         <div class="formRow">
         <div class="companyInfoDiv"><img src="../../images/company.png"> Current company </div> <select id="companyDropDownList" class="company">

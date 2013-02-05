@@ -54,53 +54,6 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
         self.enableDelete = ko.observable(helper.getEnableDelete(audMode));
     }
 
-    if (mode != 0)
-        self.mode = ko.observable(mode);
-
-    if (mode == 1) {
-        var employeeGeneralInfo = new EmployeeGeneralInfo();
-        self.bindingSource = ko.observableArray([employeeGeneralInfo]);
-    }
-
-    if (mode != 1) {
-        getGeneralInfo(employeeId);
-    }
-
-    function getGeneralInfo(code) {
-
-        var employeeCode = { id:code };
-        var request = ajaxCore.sendRequestSequential(globalEmployeeGetUrl, employeeCode, "get");
-
-        request.success(function (data, status, xhrObj) {
-
-            var employeeGeneralInfo = new EmployeeGeneralInfo();
-
-            employeeGeneralInfo.nid(data.nid);
-            employeeGeneralInfo.name(data.name);
-            employeeGeneralInfo.code(data.code);
-            employeeGeneralInfo.salutation(data.salutation);
-            employeeGeneralInfo.firstName(data.firstName);
-            employeeGeneralInfo.middleName(data.middleName);
-            employeeGeneralInfo.lastName(data.lastName);
-
-            employeeGeneralInfo.gender(data.gender);
-            employeeGeneralInfo.birthDate(helper.getDateOnly(new Date(data.birthDate)));
-
-            employeeGeneralInfo.age(data.age);
-            employeeGeneralInfo.maritalStatus(data.maritalStatus);
-            employeeGeneralInfo.marriageDate(helper.getDateOnly(new Date(data.marriageDate)));
-            employeeGeneralInfo.race(data.race);
-
-            employeeGeneralInfo.religion(data.religion);
-            employeeGeneralInfo.nationality(data.nationality);
-
-            employeeGeneralInfo.countryOrigin(data.countryOrigin);
-            employeeGeneralInfo.disabled(data.disabled);
-
-            self.bindingSource = ko.observableArray([employeeGeneralInfo]);
-
-        });
-    }
 
     self.editForm = function () {
         self.mode(2);
@@ -163,6 +116,7 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
 
         employee.race = employeeGeneralInfo.race();
         employee.religion = employeeGeneralInfo.religion();
+
         employee.nationality = employeeGeneralInfo.nationality();
         employee.countryOrigin = employeeGeneralInfo.countryOrigin();
         employee.disabled = employeeGeneralInfo.disabled();
@@ -175,7 +129,6 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
         });
     }
 
-
     helper.getCountryCode(self.countryList);
     helper.getSalutationCode(self.salutationList);
     helper.getGenderCode(self.genderList);
@@ -183,6 +136,35 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     helper.getRaceCode(self.raceList);
     helper.getReligionCode(self.religionList);
     helper.getNationalityCode(self.nationalityList);
+
+
+    self.initCountryCode = function () {
+        helper.getCountryCode(self.countryList);
+    }
+
+    self.initSalutationCode = function () {
+        helper.getSalutationCode(self.salutationList);
+    }
+
+    self.initGenderCode = function () {
+        helper.getGenderCode(self.genderList);
+    }
+
+    self.initMaritalStatusCode = function () {
+        helper.getMaritalStatusCode(self.maritalStatusList);
+    }
+
+    self.initRaceCode = function () {
+        helper.getRaceCode(self.raceList);
+    }
+
+    self.initReligionCode = function () {
+        helper.getReligionCode(self.religionList);
+    }
+
+    self.initNationalityCode = function () {
+        helper.getNationalityCode(self.nationalityList);
+    }
 
     self.getCountryCode = function (code) {
         return helper.findCodeInList(code(), self.countryList());
@@ -215,4 +197,58 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     self.remove = function (element) {
         self.initData.remove(element);
     }
+
+    self.applyBinding = function () {
+
+        self.mode(2);
+    }
+
+    self.getGeneralInfo = function (code) {
+
+        var employeeCode = { id:code };
+        var request = ajaxCore.sendRequestSequential(globalEmployeeGetUrl, employeeCode, "get");
+
+        request.success(function (data, status, xhrObj) {
+
+            var employeeGeneralInfo = new EmployeeGeneralInfo();
+            employeeGeneralInfo.nid(data.nid);
+            employeeGeneralInfo.name(data.name);
+            employeeGeneralInfo.code(data.code);
+            employeeGeneralInfo.salutation(data.salutation);
+            employeeGeneralInfo.firstName(data.firstName);
+            employeeGeneralInfo.middleName(data.middleName);
+            employeeGeneralInfo.lastName(data.lastName);
+
+            employeeGeneralInfo.gender(data.gender);
+            employeeGeneralInfo.birthDate(helper.getDateOnly(new Date(data.birthDate)));
+
+            employeeGeneralInfo.age(data.age);
+            employeeGeneralInfo.maritalStatus(data.maritalStatus);
+            employeeGeneralInfo.marriageDate(helper.getDateOnly(new Date(data.marriageDate)));
+            employeeGeneralInfo.race(data.race);
+
+
+            employeeGeneralInfo.religion(data.religion);
+            employeeGeneralInfo.nationality(data.nationality);
+
+            employeeGeneralInfo.countryOrigin(data.countryOrigin);
+            employeeGeneralInfo.disabled(data.disabled);
+
+            self.bindingSource = ko.observableArray([employeeGeneralInfo]);
+
+        });
+    }
+
+    if (mode != 0)
+        self.mode = ko.observable(mode);
+
+    if (mode == 1) {
+        var employeeGeneralInfo = new EmployeeGeneralInfo();
+        self.bindingSource = ko.observableArray([employeeGeneralInfo]);
+    }
+
+    if (mode != 1) {
+        //self.getGeneralInfo(employeeId, callBack);
+    }
+
 }
