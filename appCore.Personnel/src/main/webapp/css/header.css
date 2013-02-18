@@ -744,12 +744,14 @@ cite {
 }
 
 .navbar-inner {
-    background: -moz-linear-gradient(center top, #FFFFFF 0%, #F9F9F9 50%, #F1F1F1 50.1%, #EFEFEF 100%) repeat scroll 0 0 transparent;
+
+  /*  background: -moz-linear-gradient(center top, #FFFFFF 0%, #F9F9F9 50%, #F1F1F1 50.1%, #EFEFEF 100%) repeat scroll 0 0 transparent;
     background: -webkit-linear-gradient(top , #FFFFFF 0%, #F9F9F9 50%, #F1F1F1 50.1%, #EFEFEF 100%) repeat scroll 0 0 transparent;
     border: 1px solid #D0D0D0;
     border-radius: 4px 4px 4px 4px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 5px 2px #FFFFFF inset, 0 0 0 #000000;
-    padding: 7px 20px;
+    padding: 7px 20px;*/
+
 }
 
 .navbar .brand:hover {
@@ -796,17 +798,34 @@ cite {
 }
 
 .navbar-top .navbar-inner, .navbar-fixed-top .navbar-inner {
+   /*
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: -moz-use-text-color -moz-use-text-color #D0D0D0;
+
+    border-radius: 0 0 0 0;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    padding-left: 0;
+    padding-right: 0;*/
+
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #DDDDDD;
+    border-image: none;
     border-radius: 0 0 0 0;
     border-style: none none solid;
     border-width: 0 0 1px;
     padding-left: 0;
     padding-right: 0;
+    padding: 5px 0;
+
 }
 
 .navbar .nav {
@@ -2154,6 +2173,7 @@ input, select, textarea {
     -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 0 #000000;
     margin-top: 8px;
+    border-radius: 6px 6px 6px 6px;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -4828,9 +4848,7 @@ ui-state-hover a, .ui-state-hover a:hover {
     height: 100%;
     background-color: #000;
     filter: alpha(opacity = 50);
-    -moz-opacity: 0.5;
-    -khtml-opacity: 0.5;
-    opacity: 0.5;
+    opacity: 0.1;
     z-index: 1001;
 }
 

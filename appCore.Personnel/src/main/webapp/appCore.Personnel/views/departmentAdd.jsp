@@ -129,7 +129,12 @@
 
         <script type="text/html" id="companyEntityAddTemplate">
 
+
         <div class="form">
+
+        <div class="formMainContent">
+
+
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Department  Code</div><span class='req'>*</span><div class="inputSection"><input
@@ -150,9 +155,9 @@
 
 
         <div class="formRow">
-        <div class="labelSection">Description</div><span class='req'>&nbsp;</span><div class="inputSection"><input
+        <div class="labelSection">Description</div><span class='req'>&nbsp;</span><div class="inputSection"><textarea
         type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
-        placeholder="description for new department"/></div>
+        placeholder="description for new department"></textarea></div>
         </div>
 
         <div> <div class="maintenanceCommandSpace"></div>
@@ -162,6 +167,9 @@
         <button id="cancelBtn" type="button" data-bind="click : cancelUpdate" class="command">Cancel</button>
         </div>
         </div>
+
+        </div>
+
         <div>&nbsp;
         </div>
         <div>

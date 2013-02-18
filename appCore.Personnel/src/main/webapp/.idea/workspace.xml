@@ -20,37 +20,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="demoId.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/demoId.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="4" selection-start="1372" selection-end="1428" vertical-scroll-proportion="-0.65384614">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="employeeAdd.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeAdd.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="38" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-20.923077">
+            <state line="32" column="33" selection-start="1007" selection-end="1007" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employeeGeneralInfoView.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="employeeGeneralInfoView.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="306" column="0" selection-start="9566" selection-end="9566" vertical-scroll-proportion="0.101149425">
+            <state line="338" column="0" selection-start="10448" selection-end="10448" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/company.css">
+      <file leaf-file-name="personnelControlPanel.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="0" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
+            <state line="17" column="0" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -59,43 +50,102 @@
       <file leaf-file-name="personnel.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/personnel.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="1" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+            <state line="593" column="1" selection-start="11268" selection-end="11268" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1361183526176" expanded="true" signature="802:879" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="899:935" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="965:1100" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="1136:1190" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="5186:5376" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="5396:5444" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="5474:5482" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="5502:5615" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="5651:5660" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="5680:5730" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="8915:9055" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="9113:9126" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="9305:9418" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="9473:9548" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="9610:9636" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="9649:9651" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="9782:9787" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="10176:10185" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="10217:10272" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="10491:10632" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="10669:10673" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="10743:10800" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="10818:10922" placeholder="{...}" />
+                <marker date="1361183526176" expanded="true" signature="11034:11075" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="branchAdd.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="173" column="23" selection-start="6898" selection-end="6898" vertical-scroll-proportion="-9.461538">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employeeGeneralInfoViewModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/viewmodal/employeeGeneralInfoViewModel.js">
+      <file leaf-file-name="branch.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branch.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="25" column="44" selection-start="851" selection-end="866" vertical-scroll-proportion="-16.346153">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employeeList.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeList.jsp">
+      <file leaf-file-name="branchViewModel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/viewmodal/branchViewModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="49" selection-start="953" selection-end="953" vertical-scroll-proportion="-17.653847">
+            <state line="96" column="52" selection-start="2497" selection-end="2521" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employeeViewModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/viewmodal/employeeViewModel.js">
+      <file leaf-file-name="coreDialog.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/coreDialog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="1916" selection-end="1916" vertical-scroll-proportion="0.0">
+            <state line="78" column="59" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.46875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employeeHelper.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/viewmodal/employeeHelper.js">
+      <file leaf-file-name="header.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="801" column="0" selection-start="24960" selection-end="24960" vertical-scroll-proportion="0.0">
+            <state line="4850" column="16" selection-start="111855" selection-end="111855" vertical-scroll-proportion="-16.88">
+              <folding>
+                <marker date="1361184074986" expanded="true" signature="1004:1183" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="4367:4438" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="42978:43010" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43078:43082" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43138:43142" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43199:43347" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43417:43488" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43535:43539" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43600:43604" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43630:43634" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43666:43705" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="43729:44160" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="44191:44215" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="44278:44328" placeholder="{...}" />
+                <marker date="1361184074986" expanded="true" signature="44384:44453" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appDefinition.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="18" selection-start="4" selection-end="18" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,22 +161,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/viewmodal/holidaySetupListViewModel.js" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/holidayGroup.jsp" />
-        <option value="$PROJECT_DIR$/js/viewmodal/codeMaintenanceViewModel.js" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/maintenanceCodeAdd.jsp" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/companyConfigurator.jsp" />
-        <option value="$PROJECT_DIR$/js/viewmodal/companyConfiguratorViewModel.js" />
-        <option value="$PROJECT_DIR$/css/header.css" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp" />
-        <option value="$PROJECT_DIR$/css/landingpage.css" />
+        <option value="$PROJECT_DIR$/css/codeMaintenance.css" />
+        <option value="$PROJECT_DIR$/includes/footer.html" />
         <option value="$PROJECT_DIR$/landingpage.jsp" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/demoId.jsp" />
-        <option value="$PROJECT_DIR$/js/viewmodal/employeeHelper.js" />
+        <option value="$PROJECT_DIR$/css/default.css" />
+        <option value="$PROJECT_DIR$/css/employeeGroup.css" />
         <option value="$PROJECT_DIR$/css/company.css" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/sectionAdd.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/divisionAdd.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/unitAdd.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/departmentAdd.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp" />
         <option value="$PROJECT_DIR$/css/personnel.css" />
-        <option value="$PROJECT_DIR$/js/viewmodal/employeeGeneralInfoViewModel.js" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp" />
+        <option value="$PROJECT_DIR$/js/viewmodal/branchViewModel.js" />
+        <option value="$PROJECT_DIR$/css/header.css" />
+        <option value="$PROJECT_DIR$/js/coreDialog.js" />
       </list>
     </option>
   </component>
@@ -162,7 +212,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -205,11 +254,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viewmodal" />
+              <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -240,27 +285,10 @@
               <option name="myItemId" value="appCore.Personnel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="appCore.Personnel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,8 +296,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editing.templates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/js/viewmodal/Administration" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -333,7 +361,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2660152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2660152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947916" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -394,106 +422,145 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/departmentAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="2166" selection-end="2166" vertical-scroll-proportion="-32.153847" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/initTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="55" selection-start="1630" selection-end="1685" vertical-scroll-proportion="-16.346153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="747" column="23" selection-start="11393" selection-end="11393" vertical-scroll-proportion="0.2785957" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landingpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="97" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/employeeHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="801" column="0" selection-start="24960" selection-end="24960" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/demoId.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="4" selection-start="1372" selection-end="1428" vertical-scroll-proportion="-0.65384614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="49" selection-start="953" selection-end="953" vertical-scroll-proportion="-17.653847">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/employeeViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="1916" selection-end="1916" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="38" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-20.923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyEdit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="0" selection-start="5060" selection-end="5060" vertical-scroll-proportion="0.01954023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="36" selection-start="145" selection-end="145" vertical-scroll-proportion="-1.3076923">
-          <folding />
-        </state>
+        <state line="158" column="63" selection-start="5785" selection-end="5785" vertical-scroll-proportion="0.01954023" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/company.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="0" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="71" column="30" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.5636161" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/personnel.css">
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/sectionAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="1" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="133" column="37" selection-start="4607" selection-end="4637" vertical-scroll-proportion="0.01954023" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/employeeGeneralInfoViewModel.js">
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/divisionAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="157" column="18" selection-start="5711" selection-end="5711" vertical-scroll-proportion="0.01954023" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/section.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="9" selection-start="654" selection-end="654" vertical-scroll-proportion="0.21839081" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="33" selection-start="1007" selection-end="1007" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="306" column="0" selection-start="9566" selection-end="9566" vertical-scroll-proportion="0.101149425">
+        <state line="338" column="0" selection-start="10448" selection-end="10448" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="18" selection-start="4" selection-end="18" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3664" column="21" selection-start="108501" selection-end="108501" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/personnel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="593" column="1" selection-start="11268" selection-end="11268" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1361183526176" expanded="true" signature="802:879" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="899:935" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="965:1100" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="1136:1190" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="5186:5376" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="5396:5444" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="5474:5482" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="5502:5615" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="5651:5660" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="5680:5730" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="8915:9055" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="9113:9126" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="9305:9418" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="9473:9548" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="9610:9636" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="9649:9651" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="9782:9787" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="10176:10185" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="10217:10272" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="10491:10632" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="10669:10673" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="10743:10800" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="10818:10922" placeholder="{...}" />
+            <marker date="1361183526176" expanded="true" signature="11034:11075" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="173" column="23" selection-start="6898" selection-end="6898" vertical-scroll-proportion="-9.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branch.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="44" selection-start="851" selection-end="866" vertical-scroll-proportion="-16.346153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/branchViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="52" selection-start="2497" selection-end="2521" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4850" column="16" selection-start="111855" selection-end="111855" vertical-scroll-proportion="-16.88">
+          <folding>
+            <marker date="1361184074986" expanded="true" signature="1004:1183" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="4367:4438" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="42978:43010" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43078:43082" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43138:43142" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43199:43347" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43417:43488" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43535:43539" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43600:43604" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43630:43634" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43666:43705" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="43729:44160" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="44191:44215" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="44278:44328" placeholder="{...}" />
+            <marker date="1361184074986" expanded="true" signature="44384:44453" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/coreDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="59" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.46875">
           <folding />
         </state>
       </provider>

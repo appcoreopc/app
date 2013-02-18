@@ -8,7 +8,8 @@ html, body {
 body {
     color: #222222;
     font: 400 14px/19px Roboto,sans-serif;
-    padding: 0 10px;
+    margin: 0;
+    padding: 0;
     height: auto;
 }
 
@@ -3249,4 +3250,14 @@ a.download-sdk {
 .liveExample { height:20em; overflow:auto } /* Mobile Safari reflows pages slowly, so fix the height to avoid
         the need for reflows */
 
+.bottomContainer {
+    width : 100%;
+    background-color: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    margin: 0px;
+    padding : 0px 0px 0px 0px;
+}
 
+.landingView {
+    height: 820px;
+}

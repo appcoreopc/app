@@ -67,7 +67,6 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        </head>\r\n");
       out.write("        <body>\r\n");
       out.write("\r\n");
-      out.write("\r\n");
       out.write("        ");
       out.write("<link href=\"../../css/header.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("<link href=\"../../css/default.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
@@ -210,9 +209,9 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        var coreLoadMask = new CoreLoadMask();\r\n");
       out.write("        coreLoadMask.bindAjaxEvent(\"../../images/ajax-loader.gif\");\r\n");
       out.write("\r\n");
-      out.write("        if (sessionStorage.username == undefined || sessionStorage.username == null)\r\n");
+      out.write("            if (sessionStorage.username == undefined || sessionStorage.username == null)\r\n");
       out.write("            {\r\n");
-      out.write("                goToPage(\"http://localhost:8080/appCore-personnel/\");\r\n");
+      out.write("                    goToPage(globalHostname + \"appCore-personnel/\");\r\n");
       out.write("            }\r\n");
       out.write("\r\n");
       out.write("            try\r\n");
@@ -259,11 +258,10 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"formRow\">\r\n");
-      out.write("        <div class=\"companyInfoDiv\"><img src=\"../../images/company.png\"> Current company </div> <select id=\"companyDropDownList\" class=\"company\">\r\n");
-      out.write("        </select>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("        <div class=\"formRowCompany\">\r\n");
+      out.write("        <div class=\"companyInfoDiv\">Current company </div>\r\n");
+      out.write("        <div class=\"companyInfoSelect\"> <select id=\"companyDropDownList\" class=\"company\">\r\n");
+      out.write("        </select> </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -282,6 +280,8 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        ");
+      out.write("<div class=\"bottomContainer\">\r\n");
+      out.write("\r\n");
       out.write("<div class=\"container\">\r\n");
       out.write("      <div class=\"row\" id=\"footer\">\r\n");
       out.write("        <div class=\"span3\">\r\n");
@@ -322,6 +322,9 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("        </div>\r\n");
       out.write("      </div> \r\n");
       out.write("    </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("</div>");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </body>\r\n");

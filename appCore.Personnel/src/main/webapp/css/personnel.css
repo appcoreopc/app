@@ -5,7 +5,7 @@
 }
 
 .sectionalForm {
-
+    padding-top: 18px;
 }
 
 div.leftSection {
@@ -18,19 +18,32 @@ div.rightSection {
 
 .inputSection {
     padding-left: 20px;
-    display: inline-block;
+  /*  display: inline-block;*/
+    display: inline;
 }
 
 .inputSection > select {
     height: 30px;
 }
 
+/*
 .labelSection {
     width: 150px;
     display: inline-block;
     padding-right: 20px;
     font-weight: bold;
 }
+*/
+
+.labelSection {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro,arial,sans-serif;
+    padding-left: 30px;
+    padding-right: 20px;
+    width: 150px;
+}
+
 
 .multiLinelabelSection {
     width: 150px;
@@ -42,7 +55,7 @@ div.rightSection {
 .inlineLabelSection {
     display: inline-block;
     padding-left: 30px;
-    color : #3B5998;
+    color : #7B746E;
 }
 
 .formRow {
@@ -252,9 +265,12 @@ span.fieldSpacer {
 
 #companyDropDownList {
 
+    border: 1px solid #CCCCCC;
+    box-shadow: none;
+    color: #7B746E;
     font-size: 18px;
     height: 34px;
-    width: 70%;
+    width: 780px;
 }
 
 .widget {
@@ -333,7 +349,8 @@ span.fieldSpacer {
     color: #fff;
     padding: 4px 0px 4px 8px;
     border-color: #C5C5C5;
-    border-style: solid;
+    /*border-style: solid;*/
+    border-style: solid solid none;
     border-width: 1px;
     margin: 0px 0px 0px 0px;
     color: #676767;
@@ -565,5 +582,21 @@ span.fieldSpacer {
 
 .companyInfoDiv {
    display: inline;
-    font-size:  20px;
+   font-size:  20px;
+   text-align: left;
+    color: #3399CC;
+}
+
+
+.formMainContent {
+    border: 1px solid #D1D3D4;
+    box-shadow: none;
+}
+
+.formRowCompany {
+    border: 1px solid #C5C5C5;
+    padding: 10px;
+    background: -moz-linear-gradient(center top , #FFFFFF 0px, #F4F4F4 100%) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(top , #FFFFFF 0px, #F4F4F4 100%) repeat scroll 0 0 transparent;
+    text-align: center;
 }

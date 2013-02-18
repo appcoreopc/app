@@ -268,8 +268,16 @@ public final class gradeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("            $(\"#\" + formName).validationEngine();\r\n");
-      out.write("            var vm = new GradeInfoViewModel(globalViewModel);\r\n");
-      out.write("            ko.applyBindings(vm, document.getElementById(\"gradeForm\"));\r\n");
+      out.write("             try\r\n");
+      out.write("            {\r\n");
+      out.write("                var vm = new GradeInfoViewModel(globalViewModel);\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"gradeForm\"));\r\n");
+      out.write("            }\r\n");
+      out.write("            catch (ex)\r\n");
+      out.write("            {\r\n");
+      out.write("                console.log(ex)\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
       out.write("            $(\"#accordianGrade\").accordion({collapsible : true, active: false});\r\n");
       out.write("        });\r\n");
       out.write("\r\n");

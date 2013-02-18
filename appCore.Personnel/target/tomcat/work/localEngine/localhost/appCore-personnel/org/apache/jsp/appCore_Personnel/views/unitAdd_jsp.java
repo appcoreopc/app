@@ -180,6 +180,10 @@ public final class unitAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <script type=\"text/html\" id=\"companyEntityAddTemplate\">\r\n");
       out.write("\r\n");
       out.write("        <div class=\"form\">\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"formMainContent\">\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Unit  Code</div><span class='req'>*</span><div class=\"inputSection\"><input\r\n");
@@ -200,9 +204,9 @@ public final class unitAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRow\">\r\n");
-      out.write("        <div class=\"labelSection\">Description</div><span class='req'>&nbsp;</span><div class=\"inputSection\"><input\r\n");
+      out.write("        <div class=\"labelSection\">Description</div><span class='req'>&nbsp;</span><div class=\"inputSection\"><textarea\r\n");
       out.write("        type=\"text\" class=\"validate[required, maxSize[80]]\" id=\"Description\" data-bind=\"value : description\"\r\n");
-      out.write("        placeholder=\"description for new unit\"/></div>\r\n");
+      out.write("        placeholder=\"description for new unit\"></textarea></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div> <div class=\"maintenanceCommandSpace\"></div>\r\n");
@@ -212,6 +216,12 @@ public final class unitAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <button id=\"cancelBtn\" type=\"button\" data-bind=\"click : cancelUpdate\" class=\"command\">Cancel</button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        <div>&nbsp;\r\n");
       out.write("        </div>\r\n");
       out.write("        <div>\r\n");
@@ -261,16 +271,25 @@ public final class unitAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        var formName = \"unitForm\";\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
-      out.write("        $(\"#\" + formName).validationEngine();\r\n");
-      out.write("        var vm = new UnitInfoViewModel(globalViewModel);\r\n");
-      out.write("        ko.applyBindings(vm, document.getElementById(\"unitForm\"));\r\n");
-      out.write("        $(\"#accordianUnit\").accordion({collapsible : true, active: false});\r\n");
+      out.write("            $(\"#\" + formName).validationEngine();\r\n");
+      out.write("\r\n");
+      out.write("            try\r\n");
+      out.write("            {\r\n");
+      out.write("                var vm = new UnitInfoViewModel(globalViewModel);\r\n");
+      out.write("                ko.applyBindings(vm, document.getElementById(\"unitForm\"));\r\n");
+      out.write("            }\r\n");
+      out.write("            catch (ex)\r\n");
+      out.write("            {\r\n");
+      out.write("                console.log(ex)\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            $(\"#accordianUnit\").accordion({collapsible : true, active: false});\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
       out.write("        <form id=\"unitForm\">\r\n");
-      out.write("        <div id=\"unitMaintenance\" data-bind=\"template : { name : templateToUse} \">\r\n");
+      out.write("        <div id=\"unitMaintenance\" data-bind=\"template : { name : templateToUse } \">\r\n");
       out.write("        </form>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

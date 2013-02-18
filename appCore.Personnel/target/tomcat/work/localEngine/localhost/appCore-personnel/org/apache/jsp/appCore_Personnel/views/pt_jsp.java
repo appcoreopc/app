@@ -403,6 +403,8 @@ public final class pt_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</div>\r\n");
       out.write("</div>\r\n");
       out.write("\r\n");
+      out.write("<div class=\"bottomContainer\">\r\n");
+      out.write("\r\n");
       out.write("<div class=\"container\">\r\n");
       out.write("      <div class=\"row\" id=\"footer\">\r\n");
       out.write("        <div class=\"span3\">\r\n");
@@ -443,6 +445,9 @@ public final class pt_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("      </div> \r\n");
       out.write("    </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("</div>");
       out.write("\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");

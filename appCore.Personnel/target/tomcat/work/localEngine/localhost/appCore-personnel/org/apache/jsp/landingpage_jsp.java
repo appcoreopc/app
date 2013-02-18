@@ -168,6 +168,13 @@ public final class landingpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"landingView\">\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        <div class=\"overview\">\r\n");
       out.write("        <div class=\"categories\">\r\n");
       out.write("        <ul>\r\n");
@@ -175,7 +182,7 @@ public final class landingpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <a href=\"/appCore-personnel/appCore.Administration/view/admin.jsp\" class=\"block callout\">\r\n");
       out.write("        <img width=\"118\" height=\"114\" alt=\"\" src=\"images/camera.png\">\r\n");
       out.write("        <h2>Administration</h2>\r\n");
-      out.write("        <p>Many your application users and configuration.\r\n");
+      out.write("        <p>Manage your application users and configuration.\r\n");
       out.write("\r\n");
       out.write("        <span class=\"more\">Learn more</span>\r\n");
       out.write("        </p>\r\n");
@@ -222,7 +229,15 @@ public final class landingpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        ");
+      out.write("<div class=\"bottomContainer\">\r\n");
+      out.write("\r\n");
       out.write("<div class=\"container\">\r\n");
       out.write("      <div class=\"row\" id=\"footer\">\r\n");
       out.write("        <div class=\"span3\">\r\n");
@@ -263,6 +278,9 @@ public final class landingpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("      </div> \r\n");
       out.write("    </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("</div>");
       out.write("\r\n");
       out.write("        </body>\r\n");
       out.write("        </html>\r\n");

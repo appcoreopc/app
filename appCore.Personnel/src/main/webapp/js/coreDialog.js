@@ -76,11 +76,17 @@ var CoreDialog = function () {
             });
         $myDialog.dialog('open');
 
-        $(".ui-dialog .ui-dialog-title").css('color', '#000');
+        $(".ui-dialog .ui-dialog-title").css('color', '#fff');
         $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
         $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
         $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
+        $(".ui-dialog .ui-dialog-buttonpane button").css('width', '76px');
         $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
+        $(".ui-dialog .ui-dialog-buttonset").css('height', '56px');
+        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-left-radius', '4px');
+        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-right-radius', '4px');
+        $(".ui-dialog").css('box-shadow', '1px 1px 7px 1px rgba(0, 0, 0, 0.3)');
+        $(".ui-dialog").css('border-radius', '4px');
     }
 
     this.createGeneralConfirmationDialog = function (dialogObject, dialogCallBack) {

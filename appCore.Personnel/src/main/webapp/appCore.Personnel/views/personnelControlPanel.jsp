@@ -7,7 +7,6 @@
         </head>
         <body>
 
-
         <%@ include file="../includes/css_includes.html" %>
         <%@ include file="../includes/js_includes.html" %>
         <%@ include file="/includes/header.html" %>
@@ -22,9 +21,9 @@
         var coreLoadMask = new CoreLoadMask();
         coreLoadMask.bindAjaxEvent("../../images/ajax-loader.gif");
 
-        if (sessionStorage.username == undefined || sessionStorage.username == null)
+            if (sessionStorage.username == undefined || sessionStorage.username == null)
             {
-                goToPage("http://localhost:8080/appCore-personnel/");
+                    goToPage(globalHostname + "appCore-personnel/");
             }
 
             try
@@ -71,11 +70,10 @@
         </div>
 
 
-        <div class="formRow">
-        <div class="companyInfoDiv"><img src="../../images/company.png"> Current company </div> <select id="companyDropDownList" class="company">
-        </select>
-
-
+        <div class="formRowCompany">
+        <div class="companyInfoDiv">Current company </div>
+        <div class="companyInfoSelect"> <select id="companyDropDownList" class="company">
+        </select> </div>
         </div>
 
 
