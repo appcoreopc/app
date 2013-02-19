@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="spring-jdbc" key="selection"/>
 		<list key="findhistory">
+			<item value="spring-jdbc"/>
+			<item value="jdbc"/>
+			<item value="context"/>
 			<item value="yay"/>
 			<item value="Yay"/>
 			<item value="getbranch"/>
 			<item value="code"/>
 			<item value="spring-web"/>
-			<item value="PostCode"/>
-			<item value="postcode"/>
-			<item value="jobtype"/>
 		</list>
 		<list key="replacehistory">
 		</list>

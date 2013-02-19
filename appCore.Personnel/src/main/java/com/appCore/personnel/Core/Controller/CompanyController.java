@@ -2,6 +2,7 @@ package com.appCore.personnel.Core.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 
+import com.appCore.Mvc.Controller.AppCoreController;
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Entity.Company;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
@@ -20,7 +22,7 @@ import com.appCore.personnel.Core.Service.CompanyService;
 
 @Controller
 @RequestMapping("/Core")
-public class CompanyController
+public class CompanyController extends AppCoreController
 { 
 	
 		protected static Logger logger = Logger.getLogger("controller");
@@ -39,8 +41,7 @@ public class CompanyController
 		{
 				List<Company> list = service.getAll();
 				return list;
-		}
-		
+		}		
 		
 		@RequestMapping(value = "/Company/getAllCompanyInfo", method = RequestMethod.GET)		
 		public @ResponseBody List<Company> getAllCompany() 
@@ -90,5 +91,13 @@ public class CompanyController
 		{
 				return "View/Core/Company/edit";
 		}
-
+		
+		
+		@RequestMapping(value = "/Company/test", method = RequestMethod.GET)
+		public String editCompany () 
+		{
+			throw new NullPointerException("Figure it out man!!!!! Take More");			
+		}
+		
+	
 }
