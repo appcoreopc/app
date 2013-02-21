@@ -58,6 +58,9 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("\r\n");
       out.write("        <link href=\"../../css/employeeGeneralAddForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <link href=\"../../css/employeeGeneralForm.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("        <link href=\"../../css/employeeGeneralInfoView.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("        <script type=\"text/html\" id=\"employeeGeneralInfoTemplate\">\r\n");
       out.write("\r\n");
@@ -374,6 +377,7 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("                $(this).unbind(\"ajaxStop\");\r\n");
       out.write("                ko.applyBindings(vm, document.getElementById(\"companyGeneralInfo\"));\r\n");
       out.write("                var tab = $(\"#employeeAddTabs\").tabs();\r\n");
+      out.write("\r\n");
       out.write("            }\r\n");
       out.write("            catch (ex)\r\n");
       out.write("            {\r\n");
@@ -386,9 +390,8 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("            var input = { \"id\" : coreEmployeeGeneralViewPage, \"roleId\" : globalViewModel.employeeRole() };\r\n");
       out.write("            var coreCommand = new CoreCommand();\r\n");
       out.write("            var result = coreCommand.getPermission(hostAuthorizationUrl, input);\r\n");
-      out.write("\r\n");
       out.write("            vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());\r\n");
-      out.write("            vm.getGeneralInfo(globalViewModel.targetId());\r\n");
+      out.write("            //vm.getGeneralInfo(globalViewModel.targetId());\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");

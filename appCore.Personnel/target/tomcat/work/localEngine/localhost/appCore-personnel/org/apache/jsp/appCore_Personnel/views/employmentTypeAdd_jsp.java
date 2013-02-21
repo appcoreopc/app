@@ -61,6 +61,8 @@ public final class employmentTypeAdd_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("        <div class=\"formRowList\">\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        <span class='columnDivider'>\r\n");
       out.write("        <span class=\"labelSection\">Category</span>\r\n");
       out.write("        <span class=\"inputSectionForm\"><input type=\"text\" data-bind=\"value : $root.infoCategory\" placeholder=\"info type\"/></span>\r\n");
@@ -180,6 +182,10 @@ public final class employmentTypeAdd_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <script type=\"text/html\" id=\"companyEntityAddTemplate\">\r\n");
       out.write("\r\n");
       out.write("        <div class=\"form\">\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"formMainContent\">\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Employment Type</div><span class='req'>*</span><div class=\"inputSection\"><input\r\n");
@@ -212,6 +218,12 @@ public final class employmentTypeAdd_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <button id=\"cancelBtn\" type=\"button\" data-bind=\"click : cancelUpdate\" class=\"command\">Cancel</button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        <div>&nbsp;\r\n");
       out.write("        </div>\r\n");
       out.write("        <div>\r\n");
@@ -259,6 +271,7 @@ public final class employmentTypeAdd_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <script type=\"text/javascript\">\r\n");
       out.write("\r\n");
       out.write("        var formName = \"employmentTypeForm\";\r\n");
+      out.write("\r\n");
       out.write("        $(document).ready(function()\r\n");
       out.write("        {\r\n");
       out.write("            $(\"#\" + formName).validationEngine();\r\n");

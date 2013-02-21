@@ -458,6 +458,25 @@ var EmployeeHelper = function () {
         return formattedDate;
     }
 
+    // receive givenDate in Date format (not string)
+    this.getDateFormatDDMMYYYY = function (givenDate, customSeparator) {
+        var dataSeparator = "-";
+        if (customSeparator != undefined)
+            dataSeparator = customSeparator;
+
+        var day = givenDate.getDate();
+        var month = this.getActualMonth(givenDate.getMonth());
+
+        if (day.toString().length == 1)
+            day = "0" + day;
+
+        if (month.toString().length == 1)
+            month = "0" + month;
+
+        var formattedDate = day + dataSeparator + month + dataSeparator + givenDate.getFullYear();
+        return formattedDate;
+    }
+
     this.getActualMonth = function (value) {
         switch (value) {
             case 0:
@@ -676,9 +695,6 @@ Date.prototype.format = function (fmt) {
  }
  }
  };
-
-
-
  */
 
 ko.bindingHandlers.datepicker = {
@@ -686,50 +702,39 @@ ko.bindingHandlers.datepicker = {
         //initialize datepicker with some optional options
         var options = allBindingsAccessor().datepickerOptions || {};
         $(element).datepicker(options);
-
         $(element).after("<i class='icon-calendar'></i>");
 
         var value = ko.utils.unwrapObservable(valueAccessor());
-        if (value != null)
-            $(element).datepicker("setDate", value);
+        $(element).datepicker("setDate", value);
 
-        //handle the field changing
         ko.utils.registerEventHandler(element, "change", function () {
             var observable = valueAccessor();
             observable($(element).val());
-
-            //alert($(element).val());
-            //alert($(element).datepicker("getDate"));
-            //if (observable.isValid()) {
-            //    observable($(element).datepicker("getDate"));
-            //    $(element).blur();
-            //}
         });
 
         //handle disposal (if KO removes by the template binding)
         ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
             $(element).datepicker("destroy");
         });
-
-        // ko.bindingHandlers.validationCore.init(element, valueAccessor, allBindingsAccessor);
-
     },
     update:function (element, valueAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor());
-
-        //handle date data coming via json from Microsoft
-        //if (String(value).indexOf('/Date(') == 0) {
-        //    value = new Date(parseInt(value.replace(/\/Date\((.*?)\)\//gi, "$1")));
-        //}
-
         var current = $(element).datepicker("getDate");
 
-        if (value - current !== 0) {
+        if (current == null) {
+            /*var currentDate = new Date();
+            var helper = new EmployeeHelper();
+            var formattedDate = helper.getDateFormatDDMMYYYY(currentDate, "-");
+            $(element).datepicker("setDate", formattedDate);
+            var observableDate = $(element).datepicker("getDate");
+            var obserableTarget = valueAccessor();
+            obserableTarget(formattedDate);*/
+        }
+        else if (value - current !== 0) {
             $(element).datepicker("setDate", value);
         }
     }
 };
-
 
 /*
 

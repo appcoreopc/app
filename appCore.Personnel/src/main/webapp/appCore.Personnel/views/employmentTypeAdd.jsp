@@ -9,6 +9,8 @@
 
         <div class="formRowList">
 
+
+
         <span class='columnDivider'>
         <span class="labelSection">Category</span>
         <span class="inputSectionForm"><input type="text" data-bind="value : $root.infoCategory" placeholder="info type"/></span>
@@ -128,6 +130,10 @@
         <script type="text/html" id="companyEntityAddTemplate">
 
         <div class="form">
+
+        <div class="formMainContent">
+
+
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Employment Type</div><span class='req'>*</span><div class="inputSection"><input
@@ -160,6 +166,12 @@
         <button id="cancelBtn" type="button" data-bind="click : cancelUpdate" class="command">Cancel</button>
         </div>
         </div>
+
+
+        </div>
+
+
+
         <div>&nbsp;
         </div>
         <div>
@@ -207,6 +219,7 @@
         <script type="text/javascript">
 
         var formName = "employmentTypeForm";
+
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();

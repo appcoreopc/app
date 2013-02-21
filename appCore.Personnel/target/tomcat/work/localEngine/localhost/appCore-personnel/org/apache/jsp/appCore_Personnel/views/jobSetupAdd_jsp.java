@@ -51,6 +51,7 @@ public final class jobSetupAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("        <link href=\"../../css/themes/base/jquery.ui.all.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("        <link href=\"../../css/jobSetup.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <script language=\"javascript\" src=\"../../js/viewmodal/jobSetupCommandViewModel.js\"></script>\r\n");
       out.write("\r\n");
       out.write("        <script type=\"text/javascript\">\r\n");
@@ -102,6 +103,9 @@ public final class jobSetupAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("    <div class=\"form\">\r\n");
       out.write("\r\n");
+      out.write("            <div class=\"formMainContent\">\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("     <div id=\"jobSetupForm\">\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
@@ -125,6 +129,8 @@ public final class jobSetupAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <input type=\"text\" id=\"JobCategory\" class=\"validate[required, maxSize[80]]\" data-bind=\"value : jobCategory\"/></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
       out.write("        <div class=\"formRow\">\r\n");
       out.write("        &nbsp;\r\n");
       out.write("        </div>\r\n");
@@ -132,6 +138,7 @@ public final class jobSetupAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        <div class=\"maintenanceCommand\">\r\n");
       out.write("        </div>\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <div id=\"codeSetupTabs\">\r\n");

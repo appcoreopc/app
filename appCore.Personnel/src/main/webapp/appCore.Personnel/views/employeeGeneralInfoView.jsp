@@ -6,6 +6,9 @@
 
         <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGeneralInfoView.css" media="screen" rel="stylesheet" type="text/css" />
+
+
 
         <script type="text/html" id="employeeGeneralInfoTemplate">
 
@@ -322,6 +325,7 @@
                 $(this).unbind("ajaxStop");
                 ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
                 var tab = $("#employeeAddTabs").tabs();
+
             }
             catch (ex)
             {
@@ -334,9 +338,8 @@
             var input = { "id" : coreEmployeeGeneralViewPage, "roleId" : globalViewModel.employeeRole() };
             var coreCommand = new CoreCommand();
             var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-
             vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
-            vm.getGeneralInfo(globalViewModel.targetId());
+            //vm.getGeneralInfo(globalViewModel.targetId());
         });
 
         </script>

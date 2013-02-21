@@ -1,8 +1,9 @@
 .maintenanceCommand {
     background: none repeat scroll 0 0 transparent;
     display: inline-block;
-    padding: 12px 0 12px 0px;
-    width: 100%
+    padding: 12px 0 30px 0px;
+    width: 76%;
+    padding-left: 230px;
 }
 
 #maintenanceCommand button {
@@ -27,17 +28,15 @@
     font-weight: bold;
     padding: 18px 0 24px 30px;
     width: auto;
-    color: #258AAF;
+    color: #000;
 }
 
 .formRowSpacer {
     display: block;
     padding-top: 30px;
-
 }
 
 i .icon-doc-3 {
-
     font-size: 16px;
 }
 
@@ -47,6 +46,6 @@ i .icon-doc-3 {
 }
 
 .formEntry h4 {
-   display : inline;
-   font-size : 16px;
+    display: inline;
+    font-size: 16px;
 }

@@ -149,12 +149,9 @@ public final class maintenanceCodeAdd_jsp extends org.apache.jasper.runtime.Http
       out.write("        /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"formRowSpacer\">\r\n");
-      out.write("        </div>\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("        <div class=\"formRow darken\">\r\n");
-      out.write("        <div class=\"labelSection\"></div><div class=\"inputSection\">\r\n");
+      out.write("        <div class=\"formRow\">\r\n");
+      out.write("        <div class=\"labelSection\"></div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("        <div> <div class=\"maintenanceCommandSpace\"></div>\r\n");
@@ -166,7 +163,7 @@ public final class maintenanceCodeAdd_jsp extends org.apache.jasper.runtime.Http
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        </div>\r\n");
+      out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");

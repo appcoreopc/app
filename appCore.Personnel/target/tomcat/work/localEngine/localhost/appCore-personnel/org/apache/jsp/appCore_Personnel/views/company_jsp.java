@@ -50,6 +50,7 @@ public final class company_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write("    <link href=\"../../css/dialogBox.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("    <script language=\"javascript\" src=\"../../js/viewmodal/companyViewModel.js\"></script>\r\n");
       out.write("    <script language=\"javascript\" src=\"../../js/viewmodal/companyHelper.js\"></script>\r\n");
       out.write("\r\n");

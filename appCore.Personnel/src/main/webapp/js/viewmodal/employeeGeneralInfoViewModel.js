@@ -10,7 +10,8 @@ var EmployeeGeneralInfo = function () {
     self.lastName = ko.observable();
 
     self.gender = ko.observable();
-    self.birthDate = ko.observable();
+    var defaultDate = new Date(1970, 1, 1);
+    self.birthDate = ko.observable("what the haeee");
 
     self.age = ko.observable();
     self.maritalStatus = ko.observable();
@@ -91,14 +92,14 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     self.saveDataForm = function (data) {
 
         var employeeGeneralInfo = self.bindingSource()[0];
-
         var employee = new Employee();
+        employee.nid = employeeId;
 
-        if (self.mode() != 1)
-            employee.nid = 1;
-
+        if (self.mode() == 1) {
+            console.log("insert new employee");
+            employee.nid = null;
+        }
         employee.code = employeeGeneralInfo.code();
-
         employee.companyRef = globalCurrentCompanyId;
 
         employee.name = employeeGeneralInfo.name();
@@ -108,6 +109,10 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
 
         employee.gender = employeeGeneralInfo.gender();
         employee.salutation = employeeGeneralInfo.salutation();
+
+        console.log(employeeGeneralInfo.birthDate());
+        console.log(helper.getDate(employeeGeneralInfo.birthDate().toString()));
+
         employee.birthDate = helper.getDate(employeeGeneralInfo.birthDate().toString());
 
         employee.age = employeeGeneralInfo.age();
@@ -222,11 +227,12 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
             employeeGeneralInfo.gender(data.gender);
             employeeGeneralInfo.birthDate(helper.getDateOnly(new Date(data.birthDate)));
 
+            console.log(employeeGeneralInfo.birthDate());
+
             employeeGeneralInfo.age(data.age);
             employeeGeneralInfo.maritalStatus(data.maritalStatus);
             employeeGeneralInfo.marriageDate(helper.getDateOnly(new Date(data.marriageDate)));
             employeeGeneralInfo.race(data.race);
-
 
             employeeGeneralInfo.religion(data.religion);
             employeeGeneralInfo.nationality(data.nationality);
@@ -242,13 +248,19 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     if (mode != 0)
         self.mode = ko.observable(mode);
 
-    if (mode == 1) {
+    if (mode == coreModeInsert) {
         var employeeGeneralInfo = new EmployeeGeneralInfo();
+        var todayDate = new Date();
+        var currentDateValue = helper.getDateFormatDDMMYYYY(todayDate);
+        employeeGeneralInfo.birthDate(currentDateValue);
+        employeeGeneralInfo.marriageDate(currentDateValue);
+        console.log("set binding mode");
+        self.mode = ko.observable(mode);
         self.bindingSource = ko.observableArray([employeeGeneralInfo]);
     }
 
-    if (mode != 1) {
-        //self.getGeneralInfo(employeeId, callBack);
+    if (mode == coreModeEdit) {
+        self.getGeneralInfo(employeeId);
     }
 
 }

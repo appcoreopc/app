@@ -1,10 +1,20 @@
 var CompanyHelper = function () {
-    this.deleteCompany = function (id) {
+
+    /*this.deleteCompany = function (id) {
         var objectId = { "id":id };
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestSequential(globalCompanyDeleteUrl, objectId, "get");
         request.success(function (data) {
             return data.messageCode;
+        });
+    }*/
+
+    this.deleteCompany = function (data, callback) {
+        var objectId = { "id": data.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalCompanyDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, data);
         });
     }
 
@@ -415,7 +425,6 @@ var CompanyHelper = function () {
             callBack(data);
         });
     }
-
 
     this.getCodeType = function (globalViewModal, id) {
         var companyId = { "id":id };

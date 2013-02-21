@@ -128,6 +128,9 @@
         <script type="text/html" id="companyEntityAddTemplate">
 
         <div class="form">
+
+        <div class="formMainContent">
+
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSection">Grade</div><span class='req'>*</span><div class="inputSection"><input
@@ -166,9 +169,14 @@
         <button id="cancelBtn" type="button" data-bind="click : cancelUpdate" class="command">Cancel</button>
         </div>
         </div>
+
+        </div>
+
         <div>&nbsp;
         </div>
         <div>
+
+
 
         <div class="subHeader"> Grade Info </div>
 
@@ -231,6 +239,6 @@
 
         </script>
 
-        <form id="gadeForm">
-        <div id="gradeMaintenance" data-bind="template : { name : templateToUse} ">
+        <form id="gradeForm">
+            <div id="gradeMaintenance" data-bind="template : { name : templateToUse} ">
         </form>

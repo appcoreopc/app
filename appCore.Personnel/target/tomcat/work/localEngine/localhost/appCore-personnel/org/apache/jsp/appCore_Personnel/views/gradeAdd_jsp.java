@@ -180,6 +180,9 @@ public final class gradeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <script type=\"text/html\" id=\"companyEntityAddTemplate\">\r\n");
       out.write("\r\n");
       out.write("        <div class=\"form\">\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"formMainContent\">\r\n");
+      out.write("\r\n");
       out.write("        <div class=\"sectionalForm\">\r\n");
       out.write("        <div class=\"leftSection\">\r\n");
       out.write("        <div class=\"labelSection\">Grade</div><span class='req'>*</span><div class=\"inputSection\"><input\r\n");
@@ -218,9 +221,14 @@ public final class gradeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <button id=\"cancelBtn\" type=\"button\" data-bind=\"click : cancelUpdate\" class=\"command\">Cancel</button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
       out.write("        <div>&nbsp;\r\n");
       out.write("        </div>\r\n");
       out.write("        <div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("        <div class=\"subHeader\"> Grade Info </div>\r\n");
       out.write("\r\n");
@@ -283,8 +291,8 @@ public final class gradeAdd_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
-      out.write("        <form id=\"gadeForm\">\r\n");
-      out.write("        <div id=\"gradeMaintenance\" data-bind=\"template : { name : templateToUse} \">\r\n");
+      out.write("        <form id=\"gradeForm\">\r\n");
+      out.write("            <div id=\"gradeMaintenance\" data-bind=\"template : { name : templateToUse} \">\r\n");
       out.write("        </form>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

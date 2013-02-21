@@ -97,12 +97,9 @@
         /></div>
         </div>
 
-        <div class="formRowSpacer">
-        </div>
 
-
-        <div class="formRow darken">
-        <div class="labelSection"></div><div class="inputSection">
+        <div class="formRow">
+        <div class="labelSection"></div>
 
 
         <div> <div class="maintenanceCommandSpace"></div>
@@ -114,7 +111,7 @@
         </div>
 
 
-        </div>
+
         </div>
 
 

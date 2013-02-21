@@ -21,6 +21,13 @@
 
         <%@ include file="includes/header.html" %>
 
+
+
+        <div class="landingView">
+
+
+
+
         <div class="overview">
         <div class="categories">
         <ul>
@@ -28,7 +35,7 @@
         <a href="/appCore-personnel/appCore.Administration/view/admin.jsp" class="block callout">
         <img width="118" height="114" alt="" src="images/camera.png">
         <h2>Administration</h2>
-        <p>Many your application users and configuration.
+        <p>Manage your application users and configuration.
 
         <span class="more">Learn more</span>
         </p>
@@ -74,6 +81,12 @@
         </ul>
         </div>
         </div>
+
+
+
+        </div>
+
+
 
         <%@ include file="includes/footer.html" %>
         </body>

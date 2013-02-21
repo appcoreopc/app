@@ -72,9 +72,23 @@ var CompanyViewModel = function (gridUrl, dataSource, globalVM) {
     }
 
     function deleteFunction(data) {
-        var helper = new CompanyHelper();
-        var result = helper.deleteCompany(data.nid);
-        self.gridData.remove(data);
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalVM, self.codeType, deleteCallBack);
+    }
+
+    function deleteCallBack(status, data, globalViewModel, codeType) {
+        if (status == true) {
+            var helper = new CompanyHelper();
+            var result = helper.deleteCompany(data, successCallback);
+        }
+    }
+
+    function successCallback(result, data) {
+        if (result.messageCode == 0) {
+            self.gridData.remove(data);
+        }
     }
 
     this.getView = function () {

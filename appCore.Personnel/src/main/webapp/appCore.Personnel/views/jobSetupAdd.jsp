@@ -1,4 +1,5 @@
         <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/jobSetup.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/jobSetupCommandViewModel.js"></script>
 
         <script type="text/javascript">
@@ -50,6 +51,9 @@
 
     <div class="form">
 
+            <div class="formMainContent">
+
+
      <div id="jobSetupForm">
         <div class="sectionalForm">
         <div class="leftSection">
@@ -73,6 +77,8 @@
         <input type="text" id="JobCategory" class="validate[required, maxSize[80]]" data-bind="value : jobCategory"/></div>
         </div>
 
+            </div>
+
         <div class="formRow">
         &nbsp;
         </div>
@@ -80,6 +86,7 @@
 
         <div class="maintenanceCommand">
         </div>
+
 
 
         <div id="codeSetupTabs">
