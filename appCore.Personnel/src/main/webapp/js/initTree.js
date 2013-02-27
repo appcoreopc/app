@@ -1,7 +1,8 @@
 var menuDataSource;
 
 $(document).ready(function () {
-    var ajaxCore = new AjaxCore();
+
+    /*var ajaxCore = new AjaxCore();
     var requestMenu = ajaxCore.sendRequest(globalHostname + globalMenuServiceUrl, null, 'get');
     requestMenu.done(function (data) {
         menuDataSource = data;
@@ -10,26 +11,26 @@ $(document).ready(function () {
             $('<div id="menuDiv">Menu</div>').appendTo('body');
             $("#menuDiv").kendoMenu({
                 dataSource:menuDataSource,
-                select:onSelect
+                select: onSelectMenuItemKendo
             });
         }
     });
-
+*/
     /*var request = ajaxCore.sendRequest(globalHostname + globalCompanyServiceUrl, null, 'get');
-    request.success(function (data) {
-        if (!$.isEmptyObject(data)) {
-            if (data != undefined) {
-                $('<div class="treeDiv"><div id="treeView"></div></div>').appendTo('body');
-                var treeview = $("#treeView").kendoTreeView({
-                    dataSource:data,
-                    select:function (e) {
-                        getNodeType(this.text(e.node), data);
-                    }
-                });
-            }
-        }
-    });
-    */
+     request.success(function (data) {
+     if (!$.isEmptyObject(data)) {
+     if (data != undefined) {
+     $('<div class="treeDiv"><div id="treeView"></div></div>').appendTo('body');
+     var treeview = $("#treeView").kendoTreeView({
+     dataSource:data,
+     select:function (e) {
+     getNodeType(this.text(e.node), data);
+     }
+     });
+     }
+     }
+     });
+     */
 
 
     $("#logoutLink").click(function () {
@@ -87,7 +88,7 @@ function getMenuNodeType(nodeName, data) {
     }
 }
 
-function onSelect(e) {
+function onSelectMenuItemKendo(e) {
     var selectedItemText = $(e.item).children(".k-link").text();
     getMenuNodeType(selectedItemText, menuDataSource);
 }

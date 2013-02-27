@@ -144,14 +144,14 @@
 
         <div class="formRowView">
         <div class="viewLabelSection">Employee Id</div><div class="inputSection">
-        <input type="text" id="Code" data-bind="value : code" />
+        <input type="text" id="Code" data-bind="value : code" class="validate[required, maxSize[10]]" />
 
         </div>
         </div>
 
         <div class="formRowView">
         <div class="viewLabelSection">Name</div><div class="inputSection"> <input
-        type="text" id="Name" data-bind="value : name" /></div>
+        type="text" id="Name" data-bind="value : name" class="validate[required, maxSize[10]]" /></div>
         </div>
 
 
@@ -293,8 +293,10 @@
 
         <div>
 
-        <div class="formRow darken">
-        <div class="labelSection"></div><div class="inputSection">
+        <div class="formRow">
+        <div class="labelSection"></div>
+
+        <div class="inputSectionCommand">
 
         <div id="maintenanceCodeCommand" class="maintenanceCommand">
         <button id="generalInfoSave" type="button" data-bind="visible : $root.enableAdd, click: $root.saveDataForm"
@@ -326,6 +328,7 @@
                 ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
                 var tab = $("#employeeAddTabs").tabs();
 
+                $("#employeeGeneralForm").validationEngine();
             }
             catch (ex)
             {
@@ -339,11 +342,13 @@
             var coreCommand = new CoreCommand();
             var result = coreCommand.getPermission(hostAuthorizationUrl, input);
             vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
-            //vm.getGeneralInfo(globalViewModel.targetId());
+
         });
 
         </script>
 
+        <form id="employeeGeneralForm">
         <div id="companyGeneralInfo" class="formEntry" data-bind="template : { name : templateToUse,
         foreach : bindingSource }">
         </div>
+        </form>

@@ -4,12 +4,6 @@
     padding: 12px 0;
     width: 100%;
 }
-.maintenanceCommand {
-    background: repeat scroll 0 0 #fff;
-    display: inline-block;
-    padding: 12px 0;
-    width: 100%;
-}
 
 .maintenanceCommand button {
     background-color: #000000;

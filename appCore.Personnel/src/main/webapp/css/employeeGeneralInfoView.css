@@ -1,0 +1,17 @@
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.ui-widget-header {
+    background: -moz-linear-gradient(center top , #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
+    border: 1px solid #AAAAAA;
+    color: #222222;
+    font-weight: bold;
+}
+
+.inputSectionCommand {
+    padding-left: 204px;
+ }

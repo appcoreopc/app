@@ -1,5 +1,4 @@
 var EmployeeViewModel = function (initView, globalViewModel, data) {
-
     var self = this;
     self.mode = initView;
     self.centralPage = "employeeAdd.jsp";
@@ -93,6 +92,8 @@ var EmployeeViewModel = function (initView, globalViewModel, data) {
     function successDeleteCallback(result, data) {
         if (result.messageCode == 0) {
             self.gridData.remove(data);
+        } else if (result.messageCode == -999) {
+            showErrorStatusNotification(result.messageDescription);
         }
     }
 
@@ -150,6 +151,5 @@ var EmployeeViewModel = function (initView, globalViewModel, data) {
         self.enableDelete(helper.getEnableDelete(permissionResult.permission));
 
     }
-
     self.initializeViewModel();
 }

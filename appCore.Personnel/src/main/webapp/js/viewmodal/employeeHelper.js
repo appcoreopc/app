@@ -477,6 +477,22 @@ var EmployeeHelper = function () {
         return formattedDate;
     }
 
+    this.getDateDiffYear = function(yearToCompare)
+    {
+        if (yearToCompare == null)
+            return null;
+
+        var day = yearToCompare.substr(0, 2);
+        var month = yearToCompare.substr(3, 2);
+        var year = yearToCompare.substr(6, 4);
+        var compareDate = new Date(year, month, day);
+        var currentDate = new Date();
+
+        var diff = currentDate.getFullYear() - compareDate.getFullYear();
+        return diff;
+    }
+
+
     this.getActualMonth = function (value) {
         switch (value) {
             case 0:

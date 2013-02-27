@@ -10,10 +10,15 @@ var EmployeeGeneralInfo = function () {
     self.lastName = ko.observable();
 
     self.gender = ko.observable();
-    var defaultDate = new Date(1970, 1, 1);
-    self.birthDate = ko.observable("what the haeee");
+    self.birthDate = ko.observable();
+    //self.age = ko.observable();
 
-    self.age = ko.observable();
+    self.age = ko.computed(function()
+    {
+        var helper = new EmployeeHelper();
+        return helper.getDateDiffYear(self.birthDate());
+    });
+
     self.maritalStatus = ko.observable();
     self.marriageDate = ko.observable();
     self.race = ko.observable();
@@ -204,7 +209,6 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     }
 
     self.applyBinding = function () {
-
         self.mode(2);
     }
 
@@ -227,9 +231,6 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
             employeeGeneralInfo.gender(data.gender);
             employeeGeneralInfo.birthDate(helper.getDateOnly(new Date(data.birthDate)));
 
-            console.log(employeeGeneralInfo.birthDate());
-
-            employeeGeneralInfo.age(data.age);
             employeeGeneralInfo.maritalStatus(data.maritalStatus);
             employeeGeneralInfo.marriageDate(helper.getDateOnly(new Date(data.marriageDate)));
             employeeGeneralInfo.race(data.race);
@@ -249,12 +250,13 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
         self.mode = ko.observable(mode);
 
     if (mode == coreModeInsert) {
+
         var employeeGeneralInfo = new EmployeeGeneralInfo();
         var todayDate = new Date();
         var currentDateValue = helper.getDateFormatDDMMYYYY(todayDate);
         employeeGeneralInfo.birthDate(currentDateValue);
+
         employeeGeneralInfo.marriageDate(currentDateValue);
-        console.log("set binding mode");
         self.mode = ko.observable(mode);
         self.bindingSource = ko.observableArray([employeeGeneralInfo]);
     }

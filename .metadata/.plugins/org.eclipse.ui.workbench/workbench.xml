@@ -19,7 +19,7 @@
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.zeroturnaround.eclipse.remoting.SyncNowToolbarActions" itemType="typeToolBarContribution" x="53" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
@@ -62,6 +62,8 @@
 <part id="17"/>
 <part id="18"/>
 <part id="19"/>
+<part id="20"/>
+<part id="21"/>
 </presentation>
 </folder>
 </info>
@@ -134,7 +136,7 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CodeCheckerHelper.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="679" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppCoreController.java" partName="AppCoreController.java" path="C:/appCoreDev/appCore.Mvc/appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java" title="AppCoreController.java" tooltip="appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppCoreController.java" partName="AppCoreController.java" path="C:/appCoreDev/appCore.Mvc/appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java" title="AppCoreController.java" tooltip="appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="320" selectionTopPixel="0"/>
 </editor>
@@ -144,6 +146,14 @@
 </editor>
 <editor id="org.eclipse.m2e.editor.MavenPomEditor" name="pom.xml" partName="appCoreMvc/pom.xml" path="C:/appCoreDev/appCore.Mvc/appCoreMvc/pom.xml" title="appCoreMvc/pom.xml" tooltip="appCoreMvc/pom.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCoreMvc/pom.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BranchController.java" partName="BranchController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java" title="BranchController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="1289" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BranchService.java" partName="BranchService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java" title="BranchService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="590" selectionTopPixel="15"/>
 </editor>
 </editors>
 <views>
@@ -188,8 +198,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings (100 of 3825 items)"/>
+<category IMemento.internal.id="Warnings (100 of 3822 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="441" org.eclipse.ui.ide.resourceField="339" org.eclipse.ui.ide.severityAndDescriptionField="1051"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -726,11 +735,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Shared/src/com/appCore/Requests/RequestStatus.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" path="/appCoreMvc/pom.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java"/>
 </editors>
-<item historyLabel="AppCoreController.java" index="1">
-<position info="not_deleted" x="420" y="0"/>
-</item>
-<item historyLabel="appCoreMvc/pom.xml" index="2"/>
 <item historyLabel="AppCoreController.java" index="1">
 <position info="not_deleted" x="420" y="0"/>
 </item>
@@ -856,8 +863,14 @@
 <position info="not_deleted" x="320" y="0"/>
 </item>
 <item historyLabel="appCoreMvc/pom.xml" index="13"/>
-<item active="true" historyLabel="AppCoreController.java" index="11">
+<item historyLabel="AppCoreController.java" index="11">
 <position info="not_deleted" x="320" y="0"/>
+</item>
+<item historyLabel="BranchController.java" index="14">
+<position info="not_deleted" x="1289" y="13"/>
+</item>
+<item active="true" historyLabel="BranchService.java" index="15">
+<position info="not_deleted" x="555" y="13"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -877,6 +890,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BranchService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BranchController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" name="pom.xml" tooltip="appCoreMvc/pom.xml">
 <persistable path="/appCoreMvc/pom.xml"/>
 </file>
@@ -915,12 +934,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Section.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Section.java">
 <persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Section.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Department.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Department.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Department.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DepartmentController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/DepartmentController.java">
-<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/DepartmentController.java"/>
 </file>
 </mruList>
 </workbench>

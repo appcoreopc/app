@@ -83,7 +83,8 @@ public final class landingpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"container\">\r\n");
       out.write("            <a class=\"brand airbnb\" href=\"/\">appCore</a>\r\n");
       out.write("\r\n");
-      out.write("            <ul class=\"nav logged-out\">\r\n");
+      out.write("            <ul class=\"nav\">\r\n");
+      out.write("                <li><a href=\"#\" onclick=\"return false;\"><i id=\"configureSettings\" class=\"icon-cog-1\"></i></a></li>\r\n");
       out.write("                <li><a href=\"personnelControlPanel.jsp\"><i class=\"icon-home\"></i></a></li>\r\n");
       out.write("                </li>\r\n");
       out.write("            </ul>\r\n");

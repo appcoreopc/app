@@ -18,7 +18,7 @@ div.rightSection {
 
 .inputSection {
     padding-left: 20px;
-  /*  display: inline-block;*/
+    /*  display: inline-block;*/
     display: inline;
 }
 
@@ -38,12 +38,11 @@ div.rightSection {
 .labelSection {
     color: #7B746E;
     display: inline-block;
-    font-family: omnes-pro,arial,sans-serif;
+    font-family: omnes-pro, arial, sans-serif;
     padding-left: 30px;
     padding-right: 20px;
     width: 150px;
 }
-
 
 .multiLinelabelSection {
     width: 150px;
@@ -55,7 +54,7 @@ div.rightSection {
 .inlineLabelSection {
     display: inline-block;
     padding-left: 30px;
-    color : #7B746E;
+    color: #7B746E;
 }
 
 .formRow {
@@ -66,15 +65,14 @@ div.rightSection {
 .formRowTitle {
     display: block;
     padding-top: 6px;
-    background: -moz-linear-gradient(center top , #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
+    background: -moz-linear-gradient(center top, #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
 }
 
 .darken {
 
 }
 
-.whiteform
-{
+.whiteform {
     background-color: #FFFFFF;
     border: 1px solid #CCCCCC;
 }
@@ -186,8 +184,8 @@ div.rightSection {
     display: inline-block;
     padding: 12px 0;
     width: 100%;
-    background: -webkit-linear-gradient(top , #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
-    background: -moz-linear-gradient(center top , #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
+    background: -webkit-linear-gradient(top, #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
+    background: -moz-linear-gradient(center top, #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
 }
 
 .maintenanceCommandSpace {
@@ -235,8 +233,8 @@ div.rightSection {
 
 #menuDiv {
     position: absolute;
-    top: 8px;
-    left: 30px;
+    top: 70px;
+    left: 1px;
 }
 
 #logoutWindow {
@@ -310,8 +308,8 @@ span.fieldSpacer {
 }
 
 .widgetInfo {
-    background: -moz-linear-gradient(center top , #FFFFFF 20%, #C7C7C7 100%) -20px 0 #E3E3E0;
-    background: -webkit-linear-gradient(top , #FFFFFF 20%, #C7C7C7 100%) -20px 0 #E3E3E0;
+    background: -moz-linear-gradient(center top, #FFFFFF 20%, #C7C7C7 100%) -20px 0 #E3E3E0;
+    background: -webkit-linear-gradient(top, #FFFFFF 20%, #C7C7C7 100%) -20px 0 #E3E3E0;
     position: relative;
     width: 100%;
     height: 12em;
@@ -488,31 +486,28 @@ span.fieldSpacer {
     font-size: 16px;
 }
 
-.formList
-{
+.formList {
     border: 1px solid black;
 }
 
-.formList div:nth-of-type(even)
-{
-    background-color : #DDDDDD;
+.formList div:nth-of-type(even) {
+    background-color: #DDDDDD;
 }
-.formRowList div:nth-of-type(odd)
-{
-    background-color : #000;
+
+.formRowList div:nth-of-type(odd) {
+    background-color: #000;
 }
 
 .formAddRow {
     background-color: #EEEEDD;
     display: block;
     padding-top: 6px;
-    padding-left:16px;
+    padding-left: 16px;
 }
-
 
 .formAddRowCommand button {
 
-    display : block;
+    display: block;
     background-color: #000;
     padding-left: 6px;
     padding-right: 6px;
@@ -520,7 +515,6 @@ span.fieldSpacer {
     color: #FFFFFF;
     font-size: 14px;
 }
-
 
 .formRowSpacer {
     height: 16px;
@@ -538,8 +532,7 @@ span.fieldSpacer {
     padding: 2px 2px 2px 2px;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
-{
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     background: none repeat scroll 0 0 #EEEEDD;
     border: none;
 }
@@ -549,15 +542,14 @@ span.fieldSpacer {
     border: none;
 }
 
-.accordianRowHeader
-{
+.accordianRowHeader {
     background: none repeat scroll 0 0 #fff;
-    color : #01D001;
+    color: #01D001;
     width: 100%;
 }
 
 .formRowCommand {
-    display : block;
+    display: block;
 
 }
 
@@ -574,19 +566,18 @@ span.fieldSpacer {
 
 #loadingStatusIndicator {
     display: none;
-    position : absolute;
+    position: absolute;
     width: 100%;
     text-align: center;
     top: 30%;
 }
 
 .companyInfoDiv {
-   display: inline;
-   font-size:  20px;
-   text-align: left;
+    display: inline;
+    font-size: 20px;
+    text-align: left;
     color: #3399CC;
 }
-
 
 .formMainContent {
     border: 1px solid #D1D3D4;
@@ -596,7 +587,30 @@ span.fieldSpacer {
 .formRowCompany {
     border: 1px solid #C5C5C5;
     padding: 10px;
-    background: -moz-linear-gradient(center top , #FFFFFF 0px, #F4F4F4 100%) repeat scroll 0 0 transparent;
-    background: -webkit-linear-gradient(top , #FFFFFF 0px, #F4F4F4 100%) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(center top, #FFFFFF 0px, #F4F4F4 100%) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(top, #FFFFFF 0px, #F4F4F4 100%) repeat scroll 0 0 transparent;
     text-align: center;
+}
+
+.createMany {
+    display: inline;
+    padding-left: 4px;
+}
+
+.createMany button {
+    background-color: #000000;
+    border-style: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 4px 6px 2px 5px;
+    padding: 6px 12px 6px 6px;
+}
+
+#statusNotification {
+    background-color: yellow;
+    left: 30%;
+    position: absolute;
+    text-align: center;
+    width: 600px;
+    top: 1px;
 }

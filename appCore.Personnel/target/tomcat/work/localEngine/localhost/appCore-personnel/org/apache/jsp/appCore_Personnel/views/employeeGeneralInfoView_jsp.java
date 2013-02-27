@@ -196,14 +196,14 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("\r\n");
       out.write("        <div class=\"formRowView\">\r\n");
       out.write("        <div class=\"viewLabelSection\">Employee Id</div><div class=\"inputSection\">\r\n");
-      out.write("        <input type=\"text\" id=\"Code\" data-bind=\"value : code\" />\r\n");
+      out.write("        <input type=\"text\" id=\"Code\" data-bind=\"value : code\" class=\"validate[required, maxSize[10]]\" />\r\n");
       out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("        <div class=\"formRowView\">\r\n");
       out.write("        <div class=\"viewLabelSection\">Name</div><div class=\"inputSection\"> <input\r\n");
-      out.write("        type=\"text\" id=\"Name\" data-bind=\"value : name\" /></div>\r\n");
+      out.write("        type=\"text\" id=\"Name\" data-bind=\"value : name\" class=\"validate[required, maxSize[10]]\" /></div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -345,8 +345,10 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("\r\n");
       out.write("        <div>\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"formRow darken\">\r\n");
-      out.write("        <div class=\"labelSection\"></div><div class=\"inputSection\">\r\n");
+      out.write("        <div class=\"formRow\">\r\n");
+      out.write("        <div class=\"labelSection\"></div>\r\n");
+      out.write("\r\n");
+      out.write("        <div class=\"inputSectionCommand\">\r\n");
       out.write("\r\n");
       out.write("        <div id=\"maintenanceCodeCommand\" class=\"maintenanceCommand\">\r\n");
       out.write("        <button id=\"generalInfoSave\" type=\"button\" data-bind=\"visible : $root.enableAdd, click: $root.saveDataForm\"\r\n");
@@ -378,6 +380,7 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("                ko.applyBindings(vm, document.getElementById(\"companyGeneralInfo\"));\r\n");
       out.write("                var tab = $(\"#employeeAddTabs\").tabs();\r\n");
       out.write("\r\n");
+      out.write("                $(\"#employeeGeneralForm\").validationEngine();\r\n");
       out.write("            }\r\n");
       out.write("            catch (ex)\r\n");
       out.write("            {\r\n");
@@ -391,14 +394,16 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("            var coreCommand = new CoreCommand();\r\n");
       out.write("            var result = coreCommand.getPermission(hostAuthorizationUrl, input);\r\n");
       out.write("            vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());\r\n");
-      out.write("            //vm.getGeneralInfo(globalViewModel.targetId());\r\n");
+      out.write("\r\n");
       out.write("        });\r\n");
       out.write("\r\n");
       out.write("        </script>\r\n");
       out.write("\r\n");
+      out.write("        <form id=\"employeeGeneralForm\">\r\n");
       out.write("        <div id=\"companyGeneralInfo\" class=\"formEntry\" data-bind=\"template : { name : templateToUse,\r\n");
       out.write("        foreach : bindingSource }\">\r\n");
       out.write("        </div>\r\n");
+      out.write("        </form>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
