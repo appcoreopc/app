@@ -411,3 +411,13 @@ var JobSetupSkill = function () {
     self.categoryDescription;
     self.description;
 }
+
+var RecentItemModel = function () {
+
+    this.companyId;
+    this.companyName;
+
+    this.targetId;
+    this.editMode;
+    this.applicationScopeType;
+}

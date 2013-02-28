@@ -25,17 +25,13 @@
         <link rel="stylesheet" href="../../css/jquery-ui.css" />
 
         <script type="text/javascript" src="../../js/coreConfigureSetting.js"></script>
+        <script type="text/javascript" src="../../js/coreRecentItem.js"></script>
 
         <!-- for sidebar -->
 
         <script type="text/javascript" src="../../js/coreNotificationStatus.js"></script>
 
-        <ul id="demo_menu1" >
-        <li><a href="#" >jQuery</a></li>
-        <li><a href="#" >Write</a></li>
-        <li><a href="#" >Less</a></li>
-        <li><a href="#" >Do</a></li>
-        <li><a href="#" >More</a></li>
+        <ul id="demo_menu1">
         </ul>
 
         <script type="text/javascript">
@@ -46,28 +42,42 @@
             var coreStatusNotification = new CoreStatusNotification();
             coreStatusNotification.createStatusNotification();
 
-            if (sessionStorage.username == undefined || sessionStorage.username == null)
+        if (sessionStorage.username == undefined || sessionStorage.username == null)
             {
                 goToPage(globalHostname + "appCore-personnel/");
             }
             try
             {
                 var globalViewModel = new GlobalViewModel();
+
                 globalViewModel.employeeRole(1);
                 globalViewModel.companyId(1);
                 globalViewModel.companyName("AppCoreDev");
                 globalViewModel.username = sessionStorage.username;
+
+                globalViewModel.recentItem.subscribe(function(recentItem)
+                {
+                  $("ul#demo_menu1").updateRecentItem(recentItem);
+                });
+
                 ko.applyBindings(globalViewModel, document.getElementById("header"));
-            }
+             }
             catch(ex)
             {
                 console.log(ex);
             }
 
+
             $(document).ready(function()
             {
 
                 $("ul#demo_menu1").sidebar();
+
+                /*$("#test").click(function()
+                {
+                    globalViewModel.addToRecentItem();
+
+                });*/
 
                 $("#companyDropDownList").change(function()
                 {
@@ -75,9 +85,8 @@
                     globalViewModel.companyId(globalCurrentCompanyId);
                 });
 
-                $(document.body).configureSettings('configureSettings');
 
-                $("#configureSetupAccordian2").accordion();
+                $(document.body).configureSettings('configureSettings');
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);
@@ -85,7 +94,8 @@
                      var dialogObject = { title : "Create +", "message" : "<i>Click on the form</i>"};
                      var dialogCreateMenu = dialogHelper.createPopupDialog(dialogObject, target);
                 });
-            });
+
+           });
 
             var currentPage = "globalPersonnelControlPanel.jsp";
             var ajaxCore = new AjaxCore();
@@ -111,7 +121,9 @@
         <div class="formRowCompany">
         <div class="companyInfoDiv">Current company </div>
         <div class="companyInfoSelect"> <select id="companyDropDownList" class="company">
-        </select><span class="createMany"><button id="createEntityButton" type="button" class="command">Create ..</button></span></div>
+        </select><span class="createMany">
+        <button id="createEntityButton" type="button" class="command">Create ..</button>
+        </span></div>
         </div>
 
 
@@ -134,7 +146,3 @@
         </body>
         </html>
 
-
-
-
-        <div id="configureSetupAccordian2" class="ui-accordion ui-widget ui-helper-reset ui-accordion-icons" role="tablist"><h3>CompanySetup</h3><div><p><a>Master Id Setup</a><a>Company</a><a>Branch</a><a>Division</a><a>Department</a><a>Section</a><a>Unit</a><a>EmployeeList</a><a>Industry Code</a><a>Gender Code</a><a>Race Code</a><a>Salutation Code</a><a>Religion Code</a><a>Nationality Code</a><a>Marital Status Code</a><a>Level Code</a><a>Field Of ExpertiseCode</a><a>Family Relation Type</a><a>Employee Group</a><a>Holiday Group</a><a>Currency</a><a>Configure Company</a><a>Job Setup</a><a>Configure Employee Group</a><a>Grade</a><a>Employment Type</a><a>HolidaySetup</a><a>Configure Employee Holiday</a></p></div><h3>Job</h3><div><p><a>Job Setup</a><a>Configure Employee Group</a><a>Grade</a><a>Employment Type</a><a>HolidaySetup</a><a>Configure Employee Holiday</a></p></div><h3>Holiday</h3><div><p><a>HolidaySetup</a><a>Configure Employee Holiday</a></p></div></div>d

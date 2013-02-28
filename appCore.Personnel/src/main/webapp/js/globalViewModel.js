@@ -19,9 +19,22 @@ var GlobalViewModel = function () {
 
     self.errorMessage = ko.observable();
 
-    self.showStatus = function(message, functionCall)
-    {
+    self.recentItem = ko.observable();
+
+    self.showStatus = function (message, functionCall) {
 
     }
 
+
+    self.addToRecentItem = function () {
+
+        var recentItem = new RecentItemModel();
+        recentItem.applicationScopeType = self.applicationScopeType();
+        recentItem.editMode = self.editMode();
+        recentItem.companyName = self.companyName();
+        recentItem.companyId = self.companyId();
+        recentItem.targetId = self.targetId();
+
+        self.recentItem(recentItem); // notify change
+    }
 }
