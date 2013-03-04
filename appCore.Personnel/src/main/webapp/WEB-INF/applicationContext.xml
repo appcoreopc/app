@@ -29,7 +29,11 @@
 	
 	<context:component-scan base-package="com.appCore.personnel.Core.Helpers" />	
 	
-	
+ <!-- Configure the multipart resolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="maxUploadSize" value="10000000"/>
+    </bean>	
 	
 	<!-- Configures the annotation-driven Spring MVC Controller programming model.
 	Note that, with Spring 3.0, this tag works in Servlet MVC only!  -->

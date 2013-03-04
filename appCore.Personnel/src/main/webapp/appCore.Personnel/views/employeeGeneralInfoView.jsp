@@ -146,6 +146,13 @@
         <div class="viewLabelSection">Employee Id</div><div class="inputSection">
         <input type="text" id="Code" data-bind="value : code" class="validate[required, maxSize[10]]" />
 
+
+        <label class="file-upload">
+        <span><strong>&nbsp;</strong></span>
+        <input type="file" name="uploadfile" style="left: -800px;">
+        </label>
+
+
         </div>
         </div>
 

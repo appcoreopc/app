@@ -198,6 +198,13 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("        <div class=\"viewLabelSection\">Employee Id</div><div class=\"inputSection\">\r\n");
       out.write("        <input type=\"text\" id=\"Code\" data-bind=\"value : code\" class=\"validate[required, maxSize[10]]\" />\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("        <label class=\"file-upload\">\r\n");
+      out.write("        <span><strong>&nbsp;</strong></span>\r\n");
+      out.write("        <input type=\"file\" name=\"uploadfile\" style=\"left: -800px;\">\r\n");
+      out.write("        </label>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");

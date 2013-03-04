@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionSynchronizationManager"/>
-<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.SessionFactoryUtils"/>
-<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
-<fullyQualifiedTypeName name="org.hibernate.annotations.IndexColumn"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Service.SectionService"/>
-<fullyQualifiedTypeName name="javax.persistence.PreUpdate"/>
-<fullyQualifiedTypeName name="org.hibernate.annotations.GenerationTime"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.SectionInfo"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DepartmentInfo"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DivisionInfo"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Service.CompanyEntityService"/>
@@ -46,7 +38,6 @@
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Helpers.CodeCheckerHelper"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="appCore.Mvc.Controller.AppCoreController"/>
 <fullyQualifiedTypeName name="com.appCore.Requests.UserAuthenticationRequestStatus"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.User.Entity.Roles"/>
@@ -60,4 +51,13 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
 <fullyQualifiedTypeName name="com.appCore.Mvc.Controller.AppCoreController"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.AbstractController"/>
+<fullyQualifiedTypeName name="org.springframework.web.multipart.commons.CommonsMultipartFile"/>
+<fullyQualifiedTypeName name="org.apache.commons.fileupload.FileUpload"/>
+<fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+<fullyQualifiedTypeName name="org.apache.commons.fileupload.FileUploadException"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="org.apache.commons.fileupload.util.Streams"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>

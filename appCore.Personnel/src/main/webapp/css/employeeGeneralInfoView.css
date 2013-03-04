@@ -6,7 +6,7 @@
 }
 
 .ui-widget-header {
-    background: -moz-linear-gradient(center top , #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
+    background: -moz-linear-gradient(center top, #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
     border: 1px solid #AAAAAA;
     color: #222222;
     font-weight: bold;
@@ -14,4 +14,61 @@
 
 .inputSectionCommand {
     padding-left: 204px;
- }
+}
+
+.file-upload {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+
+.file-upload.focus {
+    outline: 2px solid yellow;
+}
+
+.file-upload input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: 70px;
+    /* Loses tab index in webkit if width is set to 0 */
+    opacity: 0;
+    filter: alpha(opacity = 0);
+}
+
+.file-upload strong {
+
+}
+
+.file-upload span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    background: url("../images/addCover.gif") no-repeat scroll 0 0 transparent;
+}
+
+.file-upload {
+    height: 26px;
+    vertical-align: bottom;
+}
+
+.file-upload,
+.file-upload span {
+    width: 30px;
+}
+
+.file-upload-status {
+    margin-left: 10px;
+    vertical-align: middle;
+    padding: 7px 11px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #888;
+    background: #f8f8f8;
+    border: 3px solid #ddd;
+}

@@ -20,10 +20,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="personnelControlPanel.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="personnelControlPanel.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="70" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.5275862">
+            <state line="71" column="13" selection-start="2619" selection-end="2663" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,61 @@
       <file leaf-file-name="globalViewModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/globalViewModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
+            <state line="19" column="40" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test2.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/test2.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/upload.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="125" selection-start="97" selection-end="126" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadAjax.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/uploadAjax.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employeeAdd.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeAdd.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="33" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employeeGeneralInfoView.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="150" column="24" selection-start="4940" selection-end="4940" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employeeGeneralInfoView.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/employeeGeneralInfoView.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="0" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.46875">
               <folding />
             </state>
           </provider>
@@ -66,10 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/viewmodal/employeeViewModel.js" />
-        <option value="$PROJECT_DIR$/js/coreNotificationStatus.js" />
-        <option value="$PROJECT_DIR$/js/userAuthenticator.js" />
-        <option value="$PROJECT_DIR$/css/personnel.css" />
         <option value="$PROJECT_DIR$/js/coreDialog.js" />
         <option value="$PROJECT_DIR$/js/initTree.js" />
         <option value="$PROJECT_DIR$/css/sidebar/dark-glass/sidebar.css" />
@@ -79,9 +129,13 @@
         <option value="$PROJECT_DIR$/js/coreConfigureSetting.js" />
         <option value="$PROJECT_DIR$/includes/header.html" />
         <option value="$PROJECT_DIR$/js/coreObjects.js" />
-        <option value="$PROJECT_DIR$/js/globalViewModel.js" />
         <option value="$PROJECT_DIR$/js/coreRecentItem.js" />
         <option value="$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp" />
+        <option value="$PROJECT_DIR$/js/globalViewModel.js" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/upload.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/uploadAjax.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp" />
+        <option value="$PROJECT_DIR$/css/employeeGeneralInfoView.css" />
       </list>
     </option>
   </component>
@@ -194,6 +248,24 @@
               <option name="myItemId" value="appCore.Personnel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appCore.Personnel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -205,15 +277,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editing.templates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/appCore.Personnel/views/test2.jsp" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\appCore.Personnel\views" />
       <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\js" />
       <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\css" />
       <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\js\viewmodal" />
-      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\appCore.Personnel\views" />
       <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\js\viewmodal\Administration" />
     </key>
   </component>
@@ -260,7 +332,6 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41150922" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19240907" sideWeight="0.32685715" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1953125" sideWeight="0.6710098" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -271,6 +342,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41150922" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947916" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -331,79 +403,24 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/coreDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="62" selection-start="6617" selection-end="6671" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="52" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/sidebar/dark-glass/sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="0" selection-start="2622" selection-end="2622" vertical-scroll-proportion="0.92410713" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/personnel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="11" selection-start="5436" selection-end="5436" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/test2.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4767" column="0" selection-start="0" selection-end="113274" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/initTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="9" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/jquery-ui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="0" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="95" column="0" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="2263" selection-end="2263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="52" column="0" selection-start="2263" selection-end="2263" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/viewmodal/branchViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="14" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="96" column="14" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appCore.administration/views/roleList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="46" selection-start="475" selection-end="484" vertical-scroll-proportion="0.1954023">
-          <folding />
-        </state>
+        <state line="10" column="46" selection-start="475" selection-end="484" vertical-scroll-proportion="0.1954023" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/coreObjects.js">
@@ -413,18 +430,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/globalViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/coreConfigureSetting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="11" selection-start="0" selection-end="3442" vertical-scroll-proportion="0.88616073">
-          <folding />
-        </state>
+        <state line="79" column="11" selection-start="0" selection-end="3442" vertical-scroll-proportion="0.88616073" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/coreRecentItem.js">
@@ -434,9 +442,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/globalViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="40" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/test2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="70" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.5275862">
+        <state line="71" column="13" selection-start="2619" selection-end="2663" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/upload.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="125" selection-start="97" selection-end="126" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/uploadAjax.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="33" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/employeeGeneralInfoViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/employeeGeneralInfoView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="24" selection-start="4940" selection-end="4940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/employeeGeneralInfoView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.46875">
           <folding />
         </state>
       </provider>
