@@ -3,6 +3,7 @@
         <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeGeneralInfoViewModel.js"></script>
+        <script language="javascript" src="../../js/coreAjaxFileUpload.js"></script>
 
         <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
@@ -147,18 +148,23 @@
         <input type="text" id="Code" data-bind="value : code" class="validate[required, maxSize[10]]" />
 
 
-        <label class="file-upload">
-        <span><strong>&nbsp;</strong></span>
-        <input type="file" name="uploadfile" style="left: -800px;">
-        </label>
-
 
         </div>
         </div>
 
         <div class="formRowView">
         <div class="viewLabelSection">Name</div><div class="inputSection"> <input
-        type="text" id="Name" data-bind="value : name" class="validate[required, maxSize[10]]" /></div>
+        type="text" id="Name" data-bind="value : name" class="validate[required, maxSize[10]]" />
+
+
+        <label class="file-upload">
+        <span><strong>&nbsp;</strong></span>
+        <input type="file" name="file">
+        <input type="text" id=" fileName" name="fileName" value="something" />
+        </label>
+
+
+        </div>
         </div>
 
 
@@ -336,6 +342,7 @@
                 var tab = $("#employeeAddTabs").tabs();
 
                 $("#employeeGeneralForm").validationEngine();
+                $(document).activateFileUpload('employeeGeneralForm');
             }
             catch (ex)
             {

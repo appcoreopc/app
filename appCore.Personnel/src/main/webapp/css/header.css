@@ -4922,6 +4922,7 @@ ui-state-hover a, .ui-state-hover a:hover {
 
 #configureSetupAccordian div p a {
     display: block;
+    padding: 2px 0px 2px 0px;
 }
 
 #configureSetupContent {
@@ -4933,4 +4934,5 @@ ui-state-hover a, .ui-state-hover a:hover {
     width: 300px;
     height: 400px;
     background-color: #fff;
+    border: none;
 }

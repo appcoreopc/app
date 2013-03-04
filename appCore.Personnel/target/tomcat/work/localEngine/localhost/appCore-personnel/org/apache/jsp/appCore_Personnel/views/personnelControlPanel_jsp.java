@@ -259,7 +259,6 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("            $(document).ready(function()\r\n");
       out.write("            {\r\n");
-      out.write("\r\n");
       out.write("                $(\"ul#demo_menu1\").sidebar();\r\n");
       out.write("\r\n");
       out.write("                /*$(\"#test\").click(function()\r\n");

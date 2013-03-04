@@ -70,7 +70,6 @@
 
             $(document).ready(function()
             {
-
                 $("ul#demo_menu1").sidebar();
 
                 /*$("#test").click(function()

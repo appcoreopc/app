@@ -67,7 +67,7 @@
             data: formData,
             //Options to tell JQuery not to process data or worry about content-type
             cache: false,
-            contentType: false,
+            contentType: 'multipart/form-data',
             processData: false
             }, 'json');
 
@@ -88,8 +88,8 @@
 
         <form id="myform">
         Please select a file to upload : <input type="file" id="file" name="file" />
-        <input type="text" id="fileName" name="fileName" value="jeremyjeremy" />
-        <input type="button" id="uploadFileBtn" value="Click me">
+         <input type="text" id="input" value="jeremyjeremy" />
+            <input type="button" id="uploadFileBtn" value="Click me">
         <input type="submit" value="upload" />
         </form>
         </div>

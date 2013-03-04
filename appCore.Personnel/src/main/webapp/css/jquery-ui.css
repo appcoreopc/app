@@ -86,15 +86,13 @@
     height: 100%;
 }
 .ui-accordion .ui-accordion-header {
-    display: block;
-    cursor: pointer;
-    position: relative;
-    margin-top: 2px;
-    padding: .5em .5em .5em .7em;
-    min-height: 0; /* support: IE7 */
-    border: 1px solid #D3D3D3;
     background-color: #E6E6E6;
-
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+    display: block;
+    min-height: 0;
+    padding-left: 10px;
+    position: relative;
 }
 .ui-accordion .ui-accordion-icons {
     padding-left: 2.2em;

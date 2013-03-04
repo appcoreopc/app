@@ -26,6 +26,7 @@ import com.appCore.Mvc.Controller.AppCoreController;
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.BranchSummary;
+import com.appCore.personnel.Core.Entity.FileUploadContent;
 import com.appCore.personnel.Core.Entity.UnitSummary;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.AssociationMembershipType;
@@ -36,17 +37,18 @@ import com.appCore.personnel.Core.Service.BranchService;
 @RequestMapping("/Core")
 public class FileUploadController {
 
-	protected static Logger logger = Logger.getLogger("controller");
-
+	protected static Logger logger = Logger.getLogger("controller");	
+	
 	@RequestMapping(value = "/create/upload", method = RequestMethod.POST, consumes = "multipart/form-data", produces = "application/json")
 	@ResponseBody()
-	public String handleImageUpload(MultipartFile file) throws IOException, FileUploadException 
+	public String handleImageUpload(MultipartFile file, @RequestParam(value = "fileName") String name) throws IOException, FileUploadException 
 	{
 		if (file.getSize() > 0) {
 			
 			File f = new java.io.File("c:\\temp\\test1");
 			file.transferTo(f);
-			
+				
+			System.out.printf("upload name:" + name);
 			//filesSession.addAll(Arrays.asList(files));
 			// store the bytes somewhere
 			System.out.println("done! everything is ok.");
@@ -55,21 +57,5 @@ public class FileUploadController {
 			return "{\"success\": false}";
 		}
 	}
-
-	/*
-	 * @RequestMapping(value = "/create/upload", method = RequestMethod.POST,
-	 * consumes="application/octet-stream", produces="application/json")
-	 * 
-	 * @ResponseBody() public String
-	 * handleImageUploadApplication(HttpServletRequest request,
-	 * 
-	 * @ModelAttribute(value="files") List<MultipartFile> filesSession) throws
-	 * IOException, FileUploadException {
-	 * 
-	 * if (request.getInputStream() != null) { File file =
-	 * File.createTempFile("file", "valumns", new File("C:\\temp"));
-	 * FileOutputStream fos = new FileOutputStream(file);
-	 * Streams.copy(request.getInputStream(), fos, true); return
-	 * "{\"success\": true}"; } else { return "{\"success\": true}"; } }
-	 */
+		
 }

@@ -2,7 +2,7 @@ package com.appCore.personnel.Core.Entity;
 
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-public class FieUpload {
+public class FileUploadContent {
 	
 	private String name; 
 	
