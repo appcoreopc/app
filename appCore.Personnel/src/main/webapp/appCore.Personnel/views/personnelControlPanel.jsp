@@ -80,8 +80,6 @@
 
                 $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalHostname + globalMenuServiceUrl);
 
-                $(document.body).configurePopupMenu('testConfigureSettings', 'testConfigureSetupView', globalHostname + globalMenuServiceUrl);
-
                 $("#createEntityButton").click(function(){
                      var target = $(this);
                      var dialogHelper = new CoreDialog();

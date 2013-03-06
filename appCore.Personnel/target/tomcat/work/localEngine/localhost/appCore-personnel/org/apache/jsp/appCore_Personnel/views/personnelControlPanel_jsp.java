@@ -118,7 +118,6 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("                <li><a href=\"personnelControlPanel.jsp\"><i class=\"icon-home\"></i></a></li>\r\n");
       out.write("\r\n");
-      out.write("                <li><a href=\"#\" onclick=\"return false;\"><i id=\"testConfigureSettings\" class=\"icon-cog-1\"></i></a></li>\r\n");
       out.write("\r\n");
       out.write("                </li>\r\n");
       out.write("            </ul>\r\n");
@@ -271,8 +270,6 @@ public final class personnelControlPanel_jsp extends org.apache.jasper.runtime.H
       out.write("                });\r\n");
       out.write("\r\n");
       out.write("                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalHostname + globalMenuServiceUrl);\r\n");
-      out.write("\r\n");
-      out.write("                $(document.body).configurePopupMenu('testConfigureSettings', 'testConfigureSetupView', globalHostname + globalMenuServiceUrl);\r\n");
       out.write("\r\n");
       out.write("                $(\"#createEntityButton\").click(function(){\r\n");
       out.write("                     var target = $(this);\r\n");
