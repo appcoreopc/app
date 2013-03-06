@@ -212,7 +212,7 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("        <label class=\"file-upload\">\r\n");
       out.write("        <span><strong>&nbsp;</strong></span>\r\n");
       out.write("        <input type=\"file\" name=\"file\">\r\n");
-      out.write("        <input type=\"text\" id=\" fileName\" name=\"fileName\" value=\"something\" />\r\n");
+      out.write("        <input type=\"hidden\" id=\"fileName\" data-bind=\"value: nid\" name=\"fileName\" />\r\n");
       out.write("        </label>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -394,7 +394,9 @@ public final class employeeGeneralInfoView_jsp extends org.apache.jasper.runtime
       out.write("                var tab = $(\"#employeeAddTabs\").tabs();\r\n");
       out.write("\r\n");
       out.write("                $(\"#employeeGeneralForm\").validationEngine();\r\n");
-      out.write("                $(document).activateFileUpload('employeeGeneralForm');\r\n");
+      out.write("                $(document).activateFileUpload('employeeGeneralForm', globalEmplpoyeePixUploadPath);\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("            }\r\n");
       out.write("            catch (ex)\r\n");
       out.write("            {\r\n");

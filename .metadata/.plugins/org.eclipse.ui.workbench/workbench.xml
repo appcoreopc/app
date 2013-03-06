@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="39" version="2.0">
+<workbench progressCount="34" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="896" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -45,6 +45,13 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
 </presentation>
 </folder>
 </info>
@@ -59,10 +66,41 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileUploadController.java" partName="FileUploadController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/FileUploadController.java" title="FileUploadController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/FileUploadController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/FileUploadController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1672" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="1821" selectionTopPixel="211"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CompanySettings.java" partName="CompanySettings.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Entity/CompanySettings.java" title="CompanySettings.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Entity/CompanySettings.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Entity/CompanySettings.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CurrencyService.java" partName="CurrencyService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java" title="CurrencyService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="683" selectionOffset="533" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Branch.java" partName="Branch.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java" title="Branch.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="57" selectionOffset="1032" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CompanySettingsService.java" partName="CompanySettingsService.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Service/CompanySettingsService.java" title="CompanySettingsService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Service/CompanySettingsService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Service/CompanySettingsService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1146" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AssociationController.java" partName="AssociationController.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/AssociationController.java" title="AssociationController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/AssociationController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/AssociationController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="142" selectionOffset="919" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileContentHelper.java" partName="FileContentHelper.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/FileContentHelper.java" title="FileContentHelper.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/FileContentHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/FileContentHelper.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="197" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CoreConstants.java" partName="CoreConstants.java" path="C:/appCoreDev/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CoreConstants.java" title="CoreConstants.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CoreConstants.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CoreConstants.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="25" selectionOffset="571" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Type Hierarchy">
+<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Helpers{FileContentHelper.java[FileContentHelper" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" selection="=appCore.Personnel/src\/main\/java&lt;com.appCore.personnel.Core.Helpers{FileContentHelper.java[FileContentHelper" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName=""/>
+</view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
@@ -106,6 +144,7 @@
 <expanded>
 <category IMemento.internal.id="Warnings (100 of 3842 items)"/>
 <category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="441" org.eclipse.ui.ide.resourceField="339" org.eclipse.ui.ide.severityAndDescriptionField="1051"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -361,18 +400,20 @@
 <view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.jdt.ui.TypeHierarchy" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
-<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -628,164 +669,167 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/FieUpload.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/FileUploadController.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=appCore.Personnel/C:\/Users\/jeremywoo\/.m2\/repository\/org\/springframework\/spring-web\/3.2.1.RELEASE\/spring-web-3.2.1.RELEASE.jar&lt;org.springframework.web.multipart.commons(CommonsMultipartFile.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Controller/BranchController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/FieUpload.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=appCore.Personnel/C:\/Users\/jeremywoo\/.m2\/repository\/commons-fileupload\/commons-fileupload\/1.2\/commons-fileupload-1.2.jar&lt;org.apache.commons.fileupload(FileUpload.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/CompanySettings.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Entity/CompanySettings.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Service/CompanySettingsService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/AssociationController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/FileContentHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/FileContentHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CoreConstants.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/FileUploadContent.java"/>
 </editors>
-<item historyLabel="FieUpload.java" index="0">
-<position info="not_deleted" x="133" y="10"/>
+<item historyLabel="CompanySettings.java" index="1">
+<position info="not_deleted" x="1528" y="0"/>
 </item>
-<item historyLabel="BranchController.java" index="1">
+<item historyLabel="Branch.java" index="3">
+<position info="not_deleted" x="828" y="132"/>
+</item>
+<item historyLabel="CompanySettings.java" index="1">
+<position info="not_deleted" x="855" y="0"/>
+</item>
+<item historyLabel="Branch.java" index="3">
+<position info="not_deleted" x="1032" y="57"/>
+</item>
+<item historyLabel="CurrencyService.java" index="2">
+<position info="not_deleted" x="645" y="0"/>
+</item>
+<item historyLabel="CompanySettings.java" index="1">
+<position info="not_deleted" x="855" y="0"/>
+</item>
+<item historyLabel="CompanySettings.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
+<item historyLabel="CompanySettingsService.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="CurrencyService.java" index="2">
+<position info="not_deleted" x="49" y="449"/>
+</item>
+<item historyLabel="CompanySettingsService.java" index="5">
+<position info="not_deleted" x="1139" y="0"/>
+</item>
+<item historyLabel="CurrencyService.java" index="2">
+<position info="not_deleted" x="533" y="683"/>
+</item>
+<item historyLabel="CompanySettingsService.java" index="5">
+<position info="not_deleted" x="1139" y="0"/>
+</item>
+<item historyLabel="CompanySettingsService.java" index="5">
+<position info="not_deleted" x="771" y="0"/>
+</item>
+<item historyLabel="CompanySettingsService.java" index="5">
+<position info="not_deleted" x="725" y="0"/>
+</item>
+<item historyLabel="AssociationController.java" index="6">
+<position info="not_deleted" x="919" y="142"/>
+</item>
+<item historyLabel="CompanySettingsService.java" index="5">
+<position info="not_deleted" x="1146" y="0"/>
+</item>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2190" y="0"/>
+</item>
+<item historyLabel="FileContentHelper.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2190" y="0"/>
+</item>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="600" y="0"/>
+</item>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="596" y="0"/>
+</item>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="60" y="13"/>
+</item>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="595" y="0"/>
+</item>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="94" y="0"/>
+</item>
+<item historyLabel="FileContentHelper.java" index="8">
 <position/>
 </item>
-<item historyLabel="BranchController.java" index="1">
-<position info="not_deleted" x="0" y="1535"/>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="313" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1538" y="0"/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="589" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="162" y="14"/>
 </item>
-<item historyLabel="FieUpload.java" index="0">
-<position info="not_deleted" x="133" y="10"/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="589" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="2867" y="0"/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="62" y="17"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1801" y="13"/>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2190" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1831" y="0"/>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2333" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1841" y="19"/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="97" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1828" y="11"/>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2333" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1987" y="0"/>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2301" y="19"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="2005" y="6"/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="298" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="314" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="298" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="FileUploadContent.java" index="10">
+<position info="not_deleted" x="193" y="20"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2303" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="197" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="571" y="25"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="197" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2273" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="CoreConstants.java" index="9">
+<position info="not_deleted" x="571" y="25"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="FileContentHelper.java" index="8">
+<position info="not_deleted" x="197" y="0"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
+<item historyLabel="AssociationController.java" index="6">
+<position info="not_deleted" x="919" y="142"/>
 </item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="2076" y="4"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1476" y="0"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1784" y="0"/>
-</item>
-<item historyLabel="CommonsMultipartFile.class" index="3">
-<position info="not_deleted" x="679" y="0"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1784" y="0"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1978" y="0"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position info="not_deleted" x="1946" y="0"/>
-</item>
-<item historyLabel="BranchController.java" index="4">
-<position info="not_deleted" x="2320" y="13"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="FieUpload.java" index="5">
-<position info="not_deleted" x="133" y="10"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="FieUpload.java" index="5">
-<position info="not_deleted" x="185" y="20"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="FieUpload.java" index="5">
-<position info="not_deleted" x="185" y="20"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="FileUpload.class" index="6">
-<position info="not_deleted" x="400" y="10"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="FileUploadContent.java" index="7">
-<position info="not_deleted" x="185" y="20"/>
-</item>
-<item historyLabel="BranchController.java" index="4">
-<position info="not_deleted" x="1668" y="45"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="BranchController.java" index="4">
-<position info="not_deleted" x="1668" y="45"/>
-</item>
-<item historyLabel="FileUploadController.java" index="2">
-<position/>
-</item>
-<item historyLabel="BranchController.java" index="4">
-<position info="not_deleted" x="46" y="0"/>
-</item>
-<item active="true" historyLabel="FileUploadController.java" index="2">
-<position/>
+<item active="true" historyLabel="FileUploadController.java" index="0">
+<position info="not_deleted" x="2273" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -793,6 +837,13 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@6d0ff85e"/>
+<trimItem IMemento.internal.id="right"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -801,10 +852,35 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CoreConstants.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CoreConstants.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/CoreConstants.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileContentHelper.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/FileContentHelper.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Helpers/FileContentHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileContentHelper.java" tooltip="appCore.Personnel/src/main/java/FileContentHelper.java">
+<persistable path="/appCore.Personnel/src/main/java/FileContentHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AssociationController.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/AssociationController.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Controller/AssociationController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CompanySettingsService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Service/CompanySettingsService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/Service/CompanySettingsService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Branch.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Entity/Branch.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CurrencyService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Job/Service/CurrencyService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CompanySettings.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/CompanySettings.java">
+<persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Configuration/CompanySettings.java"/>
+</file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="FileUpload.class" tooltip="org.apache.commons.fileupload.FileUpload">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=appCore.Personnel/C:\/Users\/jeremywoo\/.m2\/repository\/commons-fileupload\/commons-fileupload\/1.2\/commons-fileupload-1.2.jar&lt;org.apache.commons.fileupload(FileUpload.class"/>
 </file>
@@ -825,30 +901,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BranchService.java" tooltip="appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java">
 <persistable path="/appCore.Personnel/src/main/java/com/appCore/personnel/Core/Service/BranchService.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" name="pom.xml" tooltip="appCoreMvc/pom.xml">
-<persistable path="/appCoreMvc/pom.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RequestStatus.java" tooltip="appCore.Shared/src/com/appCore/Requests/RequestStatus.java">
-<persistable path="/appCore.Shared/src/com/appCore/Requests/RequestStatus.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.m2e.editor.MavenPomEditor" name="pom.xml" tooltip="appCore.Administration/pom.xml">
-<persistable path="/appCore.Administration/pom.xml"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="ControllerAdvice.class" tooltip="org.springframework.web.bind.annotation.ControllerAdvice">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=appCoreMvc/C:\/Users\/jeremywoo\/.m2\/repository\/org\/springframework\/spring-web\/3.2.1.RELEASE\/spring-web-3.2.1.RELEASE.jar&lt;org.springframework.web.bind.annotation(ControllerAdvice.class"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="Annotation.class" tooltip="java.lang.annotation.Annotation">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=appCore.Personnel/C:\/Program Files\/Java\/jre7\/lib\/rt.jar&lt;java.lang.annotation(Annotation.class"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="Controller.class" tooltip="org.springframework.stereotype.Controller">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=appCore.Personnel/C:\/Users\/jeremywoo\/.m2\/repository\/org\/springframework\/spring-context\/3.0.5.RELEASE\/spring-context-3.0.5.RELEASE.jar&lt;org.springframework.stereotype(Controller.class"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="Controller.class" tooltip="org.springframework.web.servlet.mvc.Controller">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=appCoreMvc/C:\/Users\/jeremywoo\/.m2\/repository\/org\/springframework\/spring-webmvc\/3.0.5.RELEASE\/spring-webmvc-3.0.5.RELEASE.jar&lt;org.springframework.web.servlet.mvc(Controller.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppCoreController.java" tooltip="appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java">
-<persistable path="/appCoreMvc/src/main/java/com/appCore/Mvc/Controller/AppCoreController.java"/>
 </file>
 </mruList>
 </workbench>

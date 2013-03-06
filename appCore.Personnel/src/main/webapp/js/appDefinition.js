@@ -314,6 +314,7 @@ var globalGradeDeleteUrl = globalHostname + "/app/Core/Job/Grade/delete";
 var globalSectionDeleteUrl = globalHostname + "/app/Core/Section/delete";
 var globalDepartmentDeleteUrl = globalHostname + "/app/Core/Department/delete";
 
+var globalEmployeePixUploadPath = globalHostname + "/app/Core/create/upload";
 var globalPersonnelControlPanel = "personnelControlPanel.jsp";
 var globalUserValidationUrl = globalHostname + "/app/Users/Users/validateLogin";
 var globalAdminCentralPage = "userList.jsp";

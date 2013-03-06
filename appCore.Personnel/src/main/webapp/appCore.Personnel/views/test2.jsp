@@ -16,7 +16,7 @@
         <script type="text/javascript" src="../../js/ui/jquery-ui-1.8.23.custom.js"></script>
 
 
-        <script type="text/javascript" src="../../js/coreConfigureSetting.js"></script>
+        <script type="text/javascript" src="../../js/corePopupMenu.js"></script>
 
         <!-- for sidebar -->
 

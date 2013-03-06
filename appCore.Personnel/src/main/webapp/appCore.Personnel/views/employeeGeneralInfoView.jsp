@@ -160,7 +160,7 @@
         <label class="file-upload">
         <span><strong>&nbsp;</strong></span>
         <input type="file" name="file">
-        <input type="text" id=" fileName" name="fileName" value="something" />
+        <input type="hidden" id="fileName" data-bind="value: nid" name="fileName" />
         </label>
 
 
@@ -342,7 +342,9 @@
                 var tab = $("#employeeAddTabs").tabs();
 
                 $("#employeeGeneralForm").validationEngine();
-                $(document).activateFileUpload('employeeGeneralForm');
+                $(document).activateFileUpload('employeeGeneralForm', globalEmployeePixUploadPath);
+
+
             }
             catch (ex)
             {

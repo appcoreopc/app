@@ -92,7 +92,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"navbar navbar-top class\" id=\"header\">\r\n");
       out.write("  <div class=\"navbar-inner\">\r\n");
       out.write("    <div class=\"container\">\r\n");
-      out.write("      <a class=\"brand airbnb\" href=\"/\">appCore</a>\r\n");
       out.write("\r\n");
       out.write("      <ul class=\"nav logged-out\">\r\n");
       out.write("\r\n");

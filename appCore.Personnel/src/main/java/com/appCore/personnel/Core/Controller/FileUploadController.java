@@ -1,5 +1,5 @@
 package com.appCore.personnel.Core.Controller;
-
+	
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -22,6 +22,8 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.util.Streams;
 import org.apache.log4j.Logger;
 
+import com.appCore.personnel.Core.Helpers.CoreConstants;
+import com.appCore.personnel.Core.Helpers.FileContentHelper;
 import com.appCore.Mvc.Controller.AppCoreController;
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Entity.Branch;
@@ -31,7 +33,6 @@ import com.appCore.personnel.Core.Entity.UnitSummary;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.AssociationMembershipType;
 import com.appCore.personnel.Core.Service.BranchService;
-
 
 @Controller
 @RequestMapping("/Core")
@@ -43,15 +44,10 @@ public class FileUploadController {
 	@ResponseBody()
 	public String handleImageUpload(MultipartFile file, @RequestParam(value = "fileName") String name) throws IOException, FileUploadException 
 	{
-		if (file.getSize() > 0) {
-			
-			File f = new java.io.File("c:\\temp\\test1");
-			file.transferTo(f);
-				
-			System.out.printf("upload name:" + name);
-			//filesSession.addAll(Arrays.asList(files));
-			// store the bytes somewhere
-			System.out.println("done! everything is ok.");
+		if (file.getSize() > 0 && !name.isEmpty()) {
+			String contentType = file.getContentType();
+			File targetFileName = new java.io.File(CoreConstants.fileUploadEmployeePixPath + name + FileContentHelper.getFileExtByContent(contentType));
+			file.transferTo(targetFileName);
 			return "{\"success\": true}";
 		} else {
 			return "{\"success\": false}";

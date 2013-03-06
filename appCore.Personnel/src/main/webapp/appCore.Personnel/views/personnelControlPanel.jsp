@@ -24,7 +24,7 @@
 
         <link rel="stylesheet" href="../../css/jquery-ui.css" />
 
-        <script type="text/javascript" src="../../js/coreConfigureSetting.js"></script>
+        <script type="text/javascript" src="../../js/corePopupMenu.js"></script>
         <script type="text/javascript" src="../../js/coreRecentItem.js"></script>
 
         <!-- for sidebar -->
@@ -72,20 +72,15 @@
             {
                 $("ul#demo_menu1").sidebar();
 
-                /*$("#test").click(function()
-                {
-                    globalViewModel.addToRecentItem();
-
-                });*/
-
                 $("#companyDropDownList").change(function()
                 {
                     globalCurrentCompanyId = $(this).find("option:selected").val();
                     globalViewModel.companyId(globalCurrentCompanyId);
                 });
 
+                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalHostname + globalMenuServiceUrl);
 
-                $(document.body).configureSettings('configureSettings');
+                $(document.body).configurePopupMenu('testConfigureSettings', 'testConfigureSetupView', globalHostname + globalMenuServiceUrl);
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);

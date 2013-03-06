@@ -10491,3 +10491,13 @@ Contains: Could not delete: C:\appCoreDev\appCore.Personnel\target\classes\com.
 
 !ENTRY org.eclipse.osgi 2 1 2013-03-02 07:39:50.987
 !MESSAGE NLS unused message: NewHibernateMappingElementsSelectionPage_select in: org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages
+!SESSION 2013-03-05 17:52:01.465 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_03
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.osgi 2 1 2013-03-05 18:04:15.987
+!MESSAGE NLS unused message: NewHibernateMappingElementsSelectionPage_select in: org.hibernate.eclipse.jdt.ui.internal.JdtUiMessages

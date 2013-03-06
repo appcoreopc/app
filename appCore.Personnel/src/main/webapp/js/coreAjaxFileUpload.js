@@ -1,6 +1,6 @@
 (function ($) {
 
-    $.fn.activateFileUpload = function (targetFormId) {
+    $.fn.activateFileUpload = function (targetFormId, uploadPath) {
 
         $(':file').change(function () {
             var file = this.files[0];
@@ -17,7 +17,6 @@
                 alert("File doesn't match png, jpg or gif");
             }
             else {
-                console.log('start uploading');
                 //$('#uploadFileBtn').click(function ()
                 //{
                 //var formData = new FormData($("#myform")[0]);
@@ -26,7 +25,7 @@
                 console.log(formData);
 
                 $.ajax({
-                    url:'http://localhost:8080/appCore-personnel/app/Core/create/upload', //server script to process data
+                    url:uploadPath, //server script to process data
                     type:'POST',
                     xhr:function () {  // custom xhr
                         var myXhr = $.ajaxSettings.xhr();

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.DivisionInfo"/>
-<fullyQualifiedTypeName name="com.appCore.personnel.Core.Service.CompanyEntityService"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.Company"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.CompanyEntity"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="org.apache.commons.fileupload.util.Streams"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.appCore.personnel.Core.Entity.FileUploadContent"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Configuration.Entity.CompanySettings"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Helpers.FileContentHelper"/>
+<fullyQualifiedTypeName name="com.appCore.personnel.Core.Helpers.CoreConstants"/>
 </qualifiedTypeNameHistroy>
