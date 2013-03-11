@@ -110,6 +110,8 @@ insert into maritalStatus (name, description, companyRef) values ('Married', 'Ma
 insert into maritalStatus (name, description, companyRef) values ('Divorced', 'Divorced', 2);
 
 
+insert into userlandingPage (userId, landingPage) values (2, 'landingpage.jsp');
+
 
 insert into Users (username, password) values ('user', 'user');
 insert into Users (username, password) values ('user1', 'user1');
@@ -320,8 +322,7 @@ insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef
 insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 3', 1, 1);
 
 
-
-insert into jobsetupExperience (expertise, description, experienceYears, jobSetupRef) values (1, 'Level 1', 1, 269)
+insert into jobsetupExperience (expertise, description, experienceYears, jobSetupRef) values (1, 'Level 1', 1, 269);
 insert into jobsetupSkill (skill, level, category, categorydescription, jobSetupRef) values (1, 1, 1, 'category description', 269);
 
 

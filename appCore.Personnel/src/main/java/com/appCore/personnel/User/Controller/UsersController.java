@@ -16,8 +16,10 @@ import com.appCore.Requests.RequestStatus;
 import com.appCore.Requests.UserAuthenticationRequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.User.Entity.Roles;
+import com.appCore.personnel.User.Entity.UserLandingPage;
 import com.appCore.personnel.User.Entity.Users;
 
+import com.appCore.personnel.User.Service.UserLandingPageService;
 import com.appCore.personnel.User.Service.UsersService;
 
 
@@ -29,6 +31,10 @@ public class UsersController
 		protected static Logger logger = Logger.getLogger("controller");
 		@Resource(name="usersService")
 		private UsersService service;
+		
+		@Resource(name="userLandingPageService")
+		private UserLandingPageService userLandingservice;
+		
 
 		@RequestMapping(value = "/Users/list", method = RequestMethod.GET)		
 		public @ResponseBody List<Users> listUsers () 
@@ -47,23 +53,31 @@ public class UsersController
 		@RequestMapping(value = "/Users/validateLogin", method = RequestMethod.GET)		
 		public @ResponseBody UserAuthenticationRequestStatus getUsers (@ModelAttribute Users user) 
 		{
-				UserAuthenticationRequestStatus status = new UserAuthenticationRequestStatus(); 
-				status.setMessageCode(-1);
-				status.setMessageDescription("Login fails.");
+				UserAuthenticationRequestStatus statusResponse = new UserAuthenticationRequestStatus(); 
+				statusResponse.setMessageCode(-1);
+				statusResponse.setMessageDescription("Login fails");
 				
-				List<Users> getUserResult = service.get(user.getUsername(), user.getPassword());
-				
+				List<Users> userVerificationResult = service.get(user.getUsername(), user.getPassword());
 				service.getRole(1);
 				
-				if (getUserResult.size() > 0)
+				if (userVerificationResult.size() > 0)
 				{
-					status.setUsername(user.getUsername());
+					Users userFromStore = userVerificationResult.get(0);
+					
+					statusResponse.setUsername(user.getUsername());
 					// status.setEmployeeRole();
-					status.setMessageCode(0);
-					status.setMessageDescription("User logins successfully.");
+					statusResponse.setMessageCode(0);
+					statusResponse.setMessageDescription("User logins successfully.");
+			
+					List<UserLandingPage> userLandingData = userLandingservice.getByUserId(userFromStore.getNid());
+										
+					if (userLandingData.size() > 0)
+					{
+						UserLandingPage userLanding = userLandingData.get(0);
+						statusResponse.setLandingPage(userLanding.getLandingPage());
+					}
 				}
-				
-				return status; 
+				return statusResponse; 
 		}
 		
 

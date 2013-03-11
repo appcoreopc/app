@@ -50,7 +50,7 @@
                 sessionStorage.setItem("role", 1);
                 sessionStorage.setItem("companyId", 1);
                 sessionStorage.setItem("companyName", "AppCore");
-                goToPage(globallandingPage);
+                goToPage(msg.landingPage);
             }
             else
             {

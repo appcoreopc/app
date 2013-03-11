@@ -4,6 +4,11 @@ public class UserAuthenticationRequestStatus extends RequestStatus {
 	
 	private String employeeRole; 
 	
+	private String username; 
+	
+	private String landingPage; 
+
+	
 	public String getEmployeeRole() {
 		return employeeRole;
 	}
@@ -20,7 +25,12 @@ public class UserAuthenticationRequestStatus extends RequestStatus {
 		this.username = username;
 	}
 
-	private String username; 
+	public String getLandingPage() {
+		return landingPage;
+	}
 
+	public void setLandingPage(String landingPage) {
+		this.landingPage = landingPage;
+	}
 
 }

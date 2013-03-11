@@ -8,9 +8,6 @@
         var popupSetupAccordian = popupElementName + "Accordian"
         var popupSetupView = popupElementName;
 
-        console.log(popupSetupContent);
-        console.log(popupSetupHeader);
-
         if (targetClickElementId != undefined) {
 
             var menuDialog = $("<div id='" + popupSetupView + "'><div id='" + popupSetupHeader +  "'></div><div id='" + popupSetupContent + "'></div></div>");
@@ -67,7 +64,6 @@
                 }
 
                 $(document.body).on('click', function (e) {
-                    console.log("document click event setup!");
                     if (
                         !$(e.target).is('#' + popupSetupView)
                             && !$(e.target).is("#" + targetClickElementId)
@@ -76,7 +72,6 @@
                             && !$(e.target).is("#" + popupSetupAccordian + " h3")
 
                         ) {
-                        console.log("hide element");
                         $("#" + popupSetupView).hide();
                         $(document.body).off('click');
                     }

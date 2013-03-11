@@ -17,6 +17,7 @@ import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.User.Entity.FormMenuView;
 import com.appCore.personnel.User.Entity.Forms;
 import com.appCore.personnel.User.Entity.Forms_Actions_Role;
+import com.appCore.personnel.User.Entity.Users;
 
 import com.appCore.personnel.User.Service.FormsService;
 
@@ -44,6 +45,14 @@ public class FormsController
 				return service.getFormsMenu();
 				
 		}
+		
+		@RequestMapping(value = "/Forms/listMenuByUser", method = RequestMethod.GET)		
+		public @ResponseBody List<FormMenuView> listFormsMenu(Users user) 
+		{	
+				return service.getFormsMenu();
+				
+		}
+		
 		
 		@RequestMapping(value = "/Forms/get", method = RequestMethod.GET)		
 		public @ResponseBody Forms_Actions_Role getForms (@RequestParam(value="id", required=true) String formId, @RequestParam(value="roleId") Integer roleId) 
