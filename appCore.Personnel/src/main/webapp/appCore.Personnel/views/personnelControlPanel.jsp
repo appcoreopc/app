@@ -26,6 +26,7 @@
         <script type="text/javascript" src="../../js/coreDefaultBinding.js"></script>
 
         <link rel="stylesheet" href="../../css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../css/personnelControlPanelOverride.css" />
         <script type="text/javascript" src="../../js/corePopupMenu.js"></script>
         <script type="text/javascript" src="../../js/coreRecentItem.js"></script>
 
