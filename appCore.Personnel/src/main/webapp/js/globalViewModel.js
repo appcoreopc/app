@@ -13,7 +13,6 @@ var GlobalViewModel = function () {
     self.applicationScopeType = ko.observable();
     self.refresh = ko.observable();
 
-    self.previousBindeCcomponentId = "";
     // notification indicator like facebook
     self.notifications = ko.observable();
 
@@ -21,10 +20,11 @@ var GlobalViewModel = function () {
 
     self.recentItem = ko.observable();
 
+    self.bindedViewModel = ko.observable();
+
     self.showStatus = function (message, functionCall) {
 
     }
-
 
     self.addToRecentItem = function () {
         var recentItem = new RecentItemModel();

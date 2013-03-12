@@ -1,7 +1,7 @@
     <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
     <script language="javascript" src="../../js/viewmodal/companyViewModel.js"></script>
     <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
-
+    <script language="javascript" src="../../js/coreDefaultBinding.js"></script>
 
         <script type="text/javascript">
 
@@ -20,7 +20,9 @@
                     var coreCommand = new CoreCommand();
                     var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
                     vm.gridViewModel = gridViewModel;
-                    ko.applyBindings(vm, document.getElementById("companyDiv"));
+                    //ko.applyBindings(vm, document.getElementById("companyDiv"));
+                    $("#companyDiv").setupViewBinding(vm, globalViewModel);
+
                 }
                 catch (ex)
                 {

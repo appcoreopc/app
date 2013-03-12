@@ -1,0 +1,10 @@
+.ui-icon {
+    background-repeat: no-repeat;
+    display: inline;
+    overflow: hidden;
+    text-indent: -99999px;
+}
+
+.icon-plus-circle-1  {
+    padding: 4px;
+}

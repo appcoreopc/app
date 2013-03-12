@@ -2041,7 +2041,7 @@ label, input, button, select, textarea {
 }
 
 input, button, select, textarea {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 
 label {
@@ -2173,7 +2173,7 @@ input, select, textarea {
     -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 0 #000000;
     margin-top: 8px;
-    border-radius: 6px 6px 6px 6px;
+    /*border-radius: 6px 6px 6px 6px;*/
 }
 
 input:focus, select:focus, textarea:focus {
@@ -4422,7 +4422,7 @@ i.currency.dark.ZAR {
 }
 
 .ui-widget {
-    font-family: Arial, Verdana, sans-serif;
+    /*font-family: Arial, Verdana, sans-serif;*/
     font-size: 1.1em;
 }
 
@@ -4431,7 +4431,7 @@ i.currency.dark.ZAR {
 }
 
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
-    font-family: Arial, Verdana, sans-serif;
+    /*font-family: Arial, Verdana, sans-serif;*/
     font-size: 1em;
 }
 

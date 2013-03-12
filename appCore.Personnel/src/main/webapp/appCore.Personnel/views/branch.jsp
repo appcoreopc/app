@@ -29,8 +29,10 @@
                 var coreCommand = new CoreCommand();
                 var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
                 vm.gridViewModel = gridViewModel;
-                ko.applyBindings(vm, document.getElementById("branchDiv"));
-            }
+                //ko.applyBindings(vm, document.getElementById("branchDiv"));
+                $("#branchDiv").setupViewBinding(vm, globalViewModel);
+
+    }
             catch (ex)
             {
                 console.log(ex)

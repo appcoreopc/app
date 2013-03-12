@@ -3239,7 +3239,7 @@ a.download-sdk {
 
 .ko-grid td, th { padding: 0.4em; }
 
-.ko-grid tr:nth-child(odd) { background-color: #DDD; }
+.ko-grid tr:nth-child(odd) { background-color: #EFEEEF; }
 
 .ko-grid-pageLinks { margin-bottom: 1em; }
 

@@ -1,5 +1,6 @@
-    <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/entityJqueryUIOverride.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/sectionInfoViewModel.js"></script>
         <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>

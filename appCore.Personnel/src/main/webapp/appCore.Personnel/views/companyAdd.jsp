@@ -356,15 +356,19 @@
 
 
         <div class="formRow">
-        <div class="labelSection">Postcode</div><div class="inputSection"><input type="text" id="Postcode"
-        data-bind="value: postcode" class="validate[required]"/></div>
+        <div class="labelSection">Postcode</div><div class="inputSection">
+        <input type="text" id="Postcode" data-bind="value: postcode" class="validate[required]"/>
         </div>
+        </div>
+
+
 
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Telephone</div><div class="inputSection"><input type="text" id="Telephone"
-        data-bind="value: tel" class="validate[required]"/></div>
+        <div class="labelSection">Telephone</div>
+        <div class="inputSection">
+        <input type="text" id="Telephone" data-bind="value: tel" class="validate[required]"/></div>
         </div>
 
         <div class="rightSection">
@@ -381,8 +385,9 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Parent Company</div><div class="inputSection"><select id="ParentCompany"
-        data-bind="options: companyList, optionsText: 'companyName', optionsValue: 'nid', value: parentCompany"></select></div>
+        <div class="labelSection">Parent Company</div><div class="inputSection">
+        <select id="ParentCompany" data-bind="options: companyList, optionsText: 'companyName', optionsValue: 'nid', value: parentCompany">
+        </select></div>
         </div>
 
 
