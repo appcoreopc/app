@@ -4,3 +4,11 @@
 *.jar
 *.war
 *.ear
+.bak_0.log
+.lock
+.log
+version.ini
+.jrebel
+.mylyn
+.plugins
+.metadata
