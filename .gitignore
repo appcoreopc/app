@@ -12,3 +12,5 @@ version.ini
 .mylyn
 .plugins
 .metadata
+/.metadata/.mylyn
+/.metadata/.plugins
