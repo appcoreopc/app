@@ -40,7 +40,7 @@ import javax.persistence.Table;
 
 		
 		@Column(name = "HolidayDate")
-		private Date holidayDate;
+		private Timestamp holidayDate;
 
 
 		@Column(name = "CompanyRef")
@@ -101,12 +101,12 @@ import javax.persistence.Table;
 			this.name = name;
 		}
 
-		public Date getHolidayDate() { 
+		public Timestamp getHolidayDate() { 
 			return this.holidayDate;
 		}
 
 
-		public void setHolidayDate(Date holidayDate) { 
+		public void setHolidayDate(Timestamp holidayDate) { 
 			this.holidayDate = holidayDate;
 		}
 

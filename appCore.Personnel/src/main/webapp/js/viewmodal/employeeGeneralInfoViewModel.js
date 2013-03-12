@@ -115,9 +115,6 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
         employee.gender = employeeGeneralInfo.gender();
         employee.salutation = employeeGeneralInfo.salutation();
 
-        console.log(employeeGeneralInfo.birthDate());
-        console.log(helper.getDate(employeeGeneralInfo.birthDate().toString()));
-
         employee.birthDate = helper.getDate(employeeGeneralInfo.birthDate().toString());
 
         employee.age = employeeGeneralInfo.age();

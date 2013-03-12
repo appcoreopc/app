@@ -125,6 +125,14 @@ var CompanyHelper = function () {
         });
     }
 
+    this.saveUpdateHoliday = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestType(globalHolidaySaveOrUpdateUrl, entityData, "post");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
 
     this.saveUpdateDepartment = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
@@ -209,6 +217,15 @@ var CompanyHelper = function () {
             callBack(data);
         });
     }
+
+    this.getHoliday = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalHolidaySetupGetUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
 
     this.getDepartment = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
