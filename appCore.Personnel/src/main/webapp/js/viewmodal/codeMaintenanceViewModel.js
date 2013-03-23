@@ -42,18 +42,15 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     var viewColumns = [
         { headerText:"Code Name", rowText:"name" },
         { headerText:"Description", rowText:"description" },
-        { headerText:"Start Effective Date", rowText:
-            function(data)
-            {
-                var helper = new EmployeeHelper();
-                return helper.getDateFormatMMDDYYYY(new Date(data.startEffectiveDate));
-            }
+        { headerText:"Start Effective Date", rowText:function (data) {
+            var helper = new EmployeeHelper();
+            return helper.getDateFormatMMDDYYYY(new Date(data.startEffectiveDate));
+        }
         },
-        { headerText:"End Effective Date", rowText: function(data)
-            {
-                var helper = new EmployeeHelper();
-                return helper.getDateFormatMMDDYYYY(new Date(data.endEffectiveDate));
-            }
+        { headerText:"End Effective Date", rowText:function (data) {
+            var helper = new EmployeeHelper();
+            return helper.getDateFormatMMDDYYYY(new Date(data.endEffectiveDate));
+        }
         }
 
     ];
@@ -97,14 +94,12 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         ]};
 
 
-    if (self.mode() == coreModeEdit)
-    {
+    if (self.mode() == coreModeEdit) {
         getDataForm(data);
         self.commandText("Save changes")
     }
 
-    if (self.mode() == coreModeInsert)
-    {
+    if (self.mode() == coreModeInsert) {
         self.commandText("Add new code")
     }
 
@@ -255,8 +250,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         });
     }
 
-    self.cancelChanges = function()
-    {
+    self.cancelChanges = function () {
         var dialog = new CoreDialog();
         var helper = new EmployeeHelper();
 
@@ -306,8 +300,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         });
     }
 
-    function goToAdd()
-    {
+    function goToAdd() {
         globalViewModel.targetId(null);
         globalViewModel.applicationScopeType(coreApplicationMaintenanceCode);
         globalViewModel.editMode(coreModeInsert);
@@ -315,9 +308,8 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     }
 
 
-    function initializeApp()
-    {
-        var input = { "id" : coreCodeMaintenancePage, "roleId" : globalViewModel.employeeRole() };
+    function initializeApp() {
+        var input = { "id":coreCodeMaintenancePage, "roleId":globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 

@@ -1,6 +1,6 @@
         <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../../css/entityJqueryUIOverride.css" media="screen" rel="stylesheet" type="text/css" />
+
         <script language="javascript" src="../../js/viewmodal/holidaySetupAddViewModel.js"></script>
         <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>
         <script type="text/javascript" src="../../js/coreDefaultBinding.js"></script>

@@ -50,6 +50,17 @@ public class UsersController
 				return users;
 		}
 		
+		
+		@RequestMapping(value = "/Users/authenticate", method = RequestMethod.GET)		
+		public @ResponseBody UserAuthenticationRequestStatus authenticateSecureUser(@ModelAttribute Users user) 
+		{
+			UserAuthenticationRequestStatus statusResponse = new UserAuthenticationRequestStatus(); 
+			statusResponse.setMessageCode(-1);
+			statusResponse.setMessageDescription("Login fails");
+			
+			return statusResponse;
+		}
+	
 		@RequestMapping(value = "/Users/validateLogin", method = RequestMethod.GET)		
 		public @ResponseBody UserAuthenticationRequestStatus getUsers (@ModelAttribute Users user) 
 		{

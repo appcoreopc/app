@@ -49,8 +49,8 @@
 	<div class="viewData"> 
 		<div class="maintenanceCommand">
 		</div>
-
     <div>
+
     <div id="branchDiv" data-bind="dataGrid: gridViewModel"></div>
 	</div>
 	
