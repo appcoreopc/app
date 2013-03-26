@@ -9,12 +9,13 @@
     padding: 4px;
 }
 
-.ui-accordion .ui-accordion-header {
+
+#configureSetupViewAccordian .ui-accordion-header {
     background-color: #E6E6E6;
     border: 1px solid #D3D3D3;
     cursor: pointer;
     display: block;
     min-height: 0;
-    padding-left: 0px;
-    position: relative;
+    padding-left: 10px;
+    padding-top: 10px;
 }

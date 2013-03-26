@@ -1,4 +1,3 @@
-        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/jobSetupSkillViewViewModel.js"></script>
@@ -135,20 +134,12 @@
 
             request.success(function(dataSource)
             {
-            var input = { "id" : coreEmployeeExpertiseViewPage, "roleId" : globalViewModel.employeeRole() };
-            var coreCommand = new CoreCommand();
-            var result = coreCommand.getPermission(hostAuthorizationUrl, input);
+                var input = { "id" : coreEmployeeExpertiseViewPage, "roleId" : globalViewModel.employeeRole() };
+                var coreCommand = new CoreCommand();
+                var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-            try
-            {
-            var vm = new JobSetupSkillViewViewModel(dataSource, 0, result.permission, globalViewModel);
-            ko.applyBindings(vm, document.getElementById("jobSetupSkillDataContent"));
-            }
-            catch (ex)
-            {
-            console.log(ex)
-            }
-
+                var vm = new JobSetupSkillViewViewModel(dataSource, 0, result.permission, globalViewModel);
+                $("#jobSetupSkillDataContent").setupViewBinding(vm, globalViewModel);
             });
 
         });

@@ -24,15 +24,9 @@
 
             request.success(function(data)
             {
-                try
-                {
-                    var vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel);
-                    ko.applyBindings(vm, document.getElementById("employmentTypeDiv"));
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
+                var vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel);
+                $("#employmentTypeDiv").setupViewBinding(vm, globalViewModel);
+
             });
         }
 

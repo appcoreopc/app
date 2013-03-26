@@ -1,6 +1,4 @@
-        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
-
+       <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/jobSetupQualificationViewViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
 

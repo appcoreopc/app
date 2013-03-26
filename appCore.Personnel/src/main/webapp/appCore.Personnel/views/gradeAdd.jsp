@@ -225,17 +225,10 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
-             try
-            {
-                var vm = new GradeInfoViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("gradeForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
 
-            $("#accordianGrade").accordion({collapsible : true, active: false});
+                var vm = new GradeInfoViewModel(globalViewModel);
+                $("#gradeForm").setupViewBinding(vm, globalViewModel);
+                $("#accordianGrade").accordion({collapsible : true, active: false});
         });
 
         </script>

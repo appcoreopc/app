@@ -343,8 +343,6 @@
 
                 $("#employeeGeneralForm").validationEngine();
                 $(document).activateFileUpload('employeeGeneralForm', globalEmployeePixUploadPath);
-
-
             }
             catch (ex)
             {

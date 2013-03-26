@@ -16,17 +16,10 @@
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
-            try
-            {
-                var coreCommand = new CoreCommand();
-                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                vm.loadInitData();
-                ko.applyBindings(vm, document.getElementById("qualificationAddDetailInfo"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+            var coreCommand = new CoreCommand();
+            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            vm.loadInitData();
+            $("#qualificationAddDetailInfo").setupViewBinding(vm, globalViewModel);
 
         });
 

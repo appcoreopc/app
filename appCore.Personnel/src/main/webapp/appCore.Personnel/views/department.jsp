@@ -18,16 +18,15 @@
 
         function getData(companyId)
         {
-
             var ajaxCore = new AjaxCore();
             var companyId = { id : companyId };
             var request = ajaxCore.sendRequest(globalDepartmentListByCompanyUrl, companyId, "get");
 
-        request.success(function(data)
-        {
-            var vm = new DepartmentListViewModel(0, data, globalViewModel);
-            ko.applyBindings(vm, document.getElementById("branchDiv"));
-        });
+            request.success(function(data)
+            {
+                var vm = new DepartmentListViewModel(0, data, globalViewModel);
+                $("#departmentDiv").setupViewBinding(vm, globalViewModel);
+            });
         }
 
         </script>
@@ -40,7 +39,7 @@
         </div>
 
         <div>
-        <div id="branchDiv" data-bind="dataGrid: gridViewModel"></div>
+        <div id="departmentDiv" data-bind="dataGrid: gridViewModel"></div>
         </div>
 
         </div>

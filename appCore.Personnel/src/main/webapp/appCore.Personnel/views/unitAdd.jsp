@@ -223,15 +223,8 @@
         {
             $("#" + formName).validationEngine();
 
-            try
-            {
-                var vm = new UnitInfoViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("unitForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+             var vm = new UnitInfoViewModel(globalViewModel);
+             $("#unitForm").setupViewBinding(vm, globalViewModel);
 
             $("#accordianUnit").accordion({collapsible : true, active: false});
         });

@@ -225,15 +225,8 @@
         {
             $("#" + formName).validationEngine();
 
-            try
-            {
-                var vm = new EmploymentTypeInfoViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("employmentTypeForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+            var vm = new EmploymentTypeInfoViewModel(globalViewModel);
+            $("#employmentTypeForm").setupViewBinding(vm, globalViewModel);
 
             $("#accordianEmployentType").accordion({collapsible : true, active: false});
         });

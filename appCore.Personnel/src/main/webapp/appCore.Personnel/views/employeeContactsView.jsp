@@ -194,15 +194,9 @@
                     var input = { "id" : coreEmployeeContactViewPage, "roleId" : globalViewModel.employeeRole() };
                     var coreCommand = new CoreCommand();
                     var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-                    try
-                    {
-                        var vm = new EmployeeContactViewViewModel(dataSource, coreModeList, result.permission, globalCurrentEmployee);
-                        ko.applyBindings(vm, document.getElementById("contactDataContent"));
-                    }
-                    catch (ex)
-                    {
-                        console.log(ex)
-                    }
+
+                    var vm = new EmployeeContactViewViewModel(dataSource, coreModeList, result.permission, globalCurrentEmployee);
+                    $("#contactDataContent").setupViewBinding(vm, globalViewModel);
 
                 });
             }

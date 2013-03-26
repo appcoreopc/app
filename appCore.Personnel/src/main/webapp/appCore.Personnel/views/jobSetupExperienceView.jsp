@@ -1,4 +1,3 @@
-        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/jobSetupExperienceViewViewModel.js"></script>
@@ -95,10 +94,6 @@
         </script>
 
 
-
-
-
-
         <script type="text/javascript">
 
 
@@ -115,15 +110,8 @@
                 var coreCommand = new CoreCommand();
                 var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-                try
-                {
-                    var vm = new JobSetupExperienceViewViewModel(dataSource, 0, result.permission, globalViewModel);
-                    ko.applyBindings(vm, document.getElementById("jobSetupExperienceDataContent"));
-                }
-                catch (ex)
-                {
-                console.log(ex)
-                }
+                var vm = new JobSetupExperienceViewViewModel(dataSource, 0, result.permission, globalViewModel);
+                $("#jobSetupExperienceDataContent").setupViewBinding(vm, globalViewModel);
 
         });
 
@@ -147,7 +135,6 @@
         </div>
 
         </div>
-
 
 
 

@@ -17,16 +17,9 @@
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
-            try
-            {
-                var coreCommand = new CoreCommand();
-                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                ko.applyBindings(vm, document.getElementById("contactsAddDetailInfo"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+            var coreCommand = new CoreCommand();
+            coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+            $("#contactsAddDetailInfo").setupViewBinding(vm, globalViewModel);
 
         });
 

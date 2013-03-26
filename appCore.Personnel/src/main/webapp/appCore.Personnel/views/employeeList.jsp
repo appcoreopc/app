@@ -1,5 +1,4 @@
         <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
-
         <script language="javascript" src="../../js/viewmodal/employeeViewModel.js"></script>
 
         <script type="text/javascript">
@@ -23,15 +22,8 @@
 
                 request.success(function(data)
                 {
-                    try
-                    {
-                        var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);
-                        ko.applyBindings(vm, document.getElementById("employeeDiv"));
-                    }
-                    catch (ex)
-                    {
-                        console.log(ex)
-                    }
+                    var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);
+                    $("#employeeDiv").setupViewBinding(vm, globalViewModel);
                 });
         }
 

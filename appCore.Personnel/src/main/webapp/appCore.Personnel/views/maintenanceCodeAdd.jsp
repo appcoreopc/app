@@ -29,14 +29,7 @@
                 gridDataObject = vm.getView();
             }
 
-            try
-            {
-                ko.applyBindings(vm, document.getElementById("codeForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+            $("#codeForm").setupViewBinding(vm, globalViewModel);
 
         });
 

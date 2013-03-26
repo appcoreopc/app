@@ -1,5 +1,4 @@
 var HolidayGroupChangeInfo = function (groupId, employeeId, IsMember) {
-
     var self = this;
     self.employeeGroupId = ko.observable(groupId);
     self.employeeId = ko.observable(employeeId);

@@ -7,24 +7,18 @@
 
         $(document).ready(function()
         {
-           $("#EmployeeResidenceForm").validationEngine();
+                $("#EmployeeResidenceForm").validationEngine();
 
-            var ajaxCore = new AjaxCore();
-            var vm = new EmployeeResidentialViewModel(0, globalViewModel);
+                var ajaxCore = new AjaxCore();
+                var vm = new EmployeeResidentialViewModel(0, globalViewModel);
 
-            var gridDataObject = vm.getView();
-            var input = vm.getRole();
+                var gridDataObject = vm.getView();
+                var input = vm.getRole();
 
-            try
-            {
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                ko.applyBindings(vm, document.getElementById("employeeResidenceAddInfo"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+                $("#employeeResidenceAddInfo").setupViewBinding(vm, globalViewModel);
+
         });
 
         </script>

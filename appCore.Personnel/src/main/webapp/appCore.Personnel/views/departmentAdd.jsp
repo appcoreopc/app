@@ -221,19 +221,11 @@
         var formName = "departmentForm";
         $(document).ready(function()
         {
-            $("#" + formName).validationEngine();
-
-            try
-            {
+                $("#" + formName).validationEngine();
                 var vm = new DepartmentInfoViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("departmentForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+                $("#departmentForm").setupViewBinding(vm, globalViewModel);
 
-            $("#accordianDepartment").accordion({collapsible : true, active: false});
+                $("#accordianDepartment").accordion({collapsible : true, active: false});
         });
 
         </script>

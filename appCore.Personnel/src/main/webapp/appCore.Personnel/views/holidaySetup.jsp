@@ -24,16 +24,8 @@
 
             request.success(function(data)
             {
-                try
-                {
-                    var vm = new HolidaySetupListViewModel(coreModeList, data, globalViewModel);
-                    ko.applyBindings(vm, document.getElementById("holidaySetupDiv"));
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
-
+                var vm = new HolidaySetupListViewModel(coreModeList, data, globalViewModel);
+                $("#holidaySetupDiv").setupViewBinding(vm, globalViewModel);
             });
         }
 

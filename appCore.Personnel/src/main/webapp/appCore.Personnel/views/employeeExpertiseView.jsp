@@ -157,16 +157,8 @@
             var coreCommand = new CoreCommand();
             var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-            try
-            {
-                var vm = new EmployeeExpertiseViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-                ko.applyBindings(vm, document.getElementById("expertiseDataContent"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
-
+            var vm = new EmployeeExpertiseViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+            $("#expertiseDataContent").setupViewBinding(vm, globalViewModel);
         });
 
         });
@@ -174,7 +166,6 @@
         </script>
 
         <div id="expertiseDataContent">
-
             <div data-bind="visible : $root.bindingSource().length == 0" class="emptyData">
             <div>
                 <ul>

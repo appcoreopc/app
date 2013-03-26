@@ -1,5 +1,5 @@
-        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
+
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/jobTypeViewModel.js"></script>
 
@@ -13,15 +13,8 @@
             var coreCommand = new CoreCommand();
             var result = coreCommand.getPermission(hostAuthorizationUrl, input);
             var vm = new JobTypeViewModel(globalViewModel.editMode(), globalViewModel.targetId(), result.permission, globalViewModel);
+            $("#jobDescriptionContent").setupViewBinding(vm, globalViewModel);
 
-            try
-            {
-                ko.applyBindings(vm, document.getElementById("jobDescriptionContent"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
         });
 
         </script>
@@ -38,7 +31,7 @@
         <div class="formRow">
 
         <div class="viewLabelSection">Job Description</div><span class='req'>*</span>
-        <div class="formRow">
+        <div class="jobSetuFormRow">
             <textarea id="jobDescription" class="validate[required]" data-bind="value : description"></textarea>
         </div>
 
@@ -88,7 +81,7 @@
 
         <div id="jobDescriptionContent">
 
-        <div data-bind="template : { name : templateToUse }">
-        </div>
+            <div data-bind="template : { name : templateToUse }">
+            </div>
 
         </div>

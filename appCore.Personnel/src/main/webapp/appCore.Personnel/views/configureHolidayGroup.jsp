@@ -7,15 +7,8 @@
 
         $(document).ready(function()
         {
-            try
-            {
-                var vm = new ConfigureHolidayGroupViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+            var vm = new ConfigureHolidayGroupViewModel(globalViewModel);
+            $("#configureEmployeeGroupForm").setupViewBinding(vm, globalViewModel);
         });
 
 

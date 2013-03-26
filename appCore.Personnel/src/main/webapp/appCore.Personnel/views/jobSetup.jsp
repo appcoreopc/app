@@ -1,4 +1,4 @@
-    <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/jobSetupListViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 
@@ -24,15 +24,9 @@
 
         request.success(function(data)
         {
-        try
-        {
             var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);
-            ko.applyBindings(vm, document.getElementById("jobSetupDiv"));
-        }
-        catch (ex)
-        {
-        console.log(ex)
-        }
+            $("#jobSetupDiv").setupViewBinding(vm, globalViewModel);
+
         });
         }
 

@@ -117,7 +117,6 @@
         <div class="companyInfoDiv">Current company </div>
         <div class="companyInfoSelect"> <select id="companyDropDownList" class="company">
         </select><span class="createMany">
-        <button id="createEntityButton" type="button" class="command">Create ..</button>
         </span></div>
         </div>
 

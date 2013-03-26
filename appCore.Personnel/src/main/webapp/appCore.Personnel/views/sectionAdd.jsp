@@ -228,15 +228,8 @@
         {
             $("#" + formName).validationEngine();
 
-            try
-            {
                 var vm = new SectionInfoViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("sectionForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
+                $("#sectionForm").setupViewBinding(vm, globalViewModel);
 
             $("#accordianSection").accordion({collapsible : true, active: false});
         });

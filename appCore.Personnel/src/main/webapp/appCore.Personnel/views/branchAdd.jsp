@@ -225,17 +225,19 @@
             var branchForm = "branchForm";
             $(document).ready(function()
             {
-                try
-                {
+                //try
+                //{
                     $("#" + branchForm).validationEngine();
                     var vm = new BranchInfoViewModel(globalViewModel);
-                    ko.applyBindings(vm, document.getElementById("branchForm"));
+                    $("#branchForm").setupViewBinding(vm, globalViewModel);
+                    //ko.applyBindings(vm, document.getElementById("branchForm"));
+
                     $("#accordian").accordion({collapsible : true, active: false});
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
+                //}
+                //catch (ex)
+                //{
+                //    console.log(ex)
+                //}
             });
 
             </script>

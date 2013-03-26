@@ -199,17 +199,10 @@
                  var coreCommand = new CoreCommand();
                  var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-                try
-                {
-                     var vm = new EmployeeResidenceViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-                     ko.applyBindings(vm, document.getElementById("residenceDataContent"));
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
-            });
+                 var vm = new EmployeeResidenceViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                 $("#residenceDataContent").setupViewBinding(vm, globalViewModel);
 
+            });
         });
 
         </script>

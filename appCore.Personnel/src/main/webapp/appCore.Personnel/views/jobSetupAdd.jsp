@@ -26,22 +26,18 @@
             }
 
             var tab = $("#codeSetupTabs").tabs({ cache : true});
+
         });
 
         function bindVM(vm)
         {
-            try
-            {
                 var gridDataObject = vm.getCommandForForm();
                 var input = { "id" : globalEmployeeModule, "roleId" : globalViewModel.employeeRole() };
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                ko.applyBindings(vm, document.getElementById("jobSetupForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex);
-            }
+                $("#jobSetupForm").setupViewBinding(vm, globalViewModel);
+
+
         }
 
     </script>
@@ -86,7 +82,6 @@
 
         <div class="maintenanceCommand">
         </div>
-
 
 
         <div id="codeSetupTabs">

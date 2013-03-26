@@ -169,16 +169,11 @@
         <span class="formRowRuler"></span>
         </div>
 
-
         </script>
 
 
 
-
-
-
         <script type="text/javascript">
-
 
         $(document).ready(function()
         {
@@ -192,14 +187,9 @@
                 var coreCommand = new CoreCommand();
                 var result = coreCommand.getPermission(hostAuthorizationUrl, input);
 
-                try {
-                    var vm = new EmployeeMembershipViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-                    ko.applyBindings(vm, document.getElementById("membershipDataContent"));
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
+                var vm = new EmployeeMembershipViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                $("#membershipDataContent").setupViewBinding(vm, globalViewModel);
+
             });
         });
 

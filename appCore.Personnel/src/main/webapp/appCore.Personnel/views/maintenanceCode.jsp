@@ -31,8 +31,6 @@
 
                     request.success(function(data)
                     {
-                        try
-                        {
                             vm = new CodeMaintenanceViewModel(coreModeList, codeType, data, globalViewModel);
                             var gridDataObject = vm.getView();
                             var input = { "id" : coreCodeMaintenancePage, "roleId" : 1 };
@@ -40,13 +38,7 @@
 
                             var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
                             vm.gridViewModel = gridViewModel;
-                            ko.applyBindings(vm, document.getElementById("codeMaintenanceGrid"));
-                        }
-                        catch (ex)
-                        {
-                            console.log(ex)
-                        }
-
+                            $("#codeMaintenanceGrid").setupViewBinding(vm, globalViewModel);
                     });
                 }
         }

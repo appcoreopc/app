@@ -22,21 +22,13 @@
 
         request.success(function(data)
         {
-            try {
                 var vm = new BranchViewModel(0, data, globalViewModel);
                 var gridDataObject = vm.getView();
                 var input = { "id" : coreBranchPage, "roleId" : 1 };
                 var coreCommand = new CoreCommand();
                 var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
                 vm.gridViewModel = gridViewModel;
-                //ko.applyBindings(vm, document.getElementById("branchDiv"));
                 $("#branchDiv").setupViewBinding(vm, globalViewModel);
-
-    }
-            catch (ex)
-            {
-                console.log(ex)
-            }
         });
     }
 			
@@ -57,4 +49,4 @@
 	<div>
     </div>
 </div>
-    </div>
+</div>

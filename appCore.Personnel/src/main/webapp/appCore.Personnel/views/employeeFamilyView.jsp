@@ -238,15 +238,9 @@
                 var input = { "id" : coreEmployeeFamilyViewPage, "roleId" : globalViewModel.employeeRole() };
                 var coreCommand = new CoreCommand();
                 var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-                try
-                {
-                    var vm = new EmployeeFamilyViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-                    ko.applyBindings(vm, document.getElementById("familyDataContent"));
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
+
+                var vm = new EmployeeFamilyViewViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                $("#familyDataContent").setupViewBinding(vm, globalViewModel);
             });
 
         });

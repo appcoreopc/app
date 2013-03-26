@@ -228,18 +228,9 @@
         {
             $("#" + formName).validationEngine();
 
-            try
-            {
                 var vm = new DivisionInfoViewModel(globalViewModel);
-                ko.applyBindings(vm, document.getElementById("divisionForm"));
-            }
-            catch (ex)
-            {
-                console.log(ex)
-            }
-
-            $("#accordianDivision").accordion({collapsible : true, active: false});
-
+                $("#divisionForm").setupViewBinding(vm, globalViewModel);
+                $("#accordianDivision").accordion({collapsible : true, active: false});
         });
 
         </script>
