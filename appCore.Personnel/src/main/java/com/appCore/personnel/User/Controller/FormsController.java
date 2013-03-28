@@ -50,7 +50,6 @@ public class FormsController
 		public @ResponseBody List<FormMenuView> listFormsMenu(Users user) 
 		{	
 				return service.getFormsMenu();
-				
 		}
 		
 		

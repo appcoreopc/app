@@ -16,8 +16,6 @@ import javax.persistence.OneToOne;
 import java.util.List;
 import javax.persistence.Table;
 
-
-
 	@Entity
 	@Table(name = "Forms_Actions_Role")
 	public class Forms_Actions_Role implements Serializable
@@ -30,11 +28,9 @@ import javax.persistence.Table;
 		private Integer nid;
 
 		
-		
 		@Column(name = "Role_nid")
 		private Integer role_nid;
 
-		
 		
 		@Column(name = "Actions_nid")
 		private Integer actions_nid;
@@ -132,6 +128,5 @@ import javax.persistence.Table;
 		public void setForms(Forms forms) { 
 			this.forms= forms;
 		}
-
 
 	}

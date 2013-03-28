@@ -29,7 +29,7 @@ public class BranchService
 		int summaryResultCount = 3;
 		Session session = sessionFactory.getCurrentSession();
 
-		Query queryCount = session.createQuery("select count(*) from Branch where companyId = :companyId");
+		Query queryCount = session.createQuery("select count(companyId) from Branch where companyId = :companyId");
 		queryCount.setParameter("companyId", companyId);
 		
 		Long summaryCount = ((Long) queryCount.uniqueResult()).longValue();

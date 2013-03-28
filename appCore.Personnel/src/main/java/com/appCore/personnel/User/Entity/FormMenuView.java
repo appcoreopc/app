@@ -43,8 +43,7 @@ public class FormMenuView implements Serializable
 	{ 
 		this.items = items;
 	}
-	
-	
+		
 }
 
 
