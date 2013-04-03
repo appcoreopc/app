@@ -1,12 +1,9 @@
-package src.com.appCore.personnel.Core.Controller;
+package src.com.appCore.personnel.Core.Service;
 
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.mockito.Mockito.*;
-
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

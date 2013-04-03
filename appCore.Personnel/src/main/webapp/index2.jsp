@@ -1,4 +1,4 @@
-        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <html>
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,10 +24,6 @@
         <script language="javascript" src="js/appDefinition.js"></script>
 
         <script language="javascript" src="js/carousel.js"></script>
-        <script language="javascript" src="js/rsa/rsa.js"></script>
-        <script language="javascript" src="js/rsa/jsbn.js"></script>
-        <script language="javascript" src="js/rsa/sha1.js"></script>
-
         <script language="javascript" src="js/coreDialog.js"></script>
         <script language="javascript" src="js/coreLoadMask.js"></script>
         <script language="javascript" src="js/coreCommonFunction.js"></script>
@@ -73,7 +69,7 @@
             {
                 var code = e.which;
                 if(code == 13)
-                    {
+                {
                         var authenticator = new UserAuthenticator();
                         authenticator.authenticateUser($("#username").val(),$("#password").val(), authenticateUserCallBack);
                 }

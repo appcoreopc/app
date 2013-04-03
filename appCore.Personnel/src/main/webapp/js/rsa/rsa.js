@@ -205,19 +205,14 @@ var ASN1Data = function($data) {
 
 var RSA = {
     getPublicKey: function($pem) { 
-        console.log('decoding public key');
         if($pem.length<50) return false;
         if($pem.substr(0,26)!="-----BEGIN PUBLIC KEY-----") return false;
         $pem = $pem.substr(26);
         if($pem.substr($pem.length-24)!="-----END PUBLIC KEY-----") return false;
         $pem = $pem.substr(0,$pem.length-24);
-	console.log($pem);	
-	console.log('base64 decode' + Base64.decode($pem));
-	
+
         $pem = new ASN1Data(Base64.decode($pem));
-	console.log('final transformation');	
-	console.log($pem);	
-        if($pem.error) return false;
+	    if($pem.error) return false;
         $pem = $pem.data;
         if($pem[0][0][0]=="1.2.840.113549.1.1.1")
             return new RSAPublicKey($pem[0][1][0][0], $pem[0][1][0][1]);
@@ -234,12 +229,7 @@ var RSA = {
         while ($data.length < bytes*2)
             $data = '0' + $data;
 
-        console.log($data);
-		console.log(Hex.decode($data));
-		console.log('begin');
-		console.log(Base64.encode($data));
-		//return Base64.encode(Hex.decode($data));
-		return Base64.encode(Hex.decode($data));
+        return Base64.encode(Hex.decode($data));
     },
     pkcs1pad2: function($data, $keysize) {
         if($keysize < $data.length + 11)

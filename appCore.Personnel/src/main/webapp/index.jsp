@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="css/fontelloIndex.css"><!--[if IE 7]>
         <link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
 
-
         <script language="javascript" src="js/ajaxCore.js"></script>
         <script language="javascript" src="js/jquery-1.7.2.min.js"></script>
 
@@ -29,6 +28,11 @@
         <script language="javascript" src="js/coreCommonFunction.js"></script>
         <script language="javascript" src="js/userAuthenticator.js"></script>
         <script language="javascript" src="js/coreObjects.js"></script>
+
+        <script type="text/javascript" src="js/rsa/jsbn.js"></script>
+        <script type="text/javascript" src="js/rsa/jsbn2.js"></script>
+        <script type="text/javascript" src="js/rsa/rsa.js"></script>
+        <script type="text/javascript" src="js/rsa/sha1.js"></script>
 
         <%@include file="includes/indexHeader.html" %>
 

@@ -14,33 +14,27 @@ import javax.persistence.FetchType;
 import java.util.List;
 import javax.persistence.Table;
 
-
-
 	@Entity
-	@Table(name = "Groups")
-	public class Groups implements Serializable
+	@Table(name = "Role_User")
+	public class Role_User implements Serializable
 	{
 
 		@Id
 		@GeneratedValue
-		
 		@Column(name = "Nid")
 		private Integer nid;
 
 		
-		
-		@Column(name = "Name")
-		private String name;
+		@Column(name = "Role_nid")
+		private Integer role_nid;
 
 		
-		
-		@Column(name = "Description")
-		private String description;
-
+		@Column(name = "User_nid")
+		private Integer user_nid;
 		
 		
-		@Column(name = "Disabled")
-		private Boolean disabled;
+		@Column(name = "Type")
+		private String type;
 
 		
 		
@@ -57,31 +51,31 @@ import javax.persistence.Table;
 			this.nid = nid;
 		}
 
-		public String getName() { 
-			return this.name;
+		public Integer getRole_nid() { 
+			return this.role_nid;
 		}
 
 
-		public void setName(String name) { 
-			this.name = name;
+		public void setRole_nid(Integer role_nid) { 
+			this.role_nid = role_nid;
 		}
 
-		public String getDescription() { 
-			return this.description;
-		}
-
-
-		public void setDescription(String description) { 
-			this.description = description;
-		}
-
-		public Boolean getDisabled() { 
-			return this.disabled;
+		public Integer getUser_nid() { 
+			return this.user_nid;
 		}
 
 
-		public void setDisabled(Boolean disabled) { 
-			this.disabled = disabled;
+		public void setUser_nid(Integer user_nid) { 
+			this.user_nid = user_nid;
+		}
+
+		public String getType() { 
+			return this.type;
+		}
+
+
+		public void setType(String type) { 
+			this.type = type;
 		}
 
 		public Timestamp getLastUpdate() { 
