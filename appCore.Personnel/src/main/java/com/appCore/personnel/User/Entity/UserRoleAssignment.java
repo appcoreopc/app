@@ -15,8 +15,8 @@ import java.util.List;
 import javax.persistence.Table;
 
 	@Entity
-	@Table(name = "Role_User")
-	public class Role_User implements Serializable
+	@Table(name = "UserRoleAssignment")
+	public class UserRoleAssignment implements Serializable
 	{
 
 		@Id

@@ -26,18 +26,14 @@ import javax.persistence.Table;
 		
 		@Column(name = "Nid")
 		private Integer nid;
-
 		
 		
 		@Column(name = "UserId")
 		private String userId;
 
 		
-		
 		@Column(name = "LandingPage")
-		private String landingPage;
-
-		
+		private String landingPage;		
 		
 		@Column(name = "LastLogin")
 		private Timestamp lastLogin;

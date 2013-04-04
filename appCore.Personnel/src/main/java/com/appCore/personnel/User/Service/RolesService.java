@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.appCore.personnel.Core.Job.Entity.Employee;
 import com.appCore.personnel.Core.Job.Entity.EmployeeGroup;
 import com.appCore.personnel.User.Entity.Roles;
+import com.appCore.personnel.User.Entity.UserRoleAssignment;
 import com.appCore.personnel.User.Entity.Users;
 
 @Service("rolesService")
@@ -52,12 +53,16 @@ public class RolesService
 	public boolean saveconfiguredRole(int employeeId, int groupId, boolean isGrantAccess)
 	{
 		Session session = sessionFactory.getCurrentSession();
+		
 		Roles userGroup = (Roles) session.get(Roles.class, groupId);
 		Users employee = (Users) session.get(Users.class, employeeId);
 		
 		if (isGrantAccess)
 		{
-			userGroup.getAssignedUsers().add(employee);
+			UserRoleAssignment userRoleAssignment = new UserRoleAssignment();
+			userRoleAssignment.setRole_nid(groupId);
+			userRoleAssignment.setUser_nid(employeeId);
+			userGroup.getAssignedUsers().add(userRoleAssignment);
 		}
 		else 
 		{

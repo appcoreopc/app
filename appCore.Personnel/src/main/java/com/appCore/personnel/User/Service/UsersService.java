@@ -57,8 +57,8 @@ public class UsersService // implements UserRoleService
 
 		Query query = session
 				.createSQLQuery(
-						"Select Roles_Nid From userrole_assignment where assignedUsers_Nid = :userId")
-				.addScalar("Roles_Nid", Hibernate.INTEGER);
+						"Select Role_Nid From UserRoleAssignment where user_nid = :userId")
+				.addScalar("Role_Nid", Hibernate.INTEGER);
 		query.setParameter("userId", userId);
 
 		List<Object> resultQuery = query.list();

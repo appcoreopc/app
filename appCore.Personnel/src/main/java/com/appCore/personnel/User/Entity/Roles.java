@@ -42,9 +42,8 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 		@Column(name = "Disabled")
 		private Boolean disabled;
 		
-		@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		@JoinTable(name="UserRole_Assignment")
-		private List<Users> assignedUsers;
+		@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+		private List<UserRoleAssignment> assignedUsers;
 		
 		
 		@Column(name = "LastUpdate")
@@ -96,12 +95,12 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 			this.lastUpdate = lastUpdate;
 		}
 		
-		public List<Users> getAssignedUsers() {
+		public List<UserRoleAssignment> getAssignedUsers() {
 			return assignedUsers;
 		}
 
 
-		public void setAssignedUsers(List<Users> assignedUsers) {
+		public void setAssignedUsers(List<UserRoleAssignment> assignedUsers) {
 			this.assignedUsers = assignedUsers;
 		}
 
