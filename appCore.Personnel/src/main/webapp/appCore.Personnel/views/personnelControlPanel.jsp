@@ -113,12 +113,6 @@
         </div>
 
 
-        <div class="formRowCompany">
-        <div class="companyInfoDiv">Current company </div>
-        <div class="companyInfoSelect"> <select id="companyDropDownList" class="company">
-        </select><span class="createMany">
-        </span></div>
-        </div>
 
 
         <div class="maintenanceControlCommand">

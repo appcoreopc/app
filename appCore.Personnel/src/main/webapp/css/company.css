@@ -4,7 +4,7 @@
     display: inline-block;
     /*padding: 12px 0 12px 190px;*/
     padding: 12px 0 12px 220px;
-    width: 100%
+    width: auto;
 }
 
 .maintenanceCommand button {
@@ -86,4 +86,12 @@
     height: 140px;
     width:  300px;
     border-radius: 5px 5px 5px 5px;
+}
+
+.addressDataType {
+    width: 39em;
+}
+
+.inputSection input[type="checkbox"] {
+    margin-left: 4px;
 }

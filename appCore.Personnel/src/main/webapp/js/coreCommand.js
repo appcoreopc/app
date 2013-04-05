@@ -68,7 +68,6 @@ var CoreCommand = function () {
     }
 
     this.createCommandButton = function (ctrlId, text, link, callBack) {
-
         createCommand(ctrlId, text, undefined);
         createAddBindingEventForControl(ctrlId, text, callBack);
     }
@@ -204,11 +203,9 @@ var CoreCommand = function () {
     function createCommand(ctrlId, text, commandObject, controlIdToAppendTo) {
 
         if (commandObject != undefined && commandObject.icon != undefined && controlIdToAppendTo != undefined) {
-
             appendCommandToCtrlId("<button class='" + commandObject.icon + " command' type='button' id='" + ctrlId + "'>" + text + "</button>", controlIdToAppendTo);
         }
         else if (commandObject != undefined && commandObject.icon != undefined) {
-
             appendCommandTo("<button class='" + commandObject.icon + " command' type='button' id='" + ctrlId + "'>" + text + "</button>");
         }
         else if (controlIdToAppendTo == undefined) {

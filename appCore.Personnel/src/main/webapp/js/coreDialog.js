@@ -43,7 +43,6 @@ var CoreDialog = function () {
         $("#" + targetId).dialog('close');
     }
 
-    // dialogObject - title & message is the main attribute //
     this.createConfirmationDialog = function (dialogObject, data, globalViewModel, codeType, callBack) {
 
         var overlay = $('<div id="overlay"> </div>');
@@ -77,6 +76,7 @@ var CoreDialog = function () {
             });
         $myDialog.dialog('open');
 
+        $(".ui-dialog-titlebar-close").css('visibility', 'hidden'); // hide the close button
         $(".ui-dialog .ui-dialog-title").css('color', '#fff');
         $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
         $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
@@ -89,6 +89,85 @@ var CoreDialog = function () {
         $(".ui-dialog").css('box-shadow', '1px 1px 7px 1px rgba(0, 0, 0, 0.3)');
         $(".ui-dialog").css('border-radius', '4px');
     }
+
+
+    // dialogObject - title & message is the main attribute //
+    this.createDiscardConfirmationDialog = function (dialogObject, link, callBack) {
+
+        var overlay = $('<div id="overlay"> </div>');
+        overlay.appendTo(document.body);
+
+        var $myDialog = $('<div></div>')
+            .html(dialogObject.message)
+            .dialog(
+            {
+                dialogClass:'dialogTop',
+                autoOpen:false,
+                title:dialogObject.title,
+                closeOnEscape:false,
+                position:"center",
+                show:{ effect:"fade", duration:800},
+                modal:true,
+                resizable:false,
+                closeText:"",
+                buttons:{"OK":function () {
+                    $("#overlay").remove();
+                    $(this).dialog("close");
+                    callBack(true, link);
+
+                },
+                    "Cancel":function () {
+                        $("#overlay").remove();
+                        $(this).dialog("close");
+                        callBack(false, link);
+                    }
+                }
+            });
+
+        $myDialog.dialog('open');
+
+        $(".ui-dialog .ui-dialog-title").css('color', '#fff');
+        $(".ui-dialog-titlebar-close").css('visibility', 'hidden');
+        $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
+        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
+        $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
+        $(".ui-dialog .ui-dialog-buttonpane button").css('width', '76px');
+        $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
+        $(".ui-dialog .ui-dialog-buttonset").css('height', '56px');
+        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-left-radius', '4px');
+        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-right-radius', '4px');
+        $(".ui-dialog").css('box-shadow', '1px 1px 7px 1px rgba(0, 0, 0, 0.3)');
+        $(".ui-dialog").css('border-radius', '4px');
+        $(".ui-button-text-only").css('color', '#ffffff');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // dialogObject - title & message is the main attribute //
     this.createPopupDialog = function (dialogObject, target) {

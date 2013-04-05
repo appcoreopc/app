@@ -8,7 +8,6 @@
 
         $(document).ready(function()
         {
-
                 $("#companyForm").validationEngine();
 
                 var vm;
@@ -73,18 +72,18 @@
 
         <div class="formRow">
         <div class="labelSection">Address</div><div class="inputSection"><input type="text" id="Address"
-        data-bind="value : address" class="validate[required], maxSize[30]"/></div>
+        data-bind="value : address" class="validate[required], maxSize[30], addressDataType"/></div>
         </div>
 
 
         <div class="formRow">
         <div class="labelSection"></div><div class="inputSection"><input type="text" id="Address2"
-        data-bind="value : address2" /></div>
+        data-bind="value : address2" class="addressDataType" /></div>
         </div>
 
         <div class="formRow">
         <div class="labelSection"></div><div class="inputSection"><input type="text" id="Address3"
-        data-bind="value : address3" /></div>
+        data-bind="value : address3" class="addressDataType" /></div>
         </div>
 
 
@@ -362,9 +361,7 @@
         </div>
 
 
-
-
-        <div class="sectionalForm">
+        <div class="formRow">
         <div class="leftSection">
         <div class="labelSection">Telephone</div>
         <div class="inputSection">

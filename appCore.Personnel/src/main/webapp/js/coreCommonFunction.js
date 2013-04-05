@@ -18,25 +18,18 @@ function cancelFormChanges() {
 }
 
 function cancelFormChangesWindow(ctrlId, link) {
-
-    var cancelWindow = $("#" + ctrlId);
-    cancelWindow.kendoWindow({
-        width:"350px",
-        height:"160px",
-        title:"Cancel changes",
-        actions:["Close"]
-    });
-
-    cancelWindow.data("kendoWindow").content("<div class='logoutSpacer'></div>" +
-        "<div class='logoutSpacer'></div>" +
-        "<div class='logoutMessage'>Do you want to discard current modification and exit?</div><div>&nbsp;</div>" +
-        "<div class='logoutSpacer'></div>" +
-        "<div class='logoutCommand'>" +
-        "<button type='button' onclick=$('#" + ctrlId + "').data('kendoWindow').close();" + "preparePageForLoading('" + link + "');" + ">Ok</button>&nbsp;" +
-        "<button type='button' onclick=$('#" + ctrlId + "').data('kendoWindow').close();>Cancel</button></div>");
-
-    cancelWindow.data("kendoWindow").center().open();
+    var dialog = new CoreDialog();
+    var helper = new EmployeeHelper();
+    var dialogObject = helper.createDialogObject("Discard changes", "Do you want to discard current modification and exit?");
+    var result = dialog.createDiscardConfirmationDialog(dialogObject, link, commonDiscardConfirmationCallBack);
 }
+
+function commonDiscardConfirmationCallBack(status, link) {
+    if (status == true) {
+        preparePageForLoading(link);
+    }
+}
+
 
 function getCheckedValue(id) {
     if ($('#' + id).is(":checked"))

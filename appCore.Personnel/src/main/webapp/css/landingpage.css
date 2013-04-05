@@ -79,3 +79,23 @@ a.block {
 img {
     border: 0 none;
 }
+
+.icon-users:before {
+    content: "👥";
+    font-size: 100px;
+}
+
+.icon-wrench-2:before {
+    content: "";
+    font-size: 100px;
+}
+
+.icon-calendar:before {
+    content: "📅";
+    font-size: 100px;
+}
+
+.icon-money:before {
+    content: "💰";
+    font-size: 100px;
+}

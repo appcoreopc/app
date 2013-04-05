@@ -29,7 +29,6 @@ var CompanyAddViewModel = function (mode, companyId) {
     self.companyList = ko.observableArray();
     self.templateToUse = ko.observable();
 
-
     self.mode(mode);
 
     var helper = new EmployeeHelper();
@@ -83,7 +82,6 @@ var CompanyAddViewModel = function (mode, companyId) {
 
         switch (self.mode()) {
             case 1:
-
                 var addLinkInfo = {
                     "text":"Save",
                     "link":this.centralPage,
@@ -124,7 +122,6 @@ var CompanyAddViewModel = function (mode, companyId) {
 
             default:
                 return null;
-
         }
     }
 

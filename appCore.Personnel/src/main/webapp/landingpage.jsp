@@ -33,7 +33,7 @@
         <ul>
         <li class="column first">
         <a href="/appCore-personnel/appCore.Administration/view/admin.jsp" class="block callout">
-        <img width="118" height="114" alt="" src="images/camera.png">
+        <i class="icon-wrench-2"></i>
         <h2>Administration</h2>
         <p>Manage your application users and configuration.
 
@@ -46,7 +46,7 @@
         <a href="/appCore-personnel/appCore.Personnel/views/personnelControlPanel.jsp" class="block callout"
         onclick="s_objectID=&quot;http://www.apple.com/iphone/from-the-app-store/social-networking.html_1&quot;;return
         this.s_oc?this.s_oc(e):true">
-        <img width="118" height="114" alt="" src="images/camera.png">
+        <i class="icon-users"></i>
         <h2>Personnel</h2>
         <p>Update your company, branch, division and employee information.
         <span class="more">Learn more</span>
@@ -58,7 +58,7 @@
         <a href="/iphone/from-the-app-store/social-networking.html" class="block callout"
         onclick="s_objectID=&quot;http://www.apple.com/iphone/from-the-app-store/social-networking.html_1&quot;;return
         this.s_oc?this.s_oc(e):true">
-        <img width="118" height="114" alt="" src="images/js.png">
+        <i class="icon-calendar"></i>
         <h2>Leave Management</h2>
         <p>Manage and apply leave and let the world know you're taking leave.
         <span class="more">Learn more</span>
@@ -70,7 +70,7 @@
         <a href="/iphone/from-the-app-store/social-networking.html" class="block callout"
         onclick="s_objectID=&quot;http://www.apple.com/iphone/from-the-app-store/social-networking.html_1&quot;;return
         this.s_oc?this.s_oc(e):true">
-        <img width="118" height="114" alt="" src="images/apple.png">
+        <i class="icon-money"></i>
         <h2>Payroll</h2>
         <p>Process month employee salary and income tax.
         <span class="more">Learn more</span>

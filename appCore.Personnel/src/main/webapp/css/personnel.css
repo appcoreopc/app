@@ -262,13 +262,12 @@ span.fieldSpacer {
 }
 
 #companyDropDownList {
-
     border: 1px solid #CCCCCC;
     box-shadow: none;
     color: #7B746E;
-    font-size: 18px;
-    height: 34px;
-    width: 780px;
+    font-size: 14px;
+    width: 180px;
+    margin-left : 20px;
 }
 
 .widget {
@@ -574,9 +573,10 @@ span.fieldSpacer {
 
 .companyInfoDiv {
     display: inline;
-    font-size: 20px;
+    font-size: 14px;
     text-align: left;
     color: #3399CC;
+    padding-left: 50px;
 }
 
 .formMainContent {
