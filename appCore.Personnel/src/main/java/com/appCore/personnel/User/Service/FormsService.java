@@ -1,8 +1,12 @@
 package com.appCore.personnel.User.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.annotation.Resource;
+
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -123,7 +127,33 @@ public class FormsService
 		}
 		return null;
 	}
+	
+	public Forms_Actions_Role get(String formId, int[] rolesId) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM Forms where FormId = :formId");
+		query.setParameter("formId", formId);
 
+		List<Forms> forms = query.list();
+		Integer formNid = -1;
+		
+		if (forms.size() > 0)
+		{
+			formNid = forms.get(0).getNid();
+			Query forms_actions_role_query = session.createQuery("From Forms_Actions_Role where Forms_nid = :formsNid and Role_nid in (:roleNid)"); 
+			forms_actions_role_query.setParameter("formsNid", formNid);
+			
+			List<Integer> roles =  Arrays.asList(ArrayUtils.toObject(rolesId));
+			forms_actions_role_query.setParameterList("roleNid", roles);
+			
+			List<Forms_Actions_Role> result = forms_actions_role_query.list();
+			
+			if (result.size() > 0)
+				return result.get(0);
+		}
+		return null;
+	}
+	
 	public void add(Forms forms) 
 	{
 		Session session = sessionFactory.getCurrentSession();

@@ -320,7 +320,7 @@ var globalDepartmentDeleteUrl = globalHostname + "/app/Core/Department/delete";
 var globalEmployeePixUploadPath = globalHostname + "/app/Core/create/upload";
 var globalPersonnelControlPanel = "personnelControlPanel.jsp";
 var globalUserValidationUrl = globalHostname + "/app/Users/Users/validateLogin";
-var globalUserValidationUrl2 = globalHostname + "/app/Users/Users/authenticate";
+var globalUserAuthenticationUrl = globalHostname + "/app/Users/Users/authenticate";
 var globalAdminCentralPage = "userList.jsp";
 
 var coreModeList = 0;

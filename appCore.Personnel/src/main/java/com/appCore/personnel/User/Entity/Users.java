@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 	@Entity
@@ -32,7 +33,7 @@ import javax.persistence.Table;
 		@Column(name = "LastLogin")
 		private Timestamp lastLogin;
 
-
+		
 		@Column(name = "Email")
 		private String email;
 		
@@ -94,5 +95,5 @@ import javax.persistence.Table;
 		public void setFullName(String fullName) {
 			this.fullName = fullName;
 		}
-		
+			
 	}

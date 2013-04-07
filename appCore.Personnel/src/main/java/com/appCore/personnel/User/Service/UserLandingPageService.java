@@ -43,8 +43,6 @@ public class UserLandingPageService
 		query.setParameter("id", userId);
 		return query.list();
 	}
-
-	
 	
 	public void add(UserLandingPage userLandingPage) 
 	{

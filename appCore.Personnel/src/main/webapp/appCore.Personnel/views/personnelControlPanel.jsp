@@ -52,11 +52,11 @@
             try
             {
                 var globalViewModel = new GlobalViewModel();
-
-                globalViewModel.employeeRole(1);
+                //globalViewModel.employeeRole(1);
                 globalViewModel.companyId(1);
                 globalViewModel.companyName("AppCoreDev");
                 globalViewModel.username = sessionStorage.username;
+                globalViewModel.employeeRole(sessionStorage.roles);
 
                 globalViewModel.recentItem.subscribe(function(recentItem)
                 {

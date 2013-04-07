@@ -48,10 +48,11 @@
         {
             if (msg.messageCode == 0)
             {
-                //sessionStorage.setItem("username", msg.username);
-                //sessionStorage.setItem("role", msg.employeeRole);
-                sessionStorage.setItem("username", "jeremy1");
-                sessionStorage.setItem("role", 1);
+                console.log(msg);
+                sessionStorage.setItem("username", msg.username);
+                sessionStorage.setItem("roles", msg.roles);
+                //sessionStorage.setItem("username", "jeremy1");
+                //sessionStorage.setItem("role", 1);
                 sessionStorage.setItem("companyId", 1);
                 sessionStorage.setItem("companyName", "AppCore");
                 goToPage(msg.landingPage);
@@ -74,8 +75,8 @@
                 var code = e.which;
                 if(code == 13)
                 {
-                        var authenticator = new UserAuthenticator();
-                        authenticator.authenticateUser($("#username").val(),$("#password").val(), authenticateUserCallBack);
+                     var authenticator = new UserAuthenticator();
+                     authenticator.authenticateUser($("#username").val(),$("#password").val(), authenticateUserCallBack);
                 }
             });
         });

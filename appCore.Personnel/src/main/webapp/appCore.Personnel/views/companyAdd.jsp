@@ -24,7 +24,7 @@
                     gridDataObject = vm.getView();
                 }
 
-                var input = { "id" : coreCompanyPage, "roleId" : 1 };
+                var input = { "id" : coreCompanyPage, "roleId" : globalViewModel.employeeRole() };
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
 

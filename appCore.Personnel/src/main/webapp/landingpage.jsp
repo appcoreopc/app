@@ -7,7 +7,6 @@
         <body>
 
 
-
         <link href="css/header.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="css/default.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="css/personnel.css" media="screen" rel="stylesheet" type="text/css" />
@@ -22,9 +21,7 @@
         <%@ include file="includes/header.html" %>
 
 
-
         <div class="landingView">
-
 
 
 

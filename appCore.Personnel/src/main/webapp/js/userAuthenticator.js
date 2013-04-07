@@ -9,7 +9,7 @@ var UserAuthenticator = function () {
         user.Password = RSA.encrypt(password, $key);
 
         var ajax = new AjaxCore();
-        var request = ajax.sendRequest(globalUserValidationUrl2, user, "get");
+        var request = ajax.sendRequest(globalUserAuthenticationUrl, user, "get");
         request.success(function (msg) {
             callBack(msg);
         });

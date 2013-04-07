@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
@@ -54,11 +55,24 @@ public class FormsController
 		
 		
 		@RequestMapping(value = "/Forms/get", method = RequestMethod.GET)		
+		public @ResponseBody Forms_Actions_Role getForms (@RequestParam(value="id", required=true) String formId, @RequestParam(value="roleId", required=true) int[] rolesId) 
+		{		
+				// Forms_Actions_Role forms=service.get(formId, roleId);
+				//int[] roles = ArrayUtils.toPrimitive(rolesId.toArray(new Integer[rolesId.size()]));
+				Forms_Actions_Role forms=service.get(formId, rolesId);	
+				return forms;
+		}
+		
+		
+		/*@RequestMapping(value = "/Forms/get", method = RequestMethod.GET)		
 		public @ResponseBody Forms_Actions_Role getForms (@RequestParam(value="id", required=true) String formId, @RequestParam(value="roleId") Integer roleId) 
 		{
 				Forms_Actions_Role forms=service.get(formId, roleId);
 				return forms;
 		}
+		*/
+		
+		
 		
 		@RequestMapping(value = "/Forms/add", method = RequestMethod.GET)
 		public @ResponseBody RequestStatus renderAddForms (@RequestBody Forms forms)

@@ -92,10 +92,9 @@
         }
         };
 
-
-        var widget = new WidgetCommandControl();
-        widget.createControl(branchData);
-        widget.createControl(divisionData);
+        //var widget = new WidgetCommandControl();
+        //widget.createControl(branchData);
+        //widget.createControl(divisionData);
         //widget.createControl(unitData);
         //widget.createControl(departmentData);
 

@@ -29,6 +29,11 @@ var CoreCommand = function () {
             addCommandId = commandDataObject.addLinkInfo.commandId;
         }
 
+        if (data == null)
+        {
+            return;
+        }
+
         if (data == null || data.permission == null) {
             // goToPage(hostname);
         }

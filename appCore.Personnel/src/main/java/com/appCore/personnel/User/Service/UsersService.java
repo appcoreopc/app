@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import javax.annotation.Resource;
+
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
@@ -51,25 +53,25 @@ public class UsersService // implements UserRoleService
 		return users;
 	}
 
-	public int getRole(Integer userId) {
+	public List<Integer> getRole(Integer userId) {
+		
 		Session session = sessionFactory.getCurrentSession();
 		Users employee = (Users) session.get(Users.class, userId);
 
-		Query query = session
-				.createSQLQuery(
-						"Select Role_Nid From UserRoleAssignment where user_nid = :userId")
-				.addScalar("Role_Nid", Hibernate.INTEGER);
+		Query query = session.createSQLQuery("Select Role_Nid From UserRoleAssignment where user_nid = :userId").addScalar("Role_Nid", Hibernate.INTEGER);
 		query.setParameter("userId", userId);
 
 		List<Object> resultQuery = query.list();
-
+		
+		List<Integer> roleList = new ArrayList<Integer>(); 
+			
 		for (Iterator iterator = resultQuery.iterator(); iterator.hasNext();) {
 
 			Object object = (Object) iterator.next();
 			Integer roleId = (Integer) (object);
-			
+			roleList.add(roleId);
 		}
-		return -1;
+		return roleList;
 	}
 	
 	public List<Integer> getRoleByUsername(String username) {
@@ -123,17 +125,18 @@ public class UsersService // implements UserRoleService
 		
 		List<Users> userVerificationResult = this.get(username, password);
 		
-		this.getRole(1);
-
 		if (userVerificationResult.size() > 0) {
+			
+			List<Integer> roleList = this.getRole(userVerificationResult.get(0).getNid());
+			int[] roles = ArrayUtils.toPrimitive(roleList.toArray(new Integer[roleList.size()]));
+			statusResponse.setRoles(roles);
 			Users userFromStore = userVerificationResult.get(0);
-
+			
 			statusResponse.setUsername(username);
 			statusResponse.setMessageCode(0);
 			statusResponse.setMessageDescription("User logins successfully.");
 
-			List<UserLandingPage> userLandingData = userLandingservice
-					.getByUserId(userFromStore.getNid());
+			List<UserLandingPage> userLandingData = userLandingservice.getByUserId(userFromStore.getNid());
 
 			if (userLandingData.size() > 0) {
 				UserLandingPage userLanding = userLandingData.get(0);

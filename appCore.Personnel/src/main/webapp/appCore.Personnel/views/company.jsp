@@ -16,7 +16,7 @@
                 {
                     var vm = new CompanyViewModel(globalCompanyUrl, data, globalViewModel);
                     var gridDataObject = vm.getView();
-                    var input = { "id" : coreCompanyPage, "roleId" : 1 };
+                    var input = { "id" : coreCompanyPage, "roleId" : globalViewModel.employeeRole() };
                     var coreCommand = new CoreCommand();
                     var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
                     vm.gridViewModel = gridViewModel;
