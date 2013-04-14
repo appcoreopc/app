@@ -20,7 +20,6 @@ var BranchInfoViewModel = function (globalViewModel) {
     self.addInfoType = ko.observable();
     self.addInfoValue = ko.observable();
 
-
     self.listInfo = ko.observableArray();
 
     self.mode = ko.observable(coreModeInsert);
@@ -134,9 +133,24 @@ var BranchInfoViewModel = function (globalViewModel) {
     }
 
     self.addInfo = function (data) {
-        var branchData = createBranchData();
-        var helper = new CompanyHelper();
-        helper.saveOrUpdateBranchInfo(branchData, addDataSuccessCallback);
+
+        var validationStatusOk = true;
+
+        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined ) {
+            $("#branchCategoryAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (self.addInfoType() == "" || self.addInfoType() == undefined) {
+            $("#branchTypeAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (validationStatusOk) {
+            var branchData = createBranchData();
+            var helper = new CompanyHelper();
+            helper.saveOrUpdateBranchInfo(branchData, addDataSuccessCallback);
+        }
     }
 
     function createBranchData() {
@@ -157,8 +171,7 @@ var BranchInfoViewModel = function (globalViewModel) {
 
     function addDataSuccessCallback(result) {
 
-        if (result.messageCode != null)
-        {
+        if (result.messageCode != null) {
             var data = {
                 category:self.addInfoCategory(),
                 description:self.addInfoDescription(),

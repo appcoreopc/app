@@ -3,7 +3,6 @@
         <link href="../../css/entityJqueryUIOverride.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/divisionInfoViewModel.js"></script>
-        <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>
 
 
         <script type="text/html" id="infoUpdateTemplate">
@@ -78,26 +77,26 @@
         <div class="formAddRow">
 
         <div class='columnDivider'>
-        <div class="labelSection">Category</div>
-        <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="category type"/></div>
+        <div class="labelSectionInfo">Category</div>
+        <div class="inputSectionForm"><input id="divisionCategoryAdd" type="text"  class="validate[required, maxSize[10]]" data-bind="value : $root.addInfoCategory" placeholder="category type"/></div>
 
         </div>
 
         <div class='columnDivider'>
-        <div class="labelSection">Description</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Description</div><span class='req'>*</span>
         <div class="inputSectionForm">
         <input type="text" data-bind="value : $root.addInfoDescription" placeholder="new description"/></div>
         </div>
 
 
         <div class='columnDivider'>
-        <div class="labelSection">Type</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Type</div><span class='req'>*</span>
         <div class="inputSectionForm">
-        <input type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
+        <input id="divisionTypeAdd" type="text" data-bind="value : $root.addInfoType" class="validate[required, maxSize[10]]" placeholder="new type"/></div>
         </div>
 
         <div class='columnDivider'>
-        <div class="labelSection">Value</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Value</div><span class='req'>*</span>
         <div class="inputSectionForm">
         <input type="text" data-bind="value : $root.addInfoValue" placeholder="new value"/></div>
         </div>
@@ -227,13 +226,11 @@
         var formName = "divisionForm";
         $(document).ready(function()
         {
-            $("#" + formName).validationEngine();
-
-                console.log(globalViewModel);
-
                 var vm = new DivisionInfoViewModel(globalViewModel);
                 $("#divisionForm").setupViewBinding(vm, globalViewModel);
                 $("#accordianDivision").accordion({collapsible : true, active: false});
+
+                $("#" + formName).validationEngine();
         });
 
         </script>

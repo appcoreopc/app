@@ -20,7 +20,6 @@ var SectionInfoViewModel = function (globalViewModel) {
     self.addInfoType = ko.observable();
     self.addInfoValue = ko.observable();
 
-
     self.listInfo = ko.observableArray();
 
     self.mode = ko.observable(coreModeInsert);
@@ -82,7 +81,6 @@ var SectionInfoViewModel = function (globalViewModel) {
         self.editData("");
     }
 
-
     self.editInfoData = function (data) {
 
         self.infoCategory = data.infoCategory;
@@ -127,9 +125,24 @@ var SectionInfoViewModel = function (globalViewModel) {
     }
 
     self.addInfo = function (data) {
-        var entityInfoData = createEntityData();
-        var helper = new CompanyHelper();
-        helper.saveOrUpdateSectionInfo(entityInfoData, addDataSuccessCallback);
+
+        var validationStatusOk = true;
+
+        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined) {
+            $("#sectionCategoryAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (self.addInfoType() == "" || self.addInfoType() == undefined) {
+            $("#sectionTypeAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (validationStatusOk) {
+            var entityInfoData = createEntityData();
+            var helper = new CompanyHelper();
+            helper.saveOrUpdateSectionInfo(entityInfoData, addDataSuccessCallback);
+        }
     }
 
     function createEntityData() {

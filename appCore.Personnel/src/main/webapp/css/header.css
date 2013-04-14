@@ -4948,9 +4948,8 @@ ui-state-hover a, .ui-state-hover a:hover {
     height: 400px;
     background-color: #fff;
     border: none;
+    visibility: hidden;
 }
-
-
 
 
 

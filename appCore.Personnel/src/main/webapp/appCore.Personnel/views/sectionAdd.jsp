@@ -78,26 +78,26 @@
         <div class="formAddRow">
 
         <div class='columnDivider'>
-        <div class="labelSection">Category</div>
-        <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="new category"/></div>
+        <div class="labelSectionInfo">Category</div>
+        <div class="inputSectionForm"><input id="sectionCategoryAdd" type="text"  data-bind="value : $root.addInfoCategory"  class="validate[required, maxSize[10]]" placeholder="new category"/></div>
 
         </div>
 
         <div class='columnDivider'>
-        <div class="labelSection">Description</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Description</div><span class='req'>*</span>
         <div class="inputSectionForm">
         <input type="text" data-bind="value : $root.addInfoDescription" placeholder="new description"/></div>
         </div>
 
 
         <div class='columnDivider'>
-        <div class="labelSection">Type</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Type</div><span class='req'>*</span>
         <div class="inputSectionForm">
-        <input type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
+        <input id="sectionTypeAdd" type="text" data-bind="value : $root.addInfoType"  class="validate[required, maxSize[10]]" placeholder="new type"/></div>
         </div>
 
         <div class='columnDivider'>
-        <div class="labelSection">Value</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Value</div><span class='req'>*</span>
         <div class="inputSectionForm">
         <input type="text" data-bind="value : $root.addInfoValue" placeholder="new value"/></div>
         </div>
@@ -157,7 +157,7 @@
 
         <div class="formRow">
         <div class="labelSectionBlock">Description</div><div class="inputSectionBlock"><textarea
-        class="validate[required, maxSize[80]] formTextArea" id="Description" data-bind="value : description"
+        class="formTextArea" id="Description" data-bind="value : description"
         placeholder="description for new section"></textarea></div>
         </div>
 
@@ -226,18 +226,18 @@
         <script type="text/javascript">
 
         var formName = "sectionForm";
+
         $(document).ready(function()
         {
-            $("#" + formName).validationEngine();
-
                 var vm = new SectionInfoViewModel(globalViewModel);
                 $("#sectionForm").setupViewBinding(vm, globalViewModel);
-
-            $("#accordianSection").accordion({collapsible : true, active: false});
+                $("#accordianSection").accordion({collapsible : true, active: false});
+                $("#" + formName).validationEngine();
         });
 
         </script>
 
         <form id="sectionForm">
-        <div id="sectionMaintenance" data-bind="template : { name : templateToUse} ">
+            <div id="sectionMaintenance" data-bind="template : { name : templateToUse} ">
+            </div>
         </form>

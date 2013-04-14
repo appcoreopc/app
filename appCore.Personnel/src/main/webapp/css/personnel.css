@@ -61,6 +61,15 @@ div .inputSectionBlock textarea {
     width: 150px;
 }
 
+.labelSectionInfo {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro,arial,sans-serif;
+    padding-right: 20px;
+    width: 150px;
+}
+
+
 .labelSectionBlock {
     color: #7B746E;
     display: inline-block;
@@ -518,7 +527,7 @@ span.fieldSpacer {
 }
 
 .formAddRow {
-    background-color: #EEEEDD;
+    /*background-color: #EEEEDD;*/
     display: block;
     padding-top: 6px;
     padding-left: 16px;

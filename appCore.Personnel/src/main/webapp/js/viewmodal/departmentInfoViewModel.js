@@ -127,9 +127,24 @@ var DepartmentInfoViewModel = function (globalViewModel) {
     }
 
     self.addInfo = function (data) {
-        var entityInfoData = createEntityData();
-        var helper = new CompanyHelper();
-        helper.saveOrUpdateDepartmentInfo(entityInfoData, addDataSuccessCallback);
+
+        var validationStatusOk = true;
+
+        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined) {
+            $("#departmentCategoryAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (self.addInfoType() == "" || self.addInfoType() == undefined) {
+            $("#departmentTypeAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (validationStatusOk) {
+            var entityInfoData = createEntityData();
+            var helper = new CompanyHelper();
+            helper.saveOrUpdateDepartmentInfo(entityInfoData, addDataSuccessCallback);
+        }
     }
 
     function createEntityData() {

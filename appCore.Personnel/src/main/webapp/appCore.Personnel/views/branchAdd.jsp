@@ -1,36 +1,37 @@
         <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/entityJqueryUIOverride.css" media="screen" rel="stylesheet" type="text/css" />
+
         <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/branchInfoViewModel.js"></script>
-        <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>
 
 
-            <script type="text/html" id="infoUpdateTemplate">
+        <script type="text/html" id="infoUpdateTemplate">
+
 
             <div class="formRowList">
 
             <span class='columnDivider'>
-            <span class="labelSection">Category</span>
-            <span class="inputSectionForm"><input type="text" data-bind="value : $root.infoCategory" placeholder="info type"/></span>
+            <span class="labelSectionInfo">Category</span>
+            <span class="inputSectionForm"><input type="text" data-bind="value : $root.infoCategory" class="validate[required, maxSize[10]]" placeholder="info type"/></span>
 
             </span>
 
             <span class='columnDivider'>
-            <span class="labelSection">Description</span></span>
+            <span class="labelSectionInfo">Description</span></span>
             <span class="inputSectionForm">
             <input type="text" data-bind="value : $root.infoDescription" placeholder="new description"/></span>
             </span>
 
 
             <span class='columnDivider'>
-            <span class="labelSection">Type</span></span>
+            <span class="labelSectionInfo">Type</span></span>
             <span class="inputSectionForm">
             <input type="text" data-bind="value : $root.infoType" placeholder="type"/></span>
             </span>
 
             <span class='columnDivider'>
-            <span class="labelSection">Value</span>
+            <span class="labelSectionInfo">Value</span>
             <span class="inputSectionForm">
             <input type="text" data-bind="value : $root.infoValue" placeholder="new value"/></span>
             </span>
@@ -70,34 +71,41 @@
             </script>
 
 
+
+
+
+
+
+
             <script type="text/html" id="infoAddTemplate">
 
 
             <span class="accordianRowHeader"><icon class="icon-plus-circle-1"></icon></span>
 
+
             <div class="formAddRow">
 
                 <div class='columnDivider'>
-                    <div class="labelSection">Category</div>
-                    <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="category type"/></div>
+                    <div class="labelSectionInfo">Category</div>
+                    <div class="inputSectionForm"><input id="branchCategoryAdd" type="text"  data-bind="value : $root.addInfoCategory" placeholder="category type" class="validate[required, maxSize[10]]"/></div>
 
                 </div>
 
                 <div class='columnDivider'>
-                    <div class="labelSection">Description</div><span class='req'>*</span>
+                    <div class="labelSectionInfo">Description</div><span class='req'>*</span>
                     <div class="inputSectionForm">
-                    <input type="text" data-bind="value : $root.addInfoDescription" placeholder="new description"/></div>
+                    <input type="text" id="branchDescriptionAdd" data-bind="value : $root.addInfoDescription" placeholder="new description"/></div>
                 </div>
 
 
                 <div class='columnDivider'>
-                    <div class="labelSection">Type</div><span class='req'>*</span>
+                    <div class="labelSectionInfo">Type</div><span class='req'>*</span>
                     <div class="inputSectionForm">
-                    <input type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
+                    <input type="text" id="branchTypeAdd" data-bind="value : $root.addInfoType" placeholder="new type" class="validate[required, maxSize[10]]"/></div>
                 </div>
 
                 <div class='columnDivider'>
-                    <div class="labelSection">Value</div><span class='req'>*</span>
+                    <div class="labelSectionInfo">Value</div><span class='req'>*</span>
                     <div class="inputSectionForm">
                     <input type="text" data-bind="value : $root.addInfoValue" placeholder="new value"/></div>
                 </div>
@@ -113,12 +121,6 @@
 
 
             </script>
-
-
-
-
-
-
 
 
 
@@ -159,7 +161,7 @@
 
             <div class="formRow">
             <div class="labelSectionBlock">Description</div><span class='req'>&nbsp;</span><div class="inputSectionBlock"><textarea
-            type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
+            type="text" class="validate[maxSize[80]]" id="Description" data-bind="value : description"
             placeholder="description for new branch"></textarea></div>
             </div>
 
@@ -223,27 +225,23 @@
 
             <script type="text/javascript">
 
-            var branchForm = "branchForm";
-            $(document).ready(function()
-            {
-                //try
-                //{
-                    $("#" + branchForm).validationEngine();
+                $(document).ready(function()
+                {
+                    var formName = "branchForm";
+
                     var vm = new BranchInfoViewModel(globalViewModel);
                     $("#branchForm").setupViewBinding(vm, globalViewModel);
-                    //ko.applyBindings(vm, document.getElementById("branchForm"));
-
                     $("#accordian").accordion({collapsible : true, active: false});
-                //}
-                //catch (ex)
-                //{
-                //    console.log(ex)
-                //}
-            });
+
+                    $("#" + formName).validationEngine();
+
+                });
 
             </script>
 
 
-        <form id="branchForm">
+
+            <form id="branchForm">
             <div id="branchMaintenance" data-bind="template : { name : templateToUse} ">
+            </div>
         </form>

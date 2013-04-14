@@ -128,9 +128,23 @@ var DivisionInfoViewModel = function (globalViewModel) {
     }
 
     self.addInfo = function (data) {
-        var entityInfoData = createEntityData();
-        var helper = new CompanyHelper();
-        helper.saveOrUpdateDivisionInfo(entityInfoData, addDataSuccessCallback);
+        var validationStatusOk = true;
+
+        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined) {
+            $("#divisionCategoryAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (self.addInfoType() == "" || self.addInfoType() == undefined) {
+            $("#divisionTypeAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (validationStatusOk) {
+            var entityInfoData = createEntityData();
+            var helper = new CompanyHelper();
+            helper.saveOrUpdateDivisionInfo(entityInfoData, addDataSuccessCallback);
+        }
     }
 
     function createEntityData() {
@@ -151,8 +165,7 @@ var DivisionInfoViewModel = function (globalViewModel) {
 
     function addDataSuccessCallback(result) {
 
-        if (result.messageCode != null)
-        {
+        if (result.messageCode != null) {
             var data = {
                 category:self.addInfoCategory(),
                 description:self.addInfoDescription(),

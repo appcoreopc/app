@@ -11,26 +11,26 @@
         <div class="formRowList">
 
         <span class='columnDivider'>
-        <span class="labelSection">Category</span>
+        <span class="labelSectionInfo">Category</span>
         <span class="inputSectionForm"><input type="text" data-bind="value : $root.infoCategory" placeholder="info type"/></span>
 
         </span>
 
         <span class='columnDivider'>
-        <span class="labelSection">Description</span></span>
+        <span class="labelSectionInfo">Description</span></span>
         <span class="inputSectionForm">
         <input type="text" data-bind="value : $root.infoDescription" placeholder="new description"/></span>
         </span>
 
 
         <span class='columnDivider'>
-        <span class="labelSection">Type</span></span>
+        <span class="labelSectionInfo">Type</span></span>
         <span class="inputSectionForm">
         <input type="text" data-bind="value : $root.infoType" placeholder="type"/></span>
         </span>
 
         <span class='columnDivider'>
-        <span class="labelSection">Value</span>
+        <span class="labelSectionInfo">Value</span>
         <span class="inputSectionForm">
         <input type="text" data-bind="value : $root.infoValue" placeholder="new value"/></span>
         </span>
@@ -78,26 +78,26 @@
         <div class="formAddRow">
 
         <div class='columnDivider'>
-        <div class="labelSection">Category</div>
-        <div class="inputSectionForm"><input type="text"  data-bind="value : $root.addInfoCategory" placeholder="new category"/></div>
+        <div class="labelSectionInfo">Category</div>
+        <div class="inputSectionForm"><input id="departmentCategoryAdd" class="validate[required, maxSize[10]]" type="text"  data-bind="value : $root.addInfoCategory" placeholder="new category"/></div>
 
         </div>
 
         <div class='columnDivider'>
-        <div class="labelSection">Description</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Description</div><span class='req'>*</span>
         <div class="inputSectionForm">
         <input type="text" data-bind="value : $root.addInfoDescription" placeholder="new description"/></div>
         </div>
 
 
         <div class='columnDivider'>
-        <div class="labelSection">Type</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Type</div><span class='req'>*</span>
         <div class="inputSectionForm">
-        <input type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
+        <input id="departmentTypeAdd" class="validate[required, maxSize[10]]" type="text" data-bind="value : $root.addInfoType" placeholder="new type"/></div>
         </div>
 
         <div class='columnDivider'>
-        <div class="labelSection">Value</div><span class='req'>*</span>
+        <div class="labelSectionInfo">Value</div><span class='req'>*</span>
         <div class="inputSectionForm">
         <input type="text" data-bind="value : $root.addInfoValue" placeholder="new value"/></div>
         </div>
@@ -158,7 +158,7 @@
 
         <div class="formRow">
         <div class="labelSectionBlock">Description</div><span class='req'>&nbsp;</span><div class="inputSectionBlock"><textarea
-        type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
+        type="text" id="Description" data-bind="value : description"
         placeholder="description for new department"></textarea></div>
         </div>
 
@@ -222,11 +222,12 @@
         var formName = "departmentForm";
         $(document).ready(function()
         {
-                $("#" + formName).validationEngine();
                 var vm = new DepartmentInfoViewModel(globalViewModel);
                 $("#departmentForm").setupViewBinding(vm, globalViewModel);
 
                 $("#accordianDepartment").accordion({collapsible : true, active: false});
+
+                $("#" + formName).validationEngine();
         });
 
         </script>
