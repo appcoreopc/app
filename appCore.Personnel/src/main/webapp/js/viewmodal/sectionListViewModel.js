@@ -1,8 +1,13 @@
 var SectionListViewModel = function (initView, data, globalViewModel) {
 
-    mode = initView;
+    var self = this;
+
+    self.mode = initView;
+
     this.gridUrl = globalHostname + "/app/Core/Section";
+
     this.codeCommand = "#codeCommand";
+
     this.gridId = "gridBranch";
 
     this.data = data;
@@ -62,7 +67,7 @@ var SectionListViewModel = function (initView, data, globalViewModel) {
             "model":model
         };
 
-        switch (mode) {
+        switch (self.mode) {
             case 0:
                 var addLinkInfo = {
                     "text":"Add Section",

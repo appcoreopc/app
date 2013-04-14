@@ -2,21 +2,16 @@ package com.appCore.Requests;
 
 public class UserAuthenticationRequestStatus extends RequestStatus {
 	
-	private String employeeRole; 
-	
 	private String username; 
 	
 	private String landingPage; 
 
+	private int[] roles;
 	
-	public String getEmployeeRole() {
-		return employeeRole;
-	}
-
-	public void setEmployeeRole(String employeeRole) {
-		this.employeeRole = employeeRole;
-	}
-
+	private int companyId; 
+	
+	private String companyName; 
+	
 	public String getUsername() {
 		return username;
 	}
@@ -31,6 +26,30 @@ public class UserAuthenticationRequestStatus extends RequestStatus {
 
 	public void setLandingPage(String landingPage) {
 		this.landingPage = landingPage;
+	}
+
+	public int[] getRoles() {
+		return roles;
+	}
+
+	public void setRoles(int[] roles) {
+		this.roles = roles;
+	}
+
+	public int getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(int companyId) {
+		this.companyId = companyId;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 }

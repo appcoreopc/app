@@ -15,14 +15,34 @@
 	    <link rel="stylesheet" href="css/fontelloIndex.css"><!--[if IE 7]>
         <link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
 
+
+        <link href="kendo/styles/kendo.common.min.css" rel="stylesheet">
+        <link href="kendo/styles/kendo.default.min.css" rel="stylesheet">
+
+        <script language="javascript" src="js/appDefinition.js"></script>
         <script language="javascript" src="js/jquery-1.7.2.min.js"></script>
         <script language="javascript" src="js/carousel.js"></script>
+        <script language="javascript" src="js/knockoutjs/knockout-2.2.0.debug.js"></script>
+        <script language="javascript" src="js/globalViewModel.js"></script>
+        <script language="javascript" src="js/coreGlobalViewModelSetup.js"></script>
+        <script language="javascript" src="js/coreLogout.js"></script>
+        <script language="javascript" src="kendo/js/kendo.web.min.js"></script>
 
-        <%@ include file="includes/header.html" %>
+        <%@ include file="includes/landingHeader.html" %>
+
+        <script type="text/javascript">
+
+        $(document).ready(function()
+        {
+            $(document).setupGlobalViewModel();
+            $("#logoutLink").setupLogout();
+
+        });
+
+        </script>
 
 
         <div class="landingView">
-
 
 
         <div class="overview">
@@ -82,7 +102,6 @@
 
 
         </div>
-
 
 
         <%@ include file="includes/footer.html" %>

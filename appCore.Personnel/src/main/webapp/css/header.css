@@ -2065,7 +2065,7 @@ label {
 
 input, textarea, select, .uneditable-input {
     border: 1px solid #CCCCCC;
-    border-radius: 3px 3px 3px 3px;
+    /*border-radius: 3px 3px 3px 3px;*/
     color: #393C3D;
     display: inline-block;
     font-size: 13px;

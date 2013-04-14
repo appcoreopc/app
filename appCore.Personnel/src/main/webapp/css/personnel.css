@@ -26,14 +26,31 @@ div.rightSection {
     height: 30px;
 }
 
-/*
-.labelSection {
-    width: 150px;
-    display: inline-block;
-    padding-right: 20px;
-    font-weight: bold;
+.inputSectionBlock {
+    padding-left: 20px;
+    display: block;
 }
-*/
+
+
+.inputSectionBlock input {
+    border-color: #7C7C7C #C3C3C3 #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 0 #000000;
+    margin-top: 8px;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    width: 400px;
+}
+
+div .inputSectionBlock textarea {
+    border-color: #7C7C7C #C3C3C3 #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 0 #000000;
+    margin-top: 8px;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    width : 400px;
+}
 
 .labelSection {
     color: #7B746E;
@@ -44,11 +61,54 @@ div.rightSection {
     width: 150px;
 }
 
+.labelSectionBlock {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 150px;
+    font-weight: normal;
+}
+
+.labelSectionBlockBold {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 150px;
+    font-weight: bold;
+}
+
+.labelSectionBlockInfo {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    font-size: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 150px;
+    font-weight: normal;
+}
+
+
+.labelSectionBlockRequired {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 150px;
+    font-weight: bold;
+}
+
+
+
 .multiLinelabelSection {
     width: 150px;
     display: inline-block;
     padding-right: 20px;
-    /* vertical-align: top;*/
 }
 
 .inlineLabelSection {
@@ -65,7 +125,7 @@ div.rightSection {
 .formRowTitle {
     display: block;
     padding-top: 6px;
-    background: -moz-linear-gradient(center top, #FFFFFF 20%, #DEDEDE 100%) repeat scroll 0 0 #F0F0ED;
+    border-bottom: 1px solid #CCCCCC;
 }
 
 .darken {
@@ -91,46 +151,6 @@ div.rightSection {
     display: inline-block;
     padding-left: 190px;
 }
-
-/*
-.command button {
-
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background: -moz-linear-gradient(center top, #ED1D89 0%, #DB167D 50%, #D21276 50.1%, #BF0265 100%) repeat scroll 0 0 transparent;
-    border-color: #BF0265 #B11265 #A30E5C;
-    border-style: solid;
-    border-width: 1px;
-    padding: 4px 4px 4px 4px;
-    font-size: 14px;
-    color: #fff;
-    border-radius: 4px 4px 4px 4px;
-    background: -webkit-linear-gradient(top, #EF3093 0%, #E81D87 50%, #E51481 50.1%, #D30270 100%);
-}
-
-*/
-
-/*
-.command button {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background: -moz-linear-gradient(center top, #ED1D89 0%, #DB167D 50%, #D21276 50.1%, #BF0265 100%) repeat scroll 0 0 transparent;
-    border-color: #BF0265 #B11265 #A30E5C;
-    border-style: solid;
-    border-width: 1px;
-    padding: 4px 4px 4px 4px;
-    font-size: 14px;
-    color: #fff;
-    border-radius: 4px 4px 4px 4px;
-    background: -webkit-linear-gradient(top, #EF3093 0%, #E81D87 50%, #E51481 50.1%, #D30270 100%);
-}
-*/
 
 .command button {
 
@@ -189,7 +209,7 @@ div.rightSection {
 }
 
 .maintenanceCommandSpace {
-    padding-left: 195px;
+    padding-left: 14px;
     display: inline-block;
 }
 

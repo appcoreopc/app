@@ -135,10 +135,11 @@
 
         <div class="formMainContent">
 
+        <div class="sectionalFormHeader">Department code</div>
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Department  Code</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Department  Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="DepartmentCode" name="DepartmentCode"
         placeholder="a new department code"/></div>
         </div>
@@ -150,13 +151,13 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Department Name</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Department Name</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="DepartmentName" placeholder="a new department name"/></div>
         </div>
 
 
         <div class="formRow">
-        <div class="labelSection">Description</div><span class='req'>&nbsp;</span><div class="inputSection"><textarea
+        <div class="labelSectionBlock">Description</div><span class='req'>&nbsp;</span><div class="inputSectionBlock"><textarea
         type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
         placeholder="description for new department"></textarea></div>
         </div>

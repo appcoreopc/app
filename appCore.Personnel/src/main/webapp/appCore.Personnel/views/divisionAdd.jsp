@@ -134,10 +134,11 @@
 
         <div class="formMainContent">
 
+        <div class="sectionalFormHeader">Division code</div>
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Division  Code</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Division  Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="DivisionCode" name="DivisionCode"
         placeholder="a new division code"/></div>
         </div>
@@ -149,13 +150,13 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Division Name</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Division Name</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="DivisionName" placeholder="a new division name"/></div>
         </div>
 
 
         <div class="formRow">
-        <div class="labelSection">Description</div><span class='req'>&nbsp;</span><div class="inputSection">
+        <div class="labelSectionBlock">Description</div><span class='req'>&nbsp;</span><div class="inputSectionBlock">
         <textarea class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"></textarea></div>
         </div>
 
@@ -227,6 +228,8 @@
         $(document).ready(function()
         {
             $("#" + formName).validationEngine();
+
+                console.log(globalViewModel);
 
                 var vm = new DivisionInfoViewModel(globalViewModel);
                 $("#divisionForm").setupViewBinding(vm, globalViewModel);

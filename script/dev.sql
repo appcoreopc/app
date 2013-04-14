@@ -109,19 +109,18 @@ insert into maritalStatus (name, description, companyRef) values ('Single', 'Sin
 insert into maritalStatus (name, description, companyRef) values ('Married', 'Married', 2);
 insert into maritalStatus (name, description, companyRef) values ('Divorced', 'Divorced', 2);
 
-
 insert into userlandingPage (userId, landingPage) values (2, 'landingpage.jsp');
-
 
 insert into Users (username, password) values ('user', 'user');
 insert into Users (username, password) values ('user1', 'user1');
 insert into Users (username, password) values ('user2', 'user2');
 insert into Users (username, password) values ('jeremy', 'jeremy');
 
-insert into userrole_assignment (roles_nid, assignedUsers_nid) values (1,1);
-insert into userrole_assignment (roles_nid, assignedUsers_nid) values (1,2);
-
-
+insert into userroleassignment (role_nid, user_nid) values (1,1);
+insert into userroleassignment (role_nid, user_nid) values (1,2);
+insert into userroleassignment (role_nid, user_nid) values (2,2);
+insert into userroleassignment (role_nid, user_nid) values (3,2);
+insert into userroleassignment (role_nid, user_nid) values (4,2);
 
 insert into employeeContact (email, alternateEmail, correspondenceAddress1, employeeRefId) values ('kepung@gmail.com', 'kepung@hotmail.com', 'test', 1);
 

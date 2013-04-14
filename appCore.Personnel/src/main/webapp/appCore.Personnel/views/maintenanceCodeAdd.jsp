@@ -58,8 +58,7 @@
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Name</div><span class='req'>*</span><div class="inputSection">
-           <input type="text" id="code" data-bind="codepicker : name, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }" class="validate[required, maxSize[10]]" /></div>
+        <div class="labelSection">Name</div><span class='req'>*</span><div class="inputSection"><input type="text" id="code" data-bind="codepicker : name, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }" class="validate[required, maxSize[10]]" /></div>
 
 
         </div>

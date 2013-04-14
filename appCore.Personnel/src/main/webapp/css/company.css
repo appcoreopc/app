@@ -2,8 +2,7 @@
 {
     background: none repeat scroll 0 0 transparent;
     display: inline-block;
-    /*padding: 12px 0 12px 190px;*/
-    padding: 12px 0 12px 220px;
+    padding: 12px 0 12px 0px;
     width: auto;
 }
 
@@ -85,7 +84,8 @@
 .formRow textarea {
     height: 140px;
     width:  300px;
-    border-radius: 5px 5px 5px 5px;
+    /*border-radius: 5px 5px 5px 5px;*/
+    font: 400 14px/19px Roboto,sans-serif;
 }
 
 .addressDataType {

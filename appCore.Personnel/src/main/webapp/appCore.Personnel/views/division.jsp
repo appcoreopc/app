@@ -1,6 +1,7 @@
    <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
    <script language="javascript" src="../../js/viewmodal/divisionListViewModel.js"></script>
    <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
+   <script language="javascript" src="../../js/coreGlobalViewModelSetup.js"></script>
 
 
         <script type="text/javascript">

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>BranchViewModel Test</title>
+  <link rel="stylesheet" href="../../../resources/qunit.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  
+  <script src="../../../resources/qunit.js"></script>
+  <script src="../../../resources/jshamcrest.js"></script>
+  <script src="../../../resources/jsmockito.js"></script>
+  <script src="../../../../js/jquery-1.7.2.min.js"></script>
+  <script src="../../../../js/viewmodal/branchViewModel.js"></script>
+  <script src="../../../../js/globalViewModel.js"></script>
+  <script src="../../../../js/appDefinition.js"></script>
+  <script src="../../../../js/ajaxCore.js"></script>
+  <script src="../../../../js/coreCommand.js"></script>
+    <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
+  
+  <script>
+    	
+	test( "getView() does not return null", function() {
+     
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var data = []; 
+	 
+		  var vm = new BranchViewModel(0, data, mockedGlobalView);
+          var gridDataObject = vm.getView();
+		  notEqual(gridDataObject, null, "calling BranchViewModel's getView must not not return null.");
+		 
+    });
+		
+	test( "viewmodeal mode is correctly set", function() {
+     
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var data = []; 
+	 
+		  var initViewValue = 0;
+		  var vm = new BranchViewModel(initViewValue, data, mockedGlobalView);
+          var assertMode = vm.mode; 
+		  equal(assertMode, initViewValue, "Ensure mode is correctly set.");
+		 
+    });
+
+
+	test("grid data is not empty ", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new BranchViewModel(initViewValue, fakeData, mockedGlobalView);
+          var assertData = vm.gridData();
+
+		  notEqual(assertData, null, "Ensure grid is not null.");
+		  equal(assertData.length, 2, "Record pass in length is the same.");
+	
+	});
+	
+	test("globalviewmodel passed in is ok", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new BranchViewModel(initViewValue, fakeData, mockedGlobalView);
+          var assertData = vm.globalViewModel;
+
+		  notEqual(assertData, null, "Ensure globalViewModel is not null.");
+		  
+	});
+		
+	test("Ensure gridObject viewColumns is not null", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new BranchViewModel(initViewValue, fakeData, mockedGlobalView);
+          var gridDataObject = vm.getView();
+		 
+		  notEqual(gridDataObject.viewColumns, null, "gridView column cannot be null.");
+		 
+	});
+	
+	test("Ensure gridObject updateFunction  is function and not null", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new BranchViewModel(initViewValue, fakeData, mockedGlobalView);
+          var gridDataObject = vm.getView();
+		 
+		  notEqual(gridDataObject.updateFunction, null, "updateFunction cannot be null.");
+		  equal(typeof(gridDataObject.updateFunction), 'function', "typeof updateFunction is function.");
+	});
+	
+	test("Ensure gridObject deleteFunction  is function and not null", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new BranchViewModel(initViewValue, fakeData, mockedGlobalView);
+          var gridDataObject = vm.getView();
+		 
+		  notEqual(gridDataObject.deleteFunction, null, "deleteFunction cannot be null.");
+		  equal(typeof(gridDataObject.deleteFunction), 'function', "typeof deleteFunction is function.");
+	});
+	
+	
+	test("Ensure gridObject controlId is properly assigned", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new BranchViewModel(initViewValue, fakeData, mockedGlobalView);
+          var gridDataObject = vm.getView();
+		 
+		  notEqual(gridDataObject.controlId, null, "controlId cannot be null.");
+		  notEqual(gridDataObject.controlId, undefined, "controlId cannot be undefined.");
+		  
+	});
+	
+	JsMockito.Integration.QUnit();
+	
+  </script>
+</body>
+</html>

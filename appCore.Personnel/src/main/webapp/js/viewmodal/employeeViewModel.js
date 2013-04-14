@@ -104,7 +104,7 @@ var EmployeeViewModel = function (initView, globalViewModel, data) {
     function generateEmployeeGrid(companyId) {
         var gridMetaData =
         {
-            "gridUrl":globalEmployeeUrl,
+                "gridUrl":globalEmployeeUrl,
             "data":self.gridData,
             "columns":columns,
             "model":model

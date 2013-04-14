@@ -1,7 +1,7 @@
 var BranchViewModel = function (initView, data, globalViewModel) {
 
+    var self = this;
     this.mode = initView;
-
     this.editPage = "branchAdd.jsp";
     this.addPage = "branchAdd.jsp";
     this.gridUrl = globalHostname + "/app/Core/Branch";
@@ -155,9 +155,27 @@ var BranchViewModel = function (initView, data, globalViewModel) {
         return gridDataObject;
     }
 
+    self.initializeViewModel = function () {
+        var gridDataObject = this.getView();
+        var input = { "id":coreBranchPage, "roleId": globalViewModel.employeeRole() };
+        var coreCommand = new CoreCommand();
+        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        self.gridViewModel = gridViewModel;
+    }
+
+
+    /*var gridDataObject = vm.getView();
+    var input = { "id" : coreBranchPage, "roleId" : globalViewModel.employeeRole() };
+    var coreCommand = new CoreCommand();
+    var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+    vm.gridViewModel = gridViewModel;
+    */
+
     function goToAdd() {
         globalViewModel.applicationScopeType(coreApplicationTypeBranch);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("branchAdd.jsp");
     }
+
+    self.initializeViewModel();
 }

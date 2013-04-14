@@ -13,8 +13,9 @@
 
         <div class="formMainContent">
 
+        <div class="formRow">&nbsp;</div>
 
-        <div class="formRow">
+            <div class="formRow">
         <div class="labelSection">Holiday Date</div><span class='req'>*</span><div class="inputSection">
             <input type="text" id="HolidayDate" data-bind="datepicker: holidayDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}, value : holidayDate"/>
         </div>
@@ -39,7 +40,6 @@
 
         <div class="formRow">
         <div class="labelSection">Recurring</div><span class='req'>&nbsp;</span><div class="inputSection">
-
             <select id="recurring" data-bind="value: recurring">
                 <option value="true">Yes</option>
                 <option value="false">No</option>

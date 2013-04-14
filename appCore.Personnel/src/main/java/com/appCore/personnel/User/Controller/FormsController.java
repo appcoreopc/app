@@ -53,26 +53,12 @@ public class FormsController
 				return service.getFormsMenu();
 		}
 		
-		
 		@RequestMapping(value = "/Forms/get", method = RequestMethod.GET)		
 		public @ResponseBody Forms_Actions_Role getForms (@RequestParam(value="id", required=true) String formId, @RequestParam(value="roleId", required=true) int[] rolesId) 
 		{		
-				// Forms_Actions_Role forms=service.get(formId, roleId);
-				//int[] roles = ArrayUtils.toPrimitive(rolesId.toArray(new Integer[rolesId.size()]));
 				Forms_Actions_Role forms=service.get(formId, rolesId);	
 				return forms;
 		}
-		
-		
-		/*@RequestMapping(value = "/Forms/get", method = RequestMethod.GET)		
-		public @ResponseBody Forms_Actions_Role getForms (@RequestParam(value="id", required=true) String formId, @RequestParam(value="roleId") Integer roleId) 
-		{
-				Forms_Actions_Role forms=service.get(formId, roleId);
-				return forms;
-		}
-		*/
-		
-		
 		
 		@RequestMapping(value = "/Forms/add", method = RequestMethod.GET)
 		public @ResponseBody RequestStatus renderAddForms (@RequestBody Forms forms)

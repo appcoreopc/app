@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EmployeeViewModel Test - Not Testable!</title>
+  <link rel="stylesheet" href="../../../resources/qunit.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  
+  <script src="../../../resources/qunit.js"></script>
+  <script src="../../../resources/jshamcrest.js"></script>
+  <script src="../../../resources/jsmockito.js"></script>
+  <script src="../../../../js/jquery-1.7.2.min.js"></script>
+  <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
+  <script src="../../../../js/viewmodal/employeeViewModel.js"></script>
+  <script src="../../../../js/viewmodal/employeeHelper.js"></script>
+  <script src="../../../../js/globalViewModel.js"></script>
+  <script src="../../../../js/appDefinition.js"></script>
+  <script src="../../../../js/ajaxCore.js"></script>
+  <script src="../../../../js/coreCommand.js"></script>
+  
+	
+  <script>
+    	
+	test( "mode", function() {
+     
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var data = []; 
+	 
+		  var initViewValue = 0;
+		  var vm = new EmployeeViewModel(initViewValue, mockedGlobalView, data);
+          var assertMode = vm.mode; 
+		  equal(assertMode, initViewValue, "Ensure mode is correctly set.");
+		 
+    });
+
+
+	test("grid data is not empty ", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new EmployeeViewModel(initViewValue, fakeData, mockedGlobalView);
+          var assertData = vm.gridData();
+
+		  notEqual(assertData, null, "Ensure grid is not null.");
+		  equal(assertData.length, 2, "Record pass in length is the same.");
+	
+	});
+
+
+	test("data passed in is not empty ", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new EmployeeViewModel(initViewValue, fakeData, mockedGlobalView);
+          var assertData = vm.data;
+
+		  notEqual(assertData, null, "Ensure data passed in is not null.");
+	});
+
+	
+	test("globalviewmodel passed in is ok", function()
+	{	
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+	 
+		  var initViewValue = 0;
+		  var vm = new EmployeeViewModel(initViewValue, fakeData, mockedGlobalView);
+          var assertData = vm.globalViewModel;
+
+		  notEqual(assertData, null, "Ensure globalViewModel is not null.");
+	});
+	
+	JsMockito.Integration.QUnit();
+	
+  </script>
+</body>
+</html>

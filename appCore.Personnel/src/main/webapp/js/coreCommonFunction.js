@@ -60,11 +60,11 @@ function showMessage(message) {
 var loadPageRequest;
 
 function loadPage() {
+
     if (globalCurrentPageToLoad == undefined)
         return;
 
-    if (ajaxCore == null)
-        ajaxCore = new AjaxCore();
+    var ajaxCore = new AjaxCore();
 
     loadPageRequest = ajaxCore.loadPage(globalCurrentPageToLoad);
     loadPageRequest.success(function (html) {
@@ -75,10 +75,8 @@ function loadPage() {
 function preparePageForLoading(page) {
     globalCurrentPageToLoad = page;
     var requestValue = getPageRequestParameter("id", page);
-
     if (requestValue != "")
         globalCodeMaintenance = requestValue;
-
     loadPage();
 }
 

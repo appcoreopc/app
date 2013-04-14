@@ -1,6 +1,7 @@
 <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
 <script language="javascript" src="../../js/viewmodal/branchViewModel.js"></script>
 <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
+<script language="javascript" src="../../js/coreGlobalViewModelSetup.js"></script>
 
 <script type="text/javascript">
 
@@ -22,13 +23,8 @@
 
         request.success(function(data)
         {
-                var vm = new BranchViewModel(0, data, globalViewModel);
-                var gridDataObject = vm.getView();
-                var input = { "id" : coreBranchPage, "roleId" : 1 };
-                var coreCommand = new CoreCommand();
-                var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                vm.gridViewModel = gridViewModel;
-                $("#branchDiv").setupViewBinding(vm, globalViewModel);
+              var vm = new BranchViewModel(0, data, globalViewModel);
+              $("#branchDiv").setupViewBinding(vm, globalViewModel);
         });
     }
 			

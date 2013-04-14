@@ -89,12 +89,10 @@ public class UsersController {
 			Users userFromStore = userVerificationResult.get(0);
 
 			statusResponse.setUsername(user.getUsername());
-			// status.setEmployeeRole();
 			statusResponse.setMessageCode(0);
 			statusResponse.setMessageDescription("User logins successfully.");
 
-			List<UserLandingPage> userLandingData = userLandingservice
-					.getByUserId(userFromStore.getNid());
+			List<UserLandingPage> userLandingData = userLandingservice.getByUserId(userFromStore.getNid());
 
 			if (userLandingData.size() > 0) {
 				UserLandingPage userLanding = userLandingData.get(0);

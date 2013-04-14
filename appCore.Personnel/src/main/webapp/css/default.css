@@ -3261,3 +3261,11 @@ a.download-sdk {
 .landingView {
     height: 820px;
 }
+
+.sectionalFormHeader {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 10px 0px 10px 10px;
+    vertical-align: middle;
+
+}

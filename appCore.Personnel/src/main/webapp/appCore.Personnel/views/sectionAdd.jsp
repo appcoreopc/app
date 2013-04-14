@@ -134,9 +134,11 @@
 
         <div class="formMainContent">
 
+        <div class="sectionalFormHeader">Section code</div>
+
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Section  Code</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Section  Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="SectionCode" name="SectionCode"
         placeholder="a new section code"/></div>
         </div>
@@ -148,13 +150,13 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Section Name</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Section Name</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="SectionName" placeholder="a new section name"/></div>
         </div>
 
 
         <div class="formRow">
-        <div class="labelSection">Description</div><div class="inputSection"><textarea
+        <div class="labelSectionBlock">Description</div><div class="inputSectionBlock"><textarea
         class="validate[required, maxSize[80]] formTextArea" id="Description" data-bind="value : description"
         placeholder="description for new section"></textarea></div>
         </div>
