@@ -25,7 +25,8 @@
 
                 request.success(function(data)
                 {
-                    var vm = new DivisionListViewModel(0, data, globalViewModel);
+                    var coreCommand = new CoreCommandHelper();
+                    var vm = new DivisionListViewModel(0, data, globalViewModel, coreCommand.createCommandInstance());
                     $("#divisionDiv").setupViewBinding(vm, globalViewModel);
                 });
             }

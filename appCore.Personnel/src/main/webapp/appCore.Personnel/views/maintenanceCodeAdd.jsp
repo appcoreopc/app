@@ -46,19 +46,12 @@
 
         <div class="whiteform">
 
-        <div class="formRowTitle">
 
-
-       <div class="labelSection codeTitle" data-bind="text: title"></div>
-
-        </div>
-
-        <div class="formRowSpacer">
-        </div>
+       <div class="sectionalFormHeader" data-bind="text: title"></div>
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Name</div><span class='req'>*</span><div class="inputSection"><input type="text" id="code" data-bind="codepicker : name, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }" class="validate[required, maxSize[10]]" /></div>
+        <div class="labelSectionBlockBold">Name</div><span class='req'>*</span><div class="inputSectionBlock"><input type="text" id="code" data-bind="codepicker : name, codeEntity : { codeType : $root.codeType(), companyId : $root.companyId() }" class="validate[required, maxSize[10]]" /></div>
 
 
         </div>
@@ -70,20 +63,20 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Description</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Description</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" id="DivisionName" data-bind="value: description" class="validate[required, maxSize[20]]"/><i
         class="icon-doc2"></i></div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Effective Start Date</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Effective Start Date</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" id="SartEffectiveDate" data-bind="datepicker: startEffectiveDate, datepickerOptions: { dateFormat :
         'dd-mm-yy'}, value : startEffectiveDate, enable : !disabled()" class="validate[required, maxSize[80]]"
         /></div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Effective End Date</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Effective End Date</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" id="EndEffectiveDate" data-bind="datepicker: endEffectiveDate, datepickerOptions: { dateFormat :
         'dd-mm-yy'}, value : endEffectiveDate, enable : !disabled()" class="validate[required, maxSize[80]]"
         /></div>

@@ -134,10 +134,11 @@
 
         <div class="formMainContent">
 
+        <div class="sectionalFormHeader">Employment Type</div>
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Employment Type</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Employment Type</div><span class='req'>*</span><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="EmploymentType" name="EmploymentType"
         placeholder="a new grade code"/></div>
         </div>
@@ -149,13 +150,13 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Type Description</div><span class='req'>&nbsp;</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Type Description</div><span class='req'>&nbsp;</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
         placeholder="description for new unit"/></div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Type Category</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Type Category</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : category" id="Category" placeholder="a new category"/></div>
         </div>
 

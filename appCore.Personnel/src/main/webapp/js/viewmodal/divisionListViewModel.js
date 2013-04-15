@@ -1,16 +1,14 @@
-var DivisionListViewModel = function (initView, data, globalViewModel) {
+var DivisionListViewModel = function (initView, data, globalViewModel, command) {
 
     var self = this;
 
+    self.coreCommand = command;
     self.mode = initView;
-    this.gridUrl = globalHostname + "/app/Core/Branch";
-    this.codeCommand = "#codeCommand";
-    this.gridId = "gridBranch";
-
-    this.data = data;
-
+    self.gridUrl = globalHostname + "/app/Core/Branch";
+    self.codeCommand = "#codeCommand";
+    self.gridId = "gridBranch";
+    self.data = data;
     self.gridData = ko.observableArray(data);
-
     self.globalViewModel = globalViewModel;
 
     var viewColumns = [
@@ -93,9 +91,15 @@ var DivisionListViewModel = function (initView, data, globalViewModel) {
 
     self.initializeViewModel = function () {
         var gridDataObject = getView();
-        var input = { "id":coreDivisionPage, "roleId": globalViewModel.employeeRole() };
-        var coreCommand = new CoreCommand();
-        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        var input = { "id":coreDivisionPage, "roleId":globalViewModel.employeeRole() };
+
+        console.log("actual");
+        console.log(gridDataObject);
+
+        //console.log(input);
+        //console.log(hostAuthorizationUrl);
+
+        var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
         self.gridViewModel = gridViewModel;
     }
 
@@ -131,7 +135,6 @@ var DivisionListViewModel = function (initView, data, globalViewModel) {
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("divisionAdd.jsp");
     }
-
 
     self.initializeViewModel();
 }

@@ -95,3 +95,7 @@
 .inputSection input[type="checkbox"] {
     margin-left: 4px;
 }
+
+div .commandAlign  {
+    padding-left: 18px;
+}

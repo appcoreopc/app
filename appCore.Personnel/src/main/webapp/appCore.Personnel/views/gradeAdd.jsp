@@ -124,17 +124,17 @@
 
 
 
-
-
         <script type="text/html" id="companyEntityAddTemplate">
 
         <div class="form">
 
         <div class="formMainContent">
 
+        <div class="sectionalFormHeader">Grade code</div>
+
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Grade</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Grade</div><span class='req'>*</span><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="GradeCode" name="GradeCode"
         placeholder="a new grade code"/></div>
         </div>
@@ -146,19 +146,19 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Description</div><span class='req'>&nbsp;</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Description</div><span class='req'>&nbsp;</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" id="Description" data-bind="value : description"
         placeholder="description for new unit"/></div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Category</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Category</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : category" id="Category" placeholder="a new category"/></div>
         </div>
 
 
         <div class="formRow">
-        <div class="labelSection">Probation Month</div><span class='req'>*</span><div class="inputSection"><input
+        <div class="labelSectionBlockBold">Probation Month</div><span class='req'>*</span><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : probationMonth" id="ProbationMonth" placeholder="probation month"/></div>
         </div>
 

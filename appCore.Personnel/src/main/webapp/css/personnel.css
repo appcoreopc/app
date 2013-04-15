@@ -18,8 +18,55 @@ div.rightSection {
 
 .inputSection {
     padding-left: 20px;
-    /*  display: inline-block;*/
     display: inline;
+}
+
+.inputSectionBlock {
+    display: block;
+    padding-left: 20px;
+}
+
+.labelSectionBlock {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    padding-left: 21px;
+    padding-right: 20px;
+    width: 150px;
+}
+
+.labelSectionBlock {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    padding-left: 21px;
+    padding-right: 20px;
+    width: 150px;
+}
+
+.inlineLabelSectionBlock {
+    color: #7B746E;
+    display: block;
+    padding-left: 19px;
+}
+
+.inlineLabelSectionBlockNoLeftPadding {
+    color: #7B746E;
+    display: block;
+    padding-left: 0px;
+}
+
+.inlineLabelSectionBlockNoLeftPadding input[type='text'] {
+    width: 400px;
+}
+
+div .inputSectionBlock input[type='checkbox'] {
+    width: auto;
+}
+
+div .inputSectionBlock > select {
+    height: 30px;
+    width: 409px;
 }
 
 .inputSection > select {
@@ -30,7 +77,6 @@ div.rightSection {
     padding-left: 20px;
     display: block;
 }
-
 
 .inputSectionBlock input {
     border-color: #7C7C7C #C3C3C3 #DDDDDD;
@@ -49,7 +95,7 @@ div .inputSectionBlock textarea {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 0 #000000;
     margin-top: 8px;
     transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
-    width : 400px;
+    width: 400px;
 }
 
 .labelSection {
@@ -64,11 +110,10 @@ div .inputSectionBlock textarea {
 .labelSectionInfo {
     color: #7B746E;
     display: inline-block;
-    font-family: omnes-pro,arial,sans-serif;
+    font-family: omnes-pro, arial, sans-serif;
     padding-right: 20px;
     width: 150px;
 }
-
 
 .labelSectionBlock {
     color: #7B746E;
@@ -78,6 +123,7 @@ div .inputSectionBlock textarea {
     padding-right: 20px;
     width: 150px;
     font-weight: normal;
+    font-size: 14px;
 }
 
 .labelSectionBlockBold {
@@ -88,6 +134,18 @@ div .inputSectionBlock textarea {
     padding-right: 20px;
     width: 150px;
     font-weight: bold;
+    font-size: 14px;
+}
+
+.labelSectionBlockSmall {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 150px;
+    font-weight: normal;
+    font-size: 10px;
 }
 
 .labelSectionBlockInfo {
@@ -101,7 +159,6 @@ div .inputSectionBlock textarea {
     font-weight: normal;
 }
 
-
 .labelSectionBlockRequired {
     color: #7B746E;
     display: inline-block;
@@ -111,8 +168,6 @@ div .inputSectionBlock textarea {
     width: 150px;
     font-weight: bold;
 }
-
-
 
 .multiLinelabelSection {
     width: 150px;
@@ -129,6 +184,11 @@ div .inputSectionBlock textarea {
 .formRow {
     display: block;
     padding-top: 6px;
+}
+
+.formRowInfo {
+    display: block;
+    padding-top: 0px;
 }
 
 .formRowTitle {
@@ -296,7 +356,7 @@ span.fieldSpacer {
     color: #7B746E;
     font-size: 14px;
     width: 180px;
-    margin-left : 20px;
+    margin-left: 20px;
 }
 
 .widget {

@@ -55,40 +55,49 @@
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSection">Company Code</div><div class="inputSection"><input type="text" id="CompanyCode"
+        <div class="labelSectionBlockBold">Company Code</div><div class="inputSectionBlock"><input type="text" id="CompanyCode"
         data-bind="value: companyCode" class="validate[required], maxSize[10]"/><i class="icon-tag-1"></i></div>
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Registration</div><div class="inlineLabelSection"><input type="text"
+        <div class="labelSectionBlockBold">Registration</div><div class="inlineLabelSectionBlock"><input type="text"
         id="Registration" data-bind="value : registration" class="validate[required], maxSize[10]"/></div>
         </div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Company Name</div><div class="inputSection"><input type="text" id="CompanyName"
+        <div class="labelSectionBlockBold">Company Name</div><div class="inputSectionBlock"><input type="text" id="CompanyName"
         data-bind="value: companyName" class="validate[required], maxSize[30]"/></div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Address</div><div class="inputSection"><input type="text" id="Address"
+        <div class="labelSectionBlockBold">Address</div><div class="inputSectionBlock"><input type="text" id="Address"
         data-bind="value : address" class="validate[required], maxSize[30], addressDataType"/></div>
         </div>
 
+        <div class="formRowInfo">
+        <div class="labelSectionBlockSmall">Address line 2</div>
+        </div>
+
 
         <div class="formRow">
-        <div class="labelSection"></div><div class="inputSection"><input type="text" id="Address2"
+        <div class="labelSectionBlock"></div><div class="inputSectionBlock"><input type="text" id="Address2"
         data-bind="value : address2" class="addressDataType" /></div>
         </div>
 
+        <div class="formRowInfo">
+        <div class="labelSectionBlockSmall">Address line 3</div>
+        </div>
+
+
         <div class="formRow">
-        <div class="labelSection"></div><div class="inputSection"><input type="text" id="Address3"
+        <div class="labelSectionBlock"></div><div class="inputSectionBlock"><input type="text" id="Address3"
         data-bind="value : address3" class="addressDataType" /></div>
         </div>
 
 
         <div class="formRow">
-        <div class="labelSection">City</div><div class="inputSection"><input type="text" id="City" data-bind="value :
+        <div class="labelSectionBlock">City</div><div class="inputSectionBlock"><input type="text" id="City" data-bind="value :
         city"/></div>
         </div>
 
@@ -98,7 +107,7 @@
         <div id="companyDetailInfo">
 
         <div class="formRow">
-        <div class="labelSection">Country</div><div class="inputSection">
+        <div class="labelSectionBlock">Country</div><div class="inputSectionBlock">
 
         <select id="Country" name="Country" data-bind="value: country" class="validate[required]">
         <option value="Afganistan">Afghanistan</option>
@@ -355,7 +364,7 @@
 
 
         <div class="formRow">
-        <div class="labelSection">Postcode</div><div class="inputSection">
+        <div class="labelSectionBlock">Postcode</div><div class="inputSectionBlock">
         <input type="text" id="Postcode" data-bind="value: postcode" class="validate[required]"/>
         </div>
         </div>
@@ -363,33 +372,33 @@
 
         <div class="formRow">
         <div class="leftSection">
-        <div class="labelSection">Telephone</div>
-        <div class="inputSection">
+        <div class="labelSectionBlockBold">Telephone</div>
+        <div class="inputSectionBlock">
         <input type="text" id="Telephone" data-bind="value: tel" class="validate[required]"/></div>
         </div>
 
         <div class="rightSection">
-        <div class="inlineLabelSection">Fax</div><div class="inlineLabelSection"><input type="text" id="Fax"
+        <div class="inlineLabelSectionBlockNoLeftPadding">Fax</div><div class="inlineLabelSectionBlockNoLeftPadding"><input type="text" id="Fax"
         data-bind="value: fax"/></div>
         </div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Default Currency</div><div class="inputSection">
+        <div class="labelSectionBlockBold">Default Currency</div><div class="inputSectionBlock">
         <select id="Currency" data-bind="options: currencyList, optionsText: 'name', optionsValue: 'nid', value: defaultCurrency" name="Currency" class="validate[required]">
         </select>
         </div>
         </div>
 
         <div class="formRow">
-        <div class="labelSection">Parent Company</div><div class="inputSection">
+        <div class="labelSectionBlock">Parent Company</div><div class="inputSectionBlock">
         <select id="ParentCompany" data-bind="options: companyList, optionsText: 'companyName', optionsValue: 'nid', value: parentCompany">
         </select></div>
         </div>
 
 
         <div class="formRow">
-        <div class="labelSection">Disabled</div><div class="inputSection"><input type="checkbox" id="Disabled"
+        <div class="labelSectionBlock">Disabled</div><div class="inputSectionBlock"><input type="checkbox" id="Disabled"
         data-bind="value: disabled"/></div>
         </div>
 
@@ -401,10 +410,10 @@
 
 
         <div class="formRow">
-        <div class="labelSection"></div><div class="inputSection">
+        <div class="labelSectionBlock"></div><div class="inputSectionBlock">
 
 
-        <div id="maintenanceCodeCommand" class="maintenanceCommand">
+        <div id="maintenanceCodeCommand" class="maintenanceCommand commandAlign">
         </div>
 
 

@@ -3,7 +3,6 @@
     display: inline-block;
     padding: 12px 0 30px 0px;
     width: 76%;
-    padding-left: 230px;
 }
 
 #maintenanceCommand button {
@@ -24,9 +23,7 @@
 }
 
 .codeTitle {
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 18px 0 24px 30px;
+    padding: 10px 0 10px 10px;
     width: auto;
     color: #000;
 }
@@ -48,4 +45,18 @@ i .icon-doc-3 {
 .formEntry h4 {
     display: inline;
     font-size: 16px;
+}
+
+.icon-ok-circle-1:before {
+    color: green;
+    content: "";
+}
+
+.maintenanceCommand button {
+    background-color: #000000;
+    border-style: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 4px 0 2px 5px;
+    padding: 6px 12px 6px 6px;
 }

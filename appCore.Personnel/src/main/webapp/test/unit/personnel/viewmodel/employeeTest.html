@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DivisionListViewModel Test</title>
+  <link rel="stylesheet" href="../../../resources/qunit.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  
+  <script src="../../../resources/qunit.js"></script>
+  <script src="../../../resources/jshamcrest.js"></script>
+  <script src="../../../resources/jsmockito.js"></script>
+  <script src="../../../../js/jquery-1.7.2.min.js"></script>
+  <script src="../../../../js/viewmodal/divisionListViewModel.js"></script>
+  <script src="../../../../js/globalViewModel.js"></script>
+  <script src="../../../../js/appDefinition.js"></script>
+  <script src="../../../../js/ajaxCore.js"></script>
+  <script src="../../../../js/coreCommand.js"></script>
+    <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
+  
+  <script>
+		
+	
+	var employee = function()
+	{	 
+	    this.getName = function(name)
+		{
+			return "Hello " + name;
+		}
+		
+		this.updateAddress = function(emp)
+		{
+		    console.log(emp.address1);
+			console.log(emp.address2);
+			console.log(emp.address3);
+			return emp; 
+		}
+	
+	}; 
+	
+			
+	test( "testobjectt", function() {
+     
+		  var mockObject = mock(employee);
+	  
+		  var fakeAddress = {
+		    address1 : "Addr1", 
+			address2 : "Addr2", 
+			address3 : "Addr3", 
+		  };
+		  
+		   var realAddress = {
+		    address1 : "123", 
+			address2 : "456", 
+			address3 : "789", 
+		  };
+		
+		  when(mockObject).updateAddress(fakeAddress).thenReturn(realAddress);
+		  
+		  var result = mockObject.updateAddress(realAddress);
+		  console.log(result);
+		  		  
+		  equal(0, 0, "Ensure mode is correctly set.");
+		 
+    });
+	
+	
+	
+	
+	JsMockito.Integration.QUnit();
+	
+  </script>
+</body>
+</html>

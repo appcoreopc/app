@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>DepartmentListViewModel Test</title>
+  <title>DivisionListViewModel Test</title>
   <link rel="stylesheet" href="../../../resources/qunit.css">
 </head>
 <body>
@@ -21,70 +21,178 @@
     <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
   
   <script>
-    	
-	test( "self initialization does not return null", function() {
-     
-		  var mockedGlobalView = mock(GlobalViewModel);
-		  var data = []; 
-	 
-		  var vm = new DivisionListViewModel(0, data, mockedGlobalView);
-          notEqual(vm, null, "calling DivisionListViewModel's getView must not not return null.");
-		 
-    });
 		
+	var fakeGridViewModel = {
+		  columns : [
+			{ headerText:"Division Code", rowText:"divisionCode" },
+			{ headerText:"Division Name", rowText:"divisionName" },
+			{ headerText:"Description", rowText:"description" },
+			{ headerText:"Disabled", rowText:"disabled" }
+		]
+	};
+	
+	var columns = { "columns":[
+        {
+            field:"branchCode",
+            width:90,
+            title:"Branch Code"
+        },
+        {
+            field:"branchName",
+            width:90,
+            title:"Branch Name"
+        },
+        {
+            field:"description",
+            width:90,
+            title:"Description"
+        },
+        {
+            field:"enabled",
+            width:90,
+            title:"Disabled"
+        }
+    ]};
+
+	/*
+			
 	test( "viewmodel mode is correctly set", function() {
      
 		  var mockedGlobalView = mock(GlobalViewModel);
-		  var data = []; 
-	 
+		  
+		  var mockedCommand = mock(CoreCommand);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+		  var fakeInput = { "id":coreDivisionPage, "roleId": [1, 2, 3, 4] };
+		  
+		  when(mockedCommand).parseCommand(hostAuthorizationUrl, fakeInput, fakeData).thenReturn(fakeGridViewModel);
+		  
 		  var initViewValue = 0;
-		  var vm = new DivisionListViewModel(initViewValue, data, mockedGlobalView);
+		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
           var assertMode = vm.mode; 
 		  equal(assertMode, initViewValue, "Ensure mode is correctly set.");
 		 
     });
-
-
-	test("grid data is not empty ", function()
-	{	
+	
+	
+	test( "globalViewModel mode is correctly set", function() {
+     
 		  var mockedGlobalView = mock(GlobalViewModel);
-		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-	 
-		  var initViewValue = 0;
-		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView);
-          var assertData = vm.gridData();
-
-		  notEqual(assertData, null, "Ensure grid is not null.");
-		  equal(assertData.length, 2, "Record pass in length is the same.");
-	
-	});
-	
-	
-	test("gridviewmodel is not empty ", function()
-	{	
-		  var mockedGlobalView = mock(GlobalViewModel);
-		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-	 
-		  var initViewValue = 0;
-		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView);
-          var assertData = vm.gridViewModel;
-		  equal(1, 1, "fake pass");
 		  
-	});
-	
-	test("globalviewmodel passed in is ok", function()
-	{	
-		  var mockedGlobalView = mock(GlobalViewModel);
+		  var mockedCommand = mock(CoreCommand);
 		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-	 
-		  var initViewValue = 0;
-		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView);
-          var assertData = vm.globalViewModel;
-
-		  notEqual(assertData, null, "Ensure globalViewModel is not null.");
+		  var fakeInput = { "id":coreDivisionPage, "roleId": [1, 2, 3, 4] };
 		  
-	});
+		  when(mockedCommand).parseCommand(hostAuthorizationUrl, fakeInput, fakeData).thenReturn(fakeGridViewModel);
+		  
+		  var initViewValue = 0;
+		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
+          var assertViewModel = vm.globalViewModel; 
+		  
+		  notEqual(assertViewModel, null, "Ensure globalViewModel is correctly set.");
+		 
+    }); */
+	
+	test( "gridViewModel mode is correctly set", function() {
+     
+		  var mockedGlobalView = mock(GlobalViewModel);
+		  var roleList = [1, 2, 3, 4];
+		  
+		  when(mockedGlobalView).employeeRole().thenReturn(roleList);
+		  
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+		  
+		  var mockedCommand = mock(CoreCommand);
+		  
+		  
+		  var model = {
+			id:"nid",
+			fields:{
+				nid:{ editable:false },
+				type:{ editable:false, type:"string" },
+				value:{ editable:false, validation:{ required:true } },
+				description:{ editable:false, type:"string" },
+				category:{ editable:false, validation:{ required:true } }
+			}
+		  };
 			
+		   var fakeGridDataObject =
+		   {
+            "gridUrl": undefined,
+            "data": undefined,
+            "columns":columns,
+            "model":model
+		   };
+		   
+		   var viewColumns = [
+			{ headerText:"Division Code", rowText:"divisionCode" },
+			{ headerText:"Division Name", rowText:"divisionName" },
+			{ headerText:"Description", rowText:"description" },
+			{ headerText:"Disabled", rowText:"disabled" }
+			];
+			
+			 var addLinkInfo = {
+                    "text":"Add Division",
+                    "commandId":'branchAdd',
+                    "callback":function () {
+							goToAdd()
+                    }
+                };
+
+                var updateLinkInfo = {
+                    "text":"Update",
+                    "link": this.editPage
+                };
+		   
+		  fakeGridDataObject.gridData = ko.observableArray(fakeData);
+          fakeGridDataObject.viewColumns = viewColumns;
+			
+          fakeGridDataObject.updateFunction = updateFunction;
+          fakeGridDataObject.deleteFunction = deleteFunction;
+          fakeGridDataObject.controlId = undefined;
+          fakeGridDataObject.addLinkInfo = addLinkInfo;
+          fakeGridDataObject.updateLinkInfo = updateLinkInfo;
+		  
+		  var fakeInput = { "id":coreDivisionPage, "roleId": roleList };
+		  
+		  console.log('fake data');
+		  console.log(fakeGridDataObject);
+		  
+		  //console.log(fakeInput);
+		  //console.log(hostAuthorizationUrl);
+		 
+		  when(mockedCommand).parseCommand(hostAuthorizationUrl, fakeInput, fakeGridDataObject).thenReturn(fakeGridViewModel);
+		  
+		  var initViewValue = 0;
+		  
+		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
+		  
+          var assertViewModel = vm.gridViewModel; 
+		  
+		  notEqual(assertViewModel, null, "Ensure gridViewModel is correctly set.");
+		 
+    });
+	
+	
+	 function updateFunction(data) {
+        globalViewModel.targetId(data.nid);
+        globalViewModel.editMode(coreModeEdit);
+        globalViewModel.applicationScopeType(coreApplicationTypeDivision);
+        preparePageForLoading("divisionAdd.jsp");
+    }
+	
+	function deleteFunction(data) {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, null, deleteCallBack);
+    }
+		
+	function goToAdd() {
+        globalViewModel.applicationScopeType(coreApplicationTypeDivision);
+        globalViewModel.editMode(coreModeInsert);
+        preparePageForLoading("divisionAdd.jsp");
+    }
+	
 	JsMockito.Integration.QUnit();
 	
   </script>

@@ -54,6 +54,10 @@ public class CodeCheckerHelper {
 	 * 16 - Department 
 	 * 17 - Section 
 	 * 18 - Unit 
+	 * 
+	 * 
+	 * 
+	 * 
 	 */
 	 
 	private static Query getQueryByCodeType(Session session, CodeRequest codeRequest)
