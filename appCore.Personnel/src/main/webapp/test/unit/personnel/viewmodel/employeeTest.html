@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>DivisionListViewModel Test</title>
+  <title>Example Test Test</title>
   <link rel="stylesheet" href="../../../resources/qunit.css">
 </head>
 <body>
@@ -13,37 +13,26 @@
   <script src="../../../resources/jshamcrest.js"></script>
   <script src="../../../resources/jsmockito.js"></script>
   <script src="../../../../js/jquery-1.7.2.min.js"></script>
-  <script src="../../../../js/viewmodal/divisionListViewModel.js"></script>
-  <script src="../../../../js/globalViewModel.js"></script>
-  <script src="../../../../js/appDefinition.js"></script>
-  <script src="../../../../js/ajaxCore.js"></script>
-  <script src="../../../../js/coreCommand.js"></script>
-    <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
   
   <script>
 		
 	
-	var employee = function()
-	{	 
-	    this.getName = function(name)
-		{
-			return "Hello " + name;
-		}
-		
-		this.updateAddress = function(emp)
-		{
-		    console.log(emp.address1);
-			console.log(emp.address2);
-			console.log(emp.address3);
-			return emp; 
-		}
-	
-	}; 
-	
+		var Employee = function()
+		{ 
+			this.getName = function(name)
+			{
+				return "Hello " + name;
+			}
 			
-	test( "testobjectt", function() {
+			this.updateAddress = function(emp)
+			{
+				return emp; 
+			}
+		}; 
+			
+		test( "a test", function() {
      
-		  var mockObject = mock(employee);
+		  var mockObject = mock(Employee);
 	  
 		  var fakeAddress = {
 		    address1 : "Addr1", 
@@ -51,22 +40,49 @@
 			address3 : "Addr3", 
 		  };
 		  
-		   var realAddress = {
+		
+		var nonMatchingAddress = {
+		    address1 : "DifferentAddr1", 
+			address2 : "DifferentAddr2", 
+			address3 : "DifferentAddr3", 
+		  };		
+		  
+		  var realAddress = {
 		    address1 : "123", 
 			address2 : "456", 
 			address3 : "789", 
 		  };
 		
-		  when(mockObject).updateAddress(fakeAddress).thenReturn(realAddress);
+		  // Ok 
+		  //when(mockObject).updateAddress(fakeAddress).thenReturn(realAddress);
+		  //var argumentMatchingReturnResult = mockObject.updateAddress(fakeAddress);
+		  //console.log(argumentMatchingReturnResult);
+		  //equal(argumentMatchingReturnResult, realAddress, "passing in matching argument.");
+		
+		  // Not OK - return undefined 
+		  //when(mockObject).updateAddress(fakeAddress).thenReturn(realAddress);
+		  //var argumentMatchingReturnResult = mockObject.updateAddress(nonMatchingAddress);
+		  //console.log(argumentMatchingReturnResult); // comes out undefined 
+		  //equal(argumentMatchingReturnResult, realAddress, "passing in matching argument.");
+		
+		  // uses JsHamcrest.Matchers.object() here 
+		  // match any object here 
+		  // when(mockObject).updateAddress(JsHamcrest.Matchers.object()).thenReturn(realAddress);
+		  // var result = mockObject.updateAddress(realAddress);
+		  //console.log(result);
 		  
-		  var result = mockObject.updateAddress(realAddress);
-		  console.log(result);
-		  		  
-		  equal(0, 0, "Ensure mode is correctly set.");
+		  //notEqual(result, undefined, "ensure return result is not undefined");
+		  
+		  // uses JsHamcrest.Matchers.typeOf() here 
+		   when(mockObject).updateAddress(JsHamcrest.Matchers.typeOf('object')).thenReturn(realAddress);
+		   var result = mockObject.updateAddress(realAddress);
+		   console.log(result);
+		   notEqual(result, undefined, "ensure return result is not undefined");
+		  
+		  
+		  
 		 
     });
-	
-	
 	
 	
 	JsMockito.Integration.QUnit();

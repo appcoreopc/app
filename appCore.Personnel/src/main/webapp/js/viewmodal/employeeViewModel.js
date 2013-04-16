@@ -1,5 +1,7 @@
-var EmployeeViewModel = function (initView, globalViewModel, data) {
+var EmployeeViewModel = function (initView, globalViewModel, data, command) {
     var self = this;
+    self.coreCommand = command;
+
     self.mode = initView;
     self.centralPage = "employeeAdd.jsp";
     self.editPage = "employeeAdd.jsp";
@@ -8,8 +10,6 @@ var EmployeeViewModel = function (initView, globalViewModel, data) {
     self.gridUrl = globalEmployeeUrl;
     self.codeCommand = "#codeCommand";
     self.gridId = "gridBranch";
-
-    this.data = null;
 
     self.gridData = ko.observableArray(data);
     self.globalViewModel = globalViewModel;
@@ -135,13 +135,10 @@ var EmployeeViewModel = function (initView, globalViewModel, data) {
     }
 
     self.initializeViewModel = function () {
-
         var gridDataObject = self.getListView();
         var input = { "id":coreEmployeePage, "roleId":globalViewModel.employeeRole() };
-        var coreCommand = new CoreCommand();
-
-        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-        var permissionResult = coreCommand.getPermission(hostAuthorizationUrl, input);
+        var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        var permissionResult = self.coreCommand.getPermission(hostAuthorizationUrl, input);
 
         self.gridViewModel = gridViewModel;
 

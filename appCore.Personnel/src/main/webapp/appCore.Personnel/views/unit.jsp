@@ -25,7 +25,8 @@
 
             request.success(function(data)
             {
-                 var vm = new UnitListViewModel(coreModeList, data, globalViewModel);
+                 var coreCommand = new CoreCommandHelper();
+                 var vm = new UnitListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
                  $("#unitDiv").setupViewBinding(vm, globalViewModel);
             });
         }

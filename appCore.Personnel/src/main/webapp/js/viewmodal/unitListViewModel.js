@@ -1,9 +1,9 @@
-var UnitListViewModel = function (initView, data, globalViewModel) {
+var UnitListViewModel = function (initView, data, globalViewModel, command) {
 
     var self = this;
 
     self.mode = initView;
-
+    self.coreCommand = command;
     this.gridUrl = globalHostname + "/app/Core/Branch";
     this.codeCommand = "#codeCommand";
     this.gridId = "gridBranch";
@@ -105,7 +105,6 @@ var UnitListViewModel = function (initView, data, globalViewModel) {
                 var addLinkInfo = {
                     "text":"Add Unit",
                     "commandId":'unitAdd',
-                    // "link":this.addPage,
                     "callback":function () {
                         goToAdd()
                     }
@@ -132,7 +131,7 @@ var UnitListViewModel = function (initView, data, globalViewModel) {
         var gridDataObject = getView();
         var input = { "id":coreDivisionPage, "roleId": globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
-        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
         self.gridViewModel = gridViewModel;
     }
 

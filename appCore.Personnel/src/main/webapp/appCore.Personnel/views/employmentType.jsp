@@ -24,7 +24,8 @@
 
             request.success(function(data)
             {
-                var vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel);
+                var coreCommand = new CoreCommandHelper();
+                var vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
                 $("#employmentTypeDiv").setupViewBinding(vm, globalViewModel);
 
             });

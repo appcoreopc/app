@@ -24,7 +24,8 @@
 
             request.success(function(data)
             {
-                var vm = new DepartmentListViewModel(0, data, globalViewModel);
+                var coreCommand = new CoreCommandHelper();
+                var vm = new DepartmentListViewModel(0, data, globalViewModel, coreCommand.createCommandInstance());
                 $("#departmentDiv").setupViewBinding(vm, globalViewModel);
             });
         }

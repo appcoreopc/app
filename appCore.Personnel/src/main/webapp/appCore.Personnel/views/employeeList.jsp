@@ -22,7 +22,8 @@
 
                 request.success(function(data)
                 {
-                    var vm = new EmployeeViewModel(coreModeList, globalViewModel, data);
+                    var coreCommand = new CoreCommandHelper();
+                    var vm = new EmployeeViewModel(coreModeList, globalViewModel, data, coreCommand.createCommandInstance());
                     $("#employeeDiv").setupViewBinding(vm, globalViewModel);
                 });
         }

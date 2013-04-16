@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>DivisionListViewModel Test</title>
+  <title>GradeListViewModel Test</title>
   <link rel="stylesheet" href="../../../resources/qunit.css">
 </head>
 <body>
@@ -13,62 +13,53 @@
   <script src="../../../resources/jshamcrest.js"></script>
   <script src="../../../resources/jsmockito.js"></script>
   <script src="../../../../js/jquery-1.7.2.min.js"></script>
-  <script src="../../../../js/viewmodal/divisionListViewModel.js"></script>
+  <script src="../../../../js/viewmodal/gradeListViewModel.js"></script>
   <script src="../../../../js/globalViewModel.js"></script>
   <script src="../../../../js/appDefinition.js"></script>
   <script src="../../../../js/ajaxCore.js"></script>
   <script src="../../../../js/coreCommand.js"></script>
-    <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
-  
+  <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
+	
   <script>
-		
-	var fakeGridViewModel = {
-		  columns : [
-			{ headerText:"Division Code", rowText:"divisionCode" },
-			{ headerText:"Division Name", rowText:"divisionName" },
-			{ headerText:"Description", rowText:"description" },
-			{ headerText:"Disabled", rowText:"disabled" }
-		]
-	};	
-			
-	test( "viewmodel mode is correctly set", function() {
-     
+    	
+	var fakeGridViewModel  = [
+        { headerText:"Grade Code", rowText:"code" },
+        { headerText:"Description", rowText:"description" },
+        { headerText:"Category", rowText:"category" },
+        { headerText:"Probation", rowText:"probationMonth" }
+    ];
+	
+	test("grid data is not empty ", function()
+	{	
 		  var mockedGlobalView = mock(GlobalViewModel);
-		  
 		  var mockedCommand = mock(CoreCommand);
 		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-		  var fakeInput = { "id":coreDivisionPage, "roleId": [1, 2, 3, 4] };
-		  
-		  when(mockedCommand).parseCommand(hostAuthorizationUrl, fakeInput, fakeData).thenReturn(fakeGridViewModel);
-		  
+	 
 		  var initViewValue = 0;
-		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
-          var assertMode = vm.mode; 
-		  equal(assertMode, initViewValue, "Ensure mode is correctly set.");		 
-    });
-	
-	
-	test( "globalViewModel mode is correctly set", function() {
-     
+		  var vm = new GradeListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
+          var assertData = vm.gridData();
+
+		  notEqual(assertData, null, "Ensure grid is not null.");
+		  equal(assertData.length, 2, "Record pass in length is the same.");	
+	});
+
+	test("data passed in is not empty ", function()
+	{	
 		  var mockedGlobalView = mock(GlobalViewModel);
-		  
 		  var mockedCommand = mock(CoreCommand);
 		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-		  var fakeInput = { "id":coreDivisionPage, "roleId": [1, 2, 3, 4] };
-		  
-		  when(mockedCommand).parseCommand(hostAuthorizationUrl, fakeInput, fakeData).thenReturn(fakeGridViewModel);
-		  
+	 
 		  var initViewValue = 0;
-		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
-          var assertViewModel = vm.globalViewModel; 
-		  
-		  notEqual(assertViewModel, null, "Ensure globalViewModel is correctly set.");
-		 
-    }); 
+		  var vm = new GradeListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
+          var assertData = vm.data;
+
+		  notEqual(assertData, null, "Ensure data passed in is not null.");
+	});
 	
-	test( "gridViewModel mode is correctly set", function() {
-		
-     	  var roleList = [1, 2, 3, 4];
+	test("globalviewmodel passed in is ok", function()
+	{	
+		  var roleList = [1, 2, 3, 4];
+		  
 		  var mockedGlobalView = mock(GlobalViewModel);
 		  var mockedCommand = mock(CoreCommand);
 		  
@@ -78,15 +69,15 @@
 		  when(mockedCommand).parseCommand(hostAuthorizationUrl, JsHamcrest.Matchers.object(), JsHamcrest.Matchers.object()).thenReturn(fakeGridViewModel);
 		  var initViewValue = 0;
 		  
-		  var vm = new DivisionListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
+		  var vm = new GradeListViewModel(initViewValue, fakeData, mockedGlobalView, mockedCommand);
 		  var assertViewModel = vm.gridViewModel; 
 		  
 		  console.log('assertViewModel');
 		  console.log(assertViewModel);
+		  
 		  notEqual(assertViewModel, null, "Ensure gridViewModel is correctly set.");
-		 
-    });
-		
+	});
+	
 	JsMockito.Integration.QUnit();
 	
   </script>

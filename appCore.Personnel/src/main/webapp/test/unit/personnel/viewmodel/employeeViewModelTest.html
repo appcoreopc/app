@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>EmployeeViewModel Test - Not Testable!</title>
+  <title>EmployeeViewModel Test</title>
   <link rel="stylesheet" href="../../../resources/qunit.css">
 </head>
 <body>
@@ -22,28 +22,43 @@
   <script src="../../../../js/coreCommand.js"></script>
   
 	
-  <script>
-    	
+  <script>    	
+		
+	var fakeGridViewModel  = [
+        { headerText:"Employee Code", rowText:"code" },
+        { headerText:"Employee Name", rowText:"name" },
+        { headerText:"Gender", rowText:"gender" },
+        { headerText:"Age", rowText:"age" }
+    ];
+	
+	var fakePermissionResult = {
+	  "permission" : "AUD"	
+	};
+	
 	test( "mode", function() {
      
 		  var mockedGlobalView = mock(GlobalViewModel);
-		  var data = []; 
-	 
+		  var mockedCommand = mock(CoreCommand);
+		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
+		  
+		  when(mockedCommand).getPermission(hostAuthorizationUrl, JsHamcrest.Matchers.object()).thenReturn(fakePermissionResult);
+		  
 		  var initViewValue = 0;
-		  var vm = new EmployeeViewModel(initViewValue, mockedGlobalView, data);
+		  var vm = new EmployeeViewModel(initViewValue, mockedGlobalView, fakeData, mockedCommand);
           var assertMode = vm.mode; 
 		  equal(assertMode, initViewValue, "Ensure mode is correctly set.");
-		 
-    });
+	});
 
-
-	test("grid data is not empty ", function()
+	
+	test("grid data is not empty - ko observables Array", function()
 	{	
 		  var mockedGlobalView = mock(GlobalViewModel);
+		  var mockedCommand = mock(CoreCommand);
+		  
 		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-	 
+	      when(mockedCommand).getPermission(hostAuthorizationUrl, JsHamcrest.Matchers.object()).thenReturn(fakePermissionResult);
 		  var initViewValue = 0;
-		  var vm = new EmployeeViewModel(initViewValue, fakeData, mockedGlobalView);
+		  var vm = new EmployeeViewModel(initViewValue, mockedGlobalView, fakeData, mockedCommand);
           var assertData = vm.gridData();
 
 		  notEqual(assertData, null, "Ensure grid is not null.");
@@ -51,31 +66,33 @@
 	
 	});
 
-
-	test("data passed in is not empty ", function()
-	{	
-		  var mockedGlobalView = mock(GlobalViewModel);
-		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-	 
-		  var initViewValue = 0;
-		  var vm = new EmployeeViewModel(initViewValue, fakeData, mockedGlobalView);
-          var assertData = vm.data;
-
-		  notEqual(assertData, null, "Ensure data passed in is not null.");
-	});
-
-	
+		
 	test("globalviewmodel passed in is ok", function()
 	{	
+		  var roleList = [1, 2, 3, 4];
+		  
 		  var mockedGlobalView = mock(GlobalViewModel);
+		  var mockedCommand = mock(CoreCommand);
+		  
+		  
+		  when(mockedGlobalView).employeeRole().thenReturn(roleList);
 		  var fakeData = [ {"name" : "jeremy", "id" : "12" }, {"name" : "jeremy2", "id" : "22" }]; 
-	 
+		  
+		  when(mockedCommand).getPermission(hostAuthorizationUrl, JsHamcrest.Matchers.object()).thenReturn(fakePermissionResult);
+		  when(mockedCommand).parseCommand(hostAuthorizationUrl, JsHamcrest.Matchers.object(), JsHamcrest.Matchers.object()).thenReturn(fakeGridViewModel);
+		  
 		  var initViewValue = 0;
-		  var vm = new EmployeeViewModel(initViewValue, fakeData, mockedGlobalView);
-          var assertData = vm.globalViewModel;
-
-		  notEqual(assertData, null, "Ensure globalViewModel is not null.");
+		  
+		  var vm = new EmployeeViewModel(initViewValue, mockedGlobalView, fakeData, mockedCommand);
+		  var assertViewModel = vm.gridViewModel; 
+		  
+		  console.log('assertViewModel');
+		  console.log(assertViewModel);
+		  
+		  notEqual(assertViewModel, null, "Ensure gridViewModel is correctly set.");
 	});
+	
+	
 	
 	JsMockito.Integration.QUnit();
 	

@@ -1,15 +1,16 @@
-var EmploymentTypeListViewModel = function (initView, data, globalViewModel) {
+var EmploymentTypeListViewModel = function (initView, data, globalViewModel, command) {
 
     mode = initView;
-    this.gridUrl = globalHostname + "/app/Core/Branch";
-    this.codeCommand = "#codeCommand";
-    this.gridId = "gridBranch";
 
-    this.data = data;
+    var self = this;
 
+    self.gridUrl = globalHostname + "/app/Core/Branch";
+    self.codeCommand = "#codeCommand";
+    self.gridId = "gridBranch";
+    self.data = data;
     self.gridData = ko.observableArray(data);
-
     self.globalViewModel = globalViewModel;
+    self.coreCommand = command;
 
     var viewColumns = [
         { headerText:"Code", rowText:"code" },
@@ -93,8 +94,7 @@ var EmploymentTypeListViewModel = function (initView, data, globalViewModel) {
         var gridDataObject = getView();
         var input = { "id":coreEmploymentTypePage, "roleId": globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
-
-        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
         self.gridViewModel = gridViewModel;
     }
 

@@ -26,7 +26,8 @@
 
             request.success(function(data)
             {
-                 var vm = new SectionListViewModel(0, data, globalViewModel);
+                 var coreCommand = new CoreCommandHelper();
+                 var vm = new SectionListViewModel(0, data, globalViewModel, coreCommand.createCommandInstance());
                  $("#sectionDiv").setupViewBinding(vm, globalViewModel);
             });
         }

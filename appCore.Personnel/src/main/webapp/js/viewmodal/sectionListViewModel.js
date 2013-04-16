@@ -1,17 +1,13 @@
-var SectionListViewModel = function (initView, data, globalViewModel) {
+var SectionListViewModel = function (initView, data, globalViewModel, command) {
 
     var self = this;
-
+    self.coreCommand = command;
     self.mode = initView;
-
     this.gridUrl = globalHostname + "/app/Core/Section";
-
     this.codeCommand = "#codeCommand";
-
     this.gridId = "gridBranch";
 
     this.data = data;
-
     self.gridData = ko.observableArray(data);
 
     self.globalViewModel = globalViewModel;
@@ -98,8 +94,7 @@ var SectionListViewModel = function (initView, data, globalViewModel) {
         var gridDataObject = getView();
         var input = { "id":coreDivisionPage, "roleId":1 };
         var coreCommand = new CoreCommand();
-
-        var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+        var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
         self.gridViewModel = gridViewModel;
     }
 

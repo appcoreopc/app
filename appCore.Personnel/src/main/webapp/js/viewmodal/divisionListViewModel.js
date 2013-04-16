@@ -92,13 +92,6 @@ var DivisionListViewModel = function (initView, data, globalViewModel, command) 
     self.initializeViewModel = function () {
         var gridDataObject = getView();
         var input = { "id":coreDivisionPage, "roleId":globalViewModel.employeeRole() };
-
-        console.log("actual");
-        console.log(gridDataObject);
-
-        //console.log(input);
-        //console.log(hostAuthorizationUrl);
-
         var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
         self.gridViewModel = gridViewModel;
     }

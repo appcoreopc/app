@@ -24,7 +24,8 @@
 
         request.success(function(data)
         {
-             var vm = new GradeListViewModel(coreModeList, data, globalViewModel);
+             var coreCommand = new CoreCommandHelper();
+             var vm = new GradeListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
              $("#gradeTypeDiv").setupViewBinding(vm, globalViewModel);
         });
         }
