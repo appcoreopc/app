@@ -16,7 +16,7 @@
 
         $(document).ready(function()
         {
-            $("#" + form).validationEngine();
+
 
             if (globalViewModel != undefined && globalViewModel.targetId() != null && globalViewModel.editMode() == coreModeEdit)
             {
@@ -30,6 +30,8 @@
             }
 
             $("#codeForm").setupViewBinding(vm, globalViewModel);
+            $("#" + form).validationEngine();
+
 
         });
 

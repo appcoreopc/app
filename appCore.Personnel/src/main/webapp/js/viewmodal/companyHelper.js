@@ -429,7 +429,7 @@ var CompanyHelper = function () {
 
     this.saveOrUpdateGradeInfo = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequestType(globalEmploymentTypeInfoSaveOrUpdateUrl, entityData, "post");
+        var request = ajaxCore.sendRequestType(globalGradeInfoSaveOrUpdateUrl, entityData, "post");
         request.success(function (data, status, xhrObj) {
             callBack(data);
         });

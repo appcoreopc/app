@@ -129,9 +129,24 @@ var GradeInfoViewModel = function (globalViewModel) {
     }
 
     self.addInfo = function (data) {
-        var entityInfoData = createEntityData();
-        var helper = new CompanyHelper();
-        helper.saveOrUpdateGradeInfo(entityInfoData, addDataSuccessCallback);
+
+        var validationStatusOk = true;
+
+        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined) {
+            $("#gradeCategoryAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (self.addInfoType() == "" || self.addInfoType() == undefined) {
+            $("#gradeTypeAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (validationStatusOk) {
+            var entityInfoData = createEntityData();
+            var helper = new CompanyHelper();
+            helper.saveOrUpdateGradeInfo(entityInfoData, addDataSuccessCallback);
+        }
     }
 
     function createEntityData() {

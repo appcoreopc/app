@@ -16,16 +16,15 @@
 
         <div class="formRow">
         <div class="labelSectionBlockBold">Holiday Date</div><span class='req'>*</span><div class="inputSectionBlock">
-        <input type="text" id="HolidayDate" data-bind="datepicker: holidayDate, datepickerOptions: { dateFormat :
+        <input type="text" id="HolidayDate" class="validate[required]"  data-bind="datepicker: holidayDate, datepickerOptions: { dateFormat :
         'dd-mm-yy'}, value : holidayDate"/>
         </div>
         </div>
 
         <div class="formRow">
         <div class="labelSectionBlock">Holiday Name</div><span class='req'>*</span><div class="inputSectionBlock">
-        <input type="text" id="Enabled" data-bind="value : holidayName" /></div>
+        <input type="text" id="Enabled" class="validate[required, maxSize[30]]"  data-bind="value : holidayName" /></div>
         </div>
-
 
         <div class="formRow">
         <div class="labelSectionBlock">Type</div><span class='req'>*</span><div class="inputSectionBlock">
@@ -72,14 +71,14 @@
 
         $(document).ready(function()
         {
-            $("#" + formName).validationEngine();
             var vm = new HolidaySetupAddViewModel(globalViewModel);
             $("#holidayAddForm").setupViewBinding(vm, globalViewModel);
-        });
+            $("#" + formName).validationEngine();
 
+        });
         </script>
 
-
         <form id="holidayAddForm">
-        <div id="holidaySetupAddMaintenance" data-bind="template : { name : templateToUse} ">
+            <div id="holidaySetupAddMaintenance" data-bind="template : { name : templateToUse} ">
+            </div>
         </form>

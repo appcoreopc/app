@@ -49,11 +49,11 @@
 
             <div class="formMainContent">
 
+            <div class="sectionalFormHeader">Job Setup</div>
 
-     <div id="jobSetupForm">
+        <div id="jobSetupForm">
         <div class="sectionalForm">
-        <div class="leftSection">
-        <div class="viewLabelSection">Job</div><div class="inputSection">
+        <div class="leftSection"><div class="labelSectionBlockBold">Job</div><div class="inputSectionBlock">
         <input class="validate[required, maxSize[10]]" type="text" id="JobCode" name="JobCode" data-bind="value : jobCode"/></div>
         </div>
 
@@ -64,12 +64,12 @@
 
 
         <div class="formRow">
-            <div class="viewLabelSection">Job Title</div><span class="fieldSpacer"></span><div class="inputSection">
+            <div class="labelSectionBlockBold">Job Title</div><span class="fieldSpacer"></span><div class="inputSectionBlock">
         <input type="text" id="JobTitle" class="validate[required, maxSize[80]]" data-bind="value : jobTitle"/></div>
         </div>
 
         <div class="formRow">
-            <div class="viewLabelSection">Job Category</div><span class="fieldSpacer"></span><div class="inputSection">
+            <div class="labelSectionBlockBold">Job Category</div><span class="fieldSpacer"></span><div class="inputSectionBlock">
         <input type="text" id="JobCategory" class="validate[required, maxSize[80]]" data-bind="value : jobCategory"/></div>
         </div>
 

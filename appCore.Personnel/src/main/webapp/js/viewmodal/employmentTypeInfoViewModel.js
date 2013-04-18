@@ -129,9 +129,23 @@ var EmploymentTypeInfoViewModel = function (globalViewModel) {
     }
 
     self.addInfo = function (data) {
-        var entityInfoData = createEntityData();
-        var helper = new CompanyHelper();
-        helper.saveOrUpdateEmploymentTypeInfo(entityInfoData, addDataSuccessCallback);
+
+        var validationStatusOk = true;
+
+        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined) {
+            $("#employmentTypeCategoryAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+
+        if (self.addInfoType() == "" || self.addInfoType() == undefined) {
+            $("#employmentTypeAdd").validationEngine('validate');
+            validationStatusOk = false;
+        }
+        if (validationStatusOk) {
+            var entityInfoData = createEntityData();
+            var helper = new CompanyHelper();
+            helper.saveOrUpdateEmploymentTypeInfo(entityInfoData, addDataSuccessCallback);
+        }
     }
 
     function createEntityData() {
@@ -231,7 +245,7 @@ var EmploymentTypeInfoViewModel = function (globalViewModel) {
 
     self.updateData = function (data) {
 
-        var isValid = $("#" + "gradeForm").validationEngine('validate');
+        var isValid = $("#" + "employmentTypeForm").validationEngine('validate');
 
         if (!isValid)
             return;

@@ -269,6 +269,12 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
     this.saveDataForm = function () {
 
+        var isValid = $("#" + "codeForm").validationEngine('validate');
+
+        if (!isValid)
+            return;
+
+
         var helper = new EmployeeHelper();
         var code = new GenericCodeMaintenance();
 
