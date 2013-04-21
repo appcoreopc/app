@@ -1,33 +1,26 @@
-    <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
-
+        <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/gradeListViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
-
 
         <script type="text/javascript">
 
         $(document).ready(function()
         {
-        getData(globalViewModel.companyId());
-
-        globalViewModel.companyId.subscribe(function(newValue)
-        {
-        getData(newValue);
-        });
+            getData(globalViewModel.companyId());
         });
 
         function getData(companyId)
         {
-        var ajaxCore = new AjaxCore();
-        var companyId = { id : companyId };
-        var request = ajaxCore.sendRequest(globalGradeTypeListByCompanyUrl, companyId, "get");
+            var ajaxCore = new AjaxCore();
+            var companyId = { id : companyId };
+            var request = ajaxCore.sendRequest(globalGradeTypeListByCompanyUrl, companyId, "get");
 
-        request.success(function(data)
-        {
-             var coreCommand = new CoreCommandHelper();
-             var vm = new GradeListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
-             $("#gradeTypeDiv").setupViewBinding(vm, globalViewModel);
-        });
+            request.success(function(data)
+            {
+                 var coreCommand = new CoreCommandHelper();
+                 var vm = new GradeListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
+                 $("#gradeTypeDiv").setupViewBinding(vm, globalViewModel);
+            });
         }
 
         </script>
@@ -44,4 +37,4 @@
         <div id="gradeTypeDiv" data-bind="dataGrid: gridViewModel"></div>
         </div>
 
-        </div>
+        </div></div>

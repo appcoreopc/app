@@ -6,12 +6,7 @@
         $(document).ready(function()
         {
                 $("#ui-datepicker-div").hide();
-
                 getData(globalViewModel.companyId());
-                globalViewModel.companyId.subscribe(function(newValue)
-                {
-                     getData(newValue);
-                });
         });
 
         function getData(companyId)

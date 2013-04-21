@@ -1,5 +1,4 @@
 var CoreCommand = function () {
-
     var deleteCommandId = "deleteBtn";
     var updateCommandId = "updBtn";
     var addCommandId = "addBtn";
@@ -9,7 +8,6 @@ var CoreCommand = function () {
     this.parseCommand = function (requestUrl, requestData, commandDataObject) {
         var dataPermission = this.getPermission(requestUrl, requestData);
         var gridViewModel = getCommand(dataPermission, commandDataObject);
-        $(document).trigger("parseComplete");
         return gridViewModel;
     }
 
@@ -29,8 +27,7 @@ var CoreCommand = function () {
             addCommandId = commandDataObject.addLinkInfo.commandId;
         }
 
-        if (data == null)
-        {
+        if (data == null) {
             return;
         }
 
@@ -182,13 +179,6 @@ var CoreCommand = function () {
 
     function createCancelBindingEventForControl(ctrlId, link) {
 
-        /*$("#" + ctrlId).click(function () {
-         var result = cancelFormChanges();
-         if (result)
-         preparePageForLoading(link);
-         });
-         */
-
         var dummyWindowDivId = ctrlId + "cancelWindow";
         $("#" + ctrlId).after("<div id='" + dummyWindowDivId + "'></div>");
 
@@ -223,11 +213,9 @@ var CoreCommand = function () {
             appendCommandToCtrlId("<button class='command' type='button' id='" + ctrlId + "'>" + text + "</button>", controlIdToAppendTo);
         }
     }
-
     /*
      Deprecated function
      */
-
     function createAddBindingEventForControl(ctrlId, callback) {
 
         if (callback != undefined) {
@@ -243,7 +231,6 @@ var CoreCommand = function () {
             callback();
         });
     }
-
     // Why are controls added twice here?
     function appendCommandTo(markupToAppend) {
         $(markupToAppend).appendTo(".maintenanceCommand");

@@ -17,13 +17,12 @@
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
 
-            $(document).unbind("parseComplete");
-
-            $(document).bind("parseComplete", function()
-            {
-                ko.applyBindings(vm);
-                vm.getDataForm(3);
-            });
+            //$(document).unbind("parseComplete");
+            //$(document).bind("parseComplete", function()
+            //{
+            //    ko.applyBindings(vm);
+            //    vm.getDataForm(3);
+            //});
 
         });
 

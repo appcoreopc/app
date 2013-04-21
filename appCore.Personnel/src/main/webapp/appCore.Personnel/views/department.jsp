@@ -8,12 +8,6 @@
         $(document).ready(function()
         {
             getData(globalViewModel.companyId());
-
-            globalViewModel.companyId.subscribe(function(newValue)
-            {
-                $(".maintenanceCommand").empty();
-                getData(newValue);
-            });
         });
 
         function getData(companyId)

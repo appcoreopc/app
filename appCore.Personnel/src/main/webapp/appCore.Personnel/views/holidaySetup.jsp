@@ -1,19 +1,11 @@
         <link href="../../css/dialogBox.css" media="screen" rel="stylesheet" type="text/css" />
-
         <script language="javascript" src="../../js/viewmodal/holidaySetupListViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
-
-
         <script type="text/javascript">
 
         $(document).ready(function()
         {
             getData(globalViewModel.companyId());
-            globalViewModel.companyId.subscribe(function(newValue)
-            {
-                $(".maintenanceCommand").empty();
-                getData(newValue);
-            });
         });
 
         function getData(companyId)

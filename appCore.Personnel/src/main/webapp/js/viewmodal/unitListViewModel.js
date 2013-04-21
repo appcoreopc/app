@@ -130,7 +130,6 @@ var UnitListViewModel = function (initView, data, globalViewModel, command) {
     self.initializeViewModel = function () {
         var gridDataObject = getView();
         var input = { "id":coreDivisionPage, "roleId": globalViewModel.employeeRole() };
-        var coreCommand = new CoreCommand();
         var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
         self.gridViewModel = gridViewModel;
     }

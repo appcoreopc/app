@@ -67,9 +67,15 @@
                     globalViewModel.companyId(globalCurrentCompanyId);
                 });
 
+                globalViewModel.companyId.subscribe(function(newValue)
+                {
+                    // need to find out how to check getData function is defined
+                    $(".maintenanceCommand").empty();
+                    getData(newValue);
+                });
+
                 $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalHostname + globalMenuServiceUrl);
 
-                $("#createEntityButton").click(function(){
                 $("#createEntityButton").click(function(){
                      var target = $(this);
                      var dialogHelper = new CoreDialog();
@@ -77,13 +83,11 @@
                      var dialogCreateMenu = dialogHelper.createPopupDialog(dialogObject, target);
                 });
 
-           });
-
-            var currentPage = "globalPersonnelControlPanel.jsp";
-            var ajaxCore = new AjaxCore();
-            var request;
-            var url = globalCompanyServiceUrl;
-            preparePageForLoading("personnelSummaryWidget.jsp");
+                var currentPage = "globalPersonnelControlPanel.jsp";
+                var ajaxCore = new AjaxCore();
+                var request;
+                var url = globalCompanyServiceUrl;
+                preparePageForLoading("personnelSummaryWidget.jsp");
 
             });
 

@@ -7,27 +7,20 @@
 
         $(document).ready(function()
         {
-        getData(globalViewModel.companyId());
-
-        globalViewModel.companyId.subscribe(function(newValue)
-        {
-            $(".maintenanceCommand").empty();
-            getData(newValue);
-        });
+            getData(globalViewModel.companyId());
         });
 
         function getData(companyId)
         {
-        var ajaxCore = new AjaxCore();
-        var companyId = { id : companyId };
-        var request = ajaxCore.sendRequest(globalJobSetupListByCompanyUrl, companyId, "get");
+            var ajaxCore = new AjaxCore();
+            var companyId = { id : companyId };
+            var request = ajaxCore.sendRequest(globalJobSetupListByCompanyUrl, companyId, "get");
 
-        request.success(function(data)
-        {
-            var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);
-            $("#jobSetupDiv").setupViewBinding(vm, globalViewModel);
-
-        });
+            request.success(function(data)
+            {
+                var vm = new JobSetupListViewModel(coreModeList, data, globalViewModel);
+                $("#jobSetupDiv").setupViewBinding(vm, globalViewModel);
+            });
         }
 
         </script>

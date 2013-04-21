@@ -163,14 +163,6 @@ var BranchViewModel = function (initView, data, globalViewModel) {
         self.gridViewModel = gridViewModel;
     }
 
-
-    /*var gridDataObject = vm.getView();
-    var input = { "id" : coreBranchPage, "roleId" : globalViewModel.employeeRole() };
-    var coreCommand = new CoreCommand();
-    var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-    vm.gridViewModel = gridViewModel;
-    */
-
     function goToAdd() {
         globalViewModel.applicationScopeType(coreApplicationTypeBranch);
         globalViewModel.editMode(coreModeInsert);

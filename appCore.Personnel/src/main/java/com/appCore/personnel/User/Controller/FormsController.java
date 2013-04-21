@@ -43,8 +43,7 @@ public class FormsController
 		@RequestMapping(value = "/Forms/listMenu", method = RequestMethod.GET)		
 		public @ResponseBody List<FormMenuView> listFormsMenu() 
 		{	
-				return service.getFormsMenu();
-				
+			return service.getFormsMenu();
 		}
 		
 		@RequestMapping(value = "/Forms/listMenuByUser", method = RequestMethod.GET)		
