@@ -53,6 +53,7 @@
                 goToPage(globalHostname + "appCore-personnel/");
             }
 
+
             var globalViewModel = $(document).setupGlobalViewModel();
 
             $(document).ready(function()
@@ -74,7 +75,8 @@
                     getData(newValue);
                 });
 
-                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalHostname + globalMenuServiceUrl);
+                //$(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalHostname + globalMenuServiceUrl);
+                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalRoleMenuServiceUrl, globalViewModel.employeeRole());
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);

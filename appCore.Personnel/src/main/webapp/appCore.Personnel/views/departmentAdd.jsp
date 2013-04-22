@@ -176,16 +176,16 @@
         </div>
         <div>
 
-        <div class="subHeader"> Department Info </div>
+        <div class="subHeader" data-bind="visible : showInfo"> Department Info </div>
 
         <div class="formRowSpacer"></div>
 
-        <div id="accordianDepartment" class="formRowAddContainer" data-bind="template : { name : 'infoAddTemplate'}, visible : enableAdd "></div>
+        <div id="accordianDepartment" class="formRowAddContainer" data-bind="template : { name : 'infoAddTemplate'}, visible : (enableAdd && showInfo) "></div>
 
 
         <div class="formRowSpacer"></div>
 
-        <div class="emptyData" data-bind="visible : $root.listInfo().length == 0">
+        <div class="emptyData" data-bind="visible : ($root.listInfo().length == 0 && showInfo)">
         <div>
         <ul>
 
@@ -198,7 +198,7 @@
 
 
 
-        <div class="formRowHeader" data-bind="visible : $root.listInfo().length > 0">
+        <div class="formRowHeader" data-bind="visible : ($root.listInfo().length > 0 && showInfo)">
         <span class='columnDividerListView'>Category</span>
         <span class='columnDividerListView'>Description</span>
         <span class='columnDividerListView'>Type</span>

@@ -1,5 +1,7 @@
 var globalHostname = "http://localhost:8080/appCore-personnel";
 var globalMenuServiceUrl = "/app/User/Forms/listMenu";
+var globalRoleMenuServiceUrl = globalHostname + "/app/User/Forms/listMenuByRole";
+
 var globalCompanyServiceUrl = "/app/Core/CompanyEntity/list";
 var hostAuthorizationUrl = globalHostname + "/app/User/Forms/get";
 

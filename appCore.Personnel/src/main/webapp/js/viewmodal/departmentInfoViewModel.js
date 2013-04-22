@@ -1,7 +1,6 @@
 var DepartmentInfoViewModel = function (globalViewModel) {
 
     var self = this;
-
     self.nid = ko.observable();
     self.code = ko.observable();
     self.name = ko.observable();
@@ -28,6 +27,8 @@ var DepartmentInfoViewModel = function (globalViewModel) {
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
 
+    self.showInfo = ko.observable(false);
+
     self.globalViewModel = globalViewModel;
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeDepartment) {
@@ -53,7 +54,7 @@ var DepartmentInfoViewModel = function (globalViewModel) {
 
         if (self.mode() == coreModeEdit) {
             var codeId = globalViewModel.targetId();
-
+            self.showInfo(true);
             var entityData = { id:codeId };
             var helper = new CompanyHelper();
             helper.getDepartment(entityData, getEntityGetDataCallback);

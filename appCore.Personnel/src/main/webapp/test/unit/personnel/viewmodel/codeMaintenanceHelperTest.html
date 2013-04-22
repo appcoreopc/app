@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CodeMaintenanceHelper Test</title>
+  <link rel="stylesheet" href="../../../resources/qunit.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  
+  <script src="../../../resources/qunit.js"></script>
+  <script src="../../../resources/jshamcrest.js"></script>
+  <script src="../../../resources/jsmockito.js"></script>
+  <script src="../../../../js/jquery-1.7.2.min.js"></script>
+  <script src="../../../../js/viewmodal/codeMaintenanceHelper.js"></script>
+  <script src="../../../../js/globalViewModel.js"></script>
+  <script src="../../../../js/appDefinition.js"></script>
+  <script src="../../../../js/ajaxCore.js"></script>
+  <script src="../../../../js/coreCommand.js"></script>
+  <script src="../../../../js/knockoutjs/knockout-2.2.0.debug.js"></script>
+	
+  <script>
+    	
+/*
+ Industry
+ Gender
+ Race
+ salutation
+ Religion
+ Nationality
+ Maritalstatus
+ Level
+ Fieldofexpertise
+ Familyrelationtype
+
+ */
+	
+	test( "Industry code test", function() {
+          var fakeCodeType = 1; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Industry";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	test( "Gender code test", function() {
+          var fakeCodeType = 2; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Gender";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+
+	test("Race code test", function() {
+          var fakeCodeType = 3; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Race";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	test("Salutation code test", function() {
+          var fakeCodeType = 4; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Salutation";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	test("Religion code test", function() {
+          var fakeCodeType = 5; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Religion";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	
+    test("Nationality code test", function() {
+          var fakeCodeType = 6; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Nationality";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	
+	test("MaritalStatus code test", function() {
+          var fakeCodeType = 7; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/MaritalStatus";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	
+	test("Level code test", function() {
+          var fakeCodeType = 8; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Level";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	
+	test("FieldOfExpertise code test", function() {
+          var fakeCodeType = 9; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/FieldOfExpertise";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	test("FamilyRelationType code test", function() {
+          var fakeCodeType = 10; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/FamilyRelationType";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	test("EmployeeGroup code test", function() {
+          var fakeCodeType = 11; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/EmployeeGroup";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	test("EmployeeGroup code test", function() {
+          var fakeCodeType = 12; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/HolidayGroup";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	test("Currency code test", function() {
+          var fakeCodeType = 13; 
+		  var helper = new CodeMaintenanceHelper(fakeCodeType);
+		  
+		  var expectedCodeType = "/Currency";
+		  var assertResult = helper.getUrl(); 
+		  
+		  var result = JsHamcrest.Operators.assert(assertResult, JsHamcrest.Matchers.containsString(expectedCodeType));		 
+		  equal(true, result.passed, "ensure code type return is correct/accurate");
+    });
+	
+	
+	JsMockito.Integration.QUnit();
+	
+  </script>
+</body>
+</html>

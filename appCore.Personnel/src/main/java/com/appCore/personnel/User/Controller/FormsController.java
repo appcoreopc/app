@@ -46,6 +46,13 @@ public class FormsController
 			return service.getFormsMenu();
 		}
 		
+		@RequestMapping(value = "/Forms/listMenuByRole", method = RequestMethod.GET)		
+		public @ResponseBody List<FormMenuView> listFormsMenuByRole(@RequestParam(value="roles", required=true) int[] rolesId) 
+		{	
+			return service.getFormsMenuByRole(rolesId);
+		}
+
+		
 		@RequestMapping(value = "/Forms/listMenuByUser", method = RequestMethod.GET)		
 		public @ResponseBody List<FormMenuView> listFormsMenu(Users user) 
 		{	

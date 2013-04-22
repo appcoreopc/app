@@ -30,6 +30,8 @@ var DivisionInfoViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
+    self.showInfo = ko.observable(false);
+
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeDivision) {
         throw "Application Type is not division.";
     }
@@ -53,7 +55,7 @@ var DivisionInfoViewModel = function (globalViewModel) {
 
         if (self.mode() == coreModeEdit) {
             var codeId = globalViewModel.targetId();
-
+            self.showInfo(true);
             var entityData = { id:codeId };
             var helper = new CompanyHelper();
             helper.getDivision(entityData, getBranchCallback);

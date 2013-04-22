@@ -28,6 +28,8 @@ var UnitInfoViewModel = function (globalViewModel) {
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
 
+    self.showInfo = ko.observable(false);
+
     self.globalViewModel = globalViewModel;
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeUnit) {
@@ -53,7 +55,7 @@ var UnitInfoViewModel = function (globalViewModel) {
 
         if (self.mode() == coreModeEdit) {
             var codeId = globalViewModel.targetId();
-
+            self.showInfo(true);
             var entityData = { id:codeId };
             var helper = new CompanyHelper();
             helper.getUnit(entityData, getEntityGetDataCallback);
@@ -144,7 +146,7 @@ var UnitInfoViewModel = function (globalViewModel) {
             var entityInfoData = createEntityData();
             var helper = new CompanyHelper();
             helper.saveOrUpdateUnitInfo(entityInfoData, addDataSuccessCallback);
-         }
+        }
     }
 
     function createEntityData() {

@@ -1,7 +1,6 @@
 var BranchInfoViewModel = function (globalViewModel) {
 
     var self = this;
-
     self.nid = ko.observable();
     self.code = ko.observable();
     self.name = ko.observable();
@@ -28,6 +27,8 @@ var BranchInfoViewModel = function (globalViewModel) {
     self.enableDelete = ko.observable();
 
     self.globalViewModel = globalViewModel;
+
+    self.showInfo = ko.observable(false);
 
     var viewColumns = [
         { headerText:"Branch Code", rowText:"branchCode" },
@@ -58,8 +59,8 @@ var BranchInfoViewModel = function (globalViewModel) {
         self.enableDelete(helper.getEnableDelete(result));
 
         if (self.mode() == coreModeEdit) {
+            self.showInfo(true);
             var codeId = globalViewModel.targetId();
-
             var branchData = { id:codeId };
             var helper = new CompanyHelper();
             helper.getBranch(branchData, getBranchCallback);
@@ -136,7 +137,7 @@ var BranchInfoViewModel = function (globalViewModel) {
 
         var validationStatusOk = true;
 
-        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined ) {
+        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined) {
             $("#branchCategoryAdd").validationEngine('validate');
             validationStatusOk = false;
         }
@@ -230,7 +231,6 @@ var BranchInfoViewModel = function (globalViewModel) {
 
         return "infoViewTemplate";
     }.bind(this);
-
 
     function deleteInfoConfirmCallBack(userResponse, data, globalViewModel, codeType) {
 

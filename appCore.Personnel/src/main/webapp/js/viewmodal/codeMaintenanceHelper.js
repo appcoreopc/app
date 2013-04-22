@@ -14,15 +14,18 @@
 
 var CodeMaintenanceHelper = function (codeType)
 {
-    this.gridUrl = globalHostname + "/app/Job/";
-    this.getUrl = function()
+	var self = this;
+	self.codeType = codeType;
+	self.gridUrl = globalHostname + "/app/Job/";
+						
+    self.getUrl = function()
     {
-        switch (codeType)
+        switch (self.codeType)
         {
             case 1:
-                return this.gridUrl + "Industry";
+			    return this.gridUrl + "Industry";
             case 2:
-                return this.gridUrl + "Gender";
+			    return this.gridUrl + "Gender";
             case 3:
                 return this.gridUrl + "Race";
             case 4:
@@ -48,7 +51,7 @@ var CodeMaintenanceHelper = function (codeType)
         }
     }
 
-    this.getTitle = function(codeType)
+    self.getTitle = function(codeType)
     {
         switch (codeType)
         {
@@ -80,8 +83,8 @@ var CodeMaintenanceHelper = function (codeType)
                 return "Currency";
         }
     }
-
-    this.deletMaintenanceCode = function(companyId, id, codeType)
+	
+    self.deletMaintenanceCode = function(companyId, id, codeType)
     {
         var maintenanceCodeObject = { companyId: companyId,  "id" : id };
         var url = this.getUrl(codeType);

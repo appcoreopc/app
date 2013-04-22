@@ -26,6 +26,7 @@ var SectionInfoViewModel = function (globalViewModel) {
     self.enableAdd = ko.observable();
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
+    self.showInfo = ko.observable(false);
 
     self.globalViewModel = globalViewModel;
 
@@ -52,7 +53,7 @@ var SectionInfoViewModel = function (globalViewModel) {
 
         if (self.mode() == coreModeEdit) {
             var codeId = globalViewModel.targetId();
-
+            self.showInfo(true);
             var entityData = { id:codeId };
             var helper = new CompanyHelper();
             helper.getSection(entityData, getEntityGetDataCallback);

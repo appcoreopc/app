@@ -4,10 +4,13 @@
         try
         {
             var globalViewModel = new GlobalViewModel();
-            globalViewModel.companyId(1);
-            globalViewModel.companyName("AppCoreDev");
+            globalViewModel.companyId(sessionStorage.companyId);
+            globalViewModel.companyName(sessionStorage.companyName);
             globalViewModel.username = sessionStorage.username;
             globalViewModel.employeeRole(sessionStorage.roles);
+
+
+
             ko.applyBindings(globalViewModel, document.getElementById("header"));
             return globalViewModel;
         }

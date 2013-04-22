@@ -1,7 +1,8 @@
 (function ($) {
     // anything here would be global scope //
-    $.fn.configurePopupMenu = function (targetClickElementId, popupElementName, serviceUrl) {
+    $.fn.configurePopupMenu = function (targetClickElementId, popupElementName, serviceUrl, roles) {
 
+        var dataRoles = { "roles":roles };
         var menuLoaded = false;
         var popupSetupHeader = popupElementName + "Header"
         var popupSetupContent = popupElementName + "Content"
@@ -10,9 +11,10 @@
 
         if (targetClickElementId != undefined) {
 
-            var menuDialog = $("<div id='" + popupSetupView + "'><div id='" + popupSetupHeader +  "'></div><div id='" + popupSetupContent + "'></div></div>");
+            var menuDialog = $("<div id='" + popupSetupView + "'><div id='" + popupSetupHeader + "'></div><div id='" + popupSetupContent + "'></div></div>");
             menuDialog.appendTo(document.body);
-            $("#"+ popupSetupView).css('visibility', 'hidden');
+            $("#" + popupSetupView).css('visibility', 'hidden');
+            $("#" + popupSetupView).css('display', 'none');
 
             $("#" + targetClickElementId).click(function (e) {
 
@@ -28,7 +30,8 @@
                     menuLoaded = true;
 
                     var ajaxCore = new AjaxCore();
-                    var requestMenu = ajaxCore.sendRequest(serviceUrl, null, 'get');
+                    // var requestMenu = ajaxCore.sendRequest(serviceUrl, null, 'get');
+                    var requestMenu = ajaxCore.sendRequest(serviceUrl, dataRoles, 'get');
 
                     requestMenu.done(function (data) {
                         menuDataSource = data;
@@ -40,7 +43,7 @@
                                     $("#" + popupSetupAccordian).append("<h3>" + menuDataSource[i].text + "</h3>");
                                     $("#" + popupSetupAccordian).append("<div><p></p></div>");
                                     for (var j = 0; j < menuDataSource[i].items.length; j++) {
-                                        $("#" + popupSetupAccordian +" div p").append("<a data-link='" + menuDataSource[i].items[j].link + "'>" + menuDataSource[i].items[j].text + "</a>");
+                                        $("#" + popupSetupAccordian + " div p").append("<a data-link='" + menuDataSource[i].items[j].link + "'>" + menuDataSource[i].items[j].text + "</a>");
                                     }
                                 }
                             }

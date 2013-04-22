@@ -15,8 +15,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.appCore.Requests.UserAuthenticationRequestStatus;
+import com.appCore.personnel.Core.Entity.Company;
+import com.appCore.personnel.Core.Service.CompanyService;
 import com.appCore.personnel.User.Entity.Roles;
 import com.appCore.personnel.User.Entity.UserLandingPage;
+import com.appCore.personnel.User.Entity.UserProfileConfiguration;
 import com.appCore.personnel.User.Entity.Users;
 
 @Service("usersService")
@@ -27,9 +30,14 @@ public class UsersService // implements UserRoleService
 	@Resource(name = "sessionFactory")
 	private SessionFactory sessionFactory;
 
+	@Resource(name="userProfileConfigurationService")
+	private UserProfileConfigurationService userProfileService;
 	
 	@Resource(name = "userLandingPageService")
 	private UserLandingPageService userLandingservice;
+		
+	@Resource(name = "companyService")
+	private CompanyService companyService;
 	
 	public UsersService() {
 
@@ -135,9 +143,23 @@ public class UsersService // implements UserRoleService
 			statusResponse.setUsername(username);
 			statusResponse.setMessageCode(0);
 			statusResponse.setMessageDescription("User logins successfully.");
-
+			
+			List<UserProfileConfiguration> userProfile = userProfileService.getByUserId(userFromStore.getNid());
+			
+			if (userProfile.size() > 0)	
+			{
+				int companyId = userProfile.get(0).getDefaultCompanyId();
+				Company companyFromStore = companyService.get(companyId);
+				
+				if (companyFromStore != null)
+				{
+					statusResponse.setCompanyName(companyFromStore.getCompanyName());
+				}
+				statusResponse.setCompanyId(companyId);
+			}
+			
 			List<UserLandingPage> userLandingData = userLandingservice.getByUserId(userFromStore.getNid());
-
+			
 			if (userLandingData.size() > 0) {
 				UserLandingPage userLanding = userLandingData.get(0);
 				statusResponse.setLandingPage(userLanding.getLandingPage());

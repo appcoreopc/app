@@ -48,13 +48,10 @@
         {
             if (msg.messageCode == 0)
             {
-                console.log(msg);
                 sessionStorage.setItem("username", msg.username);
                 sessionStorage.setItem("roles", msg.roles);
-                //sessionStorage.setItem("username", "jeremy1");
-                //sessionStorage.setItem("role", 1);
-                sessionStorage.setItem("companyId", 1);
-                sessionStorage.setItem("companyName", "AppCore");
+                sessionStorage.setItem("companyId", msg.companyId);
+                sessionStorage.setItem("companyName", msg.companyName);
                 goToPage(msg.landingPage);
             }
             else

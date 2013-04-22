@@ -28,6 +28,9 @@ public class FormsService
 	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
 	
+	
+	
+	
 	public FormsService()
 	{
 		
@@ -66,6 +69,71 @@ public class FormsService
 		}
 		return null;
 	}
+	
+	
+	public List<FormMenuView> getFormsMenuByRole(int[] roles) 
+	{	
+		List<FormMenuView> result = new ArrayList<FormMenuView>();
+		Session session = sessionFactory.getCurrentSession();
+		Query formsIdentifiedByRolesQuery = session.createQuery("FROM Forms_Actions_Role WHERE Role_Nid in (:roleId)");
+	
+		List<Integer> userRoles =  Arrays.asList(ArrayUtils.toObject(roles));
+		formsIdentifiedByRolesQuery.setParameterList("roleId", userRoles);
+				
+		List<Forms_Actions_Role> formRoles = formsIdentifiedByRolesQuery.list();
+		
+		if (formRoles.size() > 0)
+		{
+			List<Integer> formListToGet = getFormIds(formRoles);
+			
+			if (formListToGet.size() > 0)
+			{
+				List<Forms> formDetailList = getFormDetails(formListToGet); 
+				
+				// Construct the main layout 
+				List<FormMenuView> mainFormViewList = new ArrayList<FormMenuView>();
+				
+				FormMenuView mainFormView = new FormMenuView();
+				mainFormView.setText("Menu");
+				
+				// construct the sub forms  
+				List<FormMenuView> subFormViewList = new ArrayList<FormMenuView>();
+				
+				for (Forms childForm : formDetailList)
+				{
+					FormMenuView chidFormView = new FormMenuView();
+					chidFormView.setText(childForm.getFormId());
+					chidFormView.setLink(childForm.getLink());
+					subFormViewList.add(chidFormView);
+				}
+				
+				mainFormView.setItems(subFormViewList);
+				mainFormViewList.add(mainFormView);
+				return mainFormViewList;
+			}
+		}
+		return null;
+	}
+	
+	private List<Forms> getFormDetails(List<Integer> formIds)
+	{
+		List<Forms> list = new ArrayList<Forms>(); 
+		Session session = sessionFactory.getCurrentSession();
+		Query formsDetailQuery = session.createQuery("FROM Forms WHERE nid in (:formIds)");
+		formsDetailQuery.setParameterList("formIds", formIds);
+		return formsDetailQuery.list(); 
+	}
+	
+	private List<Integer> getFormIds(List<Forms_Actions_Role> forms)
+	{
+		List<Integer> list = new ArrayList<Integer>(); 
+		for (Forms_Actions_Role form : forms)
+		{
+			list.add(form.getForms_nid());
+		}
+		return list; 
+	}
+	
 	
 	private List<FormMenuView> getChildFormMenuItem(int id, Session session)
 	{

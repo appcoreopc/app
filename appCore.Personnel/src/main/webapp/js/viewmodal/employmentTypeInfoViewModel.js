@@ -28,6 +28,8 @@ var EmploymentTypeInfoViewModel = function (globalViewModel) {
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
 
+
+    self.showInfo = ko.observable(false);
     self.globalViewModel = globalViewModel;
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeEmploymentType) {
@@ -54,7 +56,7 @@ var EmploymentTypeInfoViewModel = function (globalViewModel) {
 
         if (self.mode() == coreModeEdit) {
             var codeId = globalViewModel.targetId();
-
+            self.showInfo(true);
             var entityData = { id:codeId };
             var helper = new CompanyHelper();
             helper.getEmploymentType(entityData, getEntityGetDataCallback);
