@@ -29,7 +29,7 @@ var GradeInfoViewModel = function (globalViewModel) {
     self.enableDelete = ko.observable();
 
     self.showInfo = ko.observable(false);
-
+    self.errorInForm = ko.observable(false);
     self.globalViewModel = globalViewModel;
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeGradeType) {
@@ -251,6 +251,9 @@ var GradeInfoViewModel = function (globalViewModel) {
         var isValid = $("#" + "gradeForm").validationEngine('validate');
 
         if (!isValid)
+            return;
+
+        if (self.errorInForm())
             return;
 
         var grade = new Grade();

@@ -477,8 +477,7 @@ var EmployeeHelper = function () {
         return formattedDate;
     }
 
-    this.getDateDiffYear = function(yearToCompare)
-    {
+    this.getDateDiffYear = function (yearToCompare) {
         if (yearToCompare == null)
             return null;
 
@@ -739,144 +738,15 @@ ko.bindingHandlers.datepicker = {
 
         if (current == null) {
             /*var currentDate = new Date();
-            var helper = new EmployeeHelper();
-            var formattedDate = helper.getDateFormatDDMMYYYY(currentDate, "-");
-            $(element).datepicker("setDate", formattedDate);
-            var observableDate = $(element).datepicker("getDate");
-            var obserableTarget = valueAccessor();
-            obserableTarget(formattedDate);*/
+             var helper = new EmployeeHelper();
+             var formattedDate = helper.getDateFormatDDMMYYYY(currentDate, "-");
+             $(element).datepicker("setDate", formattedDate);
+             var observableDate = $(element).datepicker("getDate");
+             var obserableTarget = valueAccessor();
+             obserableTarget(formattedDate);*/
         }
         else if (value - current !== 0) {
             $(element).datepicker("setDate", value);
-        }
-    }
-};
-
-/*
-
- codepicker:
- it is a control that is used to evaluate if code exist
- and created within the system.
-
- */
-
-ko.bindingHandlers.codepicker = {
-
-    init:function (element, valueAccessor, allBindingsAccessor) {
-
-        $(element).after("<i class='icon-tag-1'></i>");
-
-        var value = ko.utils.unwrapObservable(valueAccessor());
-
-        //handle the field changing
-        ko.utils.registerEventHandler(element, "change", function () {
-            var observable = valueAccessor();
-            observable($(element).val());
-        });
-
-        //handle disposal (if KO removes by the template binding)
-        ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
-            $(element).datepicker("destroy");
-        });
-
-    },
-    update:function (element, valueAccessor, allBindingsAccessor, viewModel) {
-
-        //initialize with some optional options
-        var options = allBindingsAccessor().codeEntity;
-
-        if (options != undefined) {
-            var value = ko.utils.unwrapObservable(valueAccessor());
-
-            var codeTypeOption = options.codeType;
-            var companyIdOption = options.companyId;
-
-            var codeEntity = {
-                codeName:value,
-                codeType:parseInt(codeTypeOption),
-                companyId:parseInt(companyIdOption)
-            };
-
-            if (value != undefined && value != "") {
-                var ajaxCore = new AjaxCore();
-                var request = ajaxCore.sendRequestType(globalCodeCheckExist, codeEntity, "post");
-                request.success(function (data, status, xhrObj) {
-                    if (data.messageCode == 0) {
-                        $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
-                    }
-                    else {
-                        if (viewModel.errorInForm != undefined) {
-                            viewModel.errorInForm(true);
-                        }
-                        $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span><i class=icon-cancel-circle-1></i></span>");
-
-                    }
-                });
-            }
-        }
-    }
-};
-
-ko.bindingHandlers.tcodepicker = {
-
-    init:function (element, valueAccessor, allBindingsAccessor) {
-
-        $(element).after("<i class='icon-tag-1'></i>");
-
-        var value = ko.utils.unwrapObservable(valueAccessor());
-
-        //handle the field changing
-        ko.utils.registerEventHandler(element, "change", function () {
-            var observable = valueAccessor();
-            observable($(element).val());
-        });
-
-        //handle disposal (if KO removes by the template binding)
-        ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
-            $(element).datepicker("destroy");
-        });
-
-    },
-    update:function (element, valueAccessor, allBindingsAccessor, viewModel) {
-
-        //initialize with some optional options
-        var options = allBindingsAccessor().codeEntity;
-
-        if (options != undefined) {
-            var value = ko.utils.unwrapObservable(valueAccessor());
-
-            var codeTypeOption = options.codeType;
-            var companyIdOption = options.companyId;
-
-            var codeEntity = {
-                codeName:value,
-                codeType:parseInt(codeTypeOption),
-                companyId:parseInt(companyIdOption)
-            };
-
-            if (value != undefined && value != "") {
-                var ajaxCore = new AjaxCore();
-                var request = ajaxCore.sendRequestType(globalCodeCheckExist, codeEntity, "post");
-                request.success(function (data, status, xhrObj) {
-                    if (data.messageCode == 0) {
-                        $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
-                    }
-                    else {
-
-                        if (viewModel.errorInForm != undefined) {
-                            viewModel.errorInForm(true);
-                            console.log(viewModel.errorInForm());
-                        }
-
-                        $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span><i class=icon-cancel-circle-1></i></span>");
-
-                    }
-                });
-            }
         }
     }
 };

@@ -29,6 +29,8 @@ var DepartmentInfoViewModel = function (globalViewModel) {
 
     self.showInfo = ko.observable(false);
 
+    self.errorInForm = ko.observable(false);
+
     self.globalViewModel = globalViewModel;
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeDepartment) {
@@ -248,6 +250,9 @@ var DepartmentInfoViewModel = function (globalViewModel) {
         var isValid = $("#" + "departmentForm").validationEngine('validate');
 
         if (!isValid)
+            return;
+
+        if (self.errorInForm())
             return;
 
         var department = new Department();

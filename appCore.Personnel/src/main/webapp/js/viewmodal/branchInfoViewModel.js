@@ -29,6 +29,7 @@ var BranchInfoViewModel = function (globalViewModel) {
     self.globalViewModel = globalViewModel;
 
     self.showInfo = ko.observable(false);
+    self.errorInForm = ko.observable(false);
 
     var viewColumns = [
         { headerText:"Branch Code", rowText:"branchCode" },
@@ -260,6 +261,9 @@ var BranchInfoViewModel = function (globalViewModel) {
         var isValid = $("#" + "branchForm").validationEngine('validate');
 
         if (!isValid)
+            return;
+
+        if (self.errorInForm())
             return;
 
         var branch = new Branch();

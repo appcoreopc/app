@@ -138,7 +138,7 @@
         <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSectionBlockBold">Division  Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
-        class="validate[required, maxSize[10]]" type="text" data-bind="value: code" id="DivisionCode" name="DivisionCode"
+        class="validate[required, maxSize[10]]" type="text" data-bind="codepicker : code, codeEntity : { codeType : 15, companyId : $root.globalViewModel.companyId() }"  id="DivisionCode" name="DivisionCode"
         placeholder="a new division code"/></div>
         </div>
 

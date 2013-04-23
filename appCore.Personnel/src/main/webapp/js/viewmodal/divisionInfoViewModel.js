@@ -29,7 +29,7 @@ var DivisionInfoViewModel = function (globalViewModel) {
     self.enableDelete = ko.observable();
 
     self.globalViewModel = globalViewModel;
-
+    self.errorInForm = ko.observable(false);
     self.showInfo = ko.observable(false);
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeDivision) {
@@ -256,6 +256,9 @@ var DivisionInfoViewModel = function (globalViewModel) {
         var isValid = $("#" + "divisionForm").validationEngine('validate');
 
         if (!isValid)
+            return;
+
+        if (self.errorInForm())
             return;
 
         var division = new Division();

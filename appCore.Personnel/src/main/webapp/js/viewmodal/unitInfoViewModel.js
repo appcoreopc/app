@@ -29,7 +29,7 @@ var UnitInfoViewModel = function (globalViewModel) {
     self.enableDelete = ko.observable();
 
     self.showInfo = ko.observable(false);
-
+    self.errorInForm = ko.observable(false);
     self.globalViewModel = globalViewModel;
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeUnit) {
@@ -249,6 +249,9 @@ var UnitInfoViewModel = function (globalViewModel) {
         var isValid = $("#" + "unitForm").validationEngine('validate');
 
         if (!isValid)
+            return;
+
+        if (self.errorInForm())
             return;
 
         var unit = new Unit();

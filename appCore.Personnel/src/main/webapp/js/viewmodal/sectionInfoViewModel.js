@@ -27,7 +27,7 @@ var SectionInfoViewModel = function (globalViewModel) {
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
     self.showInfo = ko.observable(false);
-
+    self.errorInForm = ko.observable(false);
     self.globalViewModel = globalViewModel;
 
     if (self.globalViewModel.applicationScopeType() != coreApplicationTypeSection) {
@@ -246,6 +246,9 @@ var SectionInfoViewModel = function (globalViewModel) {
         var isValid = $("#" + "sectionForm").validationEngine('validate');
 
         if (!isValid)
+            return;
+
+        if (self.errorInForm())
             return;
 
         var section = new Section();

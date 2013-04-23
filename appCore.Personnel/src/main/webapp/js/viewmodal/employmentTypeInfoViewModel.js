@@ -28,7 +28,7 @@ var EmploymentTypeInfoViewModel = function (globalViewModel) {
     self.enableUpdate = ko.observable();
     self.enableDelete = ko.observable();
 
-
+    self.errorInForm = ko.observable(false);
     self.showInfo = ko.observable(false);
     self.globalViewModel = globalViewModel;
 
@@ -250,6 +250,9 @@ var EmploymentTypeInfoViewModel = function (globalViewModel) {
         var isValid = $("#" + "employmentTypeForm").validationEngine('validate');
 
         if (!isValid)
+            return;
+
+        if (self.errorInForm())
             return;
 
         var employmentType = new EmploymentType();
