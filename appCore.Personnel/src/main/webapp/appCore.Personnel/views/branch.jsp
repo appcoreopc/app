@@ -8,12 +8,6 @@
     $(document).ready(function()
 	{
         getData(globalViewModel.companyId());
-        /*globalViewModel.companyId.subscribe(function(newValue)
-        {
-            console.log("happening");
-            $(".maintenanceCommand").empty();
-            getData(newValue);
-        }); */
     });
 
     function getData(companyId)
@@ -24,8 +18,8 @@
 
         request.success(function(data)
         {
-              var vm = new BranchViewModel(0, data, globalViewModel);
-              $("#branchDiv").setupViewBinding(vm, globalViewModel);
+             var vm = new BranchViewModel(0, data, globalViewModel);
+             $("#branchDiv").setupViewBinding(vm, globalViewModel);
         });
     }
 			

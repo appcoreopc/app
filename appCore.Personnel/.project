@@ -4,8 +4,8 @@
 	<comment></comment>
 	<projects>
 		<project>appCore.Administration</project>
-		<project>appCore.Shared</project>
 		<project>appCoreMvc</project>
+		<project>appCore.Shared</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

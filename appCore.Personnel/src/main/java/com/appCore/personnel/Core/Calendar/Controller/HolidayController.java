@@ -19,7 +19,6 @@ import com.appCore.personnel.Core.Calendar.Service.HolidayService;
 import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
-
 @Controller
 @RequestMapping("/Core/Calendar")
 public class HolidayController

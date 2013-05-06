@@ -54,9 +54,10 @@ public class CodeCheckerHelper {
 	 * 16 - Department 
 	 * 17 - Section 
 	 * 18 - Unit 
-	 * 
-	 * 
-	 * 
+	 * 19 - Users
+	 * 20 - EmploymentType
+	 * 21 - Grade
+	 * 22 - Holiday 
 	 * 
 	 */
 	 
@@ -177,6 +178,25 @@ public class CodeCheckerHelper {
 				Query userQuery = session.createQuery(userStringQuery);
 				userQuery.setParameter("codeName", codeRequest.getCodeName());
 				return userQuery;
+			case 20:
+				String employmentTypeStringQuery = "FROM EmploymentType WHERE Code = :codeName AND CompanyRef = :companyId";
+				Query employmentTypeQuery = session.createQuery(employmentTypeStringQuery);
+				employmentTypeQuery.setParameter("codeName", codeRequest.getCodeName());
+				employmentTypeQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return employmentTypeQuery;
+			case 21:
+				String gradeStringQuery = "FROM Grade WHERE Code = :codeName AND CompanyRef = :companyId";
+				Query gradeQuery = session.createQuery(gradeStringQuery);
+				gradeQuery.setParameter("codeName", codeRequest.getCodeName());
+				gradeQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return gradeQuery;
+			case 22:
+				String holidayStringQuery = "FROM Holiday WHERE Name = :codeName AND CompanyRef = :companyId";
+				Query holidayQuery = session.createQuery(holidayStringQuery);
+				holidayQuery.setParameter("codeName", codeRequest.getCodeName());
+				holidayQuery.setParameter("companyId", codeRequest.getCompanyId());
+				return holidayQuery;
+				
 		}
 		return null; 
 	}

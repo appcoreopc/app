@@ -52,7 +52,11 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (9,1, 'A
 insert into forms_actions_role (forms_nid, role_nid, permission) values (10,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (11, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (12, 1,'AUD');
+
 insert into forms_actions_role (forms_nid, role_nid, permission) values (13, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (25, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (26, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (27, 1,'AUD');
 
 
 insert into level (name, description, companyRef) values ('Level1', 'Level1', 1);
@@ -324,6 +328,7 @@ insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef
 insert into jobsetupExperience (expertise, description, experienceYears, jobSetupRef) values (1, 'Level 1', 1, 269);
 insert into jobsetupSkill (skill, level, category, categorydescription, jobSetupRef) values (1, 1, 1, 'category description', 269);
 
-
-
+insert into UserProfileConfiguration (userId, DefaultCompanyId) values (1, 1);
+insert into UserProfileConfiguration (userId, DefaultCompanyId) values (2, 1);
+insert into UserProfileConfiguration (userId, DefaultCompanyId) values (3, 1);
 

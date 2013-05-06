@@ -8,6 +8,7 @@
   <name>appCorePersonnel</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+	        
   <dependency>
    <groupId>org.hibernate</groupId>
    <artifactId>hibernate-envers</artifactId>

@@ -25,6 +25,7 @@ public class SecureKeyProvider implements SecureDataKeyProvider {
 		KeySpec privateKeySpec = new PKCS8EncodedKeySpec(reconstructedKey);
 		PrivateKey reconstructedPrivateKey = keyFactory.generatePrivate(privateKeySpec);
 		return reconstructedPrivateKey;
+	
 	}
 	
 	

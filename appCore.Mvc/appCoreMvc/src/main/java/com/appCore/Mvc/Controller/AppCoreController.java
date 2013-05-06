@@ -15,5 +15,5 @@ public class AppCoreController
 		errorStatus.setMessageCode(-999);
 		errorStatus.setMessageDescription(exception.getMessage());
 		return errorStatus;
-	}
+	}	
 }

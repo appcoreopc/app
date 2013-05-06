@@ -78,6 +78,57 @@ public class BranchServiceTest {
 	    Branch branchFromDatastore = service.get(fakeParamater);
 	    org.junit.Assert.assertEquals(fakeBranchCode, branchFromDatastore.getBranchCode());
 	    
+
+	}
+	
+	@Test
+	public void testSaveOrUpdate()
+	{
+		BranchService service = new BranchService();
+		
+		String fakeBranchCode = "Test";
+		Branch fakeBranch = new Branch();
+		fakeBranch.setBranchCode(fakeBranchCode);
+		
+		SessionFactory mockedSessionFactory =  Mockito.mock(SessionFactory.class);
+		Session mockedSession = Mockito.mock(Session.class);
+	    Query mockedQuery = Mockito.mock(Query.class);
+	    
+	    Mockito.when(mockedSessionFactory.getCurrentSession()).thenReturn(mockedSession);
+	    
+	    ReflectionTestUtils.setField(service, "sessionFactory", mockedSessionFactory);
+		
+	    service.saveOrUpdate(fakeBranch);
+	    
+	    verify(mockedSession).saveOrUpdate(fakeBranch);
+	    verify(mockedSession, times(1));
+	}
+	
+	@Test
+	public void testDelete()
+	{
+	
+		BranchService service = new BranchService();
+		
+		String fakeBranchCode = "Test";
+		Branch fakeBranch = new Branch();
+		fakeBranch.setBranchCode(fakeBranchCode);
+		
+		Integer fakeParamater = 1;
+		
+		SessionFactory mockedSessionFactory =  Mockito.mock(SessionFactory.class);
+		Session mockedSession = Mockito.mock(Session.class);
+	    Query mockedQuery = Mockito.mock(Query.class);
+	    
+	    Mockito.when(mockedSessionFactory.getCurrentSession()).thenReturn(mockedSession);
+	    Mockito.when(mockedSession.get(Branch.class, fakeParamater)).thenReturn(fakeBranch);
+	    
+	    ReflectionTestUtils.setField(service, "sessionFactory", mockedSessionFactory);
+		
+	    service.delete(fakeParamater);
+		verify(mockedSession).get(Branch.class, fakeParamater);
+		verify(mockedSession).delete(fakeBranch);
+		
 	}
 	
 }

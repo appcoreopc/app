@@ -3,6 +3,7 @@
 	<name>appCoreMvc</name>
 	<comment></comment>
 	<projects>
+		<project>appCore.Shared</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

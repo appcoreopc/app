@@ -91,8 +91,7 @@ public class BranchService
 	public void saveOrUpdate(Branch branch) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(branch);
-			
+		session.saveOrUpdate(branch);			
 	}
 
 
