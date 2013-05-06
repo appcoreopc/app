@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!-- Configuration of the Ant build system to generate a Jar file -->
+<project name="appCore.Shared" default="CreateJar">
+	<target name="CreateJar" description="Create Jar file">
+		<jar jarfile="../target/com.appCore.Mvc.jar" basedir="../target/classes"
+			includes="*.class">
+			<fileset dir="../target/classes" includes="com/**" />
+		</jar>
+		<exec executable="cmd">
+			<arg value="/c rmdir /S /Q C:\Users\jeremywoo\.m2\repository\com\appCore\Mvc" />
+		</exec>
+		<exec executable="cmd">
+			<arg
+				value="/c mvn install:install-file -Dfile=C:\appCoreDev\appCore.Mvc\appCoreMvc\target\com.appCore.Mvc.jar -DgroupId=com.appCore.Mvc -DartifactId=com.appCore.Mvc -Dversion=1 -Dpackaging=jar" />
+		</exec>
+	</target>
+</project>
