@@ -23,4 +23,12 @@ var UserHelper = function()
             callBack(data);
         });
     }
+
+    this.getResourceList = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalResourceListByCompanyUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
 }

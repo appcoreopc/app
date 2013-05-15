@@ -49,7 +49,7 @@
         <div class="categories">
         <ul>
         <li class="column first">
-        <a href="/appCore-personnel/appCore.Administration/view/admin.jsp" class="block callout">
+        <a href="/appCore-personnel/appCore.administration/views/personnelControlPanel.jsp" class="block callout">
         <i class="icon-wrench-2"></i>
         <h2>Administration</h2>
         <p>Manage your application users and configuration.

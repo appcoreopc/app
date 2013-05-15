@@ -1,4 +1,4 @@
-    <link href="../../css/employeeGroup.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/employeeGroup.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/Administration/configureRoleRightsViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/Administration/userHelper.js"></script>
 
@@ -6,14 +6,14 @@
 
         $(document).ready(function()
         {
-        var vm = new ConfigureRoleRightsViewModel(globalViewModel);
-        ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
+            var vm = new ConfigureRoleRightsViewModel(globalViewModel);
+            $("#configureRoleRight").setupViewBinding(vm, globalViewModel);
         });
 
 
         </script>
 
-        <form id="configureEmployeeGroupForm">
+        <form id="configureRoleRight">
 
         <div class="form">
         <div class="sectionalForm">
@@ -38,22 +38,18 @@
         </div>
 
 
-        <div class="sectionalForm">
-        <div class="leftSection fixedWidth">
-        <div class="labelSectionBlock">&nbsp;</div><div class="inputSectionList">
-        Add/Update/Delete
-        </div>
+        <div class="formRow">
+        &nbsp;
+
+        <div class="labelSectionBlock">Permission</div>
+
+        <div class="inputSection">
+        <select id="allResourceRights" data-bind="options: allRolesList, optionsText: 'rolename', optionsValue:
+        'rolename', optionsCaption : 'Choose a role' , value : currentlySelectedGroup">
+        </select>
         </div>
 
-        <div class="rightSection">
 
-        <div class="labelSectionBlockRight"></div><div class="inlineLabelSection">
-        <input type="checkbox" id="Add" />
-        <input type="checkbox" id="Update" />
-        <input type="checkbox" id="Delete" />
-        </div>
-
-        </div>
         </div>
 
 

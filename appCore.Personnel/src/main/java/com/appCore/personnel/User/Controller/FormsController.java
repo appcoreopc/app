@@ -54,7 +54,7 @@ public class FormsController
 
 		
 		@RequestMapping(value = "/Forms/listMenuByUser", method = RequestMethod.GET)		
-		public @ResponseBody List<FormMenuView> listFormsMenu(Users user) 
+		public @ResponseBody List<FormMenuView> listFormsMenu(Users user)
 		{	
 				return service.getFormsMenu();
 		}
@@ -65,6 +65,14 @@ public class FormsController
 				Forms_Actions_Role forms=service.get(formId, rolesId);	
 				return forms;
 		}
+		
+		@RequestMapping(value = "/Forms/getFormResource", method = RequestMethod.GET)		
+		public @ResponseBody Forms getFormResource (@RequestParam(value="id", required=true) Integer formId) 
+		{		
+				Forms forms=service.get(formId);	
+				return forms;
+		}
+				
 		
 		@RequestMapping(value = "/Forms/add", method = RequestMethod.GET)
 		public @ResponseBody RequestStatus renderAddForms (@RequestBody Forms forms)

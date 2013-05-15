@@ -14,7 +14,6 @@ var FormsRights = function (nid, formName, permission) {
 
 }
 
-
 var rightsGroupData = [];
 
 var ConfigureRoleRightsViewModel = function (globalViewModel) {
@@ -46,25 +45,15 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
-    //if (self.globalViewModel.applicationScopeType() != coreApplicationTypeUnit) {
-    //    throw "Application Type is not of type userRoleGroup.";
-    //}
-
-    /*globalViewModel.companyId.subscribe(function (newValue) {
-     getData(newValue);
-     });
-     */
-
-    self.remokeFromGroup = function (data) {
+    self.removeFromGroup = function (data) {
 
     }
 
     function getData() {
-
         var helper = new UserHelper();
         var entityObject = { id:0 };
-        helper.getRoleRights(entityObject, getRolesRightsCallback);
-        helper.getModules(entityObject, getModulesCallback);
+        helper.getUserRoles(entityObject, getRolesRightsCallback); // obtain roles
+        helper.getResourceList(entityObject, getModulesCallback);  // obtain forms list
     }
 
     function getModulesCallback(data) {
@@ -86,7 +75,7 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
 
     function initializeApplication() {
 
-        var input = { "id":coreUnitPage, "roleId":self.globalViewModel.userRole() };
+        var input = { "id":coreUnitPage, "roleId":self.globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var moduleResult = coreCommand.getPermission(hostAuthorizationUrl, input);
         var result = moduleResult.permission;
@@ -290,7 +279,7 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     self.cancelUpdate = function (data) {
-        preparePageForLoading("userList.jsp");
+        preparePageForLoading(globalEmptyMainPage);
     }
 
     self.assignToGroup = function (data) {
@@ -484,7 +473,6 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
                         }
                     }
                 }
-
                 if (newList.length > 0) {
                     self.moduleNotInGroupList(newList);
                 }

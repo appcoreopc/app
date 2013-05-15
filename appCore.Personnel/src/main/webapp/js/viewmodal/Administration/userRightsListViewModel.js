@@ -1,12 +1,9 @@
 var UserRightsListViewModel = function (initView, data, globalViewModel) {
 
-    mode = initView;
-    this.gridUrl = globalHostname + "/app/Core/Branch";
+    var mode = initView;
     this.codeCommand = "#codeCommand";
     this.gridId = "gridBranch";
-
     this.data = data;
-
     self.gridData = ko.observableArray(data);
     self.globalViewModel = globalViewModel;
 
@@ -14,82 +11,10 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
         { headerText:"User name", rowText:"username" }
     ];
 
-    var model = {
-        id:"nid",
-        fields:{
-            nid:{ editable:false },
-            type:{ editable:false, type:"string" },
-            value:{ editable:false, validation:{ required:true } },
-            description:{ editable:false, type:"string" },
-            category:{ editable:false, validation:{ required:true } }
-        }
-    };
-
-    var columns = { "columns":[
-        {
-            field:"branchCode",
-            width:90,
-            title:"Branch Code"
-        },
-        {
-            field:"branchName",
-            width:90,
-            title:"Branch Name"
-        },
-        {
-            field:"description",
-            width:90,
-            title:"Description"
-        },
-        {
-            field:"enabled",
-            width:90,
-            title:"Disabled"
-        }
-    ]};
-
-    var infoColumns = { "columns":[
-        {
-            field:"type",
-            width:90,
-            title:"Type"
-        },
-        {
-            field:"value",
-            width:90,
-            title:"Value"
-        },
-        {
-            field:"description",
-            width:90,
-            title:"Description"
-        },
-        {
-            field:"category",
-            width:90,
-            title:"Category"
-        }
-
-    ]};
-
-    var infoModel = {
-        id:"nid",
-        fields:{
-            nid:{ editable:false },
-            type:{  type:"string" },
-            value:{  validation:{ required:true } },
-            description:{  type:"string" },
-            category:{  validation:{ required:true } }
-        }
-    };
-
     function getView() {
         var gridDataObject =
         {
-            "gridUrl":this.gridUrl,
-            "data":this.data,
-            "columns":columns,
-            "model":model
+            "data":this.data
         };
 
         switch (mode) {
@@ -101,36 +26,6 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
                     "ctrlId":"addUserBtn",
                     "callback":function () {
                         goToAdd()
-                    }
-                };
-
-                var addRoleLinkInfo = {
-                    "text":"Add Role",
-                    "commandId":'userAdd',
-                    "ctrlId":"addRoleBtn",
-                    "link":globalPersonnelControlPanel,
-                    "callback":function () {
-                        goToAddRole()
-                    }
-                };
-
-                var assignRoleLinkInfo = {
-                    "text":"Assign Rights",
-                    "commandId":'userAdd',
-                    "ctrlId":"assignRightBtn",
-                    "link":globalPersonnelControlPanel,
-                    "callback":function () {
-                        goToAssignRight()
-                    }
-                };
-
-                var listRoleLinkInfo = {
-                    "text":"List role",
-                    "commandId":'listRole',
-                    "ctrlId":"listUserRoleBtnlistUserRoleBtn",
-                    "link":globalPersonnelControlPanel,
-                    "callback":function () {
-                        goToListRole()
                     }
                 };
 
@@ -148,11 +43,7 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
                 gridDataObject.updateLinkInfo = updateLinkInfo;
 
                 gridDataObject.addLinkInfo = [];
-                gridDataObject.addLinkInfo.push(listRoleLinkInfo);
                 gridDataObject.addLinkInfo.push(addUserLinkInfo);
-                gridDataObject.addLinkInfo.push(addRoleLinkInfo);
-                gridDataObject.addLinkInfo.push(assignRoleLinkInfo);
-
                 return gridDataObject;
         }
         return gridDataObject;
@@ -160,7 +51,7 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
 
     self.initializeViewModel = function () {
         var gridDataObject = getView();
-        var input = { "id":coreDivisionPage, "roleId":globalViewModel.userRole() };
+        var input = { "id":coreDivisionPage, "roleId":globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
 
         var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
@@ -191,31 +82,14 @@ var UserRightsListViewModel = function (initView, data, globalViewModel) {
         globalViewModel.targetId(data.nid);
         globalViewModel.editMode(coreModeEdit);
         globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        preparePageForLoading("usersAdd.jsp");
+        preparePageForLoading(globalAdminHostPath + "usersAdd.jsp");
     }
 
     function goToAdd() {
         globalViewModel.applicationScopeType(coreApplicationTypeUnit);
         globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("usersAdd.jsp");
+        preparePageForLoading(globalAdminHostPath + "usersAdd.jsp");
     }
 
-    function goToAddRole() {
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("userRoleAdd.jsp");
-    }
-
-    function goToAssignRight() {
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("configureUserRoles.jsp");
-    }
-
-    function goToListRole() {
-        globalViewModel.applicationScopeType(coreApplicationTypeUnit);
-        globalViewModel.editMode(coreModeInsert);
-        preparePageForLoading("roleList.jsp");
-    }
     self.initializeViewModel();
 }

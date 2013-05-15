@@ -7,12 +7,7 @@
 
         $(document).ready(function()
         {
-            getData(globalViewModel.userRole());
-            globalViewModel.userRole.subscribe(function(newValue)
-            {
-                $(".maintenanceCommand").empty();
-                getData(newValue);
-            });
+            getData(globalViewModel.companyId());
         });
 
         function getData(companyId)
@@ -20,11 +15,11 @@
             var ajaxCore = new AjaxCore();
             var companyId = { id : companyId };
 
-            var request = ajaxCore.sendRequest(globalUserList, companyId, "get");
+            var request = ajaxCore.sendRequest(globalRoleListByCompanyUrl, companyId, "get");
             request.success(function(data)
             {
-                var vm = new UserRoleListViewModel(coreModeList, data, globalViewModel);
-                ko.applyBindings(vm, document.getElementById("userRightListDiv"));
+                  var vm = new UserRoleListViewModel(0, data, globalViewModel);
+				 $("#userRightListDiv").setupViewBinding(vm, globalViewModel);
             });
         }
 
@@ -32,7 +27,6 @@
 
         <div class="forms">
         <h1>Role Maintenance</h1>
-
 
         <div class="viewData">
         <div class="maintenanceCommand">
@@ -42,4 +36,5 @@
         <div id="userRightListDiv" data-bind="dataGrid: gridViewModel"></div>
         </div>
 
+        </div>
         </div>

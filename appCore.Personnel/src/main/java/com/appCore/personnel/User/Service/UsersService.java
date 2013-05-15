@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.appCore.Requests.UserAuthenticationRequestStatus;
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.Company;
 import com.appCore.personnel.Core.Service.CompanyService;
 import com.appCore.personnel.User.Entity.Roles;
@@ -52,6 +53,15 @@ public class UsersService // implements UserRoleService
 		Query query = session.createQuery("FROM  Users");
 
 		return query.list();
+	}
+	
+	public List<Users> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Users WHERE CompanyId = :id");
+		query.setParameter("id", id);
+		return query.list();
+		
 	}
 
 	public Users get(Integer id) {
@@ -190,7 +200,6 @@ public class UsersService // implements UserRoleService
 	public void delete(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
 		Users users = (Users) session.get(Users.class, id);
-
 		session.delete(users);
 	}
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.User.Entity.Roles;
@@ -22,10 +23,9 @@ import com.appCore.personnel.User.Service.RolesService;
 @Controller
 @RequestMapping("/User")
 public class RolesController
-{ 
-
-	
+{ 	
 		protected static Logger logger = Logger.getLogger("controller");
+		
 		@Resource(name="rolesService")
 		private RolesService service;
 
@@ -36,6 +36,15 @@ public class RolesController
 				return list;
 		}
 
+		@RequestMapping(value = "/Roles/listByCompany", method = RequestMethod.GET)
+		public @ResponseBody
+		List<Roles> listByCompany(
+				@RequestParam(value = "id", required = true) Integer id) {
+			List<Roles> list = service.getAllByCompany(id);
+			return list;
+		}
+
+		
 		@RequestMapping(value = "/Roles/get", method = RequestMethod.GET)		
 		public @ResponseBody Roles getRoles (@RequestParam(value="id", required=true) Integer id ) 
 		{
@@ -78,6 +87,5 @@ public class RolesController
 				service.delete(id);
 				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
-
 
 }

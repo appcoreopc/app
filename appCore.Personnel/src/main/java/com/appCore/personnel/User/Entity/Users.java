@@ -21,6 +21,9 @@ import javax.persistence.Transient;
 		@Column(name = "Nid")
 		private Integer nid;
 
+		@Column(name = "CompanyId")
+		private Integer companyId;
+		
 		
 		@Column(name = "Username")
 		private String username;
@@ -94,6 +97,16 @@ import javax.persistence.Transient;
 
 		public void setFullName(String fullName) {
 			this.fullName = fullName;
+		}
+
+
+		public Integer getCompanyId() {
+			return companyId;
+		}
+
+
+		public void setCompanyId(Integer companyId) {
+			this.companyId = companyId;
 		}
 			
 	}

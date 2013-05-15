@@ -1,4 +1,4 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
 
         <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
 
@@ -97,7 +97,7 @@
 
 
         <div class="formRow">
-        <div class="labelSectionBlock">City</div><div class="inputSectionBlock"><input type="text" id="City" data-bind="value :
+        <div class="labelSectionBlockBold">City</div><div class="inputSectionBlock"><input type="text" id="City" data-bind="value :
         city"/></div>
         </div>
 

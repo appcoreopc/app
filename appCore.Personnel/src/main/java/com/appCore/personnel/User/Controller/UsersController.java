@@ -23,6 +23,7 @@ import com.appCore.Requests.UserAuthenticationRequestStatus;
 import com.appCore.Security.Users.EncodedKey;
 import com.appCore.Security.Users.SecureDataKeyProvider;
 import com.appCore.Security.Users.SecureKeyProvider;
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.User.Entity.Roles;
 import com.appCore.personnel.User.Entity.UserLandingPage;
@@ -49,6 +50,16 @@ public class UsersController {
 		List<Users> list = service.getAll();
 		return list;
 	}
+	
+	
+	@RequestMapping(value = "/Users/listByCompany", method = RequestMethod.GET)
+	public @ResponseBody
+	List<Users> listByCompany(
+			@RequestParam(value = "id", required = true) Integer id) {
+		List<Users> list = service.getAllByCompany(id);
+		return list;
+	}
+	
 
 	@RequestMapping(value = "/Users/get", method = RequestMethod.GET)
 	public @ResponseBody
@@ -56,6 +67,15 @@ public class UsersController {
 		Users users = service.get(id);
 		return users;
 	}
+	
+	@RequestMapping(value = "/Users/delete", method = RequestMethod.GET)
+	public @ResponseBody RequestStatus deleteUsers(@RequestParam(value = "id", required = true) Integer id) 
+	{
+		service.delete(id);
+		return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
+	}
+	
+	
 
 	@RequestMapping(value = "/Users/authenticate", method = RequestMethod.GET)
 	public @ResponseBody

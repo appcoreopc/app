@@ -1,5 +1,4 @@
 var BranchInfoViewModel = function (globalViewModel) {
-
     var self = this;
     self.nid = ko.observable();
     self.code = ko.observable();

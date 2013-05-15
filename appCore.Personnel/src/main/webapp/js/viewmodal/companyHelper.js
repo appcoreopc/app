@@ -55,6 +55,24 @@ var CompanyHelper = function () {
         });
     }
 
+    this.deleteRole = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalRoleDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
+    this.deleteResource = function (targetData, callback) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalResourceDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, targetData);
+        });
+    }
+
     this.deleteHoliday = function (targetData, callback) {
         var objectId = { "id":targetData.nid };
         var ajaxCore = new AjaxCore();

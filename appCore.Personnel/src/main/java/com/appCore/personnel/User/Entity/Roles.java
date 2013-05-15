@@ -30,7 +30,10 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 		@Column(name = "Nid")
 		private Integer nid;
 
-				
+		@Column(name = "CompanyId")
+		private Integer companyId;
+		
+		
 		@Column(name = "Rolename")
 		private String rolename;
 		
@@ -102,6 +105,16 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 
 		public void setAssignedUsers(List<UserRoleAssignment> assignedUsers) {
 			this.assignedUsers = assignedUsers;
+		}
+
+
+		public Integer getCompanyId() {
+			return companyId;
+		}
+
+
+		public void setCompanyId(Integer companyId) {
+			this.companyId = companyId;
 		}
 
 

@@ -1,12 +1,9 @@
-var UsersAddEditViewModel = function (mode, companyId) {
-
+var UsersAddEditViewModel = function (mode, globalViewModel) {
     var self = this;
-    var modelCompanyId = companyId;
-    this.centralPage = globalAdminCentralPage;
-
+    this.centralPage = globalAdminHostPath + globalAdminCentralPage;
     self.mode = ko.observable(0);
     self.nid = ko.observable();
-
+    self.globalViewModel = globalViewModel;
     self.userName = ko.observable();
     self.password = ko.observable();
     self.confirmPassword = ko.observable();
@@ -14,48 +11,37 @@ var UsersAddEditViewModel = function (mode, companyId) {
     self.email = ko.observable();
 
     self.errorExist = ko.observable();
-
     self.templateToUse = ko.observable();
-
     self.mode(mode);
 
-    if (mode == 2) {
+    if (mode == coreModeEdit) {
+        getUserDetails(self.globalViewModel.targetId());
+    }
 
-        getUserDetails(modelCompanyId);
-       }
-
-    function getUserDetails(companyId) {
-
+    function getUserDetails(targetId) {
         var ajaxCore = new AjaxCore();
-        var companyRequest = { id:companyId };
-
+        var companyRequest = { id:targetId};
         var request = ajaxCore.sendRequest(globalUserGet, companyRequest, "get");
 
         request.success(function (dataSource) {
             self.nid(dataSource.nid);
-
             self.userName(dataSource.username);
             self.password(dataSource.password);
             self.confirmPassword(dataSource.password);
-
             self.fullName(dataSource.fullName);
             self.email(dataSource.email);
         });
     }
 
-
     this.getView = function () {
         var gridDataObject =
         {
             "gridUrl":this.gridUrl,
-            "data":this.data,
-            "columns":null,
-            "model":null
+            "data":this.data
         };
 
         switch (self.mode()) {
             case 1:
-
                 var addLinkInfo = {
                     "text":"Save",
                     "link":this.centralPage,
@@ -100,11 +86,23 @@ var UsersAddEditViewModel = function (mode, companyId) {
         }
     }
 
+
+    function emptyfunction()
+    {
+
+    }
+
     self.saveOrUpdateUser = function () {
 
         var isValid = $("#" + "userForm").validationEngine('validate');
         if (!isValid) {
-            alert('invalid validation.')
+            return;
+        }
+
+        if (self.password() !== self.confirmPassword()) {
+            var dialog = new CoreDialog();
+            var dialogMessage = { title : "Invalid password", message : "Password and confirm password is not the same" };
+            dialog.createGeneralConfirmationDialog(dialogMessage, emptyfunction);
             return;
         }
 
@@ -112,19 +110,19 @@ var UsersAddEditViewModel = function (mode, companyId) {
             username:self.userName(),
             password:self.password(),
             email:self.email(),
-            fullName:self.fullName()
+            fullName:self.fullName(),
+            companyId:self.globalViewModel.companyId()
         };
 
-        if (self.mode() == 2) {
+        if (self.mode() == coreModeEdit) {
             user.nid = self.nid();
         }
 
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalUserSaveOrUpdate, user, "post");
-
         request.success(function (dataSource) {
             globalCurrentId = null;
-            goToPage(globalPersonnelControlPanel);
+            preparePageForLoading(globalAdminHostPath + "userList.jsp");
         });
     }
 }

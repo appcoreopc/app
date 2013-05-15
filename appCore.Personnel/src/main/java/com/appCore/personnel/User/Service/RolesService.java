@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Job.Entity.Employee;
 import com.appCore.personnel.Core.Job.Entity.EmployeeGroup;
 import com.appCore.personnel.User.Entity.Roles;
@@ -40,6 +41,15 @@ public class RolesService
 		Query query = session.createQuery("FROM  Roles");
 
 		return  query.list();
+	}
+	
+	public List<Roles> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  Roles WHERE CompanyId = :id");
+		query.setParameter("id", id);
+		return query.list();
+		
 	}
 
 	public Roles get(Integer id) 

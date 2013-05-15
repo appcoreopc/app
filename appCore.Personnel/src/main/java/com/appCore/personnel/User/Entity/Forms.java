@@ -41,6 +41,8 @@ import javax.persistence.Table;
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
 
+		@Column(name = "CompanyId")
+		private Integer companyId;
 		
 		@OneToOne
 		private Category category;
@@ -98,5 +100,15 @@ import javax.persistence.Table;
 
 		public void setLastUpdate(Timestamp lastUpdate) { 
 			this.lastUpdate = lastUpdate;
+		}
+
+
+		public Integer getCompanyId() {
+			return companyId;
+		}
+
+
+		public void setCompanyId(Integer companyId) {
+			this.companyId = companyId;
 		}
 	}

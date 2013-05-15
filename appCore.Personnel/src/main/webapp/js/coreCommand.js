@@ -11,6 +11,9 @@ var CoreCommand = function () {
         return gridViewModel;
     }
 
+    /***********************************************/
+    // should be change to a callback
+    /***********************************************/
     this.getPermission = function (requestUrl, requestData) {
         var ajaxCore = new AjaxCore();
         var commandType;
@@ -231,7 +234,7 @@ var CoreCommand = function () {
             callback();
         });
     }
-    // Why are controls added twice here?
+
     function appendCommandTo(markupToAppend) {
         $(markupToAppend).appendTo(".maintenanceCommand");
     }
