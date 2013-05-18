@@ -10,7 +10,7 @@ var UserHelper = function()
 
     this.getUserRoles = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalRoleList, entityData, "get");
+        var request = ajaxCore.sendRequest(globalRoleListByCompanyUrl, entityData, "get");
         request.success(function (data, status, xhrObj) {
             callBack(data);
         });

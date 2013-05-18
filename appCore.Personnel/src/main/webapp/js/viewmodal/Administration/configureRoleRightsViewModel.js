@@ -1,7 +1,7 @@
-var UserRoleRightChangeInfo = function (groupId, employeeId, IsMember, permission) {
+var GenericChangeSetInfo = function (groupId, targetId, IsMember, permission) {
     var self = this;
-    self.employeeGroupId = ko.observable(groupId);
-    self.employeeId = ko.observable(employeeId);
+    self.groupId = ko.observable(groupId);
+    self.targetId = ko.observable(targetId);
     self.isMember = ko.observable(IsMember);
     self.permission = ko.observable(permission);
 }
@@ -11,18 +11,14 @@ var FormsRights = function (nid, formName, permission) {
     self.nid = ko.observable(nid);
     self.formName = ko.observable(formName);
     self.permission = ko.observable(permission);
-
 }
 
 var rightsGroupData = [];
 
 var ConfigureRoleRightsViewModel = function (globalViewModel) {
-
     var groupFieldName = "rolename";
     var elementFieldName = "username";
-
     var self = this;
-
     // all the roles
     self.allRolesList = ko.observableArray();
     // all modules
@@ -34,8 +30,9 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     self.currentlySelectedGroup = ko.observable();
     self.selectionOfModule = ko.observableArray();
 
-    self.employeeGroupChangeList = ko.observableArray();
-    self.selectionOfEmployeeToRemove = ko.observableArray();
+    self.targetGroupChangeSet = ko.observableArray();
+    self.selectionToRemove = ko.observableArray();
+    //self.selectionToRemove = [];
 
     self.mode = ko.observable(coreModeInsert);
 
@@ -45,36 +42,31 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
-    self.removeFromGroup = function (data) {
-
-    }
-
-    function getData() {
+    function getData(value) {
         var helper = new UserHelper();
-        var entityObject = { id:0 };
+        var entityObject = { id:globalViewModel.companyId() };
         helper.getUserRoles(entityObject, getRolesRightsCallback); // obtain roles
-        helper.getResourceList(entityObject, getModulesCallback);  // obtain forms list
+        helper.getResourceList(entityObject, getModulesCallback);  // obtain forms/resource list
     }
 
     function getModulesCallback(data) {
         self.moduleListedInSystem(data);
     }
 
-
     function getRolesRightsCallback(data) {
+
         self.allRolesList(data);
+
         $.each(data, function (key, value) {
-            rightsGroupData[value[groupFieldName]] = value.assignedRights;
+            rightsGroupData[value[groupFieldName]] = value.forms;
         });
     }
 
     self.mode(self.globalViewModel.editMode());
-
     // get permission
     initializeApplication();
 
     function initializeApplication() {
-
         var input = { "id":coreUnitPage, "roleId":self.globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var moduleResult = coreCommand.getPermission(hostAuthorizationUrl, input);
@@ -86,14 +78,11 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
         self.enableUpdate(helper.getEnableUpdate(result));
         self.enableDelete(helper.getEnableDelete(result));
 
-        getData();
-
+        getData(globalViewModel.companyId());
     }
 
     function getEntityGetDataCallback(data) {
-
         if (data != null) {
-
             self.nid(data.nid);
             self.code(data.unitCode);
             self.name(data.unitName);
@@ -111,7 +100,6 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     self.cancelInfoData = function () {
         self.editData("");
     }
-
 
     self.editInfoData = function (data) {
 
@@ -142,7 +130,6 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     function createUpdateEntityData(data) {
-
         var entityData = {
             category:data.infoCategory(),
             description:data.infoDescription(),
@@ -163,7 +150,6 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     function createEntityData() {
-
         var entityData = {
             category:self.addInfoCategory(),
             description:self.addInfoDescription(),
@@ -198,11 +184,9 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
             self.addInfoType("");
             self.addInfoValue("");
         }
-
     }
 
     self.addInfoData = function () {
-
         var data = {
             category:self.addInfoCategory(),
             description:self.addInfoDescription(),
@@ -218,7 +202,6 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
         self.addInfoType("");
         self.addInfoValue("");
     }
-
 
     self.templateToUse = function (item) {
         switch (self.mode()) {
@@ -258,15 +241,13 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     self.updateData = function (data) {
-
-
-        var list = self.employeeGroupChangeList();
+        var list = self.targetGroupChangeSet();
         var helper = new UserHelper();
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
             var entityObject = {
-                employeeId:item.employeeId(),
-                groupId:item.employeeGroupId(),
+                targetId:item.targetId(),
+                groupId:item.groupId(),
                 isGrantAccess:item.isMember()
             };
 
@@ -283,47 +264,38 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     self.assignToGroup = function (data) {
-
+        var targetElement = null;
         var selection = self.selectionOfModule();
-        var emp = null;
         var groupName = self.currentlySelectedGroup();
 
-        var assignedUsers = rightsGroupData[groupName];
-
-        // base on selection // remove from main list
         for (var i = 0; i < selection.length; i++) {
+            var selectedElementId = selection[i];
+            var listedModules = self.moduleListedInSystem();
 
-            var employeeId = selection[i];
-
-            var employeeList = self.moduleListedInSystem();
-
-            for (var j = 0; j < employeeList.length; j++) {
-                emp = employeeList[j];
-                if (emp.nid == employeeId) {
-                    removeItemFromList(self.moduleNotInGroupList, employeeId);
+            for (var j = 0; j < listedModules.length; j++) {
+                targetElement = listedModules[j];
+                if (targetElement.nid == selectedElementId) {
+                    removeItemFromList(self.moduleNotInGroupList, selectedElementId);
                     break;
                 }
             }
-
-            self.rightsCurrentlyAssignedToAGroup.push(emp);
-
-            lookupChangesToPropagateToServer(groupName, employeeId, true);
+            var flattenElement = { "nid":targetElement.nid, "formName":targetElement.formId, "permission":null};
+            self.rightsCurrentlyAssignedToAGroup.push(flattenElement);
+            lookupChangesToPropagateToServer(groupName, selectedElementId, true);
+            console.log(self.targetGroupChangeSet());
         }
-
         self.selectionOfModule = ko.observableArray();
     }
 
-
-    function removeItemFromListIfExistByGroupAndId(list, groupId, employeeId) {
-
+    function removeItemFromListIfExistByGroupAndId(list, groupId, targetId) {
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
-            if (item.employeeGroupId() == groupId && item.employeeId() == employeeId) {
+            if (item.groupId() == groupId && item.targetId() == targetId) {
                 list.splice(i, 1);
                 break;
             }
         }
-        self.employeeGroupChangeList(list);
+        self.targetGroupChangeSet(list);
         return list;
     }
 
@@ -333,17 +305,14 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
             var item = itemList[j];
             if (item.nid == value) {
                 list.splice(j, 1);
-                break;
+                return itemList;
             }
         }
     }
 
-
     function getGroupId(groupName) {
         var groupList = self.allRolesList();
-
         for (var i = 0; i < groupList.length; i++) {
-            //if (groupList[i].name == groupName) {
             if (groupList[i][groupFieldName] == groupName) {
                 return groupList[i].nid;
             }
@@ -351,75 +320,70 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
         return null;
     }
 
-
     self.removeFromGroup = function (data) {
-
-        var selection = self.selectionOfEmployeeToRemove();
-        var emp = null;
-
+        var selection = self.selectionToRemove();
+        var targetElement = null;
         for (var i = 0; i < selection.length; i++) {
-            var employeeId = selection[i];
-            var employeeList = self.moduleListedInSystem();
-            for (var j = 0; j < employeeList.length; j++) {
-                emp = employeeList[j];
-                if (emp.nid == employeeId) {
-                    removeItemFromList(self.rightsCurrentlyAssignedToAGroup, employeeId);
-                    break;
+            var selectedElementToRemove = selection[i];
+            var list = self.rightsCurrentlyAssignedToAGroup();
+            for (var j = 0; j < list.length; j++) {
+
+                var itemElement = list[j];
+                if (itemElement.nid == selectedElementToRemove) {
+                    var elementToPass = itemElement;
+                    self.moduleNotInGroupList.push(elementToPass);
+                    self.rightsCurrentlyAssignedToAGroup.splice(j, 1);
                 }
             }
-
-            self.moduleNotInGroupList.push(emp);
-            lookupChangesToPropagateToServer(self.currentlySelectedGroup(), employeeId, false);
+            lookupChangesToPropagateToServer(self.currentlySelectedGroup(), selectedElementToRemove, false);
+            console.log(self.targetGroupChangeSet());
         }
-
-        self.selectionOfEmployeeToRemove = ko.observableArray();
+        self.selectionToRemove = ko.observableArray();
     }
 
-    function lookupChangesToPropagateToServer(groupName, employeeId, boolValueToSet) {
-
+    function lookupChangesToPropagateToServer(groupName, taregetId, boolValueToSet) {
         var recordModifiedIndicator = true;
         var groupId = getGroupId(groupName);
 
         if (boolValueToSet) {
-
-            if (checkIfReassignment(employeeId, groupName)) {
+            if (checkIfReassignment(taregetId, groupName)) {
                 recordModifiedIndicator = false;
-                removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
+                removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, taregetId);
             }
         }
         else if (boolValueToSet == false) {
-            if (isRevokeAccess(employeeId, groupName)) {
+            if (isRevokeAccess(taregetId, groupName)) {
                 recordModifiedIndicator = true;
             }
             else {
                 recordModifiedIndicator = false;
-                removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
+                removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, taregetId);
             }
         }
 
         if (recordModifiedIndicator == true) {
-            removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
-            var employeeGroupInfo = new UserRoleRightChangeInfo(groupId, employeeId, boolValueToSet);
-            self.employeeGroupChangeList.push(employeeGroupInfo);
+            removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, taregetId);
+            var employeeGroupInfo = new GenericChangeSetInfo(groupId, taregetId, boolValueToSet);
+            self.targetGroupChangeSet.push(employeeGroupInfo);
         }
     }
 
-    function checkIfReassignment(employeeId, groupName) {
+    function checkIfReassignment(targetId, groupName) {
         var isRecordAnReassignment = false;
         var staticAssignedDataFromServer = rightsGroupData[groupName];
         for (var i = 0; i < staticAssignedDataFromServer.length; i++) {
-            if (staticAssignedDataFromServer[i].nid == employeeId) {
+            if (staticAssignedDataFromServer[i].nid == targetId) {
                 isRecordAnReassignment = true;
             }
         }
         return isRecordAnReassignment;
     }
 
-    function isRevokeAccess(employeeId, groupName) {
+    function isRevokeAccess(targetId, groupName) {
         var isDoubleRevokeRecord = false;
         var staticAssignedDataFromServer = rightsGroupData[groupName];
         for (var i = 0; i < staticAssignedDataFromServer.length; i++) {
-            if (staticAssignedDataFromServer[i].nid == employeeId) {
+            if (staticAssignedDataFromServer[i].nid == targetId) {
                 isDoubleRevokeRecord = true;
                 break;
             }
@@ -437,48 +401,58 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
         }
     }
 
-    function flattenFormRightsToObservables(clonedAssignedEmployees) {
-
+    function flattenFormRightsToObservables(source) {
         var flattenData = [];
+        for (var i = 0; i < source.length; i++) {
+            var nid = source[i].nid;
+            var formName = source[i].formId;
+            var permission = source[i].permission;
+            var flattenElement = new FormsRights(nid, formName, permission);
+            flattenData.push(flattenElement);
+        }
+        return flattenData;
+    }
 
-        for (var i = 0; i < clonedAssignedEmployees.length; i++) {
-            var formId = clonedAssignedEmployees[i].forms.nid;
-            var formName = clonedAssignedEmployees[i].forms.formId;
-            var permission = clonedAssignedEmployees[i].permission;
+    //self.nid = ko.observable(nid);
+    //self.formName = ko.observable(formName);
+    //self.permission = ko.observable(permission);
 
-            var flattenElement = new FormsRights(formId, formName, permission);
+    function flattenObjects(source) {
+        var flattenData = [];
+        for (var i = 0; i < source.length; i++) {
+            var nid = source[i].nid;
+            var formName = source[i].formId;
+            var permission = source[i].permission;
+            var flattenElement = { "nid":nid, "formName":formName, "permission":permission};
             flattenData.push(flattenElement);
         }
         return flattenData;
     }
 
     self.currentlySelectedGroup.subscribe(function (groupName) {
-
         if (groupName != undefined) {
-
             self.moduleNotInGroupList.removeAll();
-            self.employeeGroupChangeList.removeAll();
+            self.targetGroupChangeSet.removeAll();
 
             var assignedRights = rightsGroupData[groupName];
             var clonedAssignedRights = assignedRights.slice();
-            self.rightsCurrentlyAssignedToAGroup(flattenFormRightsToObservables(clonedAssignedRights));
+            self.rightsCurrentlyAssignedToAGroup(flattenObjects(clonedAssignedRights));
 
             if (assignedRights != undefined) {
                 var newList = self.moduleListedInSystem.slice();
                 for (var i = 0; i < assignedRights.length; i++) {
                     for (var k = 0; k < newList.length; k++) {
-
-                        if (newList[k]["nid"] == assignedRights[i]["forms"]["nid"]) {
+                        if (newList[k]["nid"] == assignedRights[i]["nid"]) {
                             newList.splice(k, 1);  // remove the list
                         }
                     }
                 }
+
                 if (newList.length > 0) {
-                    self.moduleNotInGroupList(newList);
+                    self.moduleNotInGroupList(flattenObjects(newList));
                 }
             }
             else {
-
             }
         }
     });

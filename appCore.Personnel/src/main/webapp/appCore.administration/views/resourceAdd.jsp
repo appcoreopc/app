@@ -15,6 +15,7 @@
 
                 if (globalViewModel != undefined && globalViewModel.targetId() != null)
                 {
+                    console.log("edit mode");
                     vm = new ResourceAddEditViewModel(coreModeEdit, globalViewModel);
                     gridDataObject = vm.getView();
                 }

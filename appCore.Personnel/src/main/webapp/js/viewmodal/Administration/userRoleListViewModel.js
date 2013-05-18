@@ -11,7 +11,8 @@ var UserRoleListViewModel = function (initView, data, globalViewModel) {
     self.globalViewModel = globalViewModel;
 
     var viewColumns = [
-        { headerText:"Role", rowText:"rolename" }
+        { headerText:"Role", rowText:"rolename" },
+        { headerText:"Description", rowText:"description" }
     ];
 
     function getView() {

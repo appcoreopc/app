@@ -25,8 +25,7 @@
         <div class="labelSectionBlock">Role</div>
 
         <div class="inputSection">
-        <select id="allEmployeeGroupList" data-bind="options: allRolesList, optionsText: 'rolename', optionsValue:
-        'rolename', optionsCaption : 'Choose a role' , value : currentlySelectedGroup">
+        <select id="allEmployeeGroupList" data-bind="options: allRolesList, optionsText: 'rolename', optionsValue: 'rolename', optionsCaption : 'Choose a role' , value : currentlySelectedGroup">
         </select>
         </div>
 
@@ -44,8 +43,7 @@
         <div class="labelSectionBlock">Permission</div>
 
         <div class="inputSection">
-        <select id="allResourceRights" data-bind="options: allRolesList, optionsText: 'rolename', optionsValue:
-        'rolename', optionsCaption : 'Choose a role' , value : currentlySelectedGroup">
+        <select id="allResourceRights">
         </select>
         </div>
 
@@ -63,10 +61,9 @@
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlock">Modules in system</div><div class="inputSectionList">
+        <div class="labelSectionBlock">Resources in system</div><div class="inputSectionList">
 
-        <select multiple="true" id="moduleListedInSystem" data-bind="options: moduleNotInGroupList, optionsText:
-        'formId', optionsValue: 'nid', selectedOptions : selectionOfModule">
+        <select multiple="true" id="moduleListedInSystem" data-bind="options: moduleNotInGroupList, optionsText: 'formName', optionsValue: 'nid', selectedOptions : selectionOfModule">
         </select>
 
         </div>
@@ -76,8 +73,7 @@
         <div class="rightSection">
 
         <div class="labelSectionBlockRight">Modules assigned to current role</div><div class="inlineLabelSection">
-        <select id="currentlyAssignedGroup" data-bind="options : rightsCurrentlyAssignedToAGroup, optionsText:
-        'formName', optionsValue: 'formId', selectedOptions : selectionOfEmployeeToRemove " multiple="multiple">
+        <select multiple="true" id="currentlyAssignedGroup" data-bind="options: rightsCurrentlyAssignedToAGroup, optionsText: 'formName', optionsValue: 'nid', selectedOptions : selectionToRemove">
         </select>
         </div>
 

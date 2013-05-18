@@ -83,6 +83,7 @@ var FormsListViewModel = function (initView, data, globalViewModel, command) {
     }
 
     function goToAdd() {
+        globalViewModel.targetId(null);
         globalViewModel.applicationScopeType(coreApplicationTypeFormsType);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading(globalAdminHostPath + "resourceAdd.jsp");

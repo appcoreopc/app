@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.User.Entity.FormMenuView;
@@ -27,7 +28,6 @@ import com.appCore.personnel.User.Service.FormsService;
 @RequestMapping("/User")
 public class FormsController
 { 
-
 	
 		protected static Logger logger = Logger.getLogger("controller");
 		@Resource(name="formsService")
@@ -41,9 +41,16 @@ public class FormsController
 		}
 		
 		@RequestMapping(value = "/Forms/listMenu", method = RequestMethod.GET)		
-		public @ResponseBody List<FormMenuView> listFormsMenu() 
+		public @ResponseBody List<FormMenuView> listFormsMenu() 	
 		{	
 			return service.getFormsMenu();
+		}
+				
+		@RequestMapping(value = "/Forms/listByCompany", method = RequestMethod.GET)
+		public @ResponseBody List<Forms> listByCompany(@RequestParam(value = "id", required = true) Integer id) 
+		{
+			List<Forms> list = service.getAllByCompany(id);
+			return list;
 		}
 		
 		@RequestMapping(value = "/Forms/listMenuByRole", method = RequestMethod.GET)		

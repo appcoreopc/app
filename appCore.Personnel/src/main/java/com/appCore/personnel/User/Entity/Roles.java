@@ -13,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
+import javax.persistence.Transient;
+
 import java.util.List;
 import javax.persistence.Table;
 
@@ -47,6 +49,13 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 		
 		@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 		private List<UserRoleAssignment> assignedUsers;
+		
+		
+		@Transient
+		private List<Users> users;
+		
+		@Transient
+		private List<Forms> forms;
 		
 		
 		@Column(name = "LastUpdate")
@@ -118,5 +127,23 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 		}
 
 
+		public List<Users> getUsers() {
+			return users;
+		}
+
+
+		public void setUsers(List<Users> users) {
+			this.users = users;
+		}
+
+
+		public List<Forms> getForms() {
+			return forms;
+		}
+
+
+		public void setForms(List<Forms> forms) {
+			this.forms = forms;
+		}
 		
 	}

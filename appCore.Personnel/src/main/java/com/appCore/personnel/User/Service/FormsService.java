@@ -14,6 +14,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.User.Entity.FormMenuView;
 import com.appCore.personnel.User.Entity.Forms;
 import com.appCore.personnel.User.Entity.Forms_Actions_Role;
@@ -161,6 +162,15 @@ public class FormsService
 		Query query = session.createQuery("FROM  Forms");
 
 		return  query.list();
+	}
+	
+	public List<Forms> getAllByCompany(Integer id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM Forms WHERE CompanyId = :id");
+		query.setParameter("id", id);
+		return query.list();
+		
 	}
 
 	public Forms get(Integer id) 

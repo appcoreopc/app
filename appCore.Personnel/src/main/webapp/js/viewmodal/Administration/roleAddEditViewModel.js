@@ -1,6 +1,6 @@
 var RoleAddEditViewModel = function (mode, globalViewModel) {
     var self = this;
-    this.centralPage = globalAdminHostPath + globalAdminCentralPage;
+    this.centralPage = globalAdminHostPath + "roleList.jsp  ";
     self.mode = ko.observable(0);
 
     self.nid = ko.observable();

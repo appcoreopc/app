@@ -46,14 +46,14 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
      });
      */
 
-    self.remokeFromGroup = function (data) {
+    self.removeFromGroup = function (data) {
 
     }
 
     function getData() {
 
         var helper = new UserHelper();
-        var entityObject = { id:0 };
+        var entityObject = { id:globalViewModel.companyId() };
         helper.getUserRoles(entityObject, getUserRolesCallback);
         helper.getUsers(entityObject, getUsersCallback);
     }
@@ -79,7 +79,7 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
 
     function initializeApplication() {
 
-        var input = { "id":coreUnitPage, "roleId":self.globalViewModel.userRole() };
+        var input = { "id":coreUnitPage, "roleId":self.globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var moduleResult = coreCommand.getPermission(hostAuthorizationUrl, input);
         var result = moduleResult.permission;
