@@ -126,20 +126,22 @@ public class RolesService {
 		return roles;
 	}
 
-	public boolean saveconfigureRole(int employeeId, int groupId,
-			boolean isGrantAccess) {
+	public boolean saveconfigureRole(int targetId, int groupId, boolean isGrantAccess) 
+	{
 		Session session = sessionFactory.getCurrentSession();
-
-		Roles userGroup = (Roles) session.get(Roles.class, groupId);
-		Users employee = (Users) session.get(Users.class, employeeId);
-
+		
 		if (isGrantAccess) {
 			UserRoleAssignment userRoleAssignment = new UserRoleAssignment();
 			userRoleAssignment.setRole_nid(groupId);
-			userRoleAssignment.setUser_nid(employeeId);
-			userGroup.getAssignedUsers().add(userRoleAssignment);
+			userRoleAssignment.setUser_nid(targetId);
+			session.save(userRoleAssignment);
+			
 		} else {
-			userGroup.getAssignedUsers().remove(employee);
+
+			Query userRoleAssignmentQuery = session.createQuery("Delete FROM  UserRoleAssignment WHERE 	Role_nid = :roleId AND User_nid = :userId");
+			userRoleAssignmentQuery.setParameter("roleId", groupId);
+			userRoleAssignmentQuery.setParameter("userId", targetId);
+			userRoleAssignmentQuery.executeUpdate();
 		}
 		return true;
 

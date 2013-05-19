@@ -1,4 +1,4 @@
-var UserRoleChangeInfo = function (groupId, employeeId, IsMember) {
+var UserRoleChangeSet = function (groupId, employeeId, IsMember) {
     var self = this;
     self.employeeGroupId = ko.observable(groupId);
     self.employeeId = ko.observable(employeeId);
@@ -46,9 +46,6 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
      });
      */
 
-    self.removeFromGroup = function (data) {
-
-    }
 
     function getData() {
 
@@ -63,11 +60,9 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
     }
 
     function getUserRolesCallback(data) {
-
         self.allRolesList(data);
-
         $.each(data, function (key, value) {
-            usersGroupData[value[groupFieldName]] = value.assignedUsers;
+            usersGroupData[value[groupFieldName]] = value.users;
         });
 
     }
@@ -262,29 +257,24 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
     }
 
     self.updateData = function (data) {
-
-        console.log(self.employeeGroupChangeList());
-
         var list = self.employeeGroupChangeList();
         var helper = new UserHelper();
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
             var entityObject = {
-                employeeId:item.employeeId(),
+                targetId:item.employeeId(),
                 groupId:item.employeeGroupId(),
                 isGrantAccess:item.isMember()
             };
-
             helper.configureUserRole(entityObject, updateCompleteCallBack);
         }
     }
 
     function updateCompleteCallBack(data) {
-
     }
 
     self.cancelUpdate = function (data) {
-        preparePageForLoading("personnelControlPanel.jsp");
+        preparePageForLoading(globalEmptyMainPage);
     }
 
     self.assignToGroup = function (data) {
@@ -293,30 +283,27 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
         var emp = null;
         var groupName = self.currentlySelectedGroup();
 
-
         var assignedUsers = usersGroupData[groupName];
 
         // base on selection // remove from main list
         for (var i = 0; i < selection.length; i++) {
 
-            var employeeId = selection[i];
+            var targetId = selection[i];
 
             var employeeList = self.allUsersList();
 
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
-                if (emp.nid == employeeId) {
-                    removeItemFromList(self.usersNotInGroupList, employeeId);
+                if (emp.nid == targetId) {
+                    removeItemFromList(self.usersNotInGroupList, targetId);
                     break;
                 }
             }
-
             self.usersCurrentlyAssignedToAGroup.push(emp);
-
-            lookupChangesToPropagateToServer(groupName, employeeId, true);
+            lookupChangesToPropagateToServer(groupName, targetId, true);
         }
-
         self.selectionOfEmployee = ko.observableArray();
+        console.log(self.employeeGroupChangeList());
     }
 
 
@@ -357,28 +344,28 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
         return null;
     }
 
-
     self.removeFromGroup = function (data) {
 
         var selection = self.selectionOfEmployeeToRemove();
         var emp = null;
 
         for (var i = 0; i < selection.length; i++) {
-            var employeeId = selection[i];
+            var targetId = selection[i];
             var employeeList = self.allUsersList();
             for (var j = 0; j < employeeList.length; j++) {
                 emp = employeeList[j];
-                if (emp.nid == employeeId) {
-                    removeItemFromList(self.usersCurrentlyAssignedToAGroup, employeeId);
+                if (emp.nid == targetId) {
+                    removeItemFromList(self.usersCurrentlyAssignedToAGroup, targetId);
                     break;
                 }
             }
-
             self.usersNotInGroupList.push(emp);
-            lookupChangesToPropagateToServer(self.currentlySelectedGroup(), employeeId, false);
+            lookupChangesToPropagateToServer(self.currentlySelectedGroup(), targetId, false);
         }
 
         self.selectionOfEmployeeToRemove = ko.observableArray();
+
+        console.log(self.employeeGroupChangeList());
     }
 
     function lookupChangesToPropagateToServer(groupName, employeeId, boolValueToSet) {
@@ -405,7 +392,7 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
 
         if (recordModifiedIndicator == true) {
             removeItemFromListIfExistByGroupAndId(self.employeeGroupChangeList(), groupId, employeeId);
-            var employeeGroupInfo = new UserRoleChangeInfo(groupId, employeeId, boolValueToSet);
+            var employeeGroupInfo = new UserRoleChangeSet(groupId, employeeId, boolValueToSet);
             self.employeeGroupChangeList.push(employeeGroupInfo);
         }
     }
@@ -445,31 +432,33 @@ var ConfigureUserRoleViewModel = function (globalViewModel) {
 
     self.currentlySelectedGroup.subscribe(function (groupName) {
 
-        self.usersNotInGroupList.removeAll();
-        var assignedEmployees = usersGroupData[groupName];
-        var clonedAssignedEmployees = assignedEmployees.slice();
-        self.usersCurrentlyAssignedToAGroup(clonedAssignedEmployees);
-
-        if (assignedEmployees != undefined) {
-            var newList = self.allUsersList.slice();
-
-            for (var i = 0; i < assignedEmployees.length; i++) {
-                for (var k = 0; k < newList.length; k++) {
-                    if (newList[k][elementFieldName] == assignedEmployees[i][elementFieldName]) {
-                        newList.splice(k, 1);  // remove the list
-                    }
-                }
-            }
-
-            if (newList.length > 0) {
-                self.usersNotInGroupList(newList);
-            }
-
-            //pushDataToComboBox(targetControlId, assignedEmployees);
+        if (groupName === undefined) {
+            self.usersCurrentlyAssignedToAGroup([]);
+            self.usersNotInGroupList([]);
         }
         else {
 
-            // appendAvailableHolidayDataToComboBox(allHolidays, targetControlId);
+            self.usersNotInGroupList.removeAll();
+            var assignedEmployees = usersGroupData[groupName];
+            var clonedAssignedEmployees = assignedEmployees.slice();
+            self.usersCurrentlyAssignedToAGroup(clonedAssignedEmployees);
+
+            if (assignedEmployees !== undefined) {
+                var newList = self.allUsersList.slice();
+
+                for (var i = 0; i < assignedEmployees.length; i++) {
+                    for (var k = 0; k < newList.length; k++) {
+                        if (newList[k][elementFieldName] == assignedEmployees[i][elementFieldName]) {
+                            newList.splice(k, 1);  // remove the list
+                        }
+                    }
+                }
+                if (newList.length > 0) {
+                    self.usersNotInGroupList(newList);
+                }
+            }
+            else {
+            }
         }
     });
 }
