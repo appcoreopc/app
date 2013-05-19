@@ -55,7 +55,7 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 		private List<Users> users;
 		
 		@Transient
-		private List<Forms> forms;
+		private List<FormPermission> forms;
 		
 		
 		@Column(name = "LastUpdate")
@@ -137,12 +137,12 @@ import com.appCore.personnel.Core.Job.Entity.Employee;
 		}
 
 
-		public List<Forms> getForms() {
+		public List<FormPermission> getForms() {
 			return forms;
 		}
 
 
-		public void setForms(List<Forms> forms) {
+		public void setForms(List<FormPermission> forms) {
 			this.forms = forms;
 		}
 		

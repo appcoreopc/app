@@ -52,8 +52,8 @@ import javax.persistence.Table;
 		private Timestamp lastUpdate;
 
 
-		@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		private Forms forms;
+		//@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+		//private Forms forms;
 				
 		
 		public Integer getNid() { 
@@ -121,6 +121,7 @@ import javax.persistence.Table;
 			this.lastUpdate = lastUpdate;
 		}
 		
+		/*
 		public Forms getForms() { 
 			return this.forms;
 		}
@@ -128,5 +129,6 @@ import javax.persistence.Table;
 		public void setForms(Forms forms) { 
 			this.forms= forms;
 		}
+		*/
 
 	}

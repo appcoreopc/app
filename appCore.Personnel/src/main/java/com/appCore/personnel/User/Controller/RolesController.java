@@ -52,10 +52,18 @@ public class RolesController
 				return roles;
 		}
 
-		@RequestMapping(value = "/Roles/configuredRole", method = RequestMethod.GET)		
-		public @ResponseBody RequestStatus saveconfiguredRole (@RequestParam(value="employeeId", required=true) int employeeId, int groupId, boolean isGrantAccess) 
+		@RequestMapping(value = "/Roles/configureRole", method = RequestMethod.GET)		
+		public @ResponseBody RequestStatus saveconfigureRole (@RequestParam(value="targetId", required=true) int targetId, int groupId, boolean isGrantAccess) 
 		{
-				service.saveconfiguredRole(employeeId, groupId, isGrantAccess);
+				service.saveconfigureRole(targetId, groupId, isGrantAccess);
+				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+		}
+		
+		
+		@RequestMapping(value = "/Roles/configureResource", method = RequestMethod.GET)		
+		public @ResponseBody RequestStatus configureResource(@RequestParam(value="targetId", required=true) int targetId, int groupId, boolean isGrantAccess, String permission) 
+		{
+				service.configureResource(targetId, groupId, isGrantAccess, permission);
 				return RequestStatusHelper.GenerateRequestStatusSaveOperation();
 		}
 		

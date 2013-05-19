@@ -42,6 +42,12 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
 
     self.globalViewModel = globalViewModel;
 
+    self.addPermission = ko.observable(false);
+    self.updatePermission = ko.observable(false);
+    self.deletePermission = ko.observable(false);
+
+    self.userConfigurePermission = ko.observableArray();
+
     function getData(value) {
         var helper = new UserHelper();
         var entityObject = { id:globalViewModel.companyId() };
@@ -54,9 +60,7 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     function getRolesRightsCallback(data) {
-
         self.allRolesList(data);
-
         $.each(data, function (key, value) {
             rightsGroupData[value[groupFieldName]] = value.forms;
         });
@@ -102,7 +106,6 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     self.editInfoData = function (data) {
-
         self.infoCategory = data.infoCategory;
         self.infoDescription = data.infoDescription;
         self.infoType = data.infoType;
@@ -242,16 +245,17 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
 
     self.updateData = function (data) {
         var list = self.targetGroupChangeSet();
+
         var helper = new UserHelper();
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
             var entityObject = {
                 targetId:item.targetId(),
                 groupId:item.groupId(),
-                isGrantAccess:item.isMember()
+                isGrantAccess:item.isMember(),
+                permission:item.permission()
             };
-
-            helper.configureUserRole(entityObject, updateCompleteCallBack);
+            helper.configureRoleResource(entityObject, updateCompleteCallBack);
         }
     }
 
@@ -264,9 +268,11 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
     }
 
     self.assignToGroup = function (data) {
+
         var targetElement = null;
         var selection = self.selectionOfModule();
         var groupName = self.currentlySelectedGroup();
+        var permission = null;
 
         for (var i = 0; i < selection.length; i++) {
             var selectedElementId = selection[i];
@@ -275,17 +281,43 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
             for (var j = 0; j < listedModules.length; j++) {
                 targetElement = listedModules[j];
                 if (targetElement.nid == selectedElementId) {
+
+                    if (targetElement.permission == undefined) {
+                        permission = getPermissionFromInterface();
+                    }
                     removeItemFromList(self.moduleNotInGroupList, selectedElementId);
                     break;
                 }
             }
-            var flattenElement = { "nid":targetElement.nid, "formName":targetElement.formId, "permission":null};
+            var flattenElement = { "nid":targetElement.nid, "formName":targetElement.formId, "permission":permission };
             self.rightsCurrentlyAssignedToAGroup.push(flattenElement);
-            lookupChangesToPropagateToServer(groupName, selectedElementId, true);
-            console.log(self.targetGroupChangeSet());
+            lookupChangesToPropagateToServer(groupName, selectedElementId, true, permission);
         }
         self.selectionOfModule = ko.observableArray();
     }
+
+    function getPermissionFromInterface() {
+        var permission = null;
+        if (self.addPermission())
+            permission = "A";
+        if (self.updatePermission())
+            permission += "U";
+        if (self.deletePermission())
+            permission += "D";
+        return permission;
+    }
+
+
+    function getPermissionFromConfiguredList(list, selectedElement) {
+        for (var i = 0; i < list.length; i++) {
+            var element = list[i];
+            if (element.nid == selectedElement) {
+                return element.permission;
+            }
+        }
+        return undefined;
+    }
+
 
     function removeItemFromListIfExistByGroupAndId(list, groupId, targetId) {
         for (var i = 0; i < list.length; i++) {
@@ -335,35 +367,35 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
                     self.rightsCurrentlyAssignedToAGroup.splice(j, 1);
                 }
             }
-            lookupChangesToPropagateToServer(self.currentlySelectedGroup(), selectedElementToRemove, false);
-            console.log(self.targetGroupChangeSet());
+            lookupChangesToPropagateToServer(self.currentlySelectedGroup(), selectedElementToRemove, false, itemElement.permission);
+
         }
         self.selectionToRemove = ko.observableArray();
     }
 
-    function lookupChangesToPropagateToServer(groupName, taregetId, boolValueToSet) {
+    function lookupChangesToPropagateToServer(groupName, targetId, boolValueToSet, permission) {
         var recordModifiedIndicator = true;
         var groupId = getGroupId(groupName);
 
         if (boolValueToSet) {
-            if (checkIfReassignment(taregetId, groupName)) {
+            if (checkIfReassignment(targetId, groupName)) {
                 recordModifiedIndicator = false;
-                removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, taregetId);
+                removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, targetId);
             }
         }
         else if (boolValueToSet == false) {
-            if (isRevokeAccess(taregetId, groupName)) {
+            if (isRevokeAccess(targetId, groupName)) {
                 recordModifiedIndicator = true;
             }
             else {
                 recordModifiedIndicator = false;
-                removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, taregetId);
+                removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, targetId);
             }
         }
 
         if (recordModifiedIndicator == true) {
-            removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, taregetId);
-            var employeeGroupInfo = new GenericChangeSetInfo(groupId, taregetId, boolValueToSet);
+            removeItemFromListIfExistByGroupAndId(self.targetGroupChangeSet(), groupId, targetId);
+            var employeeGroupInfo = new GenericChangeSetInfo(groupId, targetId, boolValueToSet, permission);
             self.targetGroupChangeSet.push(employeeGroupInfo);
         }
     }
@@ -433,9 +465,9 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
         if (groupName != undefined) {
             self.moduleNotInGroupList.removeAll();
             self.targetGroupChangeSet.removeAll();
-
             var assignedRights = rightsGroupData[groupName];
             var clonedAssignedRights = assignedRights.slice();
+
             self.rightsCurrentlyAssignedToAGroup(flattenObjects(clonedAssignedRights));
 
             if (assignedRights != undefined) {
@@ -447,7 +479,6 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
                         }
                     }
                 }
-
                 if (newList.length > 0) {
                     self.moduleNotInGroupList(flattenObjects(newList));
                 }

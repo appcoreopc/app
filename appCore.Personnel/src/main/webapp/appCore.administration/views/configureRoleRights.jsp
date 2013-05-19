@@ -43,8 +43,10 @@
         <div class="labelSectionBlock">Permission</div>
 
         <div class="inputSection">
-        <select id="allResourceRights">
-        </select>
+         <input type='checkbox' value='A' data-bind="checked : addPermission" />
+         <input type='checkbox' value='U' data-bind="checked : updatePermission" />
+         <input type='checkbox' value='D' data-bind="checked : deletePermission" />
+
         </div>
 
 

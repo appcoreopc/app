@@ -24,6 +24,15 @@ var UserHelper = function()
         });
     }
 
+    this.configureRoleResource = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalConfigureRoleResourceUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+
     this.getResourceList = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalResourceListByCompanyUrl, entityData, "get");
