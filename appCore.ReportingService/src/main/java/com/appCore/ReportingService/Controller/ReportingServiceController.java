@@ -1,29 +1,87 @@
-package com.appCore.ReportingService.Controller;
+package com.appCore.reportingService.Controller;
+
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import javax.annotation.Resource;
-import java.util.List;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
+import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
+import com.appCore.reportingService.Entity.Report;
+import com.appCore.reportingService.Entity.ReportRequest;
+import com.appCore.reportingService.Service.ReportService;
 
-import com.appCore.ReportingService.Entity.ReportRequest;
+import javax.annotation.Resource;
 
 @Controller
 @RequestMapping("/Core")
 public class ReportingServiceController {
 
 	protected static Logger logger = Logger.getLogger("controller");
+	@Resource(name="reportService")
+	private ReportService service;
+	
+	
+	@RequestMapping(value = "/Report/list", method = RequestMethod.GET)		
+	public @ResponseBody List<Report> listReport () 
+	{
+			List<Report> list = service.getAll();
+			return list;
+	}
+	
+	@RequestMapping(value = "/Report/listByCompany", method = RequestMethod.GET)		
+	public @ResponseBody List<Report> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+	{
+			List<Report> list = service.getAllByCompany(id);
+			return list;
+	}
 
+	@RequestMapping(value = "/Report/get", method = RequestMethod.GET)		
+	public @ResponseBody Report getReport (@RequestParam(value="id", required=true) Integer id ) 
+	{
+			Report report=service.get(id);
+			return report;
+	}
+
+	@RequestMapping(value = "/Report/add", method = RequestMethod.GET)
+	public @ResponseBody RequestStatus renderAddReport (@RequestBody Report report)
+	{
+			service.add(report);
+			return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+	}
+
+	@RequestMapping(value = "/Report/add", method = RequestMethod.POST)
+	public @ResponseBody RequestStatus addReport (@RequestBody Report report)
+	{
+			service.add(report);
+			return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+	}
+
+	@RequestMapping(value = "/Report/saveOrUpdate", method = RequestMethod.POST)
+	public @ResponseBody RequestStatus saveOrUpdateReport (@RequestBody Report report)
+	{
+			service.saveOrUpdate(report);
+			return RequestStatusHelper.GenerateRequestStatusSaveOperation();
+	}
+
+	@RequestMapping(value = "/Report/delete", method = RequestMethod.GET)
+	public @ResponseBody RequestStatus deleteReport (@RequestParam(value="id", required=true) Integer id)
+	{
+			service.delete(id);
+			return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
+	}
+	
+	
+	
+	
 	@RequestMapping(value = "/Report/getReport", method = RequestMethod.GET)
 	public @ResponseBody
-	String getReport(@RequestParam(value = "id", required = true) ReportRequest reportRequest) {
+	String getReport(
+			@RequestParam(value = "id", required = true) ReportRequest reportRequest) {
 		return "";
 	}
 
@@ -34,7 +92,7 @@ public class ReportingServiceController {
 		return "";
 	}
 
-	/////////////////////////////////////////////////////////////////////////////////////////
+	// ///////////////////////////////////////////////////////////////////////////////////////
 	@RequestMapping(value = "/Report/getAllUserReport", method = RequestMethod.GET)
 	public @ResponseBody
 	String getAllUserReport(
@@ -63,7 +121,5 @@ public class ReportingServiceController {
 	String getUserReport(@RequestParam(value = "id", required = true) Integer id) {
 		return "";
 	}
-
-	/////////////////////////////////////////////////////////////////////////////////////////
 
 }

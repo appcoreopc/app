@@ -15,10 +15,10 @@ import org.apache.log4j.Logger;
 import com.appCore.Requests.CodeRequest;
 import com.appCore.Requests.RequestStatus;
 
+import com.appCore.personnel.Core.CodeChecker.CodeCheckerHelper;
 import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.BranchSummary;
 import com.appCore.personnel.Core.Entity.UnitSummary;
-import com.appCore.personnel.Core.Helpers.CodeCheckerHelper;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.AssociationMembershipType;
 import com.appCore.personnel.Core.Service.BranchService;

@@ -1,12 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.appCore.personnel</groupId>
-	<artifactId>appCore-personnel</artifactId>
-	<packaging>war</packaging>
-	<version>1.0.0-SNAPSHOT</version>
-	<name>appCorePersonnel</name>
-	<url>http://maven.apache.org</url>
+	<groupId>com.appCore.ReportingService</groupId>
+	<artifactId>com.appCore.ReportingService</artifactId>
+	<version>1</version>
 	<repositories>
 		<repository>
 			<id>fdvsolution.public</id>
@@ -217,19 +214,6 @@
 			<groupId>ar.com.fdvs</groupId>
 			<artifactId>DynamicJasper</artifactId>
 			<version>4.0.0</version>
-		</dependency>
-	</dependencies>
-	<build>
-		<finalName>appCore.Personnel</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+		</dependency>		
+	</dependencies>	
 </project>

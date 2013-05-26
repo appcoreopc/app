@@ -1,4 +1,4 @@
-package com.appCore.ReportingService.Entity;
+package com.appCore.reportingService.Entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -14,6 +14,10 @@ public class ReportRequest implements Serializable {
 	List<String> fields;
 		
 	String userReportName;
+	
+	Integer resourceId; 
+
+	String reportLogicScript; 
 	
 	UserInfo userInfo;
 
@@ -63,6 +67,22 @@ public class ReportRequest implements Serializable {
 
 	public void setUserInfo(UserInfo userInfo) {
 		this.userInfo = userInfo;
+	}
+
+	public Integer getResourceId() {
+		return resourceId;
+	}
+
+	public void setResourceId(Integer resourceId) {
+		this.resourceId = resourceId;
+	}
+
+	public String getReportLogicScript() {
+		return reportLogicScript;
+	}
+
+	public void setReportLogicScript(String reportLogicScript) {
+		this.reportLogicScript = reportLogicScript;
 	}
 	
 }

@@ -1,4 +1,4 @@
-package com.appCore.ReportingService.Entity;
+package com.appCore.reportingService.Entity;
 
 import java.io.Serializable;
 

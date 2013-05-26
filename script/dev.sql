@@ -1,4 +1,5 @@
 insert into roles (companyId, rolename, description) values (1, 'General', 'General');
+insert into roles (companyId, rolename, description) values (1, 'Group B', 'Group B');
 insert into roles (companyId, rolename, description) values (2, 'General CompanyB', 'General CompanyB');
 
 insert into category (categoryname, description) values ('CompanySetup', 'Company');
@@ -42,8 +43,9 @@ insert into forms (formid, link, category_nid, companyId) values ('Configure Emp
 
 insert into forms (formid, link, category_nid, companyId) values ('Role', '../../appCore.administration/views/roleList.jsp', 1, 1);
 insert into forms (formid, link, category_nid, companyId) values ('Resource', '../../appCore.administration/views/resourceAccessList.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Manage Role', '../../appCore.administration/views/configureRoleRights.jsp', 1, 1);
+insert into forms (formid, link, category_nid, companyId) values ('Manage Role Resource', '../../appCore.administration/views/configureRoleRights.jsp', 1, 1);
 insert into forms (formid, link, category_nid, companyId) values ('User', '../../appCore.administration/views/userList.jsp', 1, 1);
+insert into forms (formid, link, category_nid, companyId) values ('Manager Role User', '../../appCore.administration/views/configureUserRoles.jsp', 1, 1);
 
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (2,1, 'AUD');
@@ -65,6 +67,10 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (29, 1,'
 insert into forms_actions_role (forms_nid, role_nid, permission) values (30, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (31, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (32, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (33, 1,'AUD');
+
+
+insert into forms_actions_role (forms_nid, role_nid, permission) values (1, 2,'AUD');
 
 insert into level (name, description, companyRef) values ('Level1', 'Level1', 1);
 insert into level (name, description, companyRef) values ('Level2', 'Level2', 1);

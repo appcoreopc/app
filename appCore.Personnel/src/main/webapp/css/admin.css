@@ -1,0 +1,11 @@
+.configureLabelSectionBlock {
+    color: #7B746E;
+    display: inline-block;
+    font-family: omnes-pro, arial, sans-serif;
+    width: 150px;
+}
+.configureInputSectionBlock {
+    display: block;
+
+}
+

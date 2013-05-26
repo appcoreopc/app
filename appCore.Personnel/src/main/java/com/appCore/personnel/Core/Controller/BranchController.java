@@ -7,15 +7,23 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import groovy.util.ResourceException;
+import groovy.util.ScriptException;
+
 import javax.annotation.Resource;
+
+import java.io.IOException;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
+import org.codehaus.groovy.control.CompilationFailedException;
 
 
 import com.appCore.Mvc.Controller.AppCoreController;
 import com.appCore.Requests.RequestStatus;
+import com.appCore.Scripting.GroovyScriptProvider;
 import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.BranchSummary;
 import com.appCore.personnel.Core.Entity.UnitSummary;
@@ -59,6 +67,20 @@ public class BranchController {
 		Branch branch = service.get(id);
 		return branch;
 	}
+	
+	
+	@RequestMapping(value = "/Branch/getCompile", method = RequestMethod.GET)
+	public @ResponseBody
+	String getCompile(@RequestParam(value = "id", required = true) Integer id) throws IOException, ResourceException, ScriptException, CompilationFailedException, InstantiationException, IllegalAccessException {
+		
+		GroovyScriptProvider scripting = new GroovyScriptProvider("c:\\temp\\");
+		scripting.executeScript("hello.groovy");
+		scripting.invokeMethodOnClass("employee.groovy", "plus",  new Object[] {10 });
+		
+		return "test";
+	}
+	
+	
 
 	@RequestMapping(value = "/Branch/add", method = RequestMethod.GET)
 	public @ResponseBody

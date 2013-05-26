@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
 
 import com.appCore.Requests.CodeRequest;
 import com.appCore.Requests.RequestStatus;
-import com.appCore.personnel.Core.Helpers.CodeCheckerHelper;
+import com.appCore.personnel.Core.CodeChecker.CodeCheckerHelper;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 import com.appCore.personnel.Core.Job.Entity.Race;

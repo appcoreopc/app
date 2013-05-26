@@ -1,4 +1,4 @@
-package com.appCore.personnel.Core.Helpers;
+package com.appCore.personnel.Core.CodeChecker;
 
 import javax.annotation.Resource;
 
@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.appCore.Requests.CodeRequest;
 import com.appCore.Requests.RequestStatus;
+import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 
 @Service("codeCheckerService")
 @Transactional

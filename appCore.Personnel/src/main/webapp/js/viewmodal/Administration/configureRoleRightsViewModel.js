@@ -284,6 +284,11 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
 
                     if (targetElement.permission == undefined) {
                         permission = getPermissionFromInterface();
+
+                        if (permission == null) {
+                            alert('you need to assign atleast a permission');
+                            return;
+                        }
                     }
                     removeItemFromList(self.moduleNotInGroupList, selectedElementId);
                     break;
@@ -484,7 +489,61 @@ var ConfigureRoleRightsViewModel = function (globalViewModel) {
                 }
             }
             else {
+
             }
         }
+        else {
+            self.moduleNotInGroupList([]);
+            self.rightsCurrentlyAssignedToAGroup([]);
+        }
     });
+
+    self.examinePermission = function () {
+        getModulePermission(self.selectionOfModule(), self.moduleNotInGroupList())
+    }
+
+    self.examinePermissionAllocatedModule = function () {
+        getModulePermission(self.selectionToRemove(), self.rightsCurrentlyAssignedToAGroup())
+    }
+
+
+    function getModulePermission(selectedOptions, listedModules) {
+
+        var unassignedPermission = selectedOptions;
+        var firstRecord = null;
+        if (Object.prototype.toString.call(unassignedPermission) === '[object Array]') {
+            firstRecord = unassignedPermission[0];
+        }
+
+        if (firstRecord != null) {
+            var moduleRecords = listedModules;
+            var permission = findPermission(moduleRecords, firstRecord);
+            if (permission != null) {
+                self.addPermission(matchPermission(permission, "A"));
+                self.updatePermission(matchPermission(permission, "U"));
+                self.deletePermission(matchPermission(permission, "D"));
+            }
+            else {
+                self.addPermission(false);
+                self.updatePermission(false);
+                self.deletePermission(false);
+            }
+        }
+    }
+
+    function findPermission(list, targetId) {
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].nid == targetId) {
+                return list[i].permission;
+            }
+        }
+        return null;
+    }
+
+    function matchPermission(source, searchString) {
+        if (source.indexOf(searchString) > -1) {
+            return true;
+        }
+        return false;
+    }
 }

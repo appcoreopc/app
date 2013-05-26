@@ -1,4 +1,5 @@
         <link href="../../css/employeeGroup.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/admin.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/Administration/configureRoleRightsViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/Administration/userHelper.js"></script>
 
@@ -38,11 +39,9 @@
 
 
         <div class="formRow">
-        &nbsp;
+        <div class="configureLabelSectionBlock">Assigned permissions</div>
 
-        <div class="labelSectionBlock">Permission</div>
-
-        <div class="inputSection">
+        <div class="configureInputSectionBlock">
          <input type='checkbox' value='A' data-bind="checked : addPermission" />
          <input type='checkbox' value='U' data-bind="checked : updatePermission" />
          <input type='checkbox' value='D' data-bind="checked : deletePermission" />
@@ -63,9 +62,9 @@
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlock">Resources in system</div><div class="inputSectionList">
+        <div class="configureLabelSectionBlock">Resources in system</div><div class="inputSectionList">
 
-        <select multiple="true" id="moduleListedInSystem" data-bind="options: moduleNotInGroupList, optionsText: 'formName', optionsValue: 'nid', selectedOptions : selectionOfModule">
+        <select multiple="true" id="moduleListedInSystem" data-bind="options: moduleNotInGroupList, optionsText: 'formName', optionsValue: 'nid', selectedOptions : selectionOfModule, event : { change : examinePermission } ">
         </select>
 
         </div>
@@ -75,7 +74,7 @@
         <div class="rightSection">
 
         <div class="labelSectionBlockRight">Modules assigned to current role</div><div class="inlineLabelSection">
-        <select multiple="true" id="currentlyAssignedGroup" data-bind="options: rightsCurrentlyAssignedToAGroup, optionsText: 'formName', optionsValue: 'nid', selectedOptions : selectionToRemove">
+        <select multiple="true" id="currentlyAssignedGroup" data-bind="options: rightsCurrentlyAssignedToAGroup, optionsText: 'formName', optionsValue: 'nid', selectedOptions : selectionToRemove, event : { change : examinePermissionAllocatedModule }">
         </select>
         </div>
 

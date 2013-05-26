@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!-- Configuration of the Ant build system to generate a Jar file -->
+<project name="appCore.ReportingService" default="CreateJar">
+	<target name="CreateJar" description="Create Jar file">
+		<jar jarfile="target/com.appCore.ReportingService.jar" basedir="." includes="*.class">
+			<fileset dir="./target/classes" includes="com/**" />
+		</jar>
+		<exec executable="cmd">
+			<arg
+				value="/c rmdir /S /Q C:\Users\jeremywoo\.m2\repository\com\appCore\ReportingService" />
+		</exec>
+		<exec executable="cmd">
+			<arg
+				value="/c mvn install:install-file -Dfile=C:\appCoreDev\appCore.ReportingService\target\com.appCore.ReportingService.jar -DgroupId=com.appCore.ReportingService -DartifactId=com.appCore.ReportingService -Dversion=1 -Dpackaging=jar" />
+		</exec>
+	</target>
+</project>
