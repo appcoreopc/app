@@ -11,7 +11,7 @@
 
         <%@ include file="../includes/css_includes.html" %>
         <%@ include file="../includes/js_includes.html" %>
-        <%@ include file="/includes/header.html" %>
+        <%@ include file="/includes/admin_header.html" %>
 
         <script language="javascript" src="../../js/coreComboControl.js"></script>
 
@@ -70,13 +70,13 @@
 
                 globalViewModel.companyId.subscribe(function(newValue)
                 {
-                    // need to find out how to check getData function is defined
                     $(".maintenanceCommand").empty();
                     getData(newValue);
                 });
 
-                //$(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalHostname + globalMenuServiceUrl);
-                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalRoleMenuServiceUrl, globalViewModel.employeeRole());
+
+                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalAdminMenuServiceUrl, globalViewModel.employeeRole());
+                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole());
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);
@@ -89,7 +89,6 @@
                 var ajaxCore = new AjaxCore();
                 var request;
                 var url = globalCompanyServiceUrl;
-                preparePageForLoading("personnelSummaryWidget.jsp");
 
             });
 

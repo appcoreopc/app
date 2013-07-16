@@ -6,6 +6,35 @@
 }
 .configureInputSectionBlock {
     display: block;
-
 }
 
+.roleLabelSectionBlock {
+    color: #7B746E;
+    display: block;
+    padding-right: 0px;
+    width: 200px;
+}
+
+#configureRoleRight {
+    border: 1px solid #D1D3D4;
+    box-shadow: none;
+    padding-left: 70px;
+}
+
+#configureUserRoleForm {
+    border: 1px solid #D1D3D4;
+    box-shadow: none;
+    padding-left: 70px;
+}
+
+.adminButton {
+    padding-left: 21px;
+}
+
+.adminButton button {
+    background: -moz-linear-gradient(center top , #000000 0%, #000000 50%, #000000 50.1%, #000000 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #000000;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 6px 8px;
+}

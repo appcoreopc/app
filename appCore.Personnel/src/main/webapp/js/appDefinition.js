@@ -1,7 +1,13 @@
 var globalHostname = "http://localhost:8080/appCore-personnel";
 var globalAdminHostPath = "../../appCore.administration/views/";
 var globalMenuServiceUrl = "/app/User/Forms/listMenu";
-var globalRoleMenuServiceUrl = globalHostname + "/app/User/Forms/listMenuByRole";
+var globalRoleMenuServiceUrl = globalHostname + "/app/User/Forms/listPersonnelMenuByRole";
+
+var globalAdminMenuServiceUrl = globalHostname + "/app/User/Forms/listAdminMenuByRole";
+var globalPayrollMenuServiceUrl = globalHostname + "/app/User/Forms/listPayrollMenuByRole";
+var globalLeaveMenuServiceUrl = globalHostname + "/app/User/Forms/listLeaveMenuByRole";
+var globalUserProfileServiceUrl = globalHostname + "/app/User/Forms/listUserProfileMenu";
+
 var globalCompanyServiceUrl = "/app/Core/CompanyEntity/list";
 var hostAuthorizationUrl = globalHostname + "/app/User/Forms/get";
 var globalResourceGetUrl = globalHostname + "/app/User/Forms/getFormResource";
@@ -18,6 +24,7 @@ var coreEmployeeEmploymentViewPage = "Branch";
 var coreEmployeeExpertiseViewPage = "Branch";
 var coreDepartmentPage = "Department";
 var coreCompanyPage = "Company";
+var coreChangePasswordPage = "Company";
 var coreDivisionPage = "Division";
 var coreJobSetupPage = "Branch";
 var coreUnitPage = "Unit";
@@ -207,6 +214,7 @@ var globalEmployeePixUploadPath = globalHostname + "/app/Core/create/upload";
 var globalPersonnelControlPanel = "personnelControlPanel.jsp";
 var globalUserValidationUrl = globalHostname + "/app/Users/Users/validateLogin";
 var globalUserAuthenticationUrl = globalHostname + "/app/Users/Users/authenticate";
+var globalUserPasswordUpdateUrl = globalHostname + "/app/Users/Users/updatePassword";
 var globalAdminCentralPage = "userList.jsp";
 var globalEmptyMainPage = "emptyMainScreen.jsp";
 

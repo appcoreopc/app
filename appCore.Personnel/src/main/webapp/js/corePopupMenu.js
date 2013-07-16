@@ -1,6 +1,6 @@
 (function ($) {
     // anything here would be global scope //
-    $.fn.configurePopupMenu = function (targetClickElementId, popupElementName, serviceUrl, roles) {
+    $.fn.configurePopupMenu = function (targetClickElementId, popupElementName, serviceUrl, roles, popTitle) {
 
         var dataRoles = { "roles":roles };
         var menuLoaded = false;
@@ -40,7 +40,8 @@
                             for (var i = 0; i < menuDataSource.length; i++) {
                                 if (menuDataSource[i].text != null) {
 
-                                    $("#" + popupSetupAccordian).append("<h3>" + menuDataSource[i].text + "</h3>");
+                                    //$("#" + popupSetupAccordian).append("<h3>" + menuDataSource[i].text + "</h3>");
+                                    $("#" + popupSetupAccordian).append("<h3>" + popTitle + "</h3>");
                                     $("#" + popupSetupAccordian).append("<div><p></p></div>");
                                     for (var j = 0; j < menuDataSource[i].items.length; j++) {
                                         $("#" + popupSetupAccordian + " div p").append("<a data-link='" + menuDataSource[i].items[j].link + "'>" + menuDataSource[i].items[j].text + "</a>");

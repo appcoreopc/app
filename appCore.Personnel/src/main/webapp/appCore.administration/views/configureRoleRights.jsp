@@ -23,7 +23,7 @@
         <div class="formRow">
         &nbsp;
 
-        <div class="labelSectionBlock">Role</div>
+        <div class="roleLabelSectionBlock">Role</div>
 
         <div class="inputSection">
         <select id="allEmployeeGroupList" data-bind="options: allRolesList, optionsText: 'rolename', optionsValue: 'rolename', optionsCaption : 'Choose a role' , value : currentlySelectedGroup">

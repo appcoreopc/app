@@ -40,7 +40,5 @@ public class DynamicScriptEngine implements DynamicScripting {
 		scriptEngine.setVariable(variableName, value);
 		
 	}
-
-	
 	
 }

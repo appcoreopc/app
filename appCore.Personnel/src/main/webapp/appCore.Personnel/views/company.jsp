@@ -40,10 +40,11 @@
         <div class="viewData">
         <div class="maintenanceCommand">
         </div>
-        </div>
+
 
         <div>
 
         <div id="companyDiv" data-bind="dataGrid: gridViewModel"></div>
+        </div>
         </div>
         </div>

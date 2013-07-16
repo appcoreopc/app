@@ -21,14 +21,15 @@
         {
 		
         var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest("http://localhost:8080/appCore-personnel/app/Job/EmployeeEmployment/list", null, "get");
+		
+		var reportRequest = { reportId : 1,  reportTitle : "test", outputFormat : "pdf", fields : {}, userReportName : "none", resourceId : 1,  reportLogicScript : "", userInfo : { userId : 1, roleId : 1 } };
+		
+        var request = ajaxCore.sendRequest("http://localhost:8080/appCore-personnel/app/reportingService/Report/executeReport", reportRequest, "get");
 
         request.success(function(dataSource)
         {
-			
-			
-			var vm = new RequestViewModel(dataSource); 
-			ko.applyBindings(vm);
+			//var vm = new RequestViewModel(dataSource); 
+			//ko.applyBindings(vm);
 	  
         });
 

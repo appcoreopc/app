@@ -1,4 +1,5 @@
         <link href="../../css/employeeGroup.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../css/admin.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/Administration/configureUserRoleViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/Administration/userHelper.js"></script>
 
@@ -8,13 +9,13 @@
         $(document).ready(function()
         {
             var vm = new ConfigureUserRoleViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("configureEmployeeGroupForm"));
+            ko.applyBindings(vm, document.getElementById("configureUserRoleForm"));
         });
 
 
         </script>
 
-        <form id="configureEmployeeGroupForm">
+        <form id="configureUserRoleForm">
 
         <div class="form">
         <div class="sectionalForm">
@@ -23,7 +24,7 @@
         <div class="formRow">
         &nbsp;
 
-            <div class="labelSectionBlock">User Role</div>
+            <div class="roleLabelSectionBlock">User Role</div>
 
             <div class="inputSection">
             <select id="allEmployeeGroupList" data-bind="options: allRolesList, optionsText: 'rolename', optionsValue: 'rolename', optionsCaption : 'Choose a role' , value : currentlySelectedGroup">
@@ -40,7 +41,7 @@
 
             <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlock">User listed in system</div><div class="inputSectionList">
+        <div class="configureLabelSectionBlock">User listed in system</div><div class="inputSectionList">
 
         <select multiple="true" id="usersNotInGroupList" data-bind="options: usersNotInGroupList, optionsText: 'username', optionsValue: 'nid', selectedOptions : selectionOfEmployee">
         </select>

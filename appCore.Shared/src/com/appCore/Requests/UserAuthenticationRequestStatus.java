@@ -4,6 +4,8 @@ public class UserAuthenticationRequestStatus extends RequestStatus {
 	
 	private String username; 
 	
+	private int userId;
+	
 	private String landingPage; 
 
 	private int[] roles;
@@ -50,6 +52,14 @@ public class UserAuthenticationRequestStatus extends RequestStatus {
 
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 }

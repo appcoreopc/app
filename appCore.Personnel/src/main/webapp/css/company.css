@@ -1,29 +1,26 @@
-.maintenanceCommand
-{
+.maintenanceCommand {
     background: none repeat scroll 0 0 transparent;
     display: inline-block;
     padding: 12px 0 12px 0px;
     width: auto;
 }
 
-.maintenanceCommand button {
-    background-color: #000000;
-    border-style: none;
-    color: #FFFFFF;
-    font-size: 13px;
-    margin: 4px 0 2px 4px;
-    padding: 6px 10px 6px 6px;
-}
-
 #maintenanceCommand button {
-    background-color: #000000;
-    border-style: none;
-    color: #FFFFFF;
-    font-size: 13px;
-    margin: 4px 6px 2px 0px;
-    padding: 6px 12px 6px 6px;
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(center top, #ED1D89 0%, #DB167D 50%, #D21276 50.1%, #BF0265 100%) repeat scroll 0 0 transparent;
+    border-color: #BF0265 #B11265 #A30E5C;
+    border-style: solid;
+    border-width: 1px;
+    padding: 4px 4px 4px 4px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px 4px 4px 4px;
+    background: -webkit-linear-gradient(top, #EF3093 0%, #E81D87 50%, #E51481 50.1%, #D30270 100%);
 }
-
 
 .icon-plus-circle-1:before {
     content: "";
@@ -47,16 +44,16 @@
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-    font-size : 20px;
+    font-size: 20px;
 }
 
 .formAddRowCommand {
-    display : block;
-    padding-left : 12px;
+    display: block;
+    padding-left: 12px;
 }
 
 .formAddRowCommand button {
-    display : inline;
+    display: inline;
     background-color: #000000;
     border-style: none;
     color: #FFFFFF;
@@ -78,14 +75,14 @@
 }
 
 .emptyDataSpacer {
-    height : 128px;
+    height: 128px;
 }
 
 .formRow textarea {
     height: 140px;
-    width:  300px;
+    width: 300px;
     /*border-radius: 5px 5px 5px 5px;*/
-    font: 400 14px/19px Roboto,sans-serif;
+    font: 400 14px/19px Roboto, sans-serif;
 }
 
 .addressDataType {
@@ -96,6 +93,41 @@
     margin-left: 4px;
 }
 
-div .commandAlign  {
+div .commandAlign {
     padding-left: 18px;
+}
+
+[class="icon-asterisk"]:before {
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
+div#companyCodeSetupTabs ul.ui-widget-header {
+    background: none repeat-x scroll 0 0 #F5F5F5;
+    border: 1px solid #AAAAAA;
+    font-weight: bold;
+}
+
+div#companyCodeSetupTabs ul.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 2px;
+}
+
+div#companyCodeSetupTabs ul.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 2px;
+}
+
+div#companyCodeSetupTabs ul.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 2px;
+}
+
+div#companyCodeSetupTabs ul.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 2px;
+}
+
+div#companyCodeSetupTabs ul li.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color: #3399CC;
+    text-decoration: none;
 }

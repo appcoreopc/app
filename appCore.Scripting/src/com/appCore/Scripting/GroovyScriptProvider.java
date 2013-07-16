@@ -22,6 +22,11 @@ public class GroovyScriptProvider implements ScriptProvider {
 	Binding binding = new Binding();
 	GroovyClassLoader groovyLoader = new GroovyClassLoader(this.getClass().getClassLoader());
 	String codeExecutionPath = "";
+
+	public GroovyScriptProvider() 
+	{
+
+	}
 	
 	public GroovyScriptProvider(String path) throws IOException {
 
@@ -53,6 +58,7 @@ public class GroovyScriptProvider implements ScriptProvider {
 
 		binding.setVariable(variableName, value);
 	}
+		
 	
 	public Object invokeMethodOnClass(String scriptName,  String invokeMethodName, Object[] arguments) throws CompilationFailedException, IOException, InstantiationException, IllegalAccessException
 	{
@@ -61,5 +67,13 @@ public class GroovyScriptProvider implements ScriptProvider {
 		Object result = groovyObject.invokeMethod(invokeMethodName, arguments);
 		return result;
 	}
-	
+		
+	public <T> T createInstance(String scriptName) throws InstantiationException, IllegalAccessException, CompilationFailedException, IOException
+	{
+		System.out.println(scriptName);
+		//GroovyClassLoader classLoader = new GroovyClassLoader();
+		Class targetClass = groovyLoader.parseClass(new File(scriptName));
+		//Class tagetClass = classLoader.par
+		return (T) targetClass.newInstance();
+	}
 }

@@ -6,46 +6,62 @@ insert into category (categoryname, description) values ('CompanySetup', 'Compan
 insert into category (categoryname, description) values ('Job', 'Job');
 insert into category (categoryname, description) values ('Holiday', 'Holiday');
 
-insert into forms (formid, link, category_nid, companyId) values ('Master Id Setup', 'masterIdSetup.jsp', 1, 1);
+-- Type 
+-- 1 - Personnel 
+-- 2 - Admin
+-- 3 - Leave
+-- 4 - Payroll
+-- 5 - User Profile
 
-insert into forms (formid, link, category_nid, companyId) values ('Company', 'company.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Branch', 'branch.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Division', 'division.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Department', 'department.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Section', 'section.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Unit', 'unit.jsp', 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Master Id Setup', 'masterIdSetup.jsp', 1, 1, 1);
+
+insert into forms (formid, link, category_nid, companyId, type) values ('Company', 'company.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Branch', 'branch.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Division', 'division.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Department', 'department.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Section', 'section.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Unit', 'unit.jsp', 1, 1, 1);
 
 -- insert into forms (formid, link, category_nid) values ('Employee', 'employeeAdd.jsp', 1);
-insert into forms (formid, link, category_nid, companyId) values ('EmployeeList', 'employeeList.jsp', 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('EmployeeList', 'employeeList.jsp', 1, 1, 1);
 
-insert into forms (formid, link, category_nid, companyId) values ('Industry Code', 'maintenanceCode.jsp?id=1', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Gender Code', 'maintenanceCode.jsp?id=2', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Race Code', 'maintenanceCode.jsp?id=3', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Salutation Code', 'maintenanceCode.jsp?id=4', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Religion Code', 'maintenanceCode.jsp?id=5', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Nationality Code', 'maintenanceCode.jsp?id=6', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Marital Status Code', 'maintenanceCode.jsp?id=7', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Level Code', 'maintenanceCode.jsp?id=8', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Field Of ExpertiseCode', 'maintenanceCode.jsp?id=9', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Family Relation Type', 'maintenanceCode.jsp?id=10', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Holiday Group', 'maintenanceCode.jsp?id=12', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Currency', 'maintenanceCode.jsp?id=13', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Configure Company', 'companyConfigurator.jsp', 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Industry Code', 'maintenanceCode.jsp?id=1', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Gender Code', 'maintenanceCode.jsp?id=2', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Race Code', 'maintenanceCode.jsp?id=3', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Salutation Code', 'maintenanceCode.jsp?id=4', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Religion Code', 'maintenanceCode.jsp?id=5', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Nationality Code', 'maintenanceCode.jsp?id=6', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Marital Status Code', 'maintenanceCode.jsp?id=7', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Level Code', 'maintenanceCode.jsp?id=8', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Field Of ExpertiseCode', 'maintenanceCode.jsp?id=9', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Family Relation Type', 'maintenanceCode.jsp?id=10', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Employee Group', 'maintenanceCode.jsp?id=11', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Holiday Group', 'maintenanceCode.jsp?id=12', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Currency', 'maintenanceCode.jsp?id=13', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Configure Company', 'companyConfigurator.jsp', 1, 1, 1);
 
-insert into forms (formid, link, category_nid, companyId) values ('Job Setup', 'jobSetup.jsp', 2, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Configure Employee Group', 'configureEmployeeGroup.jsp', 2, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Grade', 'grade.jsp', 2, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Employment Type', 'employmentType.jsp', 2, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Job Setup', 'jobSetup.jsp', 2, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Configure Employee Group', 'configureEmployeeGroup.jsp', 2, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Grade', 'grade.jsp', 2, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Employment Type', 'employmentType.jsp', 2, 1, 1);
 
-insert into forms (formid, link, category_nid, companyId) values ('HolidaySetup', 'holidaySetup.jsp', 3, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Configure Employee Holiday', 'configureHolidayGroup.jsp', 3, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('HolidaySetup', 'holidaySetup.jsp', 3, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Configure Employee Holiday', 'configureHolidayGroup.jsp', 3, 1, 1);
 
-insert into forms (formid, link, category_nid, companyId) values ('Role', '../../appCore.administration/views/roleList.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Resource', '../../appCore.administration/views/resourceAccessList.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Manage Role Resource', '../../appCore.administration/views/configureRoleRights.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('User', '../../appCore.administration/views/userList.jsp', 1, 1);
-insert into forms (formid, link, category_nid, companyId) values ('Manager Role User', '../../appCore.administration/views/configureUserRoles.jsp', 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Role', '../../appCore.administration/views/roleList.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Resource', '../../appCore.administration/views/resourceAccessList.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Manage Role Resource', '../../appCore.administration/views/configureRoleRights.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('User', '../../appCore.administration/views/userList.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Manager Role User', '../../appCore.administration/views/configureUserRoles.jsp', 1, 1, 1);
+
+insert into forms (formid, link, category_nid, companyId, type) values ('Role', 'roleList.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Resource', 'resourceAccessList.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Manage Role Resource', 'configureRoleRights.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('User', 'userList.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Manager Role User', 'configureUserRoles.jsp', 1, 1, 2);
+
+insert into forms (formid, link, category_nid, companyId, type) values ('Change password', 'changePassword.jsp', 1, 1, 5);
+
 
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (2,1, 'AUD');
@@ -68,8 +84,13 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (30, 1,'
 insert into forms_actions_role (forms_nid, role_nid, permission) values (31, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (32, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (33, 1,'AUD');
-
-
+insert into forms_actions_role (forms_nid, role_nid, permission) values (34, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (35, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (36, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (37, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (38, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (39, 1,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (40, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1, 2,'AUD');
 
 insert into level (name, description, companyRef) values ('Level1', 'Level1', 1);
@@ -93,7 +114,6 @@ insert into fieldofexpertise (name, description, companyRef) values ('ExpertiseC
 insert into industry (name, description, companyRef) values ('IT', 'IT', 1);
 insert into industry (name, description, companyRef) values ('Account', 'Account', 1);
 insert into industry (name, description, companyRef) values ('Business', 'Business', 1);
-
 
 insert into industry (name, description, companyRef) values ('IT', 'IT', 2);
 insert into industry (name, description, companyRef) values ('Account', 'Account', 2);
@@ -169,7 +189,6 @@ insert into Country (name, description, companyRef) values ('Malaysia', 'Malaysi
 insert into Country (name, description, companyRef) values ('Singapore', 'Singapore', 1);
 insert into Country (name, description, companyRef) values ('US', 'US', 1);
 insert into Country (name, description, companyRef) values ('India', 'India', 1);
-
 
 insert into Country (name, description, companyRef) values ('Malaysia', 'Malaysia', 2);
 insert into Country (name, description, companyRef) values ('Singapore', 'Singapore', 2);

@@ -5,6 +5,10 @@
         <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/branchInfoViewModel.js"></script>
 
+        <script language="javascript" src="../../js/bootstrap.min.js"></script>
+
+
+
 
         <script type="text/html" id="infoUpdateTemplate">
 
@@ -142,9 +146,9 @@
 
             <div class="sectionalForm">
             <div class="leftSection">
-            <div class="labelSectionBlockBold">Branch Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
+            <div class="labelSectionBlockBold"><i class="icon-asterisk"></i>Branch Code</div><div class="inputSectionBlock"><input
             class="validate[required, maxSize[10]]" type="text" data-bind="codepicker : code, codeEntity : { codeType : 14, companyId : $root.globalViewModel.companyId() }"
-            id="BranchCode" name="BranchCode" placeholder="a new branch code"/></div>
+            id="BranchCode" name="BranchCode" placeholder="a new branch code"  /></div>
             </div>
 
             <div class="rightSection">
@@ -154,7 +158,7 @@
             </div>
 
             <div class="formRow">
-            <div class="labelSectionBlockBold">Branch Name</div><span class='req'>*</span><div class="inputSectionBlock"><input
+            <div class="labelSectionBlockBold"><i class="icon-asterisk"></i>Branch Name</div><div class="inputSectionBlock"><input
             type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="BranchName" placeholder="a new branch name"/></div>
             </div>
 
@@ -220,6 +224,7 @@
 
             <script type="text/javascript">
 
+
                 $(document).ready(function()
                 {
                     var formName = "branchForm";
@@ -227,6 +232,7 @@
                     $("#branchForm").setupViewBinding(vm, globalViewModel);
                     $("#accordian").accordion({collapsible : true, active: false});
                     $("#" + formName).validationEngine();
+
                 });
 
             </script>

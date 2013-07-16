@@ -17,8 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ReportingServiceConfiguration")
 public class ReportingServiceConfiguration implements Serializable
-{
-						
+{						
 				
 		@Id
 		@GeneratedValue 
@@ -29,15 +28,20 @@ public class ReportingServiceConfiguration implements Serializable
 		@Column(name = "CodePath")
 		private String codePath;
 						
+		
+		// Max number of record to be retrieve before putting 
+		// it into a queue to be run by reporting daemon / service. 
+		@Column(name = "MaxRecordConfig")
+		private String maxRecordConfig;
 				
+		
 		@Column(name = "Disabled")
 		private Boolean disabled;
 						
 				
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
-				
-		
+						
 						
 		public Integer getNid() 
 		{ 
@@ -77,6 +81,14 @@ public class ReportingServiceConfiguration implements Serializable
 		public void setLastUpdate(Timestamp lastUpdate) 
 		{ 
 			this.lastUpdate = lastUpdate;
+		}
+
+		public String getMaxRecordConfig() {
+			return maxRecordConfig;
+		}
+
+		public void setMaxRecordConfig(String maxRecordConfig) {
+			this.maxRecordConfig = maxRecordConfig;
 		}				
 			
 }

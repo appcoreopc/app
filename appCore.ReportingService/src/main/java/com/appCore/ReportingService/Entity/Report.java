@@ -18,22 +18,24 @@ import javax.persistence.Table;
 @Table(name = "Report")
 public class Report implements Serializable
 {
-						
-				
+										
 		@Id
 		@GeneratedValue 
 		@Column(name = "Nid")
 		private Integer nid;
-						
+					
 				
 		@Column(name = "ResourceId")
 		private Integer resourceId;
+		
+		@Column(name = "CompanyRef")
+		private Integer companyRef;
 						
 				
 		@Column(name = "ReportLogicScript")
 		private String reportLogicScript;
-						
 				
+		
 		@Column(name = "Name")
 		private String name;
 						
@@ -64,8 +66,7 @@ public class Report implements Serializable
 				
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
-				
-		
+			
 						
 		public Integer getNid() 
 		{ 
@@ -175,6 +176,14 @@ public class Report implements Serializable
 		public void setLastUpdate(Timestamp lastUpdate) 
 		{ 
 			this.lastUpdate = lastUpdate;
+		}
+
+		public Integer getCompanyRef() {
+			return companyRef;
+		}
+
+		public void setCompanyRef(Integer companyRef) {
+			this.companyRef = companyRef;
 		}				
 			
 }

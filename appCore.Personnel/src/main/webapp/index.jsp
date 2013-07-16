@@ -49,6 +49,7 @@
             if (msg.messageCode == 0)
             {
                 sessionStorage.setItem("username", msg.username);
+                sessionStorage.setItem("userId", msg.userId);
                 sessionStorage.setItem("roles", msg.roles);
                 sessionStorage.setItem("companyId", msg.companyId);
                 sessionStorage.setItem("companyName", msg.companyName);

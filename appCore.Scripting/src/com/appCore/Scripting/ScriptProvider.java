@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.codehaus.groovy.control.CompilationFailedException;
 
-interface ScriptProvider {
+public interface ScriptProvider {
 
 	void setScriptPath(String codePath) throws IOException;
 
@@ -22,7 +22,6 @@ interface ScriptProvider {
 	void setVariable(String variableName, Object value);
 	
 	Object invokeMethodOnClass(String scriptName,  String invokeMethodName, Object[] arguments) throws CompilationFailedException, IOException, InstantiationException, IllegalAccessException;
-
 	
-	
+	<T> T createInstance(String scriptName) throws InstantiationException, IllegalAccessException, CompilationFailedException, IOException;
 }

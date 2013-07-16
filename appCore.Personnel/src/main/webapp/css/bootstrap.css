@@ -1,0 +1,21 @@
+.label-warning, .badge-warning {
+    background-color: #F89406;
+}
+
+.label {
+    border-radius: 3px 3px 3px 3px;
+}
+
+.label, .badge {
+    background-color: #999999;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    padding: 2px 4px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+

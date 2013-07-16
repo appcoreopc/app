@@ -40,4 +40,12 @@ var UserHelper = function()
             callBack(data);
         });
     }
+
+    this.updatePassword = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalUserPasswordUpdateUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+               callBack(data);
+        });
+    }
 }

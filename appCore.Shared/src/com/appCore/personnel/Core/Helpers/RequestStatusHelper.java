@@ -20,6 +20,15 @@ public class RequestStatusHelper {
 		return status; 
 	}
 	
+	public static RequestStatus generateReportExecutionStatus() 
+	{
+		RequestStatus status = new RequestStatus(); 
+		status.setMessageCode(0);
+		status.setMessageDescription("Create operation completed successfully.");
+		return status; 
+	}
+	
+	
 	public static RequestStatus GenerateRequestStatusDeleteOperation() 
 	{
 		RequestStatus status = new RequestStatus(); 

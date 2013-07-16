@@ -4911,6 +4911,7 @@ ui-state-hover a, .ui-state-hover a:hover {
     font-weight: bold;
 }
 
+
 #configureSettings {
     font-size: 17px;
 }
@@ -4926,11 +4927,14 @@ ui-state-hover a, .ui-state-hover a:hover {
     height: 11px;
     position: absolute;
     top: -11px;
-    width: 20px;
 }
+
 
 #configureSetupViewAccordian {
     cursor: pointer;
+    box-shadow : 0 3px 8px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(100, 100, 100, 0.4);
+    border-radius: 5px 5px 5px 5px;
 }
 
 #configureSetupViewAccordian div p a {
@@ -4951,15 +4955,6 @@ ui-state-hover a, .ui-state-hover a:hover {
     visibility: hidden;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+.nav > li > .adminNav {
+    display: inline;
+}
