@@ -16,8 +16,6 @@ import java.util.List;
 import javax.persistence.Table;
 import com.appCore.personnel.Core.Calendar.Entity.OffDayInfo;
 
-
-
 	@Entity
 	@Table(name = "OffDay")
 	public class OffDay implements Serializable

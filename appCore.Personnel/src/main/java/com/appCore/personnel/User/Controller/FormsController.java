@@ -53,12 +53,37 @@ public class FormsController
 			return list;
 		}
 		
-		@RequestMapping(value = "/Forms/listMenuByRole", method = RequestMethod.GET)		
+		@RequestMapping(value = "/Forms/listPersonnelMenuByRole", method = RequestMethod.GET)		
 		public @ResponseBody List<FormMenuView> listFormsMenuByRole(@RequestParam(value="roles", required=true) int[] rolesId) 
 		{	
-			return service.getFormsMenuByRole(rolesId);
+			return service.getMenuTypeByRole(rolesId, FormsService.personnelMenuType);
 		}
-
+		
+		
+		@RequestMapping(value = "/Forms/listAdminMenuByRole", method = RequestMethod.GET)		
+		public @ResponseBody List<FormMenuView> listAdminMenuByRole(@RequestParam(value="roles", required=true) int[] rolesId) 
+		{	
+			return service.getMenuTypeByRole(rolesId, FormsService.adminMenuType);
+		}
+		
+		@RequestMapping(value = "/Forms/listLeaveMenuByRole", method = RequestMethod.GET)		
+		public @ResponseBody List<FormMenuView> listLeaveMenuByRole(@RequestParam(value="roles", required=true) int[] rolesId) 
+		{	
+			return service.getMenuTypeByRole(rolesId, FormsService.leaveMenuType);
+		}
+		
+		@RequestMapping(value = "/Forms/listPayrollMenuByRole", method = RequestMethod.GET)		
+		public @ResponseBody List<FormMenuView> listPayrollMenuByRole(@RequestParam(value="roles", required=true) int[] rolesId) 
+		{	
+			return service.getMenuTypeByRole(rolesId, FormsService.payrollMenuType);
+		}
+		
+		@RequestMapping(value = "/Forms/listUserProfileMenu", method = RequestMethod.GET)		
+		public @ResponseBody List<FormMenuView> listUserProfileMenu(@RequestParam(value="roles", required=true) int[] rolesId) 
+		{	
+			return service.getMenuTypeByRole(rolesId, FormsService.userProfileMenuType);
+		}
+				
 		
 		@RequestMapping(value = "/Forms/listMenuByUser", method = RequestMethod.GET)		
 		public @ResponseBody List<FormMenuView> listFormsMenu(Users user)

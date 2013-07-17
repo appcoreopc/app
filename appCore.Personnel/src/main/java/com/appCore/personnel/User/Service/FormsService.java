@@ -14,23 +14,33 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.User.Entity.FormMenuView;
 import com.appCore.personnel.User.Entity.Forms;
 import com.appCore.personnel.User.Entity.Forms_Actions_Role;
 import com.appCore.personnel.User.Entity.Category;
-
 
 @Service("formsService")
 @Transactional
 public class FormsService
 { 
 
+	/*
+	 	Type 
+		1 - Personnel 
+		2 - Admin
+		3 - Leave
+		4 - Payroll
+		5 - User Profile
+	 */
+
+	public static final int personnelMenuType = 1;
+	public static final int adminMenuType = 2;
+	public static final int leaveMenuType = 3;
+	public static final int payrollMenuType = 4;
+	public static final int userProfileMenuType = 5;
+
 	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
-	
-	
-	
 	
 	public FormsService()
 	{
@@ -72,7 +82,7 @@ public class FormsService
 	}
 	
 	
-	public List<FormMenuView> getFormsMenuByRole(int[] roles) 
+	public List<FormMenuView> getMenuTypeByRole(int[] roles, Integer type) 
 	{	
 		List<FormMenuView> result = new ArrayList<FormMenuView>();
 		Session session = sessionFactory.getCurrentSession();
@@ -89,7 +99,7 @@ public class FormsService
 			
 			if (formListToGet.size() > 0)
 			{
-				List<Forms> formDetailList = getFormDetails(formListToGet); 
+				List<Forms> formDetailList = getFormDetails(formListToGet, type); 
 				
 				// Construct the main layout 
 				List<FormMenuView> mainFormViewList = new ArrayList<FormMenuView>();
@@ -116,12 +126,14 @@ public class FormsService
 		return null;
 	}
 	
-	private List<Forms> getFormDetails(List<Integer> formIds)
+	
+	private List<Forms> getFormDetails(List<Integer> formIds, Integer type)
 	{
 		List<Forms> list = new ArrayList<Forms>(); 
 		Session session = sessionFactory.getCurrentSession();
-		Query formsDetailQuery = session.createQuery("FROM Forms WHERE nid in (:formIds)");
+		Query formsDetailQuery = session.createQuery("FROM Forms WHERE nid in (:formIds) AND type= :type");
 		formsDetailQuery.setParameterList("formIds", formIds);
+		formsDetailQuery.setParameter("type", type);
 		return formsDetailQuery.list(); 
 	}
 	

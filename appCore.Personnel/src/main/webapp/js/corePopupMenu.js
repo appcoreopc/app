@@ -41,7 +41,7 @@
                                 if (menuDataSource[i].text != null) {
 
                                     //$("#" + popupSetupAccordian).append("<h3>" + menuDataSource[i].text + "</h3>");
-                                    $("#" + popupSetupAccordian).append("<h3>" + popTitle + "</h3>");
+                                    $("#" + popupSetupAccordian).append("<div class='popupMenuTitle'>" + popTitle + "</div>");
                                     $("#" + popupSetupAccordian).append("<div><p></p></div>");
                                     for (var j = 0; j < menuDataSource[i].items.length; j++) {
                                         $("#" + popupSetupAccordian + " div p").append("<a data-link='" + menuDataSource[i].items[j].link + "'>" + menuDataSource[i].items[j].text + "</a>");

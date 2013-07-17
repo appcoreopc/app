@@ -61,6 +61,27 @@ public class UsersController {
 	}
 	
 
+	@RequestMapping(value = "/Users/updatePassword", method = RequestMethod.GET)
+	public @ResponseBody RequestStatus updatePassword(@RequestParam(value = "id", required = true) Integer userId, String oldPassword, String newPassword ) {
+		
+		RequestStatus status = new RequestStatus();
+		int updateResult = service.changePassword(userId, oldPassword, newPassword);
+		
+		if (updateResult == 0)
+		{
+		    status.setMessageCode(0);
+		    status.setMessageDescription("Password successfully changed.");
+		}
+		else 
+		{
+			status.setMessageCode(-1);
+			status.setMessageDescription("Old password does not matched.");
+		}
+		
+		return status;
+	}
+	
+	
 	@RequestMapping(value = "/Users/get", method = RequestMethod.GET)
 	public @ResponseBody
 	Users getUsers(@RequestParam(value = "id", required = true) Integer id) {

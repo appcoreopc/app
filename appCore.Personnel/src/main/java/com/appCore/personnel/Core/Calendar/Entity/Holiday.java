@@ -22,13 +22,11 @@ import javax.persistence.Transient;
 import java.util.List;
 import javax.persistence.Table;
 
-
-
 	@Entity
 	@Table(name = "Holiday")
 	public class Holiday implements Serializable
 	{
-
+		
 		@Id
 		@GeneratedValue
 		@Column(name = "Nid")

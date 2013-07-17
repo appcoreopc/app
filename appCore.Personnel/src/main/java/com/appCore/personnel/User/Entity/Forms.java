@@ -24,12 +24,15 @@ import javax.persistence.Table;
 
 		@Id
 		@GeneratedValue
-		
 		@Column(name = "Nid")
 		private Integer nid;
 		
+		@Column(name = "Type")
+		private Integer type;
+		
 		@Column(name = "FormId")
 		private String formId;
+		
 		
 		@Column(name = "Link")
 		private String link;
@@ -111,4 +114,14 @@ import javax.persistence.Table;
 		public void setCompanyId(Integer companyId) {
 			this.companyId = companyId;
 		}
+
+
+		public Integer getType() {
+			return type;
+		}
+
+		public void setType(Integer type) {
+			this.type = type;
+		}
+		
 	}

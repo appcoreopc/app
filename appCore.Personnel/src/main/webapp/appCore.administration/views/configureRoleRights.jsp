@@ -17,8 +17,7 @@
         <form id="configureRoleRight">
 
         <div class="form">
-        <div class="sectionalForm">
-        </div>
+            <div class="sectionHead">Configure Resource Right</div>
 
         <div class="formRow">
         &nbsp;
@@ -42,10 +41,9 @@
         <div class="configureLabelSectionBlock">Assigned permissions</div>
 
         <div class="configureInputSectionBlock">
-         <input type='checkbox' value='A' data-bind="checked : addPermission" />
-         <input type='checkbox' value='U' data-bind="checked : updatePermission" />
-         <input type='checkbox' value='D' data-bind="checked : deletePermission" />
-
+         <input type='checkbox' value='A' data-bind="checked : addPermission" /><span>Add</span>
+         <input type='checkbox' value='U' data-bind="checked : updatePermission" /> <span>Update</span>
+         <input type='checkbox' value='D' data-bind="checked : deletePermission" /> <span>Delete</span>
         </div>
 
 

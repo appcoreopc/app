@@ -30,6 +30,7 @@ import com.appCore.personnel.Core.Entity.UnitSummary;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
 import com.appCore.personnel.Core.Job.Entity.AssociationMembershipType;
 import com.appCore.personnel.Core.Service.BranchService;
+import com.appCore.reportingService.Core.RunnableReport;
 
 @Controller
 @RequestMapping("/Core")
@@ -74,13 +75,19 @@ public class BranchController {
 	String getCompile(@RequestParam(value = "id", required = true) Integer id) throws IOException, ResourceException, ScriptException, CompilationFailedException, InstantiationException, IllegalAccessException {
 		
 		GroovyScriptProvider scripting = new GroovyScriptProvider("c:\\temp\\");
-		scripting.executeScript("hello.groovy");
-		scripting.invokeMethodOnClass("employee.groovy", "plus",  new Object[] {10 });
+		RunnableReport rpt = scripting.createInstance("c:\\temp\\reportTest.groovy");
 		
+		int statusReport = rpt.getReportStatus();
+		
+		int executeStatus = rpt.executeReport();
+		
+		
+		System.out.println("status report" + statusReport);
+		System.out.println("execute status"+ executeStatus);
+		//scripting.executeScript("hello.groovy");
+		//scripting.invokeMethodOnClass("employee.groovy", "plus",  new Object[] {10 });
 		return "test";
 	}
-	
-	
 
 	@RequestMapping(value = "/Branch/add", method = RequestMethod.GET)
 	public @ResponseBody

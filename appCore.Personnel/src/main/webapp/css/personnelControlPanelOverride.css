@@ -1,18 +1,24 @@
 #configureSetupViewAccordian .ui-accordion-header {
     border: 1px solid #D3D3D3;
     cursor: pointer;
-    /*display: block;*/
     min-height: 0;
     padding-left: 31px;
     position: relative;
 }
 
-
+#configureSetupViewAccordian h3 .ui-accordion .ui-accordion-header {
+    background-color: #E6E6E6;
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+    display: block;
+    min-height: 0;
+    position: relative;
+}
 
 #configureAdminViewContent {
     height: auto;
     width: 200px;
-    box-shadow : 0 3px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(100, 100, 100, 0.4);
     border-radius: 5px 5px 5px 5px;
 }
@@ -25,6 +31,7 @@
     min-height: 0;
     padding-left: 10px;
     position: relative;
+    line-height: 34px;
 }
 
 #configureAdminViewAccordian .ui-accordion-content.ui-helper-reset.ui-widget-content.ui-corner-bottom.ui-accordion-content-active {
@@ -34,4 +41,13 @@
 #configureAdminViewAccordian .ui-accordion-content.ui-helper-reset.ui-widget-content.ui-corner-bottom.ui-accordion-content-active a {
     display: block;
     padding-left: 9px;
+}
+
+#configureSetupViewAccordian div.popupMenuTitle {
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+    min-height: 0;
+    padding-left: 31px;
+    position: relative;
+    line-height: 34px;
 }

@@ -4,6 +4,7 @@
     font-family: omnes-pro, arial, sans-serif;
     width: 150px;
 }
+
 .configureInputSectionBlock {
     display: block;
 }
@@ -18,13 +19,13 @@
 #configureRoleRight {
     border: 1px solid #D1D3D4;
     box-shadow: none;
-    padding-left: 70px;
+    width: 774px;
 }
 
 #configureUserRoleForm {
     border: 1px solid #D1D3D4;
     box-shadow: none;
-    padding-left: 70px;
+    width: 774px;
 }
 
 .adminButton {
@@ -32,9 +33,23 @@
 }
 
 .adminButton button {
-    background: -moz-linear-gradient(center top , #000000 0%, #000000 50%, #000000 50.1%, #000000 100%) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(center top, #000000 0%, #000000 50%, #000000 50.1%, #000000 100%) repeat scroll 0 0 transparent;
     border: 1px solid #000000;
     color: #FFFFFF;
     font-size: 14px;
     padding: 6px 8px;
+}
+
+.sectionHead {
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #EBEBEB;
+    margin: 0;
+    color: #9DA0A4;
+    padding: 8px 14px;
+}
+
+.configureInputSectionBlock > span {
+    padding-left: 4px;
+    padding-right: 4px;
+    color: #7B746E;
 }

@@ -123,7 +123,28 @@ public class UsersService // implements UserRoleService
 		}
 		return null;
 	}
-	
+			
+	public int changePassword(Integer userId, String oldPassword, String newPassword) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("From Users where nid = :userId AND password = :oldPassword");
+		query.setParameter("userId", userId);
+		query.setParameter("oldPassword", oldPassword);
+		
+		List<Users> matchingUser = query.list();
+		
+		if (matchingUser.size() > 0)
+		{
+			Query updateQuery = session.createQuery("UPDATE Users SET password = :newPassword WHERE nid = :userId");
+			updateQuery.setParameter("userId", userId);
+			updateQuery.setParameter("newPassword", newPassword);
+			int updateQueryResult = updateQuery.executeUpdate();
+			return 0;
+		}
+		else 
+		{
+			return -1;
+		}
+	}
 	
 	public List<Users> get(String username, String password) {
 		Session session = sessionFactory.getCurrentSession();
@@ -153,6 +174,7 @@ public class UsersService // implements UserRoleService
 			statusResponse.setUsername(username);
 			statusResponse.setMessageCode(0);
 			statusResponse.setMessageDescription("User logins successfully.");
+			statusResponse.setUserId(userFromStore.getNid());
 			
 			List<UserProfileConfiguration> userProfile = userProfileService.getByUserId(userFromStore.getNid());
 			

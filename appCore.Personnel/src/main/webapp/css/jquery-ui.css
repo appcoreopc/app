@@ -925,9 +925,9 @@ body .ui-tooltip {
 
 /* states and images */
 .ui-icon {
-    width: 16px;
+    /*width: 16px;
     height: 16px;
-    background-position: 16px 16px;
+    background-position: 16px 16px;*/
 }
 .ui-icon,
 .ui-widget-content .ui-icon {

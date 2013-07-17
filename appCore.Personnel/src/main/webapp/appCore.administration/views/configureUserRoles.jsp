@@ -18,8 +18,7 @@
         <form id="configureUserRoleForm">
 
         <div class="form">
-        <div class="sectionalForm">
-        </div>
+                <div class="sectionHead">Configure User Role</div>
 
         <div class="formRow">
         &nbsp;

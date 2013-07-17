@@ -4,10 +4,7 @@
 
         <script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/branchInfoViewModel.js"></script>
-
         <script language="javascript" src="../../js/bootstrap.min.js"></script>
-
-
 
 
         <script type="text/html" id="infoUpdateTemplate">
