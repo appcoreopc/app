@@ -75,8 +75,8 @@
                 });
 
 
-                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalAdminMenuServiceUrl, globalViewModel.employeeRole());
-                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole());
+                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalAdminMenuServiceUrl, globalViewModel.employeeRole(), "Navigate To ");
+                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole(), "Settings");
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);

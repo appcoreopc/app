@@ -70,23 +70,22 @@ public class BranchController {
 	}
 	
 	
+	
 	@RequestMapping(value = "/Branch/getCompile", method = RequestMethod.GET)
 	public @ResponseBody
 	String getCompile(@RequestParam(value = "id", required = true) Integer id) throws IOException, ResourceException, ScriptException, CompilationFailedException, InstantiationException, IllegalAccessException {
 		
 		GroovyScriptProvider scripting = new GroovyScriptProvider("c:\\temp\\");
 		RunnableReport rpt = scripting.createInstance("c:\\temp\\reportTest.groovy");
-		
 		int statusReport = rpt.getReportStatus();
-		
-		int executeStatus = rpt.executeReport();
-		
-		
+		//int executeStatus = rpt.executeReport();
 		System.out.println("status report" + statusReport);
-		System.out.println("execute status"+ executeStatus);
+		//System.out.println("execute status"+ executeStatus);
 		//scripting.executeScript("hello.groovy");
 		//scripting.invokeMethodOnClass("employee.groovy", "plus",  new Object[] {10 });
 		return "test";
+		
+		
 	}
 
 	@RequestMapping(value = "/Branch/add", method = RequestMethod.GET)

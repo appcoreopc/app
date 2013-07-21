@@ -62,7 +62,6 @@ var ChangePasswordViewModel = function (globalViewModel) {
 
         gridDataObject.gridData = self.gridData;
         gridDataObject.updateFunction = self.updatePassword;
-        gridDataObject.deleteFunction = deleteFunction;
         gridDataObject.controlId = this.gridId;
         gridDataObject.addLinkInfo = addLinkInfo;
         gridDataObject.updateLinkInfo = updateLinkInfo;

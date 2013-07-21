@@ -21,6 +21,7 @@ import com.appCore.reportingService.Service.ReportingServiceConfigurationService
 public class ReportingServiceConfigurationController
 { 
 	
+	
 		protected static Logger logger = Logger.getLogger("controller");
 		@Resource(name="reportingServiceConfigurationService")
 		private ReportingServiceConfigurationService service;

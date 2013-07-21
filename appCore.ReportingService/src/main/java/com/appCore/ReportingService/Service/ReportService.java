@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.appCore.reportingService.Entity.Report;
 import com.appCore.reportingService.Entity.ReportRequest;
+import com.appCore.reportingService.Service.ReportExecutionResult;
 
 @Service("reportService")
 @Transactional
@@ -65,10 +66,8 @@ public class ReportService {
 		session.delete(report);
 	}
 
-	public int executeReport(ReportRequest reportRequest) throws IOException, InstantiationException, IllegalAccessException {
-		
-		reportExecutor.executeReport(reportRequest);
-		return 0;
+	public ReportExecutionResult executeReport(ReportRequest reportRequest) throws IOException, InstantiationException, IllegalAccessException {
+		return reportExecutor.executeReport(reportRequest);
 	}
 
 }

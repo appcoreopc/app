@@ -31,7 +31,7 @@ public class ReportingServiceController {
 			
 	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
-
+	
 	
 	@RequestMapping(value = "/Report/list", method = RequestMethod.GET)
 	public @ResponseBody
@@ -39,6 +39,7 @@ public class ReportingServiceController {
 		List<Report> list = service.getAll();
 		return list;
 	}
+	
 
 	@RequestMapping(value = "/Report/listByCompany", method = RequestMethod.GET)
 	public @ResponseBody
@@ -93,12 +94,8 @@ public class ReportingServiceController {
 
 	@RequestMapping(value = "/Report/executeReport", method = RequestMethod.GET)
 	//public @ResponseBody RequestStatus executeReport(@RequestParam ReportRequest reportRequest)
-	public @ResponseBody RequestStatus executeReport(@RequestParam Integer id)
-	
-			throws IOException, InstantiationException, IllegalAccessException {
+	public @ResponseBody RequestStatus executeReport(@RequestParam Integer id) throws IOException, InstantiationException, IllegalAccessException {
 
-		System.out.println("entering into our service");
-		
 		ReportRequest reportRequest = new ReportRequest();
 		service.executeReport(reportRequest);
 		return RequestStatusHelper.GenerateRequestStatusCreateOperation();
