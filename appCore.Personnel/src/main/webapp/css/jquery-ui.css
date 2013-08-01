@@ -428,6 +428,7 @@ button.ui-button::-moz-focus-inner {
     padding: .5em 1em;
     background: none;
     overflow: auto;
+    text-align: left;
 }
 .ui-dialog .ui-dialog-buttonpane {
     text-align: left;
@@ -435,13 +436,38 @@ button.ui-button::-moz-focus-inner {
     background-image: none;
     margin-top: .5em;
     padding: .3em 1em .5em .4em;
+    border-top: none;
 }
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
-    float: right;
+    float: center;
 }
 .ui-dialog .ui-dialog-buttonpane button {
     margin: .5em .4em .5em 0;
     cursor: pointer;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 4px 12px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+
 }
 .ui-dialog .ui-resizable-se {
     width: 12px;
@@ -802,16 +828,17 @@ body .ui-tooltip {
 .ui-widget-content {
     border: 1px solid #aaaaaa/*{borderColorContent}*/;
     background: #ffffff/*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
-    color: #222222/*{fcContent}*/;
+    color: #9DA0A4/*#222222*//*{fcContent}*/;
 }
 .ui-widget-content a {
     color: #222222/*{fcContent}*/;
 }
 .ui-widget-header {
-    border: 1px solid #aaaaaa/*{borderColorHeader}*/;
-    background: #cccccc/*{bgColorHeader}*/ url(images/ui-bg_highlight-soft_75_cccccc_1x100.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
-    color: #222222/*{fcHeader}*/;
+    /*border: 1px solid #aaaaaa*//*{borderColorHeader}*/;
+    background: #fff/*{bgColorHeader}*/ url(images/ui-bg_highlight-soft_75_cccccc_1x100.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
+    color: #000/*{fcHeader}*/;
     font-weight: bold;
+    border-bottom: 1px solid #EEEEEE;
 }
 .ui-widget-header a {
     color: #222222/*{fcHeader}*/;
@@ -822,11 +849,9 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-    border: 1px solid #d3d3d3/*{borderColorDefault}*/;
-    background: #e6e6e6/*{bgColorDefault}*/ url(images/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
-    font-weight: normal/*{fwDefault}*/;
-    color: #555555/*{fcDefault}*/;
+
 }
+
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
@@ -839,10 +864,7 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-    border: 1px solid #999999/*{borderColorHover}*/;
-    background: #dadada/*{bgColorHover}*/ url(images/ui-bg_glass_75_dadada_1x400.png)/*{bgImgUrlHover}*/ 50%/*{bgHoverXPos}*/ 50%/*{bgHoverYPos}*/ repeat-x/*{bgHoverRepeat}*/;
-    font-weight: normal/*{fwDefault}*/;
-    color: #212121/*{fcHover}*/;
+
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -1140,25 +1162,25 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-    border-top-left-radius: 4px/*{cornerRadius}*/;
+    border-top-left-radius: 0px/*{cornerRadius}*/;
 }
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-    border-top-right-radius: 4px/*{cornerRadius}*/;
+    border-top-right-radius: 0px/*{cornerRadius}*/;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-    border-bottom-left-radius: 4px/*{cornerRadius}*/;
+    border-bottom-left-radius: 0px/*{cornerRadius}*/;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-    border-bottom-right-radius: 4px/*{cornerRadius}*/;
+    border-bottom-right-radius: 0px/*{cornerRadius}*/;
 }
 
 /* Overlays */

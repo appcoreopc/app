@@ -5,15 +5,6 @@
     width: 76%;
 }
 
-#maintenanceCommand button {
-    background-color: #000000;
-    border-style: none;
-    color: #FFFFFF;
-    font-size: 13px;
-    margin: 4px 6px 2px 0px;
-    padding: 6px 12px 6px 6px;
-}
-
 .labelSection {
     display: inline-block;
     font-weight: bold;
@@ -50,13 +41,4 @@ i .icon-doc-3 {
 .icon-ok-circle-1:before {
     color: green;
     content: "";
-}
-
-.maintenanceCommand button {
-    background-color: #000000;
-    border-style: none;
-    color: #FFFFFF;
-    font-size: 13px;
-    margin: 4px 0 2px 5px;
-    padding: 6px 12px 6px 6px;
 }

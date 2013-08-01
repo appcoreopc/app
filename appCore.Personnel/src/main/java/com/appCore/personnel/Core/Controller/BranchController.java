@@ -70,7 +70,6 @@ public class BranchController {
 	}
 	
 	
-	
 	@RequestMapping(value = "/Branch/getCompile", method = RequestMethod.GET)
 	public @ResponseBody
 	String getCompile(@RequestParam(value = "id", required = true) Integer id) throws IOException, ResourceException, ScriptException, CompilationFailedException, InstantiationException, IllegalAccessException {
@@ -84,8 +83,6 @@ public class BranchController {
 		//scripting.executeScript("hello.groovy");
 		//scripting.invokeMethodOnClass("employee.groovy", "plus",  new Object[] {10 });
 		return "test";
-		
-		
 	}
 
 	@RequestMapping(value = "/Branch/add", method = RequestMethod.GET)

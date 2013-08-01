@@ -828,7 +828,7 @@ cite {
 
 }
 
-.navbar .nav  {
+.navbar .nav {
     display: block;
     float: left;
     left: 0;
@@ -837,7 +837,7 @@ cite {
 }
 
 .navCompany {
-    float : left;
+    float: left;
     display: inline;
     list-style: none;
     left: 0;
@@ -845,9 +845,8 @@ cite {
     position: relative;
 }
 
-.companyNav ul
-{
-   width: auto;
+.companyNav ul {
+    width: auto;
 }
 
 .navbar .nav.pull-right {
@@ -2836,14 +2835,35 @@ a:hover .matte-media-box, a:hover .beveled-media-box, a.beveled-media-box:hover 
     top: -3px;
 }
 
+.alert .fade {
+    opacity: 0;
+    transition: opacity 0.15s linear 0s;
+}
+
+.alert .fade .in {
+    opacity: 1;
+}
+
 .alert.out {
     display: none;
+}
+
+.alert strong {
+    display: block;
+    color: inherit;
 }
 
 .alert-success {
     background-color: #DFF0D8;
     border-color: #D6E9C6;
     color: #468847;
+}
+
+.alert button.close {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0;
 }
 
 .alert-error {
@@ -2886,10 +2906,6 @@ a:hover .matte-media-box, a:hover .beveled-media-box, a.beveled-media-box:hover 
 .alert-count.fade {
     -moz-transition: opacity 0.3s ease-in-out 0s;
     opacity: 0;
-}
-
-.alert-count.fade.in {
-    opacity: 1;
 }
 
 .position-super {
@@ -4846,7 +4862,7 @@ ui-state-hover a, .ui-state-hover a:hover {
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    background: none repeat scroll 0 0 #000;
+    background: none repeat scroll 0 0;
     color: #555555;
     font-weight: normal;
     color: #fff;
@@ -4911,7 +4927,6 @@ ui-state-hover a, .ui-state-hover a:hover {
     font-weight: bold;
 }
 
-
 #configureSettings {
     font-size: 17px;
 }
@@ -4929,10 +4944,9 @@ ui-state-hover a, .ui-state-hover a:hover {
     top: -11px;
 }
 
-
 #configureSetupViewAccordian {
     cursor: pointer;
-    box-shadow : 0 3px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(100, 100, 100, 0.4);
     border-radius: 5px 5px 5px 5px;
 }

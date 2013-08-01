@@ -8,6 +8,10 @@
  e) regex
  f) text - valid length (acceptable length)
 
+ Sample usage :-
+
+ data-bind="textedit : name, controlOptions : { validateType : 'required' }"
+
  */
 
 ko.bindingHandlers.textedit = {
@@ -110,7 +114,10 @@ ko.bindingHandlers.textedit = {
         var minLength = options.minLength;
         var maxLength = options.maxLength;
 
-        textEditCaption == undefined ? "Default" : textEditCaption;
+
+        if (textEditCaption == undefined) {
+            textEditCaption = "";
+        }
 
         var labelHtmlCodeBlockStart = "<div class='labelSectionBlockBold'>";
         var labelHtmlRequiredCodeBlockStart = labelHtmlCodeBlockStart + "<i class='icon-asterisk'></i>";
@@ -171,8 +178,6 @@ ko.bindingHandlers.textedit = {
                 validationRequiredString += validationMarkupEnd;
                 $(element).addClass(validationRequiredString);
             }
-
-
         }
 
         var value = ko.utils.unwrapObservable(valueAccessor());
@@ -192,7 +197,6 @@ ko.bindingHandlers.textedit = {
 
         var attentionGrabbingColorDefinition = "#C09853";
         var okColorDefinition = "#7B746E";
-
         var value = ko.utils.unwrapObservable(valueAccessor());
 
         var options = allBindingsAccessor().controlOptions;

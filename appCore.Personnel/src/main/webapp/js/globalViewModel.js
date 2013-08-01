@@ -7,6 +7,7 @@ var GlobalViewModel = function () {
     self.employeeRole = ko.observable();
     self.employeeId = ko.observable();
     self.username = ko.observable();
+    self.userId = ko.observable();
 
     self.targetId = ko.observable();
     self.editMode = ko.observable();

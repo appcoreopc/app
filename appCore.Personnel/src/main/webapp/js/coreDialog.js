@@ -1,5 +1,4 @@
 var CoreDialog = function () {
-
     this.createMessageBox = function (dialogControlData) {
 
         $(".ui-dialog").dialog("destroy");
@@ -46,6 +45,7 @@ var CoreDialog = function () {
 
     this.createConfirmationDialog = function (dialogObject, data, globalViewModel, codeType, callBack) {
 
+
         var overlay = $('<div id="overlay"> </div>');
         overlay.appendTo(document.body);
 
@@ -75,20 +75,10 @@ var CoreDialog = function () {
                     }
                 }
             });
+
         $myDialog.dialog('open');
 
-        $(".ui-dialog-titlebar-close").css('visibility', 'hidden'); // hide the close button
-        $(".ui-dialog .ui-dialog-title").css('color', '#fff');
-        $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
-        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('width', '76px');
-        $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
-        $(".ui-dialog .ui-dialog-buttonset").css('height', '56px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-left-radius', '4px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-right-radius', '4px');
-        $(".ui-dialog").css('box-shadow', '1px 1px 7px 1px rgba(0, 0, 0, 0.3)');
-        $(".ui-dialog").css('border-radius', '4px');
+
     }
 
 
@@ -126,24 +116,8 @@ var CoreDialog = function () {
             });
 
         $myDialog.dialog('open');
-
-        $(".ui-dialog .ui-dialog-title").css('color', '#fff');
-        $(".ui-dialog-titlebar-close").css('visibility', 'hidden');
-        $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
-        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('width', '76px');
-        $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
-        $(".ui-dialog .ui-dialog-buttonset").css('height', '56px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-left-radius', '4px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-right-radius', '4px');
-        $(".ui-dialog").css('box-shadow', '1px 1px 7px 1px rgba(0, 0, 0, 0.3)');
-        $(".ui-dialog").css('border-radius', '4px');
-        $(".ui-button-text-only").css('color', '#ffffff');
     }
 
-
-    // dialogObject - title & message is the main attribute //
     this.createPopupDialog = function (dialogObject, target) {
 
         var $myDialog = $("<div></div>")
@@ -174,18 +148,6 @@ var CoreDialog = function () {
 
         $myDialog.dialog('open');
 
-        $(".ui-dialog .ui-dialog-title").css('color', '#fff');
-        $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
-        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('width', '76px');
-        $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
-        $(".ui-dialog .ui-dialog-buttonset").css('height', '56px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-left-radius', '4px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-right-radius', '4px');
-        $(".ui-dialog").css('box-shadow', '1px 1px 7px 1px rgba(0, 0, 0, 0.3)');
-        $(".ui-dialog").css('border-radius', '4px');
-
         return $myDialog;
     }
 
@@ -195,7 +157,7 @@ var CoreDialog = function () {
         menuDialog.appendTo(document.body);
 
         $("#configureSetupView").click(function () {
-            alert('testing');
+
         });
 
     }
@@ -226,20 +188,5 @@ var CoreDialog = function () {
                 }
             });
         $myDialog.dialog('open');
-
-        $(".ui-dialog-titlebar-close").css('visibility', 'hidden'); // hides the close button
-        $(".ui-dialog .ui-dialog-title").css('color', '#fff');
-        $(".ui-dialog .ui-dialog-title").css('font-weight', 'normal');
-        $(".ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css('float', 'none');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('background', '#000');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('color', '#fff');
-        $(".ui-dialog .ui-dialog-buttonpane button").css('width', '76px');
-        $(".ui-dialog .ui-dialog-buttonpane").css('border-width', '0px 0px 0px');
-        $(".ui-dialog .ui-dialog-buttonset").css('height', '56px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-left-radius', '4px');
-        $(".ui-dialog .ui-dialog-buttonset").css('border-bottom-right-radius', '4px');
-        $(".ui-dialog").css('box-shadow', '1px 1px 7px 1px rgba(0, 0, 0, 0.3)');
-        $(".ui-dialog").css('border-radius', '4px');
-
     }
 }

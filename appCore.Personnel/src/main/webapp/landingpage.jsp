@@ -24,20 +24,29 @@
         <script language="javascript" src="js/carousel.js"></script>
         <script language="javascript" src="js/knockoutjs/knockout-2.2.0.debug.js"></script>
         <script language="javascript" src="js/globalViewModel.js"></script>
+        <script language="javascript" src="js/coreScriptLoader.js"></script>
+        <script language="javascript" src="js/bootstrap.js"></script>
         <script language="javascript" src="js/coreGlobalViewModelSetup.js"></script>
         <script language="javascript" src="js/coreLogout.js"></script>
+        <script language="javascript" src="js/ajaxCore.js"></script>
         <script language="javascript" src="kendo/js/kendo.web.min.js"></script>
 
         <%@ include file="includes/landingHeader.html" %>
 
         <script type="text/javascript">
 
+        var globalViewModel;
+
         $(document).ready(function()
         {
-            $(document).setupGlobalViewModel();
+            $(document).setupGlobalViewModel(function(){
+                $(document).loadUserScript(globalViewModel.userId(), coreApplicationTypeLandingPage);
+            });
+
             $("#logoutLink").setupLogout();
 
         });
+
 
         </script>
 
@@ -46,7 +55,14 @@
 
 
         <div class="overview">
-        <div class="categories">
+
+
+        <div class="cellRow">
+
+            <div class="cellColumnLeft">&nbsp;</div>
+
+
+        <div class="cellColumnMiddle">
         <ul>
         <li class="column first">
         <a href="/appCore-personnel/appCore.administration/views/personnelControlPanel.jsp" class="block callout">
@@ -72,7 +88,7 @@
         </li>
 
         <li class="column">
-        <a href="/iphone/from-the-app-store/social-networking.html" class="block callout"
+        <a href="#" class="block callout"
         onclick="s_objectID=&quot;http://www.apple.com/iphone/from-the-app-store/social-networking.html_1&quot;;return
         this.s_oc?this.s_oc(e):true">
         <i class="icon-calendar"></i>
@@ -84,9 +100,7 @@
         </li>
 
         <li class="column">
-        <a href="/iphone/from-the-app-store/social-networking.html" class="block callout"
-        onclick="s_objectID=&quot;http://www.apple.com/iphone/from-the-app-store/social-networking.html_1&quot;;return
-        this.s_oc?this.s_oc(e):true">
+        <a href="#" class="block callout">
         <i class="icon-money"></i>
         <h2>Payroll</h2>
         <p>Process month employee salary and income tax.
@@ -96,10 +110,16 @@
         </li>
 
         </ul>
-        </div>
-        </div>
 
 
+
+        </div>
+
+        <div class="cellColumnRight"></div>
+
+
+        </div>
+        </div>
 
         </div>
 

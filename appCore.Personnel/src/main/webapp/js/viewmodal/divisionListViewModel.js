@@ -1,7 +1,5 @@
 var DivisionListViewModel = function (initView, data, globalViewModel, command) {
-
     var self = this;
-
     self.coreCommand = command;
     self.mode = initView;
     self.gridUrl = globalHostname + "/app/Core/Branch";

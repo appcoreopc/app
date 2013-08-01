@@ -11,24 +11,6 @@
     border: none;
 }
 
-.ui-dialog-buttonset button {
-    color: #fff;
-    background-color:  #000;
-    margin-right: 10px;
-
-}
-
-.ui-dialog-buttonset .ui-button-text-only {
-    color: #fff;
-    background-color:  #000;
-}
-
-.ui-dialog-titlebar {
-    height: 20px;
-    padding: 8px 0px 8px 10px;
-    color: #fff;
-}
-
 .ui-dialog-content {
      color: #000;
 }
@@ -42,15 +24,40 @@
     position: relative;
 }
 
-
 .ui-button-text-only {
     background-color: #000;
     color:  #fff;
 }
 
+/*
 .ui-widget-header {
    background-color:  #000;
 }
+*/
+
+/*
+.ui-dialog-buttonset .ui-button-text-only {
+    color: #fff;
+    background-color:  #000;
+}
+*/
+
+/*
+.ui-dialog-buttonset button {
+    color: #fff;
+    background-color:  #000;
+    margin-right: 10px;
+
+}
+*/
+
+/*
+.ui-dialog-titlebar {
+    height: 20px;
+    padding: 8px 0px 8px 10px;
+    color: #fff;
+}
+*/
 
 .ui-state-default {
     background: none;

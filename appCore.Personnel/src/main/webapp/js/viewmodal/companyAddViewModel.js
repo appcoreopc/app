@@ -125,19 +125,61 @@ var CompanyAddViewModel = function (mode, companyId) {
         }
     }
 
+    function validateControls() {
+        var result = $('[class^="validate"]');
+        $.each(result, function (i, data) {
+            $("#" + this.id).validationEngine("validate");
+        });
+    }
+
 
     this.saveOrUpdateCompany = function () {
 
         var isValid = $("#" + "companyForm").validationEngine('validate');
 
         if (!isValid) {
-            alert('invalid validation.')
+            return;
+        }
+
+        if (self.companyCode() == undefined || self.companyCode() == "") {
+            $("#companyCodeSetupTabs").tabs("select", 0);
+            validateControls();
+            return;
+        }
+
+        if (self.companyName() == undefined || self.companyName() == "") {
+            $("#companyCodeSetupTabs").tabs("select", 0);
+            validateControls();
+            return;
+        }
+
+        if (self.registration() == undefined || self.registration() == "") {
+            $("#companyCodeSetupTabs").tabs("select", 0);
+            validateControls();
+            return;
+        }
+
+        if (self.address() == undefined || self.address() == "") {
+            $("#companyCodeSetupTabs").tabs("select", 0);
+            validateControls();
+            return;
+        }
+
+        if (self.tel() == undefined || self.tel() == "") {
+            $("#companyCodeSetupTabs").tabs("select", 1);
+            validateControls();
+            return;
+        }
+
+        if (self.postcode() == undefined || self.postcode() == "") {
+            $("#companyCodeSetupTabs").tabs("select", 1);
+            validateControls();
             return;
         }
 
         var company = new Company();
 
-        if (self.mode() == 2) {
+        if (self.mode() == coreModeEdit) {
             company.nid = self.nid();
         }
 

@@ -1,8 +1,6 @@
-
-       <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
        <link href="../../css/dialogBoxEdit.css" media="screen" rel="stylesheet" type="text/css" />
-
        <link href="../../css/codeMaintenance.css" media="screen" rel="stylesheet" type="text/css" />
+
        <script language="javascript" src="../../js/viewmodal/codeMaintenanceViewModel.js"></script>
        <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
 

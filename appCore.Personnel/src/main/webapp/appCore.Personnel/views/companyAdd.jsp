@@ -1,5 +1,3 @@
-        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-
         <link href="../../css/company.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/companyAddViewModel.js"></script>
@@ -76,7 +74,7 @@
         </div>
 
         <div class="formRowInfo">
-        <div class="labelSectionBlockSmall">Address line 2</div>
+        <div class="labelSectionBlock">Address line 2</div>
         </div>
 
 
@@ -86,7 +84,7 @@
         </div>
 
         <div class="formRowInfo">
-        <div class="labelSectionBlockSmall">Address line 3</div>
+        <div class="labelSectionBlock">Address line 3</div>
         </div>
 
 
@@ -97,7 +95,7 @@
 
 
         <div class="formRow">
-        <div class="labelSectionBlockBold">City</div><div class="inputSectionBlock"><input type="text" id="City" data-bind="value :
+        <div class="labelSectionBlock">City</div><div class="inputSectionBlock"><input type="text" id="City" data-bind="value :
         city"/></div>
         </div>
 

@@ -218,6 +218,8 @@ var globalUserPasswordUpdateUrl = globalHostname + "/app/Users/Users/updatePassw
 var globalAdminCentralPage = "userList.jsp";
 var globalEmptyMainPage = "emptyMainScreen.jsp";
 
+var globalUserLandingServiceUrlGet = globalHostname + "/app/User/UserLanding/get";
+
 var coreModeList = 0;
 var coreModeInsert = 1;
 var coreModeEdit = 2;
@@ -238,3 +240,5 @@ var coreAdministrationUserManager = 12;
 var coreAdministrationUserRights = 13;
 var coreApplicationJobSetup = 14;
 var coreApplicationTypeFormsType = 15;
+var coreApplicationTypeLandingPage = 16;
+var coreApplicationTypeUsersType = 17;
