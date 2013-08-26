@@ -4,25 +4,38 @@
 
 <script type="text/javascript">
 
-  $(document).ready(function()
-  {
-		  getData(globalViewModel.companyId());
-  });
+      $(document).ready(function()
+      {
+            var vm;
+            getData(globalViewModel.companyId());
 
-  function getData(companyId)
-  {
-			var ajaxCore = new AjaxCore();
-			var companyId = { id : companyId };
+            function getData(companyId)
+            {
+                var ajaxCore = new AjaxCore();
+                var companyId = { id : companyId };
 
-			var request = ajaxCore.sendRequest(globalResourceListByCompanyUrl, companyId, "get");
+                var request = ajaxCore.sendRequest(globalResourceListByCompanyUrl, companyId, "get");
 
-			request.success(function(data)
-			{
-				  var coreCommand = new CoreCommandHelper();
-				  var vm = new FormsListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
-				  $("#formsTypeDiv").setupViewBinding(vm, globalViewModel);
-      });
-   }
+                request.success(function(data)
+                {
+                    $.when(init(data)).done(bind());
+                });
+            }
+
+            function init(data)
+            {
+                var coreCommand = new CoreCommandHelper();
+                vm = new FormsListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
+            }
+
+            function bind()
+            {
+                $("#formsTypeDiv").setupViewBinding(vm, globalViewModel);
+            }
+
+    });
+
+
 
 </script>
 

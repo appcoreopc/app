@@ -4958,12 +4958,12 @@ ui-state-hover a, .ui-state-hover a:hover {
 
 #configureSetupViewContent {
     width: 300px;
-    height: 400px;
+    height: auto;
 }
 
 #configureSetupView {
     width: 300px;
-    height: 400px;
+    height: auto;
     background-color: #fff;
     border: none;
     visibility: hidden;

@@ -7,8 +7,18 @@
 
         $(document).ready(function()
         {
-            var vm = new ConfigureRoleRightsViewModel(globalViewModel);
-            $("#configureRoleRight").setupViewBinding(vm, globalViewModel);
+            var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new ConfigureRoleRightsViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#configureRoleRight").setupViewBinding(vm, globalViewModel);
+            }
         });
 
 

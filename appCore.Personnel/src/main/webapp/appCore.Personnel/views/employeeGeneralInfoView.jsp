@@ -1,6 +1,3 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-
-        <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
         <script language="javascript" src="../../js/viewmodal/employeeHelper.js"></script>
         <script language="javascript" src="../../js/viewmodal/employeeGeneralInfoViewModel.js"></script>
         <script language="javascript" src="../../js/coreAjaxFileUpload.js"></script>
@@ -8,7 +5,6 @@
         <link href="../../css/employeeGeneralAddForm.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralInfoView.css" media="screen" rel="stylesheet" type="text/css" />
-
 
 
         <script type="text/html" id="employeeGeneralInfoTemplate">
@@ -333,15 +329,17 @@
 
         var vm;
 
+        /*
         $(document).ajaxStop(function()
         {
             try
             {
                 $(this).unbind("ajaxStop");
-                ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
-                var tab = $("#employeeAddTabs").tabs();
-
                 $("#employeeGeneralForm").validationEngine();
+
+                ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
+
+                var tab = $("#employeeAddTabs").tabs();
                 $(document).activateFileUpload('employeeGeneralForm', globalEmployeePixUploadPath);
             }
             catch (ex)
@@ -349,13 +347,28 @@
                 console.log(ex)
             }
         });
+         */
 
         $(document).ready(function()
         {
-            var input = { "id" : coreEmployeeGeneralViewPage, "roleId" : globalViewModel.employeeRole() };
-            var coreCommand = new CoreCommand();
-            var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-            vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
+            $("#employeeGeneralForm").validationEngine();
+
+            try
+            {
+                var input = { "id" : coreEmployeeGeneralViewPage, "roleId" : globalViewModel.employeeRole() };
+                var coreCommand = new CoreCommand();
+                var result = coreCommand.getPermission(hostAuthorizationUrl, input);
+                vm = new EmployeeGeneralInfoViewModel(globalViewModel.editMode(), result.permission, globalViewModel.targetId());
+                ko.applyBindings(vm, document.getElementById("companyGeneralInfo"));
+
+                var tab = $("#employeeAddTabs").tabs();
+                $(document).activateFileUpload('employeeGeneralForm', globalEmployeePixUploadPath);
+
+            }
+            catch (ex)
+            {
+                console.log(ex)
+            }
 
         });
 

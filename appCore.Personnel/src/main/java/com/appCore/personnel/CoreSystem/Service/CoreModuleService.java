@@ -1,4 +1,4 @@
-package com.appCore.personnel.User.Service;
+package com.appCore.personnel.CoreSystem.Service;
 
 import java.util.List;
 import javax.annotation.Resource;
@@ -9,61 +9,61 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.appCore.personnel.User.Entity.ScriptWidget;
+import com.appCore.personnel.CoreSystem.Entity.CoreModule;
 
-@Service("scriptWidgetService")
+@Service("coreModuleService")
 @Transactional
-public class ScriptWidgetService
+public class CoreModuleService
 { 
 
 	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
 
-	public List<ScriptWidget> getAll() 
+	public List<CoreModule> getAll() 
 	{	
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  ScriptWidget");
+		Query query = session.createQuery("FROM  CoreModule");
 
 		return query.list();
 	}
 
-	public List<ScriptWidget> getAllByCompany(Integer id) {
+	public List<CoreModule> getAllByCompany(Integer id) {
 		
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  ScriptWidget WHERE CompanyId= :id");
+		Query query = session.createQuery("FROM  CoreModule WHERE CompanyId= :id");
 		query.setParameter("id", id);
 		return query.list();
 	}
 
 
-	public ScriptWidget get(Integer id) 
+	public CoreModule get(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		ScriptWidget scriptWidget = (ScriptWidget) session.get(ScriptWidget.class, id);
+		CoreModule coreModule = (CoreModule) session.get(CoreModule.class, id);
 
-		return scriptWidget;
+		return coreModule;
 	}
 
-	public void add(ScriptWidget scriptWidget) 
+	public void add(CoreModule coreModule) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		session.save(scriptWidget);
+		session.save(coreModule);
 	}
 
 
-	public void saveOrUpdate(ScriptWidget scriptWidget) 
+	public void saveOrUpdate(CoreModule coreModule) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(scriptWidget);
+		session.saveOrUpdate(coreModule);
 	}
 
 
 	public void delete(Integer id) 
 	{
 		Session session = sessionFactory.getCurrentSession();
-		ScriptWidget scriptWidget = (ScriptWidget) session.get(ScriptWidget.class, id);
+		CoreModule coreModule = (CoreModule) session.get(CoreModule.class, id);
 
-		session.delete(scriptWidget);
+		session.delete(coreModule);
 	}
 	
 }

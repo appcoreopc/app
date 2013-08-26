@@ -1,4 +1,5 @@
 var ResourceAddEditViewModel = function (mode, globalViewModel) {
+
     var self = this;
     this.centralPage = globalAdminHostPath + "resourceAccessList.jsp";
     self.mode = ko.observable(0);
@@ -7,13 +8,30 @@ var ResourceAddEditViewModel = function (mode, globalViewModel) {
 
     self.resourceName = ko.observable();
     self.resourceLink = ko.observable();
+    self.type = ko.observable();
+
+    self.moduleList = ko.observableArray();
 
     self.errorExist = ko.observable();
     self.templateToUse = ko.observable();
     self.mode(mode);
 
+    initialize();
+
     if (mode == coreModeEdit) {
         getUserDetails(self.globalViewModel.targetId());
+    }
+
+    function initialize() {
+        var companyId = self.globalViewModel.companyId();
+        var ajaxCore = new AjaxCore();
+        var companyRequest = { id:companyId};
+        var request = ajaxCore.sendRequest(globalCoreModuleListByCompany, companyRequest, "get");
+
+        request.success(function (dataSource) {
+            self.moduleList(dataSource);
+        });
+
     }
 
     function getUserDetails(targetId) {
@@ -25,7 +43,10 @@ var ResourceAddEditViewModel = function (mode, globalViewModel) {
             self.nid(dataSource.nid);
             self.resourceName(dataSource.formId);
             self.resourceLink(dataSource.link);
+            self.type(dataSource.type);
         });
+
+
     }
 
     this.getView = function () {

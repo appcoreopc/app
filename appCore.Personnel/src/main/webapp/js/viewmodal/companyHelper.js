@@ -135,6 +135,7 @@ var CompanyHelper = function () {
         });
     }
 
+
     this.saveUpdateDivision = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestType(globalDivisionSaveOrUpdateUrl, entityData, "post");
@@ -233,6 +234,31 @@ var CompanyHelper = function () {
         var request = ajaxCore.sendRequest(globalDivisionGetUrl, entityData, "get");
         request.success(function (data, status, xhrObj) {
             callBack(data);
+        });
+    }
+
+    this.getScriptWidget = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalScriptWidgetGetUrl, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+    this.saveUpdateScriptWidget = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestType(globalSaveUpdateScriptWidgetUrl, entityData, "post");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+    this.deleteScriptWidget = function (data, callback) {
+        var objectId = { "id": data.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalScriptWidgetDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            callback(resultData, data);
         });
     }
 
@@ -469,4 +495,21 @@ var CompanyHelper = function () {
             return data.messageCode;
         });
     }
+
+    this.saveUpdateCoreModule = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestType( globalCoreModuleSaveOrUpdateUrl, entityData, "post");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+    this.getCoreModule = function (entityData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequest(globalCoreModuleGet, entityData, "get");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
 }

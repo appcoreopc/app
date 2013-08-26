@@ -11,6 +11,8 @@ public class FormMenuView implements Serializable
 	
 	private String link; 
 	
+	private Integer type;
+	
 	private List<FormMenuView> items;
 	
 	
@@ -43,7 +45,16 @@ public class FormMenuView implements Serializable
 	{ 
 		this.items = items;
 	}
-		
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+			
 }
 
 

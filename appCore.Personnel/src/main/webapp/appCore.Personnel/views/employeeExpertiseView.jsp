@@ -1,5 +1,3 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
         <script language="javascript" src="../../js/viewmodal/employeeExpertiseViewViewModel.js"></script>

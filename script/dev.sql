@@ -54,14 +54,17 @@ insert into forms (formid, link, category_nid, companyId, type) values ('Manage 
 insert into forms (formid, link, category_nid, companyId, type) values ('User', '../../appCore.administration/views/userList.jsp', 1, 1, 1);
 insert into forms (formid, link, category_nid, companyId, type) values ('Manager Role User', '../../appCore.administration/views/configureUserRoles.jsp', 1, 1, 1);
 
-insert into forms (formid, link, category_nid, companyId, type) values ('Role', 'roleList.jsp', 1, 1, 2);
-insert into forms (formid, link, category_nid, companyId, type) values ('Resource', 'resourceAccessList.jsp', 1, 1, 2);
-insert into forms (formid, link, category_nid, companyId, type) values ('Manage Role Resource', 'configureRoleRights.jsp', 1, 1, 2);
-insert into forms (formid, link, category_nid, companyId, type) values ('User', 'userList.jsp', 1, 1, 2);
-insert into forms (formid, link, category_nid, companyId, type) values ('Manager Role User', 'configureUserRoles.jsp', 1, 1, 2);
-
+insert into forms (formid, link, category_nid, companyId, type) values ('Manage Role', '../../appCore.administration/views/roleList.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Register Resource', '../../appCore.administration/views/resourceAccessList.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Configure Resource', '../../appCore.administration/views/configureRoleRights.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Manage User', 'userList.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Assign Role for User', '../../appCore.administration/views/configureUserRoles.jsp', 1, 1, 2);
 insert into forms (formid, link, category_nid, companyId, type) values ('Change password', 'changePassword.jsp', 1, 1, 5);
+insert into forms (formid, link, category_nid, companyId, type) values ('Test', 'test.jsp', 1, 1, 1);
+insert into forms (formid, link, category_nid, companyId, type) values ('Manage UI Script', '../../appCore.administration/views/scriptWidgetListPage.jsp', 1, 1, 2);
+insert into forms (formid, link, category_nid, companyId, type) values ('Core Module', '../../appCore.administration/views/coreModuleListPage.jsp', 1, 1, 2);
 
+-- configure user navigation data 
 
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (2,1, 'AUD');
@@ -92,6 +95,9 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (38, 1,'
 insert into forms_actions_role (forms_nid, role_nid, permission) values (39, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (40, 1,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1, 2,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (41, 2,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (42, 2,'AUD');
+
 
 insert into level (name, description, companyRef) values ('Level1', 'Level1', 1);
 insert into level (name, description, companyRef) values ('Level2', 'Level2', 1);
@@ -356,7 +362,6 @@ insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef
 insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 2', 1, 1);
 insert into jobsetupQualification (level, description, fieldOfStudy, jobSetupRef) values (1, 'Level 3', 1, 1);
 
-
 insert into jobsetupExperience (expertise, description, experienceYears, jobSetupRef) values (1, 'Level 1', 1, 269);
 insert into jobsetupSkill (skill, level, category, categorydescription, jobSetupRef) values (1, 1, 1, 'category description', 269);
 
@@ -364,3 +369,16 @@ insert into UserProfileConfiguration (userId, DefaultCompanyId) values (1, 1);
 insert into UserProfileConfiguration (userId, DefaultCompanyId) values (2, 1);
 insert into UserProfileConfiguration (userId, DefaultCompanyId) values (3, 1);
 
+insert into UserLanding (userId, ScriptId, Enabled, ApplicationType) values (2, 1, true, 16);
+insert into UserLanding (userId, ScriptId, Enabled, ApplicationType) values (2, 2, true, 16);
+insert into UserLanding (userId, ScriptId, Enabled, ApplicationType) values (2, 3, true, 16);
+
+insert into ScriptWidget(CompanyId, ScriptName, ScriptPath) values (1, 'Script1', 'js/test.js');
+insert into ScriptWidget(CompanyId, ScriptName, ScriptPath) values (2, 'Script1', 'js/test.js');
+insert into ScriptWidget(CompanyId, ScriptName, ScriptPath) values (3, 'Script1', 'js/test.js');
+
+insert into CoreModule(CompanyId, Description, Name) values (1, 'Personnel', 'Personnel');
+insert into CoreModule(CompanyId, Description, Name) values (1, 'Administration', 'Administration');
+insert into CoreModule(CompanyId, Description, Name) values (1, 'Leave', 'Leave');
+insert into CoreModule(CompanyId, Description, Name) values (1, 'Payroll', 'Payroll');
+insert into CoreModule(CompanyId, Description, Name) values (1, 'User Profile', 'User Profile');

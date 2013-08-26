@@ -13,17 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.apache.log4j.Logger;
 import com.appCore.Requests.RequestStatus;
 import com.appCore.personnel.Core.Helpers.RequestStatusHelper;
-
 import com.appCore.personnel.User.Entity.ScriptWidget;
-
 import com.appCore.personnel.User.Service.ScriptWidgetService;
-
 
 @Controller
 @RequestMapping("/User")
 public class ScriptWidgetController
 { 
-
 	
 		protected static Logger logger = Logger.getLogger("controller");
 		@Resource(name="scriptWidgetService")
@@ -33,6 +29,13 @@ public class ScriptWidgetController
 		public @ResponseBody List<ScriptWidget> listScriptWidget () 
 		{
 				List<ScriptWidget> list = service.getAll();
+				return list;
+		}
+		
+		@RequestMapping(value = "/ScriptWidget/listByCompany", method = RequestMethod.GET)		
+		public @ResponseBody List<ScriptWidget> listByCompany (@RequestParam(value="id", required=true) Integer id ) 
+		{
+				List<ScriptWidget> list = service.getAllByCompany(id);
 				return list;
 		}
 
@@ -70,6 +73,4 @@ public class ScriptWidgetController
 				service.delete(id);
 				return RequestStatusHelper.GenerateRequestStatusDeleteOperation();
 		}
-
-
 }

@@ -1,5 +1,4 @@
 var EmploymentInfoView = function (source) {
-
     var self = this;
     var helper = new EmployeeHelper();
 
@@ -20,8 +19,7 @@ var EmploymentInfoView = function (source) {
 var EmployeeEmploymentInfoViewModel = function (dataSource, mode, audMode, employeeId) {
 
     var self = this;
-
-    self.totalRecordCount = ko.observable(dataSource.length-1);
+    self.totalRecordCount = ko.observable(dataSource.length - 1);
     self.bindingSource = ko.observableArray();
     self.industryList = ko.observableArray();
     self.permission = ko.observable(false);
@@ -93,6 +91,12 @@ var EmployeeEmploymentInfoViewModel = function (dataSource, mode, audMode, emplo
     }
 
     self.saveDataForm = function (data) {
+
+        var isValid = $("#" + "companyForm").validationEngine('validate');
+
+        if (!isValid) {
+            return;
+        }
 
         var source = data;
 

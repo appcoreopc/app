@@ -25,9 +25,10 @@ public class FormsService
 { 
 
 	/*
-	 	Type 
+	 	CoreModule 
+		
 		1 - Personnel 
-		2 - Admin
+		2 - Administration
 		3 - Leave
 		4 - Payroll
 		5 - User Profile
@@ -115,6 +116,7 @@ public class FormsService
 					FormMenuView chidFormView = new FormMenuView();
 					chidFormView.setText(childForm.getFormId());
 					chidFormView.setLink(childForm.getLink());
+					chidFormView.setType(childForm.getType());
 					subFormViewList.add(chidFormView);
 				}
 				

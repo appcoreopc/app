@@ -13,8 +13,7 @@ var EmployeeGeneralInfo = function () {
     self.birthDate = ko.observable();
     //self.age = ko.observable();
 
-    self.age = ko.computed(function()
-    {
+    self.age = ko.computed(function () {
         var helper = new EmployeeHelper();
         return helper.getDateDiffYear(self.birthDate());
     });
@@ -90,18 +89,43 @@ var EmployeeGeneralInfoViewModel = function (mode, audMode, employeeId) {
     }.bind(this);
 
 
+    function validateControls() {
+        var result = $('[class^="validate"]');
+        $.each(result, function (i, data) {
+            $("#" + this.id).validationEngine("validate");
+        });
+    }
+
     self.cancelForm = function () {
         preparePageForLoading("employeeList.jsp");
     }
 
     self.saveDataForm = function (data) {
 
+        var isValid = $("#" + "employeeGeneralForm").validationEngine('validate');
+
+        if (!isValid) {
+            return;
+        }
+
         var employeeGeneralInfo = self.bindingSource()[0];
+
+        if (employeeGeneralInfo.code() == undefined || employeeGeneralInfo.code() == "") {
+            $("#employeeAddTabs").tabs("select", 0);
+            validateControls();
+            return;
+        }
+
+        if (employeeGeneralInfo.name() == undefined || employeeGeneralInfo.name() == "") {
+            $("#employeeAddTabs").tabs("select", 0);
+            validateControls();
+            return;
+        }
+
         var employee = new Employee();
         employee.nid = employeeId;
 
-        if (self.mode() == 1) {
-            console.log("insert new employee");
+        if (self.mode() == coreModeInsert) {
             employee.nid = null;
         }
         employee.code = employeeGeneralInfo.code();

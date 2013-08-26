@@ -6,21 +6,34 @@
 
         $(document).ready(function()
         {
+            var vm;
             getData(globalViewModel.companyId());
+
+            function getData(companyId)
+            {
+                var ajaxCore = new AjaxCore();
+                var companyId = { id : companyId };
+                var request = ajaxCore.sendRequest(globalUserListListByCompanyUrl, companyId, "get");
+
+                request.success(function(data)
+                {
+                    $.when(init(data)).done(bind());
+
+                });
+            }
+
+            function init(data)
+            {
+                vm = new UserRightsListViewModel(coreModeList, data, globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#userRightListDiv").setupViewBinding(vm, globalViewModel);
+            }
+
         });
 
-        function getData(companyId)
-        {
-            var ajaxCore = new AjaxCore();
-            var companyId = { id : companyId };
-            var request = ajaxCore.sendRequest(globalUserListListByCompanyUrl, companyId, "get");
-
-            request.success(function(data)
-            {
-                var vm = new UserRightsListViewModel(coreModeList, data, globalViewModel);
-                $("#userRightListDiv").setupViewBinding(vm, globalViewModel);
-            });
-        }
 
         </script>
 

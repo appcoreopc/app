@@ -1,5 +1,3 @@
-    <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../../kendo/styles/kendo.custom.min.css" rel="stylesheet">
         <link href="../../css/employeeView.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/employeeGeneralForm.css" media="screen" rel="stylesheet" type="text/css" />
 
@@ -177,19 +175,19 @@
 
         $(document).ready(function()
         {
-        var ajaxCore = new AjaxCore();
-        var employeeId = { id : globalViewModel.targetId() };
-        var request = ajaxCore.sendRequest(globalEmployeeEmploymentGetByEmployeeUrl, employeeId, "get");
+            var ajaxCore = new AjaxCore();
+            var employeeId = { id : globalViewModel.targetId() };
+            var request = ajaxCore.sendRequest(globalEmployeeEmploymentGetByEmployeeUrl, employeeId, "get");
 
-        request.success(function(dataSource)
-        {
-            var input = { "id" : coreEmployeeEmploymentViewPage, "roleId" : globalViewModel.employeeRole() };
-            var coreCommand = new CoreCommand();
-            var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-            var vm = new EmployeeEmploymentInfoViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
-            $("#employmentDataContent").setupViewBinding(vm, globalViewModel);
+            request.success(function(dataSource)
+            {
+                var input = { "id" : coreEmployeeEmploymentViewPage, "roleId" : globalViewModel.employeeRole() };
+                var coreCommand = new CoreCommand();
+                var result = coreCommand.getPermission(hostAuthorizationUrl, input);
+                var vm = new EmployeeEmploymentInfoViewModel(dataSource, 0, result.permission, globalCurrentEmployee);
+                $("#employmentDataContent").setupViewBinding(vm, globalViewModel);
 
-        });
+            });
         });
 
         </script>

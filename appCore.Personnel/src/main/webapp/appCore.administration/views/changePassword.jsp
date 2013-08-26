@@ -1,4 +1,3 @@
-        <link href="../../css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../../css/admin.css" media="screen" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../../js/viewmodal/Administration/changePasswordViewModel.js"></script>
         <script language="javascript" src="../../js/viewmodal/Administration/userHelper.js"></script>
@@ -12,21 +11,30 @@
                 var vm;
                 var gridDataObject;
 
-                if (globalViewModel != undefined && globalViewModel.targetId() != null)
+                $.when(init()).done(bind());
+
+                function init()
                 {
-                    vm = new ChangePasswordViewModel(globalViewModel);
-                    gridDataObject = vm.getView();
-                }
-                else
-                {
-                    vm = new ChangePasswordViewModel(globalViewModel);
-                    gridDataObject = vm.getView();
+                    if (globalViewModel != undefined && globalViewModel.targetId() != null)
+                    {
+                        vm = new ChangePasswordViewModel(globalViewModel);
+                        gridDataObject = vm.getView();
+                    }
+                    else
+                    {
+                        vm = new ChangePasswordViewModel(globalViewModel);
+                        gridDataObject = vm.getView();
+                    }
+
+                    var input = { "id" : coreChangePasswordPage, "roleId" : globalViewModel.employeeRole() };
+                    var coreCommand = new CoreCommand();
+                    coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
                 }
 
-                var input = { "id" : coreChangePasswordPage, "roleId" : globalViewModel.employeeRole() };
-                var coreCommand = new CoreCommand();
-                coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
-                $("#changePasswordForm").setupViewBinding(vm, globalViewModel);
+                function bind()
+                {
+                    $("#changePasswordForm").setupViewBinding(vm, globalViewModel);
+                }
 
                 var tab = $("#userCodeSetupTabs").tabs();
         });

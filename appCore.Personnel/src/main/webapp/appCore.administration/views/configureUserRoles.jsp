@@ -8,8 +8,18 @@
 
         $(document).ready(function()
         {
-            var vm = new ConfigureUserRoleViewModel(globalViewModel);
-            ko.applyBindings(vm, document.getElementById("configureUserRoleForm"));
+            var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new ConfigureUserRoleViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#configureUserRoleForm").setupViewBinding(vm, globalViewModel);
+            }
         });
 
 

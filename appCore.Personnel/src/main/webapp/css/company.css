@@ -69,7 +69,7 @@
 }
 
 div .commandAlign {
-    padding-left: 18px;
+   /*padding-left: 18px;*/
 }
 
 [class="icon-asterisk"]:before {
@@ -107,8 +107,6 @@ div#companyCodeSetupTabs ul li.ui-state-active a, .ui-state-active a:link, .ui-s
     color: #3399CC;
     text-decoration: none;
 }
-
-
 
 
 

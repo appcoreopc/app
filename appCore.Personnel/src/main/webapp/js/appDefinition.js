@@ -14,7 +14,9 @@ var globalResourceGetUrl = globalHostname + "/app/User/Forms/getFormResource";
 var globalResourceListByCompanyUrl = globalHostname + "/app/User/Forms/listByCompany";
 var globalResourceSaveOrUpdateUrl = globalHostname + "/app/User/Forms/saveOrUpdate";
 var globalResourceDeleteUrl = globalHostname + "/app/User/Forms/delete";
+
 var coreBranchPage = "Branch";
+var coreCoreModulePage = "Branch";
 var coreEmployeePage = "Branch";
 var coreEmployeeGeneralViewPage = "Branch";
 var coreEmployeeContactViewPage = "Branch";
@@ -38,6 +40,7 @@ var coreHolidayGroupPage = "HolidayGroup";
 var coreCodeMaintenancePage = "Branch";
 var coreUserPage = "Branch";
 var coreFormsPage = "Branch";
+var coreScriptWidgetPage = "Branch";
 var coreJobQualification = "Branch";
 var coreJobExperience = "Branch";
 var coreJobType = "Branch";
@@ -73,6 +76,7 @@ var globalEmployeeQualificationGetByEmployeeUrl = globalHostname + "/app/Job/Emp
 var globalCompanyUrl = globalHostname + "/app/Core/Company";
 var globalCompanyListUrl = globalHostname + "/app/Core/Company/list";
 var globalGetAllCompanyInfoUrl = globalHostname + "/app/Core/Company/getAllCompanyInfo";
+
 var globalCompanyGetSummaryUrl = globalHostname + "/app/Core/Company/getSummary";
 var globalCompanyAddUrl = globalHostname + "/app/Core/Company/add";
 var globalCompanyDeleteUrl = globalHostname + "/app/Core/Company/delete";
@@ -113,7 +117,11 @@ var globalEmployeeLevelListByCompany = globalHostname + "/app/Job/Level/listByCo
 var globalEmployeeAssociationMemberTypeList = globalHostname + "/app/Job/AssociationMembershipType/list";
 var globalEmployeeAssociationMemberTypeListByCompany = globalHostname + "/app/Job/AssociationMembershipType/listByCompany";
 var globalEmployeeFamilyMemberTypelList = globalHostname + "/app/Job/FamilyRelationType/list";
-var globalEmployeeFamilyMemberTypelListByCompany = globalHostname + "/app/Job/FamilyRelationType/listByCompany";
+var globalCoreModuleListUrl = globalHostname + "/app/CoreSystem/CoreModule/listByCompany"
+
+var globalCoreModuleListByCompany = globalHostname + "/app/CoreSystem/CoreModule/listByCompany"
+var globalCoreModuleGet = globalHostname + "/app/CoreSystem/CoreModule/get"
+
 var globalEmployeeFieldExpertiseList = globalHostname + "/app/Job/FieldOfExpertise/list";
 var globalEmployeeFieldExpertiseListByCompany = globalHostname + "/app/Job/FieldOfExpertise/listByCompany";
 var globalEmployeeSalutationList = globalHostname + "/app/Job/Salutation/list";
@@ -140,6 +148,11 @@ var globalEmployeeMembershipSaveOrUpdateUrl = globalHostname + "/app/Job/Employe
 var globalEmployeeResidenceUrl = globalHostname + "/app/Job/EmployeeResidence/add";
 var globalEmployeeFamilyUrl = globalHostname + "/app/Job/EmployeeFamily/add";
 var globalEmployeeFamilySaveOrUpdateUrl = globalHostname + "/app/Job/EmployeeFamily/saveOrUpdate";
+
+var globalSaveUpdateScriptWidgetUrl = globalHostname + "/app/User/ScriptWidget/saveOrUpdate";
+var globalScriptWidgetGetUrl = globalHostname + "/app/User/ScriptWidget/get";
+var globalScriptWidgetDeleteUrl = globalHostname + "/app/User/ScriptWidget/delete";
+
 var globalEmployeeSpecialtyList = globalHostname + "/app/Job/Industry/list";
 
 /* Event definition */
@@ -160,6 +173,8 @@ var globalGradeInfoDeleteUrl = globalHostname + "/app/Core/Job/GradeInfo/delete"
 var globalEmploymentTypeInfoDeleteUrl = globalHostname + "/app/Core/Job/EmploymentTypeInfo/delete";
 var globalBranchDeleteUrl = globalHostname + "/app/Core/Branch/delete";
 var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdate";
+
+var globalCoreModuleSaveOrUpdateUrl = globalHostname + "/app/CoreSystem/CoreModule/saveOrUpdate";
 var globalDivisionSaveOrUpdateUrl = globalHostname + "/app/Core/Division/saveOrUpdate";
 var globalHolidaySaveOrUpdateUrl = globalHostname + "/app/Core/Calendar/Holiday/saveOrUpdate";
 var globalDepartmentSaveOrUpdateUrl = globalHostname + "/app/Core/Department/saveOrUpdate";
@@ -181,6 +196,7 @@ var globalEmploymentTypeInfoSaveOrUpdateUrl = globalHostname + "/app/Core/Job/Em
 var globalEmploymentTypeSaveOrUpdateUrl = globalHostname + "/app/Core/Job/EmploymentType/saveOrUpdate";
 var globalBranchGetUrl = globalHostname + "/app/Core/Branch/get";
 var globalDivisionGetUrl = globalHostname + "/app/Core/Division/get";
+
 var globalHolidaySetupGetUrl = globalHostname + "/app/Core/Calendar/Holiday/get";
 var globalDepartmentGetUrl = globalHostname + "/app/Core/Department/get";
 var globalSectionGetUrl = globalHostname + "/app/Core/Section/get";
@@ -242,3 +258,5 @@ var coreApplicationJobSetup = 14;
 var coreApplicationTypeFormsType = 15;
 var coreApplicationTypeLandingPage = 16;
 var coreApplicationTypeUsersType = 17;
+var coreApplicationTypeScriptWidgetType = 18;
+var coreApplicationTypeCoreModuleType = 19;
