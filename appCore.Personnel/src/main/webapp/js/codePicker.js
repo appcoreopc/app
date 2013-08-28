@@ -20,7 +20,7 @@ ko.bindingHandlers.codepicker = {
 
         //handle disposal (if KO removes by the template binding)
         ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
-            $(element).datepicker("destroy");
+
         });
 
     },
@@ -28,10 +28,11 @@ ko.bindingHandlers.codepicker = {
 
         //initialize with some optional options
         var options = allBindingsAccessor().codeEntity;
+        var mode = viewModel.mode();
+        var oldCodeValue = ko.utils.domData.get(element, "code");
 
         if (options != undefined) {
             var value = ko.utils.unwrapObservable(valueAccessor());
-
             var codeTypeOption = options.codeType;
             var companyIdOption = options.companyId;
 
@@ -42,25 +43,51 @@ ko.bindingHandlers.codepicker = {
             };
 
             if (value != undefined && value != "") {
-                var ajaxCore = new AjaxCore();
-                var request = ajaxCore.sendRequestType(globalCodeCheckExist, codeEntity, "post");
-                request.success(function (data, status, xhrObj) {
-                    if (data.messageCode == 0) {
-                        $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
-                        if (viewModel.errorInForm != undefined) {
-                            viewModel.errorInForm(false);
-                        }
-                    }
-                    else {
-                        if (viewModel.errorInForm != undefined) {
-                            viewModel.errorInForm(true);
-                        }
-                        $(element).next('i').next('span').remove();
-                        $(element).next('i').after("<span><i class=icon-cancel-circle-1></i></span>");
+                if (oldCodeValue == undefined || oldCodeValue == null) {
+                    console.log('setting value for the first time');
+                    $(element).val(value);
+                    ko.utils.domData.set(element, "code", value);
+                }
 
+                oldCodeValue = ko.utils.domData.get(element, "code");
+                console.log('oldCodeValue');
+                console.log(oldCodeValue);
+                console.log('value');
+                console.log(value);
+
+                if (oldCodeValue != value) {
+
+                    console.log('executing web request');
+                    var ajaxCore = new AjaxCore();
+                    var request = ajaxCore.sendRequestType(globalCodeCheckExist, codeEntity, "post");
+
+                    request.success(function (data, status, xhrObj) {
+                        if (data.messageCode == 0) {
+                            $(element).next('i').next('span').remove();
+                            $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
+                            if (viewModel.errorInForm != undefined) {
+                                viewModel.errorInForm(false);
+                            }
+                        }
+                        else {
+
+                            if (viewModel.errorInForm != undefined) {
+                                viewModel.errorInForm(true);
+                            }
+                            $(element).next('i').next('span').remove();
+                            $(element).next('i').after("<span><i class=icon-cancel-circle-1></i></span>");
+
+                        }
+                    });
+                }
+                else {
+                    $(element).next('i').next('span').remove();
+                    $(element).next('i').after("<span><i class=icon-ok-circle-1></i></span>");
+                    if (viewModel.errorInForm != undefined) {
+                        viewModel.errorInForm(false);
                     }
-                });
+                }
+                // request ends
             }
         }
     }
@@ -116,7 +143,6 @@ ko.bindingHandlers.tcodepicker = {
 
                         if (viewModel.errorInForm != undefined) {
                             viewModel.errorInForm(true);
-                            console.log(viewModel.errorInForm());
                         }
 
                         $(element).next('i').next('span').remove();

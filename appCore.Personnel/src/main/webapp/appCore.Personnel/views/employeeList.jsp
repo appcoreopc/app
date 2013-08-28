@@ -5,23 +5,37 @@
 
         $(document).ready(function()
         {
-                $("#ui-datepicker-div").hide();
-                getData(globalViewModel.companyId());
-        });
+            var vm;
 
-        function getData(companyId)
-        {
+            $("#ui-datepicker-div").hide();
+            getData(globalViewModel.companyId());
+
+            function getData(companyId)
+            {
                 var ajaxCore = new AjaxCore();
                 var companyId = { id : companyId };
                 var request = ajaxCore.sendRequest(globalEmployeeListByCompanyUrl, companyId, "get");
 
                 request.success(function(data)
                 {
-                    var coreCommand = new CoreCommandHelper();
-                    var vm = new EmployeeViewModel(coreModeList, globalViewModel, data, coreCommand.createCommandInstance());
-                    $("#employeeDiv").setupViewBinding(vm, globalViewModel);
+                    $.when(init(data)).done(bind());
                 });
-        }
+            }
+
+            function init(data)
+            {
+                var coreCommand = new CoreCommandHelper();
+                vm = new EmployeeViewModel(coreModeList, globalViewModel, data, coreCommand.createCommandInstance());
+            }
+
+            function bind()
+            {
+                $("#employeeDiv").setupViewBinding(vm, globalViewModel);
+            }
+
+        });
+
+
 
         </script>
 

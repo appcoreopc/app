@@ -7,8 +7,18 @@
 
         $(document).ready(function()
         {
-            var vm = new ConfigureHolidayGroupViewModel(globalViewModel);
-            $("#configureEmployeeGroupForm").setupViewBinding(vm, globalViewModel);
+            var vm;
+
+            $.when(init()).done(bind());
+            function init()
+            {
+                vm = new ConfigureHolidayGroupViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#configureEmployeeGroupForm").setupViewBinding(vm, globalViewModel);
+            }
         });
 
 

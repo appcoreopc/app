@@ -225,10 +225,20 @@
         var formName = "divisionForm";
         $(document).ready(function()
         {
-                var vm = new DivisionInfoViewModel(globalViewModel);
-                $("#divisionForm").setupViewBinding(vm, globalViewModel);
-                $("#accordianDivision").accordion({collapsible : true, active: false});
+                var vm;
+                $.when(init()).done(bind());
 
+                function init()
+                {
+                    vm = new DivisionInfoViewModel(globalViewModel);
+                }
+
+                function bind()
+                {
+                    $("#divisionForm").setupViewBinding(vm, globalViewModel);
+                }
+
+                $("#accordianDivision").accordion({collapsible : true, active: false});
                 $("#" + formName).validationEngine();
         });
 

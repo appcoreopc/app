@@ -8,22 +8,31 @@
 
             $(document).ready(function()
             {
-                getData(globalViewModel.companyId());
+               var vm;
+               getData(globalViewModel.companyId());
+
+               function getData(companyId)
+               {
+                   var ajaxCore = new AjaxCore();
+                   var companyId = { id : companyId };
+                   var request = ajaxCore.sendRequest(globalDivisionListByCompanyUrl, companyId, "get");
+                   request.success(function(data)
+                   {
+                       $.when(init(data)).done(bind());
+                   });
+               }
+
+               function init(data)
+               {
+                   var coreCommand = new CoreCommandHelper();
+                   vm = new DivisionListViewModel(0, data, globalViewModel, coreCommand.createCommandInstance());
+               }
+
+               function bind()
+               {
+                   $("#divisionDiv").setupViewBinding(vm, globalViewModel);
+               }
             });
-
-            function getData(companyId)
-            {
-                var ajaxCore = new AjaxCore();
-                var companyId = { id : companyId };
-                var request = ajaxCore.sendRequest(globalDivisionListByCompanyUrl, companyId, "get");
-
-                request.success(function(data)
-                {
-                    var coreCommand = new CoreCommandHelper();
-                    var vm = new DivisionListViewModel(0, data, globalViewModel, coreCommand.createCommandInstance());
-                    $("#divisionDiv").setupViewBinding(vm, globalViewModel);
-                });
-            }
 
         </script>
 

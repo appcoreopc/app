@@ -6,11 +6,13 @@
 
         $(document).ready(function()
         {
-                $("#companyForm").validationEngine();
+            $("#companyForm").validationEngine();
 
-                var vm;
-                var gridDataObject;
+            var vm;
+            var gridDataObject;
 
+            function init()
+            {
                 if (globalViewModel != undefined && globalViewModel.targetId() != null)
                 {
                     vm = new CompanyAddViewModel(coreModeEdit, globalViewModel.targetId());
@@ -25,18 +27,16 @@
                 var input = { "id" : coreCompanyPage, "roleId" : globalViewModel.employeeRole() };
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject, vm);
+            }
 
-                try {
-                    ko.applyBindings(vm, document.getElementById("companyCodeSetupTabs"));
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
+            function bind()
+            {
+                $("#companyCodeSetupTabs").setupViewBinding(vm, globalViewModel);
+            }
 
-                var tab = $("#companyCodeSetupTabs").tabs();
+            var tab = $("#companyCodeSetupTabs").tabs();
 
-        });
+            });
 
 
         </script>

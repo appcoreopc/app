@@ -223,10 +223,22 @@
 
         $(document).ready(function()
         {
-            var vm = new EmploymentTypeInfoViewModel(globalViewModel);
-            $("#employmentTypeForm").setupViewBinding(vm, globalViewModel);
+            var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new EmploymentTypeInfoViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#employmentTypeForm").setupViewBinding(vm, globalViewModel);
+            }
+
             $("#accordianEmployentType").accordion({collapsible : true, active: false});
             $("#" + formName).validationEngine();
+
         });
 
         </script>

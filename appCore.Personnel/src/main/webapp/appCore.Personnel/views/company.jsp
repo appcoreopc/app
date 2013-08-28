@@ -9,26 +9,27 @@
         {
             var ajaxCore = new AjaxCore();
             var request = ajaxCore.sendRequest(globalCompanyListUrl, null, "get");
+            var vm;
 
             request.success(function(data)
             {
-                try
-                {
-                    var vm = new CompanyViewModel(globalCompanyUrl, data, globalViewModel);
-                    var gridDataObject = vm.getView();
-                    var input = { "id" : coreCompanyPage, "roleId" : globalViewModel.employeeRole() };
-                    var coreCommand = new CoreCommand();
-                    var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                    vm.gridViewModel = gridViewModel;
-                    //ko.applyBindings(vm, document.getElementById("companyDiv"));
-                    $("#companyDiv").setupViewBinding(vm, globalViewModel);
-
-                }
-                catch (ex)
-                {
-                    console.log(ex)
-                }
+                $.when(init(data)).done(bind());
             });
+
+            function init(data)
+            {
+                vm = new CompanyViewModel(globalCompanyUrl, data, globalViewModel);
+                var gridDataObject = vm.getView();
+                var input = { "id" : coreCompanyPage, "roleId" : globalViewModel.employeeRole() };
+                var coreCommand = new CoreCommand();
+                var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
+                vm.gridViewModel = gridViewModel;
+            }
+
+            function bind()
+            {
+                $("#companyDiv").setupViewBinding(vm, globalViewModel);
+            }
         });
 
 

@@ -225,11 +225,20 @@
                 $(document).ready(function()
                 {
                     var formName = "branchForm";
-                    var vm = new BranchInfoViewModel(globalViewModel);
-                    $("#branchForm").setupViewBinding(vm, globalViewModel);
-                    $("#accordian").accordion({collapsible : true, active: false});
-                    $("#" + formName).validationEngine();
+                    var vm;
+                    $.when(init()).done(bind());
 
+                    function init()
+                    {
+                        vm = new BranchInfoViewModel(globalViewModel);
+                    }
+
+                    function bind()
+                    {
+                        $("#branchForm").setupViewBinding(vm, globalViewModel);
+                        $("#accordian").accordion({collapsible : true, active: false});
+                        $("#" + formName).validationEngine();
+                    }
                 });
 
             </script>

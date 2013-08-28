@@ -15,8 +15,10 @@
 	
 	<!-- Scans the classpath for annotated components that will be auto-registered as Spring beans.
 	 For example @Controller and @Service. Make sure to set the correct base-package-->
-	<context:component-scan base-package="org.krams.tutorial" />
+	
 	<context:component-scan base-package="com.appCore.personnel.User.Controller" />	
+	<context:component-scan base-package="com.appCore.personnel.CoreSystem" />	
+	<context:component-scan base-package="com.appCore.personnel.Core.CodeChecker" />	
 	<context:component-scan base-package="com.appCore.personnel.User.Service" />	
 	<context:component-scan base-package="com.appCore.personnel.Core.Controller" />	
 	<context:component-scan base-package="com.appCore.personnel.Core.Service" />	
@@ -26,8 +28,13 @@
 	
 	<context:component-scan base-package="com.appCore.personnel.Core.Calendar.Controller" />	
 	<context:component-scan base-package="com.appCore.personnel.Core.Calendar.Service" />	
-	
 	<context:component-scan base-package="com.appCore.personnel.Core.Helpers" />	
+	
+	<context:component-scan base-package="com.appCore.reportingService" />	
+	
+	<!--
+	<context:component-scan base-package="com.appCore.reportingService.Controller" />	
+	<context:component-scan base-package="com.appCore.reportingService.Service" />	 -->
 	
  <!-- Configure the multipart resolver -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

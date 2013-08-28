@@ -5,21 +5,34 @@
 
         $(document).ready(function()
         {
+            var vm;
             getData(globalViewModel.companyId());
+
+            function getData(companyId)
+            {
+                var ajaxCore = new AjaxCore();
+                var companyId = { id : companyId };
+                var request = ajaxCore.sendRequest(globalHolidaySetupListByCompanyUrl, companyId, "get");
+
+                request.success(function(data)
+                {
+                    $.when(init(data)).done(bind());
+                });
+            }
+
+            function init(data)
+            {
+                vm = new HolidaySetupListViewModel(coreModeList, data, globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#holidaySetupDiv").setupViewBinding(vm, globalViewModel);
+            }
+
         });
 
-        function getData(companyId)
-        {
-            var ajaxCore = new AjaxCore();
-            var companyId = { id : companyId };
-            var request = ajaxCore.sendRequest(globalHolidaySetupListByCompanyUrl, companyId, "get");
 
-            request.success(function(data)
-            {
-                var vm = new HolidaySetupListViewModel(coreModeList, data, globalViewModel);
-                $("#holidaySetupDiv").setupViewBinding(vm, globalViewModel);
-            });
-        }
 
         </script>
 

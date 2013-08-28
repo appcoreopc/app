@@ -7,21 +7,34 @@
 
     $(document).ready(function()
 	{
-        getData(globalViewModel.companyId());
+            var vm;
+            getData(globalViewModel.companyId());
+
+            function getData(companyId)
+            {
+                var ajaxCore = new AjaxCore();
+                var companyId = { id : companyId };
+                var request = ajaxCore.sendRequest(globalBranchListByCompanyUrl, companyId, "get");
+
+                request.success(function(data)
+                {
+                    $.when(init(data)).done(bind());
+                });
+            }
+
+            function init(data)
+            {
+                vm = new BranchViewModel(0, data, globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#branchDiv").setupViewBinding(vm, globalViewModel);
+            }
+
     });
 
-    function getData(companyId)
-    {
-        var ajaxCore = new AjaxCore();
-        var companyId = { id : companyId };
-        var request = ajaxCore.sendRequest(globalBranchListByCompanyUrl, companyId, "get");
 
-        request.success(function(data)
-        {
-             var vm = new BranchViewModel(0, data, globalViewModel);
-             $("#branchDiv").setupViewBinding(vm, globalViewModel);
-        });
-    }
 			
 </script>    
 

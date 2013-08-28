@@ -229,10 +229,22 @@
 
         $(document).ready(function()
         {
-                var vm = new SectionInfoViewModel(globalViewModel);
+            var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new SectionInfoViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
                 $("#sectionForm").setupViewBinding(vm, globalViewModel);
-                $("#accordianSection").accordion({collapsible : true, active: false});
-                $("#" + formName).validationEngine();
+            }
+
+            $("#accordianSection").accordion({collapsible : true, active: false});
+            $("#" + formName).validationEngine();
+
         });
 
         </script>

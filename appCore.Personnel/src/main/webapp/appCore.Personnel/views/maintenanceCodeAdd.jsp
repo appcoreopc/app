@@ -6,32 +6,39 @@
 
         <script type="text/javascript">
 
-        var form = "codeForm";
-
-        var vm;
-        var codeType = parseInt(globalCodeMaintenance);
-        var gridDataObject;
 
         $(document).ready(function()
         {
 
+           var form = "codeForm";
+           var vm;
+           var codeType = parseInt(globalCodeMaintenance);
+           var gridDataObject;
 
-            if (globalViewModel != undefined && globalViewModel.targetId() != null && globalViewModel.editMode() == coreModeEdit)
-            {
-                vm = new CodeMaintenanceViewModel(coreModeEdit, codeType, globalViewModel.targetId, globalViewModel);
-                gridDataObject = vm.getView();
-            }
-            else
-            {
-                vm = new CodeMaintenanceViewModel(coreModeInsert, codeType, null, globalViewModel);
-                gridDataObject = vm.getView();
-            }
+           $.when(init()).done(bind());
 
-            $("#codeForm").setupViewBinding(vm, globalViewModel);
-            $("#" + form).validationEngine();
+           function init()
+           {
+               if (globalViewModel != undefined && globalViewModel.targetId() != null && globalViewModel.editMode() == coreModeEdit)
+               {
+                   vm = new CodeMaintenanceViewModel(coreModeEdit, codeType, globalViewModel.targetId, globalViewModel);
+                   gridDataObject = vm.getView();
+               }
+               else
+               {
+                   vm = new CodeMaintenanceViewModel(coreModeInsert, codeType, null, globalViewModel);
+                   gridDataObject = vm.getView();
+               }
+           }
 
+           function bind()
+           {
+               $("#codeForm").setupViewBinding(vm, globalViewModel);
+           }
 
-        });
+           $("#" + form).validationEngine();
+
+           });
 
         function getEmptyDate(date)
         {

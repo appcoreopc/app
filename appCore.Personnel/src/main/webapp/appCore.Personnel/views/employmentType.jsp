@@ -8,23 +8,35 @@
 
         $(document).ready(function()
         {
+            var vm;
             getData(globalViewModel.companyId());
-         });
 
-        function getData(companyId)
-        {
-            var ajaxCore = new AjaxCore();
-            var companyId = { id : companyId };
-            var request = ajaxCore.sendRequest(globalEmploymentTypeListByCompanyUrl, companyId, "get");
+            function getData(companyId)
+            {
+                var ajaxCore = new AjaxCore();
+                var companyId = { id : companyId };
+                var request = ajaxCore.sendRequest(globalEmploymentTypeListByCompanyUrl, companyId, "get");
 
-            request.success(function(data)
+                request.success(function(data)
+                {
+                    $.when(init(data)).done(bind());
+                });
+            }
+
+            function init(data)
             {
                 var coreCommand = new CoreCommandHelper();
-                var vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
-                $("#employmentTypeDiv").setupViewBinding(vm, globalViewModel);
+                vm = new EmploymentTypeListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
+            }
 
-            });
-        }
+            function bind()
+            {
+                $("#employmentTypeDiv").setupViewBinding(vm, globalViewModel);
+            }
+
+        });
+
+
 
         </script>
 

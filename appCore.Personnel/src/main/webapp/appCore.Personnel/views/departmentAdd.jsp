@@ -220,14 +220,24 @@
         <script type="text/javascript">
 
         var formName = "departmentForm";
+
         $(document).ready(function()
         {
-                var vm = new DepartmentInfoViewModel(globalViewModel);
+            var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new DepartmentInfoViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
                 $("#departmentForm").setupViewBinding(vm, globalViewModel);
+            }
 
-                $("#accordianDepartment").accordion({collapsible : true, active: false});
-
-                $("#" + formName).validationEngine();
+            $("#accordianDepartment").accordion({collapsible : true, active: false});
+            $("#" + formName).validationEngine();
         });
 
         </script>

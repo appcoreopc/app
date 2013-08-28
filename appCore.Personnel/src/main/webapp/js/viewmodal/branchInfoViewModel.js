@@ -68,7 +68,6 @@ var BranchInfoViewModel = function (globalViewModel) {
     }
 
     function getBranchCallback(data) {
-
         if (data != null) {
 
             self.nid(data.nid);

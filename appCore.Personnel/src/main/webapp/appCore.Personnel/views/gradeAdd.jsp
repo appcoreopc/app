@@ -224,9 +224,20 @@
         var formName = "gradeForm";
         $(document).ready(function()
         {
-             var vm = new GradeInfoViewModel(globalViewModel);
-             $("#gradeForm").setupViewBinding(vm, globalViewModel);
-             $("#accordianGrade").accordion({collapsible : true, active: false});
+            var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new GradeInfoViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#gradeForm").setupViewBinding(vm, globalViewModel);
+            }
+
+            $("#accordianGrade").accordion({collapsible : true, active: false});
              $("#" + formName).validationEngine();
         });
 

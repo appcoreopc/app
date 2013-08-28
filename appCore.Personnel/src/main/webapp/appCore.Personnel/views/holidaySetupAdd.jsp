@@ -71,8 +71,19 @@
 
         $(document).ready(function()
         {
-            var vm = new HolidaySetupAddViewModel(globalViewModel);
-            $("#holidayAddForm").setupViewBinding(vm, globalViewModel);
+            var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new HolidaySetupAddViewModel(globalViewModel);
+            }
+
+            function bind()
+            {
+                $("#holidayAddForm").setupViewBinding(vm, globalViewModel);
+            }
+
             $("#" + formName).validationEngine();
 
         });

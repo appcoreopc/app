@@ -222,8 +222,17 @@
         var formName = "unitForm";
         $(document).ready(function()
         {
-             var vm = new UnitInfoViewModel(globalViewModel);
-             $("#unitForm").setupViewBinding(vm, globalViewModel);
+             var vm;
+            $.when(init()).done(bind());
+
+            function init()
+            {
+                vm = new UnitInfoViewModel(globalViewModel);
+            }
+            function bind()
+            {
+                $("#unitForm").setupViewBinding(vm, globalViewModel);
+            }
 
              $("#accordianUnit").accordion({collapsible : true, active: false});
              $("#" + formName).validationEngine();
