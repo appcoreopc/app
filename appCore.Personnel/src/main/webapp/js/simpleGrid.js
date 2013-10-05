@@ -68,8 +68,8 @@
                            <!-- ko foreach: $parent.columns-->\
                                <td data-bind=\"text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText] \"></td>\
                            <!-- /ko -->\
-                              <td data-bind=\"visible: $root.enableUpdate\"><a href='#' data-bind='click : $root.updateData'>Update</a> </td>\
-                              <td data-bind=\"visible: $root.enableDelete\"><a href='#' data-bind=\"click : $root.deleteData\">Delete</a></td>\
+                              <td data-bind=\"visible: $root.enableUpdate\"><a href='#' data-bind='click : $root.updateData'><i class='icon-edit-1'></i></a> </td>\
+                              <td data-bind=\"visible: $root.enableDelete\"><a href='#' data-bind=\"click : $root.deleteData\"><i class='icon-minus-circle-1'></i></a></td>\
                             </tr>\
                         </tbody>\
                     </table>");

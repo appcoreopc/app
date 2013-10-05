@@ -14,8 +14,6 @@ import javax.persistence.FetchType;
 import java.util.List;
 import javax.persistence.Table;
 
-
-
 	@Entity
 	@Table(name = "Actions")
 	public class Actions implements Serializable

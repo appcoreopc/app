@@ -287,4 +287,17 @@ var BranchInfoViewModel = function (globalViewModel) {
     self.cancelUpdate = function (data) {
         preparePageForLoading("branch.jsp");
     }
+
+    self.copy = function () {
+        var vm = ko.mapping.toJS(self);
+        globalViewModel.bindedViewModel(vm);
+    }
+
+    self.paste = function () {
+        var savedVm = globalViewModel.bindedViewModel();
+        var vm = ko.mapping.fromJS(savedVm);
+        $("#branchForm").setupViewBinding(vm, globalViewModel);
+
+    }
+
 }

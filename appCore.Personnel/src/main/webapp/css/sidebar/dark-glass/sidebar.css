@@ -1,33 +1,33 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
-.sidebar-root{
-    position : relative;
-    overflow : hidden;
+.sidebar-root {
+    position: relative;
+    overflow: hidden;
 }
 
-.sidebar-root div.sidebar-container{
+.sidebar-root div.sidebar-container {
     position: absolute;
 }
 
 div.sidebar-container {
-    width : 100px;
-    height : 200px;
-    position:fixed;
-    background-color:#000000;
-    filter: alpha(opacity=87);
-    -moz-opacity:0.87;
-    opacity:0.87;
-    -moz-box-shadow:0px 0px 20px #000000;
-    -webkit-box-shadow:0px 0px 20px #000000;
-    box-shadow:0px 0px 20px #000000;
+    width: 100px;
+    height: 200px;
+    position: fixed;
+    background-color: #000000;
+    filter: alpha(opacity = 87);
+    -moz-opacity: 0.87;
+    opacity: 0.87;
+    -moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 20px #000000;
 }
 
 div.sidebar-container.left {
-    top:50%;
-    left:0px;
+    top: 50%;
+    left: 0px;
     -moz-border-radius-bottomright: 10px;
     -moz-border-radius-topright: 10px;
     -webkit-border-top-right-radius: 10px;
@@ -37,8 +37,8 @@ div.sidebar-container.left {
 }
 
 div.sidebar-container.right {
-    top:50%;
-    right:0px;
+    top: 50%;
+    right: 0px;
     -moz-border-radius-bottomleft: 10px;
     -moz-border-radius-topleft: 10px;
     -webkit-border-bottom-left-radius: 10px;
@@ -48,8 +48,8 @@ div.sidebar-container.right {
 }
 
 div.sidebar-container.top {
-    top:0px;
-    left:50%;
+    top: 0px;
+    left: 50%;
     -moz-border-radius-bottomright: 10px;
     -moz-border-radius-bottomleft: 10px;
     -webkit-border-bottom-right-radius: 10px;
@@ -59,8 +59,8 @@ div.sidebar-container.top {
 }
 
 div.sidebar-container.bottom {
-    bottom:0px;
-    left:50%;
+    bottom: 0px;
+    left: 50%;
     -moz-border-radius-topright: 10px;
     -moz-border-radius-topleft: 10px;
     -webkit-border-top-right-radius: 10px;
@@ -70,60 +70,62 @@ div.sidebar-container.bottom {
 }
 
 div.sidebar-inject {
-    position:absolute;
+    position: absolute;
 }
+
 div.sidebar-inject.left {
-    background:url("inject-left.png") center no-repeat;
-    top:0px;
-    right:0px;
-    width : 50px;
+    background: url("inject-left.png") center no-repeat;
+    top: 0px;
+    right: 0px;
+    width: 50px;
 }
 
 div.sidebar-inject.right {
-    background:url("inject-right.png") center no-repeat;
-    top:0px;
-    left:0px;
-    width : 50px;
+    background: url("inject-right.png") center no-repeat;
+    top: 0px;
+    left: 0px;
+    width: 50px;
 }
 
 div.sidebar-inject.top {
-    background:url("inject-top.png") center no-repeat;
-    bottom:0px;
-    left:0px;
-    height : 50px;
+    background: url("inject-top.png") center no-repeat;
+    bottom: 0px;
+    left: 0px;
+    height: 50px;
 }
 
 div.sidebar-inject.bottom {
-    background:url("inject-bottom.png") center no-repeat;
-    top:0px;
-    right:0px;
-    height : 50px;
+    background: url("inject-bottom.png") center no-repeat;
+    top: 0px;
+    right: 0px;
+    height: 50px;
 }
 
 div.sidebar-body {
-    margin:20px;
-    position:absolute;
-    top:0px;
-    left:0px;
-    color:#FFFFFF;
+    margin-top: 20px;
+    margin-left: 2px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #FFFFFF;
 }
 
 ul.sidebar-menu {
-    font-size:12pt;
-    font-weight:bold;
-    list-style:none;
-    text-decoration:none;
-    color:white;
+    font-size: 12pt;
+    font-weight: bold;
+    list-style: none;
+    text-decoration: none;
+    color: white;
 }
 
-ul.sidebar-menu li{
-    line-height:1.5em;
+ul.sidebar-menu li {
+    line-height: 1.5em;
 }
 
-.sidebar-container a,a:visited {
+.sidebar-container a, a:visited {
 
-    color:#3399CC;
-    text-decoration:none;
-    font-weight:bold;
+    color: #3399CC;
+    text-decoration: none;
+    font-weight: bold;
 }
 

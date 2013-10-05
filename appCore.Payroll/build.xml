@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!-- Configuration of the Ant build system to generate a Jar file -->
+<project name="appCore.Payroll" default="CreateJar">
+	<target name="CreateJar" description="Create Jar file">
+		<jar jarfile="target/com.appCore.Payroll.jar" basedir="." includes="*.class">
+			<fileset dir="./target/classes" includes="com/**" />
+		</jar>
+		<exec executable="cmd">
+			<arg
+				value="/c rmdir /S /Q C:\Users\jeremywoo\.m2\repository\com\appCore\Payroll" />
+		</exec>
+		<exec executable="cmd">
+			<arg
+				value="/c mvn install:install-file -Dfile=C:\appCoreDev\appCore.Payroll\target\com.appCore.Payroll.jar -DgroupId=com.appCore.Payroll -DartifactId=com.appCore.Payroll -Dversion=1 -Dpackaging=jar" />
+		</exec>
+	</target>
+	
+</project>

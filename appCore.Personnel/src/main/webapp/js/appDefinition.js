@@ -46,6 +46,11 @@ var coreJobExperience = "Branch";
 var coreJobType = "Branch";
 var coreJobSkillRequirement = "Branch";
 var globalEmployeeModule = "Branch";
+var corePayrollScriptPage="Branch";
+var corePayrollTablePage = "Branch";
+var coreWorkPackagePage = "Branch";
+var coreConfigureWorkPackagePage = "Branch";
+
 var globalCoreGridAppearanceToobarCreateCancel = "toolbarCreateCancel";
 var globalEditorModeInsert = "Insert";
 var globalEditorModeEdit = "Edit";
@@ -240,6 +245,10 @@ var coreModeList = 0;
 var coreModeInsert = 1;
 var coreModeEdit = 2;
 
+var coreMessageWarning = -2;
+var coreMessageError = -1;
+var coreMessageInfo = 0;
+
 var coreApplicationTypeCompany = 0;
 var coreApplicationTypeEmployee = 1;
 var coreApplicationTypeCode = 2;
@@ -260,3 +269,7 @@ var coreApplicationTypeLandingPage = 16;
 var coreApplicationTypeUsersType = 17;
 var coreApplicationTypeScriptWidgetType = 18;
 var coreApplicationTypeCoreModuleType = 19;
+var coreApplicationTypePayrollScriptType=20;
+var coreApplicationTypePayrollTableType=21;
+var coreApplicationTypeWorkPackageType=22;
+var coreApplicationTypeConfigureWorkPackageType=23;

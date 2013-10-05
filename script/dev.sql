@@ -63,8 +63,15 @@ insert into forms (formid, link, category_nid, companyId, type) values ('Change 
 insert into forms (formid, link, category_nid, companyId, type) values ('Test', 'test.jsp', 1, 1, 1);
 insert into forms (formid, link, category_nid, companyId, type) values ('Manage UI Script', '../../appCore.administration/views/scriptWidgetListPage.jsp', 1, 1, 2);
 insert into forms (formid, link, category_nid, companyId, type) values ('Core Module', '../../appCore.administration/views/coreModuleListPage.jsp', 1, 1, 2);
+	
+-- this is for payroll menu 
+insert into forms (formid, link, category_nid, companyId, type) values ('Payroll script', '../../appCore.Payroll/views/payrollScriptListPage.jsp', 1, 1, 4);
+insert into forms (formid, link, category_nid, companyId, type) values ('Payroll table setup', '../../appCore.Payroll/views/payrollTableListPage.jsp', 1, 1, 4);
+insert into forms (formid, link, category_nid, companyId, type) values ('Payroll table value', '../../appCore.Payroll/views/payrollTableValueListPage.jsp', 1, 1, 4);
+insert into forms (formid, link, category_nid, companyId, type) values ('Salary package', '../../appCore.Payroll/views/workPackageListPage.jsp', 1, 1, 4);
+insert into forms (formid, link, category_nid, companyId, type) values ('Configure work package', '../../appCore.Payroll/views/configureWorkPackageListPage.jsp', 1, 1, 4);
 
--- configure user navigation data 
+-- configure user navigation data 	
 
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1,1, 'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (2,1, 'AUD');
@@ -97,6 +104,11 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (40, 1,'
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1, 2,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (41, 2,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (42, 2,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (43, 4,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (44, 4,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (45, 4,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (46, 4,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (47, 4,'AUD');
 
 
 insert into level (name, description, companyRef) values ('Level1', 'Level1', 1);

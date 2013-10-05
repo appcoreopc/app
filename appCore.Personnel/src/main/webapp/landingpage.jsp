@@ -100,7 +100,7 @@
         </li>
 
         <li class="column">
-        <a href="#" class="block callout">
+        <a href="/appCore-personnel/appCore.Payroll/views/personnelControlPanel.jsp" class="block callout">
         <i class="icon-money"></i>
         <h2>Payroll</h2>
         <p>Process month employee salary and income tax.

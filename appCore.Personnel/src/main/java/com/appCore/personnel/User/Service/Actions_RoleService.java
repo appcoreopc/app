@@ -21,6 +21,8 @@ public class Actions_RoleService
 
 	public Actions_RoleService()
 	{
+		
+		
 	}
 	
 	public Actions_RoleService(SessionFactory sessionFactory)

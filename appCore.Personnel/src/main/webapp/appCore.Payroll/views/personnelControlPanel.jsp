@@ -11,7 +11,7 @@
 
         <%@ include file="../includes/css_includes.html" %>
         <%@ include file="../includes/js_includes.html" %>
-        <%@ include file="/includes/admin_header.html" %>
+        <%@ include file="/includes/header.html" %>
 
         <script language="javascript" src="../../js/coreComboControl.js"></script>
 
@@ -32,6 +32,7 @@
 
         <script language="javascript" src="../../js/coreGlobalViewModelSetup.js"></script>
         <script language="javascript" src="../../js/coreLogout.js"></script>
+        <script language="javascript" src="../../js/coreMessageNotification.js"></script>
 
         <!-- for sidebar -->
 
@@ -74,10 +75,10 @@
                     getData(newValue);
                 });
 
+                $("#messageNotification").initCoreMessageNotification(globalViewModel, null);
 
-
-                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalRoleMenuServiceUrl, globalViewModel.employeeRole());
-                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalRoleMenuServiceUrl, globalViewModel.employeeRole());
+                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalRoleMenuServiceUrl, globalViewModel.employeeRole(), "Navigate to ", 4);
+                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole(), "Settings", 5);
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);
@@ -90,7 +91,7 @@
                 var ajaxCore = new AjaxCore();
                 var request;
                 var url = globalCompanyServiceUrl;
-                //preparePageForLoading("personnelSummaryWidget.jsp");
+                preparePageForLoading("personnelSummaryWidget.jsp");
 
             });
 

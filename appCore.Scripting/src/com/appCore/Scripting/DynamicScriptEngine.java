@@ -15,7 +15,6 @@ public class DynamicScriptEngine implements DynamicScripting {
 		 scriptEngine = new GroovyScriptProvider(codePath);
 	}
 	
-	
 	public void setScriptPath(String codePath) throws IOException {
 	
 		scriptEngine = new GroovyScriptProvider(codePath);

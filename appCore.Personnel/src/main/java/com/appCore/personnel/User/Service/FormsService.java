@@ -25,8 +25,7 @@ public class FormsService
 { 
 
 	/*
-	 	CoreModule 
-		
+	 	CoreModule 		
 		1 - Personnel 
 		2 - Administration
 		3 - Leave
@@ -100,6 +99,7 @@ public class FormsService
 			
 			if (formListToGet.size() > 0)
 			{
+				
 				List<Forms> formDetailList = getFormDetails(formListToGet, type); 
 				
 				// Construct the main layout 

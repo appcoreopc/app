@@ -44,20 +44,14 @@ ko.bindingHandlers.codepicker = {
 
             if (value != undefined && value != "") {
                 if (oldCodeValue == undefined || oldCodeValue == null) {
-                    console.log('setting value for the first time');
                     $(element).val(value);
                     ko.utils.domData.set(element, "code", value);
                 }
 
                 oldCodeValue = ko.utils.domData.get(element, "code");
-                console.log('oldCodeValue');
-                console.log(oldCodeValue);
-                console.log('value');
-                console.log(value);
 
                 if (oldCodeValue != value) {
 
-                    console.log('executing web request');
                     var ajaxCore = new AjaxCore();
                     var request = ajaxCore.sendRequestType(globalCodeCheckExist, codeEntity, "post");
 

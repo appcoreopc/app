@@ -32,12 +32,15 @@
 
         <script language="javascript" src="../../js/coreGlobalViewModelSetup.js"></script>
         <script language="javascript" src="../../js/coreLogout.js"></script>
+        <script language="javascript" src="../../js/coreSideBar.js"></script>
+        <script language="javascript" src="../../js/coreMessageNotification.js"></script>
 
         <!-- for sidebar -->
 
         <script type="text/javascript" src="../../js/coreNotificationStatus.js"></script>
 
         <ul id="recentItemSideBar">
+
         </ul>
 
         <script type="text/javascript">
@@ -70,13 +73,16 @@
 
                 globalViewModel.companyId.subscribe(function(newValue)
                 {
-                    // need to find out how to check getData function is defined
                     $(".maintenanceCommand").empty();
                     getData(newValue);
                 });
 
-                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalRoleMenuServiceUrl, globalViewModel.employeeRole(), "Navigate to ");
-                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole(), "Settings");
+                $("#messageNotification").initCoreMessageNotification(globalViewModel, null);
+
+                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalRoleMenuServiceUrl, globalViewModel.employeeRole(), "Navigate to ", 1);
+                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole(), "Settings", 5);
+
+                $("#recentItemSideBar").setupSideBar(globalViewModel);
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);

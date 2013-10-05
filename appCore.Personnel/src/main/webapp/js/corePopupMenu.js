@@ -1,8 +1,9 @@
 (function ($) {
     // anything here would be global scope //
-    $.fn.configurePopupMenu = function (targetClickElementId, popupElementName, serviceUrl, roles, popTitle) {
+    $.fn.configurePopupMenu = function (targetClickElementId, popupElementName, serviceUrl, roles, popTitle, moduleType) {
 
-        var dataRoles = { "roles":roles };
+        // should add in the type here as well //
+        var dataRoles = { "roles":roles, "moduleType" : moduleType  };
         var menuLoaded = false;
         var popupSetupHeader = popupElementName + "Header"
         var popupSetupContent = popupElementName + "Content"
@@ -30,7 +31,6 @@
                     menuLoaded = true;
 
                     var ajaxCore = new AjaxCore();
-                    // var requestMenu = ajaxCore.sendRequest(serviceUrl, null, 'get');
                     var requestMenu = ajaxCore.sendRequest(serviceUrl, dataRoles, 'get');
 
                     requestMenu.done(function (data) {

@@ -53,10 +53,13 @@ public class FormsController
 			return list;
 		}
 		
+		// Keep this method // 
+		// we need to ensure that we are hitting a specific URL - part of good practices for service design pattern :- message passing 
+		
 		@RequestMapping(value = "/Forms/listPersonnelMenuByRole", method = RequestMethod.GET)		
-		public @ResponseBody List<FormMenuView> listFormsMenuByRole(@RequestParam(value="roles", required=true) int[] rolesId) 
+		public @ResponseBody List<FormMenuView> listFormsMenuByRole(@RequestParam(value="roles", required=true) int[] rolesId, int moduleType) 
 		{	
-			return service.getMenuTypeByRole(rolesId, FormsService.personnelMenuType);
+			return service.getMenuTypeByRole(rolesId, moduleType);
 		}
 		
 		

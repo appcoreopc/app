@@ -54,3 +54,8 @@
     background-color: #F7F7F7;
     border-bottom: 1px solid #EBEBEB;
 }
+
+.navCompany div {
+    top: 0;
+    width: 500px;
+}

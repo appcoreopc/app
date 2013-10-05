@@ -74,9 +74,8 @@
                     getData(newValue);
                 });
 
-
-                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalAdminMenuServiceUrl, globalViewModel.employeeRole(), "Navigate To ");
-                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole(), "Settings");
+                $(document.body).configurePopupMenu('configureSettings', 'configureSetupView', globalAdminMenuServiceUrl, globalViewModel.employeeRole(), "Navigate To ", 2);
+                $(document.body).configurePopupMenu('adminSettings', 'configureAdminView', globalUserProfileServiceUrl, globalViewModel.employeeRole(), "Settings", 5);
 
                 $("#createEntityButton").click(function(){
                      var target = $(this);

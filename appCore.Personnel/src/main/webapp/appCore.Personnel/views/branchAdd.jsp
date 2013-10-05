@@ -171,6 +171,8 @@
             <button id="saveBtn" type="button" data-bind="visible : enableAdd || enableUpdate, click : updateData"
             class="command">Save</button>
             <button id="cancelBtn" type="button" data-bind="click : cancelUpdate" class="command">Cancel</button>
+            <button id="copy" type="button" data-bind="click : copy" class="command">Copy</button>
+            <button id="paste" type="button" data-bind="click : paste" class="command">Paste</button>
             </div>
             </div>
 
@@ -218,14 +220,14 @@
 
             </script>
 
-
             <script type="text/javascript">
 
+                var vm;
 
                 $(document).ready(function()
                 {
                     var formName = "branchForm";
-                    var vm;
+                    //var vm;
                     $.when(init()).done(bind());
 
                     function init()
@@ -243,9 +245,7 @@
 
             </script>
 
-
-
             <form id="branchForm">
-            <div id="branchMaintenance" data-bind="template : { name : templateToUse} ">
+                <div id="branchMaintenance" data-bind="template : { name : templateToUse} ">
             </div>
         </form>

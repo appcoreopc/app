@@ -20,91 +20,55 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="userComponentModule.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/userComponentModule.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landingpage.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/landingpage.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/header.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2845" column="0" selection-start="63889" selection-end="63889" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landingpage.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/landingpage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="36" selection-start="2406" selection-end="2406" vertical-scroll-proportion="-12.843137">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="companyAdd.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyAdd.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="0" selection-start="3739" selection-end="3739" vertical-scroll-proportion="-31.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personnel.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/personnel.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="0" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coreMenu.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/coreMenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="corePopupMenu.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/corePopupMenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="personnelControlPanel.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appCore.leaveManagement/views/personnelControlPanel.jsp">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="119" selection-start="3064" selection-end="3088" vertical-scroll-proportion="-18.961538">
+            <state line="81" column="0" selection-start="3225" selection-end="3225" vertical-scroll-proportion="-14.384615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appDefinition.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
+      <file leaf-file-name="coreSideBar.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/coreSideBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="4" selection-start="188" selection-end="188" vertical-scroll-proportion="0.08793104">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coreMessageNotification.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/coreMessageNotification.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coreRecentItem.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/coreRecentItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="globalViewModel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/globalViewModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="16" selection-start="547" selection-end="554" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="branchInfoViewModel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/viewmodal/branchInfoViewModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,22 +84,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/test2.js" />
-        <option value="$PROJECT_DIR$/js/globalViewModel.js" />
-        <option value="$PROJECT_DIR$/js/coreGlobalViewModelSetup.js" />
+        <option value="$PROJECT_DIR$/appCore.Payroll/views/payrollTableAdd.jsp" />
+        <option value="$PROJECT_DIR$/js/viewmodal/Payroll/payrollTableAddViewModel.js" />
+        <option value="$PROJECT_DIR$/js/viewmodal/Payroll/payrollTableListViewModel.js" />
+        <option value="$PROJECT_DIR$/appCore.Payroll/views/workPackageListPage.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Payroll/views/workPackageAdd.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageListPage.jsp" />
+        <option value="$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageAdd.jsp" />
         <option value="$PROJECT_DIR$/js/appDefinition.js" />
-        <option value="$PROJECT_DIR$/js/coreUserAlert.js" />
-        <option value="$PROJECT_DIR$/js/coreScriptLoader.js" />
-        <option value="$PROJECT_DIR$/js/userAlertLoadableModule.js" />
-        <option value="$PROJECT_DIR$/js/test.js" />
-        <option value="$PROJECT_DIR$/js/textEdit.js" />
+        <option value="$PROJECT_DIR$/js/viewmodal/branchInfoViewModel.js" />
         <option value="$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp" />
-        <option value="$PROJECT_DIR$/js/viewmodal/companyAddViewModel.js" />
-        <option value="$PROJECT_DIR$/css/landingpage.css" />
-        <option value="$PROJECT_DIR$/landingpage.jsp" />
-        <option value="$PROJECT_DIR$/css/header.css" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/companyAdd.jsp" />
-        <option value="$PROJECT_DIR$/css/personnel.css" />
+        <option value="$PROJECT_DIR$/js/coreToolbox.js" />
+        <option value="$PROJECT_DIR$/css/sidebar/dark-glass/sidebar.css" />
+        <option value="$PROJECT_DIR$/js/coreSystemMessage.js" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp" />
+        <option value="$PROJECT_DIR$/js/coreMessageNotification.js" />
+        <option value="$PROJECT_DIR$/js/coreSideBar.js" />
       </list>
     </option>
   </component>
@@ -171,6 +135,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -205,7 +170,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,8 +177,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editing.templates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/landingpage.jsp" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -268,7 +232,6 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34310532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19240907" sideWeight="0.32685715" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17708333" sideWeight="0.6568947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -279,8 +242,9 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34310532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947916" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947916" sideWeight="0.6568947" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -339,170 +303,157 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/codePicker.js">
+    <entry file="file://$PROJECT_DIR$/appCore.Payroll/views/payrollScriptAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="113" selection-end="128" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="415" selection-end="423" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/coreTextBox.js">
+    <entry file="file://$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageListPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1" column="61" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/textEdit.js">
+    <entry file="file://$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="0" selection-end="8898" vertical-scroll-proportion="0.0">
+        <state line="4" column="70" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/Payroll/configureWorkPackageAddViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="55" selection-start="1097" selection-end="1125" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="0" selection-start="5269" selection-end="5269" vertical-scroll-proportion="0.0">
+        <state line="246" column="0" selection-start="9903" selection-end="9903" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1375103509693" expanded="true" signature="628:2400" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="668:2313" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="710:964" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1006:1075" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1119:1231" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1294:1356" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1400:1494" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1556:1776" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1656:1756" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1819:2293" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="1917:2273" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="2038:2081" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="2209:2252" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="2355:2375" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="2461:3214" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="2500:3191" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="3281:5259" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="3415:5235" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="3460:3760" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="3805:4121" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="3950:4098" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="4167:4495" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="4305:4472" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="4540:4812" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="4679:4789" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="4858:5166" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="5338:8932" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="5370:8909" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="5413:7371" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="5518:6224" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="5556:5967" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="5681:5948" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="5688:5942" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6007:6205" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6099:6186" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6122:6180" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6259:6554" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6384:6535" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6391:6529" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6590:6915" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6713:6896" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6723:6890" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="6934:7351" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="7042:7332" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="7158:7199" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="7390:7415" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="7433:8890" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="7871:8052" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="7889:8033" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="7906:8014" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="8158:8637" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="8978:9425" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="9043:9401" placeholder="{...}" />
-            <marker date="1375103509693" expanded="true" signature="9463:9587" placeholder="..." />
-            <marker date="1375103509693" expanded="true" signature="9552:9571" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="628:2400" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="668:2313" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="710:964" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1006:1075" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1119:1231" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1294:1356" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1400:1494" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1556:1776" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1656:1756" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1819:2293" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="1917:2273" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="2038:2081" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="2209:2252" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="2355:2375" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="2461:3214" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="2500:3191" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="3281:5259" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="3415:5235" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="3460:3760" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="3805:4121" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="3950:4098" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="4167:4495" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="4305:4472" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="4540:4812" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="4679:4789" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="4858:5166" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="5338:9133" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="5370:9110" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="5413:7572" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="5518:6224" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="5556:5967" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="5681:5948" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="5688:5942" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6007:6205" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6099:6186" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6122:6180" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6259:6554" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6384:6535" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6391:6529" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6590:6915" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6713:6896" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6723:6890" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="6934:7552" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="7042:7533" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="7158:7199" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="7591:7616" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="7634:9091" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="8072:8253" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="8090:8234" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="8107:8215" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="8359:8838" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="9178:9901" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="9267:9877" placeholder="{...}" />
+            <marker date="1380803511484" expanded="true" signature="9454:9548" placeholder="{...}" />
+            <marker date="1380803511484" expanded="true" signature="9606:9859" placeholder="{...}" />
+            <marker date="1380803511484" expanded="true" signature="9937:10065" placeholder="..." />
+            <marker date="1380803511484" expanded="true" signature="10030:10049" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/companyAddViewModel.js">
+    <entry file="file://$PROJECT_DIR$/css/sidebar/dark-glass/sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/coreLogout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="11" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.47433037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/globalViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="547" selection-end="554" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/coreGlobalViewModelSetup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="9" selection-start="25" selection-end="25" vertical-scroll-proportion="0.018973215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/coreRecentItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/userAlertLoadableModule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/userComponentModule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/landingpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="36" selection-start="2406" selection-end="2406" vertical-scroll-proportion="-12.843137">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/landingpage.css">
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/branchInfoViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/header.css">
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2845" column="0" selection-start="63889" selection-end="63889" vertical-scroll-proportion="0.0">
+        <state line="81" column="0" selection-start="3225" selection-end="3225" vertical-scroll-proportion="-14.384615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/companyAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="3739" selection-end="3739" vertical-scroll-proportion="-31.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/personnel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/coreMenu.js">
+    <entry file="file://$PROJECT_DIR$/js/coreMessageNotification.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/corePopupMenu.js">
+    <entry file="file://$PROJECT_DIR$/js/coreSideBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.leaveManagement/views/personnelControlPanel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="119" selection-start="3064" selection-end="3088" vertical-scroll-proportion="-18.961538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="4" selection-start="188" selection-end="188" vertical-scroll-proportion="0.08793104">
           <folding />
         </state>
       </provider>

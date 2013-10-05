@@ -11,6 +11,8 @@
             var vm;
             var gridDataObject;
 
+            $.when(init()).done(bind());
+
             function init()
             {
                 if (globalViewModel != undefined && globalViewModel.targetId() != null)
@@ -34,7 +36,7 @@
                 $("#companyCodeSetupTabs").setupViewBinding(vm, globalViewModel);
             }
 
-            var tab = $("#companyCodeSetupTabs").tabs();
+                var tab = $("#companyCodeSetupTabs").tabs();
 
             });
 

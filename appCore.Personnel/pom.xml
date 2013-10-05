@@ -214,6 +214,12 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>com.appCore.Payroll</groupId>
+			<artifactId>com.appCore.Payroll</artifactId>
+			<version>1</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>com.appCore.ReportingService</groupId>
 			<artifactId>com.appCore.ReportingService</artifactId>
 			<version>1</version>
