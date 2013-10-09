@@ -25,7 +25,6 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     this.centralPage = "maintenanceCode.jsp";
     this.editPage = "maintenanceCodeAdd.jsp";
     this.addPage = "maintenanceCodeAdd.jsp";
-    this.branchForm = "codeForm";
 
     this.gridUrl = "";
     this.codeCommand = "#maintenanceCodeCommand";
@@ -33,8 +32,6 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     this.data = data;
 
     self.codeType(codeType);
-
-    var form = "codeForm";
 
     if (initView == 0)
         self.gridData = ko.observableArray(data);
@@ -266,7 +263,6 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
         }
     }
 
-
     this.saveDataForm = function () {
 
         var isValid = $("#" + "codeForm").validationEngine('validate');
@@ -315,6 +311,7 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
 
 
     function initializeApp() {
+
         var input = { "id":coreCodeMaintenancePage, "roleId":globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var result = coreCommand.getPermission(hostAuthorizationUrl, input);

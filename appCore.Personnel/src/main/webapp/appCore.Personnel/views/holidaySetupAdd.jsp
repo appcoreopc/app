@@ -68,10 +68,10 @@
         <script type="text/javascript">
 
         var formName = "holidayAddForm";
+        var vm;
 
         $(document).ready(function()
         {
-            var vm;
             $.when(init()).done(bind());
 
             function init()
@@ -81,7 +81,7 @@
 
             function bind()
             {
-                $("#holidayAddForm").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
             }
 
             $("#" + formName).validationEngine();

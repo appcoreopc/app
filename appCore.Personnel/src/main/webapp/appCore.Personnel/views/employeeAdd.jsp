@@ -4,9 +4,11 @@
 
         <script type="text/javascript">
 
+        var vm;
+
         $(document).ready(function()
         {
-            var vm = new EmployeeCommandViewModel();
+            vm = new EmployeeCommandViewModel();
             var gridDataObject = vm.getCommandForForm();
 
             var input = { "id" : globalEmployeeModule, "roleId" : globalViewModel.employeeRole() };

@@ -5,6 +5,9 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "jobDescriptionContent";
+
         $(document).ready(function()
         {
             $("#jobTypeForm").validationEngine();
@@ -12,8 +15,9 @@
             var input = { "id" : coreJobType, "roleId" : globalViewModel.employeeRole() };
             var coreCommand = new CoreCommand();
             var result = coreCommand.getPermission(hostAuthorizationUrl, input);
-            var vm = new JobTypeViewModel(globalViewModel.editMode(), globalViewModel.targetId(), result.permission, globalViewModel);
-            $("#jobDescriptionContent").setupViewBinding(vm, globalViewModel);
+
+            vm = new JobTypeViewModel(globalViewModel.editMode(), globalViewModel.targetId(), result.permission, globalViewModel);
+            $("#" + formName).setupViewBinding(vm, globalViewModel);
 
         });
 

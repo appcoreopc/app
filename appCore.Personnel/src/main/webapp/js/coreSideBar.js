@@ -1,6 +1,5 @@
 (function ($) {
     $.fn.setupSideBar = function (globalViewModel) {
-
         var globalCopy = "globalCopy";
         var globalPaste = "globalPaste";
         var globalPrint = "globalPrint";
@@ -14,10 +13,21 @@
             globalViewModel.message(message);
         }
 
+        function copy() {
+            var vmToCopy = ko.mapping.toJS(vm);
+            globalViewModel.bindedViewModel(vmToCopy);
+        }
+
+        function paste(formId) {
+            var viewModel = globalViewModel.bindedViewModel();
+            vm = ko.mapping.fromJS(viewModel);
+            $("#" + formId).setupViewBinding(vm, globalViewModel);
+        }
+
         $("#" + globalCopy).click(function () {
 
-            if (typeof vm !== 'undefined' && vm.copy) {
-                vm.copy();
+            if (typeof vm !== 'undefined') {
+                copy();
                 sendMessage('Copied successfully.');
             }
             else {
@@ -26,8 +36,8 @@
         });
 
         $("#" + globalPaste).click(function () {
-            if (typeof vm !== 'undefined' && vm.paste) {
-                vm.paste();
+            if (typeof vm !== 'undefined') {
+                paste(formName);
                 sendMessage('Paste operation executed.');
             }
             else {
@@ -44,8 +54,6 @@
                 sendMessage('print method not supported.');
             }
         });
-
-
     };
 
 })(jQuery);

@@ -5,13 +5,16 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "qualificationAddDetailInfo";
+
         $(document).ready(function()
         {
 
             $("#QualificationForm").validationEngine();
 
             var ajaxCore = new AjaxCore();
-            var vm = new EmployeeQualificationViewModel(0, globalViewModel);
+            vm = new EmployeeQualificationViewModel(0, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
@@ -19,7 +22,7 @@
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
             vm.loadInitData();
-            $("#qualificationAddDetailInfo").setupViewBinding(vm, globalViewModel);
+            $("#" + formName).setupViewBinding(vm, globalViewModel);
 
         });
 

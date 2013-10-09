@@ -7,19 +7,23 @@
 
         <script type="text/javascript">
 
+
+        var vm;
+        var formName = "contactsAddDetailInfo";
+
         $(document).ready(function()
         {
             $("#ContactForm").validationEngine();
 
             var ajaxCore = new AjaxCore();
-            var vm = new EmployeeContactsViewModel(0, globalViewModel);
+            vm = new EmployeeContactsViewModel(0, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-            $("#contactsAddDetailInfo").setupViewBinding(vm, globalViewModel);
+            $("#" + formName).setupViewBinding(vm, globalViewModel);
 
         });
 

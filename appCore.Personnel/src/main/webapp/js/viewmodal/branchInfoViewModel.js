@@ -1,4 +1,5 @@
 var BranchInfoViewModel = function (globalViewModel) {
+
     var self = this;
     self.nid = ko.observable();
     self.code = ko.observable();
@@ -19,6 +20,7 @@ var BranchInfoViewModel = function (globalViewModel) {
     self.addInfoValue = ko.observable();
 
     self.listInfo = ko.observableArray();
+    self.editData = ko.observable();
 
     self.mode = ko.observable(coreModeInsert);
     self.enableAdd = ko.observable();
@@ -82,15 +84,11 @@ var BranchInfoViewModel = function (globalViewModel) {
         }
     }
 
-    self.editData = ko.observable();
-
     self.cancelInfoData = function () {
         self.editData("");
     }
 
-
     self.editInfoData = function (data) {
-
         self.infoCategory = data.infoCategory;
         self.infoDescription = data.infoDescription;
         self.infoType = data.infoType;
@@ -241,7 +239,6 @@ var BranchInfoViewModel = function (globalViewModel) {
     }
 
     function deleteCompleteCallback(result, data) {
-
         if (result.messageCode == 0) {
             self.listInfo.remove(data);
         }
@@ -255,7 +252,6 @@ var BranchInfoViewModel = function (globalViewModel) {
     }
 
     self.updateData = function (data) {
-
         var isValid = $("#" + "branchForm").validationEngine('validate');
 
         if (!isValid)
@@ -265,6 +261,7 @@ var BranchInfoViewModel = function (globalViewModel) {
             return;
 
         var branch = new Branch();
+
         if (self.mode() == coreModeEdit)
             branch.nid = self.nid();
 
@@ -287,17 +284,4 @@ var BranchInfoViewModel = function (globalViewModel) {
     self.cancelUpdate = function (data) {
         preparePageForLoading("branch.jsp");
     }
-
-    self.copy = function () {
-        var vm = ko.mapping.toJS(self);
-        globalViewModel.bindedViewModel(vm);
-    }
-
-    self.paste = function () {
-        var savedVm = globalViewModel.bindedViewModel();
-        var vm = ko.mapping.fromJS(savedVm);
-        $("#branchForm").setupViewBinding(vm, globalViewModel);
-
-    }
-
 }

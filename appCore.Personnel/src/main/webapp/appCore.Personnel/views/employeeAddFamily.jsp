@@ -6,18 +6,21 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "familyAddDetailInfo";
+
         $(document).ready(function()
         {
             $("#FamilyForm").validationEngine();
 
-            var vm = new EmployeeFamilyViewModel(0, globalViewModel);
+            vm = new EmployeeFamilyViewModel(0, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-            $("#familyAddDetailInfo").setupViewBinding(vm, globalViewModel);
+            $("#" + formName).setupViewBinding(vm, globalViewModel);
         });
 
         </script>

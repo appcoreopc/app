@@ -1,11 +1,13 @@
 <script language="javascript" src="../../js/viewmodal/jobSkillViewModel.js"></script>
 
-<script type="text/javascript">          
+<script type="text/javascript">
 
 
-	$(document).ready(function() 
+    var vm;
+
+    $(document).ready(function()
 	{
-			var vm = new JobSkillViewModel(1);
+			vm = new JobSkillViewModel(1);
 			var gridDataObject = vm.getView();
 			var input = { "id" : coreJobSkillRequirement, "roleId" : 1 };
 			var coreCommand = new CoreCommand();

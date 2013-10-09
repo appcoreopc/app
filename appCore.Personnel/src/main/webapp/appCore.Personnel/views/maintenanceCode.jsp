@@ -14,6 +14,7 @@
             function getData(companyId)
             {
                 codeType = parseInt(globalCodeMaintenance);
+
                 if (codeType != null)
                 {
                     var helper = new CodeMaintenanceHelper(codeType);

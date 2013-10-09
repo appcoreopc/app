@@ -5,19 +5,22 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "employeeResidenceAddInfo";
+
         $(document).ready(function()
         {
                 $("#EmployeeResidenceForm").validationEngine();
 
                 var ajaxCore = new AjaxCore();
-                var vm = new EmployeeResidentialViewModel(0, globalViewModel);
+                vm = new EmployeeResidentialViewModel(0, globalViewModel);
 
                 var gridDataObject = vm.getView();
                 var input = vm.getRole();
 
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                $("#employeeResidenceAddInfo").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
 
         });
 

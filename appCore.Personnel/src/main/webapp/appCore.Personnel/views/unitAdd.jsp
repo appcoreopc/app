@@ -219,10 +219,11 @@
 
         <script type="text/javascript">
 
+        var vm;
         var formName = "unitForm";
+
         $(document).ready(function()
         {
-             var vm;
             $.when(init()).done(bind());
 
             function init()
@@ -231,7 +232,7 @@
             }
             function bind()
             {
-                $("#unitForm").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
             }
 
              $("#accordianUnit").accordion({collapsible : true, active: false});

@@ -4,9 +4,11 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "jobSetupForm";
+
         $(document).ready(function()
         {
-
             if (globalViewModel.editMode() == coreModeEdit)
             {
                 var ajaxCore = new AjaxCore();
@@ -15,13 +17,13 @@
 
                 request.success(function(dataSource)
                 {
-                    var vm = new JobSetupCommandViewModel(globalViewModel.editMode(), dataSource, globalViewModel);
+                    vm = new JobSetupCommandViewModel(globalViewModel.editMode(), dataSource, globalViewModel);
                     bindVM(vm);
                 });
             }
             else
             {
-                var vm = new JobSetupCommandViewModel(globalViewModel.editMode(), null, globalViewModel);
+                vm = new JobSetupCommandViewModel(globalViewModel.editMode(), null, globalViewModel);
                 bindVM(vm);
             }
 
@@ -35,7 +37,7 @@
                 var input = { "id" : globalEmployeeModule, "roleId" : globalViewModel.employeeRole() };
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-                $("#jobSetupForm").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
 
 
         }

@@ -219,11 +219,11 @@
 
         <script type="text/javascript">
 
+        var vm;
         var formName = "employmentTypeForm";
 
         $(document).ready(function()
         {
-            var vm;
             $.when(init()).done(bind());
 
             function init()
@@ -233,7 +233,7 @@
 
             function bind()
             {
-                $("#employmentTypeForm").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
             }
 
             $("#accordianEmployentType").accordion({collapsible : true, active: false});

@@ -5,12 +5,15 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "employeeExpertiseAddDetailInfo";
+
         $(document).ready(function()
         {
            $("#JobSetupSkillForm").validationEngine();
 
             var ajaxCore = new AjaxCore();
-            var vm = new JobSetupSkillAddViewModel(coreModeInsert, globalViewModel);
+            vm = new JobSetupSkillAddViewModel(coreModeInsert, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
@@ -18,7 +21,7 @@
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
             vm.loadInitData();
-            $("#employeeExpertiseAddDetailInfo").setupViewBinding(vm, globalViewModel);
+            $("#" + formName).setupViewBinding(vm, globalViewModel);
 
         });
 

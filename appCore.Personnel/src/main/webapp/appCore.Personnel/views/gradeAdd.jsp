@@ -221,10 +221,11 @@
 
         <script type="text/javascript">
 
+        var vm;
         var formName = "gradeForm";
+
         $(document).ready(function()
         {
-            var vm;
             $.when(init()).done(bind());
 
             function init()
@@ -234,7 +235,7 @@
 
             function bind()
             {
-                $("#gradeForm").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
             }
 
             $("#accordianGrade").accordion({collapsible : true, active: false});

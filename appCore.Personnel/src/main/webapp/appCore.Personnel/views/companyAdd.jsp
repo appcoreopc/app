@@ -4,11 +4,13 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "companyCodeSetupTabs";
+
         $(document).ready(function()
         {
             $("#companyForm").validationEngine();
 
-            var vm;
             var gridDataObject;
 
             $.when(init()).done(bind());
@@ -33,10 +35,10 @@
 
             function bind()
             {
-                $("#companyCodeSetupTabs").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
             }
 
-                var tab = $("#companyCodeSetupTabs").tabs();
+             var tab = $("#" + formName).tabs();
 
             });
 

@@ -1,10 +1,12 @@
 <script language="javascript" src="../../js/viewmodal/jobExperienceViewModel.js"></script>
 
-<script type="text/javascript">          
+<script type="text/javascript">
 
-	$(document).ready(function() 
+    var vm;
+
+    $(document).ready(function()
 	{
-			var vm = new JobExperienceViewModel(1);
+			vm = new JobExperienceViewModel(1);
 			var gridDataObject = vm.getView();
 			var input = { "id" : coreJobExperience, "roleId" : 1 };
 			var coreCommand = new CoreCommand();

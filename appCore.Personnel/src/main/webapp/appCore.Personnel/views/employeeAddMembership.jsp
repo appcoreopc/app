@@ -6,20 +6,23 @@
 
         <script type="text/javascript">
 
+        var vm;
+        var formName = "MembershipAddDetailInfo";
+
         $(document).ready(function()
         {
 
             $("#MembershipForm").validationEngine();
 
             var ajaxCore = new AjaxCore();
-            var vm = new EmployeeMembershipViewModel(0, globalViewModel);
+            vm = new EmployeeMembershipViewModel(0, globalViewModel);
 
             var gridDataObject = vm.getView();
             var input = vm.getRole();
 
             var coreCommand = new CoreCommand();
             coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-            $("#MembershipAddDetailInfo").setupViewBinding(vm, globalViewModel);
+            $("#" + formName).setupViewBinding(vm, globalViewModel);
 
         });
 

@@ -171,8 +171,7 @@
             <button id="saveBtn" type="button" data-bind="visible : enableAdd || enableUpdate, click : updateData"
             class="command">Save</button>
             <button id="cancelBtn" type="button" data-bind="click : cancelUpdate" class="command">Cancel</button>
-            <button id="copy" type="button" data-bind="click : copy" class="command">Copy</button>
-            <button id="paste" type="button" data-bind="click : paste" class="command">Paste</button>
+
             </div>
             </div>
 
@@ -223,11 +222,10 @@
             <script type="text/javascript">
 
                 var vm;
+                var formName = "branchForm";
 
                 $(document).ready(function()
                 {
-                    var formName = "branchForm";
-                    //var vm;
                     $.when(init()).done(bind());
 
                     function init()
@@ -237,7 +235,7 @@
 
                     function bind()
                     {
-                        $("#branchForm").setupViewBinding(vm, globalViewModel);
+                        $("#" + formName).setupViewBinding(vm, globalViewModel);
                         $("#accordian").accordion({collapsible : true, active: false});
                         $("#" + formName).validationEngine();
                     }

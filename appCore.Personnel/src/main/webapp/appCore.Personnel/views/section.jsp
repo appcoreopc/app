@@ -7,9 +7,13 @@
 
         <script type="text/javascript">
 
+
+        var vm;
+        var formName = "sectionDiv";
+
         $(document).ready(function()
         {
-            var vm;
+
             getData(globalViewModel.companyId());
 
             function getData(companyId)
@@ -32,7 +36,7 @@
 
             function bind()
             {
-                $("#sectionDiv").setupViewBinding(vm, globalViewModel);
+                $("#" + formName).setupViewBinding(vm, globalViewModel);
             }
 
         });

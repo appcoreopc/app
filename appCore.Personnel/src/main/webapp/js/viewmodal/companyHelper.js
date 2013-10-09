@@ -1,16 +1,16 @@
 var CompanyHelper = function () {
 
     /*this.deleteCompany = function (id) {
-        var objectId = { "id":id };
-        var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequestSequential(globalCompanyDeleteUrl, objectId, "get");
-        request.success(function (data) {
-            return data.messageCode;
-        });
-    }*/
+     var objectId = { "id":id };
+     var ajaxCore = new AjaxCore();
+     var request = ajaxCore.sendRequestSequential(globalCompanyDeleteUrl, objectId, "get");
+     request.success(function (data) {
+     return data.messageCode;
+     });
+     }*/
 
     this.deleteCompany = function (data, callback) {
-        var objectId = { "id": data.nid };
+        var objectId = { "id":data.nid };
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestSequential(globalCompanyDeleteUrl, objectId, "get");
         request.success(function (resultData) {
@@ -135,6 +135,14 @@ var CompanyHelper = function () {
         });
     }
 
+    this.saveUpdateMaintenanceCode = function (codeType, entityData, callBack) {
+        var helper = new CodeMaintenanceHelper(codeType);
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestType(helper.getUrl() + "/saveOrUpdate", entityData, "post");
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
 
     this.saveUpdateDivision = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
@@ -229,6 +237,18 @@ var CompanyHelper = function () {
         });
     }
 
+    this.getMaintenanceCode = function (codeType, maintenanceData, callBack) {
+        var ajaxCore = new AjaxCore();
+        var helper = new CodeMaintenanceHelper(codeType);
+        var dateHelper = new EmployeeHelper();
+        var request = ajaxCore.sendRequest(helper.getUrl() + "/get", maintenanceData, "get");
+
+        request.success(function (data, status, xhrObj) {
+            callBack(data);
+        });
+    }
+
+
     this.getDivision = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalDivisionGetUrl, entityData, "get");
@@ -254,7 +274,7 @@ var CompanyHelper = function () {
     }
 
     this.deleteScriptWidget = function (data, callback) {
-        var objectId = { "id": data.nid };
+        var objectId = { "id":data.nid };
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequestSequential(globalScriptWidgetDeleteUrl, objectId, "get");
         request.success(function (resultData) {
@@ -345,7 +365,6 @@ var CompanyHelper = function () {
     }
 
 
-
     this.getGrade = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalGradeGetUrl, entityData, "get");
@@ -363,8 +382,7 @@ var CompanyHelper = function () {
         });
     }
 
-    this.deleteBranchInfo = function (entityData, data, callBack)
-    {
+    this.deleteBranchInfo = function (entityData, data, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalBranchInfoDeleteUrl, entityData, "get");
         request.success(function (responseData, status, xhrObj) {
@@ -372,8 +390,7 @@ var CompanyHelper = function () {
         });
     }
 
-    this.deleteDivisionInfo = function (entityData, data, callBack)
-    {
+    this.deleteDivisionInfo = function (entityData, data, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalDivisionInfoDeleteUrl, entityData, "get");
         request.success(function (responseData, status, xhrObj) {
@@ -382,8 +399,7 @@ var CompanyHelper = function () {
     }
 
 
-    this.deleteDepartmentInfo = function (entityData, data, callBack)
-    {
+    this.deleteDepartmentInfo = function (entityData, data, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalDepartmentInfoDeleteUrl, entityData, "get");
         request.success(function (responseData, status, xhrObj) {
@@ -392,8 +408,7 @@ var CompanyHelper = function () {
     }
 
 
-    this.deleteSectionInfo = function (entityData, data, callBack)
-    {
+    this.deleteSectionInfo = function (entityData, data, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalSectionInfoDeleteUrl, entityData, "get");
         request.success(function (responseData, status, xhrObj) {
@@ -402,8 +417,7 @@ var CompanyHelper = function () {
     }
 
 
-    this.deleteUnitInfo = function (entityData, data, callBack)
-    {
+    this.deleteUnitInfo = function (entityData, data, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalUnitInfoDeleteUrl, entityData, "get");
         request.success(function (responseData, status, xhrObj) {
@@ -411,8 +425,7 @@ var CompanyHelper = function () {
         });
     }
 
-    this.deleteGradeInfo = function (entityData, data, callBack)
-    {
+    this.deleteGradeInfo = function (entityData, data, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalGradeInfoDeleteUrl, entityData, "get");
         request.success(function (responseData, status, xhrObj) {
@@ -420,8 +433,7 @@ var CompanyHelper = function () {
         });
     }
 
-    this.deleteEmploymentTypeInfo = function (entityData, data, callBack)
-    {
+    this.deleteEmploymentTypeInfo = function (entityData, data, callBack) {
         var ajaxCore = new AjaxCore();
         var request = ajaxCore.sendRequest(globalEmploymentTypeInfoDeleteUrl, entityData, "get");
         request.success(function (responseData, status, xhrObj) {
@@ -498,7 +510,7 @@ var CompanyHelper = function () {
 
     this.saveUpdateCoreModule = function (entityData, callBack) {
         var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequestType( globalCoreModuleSaveOrUpdateUrl, entityData, "post");
+        var request = ajaxCore.sendRequestType(globalCoreModuleSaveOrUpdateUrl, entityData, "post");
         request.success(function (data, status, xhrObj) {
             callBack(data);
         });
