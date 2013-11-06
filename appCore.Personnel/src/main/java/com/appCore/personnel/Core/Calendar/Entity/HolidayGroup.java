@@ -32,34 +32,43 @@ import com.appCore.personnel.Core.Calendar.Entity.Holiday;
 		@GeneratedValue
 		@Column(name = "Nid")
 		private Integer nid;
-
 		
 		@Column(name = "Name")
 		private String name;
-		
 				
 		@Column(name = "Description")
 		private String description;
 		
-		//@MapKeyManyToMany(joinColumns=@JoinColumn(name="Holiday_Keys"))
-		
-		//@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-		//@JoinTable(name="HolidayGroup_Holiday", joinColumns={ @JoinColumn(name="HolidayGroup_Key")}, 
-		//inverseJoinColumns={@JoinColumn(name="Holiday_Key")})
-		//@JoinColumn(name="HolidayGroup_Key")
-		
 		@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 		@JoinTable(name="HolidayGroup_Holiday")
 		private List<Holiday> holidays;
-	
+
+		@Column(name = "HolidayReplacementType")
+		private Integer holidayReplacementType;
 		
 		@Column(name = "LastUpdate")
 		private Timestamp lastUpdate;
-
 		
 		@Column(name = "CompanyRef")
 		private int companyRef;
 		
+		@Column(name = "startholidayValidityCycle")
+		private Timestamp startholidayValidityCycle;
+		
+		@Column(name = "endholidayValidityCycle")
+		private Timestamp endholidayValidityCycle;
+		
+		@Column(name = "EntitlementType")
+		private int entitlementType;
+		
+		@Column(name = "ReplacementType")
+		private int replacementType;
+		
+		@Column(name = "LeaveEarningType")
+		private int leaveEarningType;
+		
+		@Column(name = "NotificationType")
+		private int notificationType;
 		
 		@Column(name = "StartEffectiveDate")
 		private Timestamp startEffectiveDate;
@@ -67,7 +76,6 @@ import com.appCore.personnel.Core.Calendar.Entity.Holiday;
 		
 		@Column(name = "EndEffectiveDate")
 		private Timestamp endEffectiveDate;
-
 		
 		
 		@Column(name = "Disabled")
@@ -154,6 +162,76 @@ import com.appCore.personnel.Core.Calendar.Entity.Holiday;
 
 		public void setDisabled(Boolean disabled) {
 			this.disabled = disabled;
+		}
+
+
+		public Timestamp getStartholidayValidityCycle() {
+			return startholidayValidityCycle;
+		}
+
+
+		public void setStartholidayValidityCycle(Timestamp startholidayValidityCycle) {
+			this.startholidayValidityCycle = startholidayValidityCycle;
+		}
+
+
+		public Timestamp getEndholidayValidityCycle() {
+			return endholidayValidityCycle;
+		}
+
+
+		public void setEndholidayValidityCycle(Timestamp endholidayValidityCycle) {
+			this.endholidayValidityCycle = endholidayValidityCycle;
+		}
+
+
+		public int getEntitlementType() {
+			return entitlementType;
+		}
+
+
+		public void setEntitlementType(int entitlementType) {
+			this.entitlementType = entitlementType;
+		}
+
+
+		public int getReplacementType() {
+			return replacementType;
+		}
+
+
+		public void setReplacementType(int replacementType) {
+			this.replacementType = replacementType;
+		}
+
+
+		public int getLeaveEarningType() {
+			return leaveEarningType;
+		}
+
+
+		public void setLeaveEarningType(int leaveEarningType) {
+			this.leaveEarningType = leaveEarningType;
+		}
+
+
+		public int getNotificationType() {
+			return notificationType;
+		}
+
+
+		public void setNotificationType(int notificationType) {
+			this.notificationType = notificationType;
+		}
+
+
+		public Integer getHolidayReplacementType() {
+			return holidayReplacementType;
+		}
+
+
+		public void setHolidayReplacementType(Integer holidayReplacementType) {
+			this.holidayReplacementType = holidayReplacementType;
 		}
 
 

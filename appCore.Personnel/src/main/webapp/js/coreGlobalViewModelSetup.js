@@ -14,7 +14,6 @@
             if (setupCompleteCallBack != undefined) {
                 setupCompleteCallBack();
             }
-
             return globalViewModel;
         }
         catch (ex) {

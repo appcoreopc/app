@@ -3,7 +3,7 @@
     $.fn.configurePopupMenu = function (targetClickElementId, popupElementName, serviceUrl, roles, popTitle, moduleType) {
 
         // should add in the type here as well //
-        var dataRoles = { "roles":roles, "moduleType" : moduleType  };
+        var dataRoles = { "roles":roles, "moduleType":moduleType  };
         var menuLoaded = false;
         var popupSetupHeader = popupElementName + "Header"
         var popupSetupContent = popupElementName + "Content"

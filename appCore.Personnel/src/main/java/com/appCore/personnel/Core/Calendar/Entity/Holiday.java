@@ -35,25 +35,32 @@ import javax.persistence.Table;
 		
 		@Column(name = "Name")
 		private String name;
-
+		
+		// determine what action to take 
+		// when holiday falls on sat / sun
+		@Column(name = "ActionFallsOnHoliday")
+		private int actionFallsOnHoliday;
+		
 		
 		@Column(name = "HolidayDate")
 		private Timestamp holidayDate;
 
+		
+		@Column(name = "StartholidayValidityCycle")
+		private Timestamp startholidayValidityCycle;
+
+		
+		@Column(name = "EndholidayValidityCycle")
+		private Timestamp endholidayValidityCycle;
+			
+
+		@Column(name = "NotificationType")
+		private int notificationType;
+		
 
 		@Column(name = "CompanyRef")
 		private Integer companyRef;
-
 		
-		public Integer getCompanyRef() {
-			return companyRef;
-		}
-
-
-		public void setCompanyRef(Integer companyId) {
-			this.companyRef = companyId;
-		}
-
 		
 		@Column(name = "Recurring")
 		private Boolean recurring;
@@ -62,13 +69,6 @@ import javax.persistence.Table;
 		@Column(name = "Description")
 		private String description;
 		
-		//@OneToMany
-		//@JoinColumn(name="Holiday_Key")
-		//@OneToMany
-		//@JoinColumn(name="HolidayKey")
-		//@ManyToOne
-		//@ManyToMany
-		//@JoinTable(name="HolidayGroup_Holiday") //, joinColumns=@JoinColumn(name="Holiday_Key"))
 		@Transient
 		private List<HolidayGroup> holidayGroup;
 		
@@ -86,6 +86,15 @@ import javax.persistence.Table;
 		}
 
 
+		public Integer getCompanyRef() {
+			return companyRef;
+		}
+
+
+		public void setCompanyRef(Integer companyId) {
+			this.companyRef = companyId;
+		}
+		
 		public void setNid(Integer nid) { 
 			this.nid = nid;
 		}
@@ -154,5 +163,45 @@ import javax.persistence.Table;
 
 		public void setLastUpdate(Date lastUpdate) { 
 			this.lastUpdate = lastUpdate;
+		}
+
+
+		public int getActionFallsOnHoliday() {
+			return actionFallsOnHoliday;
+		}
+
+
+		public void setActionFallsOnHoliday(int actionFallsOnHoliday) {
+			this.actionFallsOnHoliday = actionFallsOnHoliday;
+		}
+
+
+		public Timestamp getStartholidayValidityCycle() {
+			return startholidayValidityCycle;
+		}
+
+
+		public void setStartholidayValidityCycle(Timestamp startholidayValidityCycle) {
+			this.startholidayValidityCycle = startholidayValidityCycle;
+		}
+
+
+		public Timestamp getEndholidayValidityCycle() {
+			return endholidayValidityCycle;
+		}
+
+
+		public void setEndholidayValidityCycle(Timestamp endholidayValidityCycle) {
+			this.endholidayValidityCycle = endholidayValidityCycle;
+		}
+
+
+		public int getNotificationType() {
+			return notificationType;
+		}
+
+
+		public void setNotificationType(int notificationType) {
+			this.notificationType = notificationType;
 		}
 	}

@@ -10,9 +10,15 @@
                 $.each(data, function (index, value) {
                     if (value.scriptPath != undefined) {
                         if (value.scriptPath != null) {
-                            $.getScript(value.scriptPath, function (data, textStatus, jqhr) {
-                                $(document).loadControl(userId);
-                            });
+                            try {
+                                $.getScript(value.scriptPath, function (data, textStatus, jqhr) {
+                                    $(document).loadControl(userId);
+                                });
+                            }
+                            catch (ex) {
+                                throw 'loadable control using loadUserScript must implement loadControl method' + ex.message;
+                            }
+
                         }
                     }
                 });

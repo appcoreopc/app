@@ -113,9 +113,9 @@ var CodeMaintenanceViewModel = function (initView, codeType, data, globalViewMod
     }
 
     function updateFunction(data) {
-
         var helper = new EmployeeHelper();
         helper.setMaintenanceCodeEditMode(globalViewModel, data.nid);
+        globalViewModel.editMode(coreModeEdit);
         preparePageForLoading("maintenanceCodeAdd.jsp");
     }
 

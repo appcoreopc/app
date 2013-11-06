@@ -561,15 +561,14 @@ var EmployeeHelper = function () {
     this.setMaintenanceCodeEditMode = function (globalViewModel, id) {
         globalViewModel.targetId(id);
         globalViewModel.editMode(coreModeEdit);
-        globalViewModel.applicationScopeType(coreApplicationTypeCode);
+        globalViewModel.applicationScopeType(coreApplicationMaintenanceCode);
     }
 
     this.setMaintenanceCodeInsertMode = function (globalViewModel, id) {
         globalViewModel.targetId(id);
         globalViewModel.editMode(coreModeInsert);
-        globalViewModel.applicationScopeType(coreApplicationTypeCode);
+        globalViewModel.applicationScopeType(coreApplicationMaintenanceCode);
     }
-
 
     this.setCompanyEditMode = function (globalViewModel, id) {
         globalViewModel.targetId(id);

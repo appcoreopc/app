@@ -71,6 +71,14 @@ insert into forms (formid, link, category_nid, companyId, type) values ('Payroll
 insert into forms (formid, link, category_nid, companyId, type) values ('Salary package', '../../appCore.Payroll/views/workPackageListPage.jsp', 1, 1, 4);
 insert into forms (formid, link, category_nid, companyId, type) values ('Configure work package', '../../appCore.Payroll/views/configureWorkPackageListPage.jsp', 1, 1, 4);
 
+-- this is for  leave menu 
+
+insert into forms (formid, link, category_nid, companyId, type) values ('Employee Leave Configuration ', '../../appCore.Leave/views/employeeHolidayListPage.jsp', 1, 1, 3);
+insert into forms (formid, link, category_nid, companyId, type) values ('Entitlement Type', '../../appCore.Leave/views/holidayEntitlementTypeListPage.jsp', 1, 1, 3);
+insert into forms (formid, link, category_nid, companyId, type) values ('Leave Earning Schme Setup', '../../appCore.Leave/views/holidayLeaveEarningSchemeListPage.jsp', 1, 1, 3);
+insert into forms (formid, link, category_nid, companyId, type) values ('Replacement Type Setup', '../../appCore.Leave/views/holidayReplacementTypeListPage.jsp', 1, 1, 3);
+insert into forms (formid, link, category_nid, companyId, type) values ('Notification Type', '../../appCore.Leave/views/notificationListPage.jsp', 1, 1, 3);
+
 -- configure user navigation data 	
 
 insert into forms_actions_role (forms_nid, role_nid, permission) values (1,1, 'AUD');
@@ -110,6 +118,11 @@ insert into forms_actions_role (forms_nid, role_nid, permission) values (45, 4,'
 insert into forms_actions_role (forms_nid, role_nid, permission) values (46, 4,'AUD');
 insert into forms_actions_role (forms_nid, role_nid, permission) values (47, 4,'AUD');
 
+insert into forms_actions_role (forms_nid, role_nid, permission) values (48, 3,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (49, 3,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (50, 3,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (51, 3,'AUD');
+insert into forms_actions_role (forms_nid, role_nid, permission) values (52, 3,'AUD');
 
 insert into level (name, description, companyRef) values ('Level1', 'Level1', 1);
 insert into level (name, description, companyRef) values ('Level2', 'Level2', 1);
@@ -385,7 +398,7 @@ insert into UserLanding (userId, ScriptId, Enabled, ApplicationType) values (2, 
 insert into UserLanding (userId, ScriptId, Enabled, ApplicationType) values (2, 2, true, 16);
 insert into UserLanding (userId, ScriptId, Enabled, ApplicationType) values (2, 3, true, 16);
 
-insert into ScriptWidget(CompanyId, ScriptName, ScriptPath) values (1, 'Script1', 'js/test.js');
+insert into ScriptWidget(CompanyId, ScriptName, ScriptPath) values (1, 'Script1', 'js/mainModuleOptionPage.js');
 insert into ScriptWidget(CompanyId, ScriptName, ScriptPath) values (2, 'Script1', 'js/test.js');
 insert into ScriptWidget(CompanyId, ScriptName, ScriptPath) values (3, 'Script1', 'js/test.js');
 
@@ -394,3 +407,20 @@ insert into CoreModule(CompanyId, Description, Name) values (1, 'Administration'
 insert into CoreModule(CompanyId, Description, Name) values (1, 'Leave', 'Leave');
 insert into CoreModule(CompanyId, Description, Name) values (1, 'Payroll', 'Payroll');
 insert into CoreModule(CompanyId, Description, Name) values (1, 'User Profile', 'User Profile');
+
+-- Leave setup 
+insert into HolidayEntitlementType (name, description, CompanyId) values ('General', 'Basic Leave', 1);
+insert into HolidayEntitlementType (name, description, CompanyId) values ('Long Serving Leave', 'Basic Leave', 1);
+
+insert into HolidayLeaveEarningScheme (name, description, CompanyId) values ('Yearly Allocated', 'Allocated based on year', 1);
+insert into  HolidayLeaveEarningScheme (name, description, CompanyId) values ('Earned Monthly', 'Leave Earned by month', 1);	
+
+insert into  HolidayReplacementType	 (name, description, CompanyId) values ('None', 'No replacement for a particular holiday', 1);
+insert into  HolidayReplacementType	 (name, description, CompanyId) values ('Next day', 'Replacement based on next working day', 1);
+
+insert into  LeaveWorkflow	 (name, description, CompanyId) values ('Software Leave Approval', 'Software Engineering Department Workflow', 1);
+
+insert into EmployeeHoliday (employeeId, companyId, holidayentitlementtype, LeaveEarningScheme, HolidayReplacementType, LeaveWorkflowId) values (1, 1, 1, 1, 1, 1);
+insert into EmployeeHoliday (employeeId, companyId, holidayentitlementtype, LeaveEarningScheme, HolidayReplacementType, LeaveWorkflowId) values (2, 1, 1, 1, 1, 1);
+
+

@@ -46,10 +46,15 @@ var coreJobExperience = "Branch";
 var coreJobType = "Branch";
 var coreJobSkillRequirement = "Branch";
 var globalEmployeeModule = "Branch";
-var corePayrollScriptPage="Branch";
+var corePayrollScriptPage = "Branch";
 var corePayrollTablePage = "Branch";
 var coreWorkPackagePage = "Branch";
 var coreConfigureWorkPackagePage = "Branch";
+var coreEmployeeHolidayPage = "Branch";
+var coreHolidayEntitlementTypePage = "Branch";
+var coreHolidayLeaveEarningSchemePage = "Branch";
+var coreHolidayReplacementTypePage = "Branch";
+var coreNotificationPage = "Branch";
 
 var globalCoreGridAppearanceToobarCreateCancel = "toolbarCreateCancel";
 var globalEditorModeInsert = "Insert";
@@ -182,6 +187,7 @@ var globalBranchSaveOrUpdateUrl = globalHostname + "/app/Core/Branch/saveOrUpdat
 var globalCoreModuleSaveOrUpdateUrl = globalHostname + "/app/CoreSystem/CoreModule/saveOrUpdate";
 var globalDivisionSaveOrUpdateUrl = globalHostname + "/app/Core/Division/saveOrUpdate";
 var globalHolidaySaveOrUpdateUrl = globalHostname + "/app/Core/Calendar/Holiday/saveOrUpdate";
+
 var globalDepartmentSaveOrUpdateUrl = globalHostname + "/app/Core/Department/saveOrUpdate";
 var globalSectionSaveOrUpdateUrl = globalHostname + "/app/Core/Section/saveOrUpdate";
 var globalEmployeeGroupConfigureUrl = globalHostname + "/app/Job/EmployeeGroup/configuredEmployeeGroup";
@@ -240,6 +246,18 @@ var globalAdminCentralPage = "userList.jsp";
 var globalEmptyMainPage = "emptyMainScreen.jsp";
 
 var globalUserLandingServiceUrlGet = globalHostname + "/app/User/UserLanding/get";
+var globalLeaveEntitlementGetUrl = globalHostname + "/app/Calendar/HolidayEntitlementType/get";
+var globalLeaveEntitlementDeleteUrl = globalHostname + "/app/Calendar/HolidayEntitlementType/delete";
+var globalLeaveEntitlementSaveOrUpdateUrl = globalHostname + "/app/Calendar/HolidayEntitlementType/saveOrUpdate";
+
+var globalLeaveEarningSchemeSaveOrUpdateUrl = globalHostname + "/app/Calendar/HolidayLeaveEarningScheme/saveOrUpdate";
+var globalReplacementTypeSaveOrUpdateUrl = globalHostname + "/app/Calendar/HolidayReplacementType/saveOrUpdate";
+var globalReplacementTypeGetUrl = globalHostname + "/app/Calendar/HolidayReplacementType/get";
+
+
+var globalLeaveEarningSchemeGetUrl = globalHostname + "/app/Calendar/HolidayLeaveEarningScheme/get";
+var globalLeaveEarningSchemeDeleteUrl = globalHostname + "/app/Calendar/HolidayLeaveEarningScheme/delete";
+var globalLeaveReplacementTypeDeleteUrl = globalHostname + "/app/Calendar/HolidayReplacementType/delete";
 
 var coreModeList = 0;
 var coreModeInsert = 1;
@@ -269,7 +287,12 @@ var coreApplicationTypeLandingPage = 16;
 var coreApplicationTypeUsersType = 17;
 var coreApplicationTypeScriptWidgetType = 18;
 var coreApplicationTypeCoreModuleType = 19;
-var coreApplicationTypePayrollScriptType=20;
-var coreApplicationTypePayrollTableType=21;
-var coreApplicationTypeWorkPackageType=22;
-var coreApplicationTypeConfigureWorkPackageType=23;
+var coreApplicationTypePayrollScriptType = 20;
+var coreApplicationTypePayrollTableType = 21;
+var coreApplicationTypeWorkPackageType = 22;
+var coreApplicationTypeConfigureWorkPackageType = 23;
+var coreApplicationTypeEmployeeHolidayType = 24;
+var coreApplicationTypeHolidayEntitlementTypeType = 25;
+var coreApplicationTypeHolidayLeaveEarningSchemeType = 26;
+var coreApplicationTypeHolidayReplacementTypeType = 27;
+var coreApplicationTypeNotificationType = 28;

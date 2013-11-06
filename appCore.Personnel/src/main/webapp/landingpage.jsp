@@ -2,7 +2,7 @@
         <html>
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>appCore Landing Page</title>
+        <title>Main Page</title>
         </head>
         <body>
 
@@ -51,78 +51,8 @@
         </script>
 
 
-        <div class="landingView">
-
-
-        <div class="overview">
-
-
-        <div class="cellRow">
-
-            <div class="cellColumnLeft">&nbsp;</div>
-
-
-        <div class="cellColumnMiddle">
-        <ul>
-        <li class="column first">
-        <a href="/appCore-personnel/appCore.administration/views/personnelControlPanel.jsp" class="block callout">
-        <i class="icon-wrench-2"></i>
-        <h2>Administration</h2>
-        <p>Manage your application users and configuration.
-
-        <span class="more">Learn more</span>
-        </p>
-        </a>
-        </li>
-
-        <li class="column">
-        <a href="/appCore-personnel/appCore.Personnel/views/personnelControlPanel.jsp" class="block callout"
-        onclick="s_objectID=&quot;http://www.apple.com/iphone/from-the-app-store/social-networking.html_1&quot;;return
-        this.s_oc?this.s_oc(e):true">
-        <i class="icon-users"></i>
-        <h2>Personnel</h2>
-        <p>Update your company, branch, division and employee information.
-        <span class="more">Learn more</span>
-        </p>
-        </a>
-        </li>
-
-        <li class="column">
-        <a href="#" class="block callout"
-        onclick="s_objectID=&quot;http://www.apple.com/iphone/from-the-app-store/social-networking.html_1&quot;;return
-        this.s_oc?this.s_oc(e):true">
-        <i class="icon-calendar"></i>
-        <h2>Leave Management</h2>
-        <p>Manage and apply leave and let the world know you're taking leave.
-        <span class="more">Learn more</span>
-        </p>
-        </a>
-        </li>
-
-        <li class="column">
-        <a href="/appCore-personnel/appCore.Payroll/views/personnelControlPanel.jsp" class="block callout">
-        <i class="icon-money"></i>
-        <h2>Payroll</h2>
-        <p>Process month employee salary and income tax.
-        <span class="more">Learn more</span>
-        </p>
-        </a>
-        </li>
-
-        </ul>
-
-
-
+        <div id="viewPort">
         </div>
-
-        <div class="cellColumnRight"></div>
-
-
-        </div>
-        </div>
-
-        </div>
-
 
         <%@ include file="includes/footer.html" %>
         </body>

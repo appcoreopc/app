@@ -1,5 +1,8 @@
 (function ($) {
     $.fn.setupSideBar = function (globalViewModel) {
+
+        $(this).sidebar();
+
         var globalCopy = "globalCopy";
         var globalPaste = "globalPaste";
         var globalPrint = "globalPrint";
@@ -7,6 +10,7 @@
         $(this).append('<li id="' + globalCopy + '"><i class="icon-doc-3"></i>Copy</li>');
         $(this).append('<li id="' + globalPaste + '"><i class="icon-doc-inv"></i>Paste</li>');
         $(this).append('<li id="' + globalPrint + '"><i class="icon-print-1"></i>Print</li>');
+
 
         function sendMessage(messageContent) {
             var message = { "messageType":coreMessageInfo, "message":messageContent}
