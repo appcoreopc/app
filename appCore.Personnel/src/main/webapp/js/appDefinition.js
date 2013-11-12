@@ -246,18 +246,6 @@ var globalAdminCentralPage = "userList.jsp";
 var globalEmptyMainPage = "emptyMainScreen.jsp";
 
 var globalUserLandingServiceUrlGet = globalHostname + "/app/User/UserLanding/get";
-var globalLeaveEntitlementGetUrl = globalHostname + "/app/Calendar/HolidayEntitlementType/get";
-var globalLeaveEntitlementDeleteUrl = globalHostname + "/app/Calendar/HolidayEntitlementType/delete";
-var globalLeaveEntitlementSaveOrUpdateUrl = globalHostname + "/app/Calendar/HolidayEntitlementType/saveOrUpdate";
-
-var globalLeaveEarningSchemeSaveOrUpdateUrl = globalHostname + "/app/Calendar/HolidayLeaveEarningScheme/saveOrUpdate";
-var globalReplacementTypeSaveOrUpdateUrl = globalHostname + "/app/Calendar/HolidayReplacementType/saveOrUpdate";
-var globalReplacementTypeGetUrl = globalHostname + "/app/Calendar/HolidayReplacementType/get";
-
-
-var globalLeaveEarningSchemeGetUrl = globalHostname + "/app/Calendar/HolidayLeaveEarningScheme/get";
-var globalLeaveEarningSchemeDeleteUrl = globalHostname + "/app/Calendar/HolidayLeaveEarningScheme/delete";
-var globalLeaveReplacementTypeDeleteUrl = globalHostname + "/app/Calendar/HolidayReplacementType/delete";
 
 var coreModeList = 0;
 var coreModeInsert = 1;

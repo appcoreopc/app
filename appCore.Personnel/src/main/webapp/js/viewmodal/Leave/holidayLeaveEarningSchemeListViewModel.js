@@ -39,7 +39,7 @@ var HolidayLeaveEarningSchemeListViewModel = function (initView, data, globalVie
         switch (mode) {
             case 0:
                 var addLinkInfo = {
-                    "text":"Add HolidayLeaveEarningScheme",
+                    "text":"Add Leave Earning Scheme",
                     "commandId":'HolidayLeaveEarningSchemeAdd',
                     "callback":function () {
                         goToAdd()

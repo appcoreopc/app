@@ -41,7 +41,7 @@
 </script>
 
 <div class="forms">
-  <h1>HolidayLeaveEarningScheme Maintenance</h1>
+  <h1>Leave Earning Scheme Maintenance</h1>
 
 
   <div class="viewData">

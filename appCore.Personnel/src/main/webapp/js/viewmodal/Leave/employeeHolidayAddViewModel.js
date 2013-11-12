@@ -2,15 +2,27 @@ var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
 
     var self = this;
 
-		
-	 self.nid = ko.observable();
-	 self.holidayEntitlementType = ko.observable();
-	 self.leaveEarningScheme = ko.observable();
-	 self.leaveWorkflow = ko.observable();
-	 self.lastUpdate = ko.observable();
-	 
-    self.commandText = ko.observable("Add");
+    self.nid = ko.observable();
+    self.employeeId = ko.observable();
+    self.entitlementType = ko.observable();
+    self.earningType = ko.observable();
+    self.replacementType = ko.observable();
+    self.leaveWorkflowId = ko.observable();
 
+    self.entityList = ko.observableArray();
+    self.holidayEntitlementType = ko.observableArray();
+    self.leaveEarningScheme = ko.observableArray();
+    self.leaveReplacementType = ko.observableArray();
+    self.leaveWorkflow = ko.observableArray();
+    self.lastUpdate = ko.observable();
+
+    self.currentHolidayEntitlementType = ko.observable();
+    self.currentLeaveEarningScheme = ko.observable();
+    self.currentLeaveReplacementType = ko.observable();
+    self.currentWorkflowId = ko.observable();
+
+    self.editData = ko.observable();
+    self.commandText = ko.observable("Add");
     self.mode = ko.observable(mode);
     self.enableAdd = ko.observable();
     self.enableUpdate = ko.observable();
@@ -25,12 +37,10 @@ var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
     }
 
     self.mode(self.globalViewModel.editMode());
-
     // get permission
     initializeApplication();
 
     function initializeApplication() {
-
         var input = { "id":coreEmployeeHolidayPage, "roleId":self.globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var moduleResult = coreCommand.getPermission(hostAuthorizationUrl, input);
@@ -45,43 +55,47 @@ var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
             var codeId = globalViewModel.targetId();
             self.showInfo(true);
             var entityData = { id:codeId };
-            var helper = new CompanyHelper();
-            helper.getEmployeeHoliday(entityData, getEntityGetDataCallback);
         }
     }
 
-    function getEntityGetDataCallback(data) {
-
-        if (data != null) {
-
-				
-				    self.nid(data.nid);
-         
-				
-				    self.holidayEntitlementType(data.holidayEntitlementType);
-         
-				
-				    self.leaveEarningScheme(data.leaveEarningScheme);
-         
-				
-				    self.leaveWorkflow(data.leaveWorkflow);
-         
-				
-				    self.lastUpdate(data.lastUpdate);
-         
-				            
-        }
+    self.getEntitlementTypeData = function () {
+        var helper = new LeaveHelper();
+        var entityData = { id:globalViewModel.companyId() };
+        return helper.listByCompanyHolidayEntitlementType(entityData);
     }
 
-    self.editData = ko.observable();
+    self.getLeaveEarningScheme = function () {
+        var helper = new LeaveHelper();
+        var entityData = { id:globalViewModel.companyId() };
+        return helper.listByCompanyHolidayLeaveEarningScheme(entityData);
+    }
+
+    self.getLeaveReplacementScheme = function () {
+        var helper = new LeaveHelper();
+        var entityData = { id:globalViewModel.companyId() };
+        return helper.listByCompanyLeaveReplacementType(entityData);
+    }
+
+    self.listByCompanyEmployee = function () {
+        var helper = new LeaveHelper();
+        var entityData = { id:globalViewModel.companyId() };
+        return helper.listByCompanyEmployee(entityData);
+    }
+
+    self.getData = function () {
+        if (self.mode() == coreModeEdit) {
+            var codeId = globalViewModel.targetId();
+            var entityData = { id:codeId };
+            var helper = new LeaveHelper();
+            return helper.getEmployeeHoliday(entityData);
+        }
+    }
 
     self.cancelInfoData = function () {
         self.editData("");
     }
 
-
     self.editInfoData = function (data) {
-
         self.infoCategory = data.infoCategory;
         self.infoDescription = data.infoDescription;
         self.infoType = data.infoType;
@@ -98,14 +112,6 @@ var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
 
     self.closeAddControl = function () {
         $("#accordianEmployeeHoliday").accordion({collapsible:true, active:false});
-    }
-
-    self.updateInfoData = function (data) {
-
-        var entityData = createUpdateEntityData(data);
-        var helper = new CompanyHelper();
-        helper.saveOrUpdateEmployeeHolidayInfo(entityData, updateDataSuccessCallback);
-        self.editData("");
     }
 
     function createUpdateEntityData(data) {
@@ -254,14 +260,15 @@ var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
         if (self.mode() == coreModeEdit)
             employeeHoliday.nid = self.nid();
 
-														employeeHoliday.nid = self.nid();
-														employeeHoliday.holidayEntitlementType = self.holidayEntitlementType();
-														employeeHoliday.leaveEarningScheme = self.leaveEarningScheme();
-														employeeHoliday.leaveWorkflow = self.leaveWorkflow();
-														employeeHoliday.lastUpdate = self.lastUpdate();
-						
+        employeeHoliday.companyId = globalViewModel.companyId();
+        employeeHoliday.nid = self.nid();
+        employeeHoliday.employeeId = self.employeeId();
+        employeeHoliday.holidayEntitlementType = self.currentHolidayEntitlementType();
+        employeeHoliday.leaveEarningScheme = self.currentLeaveEarningScheme();
+        employeeHoliday.holidayReplacementType = self.currentLeaveReplacementType();
+        employeeHoliday.lastUpdate = self.lastUpdate();
 
-        var helper = new CompanyHelper();
+        var helper = new LeaveHelper();
         helper.saveUpdateEmployeeHoliday(employeeHoliday, saveOrUpdateStatus)
     }
 

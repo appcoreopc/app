@@ -25,7 +25,6 @@
       {
           var coreCommand = new CoreCommandHelper();
           vm = new HolidayReplacementTypeListViewModel(coreModeList, data, globalViewModel, coreCommand.createCommandInstance());
-      
       }
       
       function bind()
@@ -41,7 +40,7 @@
 </script>
 
 <div class="forms">
-  <h1>HolidayReplacementType Maintenance</h1>
+  <h1>Leave Replacement Type Maintenance</h1>
 
 
   <div class="viewData">

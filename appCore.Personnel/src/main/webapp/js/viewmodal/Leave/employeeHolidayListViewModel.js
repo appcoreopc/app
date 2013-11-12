@@ -1,6 +1,6 @@
-var EmployeeHolidayListViewModel = function (initView, data, globalViewModel, command) {
+var EmployeeHolidayListViewModel = function (initView, data, globalViewModel, command, entityList, entitlementList, earningLeaveList, replacementList) {
 
-    mode = initView;
+    var mode = initView;
     var self = this;
     self.gridUrl = globalHostname + "/app/Core/EmployeeHoliday";
     self.codeCommand = "#codeCommand";
@@ -9,19 +9,65 @@ var EmployeeHolidayListViewModel = function (initView, data, globalViewModel, co
     self.gridData = ko.observableArray(data);
     self.globalViewModel = globalViewModel;
     self.coreCommand = command;
+    self.entityList = ko.observableArray(entityList);
+    self.entitlementList = ko.observableArray(entitlementList);
+    self.earningLeaveList = ko.observableArray(earningLeaveList);
+    self.replacementList = ko.observableArray(replacementList);
 
     var viewColumns = [
 
-        { headerText:"nid", rowText:"nid" },
+        { headerText:"Employee", rowText:function (data) {
+            var i = getMatchingItem(self.entityList(), data, "employeeId", "nid")
+            if (i != null)
+                return i.name;
+            else
+                return "";
+        } },
 
-        { headerText:"holidayEntitlementType", rowText:"holidayEntitlementType" },
+        { headerText:"Entitlement Type", rowText:function (data) {
 
-        { headerText:"leaveEarningScheme", rowText:"leaveEarningScheme" },
+            var i = getMatchingItem(self.entitlementList(), data, "holidayEntitlementType", "nid")
+            if (i != null)
+                return i.name;
+            else
+                return "";
+        }
+        },
 
-        { headerText:"leaveWorkflow", rowText:"leaveWorkflow" },
+        { headerText:"Leave Earning Scheme", rowText:function (data) {
 
-        { headerText:"lastUpdate", rowText:"lastUpdate" }
+            var i = getMatchingItem(self.earningLeaveList(), data, "leaveEarningScheme", "nid")
+            if (i != null)
+                return i.name;
+            else
+                return "";
+        } },
+
+        { headerText:"Leave Replacement Type", rowText:function (data) {
+
+            var i = getMatchingItem(self.replacementList(), data, "holidayReplacementType", "nid")
+            if (i != null)
+                return i.name;
+            else
+                return "";
+        }
+        }
     ];
+
+    function getMatchingItem(nativeList, data, sourceFieldName, requiredFieldName) {
+        var i = ko.utils.arrayFirst(nativeList, function (item) {
+            if (data[sourceFieldName] == item[requiredFieldName]) {
+                return item;
+            }
+            else
+                return null;
+        });
+
+        if (i != null)
+            return i;
+        else
+            return null;
+    }
 
     function getView() {
         var gridDataObject =
@@ -33,7 +79,7 @@ var EmployeeHolidayListViewModel = function (initView, data, globalViewModel, co
         switch (mode) {
             case 0:
                 var addLinkInfo = {
-                    "text":"Add EmployeeHoliday",
+                    "text":"Configure New Employee Leave",
                     "commandId":'EmployeeHolidayAdd',
                     "callback":function () {
                         goToAdd()

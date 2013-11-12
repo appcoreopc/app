@@ -53,13 +53,15 @@ var HolidayLeaveEarningSchemeInfoViewModel = function (mode, globalViewModel) {
 
     function getEntityGetDataCallback(data) {
         if (data != null) {
+            var dateHelper = new EmployeeHelper();
+
             self.nid(data.nid);
             self.name(data.name);
             self.description(data.description);
             self.type(data.type);
             self.refId(data.refId);
-            self.startEffectiveDate(data.startEffectiveDate);
-            self.endEffectiveDate(data.endEffectiveDate);
+            self.startEffectiveDate(dateHelper.getDateOnly(new Date(data.startEffectiveDate)));
+            self.endEffectiveDate(dateHelper.getDateOnly(new Date(data.endEffectiveDate)));
             self.lastUpdate(data.lastUpdate);
         }
     }
@@ -238,6 +240,8 @@ var HolidayLeaveEarningSchemeInfoViewModel = function (mode, globalViewModel) {
         if (!isValid)
             return;
 
+        var helper = new EmployeeHelper();
+
         if (self.errorInForm())
             return;
 
@@ -251,8 +255,8 @@ var HolidayLeaveEarningSchemeInfoViewModel = function (mode, globalViewModel) {
         holidayLeaveEarningScheme.description = self.description();
         holidayLeaveEarningScheme.type = self.type();
         holidayLeaveEarningScheme.refId = self.refId();
-        holidayLeaveEarningScheme.startEffectiveDate = self.startEffectiveDate();
-        holidayLeaveEarningScheme.endEffectiveDate = self.endEffectiveDate();
+        holidayLeaveEarningScheme.startEffectiveDate = helper.getDate(self.startEffectiveDate());
+        holidayLeaveEarningScheme.endEffectiveDate = helper.getDate(self.endEffectiveDate());
         holidayLeaveEarningScheme.lastUpdate = self.lastUpdate();
 
 

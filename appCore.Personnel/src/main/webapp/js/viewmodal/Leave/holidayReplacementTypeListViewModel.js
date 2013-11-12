@@ -1,6 +1,6 @@
- var HolidayReplacementTypeListViewModel = function (initView, data, globalViewModel, command) { 
-    
-	  mode = initView;
+var HolidayReplacementTypeListViewModel = function (initView, data, globalViewModel, command) {
+
+    mode = initView;
     var self = this;
     self.gridUrl = globalHostname + "/app/Core/HolidayReplacementType";
     self.codeCommand = "#codeCommand";
@@ -10,26 +10,26 @@
     self.globalViewModel = globalViewModel;
     self.coreCommand = command;
 
-		
+
     var viewColumns = [
-				
-     { headerText:"nid", rowText:"nid" },
-				    		
-     { headerText:"name", rowText:"name" },
-				    		
-     { headerText:"description", rowText:"description" },
-				    		
-     { headerText:"type", rowText:"type" },
-				    		
-     { headerText:"refId", rowText:"refId" },
-				    		
-     { headerText:"startEffectiveDate", rowText:"startEffectiveDate" },
-				    		
-     { headerText:"endEffectiveDate", rowText:"endEffectiveDate" },
-				    		
-     { headerText:"lastUpdate", rowText:"lastUpdate" }    			    
+
+        { headerText:"nid", rowText:"nid" },
+
+        { headerText:"name", rowText:"name" },
+
+        { headerText:"description", rowText:"description" },
+
+        { headerText:"type", rowText:"type" },
+
+        { headerText:"refId", rowText:"refId" },
+
+        { headerText:"startEffectiveDate", rowText:"startEffectiveDate" },
+
+        { headerText:"endEffectiveDate", rowText:"endEffectiveDate" },
+
+        { headerText:"lastUpdate", rowText:"lastUpdate" }
     ];
-		
+
     function getView() {
         var gridDataObject =
         {
@@ -40,7 +40,7 @@
         switch (mode) {
             case 0:
                 var addLinkInfo = {
-                    "text":"Add HolidayReplacementType",
+                    "text":"Add Leave Replacement Type",
                     "commandId":'HolidayReplacementTypeAdd',
                     "callback":function () {
                         goToAdd()

@@ -41,7 +41,7 @@
 </script>
 
 <div class="forms">
-  <h1>HolidayEntitlementType Maintenance</h1>
+  <h1>Holiday Entitlement Type Maintenance</h1>
 
 
   <div class="viewData">

@@ -40,7 +40,7 @@ var HolidayEntitlementTypeListViewModel = function (initView, data, globalViewMo
         switch (mode) {
             case 0:
                 var addLinkInfo = {
-                    "text":"Add HolidayEntitlementType",
+                    "text":"Add Entitlement Type",
                     "commandId":'HolidayEntitlementTypeAdd',
                     "callback":function () {
                         goToAdd()

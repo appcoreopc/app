@@ -11,17 +11,9 @@
 
     <div class="formMainContent">
 
-      <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
-        <span class='req'>&nbsp;</span>
-        <div class="inputSectionBlock">
-          <input type="text" id="nid" data-bind="value : nid" placeholder="nid"/>
-        </div>
-      </div>
 
-             
       <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
+        <div class="labelSectionBlockBold">Name</div>
         <span class='req'>&nbsp;</span>
         <div class="inputSectionBlock">
           <input type="text" id="name" data-bind="value : name" placeholder="name"/>
@@ -39,46 +31,17 @@
 
              
       <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
-        <span class='req'>&nbsp;</span>
+        <div class="labelSectionBlockBold">Start Effective Date</div>
         <div class="inputSectionBlock">
-          <input type="text" id="type" data-bind="value : type" placeholder="type"/>
+          <input type="text" id="startEffectiveDate" data-bind="datepicker: startEffectiveDate, datepickerOptions: { dateFormat : 'dd-mm-yy'}, value : startEffectiveDate" placeholder="startEffectiveDate"/>
         </div>
       </div>
 
              
       <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
-        <span class='req'>&nbsp;</span>
+        <div class="labelSectionBlockBold">End Effective Date</div>
         <div class="inputSectionBlock">
-          <input type="text" id="refId" data-bind="value : refId" placeholder="refId"/>
-        </div>
-      </div>
-
-             
-      <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
-        <span class='req'>&nbsp;</span>
-        <div class="inputSectionBlock">
-          <input type="text" id="startEffectiveDate" data-bind="value : startEffectiveDate" placeholder="startEffectiveDate"/>
-        </div>
-      </div>
-
-             
-      <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
-        <span class='req'>&nbsp;</span>
-        <div class="inputSectionBlock">
-          <input type="text" id="endEffectiveDate" data-bind="value : endEffectiveDate" placeholder="endEffectiveDate"/>
-        </div>
-      </div>
-
-             
-      <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
-        <span class='req'>&nbsp;</span>
-        <div class="inputSectionBlock">
-          <input type="text" id="lastUpdate" data-bind="value : lastUpdate" placeholder="lastUpdate"/>
+          <input type="text" id="endEffectiveDate" data-bind="datepicker: endEffectiveDate, datepickerOptions: { dateFormat :'dd-mm-yy'}, value : endEffectiveDate" placeholder="endEffectiveDate"/>
         </div>
       </div>
 

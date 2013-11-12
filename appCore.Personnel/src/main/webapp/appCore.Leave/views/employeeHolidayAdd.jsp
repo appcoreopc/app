@@ -5,210 +5,55 @@
 <script language="javascript" src="../../js/viewmodal/Leave/employeeHolidayAddViewModel.js"></script>
 <script language="javascript" src="../../js/jquery.validationEngine-en.js"></script>
 
-
-<script type="text/html" id="infoUpdateTemplate">
-
-  <div class="formRowList">
-
-
-    
-    <div class="formRow">
-      <div class="labelSectionBlockBold">Description</div>
-      <span class='req'>&nbsp;</span>
-      <div class="inputSectionBlock">
-        <input type="text" id="nid" data-bind="value : nid" placeholder="nid"/>
-      </div>
-    </div>
-
-    
-    <div class="formRow">
-      <div class="labelSectionBlockBold">Description</div>
-      <span class='req'>&nbsp;</span>
-      <div class="inputSectionBlock">
-        <input type="text" id="holidayEntitlementType" data-bind="value : holidayEntitlementType" placeholder="holidayEntitlementType"/>
-      </div>
-    </div>
-
-    
-    <div class="formRow">
-      <div class="labelSectionBlockBold">Description</div>
-      <span class='req'>&nbsp;</span>
-      <div class="inputSectionBlock">
-        <input type="text" id="leaveEarningScheme" data-bind="value : leaveEarningScheme" placeholder="leaveEarningScheme"/>
-      </div>
-    </div>
-
-    
-    <div class="formRow">
-      <div class="labelSectionBlockBold">Description</div>
-      <span class='req'>&nbsp;</span>
-      <div class="inputSectionBlock">
-        <input type="text" id="leaveWorkflow" data-bind="value : leaveWorkflow" placeholder="leaveWorkflow"/>
-      </div>
-    </div>
-
-    
-    <div class="formRow">
-      <div class="labelSectionBlockBold">Description</div>
-      <span class='req'>&nbsp;</span>
-      <div class="inputSectionBlock">
-        <input type="text" id="lastUpdate" data-bind="value : lastUpdate" placeholder="lastUpdate"/>
-      </div>
-    </div>
-
-    
-    
-    <span class="formRowCommand">
-      <span class="labelSectionCommand"></span>
-      <span class="inputSectionForm">
-        <button id="updateBtn" type="button" data-bind="visible : $root.enableUpdate, click : $root.updateInfoData"
-        class="command">Update</button>
-
-        <button id="cancelUpdateBtn" type="button" data-bind="visible : $root.enableUpdate, click : $root.cancelInfoData"
-        class="command">Cancel</button>
-
-      </span>
-    </span>
-
-  </div>
-
-  <span class="formRowSpacer">
-  </span>
-
-
-
-</script>
-
-<script type="text/html" id="infoViewTemplate">
-
-  <div class="formRowList">
-    <span class='columnDividerListView' data-bind="text : infoCategory"></span>
-    <span class='columnDividerListView' data-bind="text : infoDescription"></span>
-    <span class='columnDividerListView' data-bind="text : infoType"></span>
-    <span class='columnDividerListView' data-bind="text : infoValue"></span>
-    <span class='columnDividerListViewCmd'>
-      <a href="#" data-bind="visible : $root.enableUpdate, click : $root.editInfoData">Edit</a>
-    </span>
-    <span class='columnDividerListViewCmd'>
-      <a href="#" data-bind="visible : $root.enableDelete, click : $root.deleteInfoData">Delete</a>
-    </span>
-  </div>
-
-</script>
-
-
-<script type="text/html" id="infoAddTemplate">
-
-
-  <span class="accordianRowHeader">
-    <icon class="icon-plus-circle-1"></icon>
-  </span>
-
-  <div class="formAddRow">
-
-    <div class='columnDivider'>
-      <div class="labelSectionInfo">Category</div>
-      <div class="inputSectionForm">
-        <input id="employeeHolidayCategoryAdd" type="text" class="validate[required, maxSize[10]]" data-bind="value : $root.addInfoCategory" placeholder="new category"/>
-      </div>
-
-    </div>
-
-    <div class='columnDivider'>
-      <div class="labelSectionInfo">Description</div>
-      <span class='req'>*</span>
-      <div class="inputSectionForm">
-        <input type="text" id="employeeHolidayDescriptionAdd" data-bind="value : $root.addInfoDescription" placeholder="new description"/>
-      </div>
-    </div>
-
-
-    <div class='columnDivider'>
-      <div class="labelSectionInfo">Type</div>
-      <span class='req'>*</span>
-      <div class="inputSectionForm">
-        <input type="text" id="employeeHolidayTypeAdd" data-bind="value : $root.addInfoType" class="validate[required, maxSize[10]]" placeholder="new type"/>
-      </div>
-    </div>
-
-    <div class='columnDivider'>
-      <div class="labelSectionInfo">Value</div>
-      <span class='req'>*</span>
-      <div class="inputSectionForm">
-        <input type="text" data-bind="value : $root.addInfoValue" placeholder="new value"/>
-      </div>
-    </div>
-
-    <span class="formAddRowCommand">
-      <button id="addBtn" type="button" data-bind="visible: $root.enableAdd, click: addInfo" class="command">Add</button>
-      <button id="addCancelBtn" type="button" data-bind="visible: $root.enableAdd, click : $root.closeAddControl" class="command">Cancel</button>
-    </span>
-
-    <span class="formRowSpacer"></span>
-
-  </div>
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
 <script type="text/html" id="EmployeeHolidayEntityAddTemplate">
 
   <div class="form">
 
     <div class="formMainContent">
 
-            
       <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
+        <div class="labelSectionBlockBold">Employee Name</div>
         <span class='req'>&nbsp;</span>
         <div class="inputSectionBlock">
-          <input type="text" id="nid" data-bind="value : nid" placeholder="nid"/>
+          <select id="nid" data-bind="options: entityList, optionsText: 'name', optionsValue: 'nid', value: employeeId, optionsCaption: 'Select...'" placeholder="name">
+          </select>
         </div>
       </div>
 
              
       <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
+        <div class="labelSectionBlockBold">Entitlement</div>
         <span class='req'>&nbsp;</span>
         <div class="inputSectionBlock">
-          <input type="text" id="holidayEntitlementType" data-bind="value : holidayEntitlementType" placeholder="holidayEntitlementType"/>
+          <select id="holidayEntitlementType" data-bind="options: holidayEntitlementType, optionsText: 'name', optionsValue: 'nid', value: currentHolidayEntitlementType, optionsCaption: 'Select...'">
+          </select>
         </div>
       </div>
 
-             
-      <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
+    <div class="formRow">
+        <div class="labelSectionBlockBold">Leave Replacement Type</div>
         <span class='req'>&nbsp;</span>
         <div class="inputSectionBlock">
-          <input type="text" id="leaveEarningScheme" data-bind="value : leaveEarningScheme" placeholder="leaveEarningScheme"/>
+            <select id="holidayReplacementType" data-bind="options: leaveReplacementType, optionsText: 'name', optionsValue: 'nid', value: currentLeaveReplacementType, optionsCaption: 'Select...'" placeholder="holidayEntitlementType">
+            </select>
+        </div>
+    </div>
+
+      <div class="formRow">
+        <div class="labelSectionBlockBold">Leave Earning Scheme</div>
+        <span class='req'>&nbsp;</span>
+        <div class="inputSectionBlock">
+          <select id="leaveEarningScheme" data-bind="options: leaveEarningScheme, optionsText: 'name', optionsValue: 'nid' , value: currentLeaveEarningScheme, optionsCaption: 'Select...'" placeholder="leaveEarningScheme">
+          </select>
         </div>
       </div>
 
-             
-      <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
-        <span class='req'>&nbsp;</span>
-        <div class="inputSectionBlock">
-          <input type="text" id="leaveWorkflow" data-bind="value : leaveWorkflow" placeholder="leaveWorkflow"/>
-        </div>
-      </div>
 
-             
       <div class="formRow">
-        <div class="labelSectionBlockBold">Description</div>
+        <div class="labelSectionBlockBold">Approval Process</div>
         <span class='req'>&nbsp;</span>
         <div class="inputSectionBlock">
-          <input type="text" id="lastUpdate" data-bind="value : lastUpdate" placeholder="lastUpdate"/>
+          <input type="text" id="leaveWorkflow" data-bind="value : currentWorkflowId" placeholder="leaveWorkflow"/>
         </div>
       </div>
 
@@ -238,15 +83,39 @@
     $(document).ready(function()
     {
             var vm;
-            $.when(init()).done(bind());
+            $.when(init(), vm.listByCompanyEmployee(), vm.getData(), vm.getEntitlementTypeData(), vm.getLeaveEarningScheme(), vm.getLeaveReplacementScheme()).done(
+                function(initFunction, employeeResponse, getDataResponse, entitlementResponse, leaveEarningResponse, leaveReplacementResponse)
+                {
+                    if (employeeResponse[0] != null)
+                    {
+                        vm.entityList(employeeResponse[0]);
+                    }
+
+                    vm.holidayEntitlementType(entitlementResponse[0]);
+                    vm.leaveEarningScheme(leaveEarningResponse[0]);
+                    vm.leaveReplacementType(leaveReplacementResponse[0]);
+
+                    if (getDataResponse[0] != null)
+                    {
+                        var data = getDataResponse[0];
+                        console.log(getDataResponse[0]);
+                        vm.nid(data.nid);
+                        vm.employeeId(data.employeeId);
+                        vm.currentHolidayEntitlementType(data.holidayEntitlementType);
+                        vm.currentLeaveReplacementType(data.holidayReplacementType);
+                        vm.currentLeaveEarningScheme(data.leaveEarningScheme);
+                        vm.currentWorkflowId(data.leaveWorkflowId);
+                        vm.lastUpdate(data.lastUpdate);
+                    }
+                    bind();
+                });
             
             function init()
             {
-
                  if (globalViewModel != undefined && globalViewModel.targetId() != null)
                  {  
                       vm = new EmployeeHolidayInfoViewModel(coreModeEdit, globalViewModel);
-                  }
+                 }
                  else
                  {
                       vm = new EmployeeHolidayInfoViewModel(coreModeInsert, globalViewModel);
@@ -265,4 +134,4 @@
 
 <form id="employeeHolidayForm">
   <div id="employeeHolidayMaintenance" data-bind="template : { name : templateToUse} ">
-        </form>
+</form>

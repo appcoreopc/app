@@ -52,15 +52,15 @@ var HolidayEntitlementTypeInfoViewModel = function (mode, globalViewModel) {
     }
 
     function getEntityGetDataCallback(data) {
-
+        var dateHelper = new EmployeeHelper();
         if (data != null) {
             self.nid(data.nid);
             self.name(data.name);
             self.description(data.description);
             self.type(data.type);
             self.refId(data.refId);
-            self.startEffectiveDate(data.startEffectiveDate);
-            self.endEffectiveDate(data.endEffectiveDate);
+            self.startEffectiveDate(dateHelper.getDateOnly(new Date(data.startEffectiveDate)));
+            self.endEffectiveDate(dateHelper.getDateOnly(new Date(data.endEffectiveDate)));
             self.lastUpdate(data.lastUpdate);
         }
     }
@@ -241,6 +241,8 @@ var HolidayEntitlementTypeInfoViewModel = function (mode, globalViewModel) {
         if (self.errorInForm())
             return;
 
+        var helper = new EmployeeHelper();
+
         var holidayEntitlementType = {};
         if (self.mode() == coreModeEdit)
             holidayEntitlementType.nid = self.nid();
@@ -252,8 +254,8 @@ var HolidayEntitlementTypeInfoViewModel = function (mode, globalViewModel) {
         holidayEntitlementType.description = self.description();
         holidayEntitlementType.type = self.type();
         holidayEntitlementType.refId = self.refId();
-        holidayEntitlementType.startEffectiveDate = self.startEffectiveDate();
-        holidayEntitlementType.endEffectiveDate = self.endEffectiveDate();
+        holidayEntitlementType.startEffectiveDate = helper.getDate(self.startEffectiveDate());
+        holidayEntitlementType.endEffectiveDate = helper.getDate(self.endEffectiveDate());
         holidayEntitlementType.lastUpdate = self.lastUpdate();
 
 

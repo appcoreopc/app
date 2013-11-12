@@ -1,8 +1,5 @@
 var HolidayReplacementTypeInfoViewModel = function (mode, globalViewModel) {
-
     var self = this;
-
-
     self.nid = ko.observable();
     self.name = ko.observable();
     self.description = ko.observable();
@@ -57,31 +54,15 @@ var HolidayReplacementTypeInfoViewModel = function (mode, globalViewModel) {
 
         if (data != null) {
 
-
+            var dateHelper = new EmployeeHelper();
             self.nid(data.nid);
-
-
             self.name(data.name);
-
-
             self.description(data.description);
-
-
             self.type(data.type);
-
-
             self.refId(data.refId);
-
-
-            self.startEffectiveDate(data.startEffectiveDate);
-
-
-            self.endEffectiveDate(data.endEffectiveDate);
-
-
+            self.startEffectiveDate(dateHelper.getDateOnly(new Date(data.startEffectiveDate)));
+            self.endEffectiveDate(dateHelper.getDateOnly(new Date(data.endEffectiveDate)));
             self.lastUpdate(data.lastUpdate);
-
-
         }
     }
 
@@ -255,13 +236,14 @@ var HolidayReplacementTypeInfoViewModel = function (mode, globalViewModel) {
     self.updateData = function (data) {
 
         var isValid = $("#" + "holidayReplacementTypeForm").validationEngine('validate');
-
         if (!isValid)
             return;
+
 
         if (self.errorInForm())
             return;
 
+        var helper = new EmployeeHelper();
         var holidayReplacementType = {};
         if (self.mode() == coreModeEdit)
             holidayReplacementType.nid = self.nid();
@@ -272,8 +254,8 @@ var HolidayReplacementTypeInfoViewModel = function (mode, globalViewModel) {
         holidayReplacementType.description = self.description();
         holidayReplacementType.type = self.type();
         holidayReplacementType.refId = self.refId();
-        holidayReplacementType.startEffectiveDate = self.startEffectiveDate();
-        holidayReplacementType.endEffectiveDate = self.endEffectiveDate();
+        holidayReplacementType.startEffectiveDate = helper.getDate(self.startEffectiveDate());
+        holidayReplacementType.endEffectiveDate = helper.getDate(self.endEffectiveDate());
         holidayReplacementType.lastUpdate = self.lastUpdate();
 
 

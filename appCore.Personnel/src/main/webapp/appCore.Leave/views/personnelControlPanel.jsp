@@ -20,10 +20,11 @@
         <link rel="stylesheet" href="../../css/fontello-ie7.css"><![endif]-->
 
         <!-- for sidebar -->
-        <!-- <script type="text/javascript" src="../../js/ui/jquery-ui-1.8.23.custom.js"></script> -->
+        <!-- <script type="text/javascript" src="..0/../js/ui/jquery-ui-1.8.23.custom.js"></script> -->
 
         <script type="text/javascript" src="../../js/jquery.sidebar.js"></script>
         <script type="text/javascript" src="../../js/coreDefaultBinding.js"></script>
+        <script type="text/javascript" src="../../js/viewmodal/Leave/userEventCalendar.js"></script>
 
         <link rel="stylesheet" href="../../css/jquery-ui.css" />
         <link rel="stylesheet" href="../../css/personnelControlPanelOverride.css" />
@@ -65,16 +66,15 @@
                 var m = date.getMonth();
                 var y = date.getFullYear();
 
-                myModel =
+                var opt =
                 {
-                    items:ko.observableArray(
+                    events:
                     [{
-                        title:'All Day Event', start:new Date(y, m, 1)
-                    }]),
-                    viewDate:ko.observable(Date.now())
+                    title:'All Day Event', start:new Date(y, m, 1)
+                    }]
                 };
 
-                $("#viewPort").setupFullCalendar(myModel, globalViewModel);
+                $("#viewPort").loadUserEventCalendar(opt);
 
                 $("#logoutLink").setupLogout();
 

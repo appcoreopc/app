@@ -17,7 +17,7 @@
             var viewModel = viewModelAccessor();
             element.innerHTML = "";
 
-            var calendar = $(element).fullCalendar({
+                var calendar = $(element).fullCalendar({
                 events:ko.utils.unwrapObservable(viewModel.events),
                 header:viewModel.header,
                 editable:viewModel.editable,
