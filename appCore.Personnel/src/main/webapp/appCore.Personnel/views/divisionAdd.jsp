@@ -137,7 +137,7 @@
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlockBold">Division  Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
+        <div class="labelSectionBlockBold"><i class="icon-asterisk"></i>Division  Code</div><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="codepicker : code, codeEntity : { codeType : 15, companyId : $root.globalViewModel.companyId() }"  id="DivisionCode" name="DivisionCode"
         placeholder="a new division code"/></div>
         </div>
@@ -149,7 +149,7 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSectionBlockBold">Division Name</div><span class='req'>*</span><div class="inputSectionBlock"><input
+        <div class="labelSectionBlockBold">Division Name</div><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="DivisionName" placeholder="a new division name"/></div>
         </div>
 
@@ -237,6 +237,7 @@
                 function bind()
                 {
                     $("#" + formName).setupViewBinding(vm, globalViewModel);
+                    $('#DivisionCode').mask('AAAAAAAAAA');
                 }
 
                 $("#accordianDivision").accordion({collapsible : true, active: false});

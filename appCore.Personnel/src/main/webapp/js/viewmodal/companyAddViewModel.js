@@ -35,7 +35,7 @@ var CompanyAddViewModel = function (mode, companyId) {
     helper.getCurrency(self.currencyList, companyId);
     helper.getCompanyList(self.companyList);
 
-    if (mode == 2) {
+    if (mode == coreModeEdit) {
         getCompany(modelCompanyId);
     }
 
@@ -48,7 +48,6 @@ var CompanyAddViewModel = function (mode, companyId) {
 
         request.success(function (dataSource) {
             self.nid(dataSource.nid);
-
             self.companyCode(dataSource.companyCode);
             self.companyName(dataSource.companyName);
             self.registration(dataSource.registration);

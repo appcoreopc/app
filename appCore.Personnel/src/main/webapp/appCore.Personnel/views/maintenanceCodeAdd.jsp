@@ -21,7 +21,7 @@
         class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="codepicker : name, codeEntity : { codeType : 14,
         companyId : $root.globalViewModel.companyId() }"
-        id="BranchCode" name="BranchCode" placeholder="a new branch code" /></div>
+        id="Code" name="Code" placeholder="a new branch code" /></div>
         </div>
 
         <div class="rightSection">
@@ -87,6 +87,7 @@
                 $("#" + formName).setupViewBinding(vm, globalViewModel);
                 $("#accordian").accordion({collapsible : true, active: false});
                 $("#" + formName).validationEngine();
+                $('#Code').mask('AAAAAAAAAA');
             }
         });
 

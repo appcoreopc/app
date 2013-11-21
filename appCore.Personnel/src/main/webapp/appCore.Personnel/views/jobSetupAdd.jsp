@@ -38,8 +38,7 @@
                 var coreCommand = new CoreCommand();
                 coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
                 $("#" + formName).setupViewBinding(vm, globalViewModel);
-
-
+                $('#JobCode').mask('AAAAAAAAAA');
         }
 
     </script>

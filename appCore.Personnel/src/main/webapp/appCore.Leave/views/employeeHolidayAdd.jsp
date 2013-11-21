@@ -80,55 +80,24 @@
 <script type="text/javascript">
 
     var formName = "employeeHolidayForm";
+
+
     $(document).ready(function()
     {
             var vm;
-            $.when(init(), vm.listByCompanyEmployee(), vm.getData(), vm.getEntitlementTypeData(), vm.getLeaveEarningScheme(), vm.getLeaveReplacementScheme()).done(
-                function(initFunction, employeeResponse, getDataResponse, entitlementResponse, leaveEarningResponse, leaveReplacementResponse)
-                {
-                    if (employeeResponse[0] != null)
-                    {
-                        vm.entityList(employeeResponse[0]);
-                    }
 
-                    vm.holidayEntitlementType(entitlementResponse[0]);
-                    vm.leaveEarningScheme(leaveEarningResponse[0]);
-                    vm.leaveReplacementType(leaveReplacementResponse[0]);
+            if (globalViewModel != undefined && globalViewModel.targetId() != null)
+            {
+                vm = new EmployeeHolidayInfoViewModel(coreModeEdit, globalViewModel);
+            }
+            else
+            {
+                vm = new EmployeeHolidayInfoViewModel(coreModeInsert, globalViewModel);
+            }
+            vm.renderView();
 
-                    if (getDataResponse[0] != null)
-                    {
-                        var data = getDataResponse[0];
-                        console.log(getDataResponse[0]);
-                        vm.nid(data.nid);
-                        vm.employeeId(data.employeeId);
-                        vm.currentHolidayEntitlementType(data.holidayEntitlementType);
-                        vm.currentLeaveReplacementType(data.holidayReplacementType);
-                        vm.currentLeaveEarningScheme(data.leaveEarningScheme);
-                        vm.currentWorkflowId(data.leaveWorkflowId);
-                        vm.lastUpdate(data.lastUpdate);
-                    }
-                    bind();
-                });
-            
-            function init()
-            {
-                 if (globalViewModel != undefined && globalViewModel.targetId() != null)
-                 {  
-                      vm = new EmployeeHolidayInfoViewModel(coreModeEdit, globalViewModel);
-                 }
-                 else
-                 {
-                      vm = new EmployeeHolidayInfoViewModel(coreModeInsert, globalViewModel);
-                 }
-            }
-            
-            function bind()
-            {
-                $("#employeeHolidayForm").setupViewBinding(vm, globalViewModel);
-                $("#accordianEmployeeHoliday").accordion({collapsible : true, active: false});
-                $("#" + formName).validationEngine();
-            }
     });
+
 
 </script>
 

@@ -126,8 +126,6 @@
 
 
 
-
-
         <script type="text/html" id="companyEntityAddTemplate">
 
 
@@ -139,7 +137,7 @@
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlockBold">Department  Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
+        <div class="labelSectionBlockBold"><i class="icon-asterisk"></i>Department  Code</div><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="codepicker : code, codeEntity : { codeType : 16, companyId : $root.globalViewModel.companyId() }" id="DepartmentCode" name="DepartmentCode"
         placeholder="a new department code"/></div>
         </div>
@@ -151,7 +149,7 @@
         </div>
 
         <div class="formRow">
-        <div class="labelSectionBlockBold">Department Name</div><span class='req'>*</span><div class="inputSectionBlock"><input
+        <div class="labelSectionBlockBold">Department Name</div><div class="inputSectionBlock"><input
         type="text" class="validate[required, maxSize[80]]" data-bind="value : name" id="DepartmentName" placeholder="a new department name"/></div>
         </div>
 
@@ -200,7 +198,7 @@
 
         <div class="formRowHeader" data-bind="visible : ($root.listInfo().length > 0 && showInfo)">
         <span class='columnDividerListView'>Category</span>
-        <span class='columnDividerListView'>Description</span>
+            <span class='columnDividerListView'>Description</span>
         <span class='columnDividerListView'>Type</span>
         <span class='columnDividerListView'>Value</span>
         <span class='columnDividerListViewCmd' data-bind='visible: $root.enableUpdate'>Edit</span>
@@ -234,6 +232,7 @@
             function bind()
             {
                 $("#" + formName).setupViewBinding(vm, globalViewModel);
+                $('#DepartmentCode').mask('AAAAAAAAAA');
             }
 
             $("#accordianDepartment").accordion({collapsible : true, active: false});

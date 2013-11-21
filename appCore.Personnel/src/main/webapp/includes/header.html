@@ -5,26 +5,31 @@
 
             <ul class="nav">
                 <li><a href="#" onclick="return false;"><i id="configureSettings" class="icon-cog-1"></i></a></li>
-                <li><a href="personnelControlPanel.jsp"><i class="icon-home"></i></a></li>
+                <li><a href="../../landingpage.jsp"><i class="icon-home"></i></a></li>
                 </li>
             </ul>
 
             <ul class="navCompany">
-               <li>
+                <li>
 
-                       <div class="companyInfoDiv">Current company <select id="companyDropDownList" class="company">
-                       </select></div>
+                    <div class="companyInfoDiv">Current company <select id="companyDropDownList" class="company">
+                    </select></div>
 
-               </li>
+                </li>
             </ul>
 
             <ul class="navCompany">
-                <li><div id="messageNotification"> </div></li>
+                <li>
+                    <div id="messageNotification"></div>
+                </li>
             </ul>
 
 
             <ul class="nav pull-right">
-                <li class="usernamePlacement" data-bind="visible : username != undefined"><a class="adminNav" onclick="return false;" href="#"><i id="adminSettings" class="icon-user"></i>
+                <li class="usernamePlacement" data-bind="visible : username != undefined"><a class="adminNav"
+                                                                                             onclick="return false;"
+                                                                                             href="#"><i
+                        id="adminSettings" class="icon-user"></i>
                 </a>
                 </li>
                 <li class="usernamePlacement" data-bind="text : username"></li>

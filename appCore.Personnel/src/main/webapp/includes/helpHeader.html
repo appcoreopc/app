@@ -4,11 +4,13 @@
 
             <ul class="nav">
                 <li><a href="landingpage.jsp"><i class="icon-home"></i></a></li>
-                </li>
+            </ul>
+
+            <ul class="nav pull-center">
+                <li class="helpSearchTextbox"><input type="text" placeholder="What do you need help with?"/> </li>
             </ul>
 
             <ul class="nav pull-right">
-                <li class="usernamePlacement" data-bind="visible : username != undefined"><i class="icon-user"></i></li>
                 <li class="usernamePlacement" data-bind="text : username"></li>
                 <li class="wishlist-nav divider-vertical"></li>
                 <li><a href="/login" id="logoutLink" onclick="return false;">Log out</a></li>

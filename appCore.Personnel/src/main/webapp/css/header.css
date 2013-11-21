@@ -4500,10 +4500,10 @@ i.currency.dark.ZAR {
 }
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-    background: none repeat scroll 0 0 #DADADA;
+    /*background: none repeat scroll 0 0 #DADADA;
     border: 1px solid #999999;
     color: #212121;
-    font-weight: normal;
+    font-weight: normal;*/
 }
 
 .
@@ -4865,7 +4865,6 @@ ui-state-hover a, .ui-state-hover a:hover {
     background: none repeat scroll 0 0;
     color: #555555;
     font-weight: normal;
-    color: #fff;
     padding-left: 2px;
 }
 

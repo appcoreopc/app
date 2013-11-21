@@ -36,6 +36,11 @@
             function bind()
             {
                 $("#" + formName).setupViewBinding(vm, globalViewModel);
+
+                $("#postcode").mask('00-000');
+                $("#Telephone").mask('(000) 000-0000');
+                $("#Fax").mask('(000) 000-0000');
+
             }
 
              var tab = $("#" + formName).tabs();
@@ -98,10 +103,6 @@
         </div>
 
 
-        <div class="formRow">
-        <div class="labelSectionBlock">City</div><div class="inputSectionBlock"><input type="text" id="City" data-bind="value :
-        city"/></div>
-        </div>
 
         </div>
 
@@ -365,14 +366,24 @@
         </div>
 
 
-        <div class="formRow">
-        <div class="labelSectionBlock">Postcode</div><div class="inputSectionBlock">
-        <input type="text" id="Postcode" data-bind="value: postcode" class="validate[required]"/>
-        </div>
-        </div>
 
 
         <div class="formRow">
+            <div class="leftSection">
+            <div class="labelSectionBlockBold">City</div>
+            <div class="inputSectionBlock">
+            <input type="text" id="city" data-bind="value: city" class="validate[required]"/></div>
+            </div>
+
+            <div class="rightSection">
+            <div class="inlineLabelSectionBlockNoLeftPadding">Postcode</div><div class="inlineLabelSectionBlockNoLeftPadding"><input type="text" id="postcode"
+            data-bind="value: postcode"/></div>
+            </div>
+            </div>
+
+
+
+            <div class="formRow">
         <div class="leftSection">
         <div class="labelSectionBlockBold">Telephone</div>
         <div class="inputSectionBlock">

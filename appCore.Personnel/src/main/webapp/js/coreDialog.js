@@ -77,9 +77,6 @@ var CoreDialog = function () {
     // dialogObject - title & message is the main attribute //
     this.createDiscardConfirmationDialog = function (dialogObject, link, callBack) {
 
-        var overlay = $('<div id="overlay"> </div>');
-        overlay.appendTo(document.body);
-
         var $myDialog = $('<div></div>')
             .html(dialogObject.message)
             .dialog(
@@ -93,13 +90,11 @@ var CoreDialog = function () {
                 modal:true,
                 resizable:false,
                 buttons:{"OK":function () {
-                    $("#overlay").remove();
                     $(this).dialog("close");
                     callBack(true, link);
 
                 },
                     "Cancel":function () {
-                        $("#overlay").remove();
                         $(this).dialog("close");
                         callBack(false, link);
                     }
@@ -155,9 +150,6 @@ var CoreDialog = function () {
 
     this.createGeneralConfirmationDialog = function (dialogObject, dialogCallBack) {
 
-        var overlay = $('<div id="overlay"> </div>');
-        overlay.appendTo(document.body);
-
         var $myDialog = $('<div></div>')
             .html(dialogObject.message)
             .dialog(
@@ -172,7 +164,6 @@ var CoreDialog = function () {
                 resizable:false,
                 closeText:"",
                 buttons:{"OK":function () {
-                    $("#overlay").remove();
                     $(this).dialog("close");
                     dialogCallBack(true);
                 }

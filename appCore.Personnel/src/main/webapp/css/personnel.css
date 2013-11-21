@@ -743,3 +743,8 @@ span.fieldSpacer {
     width: 600px;
     top: 1px;
 }
+
+.inputSectionBlock i {
+    padding-left: 4px;
+    font-size: 16px;
+}

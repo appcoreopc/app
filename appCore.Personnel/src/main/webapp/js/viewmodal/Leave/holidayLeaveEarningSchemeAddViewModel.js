@@ -68,27 +68,6 @@ var HolidayLeaveEarningSchemeInfoViewModel = function (mode, globalViewModel) {
 
     self.editData = ko.observable();
 
-    self.cancelInfoData = function () {
-        self.editData("");
-    }
-
-
-    self.editInfoData = function (data) {
-
-        self.infoCategory = data.infoCategory;
-        self.infoDescription = data.infoDescription;
-        self.infoType = data.infoType;
-        self.infoValue = data.infoValue;
-        self.editData(data);
-    }
-
-    self.deleteInfoData = function (data) {
-        var dialog = new CoreDialog();
-        var helper = new EmployeeHelper();
-        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
-        var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, self.codeType, deleteInfoConfirmCallBack);
-    }
-
     self.closeAddControl = function () {
         $("#accordianHolidayLeaveEarningScheme").accordion({collapsible:true, active:false});
     }
@@ -106,7 +85,6 @@ var HolidayLeaveEarningSchemeInfoViewModel = function (mode, globalViewModel) {
         var entityData = {
             category:data.infoCategory(),
             description:data.infoDescription(),
-            //probationMonth : self.probationMonth(),
             type:data.infoType(),
             value:data.infoValue(),
             refEntity:self.nid()
@@ -216,15 +194,6 @@ var HolidayLeaveEarningSchemeInfoViewModel = function (mode, globalViewModel) {
         return "infoViewTemplate";
     }.bind(this);
 
-
-    function deleteInfoConfirmCallBack(userResponse, data, globalViewModel, codeType) {
-
-        if (userResponse == true) {
-            var helper = new CompanyHelper();
-            var entityData = { id:data.nid() };
-            var result = helper.deleteHolidayLeaveEarningSchemeInfo(entityData, data, deleteCompleteCallback);
-        }
-    }
 
     function deleteCompleteCallback(result, data) {
 

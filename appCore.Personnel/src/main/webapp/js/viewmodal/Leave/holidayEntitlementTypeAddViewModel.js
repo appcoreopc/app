@@ -104,7 +104,6 @@ var HolidayEntitlementTypeInfoViewModel = function (mode, globalViewModel) {
         var entityData = {
             category:data.infoCategory(),
             description:data.infoDescription(),
-            //probationMonth : self.probationMonth(),
             type:data.infoType(),
             value:data.infoValue(),
             refEntity:self.nid()
@@ -113,27 +112,6 @@ var HolidayEntitlementTypeInfoViewModel = function (mode, globalViewModel) {
             entityData.nid = data.nid();
 
         return entityData;
-    }
-
-    self.addInfo = function (data) {
-
-        var validationStatusOk = true;
-
-        if (self.addInfoCategory() == "" || self.addInfoCategory() == undefined) {
-            $("#holidayEntitlementTypeCategoryAdd").validationEngine('validate');
-            validationStatusOk = false;
-        }
-
-        if (self.addInfoType() == "" || self.addInfoType() == undefined) {
-            $("#holidayEntitlementTypeTypeAdd").validationEngine('validate');
-            validationStatusOk = false;
-        }
-
-        if (validationStatusOk) {
-            var entityInfoData = createEntityData();
-            var helper = new CompanyHelper();
-            helper.saveOrUpdateHolidayEntitlementTypeInfo(entityInfoData, addDataSuccessCallback);
-        }
     }
 
     function createEntityData() {
@@ -220,7 +198,7 @@ var HolidayEntitlementTypeInfoViewModel = function (mode, globalViewModel) {
         if (userResponse == true) {
             var helper = new LeaveHelper();
             var entityData = { id:data.nid() };
-            var result = helper.deleteHolidayEntitlementTypeInfo(entityData, data, deleteCompleteCallback);
+            var result = helper.deleteHolidayEntitlementType(entityData, deleteCompleteCallback);
         }
     }
 

@@ -1,7 +1,6 @@
 var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
 
     var self = this;
-
     self.nid = ko.observable();
     self.employeeId = ko.observable();
     self.entitlementType = ko.observable();
@@ -40,7 +39,43 @@ var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
     // get permission
     initializeApplication();
 
+    self.renderView = function () {
+
+        Executor.newRegister("default", function () {
+            $.when(self.listByCompanyEmployee(), self.getData(), self.getEntitlementTypeData(), self.getLeaveEarningScheme(), self.getLeaveReplacementScheme()).done(
+                function (employeeResponse, getDataResponse, entitlementResponse, leaveEarningResponse, leaveReplacementResponse) {
+                    if (employeeResponse[0] != null) {
+                        self.entityList(employeeResponse[0]);
+                    }
+                    self.holidayEntitlementType(entitlementResponse[0]);
+                    self.leaveEarningScheme(leaveEarningResponse[0]);
+                    self.leaveReplacementType(leaveReplacementResponse[0]);
+
+                    if (getDataResponse != undefined && getDataResponse[0] != null) {
+                        var data = getDataResponse[0];
+                        self.nid(data.nid);
+                        self.employeeId(data.employeeId);
+                        self.currentHolidayEntitlementType(data.holidayEntitlementType);
+                        self.currentLeaveReplacementType(data.holidayReplacementType);
+                        self.currentLeaveEarningScheme(data.leaveEarningScheme);
+                        self.currentWorkflowId(data.leaveWorkflowId);
+                        self.lastUpdate(data.lastUpdate);
+                    }
+                    bind();
+                });
+        });
+
+        Executor.execute("default");
+    }
+
+    function bind() {
+        $("#employeeHolidayForm").setupViewBinding(self, globalViewModel);
+        $("#accordianEmployeeHoliday").accordion({collapsible:true, active:false});
+        $("#employeeHolidayForm").validationEngine();
+    }
+
     function initializeApplication() {
+
         var input = { "id":coreEmployeeHolidayPage, "roleId":self.globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var moduleResult = coreCommand.getPermission(hostAuthorizationUrl, input);
@@ -83,6 +118,7 @@ var EmployeeHolidayInfoViewModel = function (mode, globalViewModel) {
     }
 
     self.getData = function () {
+
         if (self.mode() == coreModeEdit) {
             var codeId = globalViewModel.targetId();
             var entityData = { id:codeId };

@@ -11,7 +11,7 @@
 
         <%@ include file="../includes/css_includes.html" %>
         <%@ include file="../includes/js_includes.html" %>
-        <%@ include file="/includes/admin_header.html" %>
+        <%@ include file="/includes/header.html" %>
 
         <script language="javascript" src="../../js/coreComboControl.js"></script>
 
@@ -35,7 +35,7 @@
         <script language="javascript" src="../../js/coreGlobalViewModelSetup.js"></script>
         <script language="javascript" src="../../js/coreLogout.js"></script>
         <script language="javascript" src="../../js/setupFullCalendar.js"></script>
-        <script language="javascript" src="../../js/coreFullCalendar.js"></script>
+        <script language="javascript" src="../../js/coreExecutor.js"></script>
 
         <!-- for sidebar -->
 
@@ -137,10 +137,6 @@
         </div>
 
         <div id="viewPort">
-
-        <button data-bind='click: function() { items.push({ title: "New item", start: new Date(), allDay: false }) }'>
-        Add item
-        </button>
 
 
         </div>

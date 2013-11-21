@@ -1,6 +1,6 @@
 var HolidayEntitlementTypeListViewModel = function (initView, data, globalViewModel, command) {
 
-    mode = initView;
+    var mode = initView;
     var self = this;
     self.gridUrl = globalHostname + "/app/Core/HolidayEntitlementType";
     self.codeCommand = "#codeCommand";
@@ -9,7 +9,6 @@ var HolidayEntitlementTypeListViewModel = function (initView, data, globalViewMo
     self.gridData = ko.observableArray(data);
     self.globalViewModel = globalViewModel;
     self.coreCommand = command;
-
 
     var viewColumns = [
 

@@ -223,8 +223,47 @@
                 var vm;
                 var formName = "branchForm";
 
-                $(document).ready(function()
+                    Executor = (function($, ko)
+                    {
+                        var executor = {};
+                        var commands = {};
+                        var postExecuteCommands = {};
+
+                        executor.register = function(commandName, method){
+                            var commandHandler =
+                            {
+                                ref: this,
+                                callback : method
+                            };
+                            commands[commandName] = commandHandler;
+                        };
+
+                        executor.postRegister = function(commandName, method){
+                            var commandHandler =
+                            {
+                                ref: this,
+                                callback : method
+                            };
+                            postExecuteCommands[commandName] = commandHandler;
+                        };
+
+                        executor.execute = function(commandName, data)
+                        {
+                            var cmd = commands[commandName];
+                            if (cmd){
+
+                                console.log(cmd);
+                                cmd.callback.call(cmd.ref, data);
+                                cmd.callback();
+                             }
+                        };
+                       return executor;
+                    })(jQuery, ko);
+
+
+            $(document).ready(function()
                 {
+
                     $.when(init()).done(bind());
 
                     function init()
@@ -237,8 +276,15 @@
                         $("#" + formName).setupViewBinding(vm, globalViewModel);
                         $("#accordian").accordion({collapsible : true, active: false});
                         $("#" + formName).validationEngine();
+
+                        $('#BranchCode').mask('AAAAAAAAAA');
                     }
-                });
+
+                    //Executor.register("default", function() { $.when(init()).done(bind()) });
+                    //Executor.execute("default");
+
+
+            });
 
             </script>
 

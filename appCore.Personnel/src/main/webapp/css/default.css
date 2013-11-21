@@ -4026,3 +4026,7 @@ a.download-sdk {
     padding: 10px 0 10px 10px;
     vertical-align: middle;
 }
+
+#recentItemSideBar i {
+    padding-right: 4px;
+}

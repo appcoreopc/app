@@ -124,9 +124,6 @@
 
 
 
-
-
-
         <script type="text/html" id="companyEntityAddTemplate">
 
         <div class="form">
@@ -137,7 +134,7 @@
 
         <div class="sectionalForm">
         <div class="leftSection">
-        <div class="labelSectionBlockBold">Unit  Code</div><span class='req'>*</span><div class="inputSectionBlock"><input
+        <div class="labelSectionBlockBold"><i class="icon-asterisk"></i>Unit  Code</div><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="codepicker : code, codeEntity : { codeType : 18, companyId : $root.globalViewModel.companyId() }"  id="UnitCode" name="UnitCode"
         placeholder="a new unit code"/></div>
         </div>
@@ -233,6 +230,7 @@
             function bind()
             {
                 $("#" + formName).setupViewBinding(vm, globalViewModel);
+                $('#UnitCode').mask('AAAAAAAAAA');
             }
 
              $("#accordianUnit").accordion({collapsible : true, active: false});

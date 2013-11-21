@@ -236,6 +236,7 @@
             function bind()
             {
                 $("#" + formName).setupViewBinding(vm, globalViewModel);
+                $('#GradeCode').mask('AAAAAAAAAA');
             }
 
             $("#accordianGrade").accordion({collapsible : true, active: false});

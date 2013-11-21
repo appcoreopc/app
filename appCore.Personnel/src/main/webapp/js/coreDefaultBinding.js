@@ -1,6 +1,6 @@
 (function ($) {
     $.fn.setupViewBinding = function (vm, globalViewModel) {
-        //try {
+        try {
 
             if (globalViewModel == undefined) {
                 globalViewModel = $(document).setupGlobalViewModel();
@@ -14,10 +14,10 @@
             else {
                 globalViewModel.bindedControlId(null);
             }
-        //}
-        //catch (ex) {
-        //    var myStackTrace = ex.stack;
-        //    console.log(myStackTrace);
-        //}
+        }
+        catch (ex) {
+            var myStackTrace = ex.stack;
+            console.log(myStackTrace);
+        }
     };
 })(jQuery);

@@ -293,8 +293,10 @@ var EmployeeHelper = function () {
 
     this.getCompanyList = function (list) {
         var ajaxCore = new AjaxCore();
-        var salutationRequest = ajaxCore.sendRequest(globalCompanyListUrl, null, "get");
-        salutationRequest.success(function (data, status, xhrObj) {
+        var companyRequest = ajaxCore.sendRequest(globalCompanyListUrl, null, "get");
+        companyRequest.success(function (data, status, xhrObj) {
+
+            list.push({ "companyName":"None", "nid":-1 })
             for (var i = 0; i < data.length; i++) {
                 var obj = data[i];
                 list.push(obj);

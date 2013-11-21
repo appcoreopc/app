@@ -234,6 +234,7 @@
             function bind()
             {
                 $("#" + formName).setupViewBinding(vm, globalViewModel);
+                $('#EmploymentType').mask('AAAAAAAAAA');
             }
 
             $("#accordianEmployentType").accordion({collapsible : true, active: false});

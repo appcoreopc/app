@@ -1,0 +1,29 @@
+define Code {
+    startDate : '',
+	endDate : '', 
+    constructor : function(startDate, endDate){
+        this.startDate = startDate;
+		this.endDate = endDate;
+    }
+}
+
+rule startEndDate {
+    when {
+		or(
+			m1 : Code !isDate(m1.startDate),
+			m2 : Code m2.startDate > m2.endDate
+		);
+    }
+    then {
+	   emit("error");
+    }
+}
+	
+rule endEndDate {
+    when {
+			m1 : Code !isDate(m1.endDate)
+    }
+    then {
+	   emit("error");
+    }
+}
