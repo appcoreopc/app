@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.log4j.Logger;
 
+import com.appCore.personnel.Core.Entity.Branch;
 import com.appCore.personnel.Core.Entity.BranchInfo;
 import com.appCore.personnel.Core.Entity.Department;
 import com.appCore.personnel.Core.Entity.DepartmentInfo;
@@ -125,10 +126,6 @@ public class DepartmentService
 	{
 		Session session = sessionFactory.getCurrentSession();
 		Department department = (Department) session.get(Department.class, id);
-
-		Query deleteQuery = session.createQuery("Delete FROM Section where DepartmentId = :id");
-		deleteQuery.setParameter("id", id);
-		deleteQuery.executeUpdate();
 		session.delete(department);
 	}
 

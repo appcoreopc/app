@@ -52,6 +52,7 @@ var DivisionListViewModel = function (initView, data, globalViewModel, command) 
     ]};
 
     function getView() {
+
         var gridDataObject =
         {
             "gridUrl":this.gridUrl,

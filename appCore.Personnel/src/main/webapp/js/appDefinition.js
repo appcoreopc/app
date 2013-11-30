@@ -15,6 +15,7 @@ var globalResourceListByCompanyUrl = globalHostname + "/app/User/Forms/listByCom
 var globalResourceSaveOrUpdateUrl = globalHostname + "/app/User/Forms/saveOrUpdate";
 var globalResourceDeleteUrl = globalHostname + "/app/User/Forms/delete";
 
+var globalPermissionColumnName = "permission";
 var coreBranchPage = "Branch";
 var coreCoreModulePage = "Branch";
 var coreEmployeePage = "Branch";

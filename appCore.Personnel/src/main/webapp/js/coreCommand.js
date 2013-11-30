@@ -5,6 +5,17 @@ var CoreCommand = function () {
     var cancelCommandId = "cancelBtn";
     var cancelCommandText = "Cancel";
 
+    this.getAppPermission = function (requestUrl, requestData) {
+        var ajaxCore = new AjaxCore();
+        var commandType;
+        return ajaxCore.sendRequestSequential(requestUrl, requestData, "get");
+    }
+
+
+
+
+
+
     this.parseCommand = function (requestUrl, requestData, commandDataObject) {
         var dataPermission = this.getPermission(requestUrl, requestData);
         var gridViewModel = getCommand(dataPermission, commandDataObject);
@@ -23,6 +34,9 @@ var CoreCommand = function () {
         });
         return commandType;
     }
+
+
+
 
     function getCommand(data, commandDataObject) {
 
@@ -216,6 +230,7 @@ var CoreCommand = function () {
             appendCommandToCtrlId("<button class='command' type='button' id='" + ctrlId + "'>" + text + "</button>", controlIdToAppendTo);
         }
     }
+
     /*
      Deprecated function
      */

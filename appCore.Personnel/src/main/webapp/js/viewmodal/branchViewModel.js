@@ -1,5 +1,4 @@
 var BranchViewModel = function (initView, data, globalViewModel) {
-
     var self = this;
     this.mode = initView;
     this.editPage = "branchAdd.jsp";
@@ -10,7 +9,6 @@ var BranchViewModel = function (initView, data, globalViewModel) {
     this.data = data;
 
     self.gridData = ko.observableArray(data);
-
     self.globalViewModel = globalViewModel;
 
     var viewColumns = [
@@ -21,7 +19,6 @@ var BranchViewModel = function (initView, data, globalViewModel) {
     ];
 
     var model = {
-
         id:"nid",
         fields:{
             nid:{ editable:false },
@@ -90,6 +87,18 @@ var BranchViewModel = function (initView, data, globalViewModel) {
         }
     };
 
+    self.addBranch = function()
+    {
+        var dialog = new CoreDialog();
+        var helper = new EmployeeHelper();
+        var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove this record?");
+        dialog.createDialogForm(dialogObject, data, globalViewModel, self.codeType, deleteCallBack)
+
+        //var vm = new BranchInfoViewModel(globalViewModel);
+        //vm.renderView();
+
+    }
+
     function deleteFunction(data) {
         var dialog = new CoreDialog();
         var helper = new EmployeeHelper();
@@ -157,7 +166,7 @@ var BranchViewModel = function (initView, data, globalViewModel) {
 
     self.initializeViewModel = function () {
         var gridDataObject = this.getView();
-        var input = { "id":coreBranchPage, "roleId": globalViewModel.employeeRole() };
+        var input = { "id":coreBranchPage, "roleId":globalViewModel.employeeRole() };
         var coreCommand = new CoreCommand();
         var gridViewModel = coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
         self.gridViewModel = gridViewModel;

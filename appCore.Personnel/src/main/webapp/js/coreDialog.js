@@ -44,15 +44,13 @@ var CoreDialog = function () {
 
 
     this.createConfirmationDialog = function (dialogObject, data, globalViewModel, codeType, callBack) {
-
         var $myDialog = $('<div></div>')
             .html(dialogObject.message)
             .dialog(
             {
-                dialogClass:'dialogTop',
                 autoOpen:false,
                 title:dialogObject.title,
-                closeOnEscape:false,
+                closeOnEscape:true,
                 position:"center",
                 show:{ effect:"fade", duration:800},
                 modal:true,
@@ -74,7 +72,37 @@ var CoreDialog = function () {
         $myDialog.dialog('open');
     }
 
-    // dialogObject - title & message is the main attribute //
+    this.createDialogForm = function (dialogObject, data, globalViewModel, codeType, callBack) {
+
+        $("#targetDialogForm").remove();
+
+        var $myDialog = $('<div id="targetDialogForm"></div>')
+            .load("branchAdd.jsp")
+            .dialog(
+            {
+                dialogClass:'no-close',
+                autoOpen:false,
+                title:dialogObject.title,
+                closeOnEscape:false,
+                position:"center",
+                width:'auto',
+                //show:{ effect:"fade", duration:800},
+                //modal:true,
+                //resizable:false,
+                buttons:{"OK":function () {
+                    $(this).dialog("close");
+                    //callBack(true, link);
+
+                },
+                    "Cancel":function () {
+                        $(this).dialog("close");
+                        //callBack(false, link);
+                    }
+                }
+            });
+        $myDialog.dialog('open');
+    }
+
     this.createDiscardConfirmationDialog = function (dialogObject, link, callBack) {
 
         var $myDialog = $('<div></div>')

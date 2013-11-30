@@ -39,14 +39,8 @@ var BranchInfoViewModel = function (globalViewModel) {
         { headerText:"Disabled", rowText:"enable" }
     ];
 
-    if (self.globalViewModel.applicationScopeType() != coreApplicationTypeBranch) {
-        throw "Application Type is not branch.";
-    }
 
     self.mode(self.globalViewModel.editMode());
-
-    // get permission
-    initializeApplication();
 
     function initializeApplication() {
 
@@ -60,18 +54,19 @@ var BranchInfoViewModel = function (globalViewModel) {
         self.enableUpdate(helper.getEnableUpdate(result));
         self.enableDelete(helper.getEnableDelete(result));
 
+
         if (self.mode() == coreModeEdit) {
             self.showInfo(true);
             var codeId = globalViewModel.targetId();
             var branchData = { id:codeId };
             var helper = new CompanyHelper();
-            helper.getBranch(branchData, getBranchCallback);
+            return helper.getBranch(branchData);
         }
+        return null;
     }
 
     function getBranchCallback(data) {
         if (data != null) {
-
             self.nid(data.nid);
             self.code(data.branchCode);
             self.name(data.branchName);
@@ -82,6 +77,29 @@ var BranchInfoViewModel = function (globalViewModel) {
                 self.listInfo.push(new InfoDataViewModel(data.branchInfo[i]));
             }
         }
+    }
+
+    self.renderView = function () {
+        try {
+
+            $.when(initializeApplication()).done(function (a) {
+                if (a != undefined && a != null) {
+                    getBranchCallback(a);
+                }
+                bind();
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+
+    function bind() {
+
+        $("#" + "targetDialogForm").setupViewBinding(self, globalViewModel);
+        $("#accordian").accordion({collapsible:true, active:false});
+        $("#" + "branchForm").validationEngine();
+        $('#BranchCode').mask('AAAAAAAAAA');
     }
 
     self.cancelInfoData = function () {
@@ -112,7 +130,6 @@ var BranchInfoViewModel = function (globalViewModel) {
         var branchData = createUpdateBranchData(data);
         var helper = new CompanyHelper();
         helper.saveOrUpdateBranchInfo(branchData, updateDataSuccessCallback);
-
         self.editData("");
     }
 
@@ -163,10 +180,6 @@ var BranchInfoViewModel = function (globalViewModel) {
         return branchData;
     }
 
-    function updateDataSuccessCallback(result) {
-
-    }
-
     function addDataSuccessCallback(result) {
 
         if (result.messageCode != null) {
@@ -187,7 +200,6 @@ var BranchInfoViewModel = function (globalViewModel) {
             self.addInfoType("");
             self.addInfoValue("");
         }
-
     }
 
     self.addInfoData = function () {
@@ -208,7 +220,7 @@ var BranchInfoViewModel = function (globalViewModel) {
         self.addInfoValue("");
     }
 
-
+    /*
     self.templateToUse = function (item) {
         switch (self.mode()) {
             case 1:
@@ -218,9 +230,18 @@ var BranchInfoViewModel = function (globalViewModel) {
                 return "companyEntityAddTemplate";
         }
         return "companyEntityAddTemplate";
+    }.bind(this); */
 
-    }.bind(this);
-
+    self.templateToUse = function () {
+        switch (self.mode()) {
+            case 1:
+            case 2:
+                return "companyEntityAddTemplate";
+            default:
+                return "companyEntityAddTemplate";
+        }
+        return "companyEntityAddTemplate";
+    };
 
     self.infoTemplateToUse = function (item) {
         if (item === self.editData())
@@ -270,7 +291,6 @@ var BranchInfoViewModel = function (globalViewModel) {
         branch.branchName = self.name();
         branch.description = self.description();
         branch.disabled = self.disabled();
-
         var helper = new CompanyHelper();
         helper.saveUpdateBranch(branch, saveOrUpdateStatus)
     }

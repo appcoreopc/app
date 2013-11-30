@@ -118,14 +118,6 @@
 
 
 
-
-
-
-
-
-
-
-
         <script type="text/html" id="companyEntityAddTemplate">
 
 
@@ -133,9 +125,21 @@
 
         <div class="formMainContent">
 
-        <div class="sectionalFormHeader">Department code</div>
+        <div class="sectionalFormHeader">Department code (shows department to company path)</div>
 
-        <div class="sectionalForm">
+
+
+            <div> <div class="maintenanceCommandSpace"></div>
+            <div class="maintenanceCommand">
+                <button id="copyBtn" type="button" data-bind="visible : enableAdd || enableUpdate, click : updateData" class="command"><i class="icon-popup"></i>Copy</button>
+                <button id="moveBtn" type="button" data-bind="visible : enableAdd || enableUpdate, click : updateData" class="command"><i class="icon-reply"></i>Move</button>
+                <button id="viewResource" type="button" data-bind="click : cancelUpdate" class="command"><i class="icon-info"></i>Details</button>
+                <button id="viewHistoryBtn" type="button" data-bind="click : cancelUpdate" class="command"><i class="icon-clock"></i>View History</button>
+            </div>
+            </div>
+
+
+            <div class="sectionalForm">
         <div class="leftSection">
         <div class="labelSectionBlockBold"><i class="icon-asterisk"></i>Department  Code</div><div class="inputSectionBlock"><input
         class="validate[required, maxSize[10]]" type="text" data-bind="codepicker : code, codeEntity : { codeType : 16, companyId : $root.globalViewModel.companyId() }" id="DepartmentCode" name="DepartmentCode"
@@ -242,5 +246,5 @@
         </script>
 
         <form id="departmentForm">
-        <div id="departmentMaintenance" data-bind="template : { name : templateToUse} ">
+        <div id="departmentMaintenance" data-bind="template : { name : templateToUse } ">
         </form>

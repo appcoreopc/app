@@ -16,12 +16,17 @@
         // Defines a view model class you can use to populate a grid
         ViewModel:function (configuration) {
 
+            var self = this;
+
             this.data = configuration.data;
             this.currentPageIndex = ko.observable(0);
 
             this.enableAdd = configuration.enableAdd;
             this.enableUpdate = configuration.enableUpdate;
             this.enableDelete = configuration.enableDelete;
+            this.enableSelect = configuration.enableSelect;
+
+            this.selectedIndexArray = ko.observable(true);
 
             this.pageSize = configuration.pageSize || 5;
 
@@ -36,8 +41,21 @@
 
             this.itemsOnCurrentPage = ko.computed(function () {
                 var startIndex = this.pageSize * this.currentPageIndex();
-                return this.data.slice(startIndex, startIndex + this.pageSize);
+
+                if (this.enableSelect) {
+                    var a = this.data.slice(startIndex, startIndex + this.pageSize);
+
+                    $.map(a, function (arrayElement) {
+                        var newElement = {"isSelected":ko.observable(false) };
+                        $.extend(arrayElement, newElement);
+                    });
+                    return a;
+                }
+                else {
+                    return this.data.slice(startIndex, startIndex + this.pageSize);
+                }
             }, this);
+
 
             this.maxPageIndex = ko.computed(function () {
                 return Math.ceil(ko.utils.unwrapObservable(this.data).length / this.pageSize) - 1;
@@ -45,7 +63,6 @@
         }
     };
 
-    // Templates used to render the grid
     var templateEngine = new ko.nativeTemplateEngine();
 
     templateEngine.addTemplate = function (templateName, templateMarkup) {
@@ -56,17 +73,19 @@
                     <table class=\"ko-grid\" cellspacing=\"0\">\
                         <thead>\
                             <tr>\
+                            <th data-bind=\"visible: $root.enableSelect\">Select</th>\
                             <!-- ko foreach: columns-->\
-                               <th data-bind=\"text: headerText\"></th>\
+                              <th data-bind=\"text: headerText\"></th>\
                              <!-- /ko -->\
                              <th data-bind=\"visible: $root.enableUpdate\">Update</th>\
-                              <th data-bind=\"visible: $root.enableDelete\">Delete</th>\
+                             <th data-bind=\"visible: $root.enableDelete\">Delete</th>\
                             </tr>\
                         </thead>\
                         <tbody data-bind=\"foreach: itemsOnCurrentPage\">\
                            <tr>\
+                              <td data-bind=\"visible: $root.enableSelect\"><input type=\"checkbox\" data-bind='checked : $data[\"isSelected\"]' /></td>\
                            <!-- ko foreach: $parent.columns-->\
-                               <td data-bind=\"text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText] \"></td>\
+                              <td data-bind=\"text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText] \"></td>\
                            <!-- /ko -->\
                               <td data-bind=\"visible: $root.enableUpdate\"><a href='#' data-bind='click : $root.updateData'><i class='icon-edit-1'></i></a> </td>\
                               <td data-bind=\"visible: $root.enableDelete\"><a href='#' data-bind=\"click : $root.deleteData\"><i class='icon-minus-circle-1'></i></a></td>\
@@ -84,7 +103,6 @@
                         <!-- /ko -->\
                     </div>");
 
-    // The "simpleGrid" binding
     ko.bindingHandlers.dataGrid = {
         init:function () {
             return { 'controlsDescendantBindings':true };

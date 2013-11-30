@@ -4,15 +4,16 @@ var DepartmentListViewModel = function (initView, data, globalViewModel, command
     self.mode = initView;
     self.coreCommand = command;
 
-    this.gridUrl = globalHostname + "/app/Core/Branch";
-    this.codeCommand = "#codeCommand";
-    this.gridId = "gridBranch";
-
-    this.data = data;
-
-    self.gridData = ko.observableArray(data);
+    self.enableAdd = false;
+    self.enableUpdate = ko.observable(true);
+    self.enableAdd = ko.observable(true);
+    self.enableDelete = ko.observable(true);
+    self.enableSelect = ko.observable(true);
 
     self.globalViewModel = globalViewModel;
+    self.gridViewModel;
+
+    self.gridActionViewModel;
 
     var viewColumns = [
         { headerText:"Department Code", rowText:"departmentCode" },
@@ -21,82 +22,38 @@ var DepartmentListViewModel = function (initView, data, globalViewModel, command
         { headerText:"Disabled", rowText:"disabled" }
     ];
 
-    var model = {
-
-        id:"nid",
-        fields:{
-            nid:{ editable:false },
-            type:{ editable:false, type:"string" },
-            value:{ editable:false, validation:{ required:true } },
-            description:{ editable:false, type:"string" },
-            category:{ editable:false, validation:{ required:true } }
-        }
-    };
-
-    var columns = { "columns":[
-        {
-            field:"branchCode",
-            width:90,
-            title:"Branch Code"
-        },
-        {
-            field:"branchName",
-            width:90,
-            title:"Branch Name"
-        },
-        {
-            field:"description",
-            width:90,
-            title:"Description"
-        },
-        {
-            field:"enabled",
-            width:90,
-            title:"Disabled"
-        }
-    ]};
 
     function getView() {
-        var gridDataObject =
-        {
-            "gridUrl":this.gridUrl,
-            "data":this.data,
-            "columns":columns,
-            "model":model
-        };
 
-        switch (self.mode) {
-            case 0:
-                var addLinkInfo = {
-                    "text":"Add Department",
-                    "commandId":'departmentAdd',
-                    "callback":function () {
-                        goToAdd()
-                    }
-                };
+        self.gridViewModel = new ko.dataGrid.ViewModel({
+            data:ko.observableArray(data),
+            columns:viewColumns,
+            pageSize:10,
+            enableUpdate:self.enableUpdate,
+            enableAdd:self.enableAdd,
+            enableDelete:self.enableDelete,
+            enableSelect:self.enableSelect,
+            deleteData:deleteFunction,
+            updateData:updateFunction
+        });
 
-                var updateLinkInfo = {
-                    "text":"Update",
-                    "link":this.editPage
-                };
+        self.gridActionViewModel = new ko.gridAction.ViewModel({
+            goToAdd : self.goToAdd
+        });
 
-                gridDataObject.gridData = self.gridData;
-                gridDataObject.viewColumns = viewColumns;
-                gridDataObject.updateFunction = updateFunction;
-                gridDataObject.deleteFunction = deleteFunction;
-                gridDataObject.controlId = this.gridId;
-                gridDataObject.addLinkInfo = addLinkInfo;
-                gridDataObject.updateLinkInfo = updateLinkInfo;
-                return gridDataObject;
-        }
-        return gridDataObject;
+
     }
 
-    self.initializeViewModel = function () {
+    self.renderView = function () {
         var gridDataObject = getView();
         var input = { "id":coreDivisionPage, "roleId":globalViewModel.employeeRole() };
-        var gridViewModel = self.coreCommand.parseCommand(hostAuthorizationUrl, input, gridDataObject);
-        self.gridViewModel = gridViewModel;
+        $.when(self.coreCommand.getAppPermission(hostAuthorizationUrl, input)).done(function (authorizationResponse) {
+            var helper = new EmployeeHelper();
+            var permissionColumnName = globalPermissionColumnName;
+            self.gridViewModel.enableAdd(helper.getEnableAdd(authorizationResponse[permissionColumnName]));
+            self.gridViewModel.enableUpdate(helper.getEnableUpdate(authorizationResponse[permissionColumnName]));
+            self.gridViewModel.enableDelete(helper.getEnableDelete(authorizationResponse[permissionColumnName]));
+        });
     }
 
     function deleteFunction(data) {
@@ -115,7 +72,7 @@ var DepartmentListViewModel = function (initView, data, globalViewModel, command
 
     function successDeleteCallback(result, data) {
         if (result.messageCode == 0) {
-            self.gridData.remove(data);
+            self.gridViewModel.data.remove(data);
         }
     }
 
@@ -126,11 +83,53 @@ var DepartmentListViewModel = function (initView, data, globalViewModel, command
         preparePageForLoading("departmentAdd.jsp");
     }
 
-    function goToAdd() {
+    self.selectAll = function (data) {
+        for (var i = 0; i < self.gridViewModel.data().length; i++) {
+            if (self.gridViewModel.data()[i].isSelected != undefined) {
+                self.gridViewModel.data()[i].isSelected(true);
+            }
+        }
+    }
+
+    self.deleteSelected = function (data) {
+        if (self.enableSelect != false) {
+            var dialog = new CoreDialog();
+            var helper = new EmployeeHelper();
+            var dialogObject = helper.createDialogObject("Delete record", "Do you want to remove selected record?");
+            var result = dialog.createConfirmationDialog(dialogObject, data, globalViewModel, null, deleteSelectedCallBack);
+        }
+    }
+
+    function deleteSelectedCallBack(status, data, globalViewModel, codeType) {
+        if (status == true) {
+
+            var helper = new CompanyHelper();
+            var dataValue = data.gridViewModel.data();
+            var arrayToRemove = helper.getSelectedItemGrid(dataValue);
+
+            // perform actual delete //
+            for (var j = 0; j < arrayToRemove.length; j++) {
+                var deleteElement = arrayToRemove[j]['nid'];
+                for (var k = 0; k < self.gridViewModel.data().length; k++) {
+                    if (self.gridViewModel.data()[k].nid == deleteElement) {
+                        self.gridViewModel.data.splice(k, 1);
+                        var result = helper.deleteDepartmentSelected(arrayToRemove[j]);
+                    }
+                }
+            }
+        }
+    }
+
+    function successDeleteSelectedCallback(result, data) {
+        if (result.messageCode == 0) {
+            self.gridViewModel.data.remove(data);
+            deleteSelectedCallBack(true, self, globalViewModel, null);
+        }
+    }
+
+    self.goToAdd = function () {
         globalViewModel.applicationScopeType(coreApplicationTypeDepartment);
         globalViewModel.editMode(coreModeInsert);
         preparePageForLoading("departmentAdd.jsp");
     }
-
-    self.initializeViewModel();
 }

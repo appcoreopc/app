@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/js/simpleGrid.js" line="62" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a7364cb6-6f64-4d06-8a17-1318e89986ef" name="Default" comment="" />
     <ignored path="webapp.iws" />
@@ -20,56 +23,116 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="personnelControlPanel.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
+      <file leaf-file-name="department.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/department.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="0" selection-start="3225" selection-end="3225" vertical-scroll-proportion="-14.384615">
+            <state line="8" column="9" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coreSideBar.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/coreSideBar.js">
+      <file leaf-file-name="gridAction.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/gridAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="49" column="31" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1385593338922" expanded="true" signature="2139:2171" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2139:2218" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2139:2415" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2139:2431" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2139:2475" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2139:3112" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2184:2218" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2369:2415" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2369:2431" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2369:2475" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2369:3057" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coreObjectAction.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/coreObjectAction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="99" column="0" selection-start="4102" selection-end="4102" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1385593338922" expanded="true" signature="2139:3112" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2184:3084" placeholder="..." />
+                <marker date="1385593338922" expanded="true" signature="2369:3057" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="departmentAdd.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/departmentAdd.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="217" column="0" selection-start="9019" selection-end="9019" vertical-scroll-proportion="0.25747126">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coreMessageNotification.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/coreMessageNotification.js">
+      <file leaf-file-name="departmentListViewModel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/viewmodal/departmentListViewModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="40" column="34" selection-start="1291" selection-end="1298" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coreRecentItem.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/coreRecentItem.js">
+      <file leaf-file-name="js_includes.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="25" column="54" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globalViewModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/globalViewModel.js">
+      <file leaf-file-name="coreDialog.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/coreDialog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="16" selection-start="547" selection-end="554" vertical-scroll-proportion="0.0">
+            <state line="43" column="0" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="branchInfoViewModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/viewmodal/branchInfoViewModel.js">
+      <file leaf-file-name="companyHelper.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/viewmodal/companyHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="536" column="28" selection-start="20018" selection-end="20037" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="branchViewModel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/viewmodal/branchViewModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="39" selection-start="357" selection-end="376" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simpleGrid2.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/simpleGrid2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="1" selection-start="3751" selection-end="3751" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1385425221382" expanded="true" signature="2128:3501" placeholder="..." />
+                <marker date="1385425221382" expanded="true" signature="2161:2659" placeholder="..." />
+                <marker date="1385425221382" expanded="true" signature="2195:2625" placeholder="..." />
+                <marker date="1385425221382" expanded="true" signature="2734:3471" placeholder="..." />
+                <marker date="1385425221382" expanded="true" signature="2767:3437" placeholder="..." />
+                <marker date="1385425221382" expanded="true" signature="3621:4031" placeholder="..." />
+                <marker date="1385425221382" expanded="true" signature="3931:3965" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,22 +147,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/appCore.Payroll/views/payrollTableAdd.jsp" />
-        <option value="$PROJECT_DIR$/js/viewmodal/Payroll/payrollTableAddViewModel.js" />
-        <option value="$PROJECT_DIR$/js/viewmodal/Payroll/payrollTableListViewModel.js" />
-        <option value="$PROJECT_DIR$/appCore.Payroll/views/workPackageListPage.jsp" />
-        <option value="$PROJECT_DIR$/appCore.Payroll/views/workPackageAdd.jsp" />
-        <option value="$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageListPage.jsp" />
-        <option value="$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageAdd.jsp" />
+        <option value="$PROJECT_DIR$/js/coreCommand.js" />
+        <option value="$PROJECT_DIR$/js/viewmodal/departmentInfoViewModel.js" />
+        <option value="$PROJECT_DIR$/js/viewmodal/divisionListViewModel.js" />
         <option value="$PROJECT_DIR$/js/appDefinition.js" />
-        <option value="$PROJECT_DIR$/js/viewmodal/branchInfoViewModel.js" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp" />
-        <option value="$PROJECT_DIR$/js/coreToolbox.js" />
-        <option value="$PROJECT_DIR$/css/sidebar/dark-glass/sidebar.css" />
-        <option value="$PROJECT_DIR$/js/coreSystemMessage.js" />
-        <option value="$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp" />
-        <option value="$PROJECT_DIR$/js/coreMessageNotification.js" />
-        <option value="$PROJECT_DIR$/js/coreSideBar.js" />
+        <option value="$PROJECT_DIR$/css/personnel.css" />
+        <option value="$PROJECT_DIR$/css/default.css" />
+        <option value="$PROJECT_DIR$/css/header.css" />
+        <option value="$PROJECT_DIR$/appCore.administration/includes/js_includes.html" />
+        <option value="$PROJECT_DIR$/js/simpleGrid2.js" />
+        <option value="$PROJECT_DIR$/js/viewmodal/companyHelper.js" />
+        <option value="$PROJECT_DIR$/js/simpleGrid.js" />
+        <option value="$PROJECT_DIR$/js/viewmodal/departmentListViewModel.js" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/department.jsp" />
+        <option value="$PROJECT_DIR$/js/gridAction.js" />
+        <option value="$PROJECT_DIR$/appCore.Personnel/views/departmentAdd.jsp" />
       </list>
     </option>
   </component>
@@ -168,6 +231,96 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewmodal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewmodal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Leave" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appCore.Personnel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appCore.Personnel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -176,17 +329,17 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editing.templates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/landingpage.jsp" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/viewmodal/Leave" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\js" />
-      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\appCore.Personnel\views" />
-      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\js\viewmodal\Administration" />
-      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\includes" />
+      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\js\viewmodal\Leave" />
       <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\css" />
+      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\includes" />
+      <recent name="C:\appCoreDev\appCore.Personnel\src\main\webapp\appCore.Leave\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -233,7 +386,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19240907" sideWeight="0.32685715" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17708333" sideWeight="0.6568947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19635417" sideWeight="0.6710098" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18344755" sideWeight="0.22742857" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -242,7 +395,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34310532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3713355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947916" sideWeight="0.6568947" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -303,157 +456,150 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appCore.Payroll/views/payrollScriptAdd.jsp">
+    <entry file="file://$PROJECT_DIR$/css/header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="415" selection-end="423" vertical-scroll-proportion="0.0" />
+        <state line="4958" column="22" selection-start="113508" selection-end="113508" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageListPage.jsp">
+    <entry file="file://$PROJECT_DIR$/appCore.administration/includes/js_includes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="61" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0" />
+        <state line="24" column="55" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.46896553" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Payroll/views/configureWorkPackageAdd.jsp">
+    <entry file="file://$PROJECT_DIR$/js/coreSimpleGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="70" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" />
+        <state line="126" column="1" selection-start="4392" selection-end="4392" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/Payroll/configureWorkPackageAddViewModel.js">
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branch.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="55" selection-start="1097" selection-end="1125" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/appDefinition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="29" column="40" selection-start="1135" selection-end="1150" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/branchAdd.jsp">
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/branchViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="0" selection-start="9903" selection-end="9903" vertical-scroll-proportion="0.0">
+        <state line="10" column="39" selection-start="357" selection-end="376" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/coreDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/companyHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="536" column="28" selection-start="20018" selection-end="20037" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/simpleGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="6" selection-start="2555" selection-end="2555" vertical-scroll-proportion="0.6640625">
           <folding>
-            <marker date="1380803511484" expanded="true" signature="628:2400" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="668:2313" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="710:964" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1006:1075" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1119:1231" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1294:1356" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1400:1494" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1556:1776" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1656:1756" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1819:2293" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="1917:2273" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="2038:2081" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="2209:2252" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="2355:2375" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="2461:3214" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="2500:3191" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="3281:5259" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="3415:5235" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="3460:3760" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="3805:4121" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="3950:4098" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="4167:4495" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="4305:4472" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="4540:4812" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="4679:4789" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="4858:5166" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="5338:9133" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="5370:9110" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="5413:7572" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="5518:6224" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="5556:5967" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="5681:5948" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="5688:5942" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6007:6205" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6099:6186" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6122:6180" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6259:6554" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6384:6535" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6391:6529" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6590:6915" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6713:6896" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6723:6890" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="6934:7552" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="7042:7533" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="7158:7199" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="7591:7616" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="7634:9091" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="8072:8253" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="8090:8234" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="8107:8215" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="8359:8838" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="9178:9901" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="9267:9877" placeholder="{...}" />
-            <marker date="1380803511484" expanded="true" signature="9454:9548" placeholder="{...}" />
-            <marker date="1380803511484" expanded="true" signature="9606:9859" placeholder="{...}" />
-            <marker date="1380803511484" expanded="true" signature="9937:10065" placeholder="..." />
-            <marker date="1380803511484" expanded="true" signature="10030:10049" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3537" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3383" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:2893" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:2858" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:2771" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:2744" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3536" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3510" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3484" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3458" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3433" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3382" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:3354" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:2990" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="2675:4178" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="3321:4148" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="3354:4114" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="4298:4708" placeholder="..." />
+            <marker date="1385556180038" expanded="true" signature="4608:4642" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/sidebar/dark-glass/sidebar.css">
+    <entry file="file://$PROJECT_DIR$/js/coreGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0">
+        <state line="10" column="0" selection-start="230" selection-end="230" vertical-scroll-proportion="0.018973215" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/includes/js_includes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="54" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/coreLogout.js">
+    <entry file="file://$PROJECT_DIR$/js/simpleGrid2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="11" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.47433037">
+        <state line="85" column="1" selection-start="3751" selection-end="3751" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1385425221382" expanded="true" signature="2128:3501" placeholder="..." />
+            <marker date="1385425221382" expanded="true" signature="2161:2659" placeholder="..." />
+            <marker date="1385425221382" expanded="true" signature="2195:2625" placeholder="..." />
+            <marker date="1385425221382" expanded="true" signature="2734:3471" placeholder="..." />
+            <marker date="1385425221382" expanded="true" signature="2767:3437" placeholder="..." />
+            <marker date="1385425221382" expanded="true" signature="3621:4031" placeholder="..." />
+            <marker date="1385425221382" expanded="true" signature="3931:3965" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/department.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="9" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/globalViewModel.js">
+    <entry file="file://$PROJECT_DIR$/js/viewmodal/departmentListViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="16" selection-start="547" selection-end="554" vertical-scroll-proportion="0.0">
+        <state line="40" column="34" selection-start="1291" selection-end="1298" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/coreGlobalViewModelSetup.js">
+    <entry file="file://$PROJECT_DIR$/js/gridAction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="9" selection-start="25" selection-end="25" vertical-scroll-proportion="0.018973215">
-          <folding />
+        <state line="49" column="31" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1385593338922" expanded="true" signature="2139:2171" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2139:2218" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2139:2415" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2139:2431" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2139:2475" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2139:3112" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2184:2218" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2369:2415" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2369:2431" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2369:2475" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2369:3057" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/coreRecentItem.js">
+    <entry file="file://$PROJECT_DIR$/js/coreObjectAction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="99" column="0" selection-start="4102" selection-end="4102" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1385593338922" expanded="true" signature="2139:3112" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2184:3084" placeholder="..." />
+            <marker date="1385593338922" expanded="true" signature="2369:3057" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewmodal/branchInfoViewModel.js">
+    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/departmentAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appCore.Personnel/views/personnelControlPanel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="3225" selection-end="3225" vertical-scroll-proportion="-14.384615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/coreMessageNotification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/coreSideBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="217" column="0" selection-start="9019" selection-end="9019" vertical-scroll-proportion="0.25747126">
           <folding />
         </state>
       </provider>

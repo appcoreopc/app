@@ -7,6 +7,7 @@
 
         $(document).ready(function()
         {
+
             var vm;
             getData(globalViewModel.companyId());
 
@@ -26,24 +27,44 @@
             {
                 var coreCommand = new CoreCommandHelper();
                 vm = new DepartmentListViewModel(0, data, globalViewModel, coreCommand.createCommandInstance());
+                vm.renderView();
             }
 
             function bind()
             {
-                $("#departmentDiv").setupViewBinding(vm, globalViewModel);
+                $("#departmentForm").setupViewBinding(vm, globalViewModel);
             }
 
         });
 
 
-
         </script>
 
-        <div class="forms">
+        <div class="forms" id="departmentForm">
         <h1>Department Maintenance</h1>
 
         <div class="viewData">
         <div class="maintenanceCommand">
+
+        <div data-bind="actionGrid : gridActionViewModel">
+        </div>
+
+        <!--
+        <div class="commandMenuDiv">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions..<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-bind="click : goToAdd, visible : gridViewModel.enableAdd">Add</a></li>
+                    <li><a href="#" data-bind="click : selectAll, visible : gridViewModel.enableAdd">Select all</a></li>
+                    <li><a href="#" data-bind="click : deleteSelected, visible : gridViewModel.enableDelete">Delete</a></li>
+                    <li><a href="#" data-bind="click : goToAdd, visible : gridViewModel.enableAdd">Print</a></li>
+                    <li><a href="#" data-bind="click : goToAdd, visible : gridViewModel.enableAdd">Export</a></li>
+                </ul>
+            </li>
+        </div>
+
+         -->
+
         </div>
 
         <div>

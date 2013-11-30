@@ -1081,6 +1081,7 @@ cite {
 
 .dropdown {
     position: relative;
+    list-style : none outside none;
 }
 
 .dropdown-toggle {
@@ -1100,97 +1101,6 @@ cite {
     text-indent: -99999px;
     vertical-align: top;
     width: 0;
-}
-
-.dropdown .caret {
-    margin-left: 2px;
-    margin-top: 8px;
-}
-
-.dropdown-menu {
-    background-clip: padding-box;
-    background-color: #FFFFFF;
-    border: 1px solid #D0D0D0;
-    border-radius: 5px 5px 5px 5px;
-    display: none;
-    float: left;
-    left: 0;
-    list-style: none outside none;
-    margin: 0;
-    min-width: 140px;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    z-index: 1000;
-}
-
-.dropdown-menu.bottom-up {
-    bottom: 100%;
-    margin-bottom: 2px;
-    top: auto;
-}
-
-.dropdown-menu .divider {
-    border-bottom: 0 none;
-    height: 1px;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-}
-
-.dropdown-menu a {
-    clear: both;
-    color: #393C3D;
-    display: block;
-    font-weight: bold;
-    line-height: 18px;
-    padding: 6px 10px;
-    white-space: nowrap;
-}
-
-.dropdown-bordered li a {
-    border-bottom: 1px solid #DEDEDE;
-}
-
-.dropdown-bordered li:last-child a {
-    border-bottom: 1px solid transparent;
-}
-
-.dropdown-striped li:nth-child(2n) a {
-    background-color: #FBFBFB;
-}
-
-.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
-    background-color: #E50387;
-    color: #FFFFFF;
-    text-decoration: none;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
-}
-
-.dropdown-menu li:first-child > a, .dropdown-menu li:first-child > a:hover, .dropdown-menu .active:first-child > a, .dropdown-menu .active:first-child > a:hover {
-    border-radius: 5px 5px 0 0;
-}
-
-.dropdown-menu li:last-child > a, .dropdown-menu li:last-child > a:hover, .dropdown-menu .active:last-child > a, .dropdown-menu .active:last-child > a:hover {
-    border-radius: 0 0 5px 5px;
-}
-
-.dropdown.open {
-}
-
-.dropdown.open .dropdown-menu {
-    display: block;
-}
-
-.dropdown.open .dropdown-toggle, .dropdown .dropdown-toggle:active {
-    background-color: #E1E1E1;
-    background-image: -moz-linear-gradient(center top, #CCCCCC 0%, #E1E1E1 100%);
-    border: 1px solid white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset, 0 0 0 #000000;
-}
-
-.dropdown.open .dropdown-toggle:hover, .dropdown .dropdown-toggle:active:hover {
-    border-color: white;
 }
 
 .typeahead {
@@ -4970,4 +4880,82 @@ ui-state-hover a, .ui-state-hover a:hover {
 
 .nav > li > .adminNav {
     display: inline;
+}
+
+.commandClick {
+    cursor : pointer;
+    padding-right:4px;
+}
+
+.dropdown-menu {
+    background-clip: padding-box;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: none outside none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+}
+
+.open > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 0;
+}
+
+.dropdown-menu > li > a {
+    clear: both;
+    color: #333333;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #F5F5F5;
+    color: #262626;
+    text-decoration: none;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #428BCA;
+    color: #FFFFFF;
+    outline: 0 none;
+    text-decoration: none;
+}
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    color: #999999;
+}
+
+.caret {
+    border-color: #000000 rgba(0, 0, 0, 0) -moz-use-text-color;
+    border-style: solid solid dotted;
+    border-width: 4px 4px 0;
+    display: inline-block;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    width: 0;
+}
+
+.commandMenuDiv {
+    padding-left: 12px;
+}
+
+.commandMenuDiv .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #EEEEEE;
+    border-color: #428BCA;
 }

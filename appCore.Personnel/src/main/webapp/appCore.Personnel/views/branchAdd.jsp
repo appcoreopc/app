@@ -71,18 +71,9 @@
             </script>
 
 
-
-
-
-
-
-
             <script type="text/html" id="infoAddTemplate">
 
-
             <span class="accordianRowHeader"><icon class="icon-plus-circle-1"></icon></span>
-
-
             <div class="formAddRow">
 
                 <div class='columnDivider'>
@@ -121,13 +112,6 @@
 
 
             </script>
-
-
-
-
-
-
-
 
 
 
@@ -222,73 +206,16 @@
 
                 var vm;
                 var formName = "branchForm";
-
-                    Executor = (function($, ko)
-                    {
-                        var executor = {};
-                        var commands = {};
-                        var postExecuteCommands = {};
-
-                        executor.register = function(commandName, method){
-                            var commandHandler =
-                            {
-                                ref: this,
-                                callback : method
-                            };
-                            commands[commandName] = commandHandler;
-                        };
-
-                        executor.postRegister = function(commandName, method){
-                            var commandHandler =
-                            {
-                                ref: this,
-                                callback : method
-                            };
-                            postExecuteCommands[commandName] = commandHandler;
-                        };
-
-                        executor.execute = function(commandName, data)
-                        {
-                            var cmd = commands[commandName];
-                            if (cmd){
-
-                                console.log(cmd);
-                                cmd.callback.call(cmd.ref, data);
-                                cmd.callback();
-                             }
-                        };
-                       return executor;
-                    })(jQuery, ko);
-
-
-            $(document).ready(function()
+                $(document).ready(function()
                 {
+                    var vm = new BranchInfoViewModel(globalViewModel);
+                    vm.renderView();
+                });
 
-                    $.when(init()).done(bind());
-
-                    function init()
-                    {
-                        vm = new BranchInfoViewModel(globalViewModel);
-                    }
-
-                    function bind()
-                    {
-                        $("#" + formName).setupViewBinding(vm, globalViewModel);
-                        $("#accordian").accordion({collapsible : true, active: false});
-                        $("#" + formName).validationEngine();
-
-                        $('#BranchCode').mask('AAAAAAAAAA');
-                    }
-
-                    //Executor.register("default", function() { $.when(init()).done(bind()) });
-                    //Executor.execute("default");
-
-
-            });
 
             </script>
 
             <form id="branchForm">
-                <div id="branchMaintenance" data-bind="template : { name : templateToUse} ">
+                <div id="branchMaintenance" data-bind="template : { name : templateToUse } ">
             </div>
         </form>

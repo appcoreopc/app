@@ -3,7 +3,10 @@
 <script language="javascript" src="../../js/viewmodal/companyHelper.js"></script>
 <script language="javascript" src="../../js/coreGlobalViewModelSetup.js"></script>
 
-<script type="text/javascript">
+<script language="javascript" src="../../js/viewmodal/infoDataViewModel.js"></script>
+<script language="javascript" src="../../js/viewmodal/branchInfoViewModel.js"></script>
+
+    <script type="text/javascript">
 
     $(document).ready(function()
 	{
@@ -38,16 +41,17 @@
 			
 </script>    
 
-<div class="form formOutline">
+<div id="branchDiv" class="form formOutline">
 	
 	<h1>Branch Maintenance</h1>
 	
 	<div class="viewData"> 
 		<div class="maintenanceCommand">
+        <button id="AddBranch" class="command" data-bind="click : addBranch">Add Branch</button>
 		</div>
     <div>
 
-    <div id="branchDiv" data-bind="dataGrid: gridViewModel"></div>
+    <div id="branchGrid" data-bind="dataGrid: gridViewModel"></div>
 	</div>
 	
 	<div>

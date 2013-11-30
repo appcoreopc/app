@@ -118,6 +118,16 @@ var CompanyHelper = function () {
         });
     }
 
+    this.deleteDepartmentSelected = function (targetData) {
+        var objectId = { "id":targetData.nid };
+        var ajaxCore = new AjaxCore();
+        var request = ajaxCore.sendRequestSequential(globalDepartmentDeleteUrl, objectId, "get");
+        request.success(function (resultData) {
+            //callback(resultData, targetData);
+
+        });
+    }
+
     this.deleteSection = function (targetData, callback) {
         var objectId = { "id":targetData.nid };
         var ajaxCore = new AjaxCore();
@@ -228,13 +238,13 @@ var CompanyHelper = function () {
         });
     }
 
-
     this.getBranch = function (branchData, callBack) {
         var ajaxCore = new AjaxCore();
-        var request = ajaxCore.sendRequest(globalBranchGetUrl, branchData, "get");
-        request.success(function (data, status, xhrObj) {
-            callBack(data);
-        });
+        return ajaxCore.sendRequest(globalBranchGetUrl, branchData, "get");
+        //var request = ajaxCore.sendRequest(globalBranchGetUrl, branchData, "get");
+        //request.success(function (data, status, xhrObj) {
+        // callBack(data);
+        //});
     }
 
     this.getMaintenanceCode = function (codeType, maintenanceData, callBack) {
@@ -524,4 +534,14 @@ var CompanyHelper = function () {
         });
     }
 
+    this.getSelectedItemGrid = function (dataValue) {
+        var arrayToRemove = [];
+        // push to a new array
+        for (var i = 0; i < dataValue.length; i++) {
+            if (dataValue[i].isSelected() == true) {
+                arrayToRemove.push({'index':i, 'nid':dataValue[i].nid });
+            }
+        }
+        return arrayToRemove;
+    }
 }

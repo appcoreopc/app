@@ -16,12 +16,14 @@
         // Defines a view model class you can use to populate a grid
         ViewModel:function (configuration) {
 
+
             this.data = configuration.data;
             this.currentPageIndex = ko.observable(0);
 
             this.enableAdd = configuration.enableAdd;
             this.enableUpdate = configuration.enableUpdate;
             this.enableDelete = configuration.enableDelete;
+
 
             this.pageSize = configuration.pageSize || 5;
 
@@ -56,6 +58,7 @@
                     <table class=\"ko-grid\" cellspacing=\"0\">\
                         <thead>\
                             <tr>\
+                            <th>Select</th>\
                             <!-- ko foreach: columns-->\
                                <th data-bind=\"text: headerText\"></th>\
                              <!-- /ko -->\
@@ -65,11 +68,12 @@
                         </thead>\
                         <tbody data-bind=\"foreach: itemsOnCurrentPage\">\
                            <tr>\
+                           <td><input type='checkbox' /> </td>\
                            <!-- ko foreach: $parent.columns-->\
-                               <td data-bind=\"text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText] \"></td>\
+                              <td data-bind=\"text: typeof rowText == 'function' ? rowText($parent) : $parent[rowText] \"></td>\
                            <!-- /ko -->\
-                              <td data-bind=\"visible: $root.enableUpdate\"><a href='#' data-bind='click : $root.updateData'>Update</a> </td>\
-                              <td data-bind=\"visible: $root.enableDelete\"><a href='#' data-bind=\"click : $root.deleteData\">Delete</a></td>\
+                              <td data-bind=\"visible: $root.enableUpdate\"><a href='#' data-bind='click : $root.updateData'><i class='icon-edit-1'></i></a> </td>\
+                              <td data-bind=\"visible: $root.enableDelete\"><a href='#' data-bind=\"click : $root.deleteData\"><i class='icon-minus-circle-1'></i></a></td>\
                             </tr>\
                         </tbody>\
                     </table>");
